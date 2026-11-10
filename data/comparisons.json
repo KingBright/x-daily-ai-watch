@@ -1,0 +1,954 @@
+{
+  "updated_at": "2026-11-10",
+  "sections": [
+    {
+      "key": "game",
+      "title": "游戏",
+      "scope": "category=game",
+      "rows": [
+        {
+          "id": "3d-os-scenario-skills",
+          "tech": "Agent 技能加 Scenario MCP，驱动 Blender、Maya、UE、Unity 等 DCC 和引擎",
+          "capability": "从概念图到引擎落地的多部门美术流水线",
+          "maturity": "★3.6k，2026-08 创建，活跃",
+          "license": "MIT",
+          "use_case": "AI 辅助游戏美术和资产生产"
+        },
+        {
+          "id": "scenario-blender-plugin",
+          "tech": "Blender 5 Python 扩展，内置本地 MCP",
+          "capability": "在 Blender 里一站式调用多模态生成模型",
+          "maturity": "★968，有 425 个测试文件和模糊测试",
+          "license": "GPL-3.0",
+          "use_case": "Blender 用户的 AI 资产工作流"
+        },
+        {
+          "id": "parametric-topdown-pixel-architecture",
+          "tech": "零依赖 JS 参数化渲染加 Node CLI，配方嵌入 PNG",
+          "capability": "批量生成像素建筑并导出 Godot 预制体",
+          "maturity": "★182，早期",
+          "license": "NOASSERTION",
+          "use_case": "2D 俯视角游戏批量造城"
+        },
+        {
+          "id": "threepp",
+          "tech": "C++20 移植 three.js，有 OpenGL 和 Vulkan 两套后端，支持 Python 绑定",
+          "capability": "通用 3D 渲染，含光追、DLSS、FSR",
+          "maturity": "★1.2k，2021 年起维护",
+          "license": "MIT",
+          "use_case": "C++、Python 原生 3D 应用和仿真"
+        },
+        {
+          "id": "solstice",
+          "tech": "Rust、wgpu、WGSL，离线烘焙后在浏览器流式加载",
+          "capability": "程序化植被和虚拟化几何（类 Nanite）",
+          "maturity": "★76，刚发布的演示",
+          "license": "MIT",
+          "use_case": "WebGPU 渲染技术参考"
+        },
+        {
+          "id": "portals",
+          "tech": "three.js 加纯静态站，由 Claude 长时间持续生成",
+          "capability": "471 个程序化 3D 世界",
+          "maturity": "★43，作品型",
+          "license": "NOASSERTION",
+          "use_case": "展示 AI 长程生成能力"
+        },
+        {
+          "id": "moss-keeper",
+          "tech": "单文件 HTML，内嵌 base64 视频",
+          "capability": "离线播放的动画场景",
+          "maturity": "★234，作品型",
+          "license": "未声明",
+          "use_case": "单文件分发示例"
+        },
+        {
+          "id": "modretro-chromatic-codex-edition",
+          "tech": "Codex 插件生成 GB 风格 ROM，烧进实体卡带",
+          "capability": "AI 写复古掌机游戏并在真机上跑",
+          "maturity": "商业联名硬件（light）",
+          "license": "未查到",
+          "use_case": "复古硬件和 AI 创作"
+        },
+        {
+          "id": "poke-bonk",
+          "tech": "浏览器 3D 游戏",
+          "capability": "AI 编程做出的成品游戏",
+          "maturity": "light，商业数据未查到",
+          "license": "闭源",
+          "use_case": "AI 做游戏的商业化样本"
+        },
+        {
+          "id": "hard-rock-hero",
+          "tech": "Wavedash 上的浏览器节奏游戏（摘要称用 Three.js）",
+          "capability": "一拍一动作的节奏玩法",
+          "maturity": "light",
+          "license": "闭源",
+          "use_case": "轻量网页小游戏"
+        },
+        {
+          "id": "viper-one-one",
+          "tech": "网页战斗机模拟器（摘要称用 Three.js）",
+          "capability": "飞行模拟和座舱",
+          "maturity": "light，官网抓取为空",
+          "license": "未查到",
+          "use_case": "网页模拟游戏"
+        },
+        {
+          "id": "bee-x9",
+          "tech": "Vercel 上的 3D 网页演示",
+          "capability": "机器蜜蜂展示",
+          "maturity": "light",
+          "license": "未查到",
+          "use_case": "AI 生成 3D 演示"
+        },
+        {
+          "id": "书桌之上",
+          "tech": "three.js 游戏加 Tripo 生成 3D 素材",
+          "capability": "3D 解谜叙事",
+          "maturity": "light",
+          "license": "未查到",
+          "use_case": "中文独立小游戏"
+        }
+      ],
+      "prose": [
+        "这一类分成三条技术路线：一是「AI 资产流水线」，包括 3d-os-scenario-skills、scenario-blender-plugin、parametric-topdown-pixel-architecture，目标是让 Agent 产出能进引擎的资产；二是「渲染引擎和技术底座」，包括 threepp 和 solstice；三是「AI 直接写出的成品或演示」，包括 portals、poke-bonk、书桌之上等，大多是 three.js 网页。",
+        "结论 1：最成熟、最值得接入工作流的是 Scenario 的两件套。技能库覆盖整条流水线，Blender 插件的工程质量最高（测试、模糊测试、发布签名齐全），两者合起来就是「Agent 驱动 DCC」的参考实现。",
+        "结论 2：渲染底座里，threepp 胜在成熟，solstice 胜在技术前沿（WebGPU 上的虚拟化几何），但后者还只是演示。想在浏览器之外做原生 3D，选 threepp；想研究 Web 端的下一代渲染，看 solstice。",
+        "结论 3：成品类项目普遍只是「能玩的演示」，其中好几个只有页面或帖子，只能做 light 分析，说明 AI 做游戏目前主要停留在展示阶段。可复用的价值在方法（如 portals 的长程生成），不在代码本身。"
+      ]
+    },
+    {
+      "key": "dev-efficiency",
+      "title": "研发效率",
+      "scope": "agent-eng/dev-efficiency",
+      "rows": [
+        {
+          "id": "superpowers",
+          "tech": "可组合技能加 hooks，适配十几种 harness",
+          "capability": "规划、调试、写作等研发方法论",
+          "maturity": "★31.5 万，事实标准",
+          "license": "MIT",
+          "use_case": "任何编程 Agent 的基础技能层"
+        },
+        {
+          "id": "pstack",
+          "tech": "Cursor 插件（技能加 agents）",
+          "capability": "验证驱动、少写代码、并行 Agent",
+          "maturity": "★1.6 万（cursor/plugins 仓库）",
+          "license": "未单独声明",
+          "use_case": "Cursor 重度用户"
+        },
+        {
+          "id": "elephant-goldfish-model",
+          "tech": "跨平台插件：有上下文的 Agent 写规格，无记忆的 Agent 评审",
+          "capability": "先审设计再写代码",
+          "maturity": "★1.7 万，Google 出品",
+          "license": "Apache-2.0",
+          "use_case": "需要设计评审的中大型改动"
+        },
+        {
+          "id": "understand-anything",
+          "tech": "多 Agent 流水线生成代码知识图谱",
+          "capability": "交互式理解陌生代码库",
+          "maturity": "★9.2 万",
+          "license": "MIT",
+          "use_case": "接手、调研陌生仓库"
+        },
+        {
+          "id": "security-audit-skill",
+          "tech": "单个技能加覆盖率台账和 schema 校验",
+          "capability": "分阶段审计，换新上下文证伪",
+          "maturity": "★6.8 万，Cloudflare 出品",
+          "license": "MIT",
+          "use_case": "代码安全审计"
+        },
+        {
+          "id": "landmine",
+          "tech": "CLI 加 MCP，把依赖版本的已知 bug 写进 AGENTS.md",
+          "capability": "提醒 Agent 避开依赖里已知但未修复的坑",
+          "maturity": "★10，早期",
+          "license": "MIT",
+          "use_case": "依赖多的项目"
+        },
+        {
+          "id": "openmoat",
+          "tech": "单个 Rust 二进制，确定性规则加代理",
+          "capability": "拦截敏感文件和危险命令",
+          "maturity": "★4，早期",
+          "license": "MIT/Apache-2.0",
+          "use_case": "本机运行 Agent 的安全阀"
+        },
+        {
+          "id": "stroq",
+          "tech": "TS CLI，677 个规则，本地控制台",
+          "capability": "会话审计、密钥泄露检测、指令溯源",
+          "maturity": "★232",
+          "license": "Apache-2.0",
+          "use_case": "事后审计 Agent 行为"
+        },
+        {
+          "id": "tokeneconomizer",
+          "tech": "Python 标准库加 harness 插件",
+          "capability": "仓库记忆压缩、按需加载（自报省 18–31%）",
+          "maturity": "★5.6k，MSR 和伯克利",
+          "license": "Apache-2.0",
+          "use_case": "降低 Claude Code、Codex 成本"
+        },
+        {
+          "id": "agav",
+          "tech": "TS 终端 Agent（Ink TUI）",
+          "capability": "靠工作流省钱（自报 TB2.1 得分 84.7%）",
+          "maturity": "★177",
+          "license": "Apache-2.0",
+          "use_case": "自托管终端编程 Agent"
+        },
+        {
+          "id": "agent-autoloop",
+          "tech": "零依赖 TS 内核，插件化事件源和通知",
+          "capability": "定时任务和 issue 驱动 Agent，只在关键处要人确认",
+          "maturity": "★4.3k，刚发布",
+          "license": "MIT",
+          "use_case": "无人值守的仓库维护"
+        },
+        {
+          "id": "dsh-superagent-prototype",
+          "tech": "DeepSeek Harness bundle",
+          "capability": "监控 issue、PR，自动把需求转成任务",
+          "maturity": "★2.2 万，研究原型",
+          "license": "MIT",
+          "use_case": "研究自治开发流程"
+        },
+        {
+          "id": "borg",
+          "tech": "Rust、Tokio，7 个 crate",
+          "capability": "Agent 运行时的取消、隔离、重试和预算",
+          "maturity": "★15，早期",
+          "license": "Apache-2.0",
+          "use_case": "自建可靠的 Agent 框架"
+        },
+        {
+          "id": "oar-kanso",
+          "tech": "TS 库，统一驱动 12 种以上 Agent 运行时",
+          "capability": "Agent 工作台的底层抽象",
+          "maturity": "★515",
+          "license": "Apache-2.0",
+          "use_case": "开发多 Agent 产品"
+        },
+        {
+          "id": "octopus-si-os",
+          "tech": "Rust 内核约 4.5 万行，契约式注册",
+          "capability": "研究 Agent 能否主动并自我改进的系统",
+          "maturity": "★748，范围很大",
+          "license": "MIT",
+          "use_case": "研究型"
+        },
+        {
+          "id": "anthropic-commerce-agents",
+          "tech": "Python 7 个包加 8 个 Web 应用",
+          "capability": "商业交易 Agent 的参考蓝图，含安全闸门",
+          "maturity": "★3.4k，官方",
+          "license": "Apache-2.0",
+          "use_case": "电商和支付类 Agent 开发"
+        },
+        {
+          "id": "anymodelbot",
+          "tech": "Electron 加 magpie 网关加 DSH",
+          "capability": "个人 Bot，一个 key 接 70+ 模型",
+          "maturity": "★2.8k，推广成分重",
+          "license": "MIT",
+          "use_case": "国产 IM 场景的个人 Bot"
+        },
+        {
+          "id": "exact",
+          "tech": "Contract 声明式界面加 Rust 跨端 runner",
+          "capability": "Agent 能自己构建、运行、截图、测试各平台",
+          "maturity": "★1.3k，Expo 出品",
+          "license": "MIT",
+          "use_case": "面向 Agent 的跨端应用开发"
+        },
+        {
+          "id": "captureflow",
+          "tech": "Nx 单仓，含扩展、macOS 和 Cloudflare 部署",
+          "capability": "开源录屏，Agent 可经 MCP 录演示",
+          "maturity": "★71",
+          "license": "NOASSERTION",
+          "use_case": "演示和 bug 复现录屏"
+        },
+        {
+          "id": "catalex",
+          "tech": "桌面应用（TS 加 Rust）",
+          "capability": "Agent 在草稿目录改论文，人审后合入",
+          "maturity": "★12",
+          "license": "AGPL-3.0",
+          "use_case": "学术写作"
+        },
+        {
+          "id": "perch",
+          "tech": "Rust 原生 GUI",
+          "capability": "GitHub、代码浏览和 Agent 放在同一个窗口",
+          "maturity": "★16",
+          "license": "Apache-2.0",
+          "use_case": "代码评审工作台"
+        },
+        {
+          "id": "playbasis-agent-hub",
+          "tech": "SwiftUI 菜单栏应用",
+          "capability": "统计 Claude Code、Codex 的时长、token 和余量",
+          "maturity": "★1",
+          "license": "Apache-2.0",
+          "use_case": "个人用量看板"
+        },
+        {
+          "id": "stageshow",
+          "tech": "技能加 React kit 加录屏",
+          "capability": "界面示意和动效，录屏后自我修正",
+          "maturity": "★2.9k",
+          "license": "未声明",
+          "use_case": "前端演示和原型"
+        },
+        {
+          "id": "unslop",
+          "tech": "设计技能，可选 Playwright",
+          "capability": "去掉 AI 味视觉",
+          "maturity": "★1.3 万",
+          "license": "CC-BY-4.0",
+          "use_case": "前端视觉打磨"
+        },
+        {
+          "id": "agents-md",
+          "tech": "纯文档",
+          "capability": "减少防御性垃圾代码的 AGENTS.md",
+          "maturity": "★125",
+          "license": "未声明",
+          "use_case": "放进仓库根目录即用"
+        },
+        {
+          "id": "grok-bot-cli",
+          "tech": "Node CLI 加 MCP",
+          "capability": "在终端创建 Grok Bot、群组和线程",
+          "maturity": "★181",
+          "license": "MIT",
+          "use_case": "把 Grok Bot 脚本化"
+        },
+        {
+          "id": "grokbot-field-notes",
+          "tech": "文档：角色、剧本、反模式",
+          "capability": "Grok Bot 实战经验",
+          "maturity": "★700",
+          "license": "MIT",
+          "use_case": "搭建 Bot 团队"
+        },
+        {
+          "id": "awesome-grok-bot",
+          "tech": "awesome 列表加 CSV、JSON 目录",
+          "capability": "经过验证的技能和插件索引",
+          "maturity": "★111",
+          "license": "NOASSERTION",
+          "use_case": "找插件"
+        },
+        {
+          "id": "xai-plugin-marketplace",
+          "tech": "marketplace.json 索引仓库",
+          "capability": "Grok Build 官方插件目录",
+          "maturity": "★324，官方",
+          "license": "未声明",
+          "use_case": "Grok 生态入口"
+        },
+        {
+          "id": "aether",
+          "tech": "云端开发机（light）",
+          "capability": "约 20 秒拉起 devbox 跑 Agent，沿用自己的订阅",
+          "maturity": "闭源商业",
+          "license": "闭源",
+          "use_case": "不想占用本机资源"
+        }
+      ],
+      "prose": [
+        "这一类可以按作用分成五层：方法论和技能层（superpowers、pstack、elephant-goldfish-model、unslop、stageshow、agents-md）；理解和审计层（understand-anything、security-audit-skill、stroq、landmine）；安全和成本层（openmoat、tokeneconomizer、agav、playbasis-agent-hub）；运行时和自治层（borg、oar-kanso、agent-autoloop、dsh-superagent-prototype、octopus-si-os、exact）；生态和目录层（Grok Bot 相关项目、xai-plugin-marketplace）。",
+        "结论 1：技能（SKILL.md）已经成为研发效率工具的主流载体。星标最高的几个（superpowers 31.5 万、understand-anything 9.2 万、security-audit-skill 6.8 万）都是技能或插件，而且同时适配多种 harness，技能本身几乎不绑定具体 Agent。",
+        "结论 2：多个项目不约而同用「换一个干净的上下文去复核」来提高质量：elephant-goldfish-model 用无记忆评审，security-audit-skill 用新上下文证伪，pstack 强调验证。这是目前对抗 Agent 自我确认偏差最有效的套路。",
+        "结论 3：安全和成本工具大多还很早期（openmoat、landmine、borg 都不到 20 星），但定位清晰。tokeneconomizer 有大厂论文背书，是成本优化里唯一有系统评测的；安全方面，openmoat（事前拦截）、stroq（事后审计）和 security-audit-skill（代码审计）可以组合使用。"
+      ]
+    },
+    {
+      "key": "phone-computer-use",
+      "title": "Phone/Computer Use",
+      "scope": "agent-eng/phone-computer-use",
+      "rows": [
+        {
+          "id": "mika",
+          "tech": "安卓无障碍服务加隐藏虚拟屏，在手机本机运行",
+          "capability": "操作任意 App，不需要 Root 或电脑",
+          "maturity": "★7.9k",
+          "license": "Apache-2.0",
+          "use_case": "个人安卓自动化"
+        },
+        {
+          "id": "phongent",
+          "tech": "Mika 的分支，加 iOS 主控和局域网群控",
+          "capability": "多台手机分派任务",
+          "maturity": "★356",
+          "license": "Apache-2.0",
+          "use_case": "手机群控和批量操作"
+        },
+        {
+          "id": "pinky",
+          "tech": "Go 桌面应用（GPU 自绘），go-ios 加安卓 helper，MCP",
+          "capability": "任意 Agent 操控 iPhone 或安卓，付款前停下等人确认，带录屏",
+          "maturity": "★1.5k",
+          "license": "Apache-2.0",
+          "use_case": "需要安全护栏的 Phone Use"
+        },
+        {
+          "id": "poki",
+          "tech": "iPhone 端 UI Automation 加 Mac 端 MCP",
+          "capability": "在 Mac 上让 Agent 操作真实 iPhone",
+          "maturity": "★806",
+          "license": "AGPL-3.0",
+          "use_case": "iOS 自动化"
+        },
+        {
+          "id": "opencode-browse",
+          "tech": "Chromium 扩展加 MCP，用 Playwright",
+          "capability": "接管已登录的标签页，登录和付款交还给人",
+          "maturity": "★427",
+          "license": "MIT",
+          "use_case": "在真实浏览器会话里跑 Agent"
+        },
+        {
+          "id": "pointer",
+          "tech": "Chrome 扩展加本地 bridge，MCP 和 hook",
+          "capability": "点选元素，把结构、样式和截图交给 Agent",
+          "maturity": "★1，刚发布",
+          "license": "MIT",
+          "use_case": "前端改 UI 时精确指代"
+        },
+        {
+          "id": "redraft",
+          "tech": "Chrome 扩展加本地 Claude Code bridge",
+          "capability": "多 Agent 现场改网页版式",
+          "maturity": "★5",
+          "license": "MIT",
+          "use_case": "网页设计探索"
+        },
+        {
+          "id": "windows-terminal",
+          "tech": "QEMU 加终端图形协议，MCP 提供 9 个工具",
+          "capability": "隔离的真实 Windows 11 虚拟机",
+          "maturity": "★5",
+          "license": "MIT",
+          "use_case": "安全地做 Windows Computer Use"
+        },
+        {
+          "id": "image-context-manager",
+          "tech": "Python（Pillow）加技能",
+          "capability": "截图裁剪压缩、记录发现、按需召回",
+          "maturity": "★3",
+          "license": "MIT",
+          "use_case": "降低 Computer Use 的上下文成本"
+        },
+        {
+          "id": "aura-autopilot",
+          "tech": "Python Agent 加 UE5、Unity、Godot、Roblox 插件",
+          "capability": "在游戏引擎里自动试玩和测试",
+          "maturity": "★831",
+          "license": "Apache-2.0",
+          "use_case": "游戏 QA"
+        },
+        {
+          "id": "poinky",
+          "tech": "Swift，常驻 Mac 刘海区",
+          "capability": "看屏幕、语音回答、画示意图",
+          "maturity": "★9",
+          "license": "MIT",
+          "use_case": "桌面伴随式助手"
+        },
+        {
+          "id": "hermes-voice",
+          "tech": "Home Assistant 集成加刷机的 Echo",
+          "capability": "旧 Echo 变成 Agent 的语音入口",
+          "maturity": "★627",
+          "license": "MIT",
+          "use_case": "智能家居语音"
+        }
+      ],
+      "prose": [
+        "按控制对象分：手机（mika、phongent、pinky、poki）、浏览器（opencode-browse、pointer、redraft）、桌面或虚拟机（windows-terminal、poinky、image-context-manager）、垂直领域（aura-autopilot 控制游戏引擎，hermes-voice 控制语音设备）。",
+        "结论 1：手机方向分成两条路。mika 走「手机本机运行」，免 Root、免电脑，星标最高；pinky 和 poki 走「电脑控制手机」加 MCP，方便接入现有编程 Agent。其中 pinky 的安全设计（付款前停下等确认、录屏、网关强制执行规则）在同类中最完整。",
+        "结论 2：浏览器方向的共识是「复用用户已登录的真实会话」，同时把登录、付款这类敏感步骤交还给人（opencode-browse）。pointer、redraft 这类小工具解决的是指代精度和可视化编辑，属于前端开发的辅助，不是通用浏览器 Agent。",
+        "结论 3：隔离和上下文成本是 Computer Use 的两大短板，库里已有针对性的工具：windows-terminal 用 QEMU 做隔离，image-context-manager 压缩截图。这两个都很早期（个位数星标），但方向值得跟进。"
+      ]
+    },
+    {
+      "key": "agent-fleet",
+      "title": "Agent 军团管理",
+      "scope": "agent-eng/agent-fleet",
+      "rows": [
+        {
+          "id": "t3-code",
+          "tech": "TS 单仓：本地服务器、Web、Electron 加移动端遥控",
+          "capability": "统一操控本机多种编程 Agent",
+          "maturity": "★5.4 万",
+          "license": "MIT",
+          "use_case": "多 Agent 编程控制台"
+        },
+        {
+          "id": "coincide",
+          "tech": "T3 Code 的原生 macOS 移植（AppKit、SwiftUI 加 Rust）",
+          "capability": "并排运行、中途换 Agent",
+          "maturity": "★14",
+          "license": "MIT",
+          "use_case": "追求原生性能的 Mac 用户"
+        },
+        {
+          "id": "tastecode",
+          "tech": "Electron（TS、Swift）加本地编排服务",
+          "capability": "面向创意网页、3D 和动效的多 Agent 工作台",
+          "maturity": "★513",
+          "license": "Apache-2.0",
+          "use_case": "创意前端"
+        },
+        {
+          "id": "openmausbot",
+          "tech": "Electron 加本地 harness，提供云桌面、本地 VM、本机三种环境",
+          "capability": "开源版 Grok Bot，带可给 bot 用的虚拟机",
+          "maturity": "★2 万",
+          "license": "Apache-2.0",
+          "use_case": "自托管个人 Bot"
+        },
+        {
+          "id": "open-duet-anil-matcha",
+          "tech": "Python 后端加 TS 前端，Docker 自托管",
+          "capability": "负责人分派任务，带记忆和审批（现名 Suparagent）",
+          "maturity": "★7k，2023 年起",
+          "license": "Apache-2.0",
+          "use_case": "团队多 Agent"
+        },
+        {
+          "id": "openduet-copilotkit",
+          "tech": "构建在 CopilotKit OpenBot 上",
+          "capability": "Agent 主动推进，人可以随时插手",
+          "maturity": "★2k",
+          "license": "MIT",
+          "use_case": "个人事务助理"
+        },
+        {
+          "id": "rerun",
+          "tech": "TS 单仓加 Supabase，Foreman 编排",
+          "capability": "自动组建团队，可沿用 ChatGPT 或 Claude 订阅",
+          "maturity": "★930",
+          "license": "AGPL-3.0",
+          "use_case": "自托管的多 Agent 协作"
+        },
+        {
+          "id": "bot-teams",
+          "tech": "Next.js 加仓库即 CMS（markdown 定义团队）",
+          "capability": "一条提示词安装多 bot 团队模板",
+          "maturity": "★26",
+          "license": "MIT",
+          "use_case": "快速搭建 Bot 团队"
+        },
+        {
+          "id": "hypergrok-trading-desk",
+          "tech": "插件包：7 个角色、17 个技能、只读工具",
+          "capability": "交易研究台，含人工审批",
+          "maturity": "★467",
+          "license": "MIT",
+          "use_case": "高风险领域的多角色协作样板"
+        },
+        {
+          "id": "relay",
+          "tech": "零依赖 Node CLI，加 MCP 和 hooks",
+          "capability": "在不同 Agent 之间交接任务和上下文",
+          "maturity": "★2",
+          "license": "MIT",
+          "use_case": "多种 CLI Agent 混用"
+        },
+        {
+          "id": "the-office-agents",
+          "tech": "Claude Code 插件，three.js 像素办公室",
+          "capability": "把各 Agent 的会话可视化",
+          "maturity": "★1",
+          "license": "MIT",
+          "use_case": "趣味化观察"
+        }
+      ],
+      "prose": [
+        "这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）。",
+        "结论 1：控制台方向 t3-code 一家独大（5.4 万星），coincide、tastecode 都是在它的思路上做差异化（原生性能、创意场景）。几乎所有方案都选择「驱动本机已登录的 CLI」，而不是自己接模型 API，从而沿用用户已有的订阅。",
+        "结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。",
+        "结论 3：「团队即配置」正在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。"
+      ]
+    },
+    {
+      "key": "llm-tools",
+      "title": "大模型工具",
+      "scope": "category=llm-tools",
+      "rows": [
+        {
+          "id": "mistral-large-4",
+          "tech": "1T 参数原生多模态，开放权重",
+          "capability": "编程、防御性网络安全（官方说法）",
+          "maturity": "light",
+          "license": "开放权重",
+          "use_case": "需要私有部署大模型"
+        },
+        {
+          "id": "longcat-2-5",
+          "tech": "1.6T 参数，用国产芯片训练",
+          "capability": "长程 Agent 任务",
+          "maturity": "light",
+          "license": "未查到",
+          "use_case": "国产算力生态"
+        },
+        {
+          "id": "ling-3-2-flash",
+          "tech": "原生多模态 MoE，通过 API 提供",
+          "capability": "长上下文、文档和网页理解",
+          "maturity": "light",
+          "license": "API",
+          "use_case": "多模态 API 选型"
+        },
+        {
+          "id": "hydrogen-1-0",
+          "tech": "基于 GLM-5.3 后训练的科学模型",
+          "capability": "化学、材料、生命科学",
+          "maturity": "light",
+          "license": "开放权重",
+          "use_case": "科研垂类"
+        },
+        {
+          "id": "twil-8b",
+          "tech": "约 9B 开放权重推理模型",
+          "capability": "本地推理、工具调用",
+          "maturity": "light",
+          "license": "开放权重",
+          "use_case": "本地小模型"
+        },
+        {
+          "id": "sensenova-loop-9b-preview",
+          "tech": "Looped Transformer 加 mHC，权重复用",
+          "capability": "约 9B 参数、等效 14.6B 深度，多模态",
+          "maturity": "★106，预览版",
+          "license": "Apache-2.0",
+          "use_case": "研究参数效率"
+        },
+        {
+          "id": "kimi-k3-in-c",
+          "tech": "C99 推理引擎（176KB），MXFP4、MoE",
+          "capability": "约 8GB 内存跑完整 Kimi K3（自报，非常慢）",
+          "maturity": "★1.2 万",
+          "license": "Apache-2.0",
+          "use_case": "极限低资源推理"
+        },
+        {
+          "id": "ferrite",
+          "tech": "全 Rust，kernel 编译成 PTX，两台 DGX Spark 做 TP2",
+          "capability": "Qwen3.8-27B 高速推理（自报 273 tok/s）",
+          "maturity": "★0，刚发布",
+          "license": "Apache-2.0",
+          "use_case": "Rust GPU 编程参考"
+        },
+        {
+          "id": "mlx-serve",
+          "tech": "Zig 后端加 MLX，兼容 OpenAI、Anthropic、Ollama",
+          "capability": "Mac 本地一站式 AI 服务（含视频）",
+          "maturity": "★2.4k",
+          "license": "NOASSERTION",
+          "use_case": "Mac 本地推理"
+        },
+        {
+          "id": "latent-sparse-attention",
+          "tech": "PyTorch 加 Triton、CuTeDSL，在 SGLang 提供服务",
+          "capability": "超长上下文稀疏注意力加速（自报 22.7 倍）",
+          "maturity": "★452",
+          "license": "Apache-2.0",
+          "use_case": "百万到千万级上下文"
+        },
+        {
+          "id": "xerj-query-1",
+          "tech": "Rust 搜索引擎加查询编译模型",
+          "capability": "把问题编译成程序在事实库上执行，可拒答",
+          "maturity": "★1.9 万",
+          "license": "Apache-2.0",
+          "use_case": "本地私有数据问答"
+        },
+        {
+          "id": "nesformer",
+          "tech": "把 6502 CPU 编译进 Qwen 权重",
+          "capability": "模型本身就能确定性地运行 NES 游戏",
+          "maturity": "★296",
+          "license": "NOASSERTION",
+          "use_case": "「权重即程序」研究"
+        },
+        {
+          "id": "权重空间编程-mit",
+          "tech": "前沿 LLM 不用梯度直接读写权重",
+          "capability": "改 0.016% 权重修复复读循环（自报 MATH-500 从 7.9% 到 48.1%）",
+          "maturity": "研究博客加 HF 检查点",
+          "license": "HF 公开",
+          "use_case": "可解释性和模型修复"
+        },
+        {
+          "id": "oumi-faie",
+          "tech": "端到端训练平台（SFT、DPO、GRPO、LoRA）",
+          "capability": "用自然语言描述任务，自动造数据并训出小模型",
+          "maturity": "★9.4k，2024 年起",
+          "license": "Apache-2.0",
+          "use_case": "定制专用小模型"
+        },
+        {
+          "id": "rsi-inference-bench",
+          "tech": "在真实 vLLM、SGLang 和 GPU 上评测",
+          "capability": "Agent 能否给推理栈做 Day-0 支持、优化和修复",
+          "maturity": "★144，Apple",
+          "license": "Apple 许可",
+          "use_case": "评测系统工程 Agent"
+        },
+        {
+          "id": "science-s-last-exam",
+          "tech": "Harbor 加隐藏参考答案",
+          "capability": "端到端科研能力（113 个任务）",
+          "maturity": "★21",
+          "license": "Apache-2.0",
+          "use_case": "评测科研 Agent"
+        },
+        {
+          "id": "vybbench",
+          "tech": "像素比对加 Gemini 评判",
+          "capability": "字体、颜色、编辑保真度",
+          "maturity": "★5，有利益相关",
+          "license": "Apache-2.0",
+          "use_case": "图像模型选型"
+        },
+        {
+          "id": "deeptutor",
+          "tech": "多 Agent 加 RAG，Web、桌面和 CLI",
+          "capability": "输入学习资料后讲解、出测验、追踪进度",
+          "maturity": "★5.8 万，港大",
+          "license": "Apache-2.0",
+          "use_case": "自学"
+        },
+        {
+          "id": "janestreet-agent-skills",
+          "tech": "单个技能 socratic-tutor",
+          "capability": "苏格拉底式追问辅导",
+          "maturity": "★2.5k",
+          "license": "MIT",
+          "use_case": "学习辅导"
+        },
+        {
+          "id": "teachable-figures",
+          "tech": "技能加渲染工具包加 Playwright 校验",
+          "capability": "可交互的 2D、3D 教学实验图",
+          "maturity": "★303",
+          "license": "NOASSERTION",
+          "use_case": "课程制作"
+        },
+        {
+          "id": "norman-skill",
+          "tech": "科研技能集",
+          "capability": "论文精读、科研制图、论文转 PPT",
+          "maturity": "★782",
+          "license": "未声明",
+          "use_case": "研究生科研"
+        },
+        {
+          "id": "axiom-stacks",
+          "tech": "Lean 4 加 Mathlib，由 AI Agent 写形式化",
+          "capability": "把 Stacks Project 形式化",
+          "maturity": "★131",
+          "license": "Apache-2.0",
+          "use_case": "AI 数学"
+        },
+        {
+          "id": "archimedes-reynolds",
+          "tech": "Anthropic 工具调用循环加 OpenFOAM",
+          "capability": "Agent 做 CFD 工程设计",
+          "maturity": "★115",
+          "license": "MIT",
+          "use_case": "工程仿真"
+        },
+        {
+          "id": "huashu-motion",
+          "tech": "技能加 GSAP 运行时加 studio 编辑器",
+          "capability": "代码动效视频，可以指着改",
+          "maturity": "★2.6k",
+          "license": "MIT",
+          "use_case": "产品动效视频"
+        },
+        {
+          "id": "motion-graphics-music-video-skill",
+          "tech": "Swift、Metal 渲染加音频分析",
+          "capability": "由音乐驱动动态视觉，不用生成模型",
+          "maturity": "★50",
+          "license": "MIT",
+          "use_case": "音乐可视化"
+        },
+        {
+          "id": "simcraft-perspective-illusion",
+          "tech": "24 个技能之一，Playwright 加 ffmpeg",
+          "capability": "透视错觉循环和视频拆解",
+          "maturity": "★281",
+          "license": "MIT",
+          "use_case": "短视频特效"
+        },
+        {
+          "id": "claude-make-an-anime",
+          "tech": "Claude Code 插件，Ruby 工具链加 Fal",
+          "capability": "从故事到动画、配音、字幕",
+          "maturity": "★16",
+          "license": "MIT",
+          "use_case": "AI 动画短片"
+        },
+        {
+          "id": "nomi",
+          "tech": "Electron 视频工作台加 MCP，接多家视频模型",
+          "capability": "分镜和粗剪，Agent 可以指挥",
+          "maturity": "★638",
+          "license": "AGPL-3.0",
+          "use_case": "AI 视频制作"
+        },
+        {
+          "id": "jianying-ai-mcp",
+          "tech": "pyJianYingDraft 加 MCP",
+          "capability": "读写剪映草稿",
+          "maturity": "★18",
+          "license": "未声明",
+          "use_case": "剪映用户自动化"
+        },
+        {
+          "id": "ai-character-swap",
+          "tech": "技能加 Seedance API",
+          "capability": "短视频角色替换",
+          "maturity": "★245，有肖像和 IP 风险",
+          "license": "未声明",
+          "use_case": "短视频二创（注意合规）"
+        },
+        {
+          "id": "gif-factory",
+          "tech": "技能加 Python",
+          "capability": "按风格批量做 GIF",
+          "maturity": "★1k，有 IP 风险",
+          "license": "MIT",
+          "use_case": "社媒素材"
+        },
+        {
+          "id": "hairdeck",
+          "tech": "Card VAE 加集合扩散 Transformer",
+          "capability": "单张图生成可绑定的 3D 发片",
+          "maturity": "★1k，学术",
+          "license": "Apache-2.0",
+          "use_case": "游戏和数字人美术"
+        },
+        {
+          "id": "lieflat-charts",
+          "tech": "HTML、SVG 模板技能",
+          "capability": "统一风格的数据可视化",
+          "maturity": "★6.8k",
+          "license": "NOASSERTION",
+          "use_case": "报告和 PPT 图表"
+        },
+        {
+          "id": "astryx",
+          "tech": "React 19 加 StyleX 设计系统",
+          "capability": "可定制的组件和主题",
+          "maturity": "★2.1 万，Meta",
+          "license": "MIT",
+          "use_case": "Agent 按规范生成界面"
+        },
+        {
+          "id": "opendesigner",
+          "tech": "插件加单文件 Python 引擎",
+          "capability": "设计审计和设计系统构建",
+          "maturity": "★124",
+          "license": "MIT",
+          "use_case": "设计规范落地"
+        },
+        {
+          "id": "social-media-skills",
+          "tech": "共享上下文的技能集",
+          "capability": "社媒策略、创作、分析",
+          "maturity": "★643",
+          "license": "MIT",
+          "use_case": "海外社媒运营"
+        },
+        {
+          "id": "wewrite",
+          "tech": "技能加 Python CLI",
+          "capability": "公众号从热点到发布的全流程",
+          "maturity": "★3.7k",
+          "license": "MIT",
+          "use_case": "中文公众号"
+        },
+        {
+          "id": "trendradar",
+          "tech": "Python，litellm 加 MCP",
+          "capability": "多平台热点聚合和 AI 简报",
+          "maturity": "★6.4 万",
+          "license": "GPL-3.0",
+          "use_case": "舆情和选题监控"
+        },
+        {
+          "id": "zhihu-mcp",
+          "tech": "Python MCP，基于逆向接口",
+          "capability": "知乎搜索、直答和监控",
+          "maturity": "★4，有合规风险",
+          "license": "未声明",
+          "use_case": "中文知识检索"
+        },
+        {
+          "id": "cicada-知了",
+          "tech": "四端原生客户端，在本机做语音识别",
+          "capability": "会议纪要和同声传译",
+          "maturity": "★2.1k",
+          "license": "Apache-2.0",
+          "use_case": "会议记录"
+        },
+        {
+          "id": "hy-simulmt",
+          "tech": "腾讯混元流式同传模型",
+          "capability": "中英语音到语音同传，延迟约 3 秒（自报）",
+          "maturity": "★266",
+          "license": "NOASSERTION",
+          "use_case": "实时翻译"
+        },
+        {
+          "id": "argument-cat",
+          "tech": "QVAC SDK 在端侧串联 LLM、ASR 和 TTS",
+          "capability": "安卓离线语音对话",
+          "maturity": "★0",
+          "license": "MIT",
+          "use_case": "端侧多模态样例"
+        },
+        {
+          "id": "phonic-1-语音演示",
+          "tech": "SwiftUI 演示合集",
+          "capability": "iOS 语音接入示例",
+          "maturity": "light",
+          "license": "未声明",
+          "use_case": "参考代码"
+        }
+      ],
+      "prose": [
+        "可以分成 7 组：模型（表中前几行）、推理和效率（kimi-k3-in-c、ferrite、mlx-serve、latent-sparse-attention、xerj-query-1）、权重和训练（nesformer、权重空间编程-mit、oumi-faie）、评测（rsi-inference-bench、science-s-last-exam、vybbench）、学习和科研（deeptutor 到 archimedes-reynolds）、内容创作（视频、动效、设计、写作），以及语音（cicada-知了、hy-simulmt、argument-cat、phonic-1）。",
+        "结论 1：模型组全部是 light 分析，因为只有官方博客或 API，没有可验证的代码。开放权重小模型（twil-8b、sensenova-loop-9b-preview）适合本地实验；大模型（mistral-large-4、longcat-2-5）的价值更多在于部署选项。基准数据都是厂商自报。",
+        "结论 2：最有技术含量的是「权重即程序」这条新路线：nesformer 用编译器写权重，权重空间编程-mit 让 LLM 推理后改权重，两者方向相反、互相补充。推理效率方向的 kimi-k3-in-c（极限省内存）、ferrite（全 Rust）、latent-sparse-attention（长上下文）都还以自报数据为主，生产可用性需要自己验证。",
+        "结论 3：内容创作类是数量最多的一组，而且几乎都以技能或 MCP 的形式交付，说明「LLM 加确定性工具链（ffmpeg、Playwright、Metal、GSAP）」是目前做可控内容生产的主流方式。其中涉及他人肖像和 IP 的 ai-character-swap、gif-factory，以及依赖逆向接口的 zhihu-mcp，存在合规风险。"
+      ]
+    },
+    {
+      "key": "other",
+      "title": "其他（未做对比）",
+      "scope": "",
+      "rows": [],
+      "prose": [
+        "`other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：",
+        "教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图",
+        "知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站",
+        "效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X 每日 AI 应用观察</title>
+  <meta name="description" content="基于前沿大模型的项目精选、分类与深度分析。点项目即可打开分析，支持按类别筛选与横向对比。">
+  <meta property="og:title" content="X 每日 AI 应用观察">
+  <meta property="og:description" content="基于前沿大模型的项目精选、分类与深度分析。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">X Daily AI Watch</p>
+      <h1>X 每日 AI 应用观察</h1>
+      <p class="lede">从公开的 X 帖与项目页面整理的前沿 AI 应用精选。点项目名或「分析」即可打开深度分析，每个项目都有可分享的锚点链接。</p>
+      <p class="header-links">
+        <a href="https://github.com/KingBright/x-daily-ai-watch">GitHub 仓库</a>
+        <a href="data/projects.json">项目数据</a>
+        <a href="data/comparisons.md">横向对比原文</a>
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section id="metrics" class="metrics" aria-label="概览"></section>
+
+    <div class="toolbar">
+      <div class="seg" role="tablist" aria-label="视图">
+        <button type="button" id="tab-list" class="seg-btn is-on" role="tab" aria-selected="true" data-view="list">项目列表</button>
+        <button type="button" id="tab-compare" class="seg-btn" role="tab" aria-selected="false" data-view="compare">横向对比</button>
+      </div>
+    </div>
+
+    <section id="list-view">
+      <div class="filters" id="filters">
+        <div class="seg wrap-seg" id="cat-seg" role="group" aria-label="类别"></div>
+        <div class="filter-grid">
+          <label class="field">
+            <span>Agent 子类</span>
+            <select id="sub-select"></select>
+          </label>
+          <label class="field">
+            <span>标签</span>
+            <select id="tag-select"></select>
+          </label>
+          <label class="field field-search">
+            <span>搜索</span>
+            <input id="search" type="search" placeholder="名称、简介、作者、技术、标签" autocomplete="off">
+          </label>
+        </div>
+        <p class="status" id="status"></p>
+      </div>
+      <div class="table-wrap">
+        <table class="grid" id="project-table">
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>类别</th>
+              <th class="col-sub">子类</th>
+              <th class="col-summary">简介</th>
+              <th class="col-tags">标签</th>
+              <th class="col-author">作者</th>
+              <th>分析</th>
+              <th>链接</th>
+            </tr>
+          </thead>
+          <tbody id="project-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="compare-view" hidden>
+      <div class="seg wrap-seg" id="cmp-seg" role="tablist" aria-label="对比类别"></div>
+      <p class="status" id="cmp-scope"></p>
+      <div class="table-wrap" id="cmp-table-wrap"></div>
+      <div class="prose" id="cmp-prose"></div>
+    </section>
+  </main>
+
+  <dialog id="drawer" aria-labelledby="drawer-title">
+    <div class="drawer-inner">
+      <div class="drawer-bar">
+        <h2 id="drawer-title"></h2>
+        <div class="drawer-actions">
+          <button type="button" class="btn" id="drawer-back" hidden>返回</button>
+          <button type="button" class="btn" id="drawer-copy">复制链接</button>
+          <button type="button" class="btn btn-quiet" id="drawer-close" autofocus>关闭</button>
+        </div>
+      </div>
+      <div id="drawer-body"></div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>分析由 AI 辅助生成，可能有遗漏、过时或不准确之处。标注「自报」或「自述」的数据来自项目方，未经独立验证。各项目的名称、代码、商标与内容版权归原作者所有。收录不代表推荐。</p>
+      <p>内容以 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 许可；网站代码以 <a href="https://github.com/KingBright/x-daily-ai-watch/blob/main/LICENSE-MIT">MIT</a> 许可。引用请署名「X 每日 AI 应用观察」。</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

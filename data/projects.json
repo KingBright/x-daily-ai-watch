@@ -1,0 +1,5575 @@
+{
+  "meta": {
+    "generated_at": "2026-11-09",
+    "timezone": "America/Los_Angeles",
+    "projects_total": 133,
+    "category_counts": {
+      "game": 13,
+      "agent-eng": 53,
+      "llm-tools": 43,
+      "other": 24
+    },
+    "subcategory_counts": {
+      "dev-efficiency": 30,
+      "phone-computer-use": 12,
+      "agent-fleet": 11
+    },
+    "origin_counts": {
+      "bookmark": 66,
+      "daily-digest": 67
+    },
+    "analysis_counts": {
+      "full": 105,
+      "light": 28
+    },
+    "analysis_updated_at": "2026-11-10"
+  },
+  "projects": [
+    {
+      "id": "3d-os-scenario-skills",
+      "name": "3D OS (Scenario skills)",
+      "summary": "Scenario 开源的 3D 制作技能库，多部门流水线给编程 Agent 调用。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "3d",
+        "mcp"
+      ],
+      "source_url": "https://github.com/scenario-labs/skills",
+      "preview_url": null,
+      "post_url": "https://x.com/emmanuel_2m/status/2116188727579918358",
+      "author": "Scenario",
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent Skills 格式（agentskills.io）的技能库，主体是 skills/ 下约 1660 个文件；内容生成走 Scenario MCP 服务器，专家工具则直接驱动本机的 Blender、Maya、ZBrush、Unreal、Unity、Godot、Roblox Studio（仓库含 Python、C#、GDScript、Luau 脚本）。",
+        "method": "把「选模型、先报价再花钱、保持角色和品牌一致」写成技能说明，让 Claude Code、Cursor、Codex 等 70+ 种 Agent 按需加载；DCC 专家技能按部门组成团队，内容从专家教程、会议分享和官方文档中提炼，每个技能族的 README 记录构建方式和验证程度。",
+        "features": [
+          "图片、视频、音频、贴图、天空盒、3D 资产生成",
+          "精灵动画、横版游戏套件、可玩广告等游戏向流程",
+          "角色或品牌一致性、身份库、自训练模型",
+          "质量闸门、多模型对比、生成前估算成本",
+          "驱动 Blender、Maya、Unreal、Unity 等 DCC 和引擎的专家团队"
+        ],
+        "highlights": [
+          "覆盖从概念图到引擎落地的整条美术流水线",
+          "有 318 个测试文件，并配 release-please 规范发版，工程化程度高",
+          "npx skills add 一行安装，可按需挑选技能"
+        ],
+        "limitations": [
+          "生成类技能依赖 Scenario 账号和付费额度",
+          "DCC 专家技能需要本机已装对应软件，各技能族的验证程度不一（README 自述）"
+        ],
+        "comparison": "和 scenario-blender-plugin 同出 Scenario：本项目是给 Agent 的技能层，插件是 Blender 内的 UI 加本地 MCP。和 parametric-topdown-pixel-architecture 相比，后者只做程序化像素建筑，完全离线；本项目覆盖面广，但依赖云端生成。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "bee-x9",
+      "name": "BEE-X9",
+      "summary": "用 Claude Code 做的 3D 机器蜜蜂网页演示。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "demo",
+        "3d"
+      ],
+      "source_url": null,
+      "preview_url": "https://bee-x9.vercel.app",
+      "post_url": "https://x.com/ArtiManputra/status/2117323353811984666",
+      "author": "ArtiManputra",
+      "models": [
+        "Claude Code"
+      ],
+      "first_seen": "2026-11-02",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "网页 3D 演示（Vercel 部署），帖子称用 Claude Code 制作；渲染栈未查到。",
+        "method": "未查到公开源码，实现方式未查到。",
+        "features": [
+          "浏览器里展示一只赛博机械蜜蜂的 3D 模型或动画"
+        ],
+        "highlights": [
+          "属于「编程 Agent 直接产出 3D 网页作品」的展示样例"
+        ],
+        "limitations": [
+          "无源码，页面几乎没有文字说明，交互深度未查到"
+        ],
+        "comparison": "同类代码生成 3D 展示有 portals（开源，规模大得多）和 moss-keeper（单文件、开源）；BEE-X9 只能看成品。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "hard-rock-hero",
+      "name": "Hard Rock Hero",
+      "summary": "Wavedash 上的节奏/摇滚小游戏（Three.js 网页版）。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "demo",
+        "web游戏"
+      ],
+      "source_url": null,
+      "preview_url": "https://wavedash.com/games/hard-rock-hero",
+      "post_url": "https://x.com/Zenity07/status/2103021942664290771",
+      "author": "Zenity07",
+      "models": [],
+      "first_seen": "2026-09",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Wavedash 平台上的浏览器节奏游戏；摘要称基于 Three.js，作者为 Zenity。",
+        "method": "每拍一个动作：侧移、前跳或格挡弹幕。移动一格得 1 分，金币或击杀得 5 分，歌曲结束游戏也结束（来自游戏页说明）。",
+        "features": [
+          "节奏跑酷玩法",
+          "排行榜、成就、片段录制（Wavedash 平台功能）"
+        ],
+        "highlights": [
+          "免下载即玩，规则简单",
+          "借平台的存档和排行榜体系，单人小作品也能有社交功能"
+        ],
+        "limitations": [
+          "作者自称是「小实验」，内容量有限",
+          "无源码，是否由 AI 生成未查到"
+        ],
+        "comparison": "与 poke-bonk 同属可直接游玩的网页游戏成品；poke-bonk 内容量和商业化更强，本作更像玩法原型。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "modretro-chromatic-codex-edition",
+      "name": "ModRetro Chromatic: Codex Edition",
+      "summary": "OpenAI 与 ModRetro 合作的掌机：用 Codex 插件设计关卡、做精灵动画、生成 ROM 烧进卡带在真机上玩。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "硬件",
+        "掌机",
+        "codex",
+        "plugin"
+      ],
+      "source_url": null,
+      "preview_url": "https://openai.com/supply/co-lab/chromatic",
+      "post_url": "https://x.com/OpenAIDevs/status/2119864571733446774",
+      "author": "OpenAI Developers / ModRetro",
+      "models": [
+        "Codex"
+      ],
+      "first_seen": "2026-11-09",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "商品发布，无源码",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "ModRetro Chromatic 掌机（兼容 Game Boy 卡带的复古硬件）加 Codex 的 Chromatic 插件，用来生成 ROM。",
+        "method": "在 Codex 里用插件设计关卡、做精灵动画、生成 ROM，再烧进卡带在真机上运行（来自原帖描述；官网页面需要 JS，未能读取细节）。",
+        "features": [
+          "Codex 辅助复古掌机游戏开发",
+          "产出可烧录卡带的 ROM"
+        ],
+        "highlights": [
+          "把 AI 编程延伸到实体复古硬件，是少见的软硬件联名"
+        ],
+        "limitations": [
+          "属商品，没有源码",
+          "插件能力边界、价格和发售范围都未查到"
+        ],
+        "comparison": "同类「AI 驱动游戏产出」中，portals、3d-os-scenario-skills 面向网页或现代引擎；这款是唯一面向 8 位复古硬件的。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "poke-bonk",
+      "name": "Poke Bonk",
+      "summary": "AI coding 做出的网页游戏，商业化表现很强。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "web游戏",
+        "商业化"
+      ],
+      "source_url": null,
+      "preview_url": "https://pokebonk.com",
+      "post_url": "https://x.com/vista8/status/2113656514510807297",
+      "author": "vista8",
+      "models": [],
+      "first_seen": "2026-10-24",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "浏览器 3D 游戏（需要 WebGL），具体引擎未查到。",
+        "method": "类吸血鬼幸存者的 Survivor 玩法，用关都地区 151 只宝可梦，抵御野生宝可梦潮、进化、释放大招并解锁联盟（官网描述）。",
+        "features": [
+          "3D 幸存者玩法",
+          "进化和大招系统",
+          "支持 10 种语言"
+        ],
+        "highlights": [
+          "摘要称「商业化表现很强」，但具体数据未查到",
+          "多语言，上手门槛低"
+        ],
+        "limitations": [
+          "非官方同人游戏，存在 IP 风险",
+          "无源码，AI 参与程度未查到"
+        ],
+        "comparison": "与 hard-rock-hero 同为可玩网页游戏；poke-bonk 完成度和内容量更高，但有 IP 风险。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "portals",
+      "name": "Portals",
+      "summary": "Ethan Mollick 让 Claude 生成的无尽 3D 传送门之旅，已有 471 个世界、约 140 万行 JS，浏览器直接看。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "3d",
+        "webgl",
+        "ai生成"
+      ],
+      "source_url": "https://github.com/emollick/ai-portals",
+      "preview_url": "https://portals-endless-worlds.netlify.app/",
+      "post_url": "https://x.com/emollick/status/2119917136315576813",
+      "author": "Ethan Mollick",
+      "models": [
+        "Claude 5.2"
+      ],
+      "first_seen": "2026-11-09",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "世界数与代码行数来自 README 自述",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "three.js 加原生 JavaScript，约 140 万行（README 自述）；用 esbuild 压缩、构建纯静态站，无后端；src/ 下有 1230 个文件，对应 471 个世界。",
+        "method": "由 AI Agent 设计和编写（帖子称用 Claude 5.2）。每个世界在浏览器里程序化生成几何和纹理，并实时合成音效，不加载任何 3D 模型、贴图或音频文件；同时运行两个世界（当前画面和传送门后的下一个），穿越时无剪切、无淡出。",
+        "features": [
+          "471 个自动飞行的生成世界",
+          "收藏、画廊和已看记录保存在浏览器本地",
+          "按设备降级画质，手机也能跑"
+        ],
+        "highlights": [
+          "证明长时间持续生成能堆出超大规模、可运行的作品",
+          "零资产，全部由代码生成，可用来研究程序化图形"
+        ],
+        "limitations": [
+          "代码几乎全由 AI 写成，可维护性和可读性未知",
+          "许可证标为 NOASSERTION；要流畅运行需要较好的显卡"
+        ],
+        "comparison": "和 solstice 对比：solstice 是人工主导的高质量渲染引擎（虚拟化几何加全局光照），portals 是 AI 量产的内容。和 moss-keeper、bee-x9 相比，portals 规模最大，开源也最完整。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "scenario-blender-plugin",
+      "name": "Scenario Blender Plugin",
+      "summary": "Scenario 开源的 Blender AI 插件，多模态模型一站式入口。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "blender",
+        "3d",
+        "插件"
+      ],
+      "source_url": "https://github.com/scenario-labs/blender-plugin",
+      "preview_url": null,
+      "post_url": "https://x.com/Scenario_gg/status/2113250176307536334",
+      "author": "Scenario",
+      "models": [],
+      "first_seen": "2026-10-23",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Blender 5.0+ 的 Python 扩展，附带固定版本的 SDK wheel；内置本地 MCP 服务器；GPL-3.0；配套 TypeScript 测试和 vitest、fast-check 属性测试。",
+        "method": "以场景截图或选中网格作为参考输入，调用 Scenario 云端模型生成图像、视频、3D、PBR 材质、音频和 360 环境；Blockout 功能把文字场景描述转成白盒布局；生成前显示 Creative Units 成本估算。",
+        "features": [
+          "视口内生成图片、视频、3D 和 PBR 材质",
+          "Blockout 文本转白盒",
+          "镜头运动探索",
+          "面向 Agent 的本地 MCP 服务器",
+          "官方扩展仓库加 SHA256 和 attestation 校验"
+        ],
+        "highlights": [
+          "工程严谨：425 个测试文件、ClusterFuzzLite 模糊测试、发布物签名",
+          "把云端生成和 DCC 工具链合在一个界面里"
+        ],
+        "limitations": [
+          "README 自标 Experimental",
+          "需要 Scenario 账号并消耗额度，必须联网"
+        ],
+        "comparison": "与 3d-os-scenario-skills 互补：一个是 Agent 技能，一个是 Blender 内的入口。和 threepp 相比，后者是开源渲染和仿真库，不做 AI 生成。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "solstice",
+      "name": "Solstice",
+      "summary": "Rust + WebGPU 的程序化植被与虚拟化几何渲染演示，浏览器里跑森林场景。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "rust",
+        "webgpu",
+        "3d",
+        "程序化"
+      ],
+      "source_url": "https://github.com/SamG-Coder/solstice",
+      "preview_url": "https://samg-coder.github.io/solstice/?scene=forest",
+      "post_url": "https://x.com/SamGCoder/status/2119171947326300294",
+      "author": "SamGCoder",
+      "models": [],
+      "first_seen": "2026-11-08",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 加 wgpu（WebGPU），着色器用 WGSL；Cargo workspace 拆成 render、procgen、physics、anim、asset、import 等 crate；离线烘焙器 bake 产出 .solstice 场景，浏览器流式加载。",
+        "method": "参照公开论文，独立实现 UE5 Nanite 风格的虚拟化几何（簇层级加流式 LOD）和 Lumen 风格的动态全局光照；每个场景放在独立仓库和 Pages 上，按校验和增量发布。",
+        "features": [
+          "三个场景：神庙废墟、照片扫描海湾堡垒、程序化草甸森林",
+          "体积云、自动天气变化、昼夜循环和真实月相",
+          "按 GPU 自适应质量，有调试视图",
+          "原生 viewer 和 Web 版本共用代码"
+        ],
+        "highlights": [
+          "浏览器里实现 Nanite/Lumen 级技术，在开源项目中少见",
+          "场景发布和 viewer 解耦，工程设计清晰"
+        ],
+        "limitations": [
+          "需要支持 WebGPU 的浏览器（Chrome 或 Edge）",
+          "烘焙场景耗时数分钟、体积数百 MB；项目 11 月初才创建，成熟度有待观察"
+        ],
+        "comparison": "和 threepp 相比：threepp 是通用的 three.js 风格 C++ 库，solstice 专攻次世代渲染技术。和 portals 相比，portals 重内容数量，solstice 重渲染质量。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "viper-one-one",
+      "name": "Viper One One",
+      "summary": "网页版战斗机模拟器，Three.js 物理与座舱细节，曾上 Three.js 官网首页。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "three.js",
+        "飞行模拟",
+        "demo"
+      ],
+      "source_url": null,
+      "preview_url": "http://viperoneone.com",
+      "post_url": "https://x.com/tvytlx/status/2118392901894033875",
+      "author": "tvytlx",
+      "models": [
+        "Claude Opus 5.5"
+      ],
+      "first_seen": "2026-11-06",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "网页战斗机模拟器，摘要称基于 Three.js 物理并有座舱细节，模型标注为 Claude Opus 5.5；官网抓取为空，细节未查到。",
+        "method": "未查到。",
+        "features": [
+          "网页飞行模拟",
+          "座舱细节"
+        ],
+        "highlights": [
+          "据摘要曾上 Three.js 官网首页（未核实）"
+        ],
+        "limitations": [
+          "无源码，官网内容无法抓取"
+        ],
+        "comparison": "同为网页 3D：portals 是被动观看，viper-one-one 是可操控的模拟器，书桌之上是解谜探索。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "moss-keeper",
+      "name": "moss-keeper",
+      "summary": "单文件 HTML 的 2D 吉卜力风机甲动画场景演示。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "anime",
+        "demo",
+        "html"
+      ],
+      "source_url": "https://github.com/ChetasLua/moss-keeper",
+      "preview_url": null,
+      "post_url": "https://x.com/chetaslua/status/2117169800271270124",
+      "author": "ChetasLua",
+      "models": [],
+      "first_seen": "2026-11-03",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "单个 index.html，无依赖、无构建；影片以 base64 MP4 内嵌，加载时解码成 Blob 播放。README 称用 Fable 5.5 制作。",
+        "method": "把生成好的动画短片和自定义播放器打包进一个文件；胶片颗粒在 canvas 上实时生成。",
+        "features": [
+          "自定义播放器：播放、拖动、全屏、声音开关，自动播放失败时退回静音",
+          "键盘快捷键",
+          "离线可用"
+        ],
+        "highlights": [
+          "单文件分发，下载即可离线看",
+          "适合拆解 AI 生成短片的网页包装方式"
+        ],
+        "limitations": [
+          "本质是视频加播放器，不是实时渲染，也不可交互",
+          "仓库只有 README 和 index.html，生成过程未公开"
+        ],
+        "comparison": "和 portals 的区别在于 portals 全部实时程序化生成；moss-keeper 是预渲染视频。和 bee-x9 一样是 AI 内容展示，但本项目开源。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "parametric-topdown-pixel-architecture",
+      "name": "parametric-topdown-pixel-architecture",
+      "summary": "参数化生成像素风建筑，支持多风格与 Godot 预制体导出，可给 Agent 批量造城。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "像素",
+        "godot",
+        "素材生成"
+      ],
+      "source_url": "https://github.com/Zengkailin/parametric-topdown-pixel-architecture",
+      "preview_url": null,
+      "post_url": "https://x.com/BeyondTheBoxCN/status/2119515297363251308",
+      "author": "BeyondTheBoxCN",
+      "models": [],
+      "first_seen": "2026-11-08",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "纯前端 JavaScript 渲染（零依赖、可 file:// 打开），由 Godot 插件 hd2d_scene_tools 移植；另有 Node 18+ 命令行 cli/tb.js 复用同一渲染管线，tools/ 下是 Python（Pillow）材质脚本。",
+        "method": "参数化 3D 建筑几何（宽、深、楼层、坡度、窗列、屋顶形态等），再用正交或透视投影渲染成 2D 俯视像素图；材质用 4×4 图集，16 个固定角色；导出的 PNG 文本块里嵌入完整配方，可以反向恢复参数。",
+        "features": [
+          "10 种风格 × 46 种建筑类型",
+          "1/2/4/8 方向导出，可打包精灵表和 recipe.json",
+          "风格工坊：上传自定义图集，可对单个部件换色或换图",
+          "CLI 的 inspect 和 rec apply 方便 Agent 批量造城"
+        ],
+        "highlights": [
+          "配方嵌进 PNG，可复现、可回溯，对 Agent 流水线友好",
+          "与 Godot 插件几何一致，可以从原型直接走到引擎"
+        ],
+        "limitations": [
+          "许可证标为 NOASSERTION，商用前要确认",
+          "只做建筑这一类资产；atlases.js 约 7.6MB"
+        ],
+        "comparison": "和 3d-os-scenario-skills 相比，本项目确定性、离线、零成本，但只覆盖像素建筑。和 scenario-blender-plugin 相比，后者走云端生成和 3D 管线，本项目是程序化规则生成。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "threepp",
+      "name": "threepp",
+      "summary": "C++/Vulkan 风格的 Three.js 移植库，帖中用来做越野赛车演示。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "3d",
+        "c++",
+        "引擎"
+      ],
+      "source_url": "https://github.com/markaren/threepp",
+      "preview_url": null,
+      "post_url": "https://x.com/hasibdreamer35/status/2117309264054415660",
+      "author": "markaren",
+      "models": [
+        "Claude Code"
+      ],
+      "first_seen": "2026-11-03",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "C++20 库，API 对齐 three.js r129（OpenGL 路径部分特性到 r186）；有 OpenGL 和延迟渲染 Vulkan 两套后端（光追阴影、反射、AO、GI，支持 DLSS 和 FSR 3.1）；用 pybind11 和 scikit-build-core 打包 Python wheel；集成 PhysX 5。",
+        "method": "一套场景图挂两个后端；在 three.js 高层 API 之上扩展仿真能力：PhysX 机器人、带真值标注的传感器合成数据、接 ArduPilot 做硬件在环飞行。",
+        "features": [
+          "glTF、OBJ、STL、URDF、USD 等大量加载器",
+          "Ocean FFT 水面、GPU 粒子、Gaussian splatting",
+          "场景编辑器、.tpz 单文件归档",
+          "Python 绑定（已上 PyPI）、wasm/emscripten"
+        ],
+        "highlights": [
+          "2021 年起持续维护的成熟项目，1222 星",
+          "既能做游戏、可视化，也能做机器人数字孪生"
+        ],
+        "limitations": [
+          "和 three.js 对齐的是较旧的 r129 API",
+          "帖子里的越野赛车演示由 Claude Code 制作，仓库本身不是 AI 项目"
+        ],
+        "comparison": "和 solstice 都是原生图形栈：threepp 更通用、更成熟，solstice 更前沿、更专一。对比网页向的 portals、viper-one-one，threepp 适合原生或仿真场景。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "书桌之上",
+      "name": "书桌之上",
+      "summary": "Kimi × Tripo 做的 three.js 3D 解谜小游戏。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "demo",
+        "3d",
+        "three.js"
+      ],
+      "source_url": null,
+      "preview_url": "https://wh1tzz.github.io/above-the-desk",
+      "post_url": "https://x.com/xingbugengming/status/2114958387846971570",
+      "author": "xingbugengming",
+      "models": [
+        "Kimi K3.1 Pro",
+        "Tripo"
+      ],
+      "first_seen": "2026-10-27",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "three.js 网页游戏，3D 素材由 Tripo 生成，帖子称用 Kimi K3.1 Pro 编程。",
+        "method": "电影化微型探索：玩家在深夜书桌上的缩小世界里移动、跳跃、躲避灯光、收集道具和信件（官网文本）。",
+        "features": [
+          "WASD 移动加跳跃、互动、躲藏",
+          "章节结构（第一夜·书桌，9 个场景）",
+          "进度保存，可调音量和镜头震动"
+        ],
+        "highlights": [
+          "中文原创叙事，氛围感强",
+          "展示了「AI 编程 + AI 3D 资产」的完整组合"
+        ],
+        "limitations": [
+          "无源码",
+          "篇幅较短，属于演示性质"
+        ],
+        "comparison": "和 3d-os-scenario-skills 都是 AI 资产生成路线，但本作是成品游戏。和 bee-x9 相比，本作有完整玩法和叙事。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "aether",
+      "name": "Aether",
+      "summary": "约 20 秒拉起云端开发机跑 Claude Code/Codex，沿用现有订阅。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "云端",
+        "coding-agent"
+      ],
+      "source_url": null,
+      "preview_url": "https://www.runaether.dev",
+      "post_url": "https://x.com/pranavctl/status/2118044065229132252",
+      "author": "pranavctl",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "云端隔离开发机（devbox）托管 Claude Code、Codex、OpenCode；模型费用走用户自己的订阅，Aether 只收机器费用（官网说法）。",
+        "method": "按任务约 5 秒拉起一台开发机（官网演示数据；库内摘要记作约 20 秒），实时显示终端、文件树和 3000 端口预览链接；Agent 修完后附上前后截图和会话录像，再开 PR；另有 aether review 做 PR 审查并循环修复。",
+        "features": [
+          "可观看、可插话、可 SSH 的云端 Agent 会话",
+          "PR 审查（行内意见加 changes-requested 结论）",
+          "自动化（Automations）、批量任务（Campaigns）",
+          "提供 Mac 客户端"
+        ],
+        "highlights": [
+          "不用付第二份模型账单",
+          "每个任务自带截图和录像作为验证证据"
+        ],
+        "limitations": [
+          "闭源 SaaS，源码未查到",
+          "价格和隔离细节需看官网文档"
+        ],
+        "comparison": "和 t3-code、tastecode 这类本地多 Agent 面板相比，Aether 把执行放到云端。和 dsh-superagent-prototype 相比，后者开源、事件驱动，但要自己部署。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "agav",
+      "name": "Agav",
+      "summary": "开源终端编程 agent，靠工作流省钱而非只换便宜模型。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "coding-agent",
+        "省token"
+      ],
+      "source_url": "https://github.com/prapaa-ai/agav",
+      "preview_url": "https://agav.dev",
+      "post_url": "https://x.com/agav_dev/status/2116919657840198086",
+      "author": "prapaa-ai",
+      "models": [
+        "GPT"
+      ],
+      "first_seen": "2026-11-01",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 终端 Agent，用 React 加 Ink 风格 reconciler 和 yoga-layout 渲染 TUI；接入 Anthropic、OpenAI、Ollama、MCP 等 SDK，以独立二进制分发（目录里有 Bun 相关文件和 native/）。",
+        "method": "支持 7 家模型提供方，会话中可随时切换（/model、/fast、/deep）；自动生成并跟踪计划，破坏性操作需要人确认；macOS 和 Linux 上命令在沙箱里执行；非交互模式 agav run 可在 CI 中按 JSON Schema 输出。",
+        "features": [
+          "交互式 TUI 和非交互 CLI 两种模式",
+          "本地模型（Ollama）、OpenRouter 路由",
+          "API key 加密存储、按工具授权",
+          "管道输入（cat log | agav -P）"
+        ],
+        "highlights": [
+          "自报 Terminal-Bench 2.1 得分 84.7%（PR 审核中），SWE-bench-Live Lite 62.0% 排第 2",
+          "Apache-2.0，强调不锁定厂商"
+        ],
+        "limitations": [
+          "README 自标 Experimental Beta，会有破坏性变更",
+          "「靠工作流省钱」缺乏公开的独立测量"
+        ],
+        "comparison": "和 Claude Code、Codex 这类官方 CLI 定位相近，但模型中立；和 oar-kanso 相比，Agav 自己就是 harness，OAR 是统一调用各 harness 的接口层。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "anymodelbot",
+      "name": "AnyModelBot",
+      "summary": "开源本地个人 AI Bot 框架，一钥接 70+ 模型，可进微信/飞书。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "多模型",
+        "bot"
+      ],
+      "source_url": "https://github.com/modelflare-ai/AnyModelBot",
+      "preview_url": null,
+      "post_url": "https://x.com/Dinosn/status/2117676369165590924",
+      "author": "modelflare-ai",
+      "models": [],
+      "first_seen": "2026-11-03",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Electron 桌面应用（Node 22.13+），内置 magpie 模型网关，Agent 跑在 DeepSeek Harness 上（dsh-runtime/）；bots/ 目录约 1960 个文件；可接入 Modelflare 的 70+ 模型，也可直连官方 API。",
+        "method": "一个 bot 对应一个人设，有自己的默认模型、工作区和记忆，可以在应用、微信（iLink）、飞书、Telegram、Slack、Discord 里对话；能读写文件、执行命令、操作桌面，越出工作区前先询问；设计参考 dsh-superagent-prototype。",
+        "features": [
+          "本地优先，数据和 key 留在本机",
+          "后台任务、定时规则、需要用户拍板时提醒",
+          "多渠道接入",
+          "支持 Windows、macOS、Linux"
+        ],
+        "highlights": [
+          "MIT 开源，对标 Grok Bot、OpenAI dots、Claude Duet",
+          "国内 IM 接入做得完整"
+        ],
+        "limitations": [
+          "README 大量篇幅在推广 Modelflare 付费网关（含缓存补偿、特惠等营销内容），存在利益绑定",
+          "0.1.x 版本，成熟度有限"
+        ],
+        "comparison": "和 dsh-superagent-prototype 同源（都基于 DeepSeek Harness），但它是面向个人的通用助手。和 rerun、bot-teams 相比，它侧重单人多 bot，不做团队编排。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "captureflow",
+      "name": "CaptureFlow",
+      "summary": "开源录屏分享工具，支持 Agent 经 MCP 录浏览器/桌面演示。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "mcp",
+        "录屏",
+        "视频"
+      ],
+      "source_url": "https://github.com/sardorml/captureflow",
+      "preview_url": "https://captureflow.dev",
+      "post_url": "https://x.com/sardorml/status/2118616954085024133",
+      "author": "sardorml",
+      "models": [],
+      "first_seen": "2026-11-05",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Nx monorepo（TypeScript），有 Chrome 扩展、Swift 写的 macOS 应用和 Web 看板；可自托管在 Cloudflare（wrangler）；AGPL-3.0。",
+        "method": "边录边上传，停止录制时分享链接已经就绪；提供 MCP 和 chatgpt-plugin 入口，让 Agent 能录制浏览器或桌面演示。",
+        "features": [
+          "录制标签页、窗口或全屏，可带摄像头气泡",
+          "视频上的评论、表情反应和观看统计",
+          "带标注的截图",
+          "团队工作区，按存储计费不按席位"
+        ],
+        "highlights": [
+          "Loom 的开源替代，并且面向 Agent",
+          "全部功能都在开源版里"
+        ],
+        "limitations": [
+          "macOS 应用要从源码构建，签名版尚未发布",
+          "AGPL 对商业集成有约束"
+        ],
+        "comparison": "在研发效率类里，它是少有的「给 Agent 产出可视证据」的工具，和 stageshow 的录屏自检思路相近，但 stageshow 是做营销 UI 的技能，CaptureFlow 是录屏平台。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "catalex",
+      "name": "Catalex",
+      "summary": "本地 LaTeX/Markdown 论文编辑器，Agent 在独立目录改稿再由你审阅。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "论文",
+        "写作"
+      ],
+      "source_url": "https://github.com/Catalex-app/Catalex",
+      "preview_url": "https://catalex-app.github.io",
+      "post_url": "https://x.com/RicercarG/status/2118983364225151209",
+      "author": "Catalex-app",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "macOS（Apple Silicon）原生桌面应用，TypeScript 加 Rust（推测为 Tauri 一类壳，未核实），turbo monorepo；从 ClaudePrism / Open Prism 演化而来；AGPL-3.0。",
+        "method": "本地 LaTeX/Markdown 写作工作区，直接调用本机的 Claude Code、Codex、Pi，沿用已有订阅；Agent 在私有草稿（worktree）里改稿，用户挑选要应用的修改。",
+        "features": [
+          "本地编译，支持 LaTeXmk",
+          "同一对话中切换 Agent 提供方",
+          "Agent 可以创建和解决批注",
+          "编辑历史和恢复",
+          "通过 Git 与 Overleaf / GitHub 同步"
+        ],
+        "highlights": [
+          "草稿先行、人工批准，适合学术写作",
+          "对比 OpenAI Prism，本地文件加多 Agent 是差异点"
+        ],
+        "limitations": [
+          "只支持 macOS",
+          "没有实时协作，批注不会同步到 Overleaf"
+        ],
+        "comparison": "和 norman-skill（科研技能包）互补：一个是写论文的工作台，一个是科研技能。和 perch 一样是「原生 App 加本地 Agent CLI」路线，perch 面向 PR 审查。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "elephant-goldfish-model",
+      "name": "Elephant-Goldfish Model (EGM)",
+      "summary": "Google 开源的 AI 助手插件：带上下文的「大象」写规格，无记忆的「金鱼」子 Agent 只看文档挑刺，先审设计再写码。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "plugin",
+        "规格驱动",
+        "review"
+      ],
+      "source_url": "https://github.com/google/elephant-goldfish-model",
+      "preview_url": "https://egm.dev",
+      "post_url": "https://x.com/LeoLeochen975/status/2119727255513661589",
+      "author": "Google",
+      "models": [
+        "Claude Code",
+        "Codex"
+      ],
+      "first_seen": "2026-11-09",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "原帖为转介绍帖",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "跨平台 Agent 插件，含 38 个技能文件、reviewer agents、文档标准；为 Claude Code、Codex、Antigravity、Copilot、Cursor、Gemini 分别提供发行包（distributions/）；Python 测试；Apache-2.0，Google 出品。",
+        "method": "「大象」持有项目上下文，起草规格；「金鱼」评审子 Agent 不继承对话记忆，只读草稿和引用材料，用来暴露隐含假设和盲点；人做架构取舍并批准规格后才动手实现；还有 bootstrap 和漂移报告，检查代码与规格是否偏离。",
+        "features": [
+          "egm-brainstorm 等设计流程",
+          "/egm-review-loop 自选评审者和标准",
+          "支持多个 harness 一键安装"
+        ],
+        "highlights": [
+          "用「无记忆评审」对抗上下文污染，方法论清晰",
+          "1.67 万星，Google 官方维护"
+        ],
+        "limitations": [
+          "流程偏重，小改动成本高",
+          "内置的设计评审流程面向软件规格"
+        ],
+        "comparison": "和 superpowers 都是先写规格再实现，superpowers 覆盖完整开发周期（TDD、子 Agent 实施），EGM 专注设计评审。和 pstack 的多模型审查思路类似。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "exact",
+      "name": "Exact",
+      "summary": "Expo 出品：一次编写的应用原生运行在 Web、macOS、iOS、Linux，且编程 Agent 能自己构建、运行、截图和测试各平台。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "跨平台",
+        "rust",
+        "测试"
+      ],
+      "source_url": "https://github.com/expo/exact",
+      "preview_url": null,
+      "post_url": "https://x.com/JI/status/2119810925381419125",
+      "author": "Expo (James Ide / Charlie Cheever)",
+      "models": [
+        "Claude",
+        "Codex",
+        "Grok",
+        "Muse"
+      ],
+      "first_seen": "2026-11-09",
+      "origin": "daily-digest",
+      "stars": 882,
+      "notes": "stars 查询于 2026-11-09",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "跨平台应用运行时：界面用声明式语言 Contract，逻辑用 TypeScript 或 Rust；编译器把界面变成 plan，Web 端用约 20KB 运行时驱动 DOM，macOS、iOS、Linux 端由 Rust runner 执行，Rust 布局内核按 CSS 规则计算，用 AppKit、UIKit 或 GPU 绘制；仓库约 1 万个文件，含 Lean 形式化（semantics/）。",
+        "method": "没有 webview，UI 里没有 JS 桥；scripts/agent.mjs 驱动器让 Agent 在各平台构建、运行、截图并执行 .test.contract 测试，形成可验证的闭环。",
+        "features": [
+          "一份 app.contract 在三个宿主上原生呈现",
+          "大量 @exact/* 能力包（相机、支付、通行密钥、通知等）",
+          "exact new 脚手架、模板"
+        ],
+        "highlights": [
+          "从设计上就面向 Agent 开发：自己跑、自己看、自己测",
+          "自报：新 Agent 约 57 分钟完成待办应用并通过三平台测试"
+        ],
+        "limitations": [
+          "pre-1.0，每天都在变，不保证兼容",
+          "需要 Mac、Xcode、Rust、Bun，首次构建约 13 分钟"
+        ],
+        "comparison": "和 windows-terminal 一样给 Agent 一个「可观察的运行环境」，但 Exact 面向应用开发。在研发效率类里，它是唯一改造应用框架本身的项目，其余多为技能或外挂工具。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "oar-kanso",
+      "name": "OAR / Kanso",
+      "summary": "botiverse 的开源 Agent 运行时，Kanso 是其上的演示产品。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "agent运行时"
+      ],
+      "source_url": "https://github.com/botiverse/oar",
+      "preview_url": "https://kanso.botiverse.build",
+      "post_url": "https://x.com/istdrc/status/2117296159387783591",
+      "author": "botiverse",
+      "models": [],
+      "first_seen": "2026-11-03",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 库 @botiverse/oar，统一驱动 Claude Code、Codex、Cursor、Grok Build、Kimi Code、OpenCode、Pi、Qwen Code、DeepSeek Harness 等 12 种以上运行时；依赖 @cursor/sdk、pi-coding-agent 等；634 个测试文件，另有 sea-trial 实战测试。",
+        "method": "一套 Session API：事件带 seq 和 agentPath 归属，原生事件原样保留；prompt、steer、queue、withdraw、abort 都返回带类型的接受或拒绝结果；运行时做不到的选项会在启动前直接拒绝，不会被悄悄丢弃；serveMcpTools 把宿主工具挂到任意运行时上，也可把子任务交给另一个运行时。",
+        "features": [
+          "换运行时只改一个字符串",
+          "跨进程恢复会话",
+          "支持手动压缩（compact）",
+          "Pi Durable 可在浏览器中运行"
+        ],
+        "highlights": [
+          "Agent 工作台类产品的底层抽象，能省掉大量适配逻辑",
+          "「诚实答复」的控制语义设计严谨"
+        ],
+        "limitations": [
+          "Kanso 演示产品的细节未深入研究",
+          "各运行时版本变化快，适配需要持续维护"
+        ],
+        "comparison": "和 t3-code、openduet-copilotkit 这类多 Agent 界面相比，OAR 是它们可以依赖的底层接口。和 borg 相比，OAR 驱动现成的编程 Agent，borg 编排原始 LLM 调用。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "octopus-si-os",
+      "name": "Octopus-SI-OS",
+      "summary": "接近 Codex 体验的客户端/系统，范围很大、欢迎贡献。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "coding-agent"
+      ],
+      "source_url": "https://github.com/miuuyy/Octopus-SI-OS",
+      "preview_url": null,
+      "post_url": "https://x.com/miu21590/status/2114097804494917750",
+      "author": "miuuyy",
+      "models": [],
+      "first_seen": "2026-10-25",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 内核约 4.5 万行（README 自述），Swift/JS 前端应用；registry/ 中以契约形式登记接口和执行环境；依赖 blake3、ed25519、json-patch、schemars；Codex CLI 作为其中一个 interface 移植进来。",
+        "method": "借鉴操作系统原理：能力不是挂在循环上的插件，而是架构里的契约；Agent 在策略约束下可以创建和修改目标、触发器、工具、worker 组织和执行环境，这些修改跨任务持久保存（自我演化）；一个 Agent 只是两个 JSON 文件。",
+        "features": [
+          "文字或语音对话，可在屏幕放实时小组件",
+          "项目级上下文和权限隔离",
+          "多 Agent，按角色授权",
+          "读写文件、操作浏览器和桌面"
+        ],
+        "highlights": [
+          "研究问题提得清楚：架构能否让 Agent 主动并自我改进",
+          "README 坦诚说明现在的模型并不会主动行动"
+        ],
+        "limitations": [
+          "研究预览；作者承认普通编码任务上没有比 Codex CLI 更多的收益",
+          "范围极大，主要面向 macOS"
+        ],
+        "comparison": "和 borg（嵌入式运行时）、oar-kanso（统一接口）相比，Octopus 是最「重」的完整系统。和 anymodelbot 都是常驻个人 Agent，但 Octopus 偏研究性质。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "openmoat",
+      "name": "OpenMoat",
+      "summary": "给 Claude Code/Codex/Cursor 等加本地安全阀门，拦敏感文件与危险命令。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "安全"
+      ],
+      "source_url": "https://github.com/crocodile-labs/openmoat",
+      "preview_url": "https://openmoat.dev",
+      "post_url": "https://x.com/openmoat/status/2118389207907397975",
+      "author": "crocodile-labs",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "单个 Rust 二进制（edition 2024），crates 包括 core、hosts、audit、proxy、cli、sdk、wasm；有 fuzz 测试；提供 Rust 和 JS SDK；MIT 或 Apache 双许可。",
+        "method": "每个工具调用执行前，由策略引擎按调用的真实效果（像 shell 一样解析命令，检查涉及的文件、主机和程序）做决定，不用 AI 模型判断；放行的代码在操作系统沙箱里运行，出网经代理白名单；密钥由 broker 发占位符，代理只对指定主机注入真实 token；MCP 网关固定工具描述，防止跨服务器传递数据；审计日志做哈希链。",
+        "features": [
+          "支持 Claude Code、Codex、Cursor 等 11 种 Agent",
+          "MCP 网关",
+          "PR 合并检查（GitHub Action）",
+          "策略锁：Agent 不能修改规则或自我放行",
+          "provenance：标记提交里哪些行是 Agent 写的"
+        ],
+        "highlights": [
+          "纵深防御完整，确定性规则，零外发",
+          "覆盖提示注入、密钥外泄、供应链等多个面"
+        ],
+        "limitations": [
+          "只有 4 星，刚起步；策略配置有学习成本",
+          "需要较新的 Rust 版本（1.99）"
+        ],
+        "comparison": "和 stroq 同为 Agent 安全层：stroq 擅长回溯历史会话、追溯危险命令由哪段文本触发，openmoat 侧重运行时强制执行（沙箱、出网、密钥）。和 security-audit-skill 不同，后者审计代码本身。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "perch",
+      "name": "Perch",
+      "summary": "原生桌面应用，把 GitHub、代码浏览与 Claude/Codex 放同一窗口。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "桌面",
+        "coding-agent"
+      ],
+      "source_url": "https://github.com/perch-code/perch",
+      "preview_url": null,
+      "post_url": "https://x.com/criccomini/status/2117671467701936299",
+      "author": "perch-code",
+      "models": [],
+      "first_seen": "2026-11-03",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 原生桌面应用（GTK3 或 macOS），crates 包括 agent、knowledge、github、git、lsp、syntax、app；底层调用 gh、claude、codex 这几个 CLI。",
+        "method": "把 GitHub 收件箱、PR、issue、按 PR 可浏览的代码库（含 LSP 跳转）和 Claude/Codex 客户端审查放进一个窗口；以 worktree 管理分支。",
+        "features": [
+          "LSP：查找引用、调用层级（Rust、Go、TS、Java、Python）",
+          "GitHub 风格的线程，人和 Agent 都能参与",
+          "PR 代码导览",
+          "客户端侧的 AI 审查"
+        ],
+        "highlights": [
+          "原生性能，复用现有 CLI 登录，无需额外账号",
+          "为 rust-analyzer 等会执行构建代码的 LSP 做了安全提示"
+        ],
+        "limitations": [
+          "只支持 Mac 和 Linux，不支持 Windows",
+          "16 星，个人项目"
+        ],
+        "comparison": "和 aether 的 PR 审查相比，Perch 在本地、人主导；和 understand-anything 都帮助理解代码，Perch 以 PR 为中心，后者生成整库知识图谱。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "playbasis-agent-hub",
+      "name": "Playbasis AI Agent Hub",
+      "summary": "原生 macOS 应用，读取本机 Claude Code 与 Codex 会话，统计时间、token、套餐余量、模型和交付的提交。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "macos",
+        "swift",
+        "统计"
+      ],
+      "source_url": "https://github.com/playbasis/agent-hub",
+      "preview_url": null,
+      "post_url": "https://x.com/BOLTHYPE/status/2119765364083225019",
+      "author": "Playbasis",
+      "models": [
+        "Claude Code",
+        "Codex"
+      ],
+      "first_seen": "2026-11-09",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "0.1 公开预览版",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "SwiftUI 原生 macOS 应用加菜单栏面板；读取本地 Claude Code 和 Codex 会话日志；有 schemas/、hooks/、skills/。",
+        "method": "离线解析两种 Agent 的会话，按会话、目标、Agent、项目、模型、技能等维度汇总；通过 co-author trailer、文件重叠或时间把提交和会话关联起来；请求回执做哈希链，防止事后篡改。",
+        "features": [
+          "概览：活跃时长、token 去向（重读上下文还是生成文字）",
+          "套餐额度仪表和耗尽预测",
+          "Skills 页：哪些技能被加载、上下文成本、指令文件历史",
+          "每日 Journal"
+        ],
+        "highlights": [
+          "无账号、无服务器、无 API key",
+          "「每行代码花多少 token」这类产出指标少见"
+        ],
+        "limitations": [
+          "0.1 预览版，未公证，需要从源码构建",
+          "只支持 macOS，只读 Claude Code 和 Codex"
+        ],
+        "comparison": "和 tokeneconomizer 互补：Hub 负责看清花在哪，TokenEconomizer 负责自动省。和 stroq 都读本地会话，stroq 看安全，Hub 看效率。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "stageshow",
+      "name": "Stageshow",
+      "summary": "给编程 Agent 的界面示意与动效技能，先定风格再录屏自改，减少 AI 味。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "设计"
+      ],
+      "source_url": "https://github.com/benjitaylor/skills",
+      "preview_url": null,
+      "post_url": "https://x.com/benjitaylor/status/2116593247854453244",
+      "author": "benjitaylor",
+      "models": [
+        "Claude Code",
+        "Codex"
+      ],
+      "first_seen": "2026-10-31",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent 技能（npx skills add），React 组件 kit、示例，以及录制工具（TypeScript/CSS），共 372 个文件。",
+        "method": "让 Agent 先定构图和动效风格，再用 React 搭出像真产品一样的示意 UI（静态图、功能卡、光标演示、bento 网格），然后录屏回看自己的成品并修正。",
+        "features": [
+          "构图和动效指导",
+          "可复制的组件 kit",
+          "录制工具，供 Agent 自检"
+        ],
+        "highlights": [
+          "把「看自己的输出」变成流程的一部分，减少 AI 味",
+          "面向营销和产品展示素材，场景明确"
+        ],
+        "limitations": [
+          "仓库未声明许可证（README 称各技能自带许可）",
+          "只做示意 UI，不是真实产品代码"
+        ],
+        "comparison": "和 unslop 都在去 AI 味：unslop 改已有界面，stageshow 从零做展示素材。和 huashu-motion、motion-graphics-music-video-skill（大模型工具类）在动效上有交集。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "stroq",
+      "name": "Stroq",
+      "summary": "本地审计 Claude Code/Codex/Cursor 会话，查密钥泄露并追溯危险命令。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "安全",
+        "审计"
+      ],
+      "source_url": "https://github.com/AGGIB/Stroq",
+      "preview_url": "https://stroq.dev",
+      "post_url": "https://x.com/agybay_gib/status/2119476299857285120",
+      "author": "AGGIB",
+      "models": [],
+      "first_seen": "2026-11-07",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript CLI（@stroq/cli，Node 22+），有 127.0.0.1 本地控制台、677 个规则文件、hooks，用 fast-check 做属性测试。",
+        "method": "读取最近 30 天的 Claude Code / Codex 会话、密钥文件和工作目录，统计有多少命令来自 Agent 读到的文本（提示注入链）、哪些密钥被带出本机（只显示名字，不显示值）；hook 会拒绝 curl | sh 和携带已知密钥的外连，命令复述了读到的文本时先问人。",
+        "features": [
+          "一张会话报告卡，每条都可用 stroq show 查看证据",
+          "replay：不装 hook，用历史会话回放策略",
+          "inspect：运行前检查别人发来的文件夹",
+          "attack：在沙箱里演示拦截 36 种已知攻击",
+          "技能和 MCP 来源审计"
+        ],
+        "highlights": [
+          "「指令溯源」：追溯危险命令是被哪段文本诱导的",
+          "无账号、无遥测，回溯分析零安装"
+        ],
+        "limitations": [
+          "规则匹配无法覆盖所有新型攻击",
+          "主要覆盖 Claude Code 和 Codex"
+        ],
+        "comparison": "和 openmoat 对比：openmoat 偏运行时的强制隔离（沙箱、代理、密钥 broker），stroq 偏审计和溯源，两者可以叠加。和 playbasis-agent-hub 都读本地会话，目的不同。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "superpowers",
+      "name": "Superpowers",
+      "summary": "大型 Agent 技能包，覆盖规划、调试与写作。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill"
+      ],
+      "source_url": "https://github.com/obra/superpowers",
+      "preview_url": null,
+      "post_url": "https://x.com/mr_mofun/status/2118265147680784531",
+      "author": "obra",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "可组合技能集（skills/ 下 80 个文件）加初始指令和 hooks；为 Claude Code、Codex、Cursor、Gemini、Kimi、Qwen、Grok Build、Hermes、Muse 等十几种 harness 提供插件清单。",
+        "method": "Agent 不急着写代码，先追问真实需求，把规格分成小块给人确认；再写出「没有上下文的初级工程师也能执行」的实施计划（红绿 TDD、YAGNI、DRY）；然后用子 Agent 驱动开发，逐项实施并审查，可自主运行数小时。",
+        "features": [
+          "brainstorming、writing-plans、subagent-driven-development 等技能",
+          "自动触发，不用手动调用",
+          "调试、写作等配套技能"
+        ],
+        "highlights": [
+          "31.5 万星，事实上的 Agent 开发方法论标准之一",
+          "覆盖的 harness 最广"
+        ],
+        "limitations": [
+          "流程重，小任务也会走一遍完整流程",
+          "有商业服务（Prime Radiant）"
+        ],
+        "comparison": "和 pstack、elephant-goldfish-model 构成方法论三强：superpowers 流程最完整，pstack 最重验证和多模型，EGM 最专注设计评审。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "tokeneconomizer",
+      "name": "TokenEconomizer",
+      "summary": "微软/伯克利开源：给 Claude Code/Codex 省 token 的仓库精简记忆与按需加载。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "省token"
+      ],
+      "source_url": "https://github.com/microsoft/TokenEconomizer",
+      "preview_url": null,
+      "post_url": "https://x.com/bebuu_ai/status/2117345502480245139",
+      "author": "microsoft",
+      "models": [],
+      "first_seen": "2026-11-02",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "纯标准库 Python 包加 harness 插件（Claude Code、Codex、Copilot CLI、Pi，另有若干实验支持）；出自 Microsoft Research 与 UC Berkeley（Ion Stoica、Jianfeng Gao 等）。",
+        "method": "黑盒经验学习，有三种机制：微技能（从反复出现的失败和每 3 个会话一次的模型复盘中提炼仓库事实，被 3 个会话确认后才注入，被后续会话反驳则删除）；工具裁剪（长期未用的工具在下个会话不再加载）；失败循环干预（判官模型置信度 ≥0.7 时提示换思路，每轮最多 1 次，绝不替用户中止）。",
+        "features": [
+          "参数均可配置（k、p、m、s、c、r）",
+          "一条命令恢复被裁剪的工具",
+          "支持多种 Agent，不修改 Agent 本身"
+        ],
+        "highlights": [
+          "自报：SWE-Bench 上 5 种组合平均成本降低 18.4–30.9%，30 个单元格全部更便宜，4/5 的 Pass@1 上升",
+          "机制简单透明，有论文级实验"
+        ],
+        "limitations": [
+          "收益来自常用仓库里积累的经验，新仓库作用有限",
+          "判官模型本身也有成本"
+        ],
+        "comparison": "和 playbasis-agent-hub（看用量）互补。和 landmine 都在给 Agent 注入外部知识：landmine 注入依赖 bug，本项目注入仓库经验。和 image-context-manager 同属上下文和成本治理。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "understand-anything",
+      "name": "Understand-Anything",
+      "summary": "把任意代码库变成可交互知识图谱的插件。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "代码理解",
+        "知识图谱"
+      ],
+      "source_url": "https://github.com/Lum1104/Understand-Anything",
+      "preview_url": null,
+      "post_url": "https://x.com/Divyyanshishrma/status/2116143104390787517",
+      "author": "Lum1104",
+      "models": [],
+      "first_seen": "2026-10-30",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "星标数来自帖子自述约 5.6 万",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Claude Code 等多 harness 插件（TypeScript），用多 Agent 流水线分析代码，生成知识图谱和交互式看板（Astro 主页提供 demo）。",
+        "method": "多 Agent 解析每个文件、函数、类和依赖并构建结构图；领域视图把代码映射到业务流程；/understand-knowledge 先用确定性解析器读出 Karpathy 式 LLM wiki 里的链接，再由 LLM 发现隐式关系、实体和论断。",
+        "features": [
+          "结构图和业务领域图",
+          "按依赖顺序生成的架构导览",
+          "模糊加语义搜索",
+          "diff 影响分析",
+          "知识库图谱和社区聚类"
+        ],
+        "highlights": [
+          "9.2 万星，增长极快",
+          "定位是「能教人的图」，不追求炫技"
+        ],
+        "limitations": [
+          "大仓库分析的 token 成本高",
+          "图谱质量取决于 LLM 摘要的准确度"
+        ],
+        "comparison": "和 perch 都帮助理解代码，perch 以 PR 为单位，本项目以整库为单位。和 tokeneconomizer 的「仓库记忆」不同，本项目面向人，tokeneconomizer 面向 Agent。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "agent-autoloop",
+      "name": "agent-autoloop",
+      "summary": "让 CLI agent 接定时任务与 GitHub issue，危险操作才弹确认。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "自动化",
+        "coding-agent"
+      ],
+      "source_url": "https://github.com/KKKKhazix/agent-autoloop",
+      "preview_url": null,
+      "post_url": "https://x.com/shuizhuyu/status/2118008281981665700",
+      "author": "KKKKhazix",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 写的零外部依赖内核（kernel/、host/、worker/、protocol/），需要 Node 24+；事件源、Agent、通知渠道和发布流水线都做成插件；通过命令行调用本机已登录的 Agent（如 Claude Code、Codex）。",
+        "method": "事件（cron、GitHub issue、业务报警）转成标准事件交给内核，由 rules.json 决定派给哪个 Agent、在哪个目录执行。Agent 每轮做完就退出；遇到删数据、花钱、对外发消息等事，就通过飞书、钉钉、企微、Slack、Discord 或桌面通知推卡片等人拍板。等待期间不占进程、不耗 token，拍板后接上原会话继续。",
+        "features": [
+          "规则配置，无需写胶水代码，支持暂停和恢复",
+          "同一事件排队时合并消息，可设置并行度",
+          "agent-autoloop try 演示完整闭环",
+          "统计轮数、token 和费用"
+        ],
+        "highlights": [
+          "没有后台界面，人只在需要决策时被打扰",
+          "能接任何「输入提示词、打印回复」的 CLI，接入门槛低"
+        ],
+        "limitations": [
+          "本机运行，电脑关机就停",
+          "高风险判定依赖规则和 Agent 自报，没有沙箱隔离"
+        ],
+        "comparison": "和 dsh-superagent-prototype 思路相近（事件到工单再到 Agent），但它更轻、更通用，dsh 绑定 DeepSeek Harness 和单个仓库。和 openduet-copilotkit 等编排器相比，它重在后台常驻加人工审批，不提供可视化面板。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "agents-md",
+      "name": "agents-md",
+      "summary": "一份可放进 Codex 根目录的 AGENTS.md，用来减少防御性垃圾代码。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "agents.md"
+      ],
+      "source_url": "https://github.com/SteinsHead/agents-md",
+      "preview_url": null,
+      "post_url": "https://x.com/koto_nemu/status/2117539857161740571",
+      "author": "SteinsHead",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "纯文档：AGENTS.md 中英两版，没有代码。",
+        "method": "把协作偏好写成规则：回答直接、能做完就做完、少加不必要的代码、不顺手大规模重构、该报错就报错，不用默认值、空结果或层层兜底来掩盖问题，交付时说清改了什么、验证了什么。",
+        "features": [
+          "中英双语版本",
+          "可直接放进 Codex 等 Agent 的项目根目录"
+        ],
+        "highlights": [
+          "专门针对 AI 写防御性垃圾代码的常见毛病",
+          "短小，易于合并进现有规范"
+        ],
+        "limitations": [
+          "只是规则文本，执行效果取决于模型遵循程度",
+          "没有评测数据"
+        ],
+        "comparison": "和 grokbot-field-notes 的 AGENTS.md 同类，后者更长并附 40 条踩坑记录。和 superpowers、pstack 相比，它只是单个文件，不是完整方法论。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "awesome-grok-bot",
+      "name": "awesome-grok-bot",
+      "summary": "已验证的 Grok Bot 技能、插件与 MCP 合集。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "列表",
+        "mcp",
+        "grok-bot"
+      ],
+      "source_url": "https://github.com/ZeroPointRepo/awesome-grok-bot",
+      "preview_url": null,
+      "post_url": "https://x.com/mr_mofun/status/2118265147680784531",
+      "author": "ZeroPointRepo",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "awesome 列表仓库：README、CATALOG.md、catalog.csv、plugins.json、llms.txt，附条目健康报告。",
+        "method": "每个条目对照一手来源核实；归纳 Grok Bot 的四种扩展方式（Cursor 插件和 MCP 市场等）；提供机器可读的目录供 Agent 消费。",
+        "features": [
+          "63 个技能、插件、MCP 和自托管替代方案",
+          "价格、获取方式说明",
+          "Grok Bot 与 OpenClaw、Hermes Agent 对比",
+          "安全提示"
+        ],
+        "highlights": [
+          "强调「已验证」，并纠正常见的错误认知",
+          "提供 llms.txt 和 CSV，方便 Agent 读取"
+        ],
+        "limitations": [
+          "非官方社区维护；最近一次推送是 2026-10-04，可能滞后",
+          "许可证为 NOASSERTION"
+        ],
+        "comparison": "和 xai-plugin-marketplace（官方 Grok Build 插件索引）互补：一个是社区目录，一个是官方安装源。和 grokbot-field-notes 相比，后者是实战经验，本项目是资源索引。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "borg",
+      "name": "borg",
+      "summary": "Rust 写的 Agent 运行框架，强调取消、隔离、重试与预算。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "rust",
+        "运行时"
+      ],
+      "source_url": "https://github.com/joydle/borg",
+      "preview_url": "https://joydle.github.io/borg",
+      "post_url": "https://x.com/deepspacebug/status/2119503982284710037",
+      "author": "joydle",
+      "models": [],
+      "first_seen": "2026-11-07",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 1.88+ 加 Tokio，workspace 分为 borg、borg-loop、borg-macros、borg-mcp、borg-sandbox、borg-tools、borg-tracing 七个 crate；不发布到 crates.io，用 git tag 引用。",
+        "method": "借鉴 Erlang/OTP 监督树：用 Sequential、Parallel、Branch、Fallback、LoopUntil 等原语组合 LLM 调用；支持逐子任务取消、panic 隔离、带退避和抖动的重启、熔断和跨模型降级梯子；每次派发前先做预算准入。",
+        "features": [
+          "derive 宏定义 Agent，可用 pipeline! DSL",
+          "行为护栏：循环、重复工具调用，分 Warn、Throttle、Halt 三级",
+          "任意 stdio MCP 服务器可转成工具",
+          "borg-loop 长会话可做检查点和崩溃恢复",
+          "内置 FakeLlmClient，无需 key 也能跑示例"
+        ],
+        "highlights": [
+          "把可靠性工程（取消、隔离、预算）做成一等公民",
+          "类型化交接（run_one_typed）"
+        ],
+        "limitations": [
+          "不带模型客户端，需要自己实现 AgentLlmClient",
+          "15 星，项目刚创建，生态很小"
+        ],
+        "comparison": "和 oar-kanso 相比：OAR 统一驱动现成的编程 Agent，borg 是从零编排 LLM 调用的库。和 octopus-si-os 同为 Rust 实现，后者是完整的「Agent OS」，borg 是嵌入式运行时。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "anthropic-commerce-agents",
+      "name": "commerce-agents",
+      "summary": "Anthropic 开源的商业 / 交易相关 agent 示例。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "anthropic",
+        "agent"
+      ],
+      "source_url": "https://github.com/anthropics/commerce-agents",
+      "preview_url": null,
+      "post_url": "https://x.com/aitoolsdirect/status/2116434509394563386",
+      "author": "anthropic",
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.11+ 共 7 个包（shopping-agent、merchant-agent、commerce-common 等），可运行在 Messages API、Claude Agent SDK 和 Managed Agents 上；前端是 8 个 Web 应用组成的 Node 22 workspace；附带 Claude Code 插件 commerce-builder。",
+        "method": "每个 Agent 只定义一次（prompt、skills、工具契约、闸门），在三种运行方式上复用；写操作先暂存，等人批准；checkout 只渲染购物车，由宿主完成支付。",
+        "features": [
+          "面向顾客的购物 Agent：搜索、比价、规划、加购、回答订单和政策问题、记忆偏好",
+          "面向员工的商户后台 Agent",
+          "零售、旅行、电信、娱乐四个可运行的垂直示例",
+          "/scaffold-commerce-agent 等命令生成和审查自己的 Agent"
+        ],
+        "highlights": [
+          "官方参考蓝图，安全闸门设计完整",
+          "一套定义跑三种 Claude 运行时"
+        ],
+        "limitations": [
+          "示例数据全是虚构的，不能直接用于生产",
+          "业务规则、授权和合规需部署方自行实现"
+        ],
+        "comparison": "和 dsh-superagent-prototype 同属大厂开源的 Agent 参考实现：Anthropic 偏垂直业务，DeepSeek 偏研发流程。和 rerun（AI 员工）相比，本项目是框架，不是成品。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "dsh-superagent-prototype",
+      "name": "dsh-superagent-prototype",
+      "summary": "DeepSeek 开源研究原型：盯仓库 issue/PR，把通过的需求自动变成任务交给 agent。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "agent",
+        "github"
+      ],
+      "source_url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+      "preview_url": null,
+      "post_url": "https://x.com/MartinSzerment/status/2116685349250269629",
+      "author": "deepseek-ai",
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript，作为 DeepSeek Harness（DSH）bundle 运行；有 src/、prompts/、Web 面板；用 tsdown 构建、vitest 测试。",
+        "method": "监听 GitHub（可选飞书）事件，按 Policy 判断请求方是否有权，把授权请求变成 Ticket，每个 Ticket 在独立的 DSH Session 和目录里执行，结果（如 PR）回到原对话；原则是「尽量少占人的注意力」，只在有人必须行动或能用上结果时才说话。",
+        "features": [
+          "授权策略和工单领域模型（docs/001-003）",
+          "面板显示需要人处理的事项",
+          "可扩展 Source（cookbook）",
+          "SETUP.md 让 Agent 一问一答带你完成部署"
+        ],
+        "highlights": [
+          "文档按编号递进，设计理念清晰",
+          "2.1 万星，影响力大，衍生出 AnyModelBot 等项目"
+        ],
+        "limitations": [
+          "官方声明是研究原型，非正式产品，可能有 bug",
+          "绑定 DSH 和单个仓库"
+        ],
+        "comparison": "和 agent-autoloop 最接近：dsh 有授权模型和面板，autoloop 更轻、可接任意 CLI。和 aether 相比，dsh 自托管、事件驱动，aether 是云端 SaaS。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "grok-bot-cli",
+      "name": "grok-bot-cli",
+      "summary": "从终端创建 Grok Bot、群组与线程。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "cli",
+        "grok-bot"
+      ],
+      "source_url": "https://github.com/ScriptedAlchemy/grok-bot-cli",
+      "preview_url": null,
+      "post_url": "https://x.com/mr_mofun/status/2118265147680784531",
+      "author": "ScriptedAlchemy",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Node 22.19+ CLI（gbot），复用 Grok Bot 桌面应用的加密会话和路由凭据；内置 MCP server（@modelcontextprotocol/server）和 agent-bundle 运行时；有 Claude/Cursor 插件清单。",
+        "method": "读取本机 Grok Bot 应用的会话（Linux 上用 keyring/secret-tool，Windows 上用 DPAPI），通过网关调用后端，可以创建和更新 bot、群组，发消息，查看线程，管理账户级技能库。",
+        "features": [
+          "bots、groups 的增删改",
+          "send 和 thread（支持 JSON 输出）",
+          "skills list/add/remove",
+          "自动化清理"
+        ],
+        "highlights": [
+          "把 Grok Bot 变成可脚本化的资源",
+          "说明了技能库是账户级共享的"
+        ],
+        "limitations": [
+          "非官方，依赖桌面应用的内部凭据和接口，随时可能失效",
+          "读取本地会话凭据，有安全顾虑"
+        ],
+        "comparison": "和 bot-teams（Agent 军团类）同属 Grok Bot 生态，CLI 偏运维，bot-teams 偏团队设计。和 awesome-grok-bot 相比，这是工具，不是目录。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "grokbot-field-notes",
+      "name": "grokbot-field-notes",
+      "summary": "Grok Bot 角色、剧本与踩坑笔记合集。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "grok-bot",
+        "文档"
+      ],
+      "source_url": "https://github.com/unicodef1wn/grokbot-field-notes",
+      "preview_url": null,
+      "post_url": "https://x.com/mr_mofun/status/2118265147680784531",
+      "author": "unicodef1wn",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "文档仓库：AGENTS.md、ANTIPATTERNS.md、69 个角色文件（roster/）、9 个职能剧本、由 roster 生成的 Cursor .mdc 规则（ports/，Python 生成）。",
+        "method": "整理 xAI Grok Bot 团队三人 72 小时直播从零建产品的过程，把规则、角色职责（负责什么、不负责什么、信息来源、哪些需要审批）和失败日志结构化。",
+        "features": [
+          "可直接放入仓库的 AGENTS.md",
+          "40 条现场故障及对应规则",
+          "工程、PM、销售、支持等 9 个职能剧本",
+          "PR 模板把验证循环做成表单",
+          "经济学和产品机制参考"
+        ],
+        "highlights": [
+          "基于真实直播的一线经验，不是空泛建议",
+          "角色卡写明边界和审批项，便于直接组建 bot 团队"
+        ],
+        "limitations": [
+          "非官方整理，时间点在 9 月，部分产品细节可能已变",
+          "绑定 Grok Bot/Cursor 生态"
+        ],
+        "comparison": "和 agents-md 相比：agents-md 是个人偏好，本项目是团队级实践。和 bot-teams 相比，它更偏「写好的规则加角色库」。和 pstack 的作者有交集（Lauren Tan）。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "landmine",
+      "name": "landmine",
+      "summary": "把你当前依赖版本里已知的公开漏洞写进 AGENTS.md，并经 hook/MCP 提醒编程 Agent。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "安全",
+        "mcp"
+      ],
+      "source_url": "https://github.com/devanshranjan10/landmines",
+      "preview_url": "https://landmine.tech",
+      "post_url": "https://x.com/dewanshranjan/status/2116428709108314394",
+      "author": null,
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript CLI 加 MCP 服务器（@modelcontextprotocol/server），用 tsup 构建；bench/ 下约 1261 个基准文件；可选用 Anthropic SDK 生成 trigger card。",
+        "method": "scan 读取 lockfile，找出点名你所固定版本的未关闭 GitHub issue，判断涉及哪些代码符号，再从评论里挑出最有用的绕行方案，写入 .landmine/index.json。编辑前的 hook 离线判断：编辑用到相关符号，且文件也符合 issue 的特定条件时，拦一次并把 issue 和绕行方案交给 Agent，重试则放行。",
+        "features": [
+          "landmine install 为 20 种 Agent 安装 pre-edit hook 或规则、技能",
+          "cards：模型读一次 issue 生成触发卡，之后 hook 不再调用模型",
+          "本地或托管 MCP（landmine.tech/mcp），按 npm/PyPI 精确版本查询"
+        ],
+        "highlights": [
+          "填补了 Context7（只给文档）和漏洞扫描（只管 CVE）之间的空白：未修复的普通 bug",
+          "自报 hook 每次 0.11 秒，带基准和评测目录"
+        ],
+        "limitations": [
+          "只覆盖 GitHub issue 里有记录的 bug",
+          "10 星，社区验证少"
+        ],
+        "comparison": "和 openmoat、stroq 同为 Agent 的编辑前或调用前 hook，但关注的是依赖 bug，不是安全。和 tokeneconomizer 都在「给 Agent 注入经验」，后者从历史会话学习。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "pstack",
+      "name": "pstack",
+      "summary": "Cursor 生态的 agent 工作流/验证技能栈，配合 poteto-mode 使用。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "验证",
+        "cursor"
+      ],
+      "source_url": "https://github.com/cursor/plugins/tree/main/pstack",
+      "preview_url": null,
+      "post_url": "https://x.com/kloss_xyz/status/2116801916172914906",
+      "author": "poteto",
+      "models": [],
+      "first_seen": "2026-11-02",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Cursor 官方插件仓库（cursor/plugins）里的 pstack 插件：一组 SKILL.md 技能和 agents（poteto-agent、comment-sicko），也为 Claude Code 生成适配版；作者 poteto（React 核心团队）。",
+        "method": "先求深度再求速度：/setup-pstack 选模型和推理预算，/poteto-mode 在严谨任务中强制套用原则（证明可用、根因修复、少写代码等）；多个技能走多模型流程（如 interrogate 对抗评审、arena 并行候选、swarm 扇出）。",
+        "features": [
+          "poteto-mode 工作方式",
+          "architect、tdd、interrogate、arena、swarm、reflect 等技能",
+          "约 30 条 principle-* 原则技能",
+          "支持 Claude Code"
+        ],
+        "highlights": [
+          "目标是写更少但更高质量的代码，并能放心并行多个 Agent",
+          "原则拆成独立技能，可按需触发"
+        ],
+        "limitations": [
+          "部分步骤依赖 Cursor 专属功能（Bugbot、Automations），在 Claude Code 里会跳过",
+          "技能多，需要学习"
+        ],
+        "comparison": "和 superpowers 最像：superpowers 是 brainstorm、计划、TDD、子 Agent 的线性方法论；pstack 更强调验证、多模型对抗和原则。和 elephant-goldfish-model 的无记忆评审思路相通。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "security-audit-skill",
+      "name": "security-audit-skill",
+      "summary": "Cloudflare 开源：让编程 Agent 分阶段审计代码并交叉验证。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "安全"
+      ],
+      "source_url": "https://github.com/cloudflare/security-audit-skill",
+      "preview_url": null,
+      "post_url": "https://x.com/iammukeshm/status/2118989338327253350",
+      "author": "cloudflare",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "单个 Agent 技能（SKILL.md 加阶段文档），配合 JS 校验脚本（validate-coverage-ledger.cjs、validate-findings.cjs）和 report-schema.json；Cloudflare 漏洞发现 harness 的起点版本。",
+        "method": "分六个阶段：侦察（架构、信任边界、coverage-ledger）、按覆盖面派出隔离的猎手并由覆盖批评者找缺口、由全新验证者尝试证伪候选、输出结构化记录、再由独立 Agent 复核源码结论、生成中立报告；结论分 confirmed、needs_validation、rejected 三类；多次运行可以累加，会复用历史 ledger。",
+        "features": [
+          "攻击类别提示库（含内存安全、二进制）",
+          "机器可读的 findings.json",
+          "增量审计，可针对改动重新验证"
+        ],
+        "highlights": [
+          "用「全新上下文去证伪」压低误报，方法严谨",
+          "6.8 万星，有 Cloudflare 博客背书"
+        ],
+        "limitations": [
+          "多 Agent 多轮运行，token 成本高",
+          "只是单仓库的起点版本，Cloudflare 内部的规模化系统未开源"
+        ],
+        "comparison": "和 elephant-goldfish-model 一样用「无记忆独立评审」，用在安全审计上。和 openmoat、stroq 相比：本项目审计代码，后两者管住 Agent 的行为。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "unslop",
+      "name": "unslop",
+      "summary": "给 Claude Code/Codex 的设计技能，专门压掉常见 AI 味视觉。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "设计"
+      ],
+      "source_url": "https://github.com/heydamir/unslop",
+      "preview_url": null,
+      "post_url": "https://x.com/Dinosn/status/2119136312871759899",
+      "author": "heydamir",
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "单个 Agent 技能（Claude Code、Codex、Antigravity），可选 Playwright 快照线上站点，ffmpeg 生成故事视频；CC-BY-4.0。",
+        "method": "先审计 slop（紫色渐变、发光、emoji 标签、喊叫式文案、间距不均）并标出位置，再根据产品定方向，最后像设计师做 redline 一样分轮修改；界面本来就好则只给小建议。",
+        "features": [
+          "Audit、Direction、分轮修改",
+          "支持 Next.js、React、Vue、Svelte、Tailwind、纯 HTML",
+          "只给链接也能分析线上站点",
+          "生成前后对比的故事视频"
+        ],
+        "highlights": [
+          "改之前先给方向，用户可以早点纠偏",
+          "1.29 万星，源自作者在 X 上的 Unslopping 系列"
+        ],
+        "limitations": [
+          "审美判断依赖模型，结果因模型而异",
+          "CC-BY 许可，不是典型的代码许可"
+        ],
+        "comparison": "和 stageshow 都在去 AI 味（一个改现有界面，一个做展示素材）。和 opendesigner（大模型工具类）相比，后者生成设计稿，unslop 修改现有代码。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "xai-plugin-marketplace",
+      "name": "xAI plugin-marketplace",
+      "summary": "xAI 官方插件目录仓库。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "插件",
+        "grok-bot"
+      ],
+      "source_url": "https://github.com/xai-org/plugin-marketplace",
+      "preview_url": null,
+      "post_url": "https://x.com/mr_mofun/status/2118265147680784531",
+      "author": "xai-org",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "索引仓库：.grok-plugin/marketplace.json（权威目录）加自动生成的 plugin-index.json；plugins/ 放 xAI 一方插件，external_plugins/ 放第三方插件。",
+        "method": "一个插件可包含 skills、commands、agents、hooks、MCP、LSP 配置，可选 plugin.json；第三方插件可以 vendor 进仓库，或引用远程源；Grok Build 据此浏览、安装和更新。",
+        "features": [
+          "官方插件目录",
+          "明确的目录格式规范",
+          "第三方插件免责声明"
+        ],
+        "highlights": [
+          "Grok Build 生态的官方入口",
+          "格式与 Claude/Cursor 插件体系相近，迁移成本低"
+        ],
+        "limitations": [
+          "xAI 明确不验证第三方插件的安全性",
+          "仓库未声明许可证"
+        ],
+        "comparison": "和 awesome-grok-bot（社区目录，面向 Grok Bot）互补。和 pstack 所在的 cursor/plugins 是同类的官方插件仓库。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "aura-autopilot",
+      "name": "Aura Autopilot",
+      "summary": "开源游戏试玩 agent，可在 UE5/Unity/Godot 自动玩并经 MCP 接入 Claude/Codex。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "游戏测试",
+        "mcp",
+        "computer-use"
+      ],
+      "source_url": "https://github.com/ramenvr/autopilot",
+      "preview_url": "https://tryaura.dev/autopilot",
+      "post_url": "https://x.com/warrior_naruto/status/2116698801771511839",
+      "author": "ramenvr",
+      "models": [],
+      "first_seen": "2026-11-01",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.12 Agent 端（autopilot/），配合各引擎插件（plugin/ 下 445 个文件：C++ 写 UE5、C# 写 Unity、GDScript 写 Godot、Luau 写 Roblox）；通过 websockets 通信，录制 H.264 MP4；以 MCP 接入 Claude Code 和 Codex。",
+        "method": "引擎内插件暴露游戏状态和输入，Agent 实时读取画面和状态并控制角色；按「验证某个说法、达成某个目标、找 bug」来执行试玩，并在多轮运行中持续学习关卡（README 称为 continually learning）。",
+        "features": [
+          "支持 UE 5.4–5.8、Unity 6、Godot 4、Roblox Studio（Windows 和 macOS）",
+          "自动试玩、达成目标、报告 bug",
+          "每次运行生成录像",
+          "接入 Aura 或独立 MCP"
+        ],
+        "highlights": [
+          "游戏领域少见的通用 Computer Use，覆盖四大引擎",
+          "可以让编程 Agent 改完游戏后自己玩一遍做验证"
+        ],
+        "limitations": [
+          "持续学习的效果是自述，没有公开基准（bench/ 只有 3 个文件）",
+          "需要在工程里安装插件，与 Aura 商业产品绑定"
+        ],
+        "comparison": "和 windows-terminal、pinky 同属「给 Agent 一个可操作的环境」，但目标环境是游戏引擎。和游戏类的 3d-os-scenario-skills 构成「生成内容 → 自动试玩」的闭环。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "mika",
+      "name": "Mika",
+      "summary": "跑在安卓本机的 Phone Agent，无需 Root/电脑，可操作任意 App。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "phone-use",
+        "android"
+      ],
+      "source_url": "https://github.com/wangzan101/mika",
+      "preview_url": null,
+      "post_url": "https://x.com/wangzan101/status/2115957353648664966",
+      "author": "wangzan101",
+      "models": [],
+      "first_seen": "2026-10-30",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Kotlin 加 Jetpack Compose 的安卓应用；通过无障碍服务、无线调试配对在隐藏的后台虚拟屏上操作；没有服务端，自带模型 key，或用 ChatGPT、xAI、OpenRouter 账号登录。",
+        "method": "纯视觉方式识别屏幕按钮，不调用 App API、不做逐个 App 适配；任务在后台副屏执行，用户可以照常用手机；内置浏览器里可对当前网页下指令，触摸页面即停止；把完成过的任务沉淀成技能，下次更快、更稳。",
+        "features": [
+          "一句话操作任意 App（例如总结群聊、比价加购、外卖叠券）",
+          "付款前询问",
+          "记忆偏好",
+          "支持多种语言界面"
+        ],
+        "highlights": [
+          "无需 Root、无需电脑，在手机本机运行",
+          "7900+ 星，衍生出 phongent 群控"
+        ],
+        "limitations": [
+          "配置无线调试有门槛",
+          "纯视觉方案的速度和稳定性受模型影响"
+        ],
+        "comparison": "和 pinky、poki 相比：后两者由电脑端 Agent 经 MCP 控制手机，Mika 是手机上的 Agent。phongent 在 Mika 上加了多设备主控。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "opencode-browse",
+      "name": "OpenCode Browse",
+      "summary": "让编程 Agent 操作你已登录的浏览器标签页，登录/付款交还给你。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "browser-use",
+        "computer-use"
+      ],
+      "source_url": "https://github.com/anomalyco/browse",
+      "preview_url": "https://opencode.ai/product/browse",
+      "post_url": "https://x.com/opencode/status/2118895128152621153",
+      "author": "anomalyco",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript；一个 Chromium 扩展（SolidJS UI）加一个 browse MCP 服务器和 CLI；用 Playwright 驱动标签页；按 SHA-256 校验下载的二进制，支持多发布渠道。",
+        "method": "Agent 在用户真实浏览器的后台分组标签页里工作，可截图、抓网络请求、录屏；遇到登录、2FA、付款时把标签页交还给用户，用户点 Continue 后继续。",
+        "features": [
+          "沿用用户的登录态和扩展",
+          "支持 Chrome、Edge、Brave、Arc 等",
+          "一次性配对码，免复制",
+          "任何 MCP 客户端都可用"
+        ],
+        "highlights": [
+          "交接机制处理了登录和付款这类敏感步骤",
+          "opencode 团队出品，安装体验完整"
+        ],
+        "limitations": [
+          "Agent 拿到真实登录态，风险面大",
+          "只支持 Chromium 系浏览器"
+        ],
+        "comparison": "和 pointer、redraft 同为 Chrome 扩展：pointer 是人点选元素交给 Agent，redraft 是 Agent 改页面样式，browse 是 Agent 完整操作浏览器。和 windows-terminal 的隔离 VM 路线相反，browse 主打真实环境。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "pinky",
+      "name": "Pinky",
+      "summary": "让任意 AI Agent 操控你的 iPhone/Android，付款与危险操作前会停下来等人确认，带录屏。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "phone-use",
+        "mcp"
+      ],
+      "source_url": "https://github.com/DIYgod/pinky",
+      "preview_url": null,
+      "post_url": "https://x.com/DIYgod/status/2119268531678441646",
+      "author": "DIYgod",
+      "models": [],
+      "first_seen": "2026-11-08",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Go 写的桌面应用，界面由 MyGo 在 GPU 上绘制（无 Electron、无 webview，体积 16–22MB）；用 go-ios 控制 iPhone，用 Kotlin 写安卓 helper；MCP Go SDK；用 gvisor 网络栈。",
+        "method": "任何 Agent 通过 MCP 操作真实手机；审批规则在 Pinky 网关里强制执行，不是靠提示词约束，所以 Agent 不能自我批准；能识别 10 种语言的付款、发送、删除按钮；银行、钱包、密码管理类 App 对 Agent 默认不可见，密码和验证码字段不可输入；安卓 13+ 在隐藏副屏上操作。",
+        "features": [
+          "支持 Android 10–17、iOS 17.4+",
+          "电脑端解锁手机（Touch ID 或 Windows Hello 确认，Agent 看不到 PIN）",
+          "随时接管，事后回放录像",
+          "每个新 Agent 都要授权和限定范围"
+        ],
+        "highlights": [
+          "安全设计在 Phone Use 类中最完整，规则由网关强制执行",
+          "原生、轻量，空闲时约 70MB 内存"
+        ],
+        "limitations": [
+          "iOS 26 及以下需要用 Xcode 装 helper",
+          "刚发布一周，iOS 27 以下真机未测（README 自述）"
+        ],
+        "comparison": "和 poki（只支持 iPhone、AGPL）相比，Pinky 双平台且安全闸门更强。和 mika 的端侧路线相比，Pinky 是电脑端控制。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "poinky",
+      "name": "Poinky",
+      "summary": "把 Claude Code 放进 Mac 刘海区，看屏语音回答并画示意图。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "macos",
+        "computer-use"
+      ],
+      "source_url": "https://github.com/tomyud1/poinky",
+      "preview_url": null,
+      "post_url": "https://x.com/TYudovic/status/2117203595070443976",
+      "author": "tomyud1",
+      "models": [
+        "Claude"
+      ],
+      "first_seen": "2026-11-02",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Swift macOS 应用（macOS 26+），常驻在刘海区；本地语音识别加约 350MB 的自然语音 TTS；调用 Claude Code 或 Anthropic API；有 explainer/、eval3d/ 等模块。",
+        "method": "按住 ⌃⌥ 说话，松开后它截屏理解问题，一边语音回答，一边用黄笔在屏幕上画讲解或生成可旋转的 3D 模型；也可以圈出要点击的位置一步步引导，或者代为打字（发送前先询问）；后台任务交给 Claude Code。",
+        "features": [
+          "边说边画的讲解",
+          "逐步操作指引",
+          "代填表单和写邮件",
+          "后台调用 Claude Code 跑任务",
+          "生成视频讲解"
+        ],
+        "highlights": [
+          "把「看屏加语音加画图」做成很自然的交互",
+          "安装脚本在本机构建，绕开公证限制"
+        ],
+        "limitations": [
+          "需要 macOS 26+，未公证",
+          "需要 Claude 订阅或 API key，只有 9 星"
+        ],
+        "comparison": "和 hermes-voice 同为语音入口，poinky 能看屏并操作 UI。和 pointer 相比：pointer 是人指给 Agent 看，poinky 是 Agent 指给人看。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "pointer",
+      "name": "Pointer",
+      "summary": "Chrome 里点选元素，把结构/样式/截图交给 Claude Code 或 Codex。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "浏览器",
+        "computer-use",
+        "开源",
+        "mcp"
+      ],
+      "source_url": "https://github.com/raghavendra7533/pointer",
+      "preview_url": "https://raghavendra7533.github.io/pointer/",
+      "post_url": "https://x.com/Raghav7533/status/2119479116982546653",
+      "author": "Raghav7533",
+      "models": [],
+      "first_seen": "2026-11-07",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript pnpm monorepo：Chrome 扩展、本地 bridge（npx pointer-bridge）、MCP 和 hook；用 esbuild 构建，happy-dom 测试。",
+        "method": "按 Alt+Shift+P 点选元素，把 DOM、样式、截图和源码位置发给 Agent；从组件链或 window.__POINTER_PAGE__ 推断渲染该元素的文件，用 exact、component-only、none 三档如实标出置信度；没有 MCP 时可复制为提示词。",
+        "features": [
+          "Shift 多选最多 10 个元素",
+          "键盘选择父子节点",
+          "doctor 诊断链路",
+          "状态徽章显示 bridge 是否在线"
+        ],
+        "highlights": [
+          "解决「第二个蓝色按钮」这类指代不清的问题",
+          "置信度如实标注"
+        ],
+        "limitations": [
+          "需要手动加载未打包的扩展",
+          "刚创建，只有 1 星"
+        ],
+        "comparison": "和 redraft、opencode-browse 同为浏览器桥接，pointer 方向是「人到 Agent」。和 stageshow、unslop 配合，可以精确指出要改哪里。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "poki",
+      "name": "Poki",
+      "summary": "Mac 上让 Agent 操作真实 iPhone，无需越狱。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "phone-use",
+        "macos",
+        "mcp"
+      ],
+      "source_url": "https://github.com/JosssphZhou/poki",
+      "preview_url": "https://poki.bot",
+      "post_url": "https://x.com/Tyr_Nippon/status/2119185206729179383",
+      "author": "JosssphZhou",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Swift 和 Objective-C 写的 iPhone 端应用（借助 UI Automation 开发者模式）、Rust 加 TS 写的 Mac 端本地 MCP 服务器和 Agent；需要手机上的 VPN 类 App 把 10.7.0.1 路由回手机；AGPL-3.0。",
+        "method": "免费 Apple 账号签名安装 Poki 到 iPhone，开启 Automation Mode；Mac 端通过 USB 和网络与手机通信，向 Claude Code、Codex 暴露 MCP 工具；安装过程交给 Agent 按 install-poki 技能完成，只在 iOS 需要人操作时停下。",
+        "features": [
+          "无需越狱、无需额外硬件",
+          "自带 Agent，也可接用户自己的 MCP 客户端",
+          "提供 macOS 和 Windows 的 Poki Setup"
+        ],
+        "highlights": [
+          "让 Agent 来完成复杂安装的思路很实用",
+          "支持六种语言的 README"
+        ],
+        "limitations": [
+          "免费签名 7 天过期，需要续签",
+          "环境要求多：iOS 18+、Node 24、Xcode、Rust、ffmpeg"
+        ],
+        "comparison": "和 pinky 相比，Poki 只做 iPhone，依赖更多，安全闸门较弱。和 mika 相比，iOS 无法在本机运行 Agent，只能由电脑端驱动。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "redraft",
+      "name": "Redraft",
+      "summary": "Chrome 扩展：用本机 Claude Code 现场改任意网页版式。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "浏览器",
+        "computer-use"
+      ],
+      "source_url": "https://github.com/0xCodez/redraft",
+      "preview_url": "https://getredraft.vercel.app",
+      "post_url": "https://x.com/0xCodez/status/2118469887941030027",
+      "author": "0xCodez",
+      "models": [
+        "Claude Opus"
+      ],
+      "first_seen": "2026-11-04",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Chrome 扩展（JS），用 service worker 调度；通过本地 bridge 调用 Claude Code（不需要 key），或直接使用 Anthropic API key；用 puppeteer-core 测试。",
+        "method": "页面先变成蓝图状态，一群 Claude Agent 读取页面、选定主题（或严格按用户保存的风格），逐块在真实 DOM 上做编辑，光标框选可见；结束后可撤销，或复制 CSS。",
+        "features": [
+          "Editorial、Terminal、Soft glass、Brutalist、AI slop 等预设",
+          "在本地提取当前网站的风格并保存",
+          "风格可导出为 JSON 分享",
+          "Demo 模式不调用模型"
+        ],
+        "highlights": [
+          "多 Agent 并行改页面，可视化效果强",
+          "风格约束模式会跳过导演 Agent"
+        ],
+        "limitations": [
+          "改动只在当前标签页生效，刷新后还原",
+          "只支持 macOS 和 Linux 的 bridge，5 星"
+        ],
+        "comparison": "和 unslop 都在改界面风格：unslop 改源码，redraft 只改线上页面的 CSS，适合做探索。和 pointer 方向相反。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "hermes-voice",
+      "name": "hermes-voice",
+      "summary": "经 Home Assistant 把旧 Echo 变成 Hermes Agent 语音入口。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "语音",
+        "iot"
+      ],
+      "source_url": "https://github.com/majorminorlabs/hermes-voice",
+      "preview_url": null,
+      "post_url": "https://x.com/SanemBuilds/status/2119015630145786175",
+      "author": "majorminorlabs",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Home Assistant 自定义集成（custom_components/，Python 3.13）加 HACS 包；旧 Echo 刷 echo-dot-assist 作为 Assist 卫星；Echo Show 的屏幕是一个网页；另有 wakeword/ 唤醒词资源。",
+        "method": "Echo 以 HA Assist 卫星身份接收语音，HA 把对话交给指定的 Hermes Agent profile，回复由 TTS 播报；Echo Show 上同步显示识别文本、流式回答、正在使用的工具和后台任务。",
+        "features": [
+          "一个 Hermes profile 对应一个语音助手",
+          "Echo Show 实时可视化界面",
+          "支持多款 Echo 型号（需指定固件版本）"
+        ],
+        "highlights": [
+          "把淘汰的 Echo 变成个人 Agent 的语音终端，成本低",
+          "DECISIONS.md 记录设计取舍"
+        ],
+        "limitations": [
+          "刷机门槛高，二手设备固件可能已无法解锁（README 专门警告）",
+          "依赖 Home Assistant 加 Hermes 部署"
+        ],
+        "comparison": "在 Phone/Computer Use 类中，它是唯一的语音和智能家居入口。和 poinky（Mac 上的语音加看屏）相比，hermes-voice 不看屏幕、不操作 UI，重在语音接入。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "image-context-manager",
+      "name": "image-context-manager",
+      "summary": "帮操作电脑的 Agent 管理截图：裁剪压缩、记下发现、按需回调。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "computer-use",
+        "截图"
+      ],
+      "source_url": "https://github.com/messsiii/image-context-manager",
+      "preview_url": null,
+      "post_url": "https://x.com/Shawn19s/status/2117246944582213996",
+      "author": "messsiii",
+      "models": [],
+      "first_seen": "2026-11-02",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 包（只依赖 Pillow）加 Claude Code / Codex 技能，icm install 安装到项目里。",
+        "method": "按用途选择图片的表示形式：原图、裁剪图、压缩图或文字结论；视觉检查可以委托给子 worker，只返回文字；确认结论够用后改用文字，需要时再取回原图。目的是避免截图历史堆积，撑大请求和延迟。",
+        "features": [
+          "压缩和裁剪工具",
+          "委托视觉检查",
+          "保存结论（findings）",
+          "按需取回原图"
+        ],
+        "highlights": [
+          "针对 Computer Use 的上下文成本问题，给出可操作的策略",
+          "有 5 个工作流示例和实测（experiments/）"
+        ],
+        "limitations": [
+          "0.2.0a1 实验版，只有 3 星",
+          "依赖 Agent 正确遵循技能"
+        ],
+        "comparison": "和 tokeneconomizer 同属上下文和成本治理，这个专门处理图片。可以作为 pinky、poki、windows-terminal 等 Computer Use 工具的配套。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "phongent",
+      "name": "phongent",
+      "summary": "开源多设备手机群控，可给设备下发任务或由主控 AI 分配。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "phone-use",
+        "群控"
+      ],
+      "source_url": "https://github.com/mylea1/phongent",
+      "preview_url": null,
+      "post_url": "https://x.com/myleafy1/status/2116881871091200308",
+      "author": "myleafy1",
+      "models": [],
+      "first_seen": "2026-11-02",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "基于 Mika 的分支；Kotlin 安卓端（app/、core/）加 Swift iOS 主控（ios/）；局域网发现和授权连接；有 eval/ 评测目录。",
+        "method": "主控（iOS 或安卓）用自然语言给全部设备、某个分组或单台设备下发任务，也可以由主控模型自行拆分分配；被控安卓在虚拟屏上执行，主控能看实时小窗、接管操作，并集中查看和回复各设备的通知。",
+        "features": [
+          "设备分组和批量任务",
+          "主控模型为每台设备生成不同文案和图卡",
+          "实时小窗接管",
+          "集中管理记忆、技能、定时任务"
+        ],
+        "highlights": [
+          "把单机 Phone Agent 扩展成手机群控",
+          "iOS 可以作为主控"
+        ],
+        "limitations": [
+          "iOS 只能做主控，不能执行",
+          "群控内容分发的场景存在平台合规风险"
+        ],
+        "comparison": "和 mika 是上下游关系。和 Agent 军团类的 openmausbot 等相比，phongent 是手机设备层面的「军团」。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "windows-terminal",
+      "name": "windows-terminal",
+      "summary": "在终端里跑真实 Windows 11 的 QEMU 虚拟机，任何 MCP Agent 可用 9 个 computer-use 工具操控它，不碰宿主鼠标。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "mcp",
+        "computer-use",
+        "qemu"
+      ],
+      "source_url": "https://github.com/arjunkshah12345-hash/windows-terminal",
+      "preview_url": "https://arjunkshah12345-hash.github.io/windows-terminal",
+      "post_url": "https://x.com/arjunkshah21/status/2119602874397372532",
+      "author": "Arjun Shah",
+      "models": [],
+      "first_seen": "2026-11-09",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 包（windows-terminal-vm）驱动 QEMU（支持 HVF、KVM、TCG）；终端里用 Kitty graphics、iTerm2 inline 图像或半块字符显示画面；用 wimlib 和 xorriso 重建 ISO；提供 MCP 服务器。",
+        "method": "fetch 从微软官方 CDN 获取 Windows 11 ESD 并核对 SHA-1，重建可启动 ISO；init --unattended 挂载应答盘，无人值守安装；up --view 在终端显示画面并接收键鼠；mcp 把同一台 VM 交给 Agent，提供 9 个 computer-use 工具，不碰宿主的鼠标、剪贴板和文件。",
+        "features": [
+          "持久化的命名 VM、稀疏磁盘、UEFI 和 TPM 2.0",
+          "支持 BIOS 模式，可跑旧系统和 ReactOS",
+          "在 Apple Silicon 上运行 ARM64 Windows",
+          "Ctrl+] 分离后 VM 继续运行"
+        ],
+        "highlights": [
+          "给 Agent 一台真正隔离的 Windows 电脑",
+          "全部来自官方源，不用第三方镜像"
+        ],
+        "limitations": [
+          "只有 5 星，早期项目",
+          "在终端里显示 GUI，性能和清晰度有限"
+        ],
+        "comparison": "和 opencode-browse（真实浏览器）相反，走的是隔离路线。和 openmausbot 自带的 bot 虚拟机相比，windows-terminal 专注 Windows 桌面，并可接任意 MCP Agent。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "bot-teams",
+      "name": "Bot Teams",
+      "summary": "现成多机器人团队模板，一条提示词安装。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "grok-bot",
+        "团队"
+      ],
+      "source_url": "https://github.com/ellelion/botteams",
+      "preview_url": null,
+      "post_url": "https://x.com/mr_mofun/status/2118265147680784531",
+      "author": "ellelion",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Next.js 网站（botteams.io）加仓库即 CMS：每个团队是 teams/ 里的一个 markdown 文件（front matter 写明 Bots、群聊、routines、connectors），经 JSON Schema 和语义校验；Neon Postgres、Stripe（赞助）、S3；还有一个 X mention worker 自动起草 PR。",
+        "method": "选一个团队后复制一段安装提示词粘贴给 Grok Bot，它会创建对应的 Bots 和群聊，并提出 routines 等用户确认；收录门槛是贡献者自己端到端跑通过。",
+        "features": [
+          "团队目录，可搜索，按分类、连接器筛选",
+          "单 bot 和 2–6 个 bot 的团队两种形态",
+          "Verified 标记",
+          "公开 API 和 schema"
+        ],
+        "highlights": [
+          "从「装一个 bot」升级到「装一个团队」",
+          "内容和代码同仓，透明可审"
+        ],
+        "limitations": [
+          "只支持 Grok Bot",
+          "非官方，团队质量取决于贡献者"
+        ],
+        "comparison": "和 hypergrok-trading-desk（单个垂直团队）相比，bot-teams 是目录平台。和 grokbot-field-notes 的角色库相比，bot-teams 能一键安装。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "coincide",
+      "name": "Coincide",
+      "summary": "原生 macOS 应用，并排跑 Claude Code/Codex/Cursor/Grok Build，可中途换 agent。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "macos",
+        "多智能体"
+      ],
+      "source_url": "https://github.com/apoorvdarshan/coincide",
+      "preview_url": "https://coincide.dev",
+      "post_url": "https://x.com/apoorvdarshan/status/2116927672274305244",
+      "author": "apoorvdarshan",
+      "models": [],
+      "first_seen": "2026-11-01",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "T3 Code 的原生 macOS 移植：AppKit 加 SwiftUI，Rust core（借用 gpui）；进程内直接驱动各 Agent 的 CLI；有 Fuzz 测试、远程端（CoincideRemote）和 Windows 目录。",
+        "method": "把 Claude Code、Codex、Cursor、Grok Build、OpenCode、Antigravity 放进一个窗口和一个模型选择器；同一线程中途换 Agent 时，每个 Agent 保留自己的原生会话，新接手的 Agent 会收到它错过的轮次摘要，并在同一目录继续。",
+        "features": [
+          "统一模型选择器（收藏、推理强度、快速模式）",
+          "项目和线程侧栏、⌘K",
+          "Developer ID 签名并公证",
+          "npm、Homebrew、DMG 安装"
+        ],
+        "highlights": [
+          "比 Electron 版启动快、内存低（README 自述）",
+          "中途切换 Agent 的摘要交接设计"
+        ],
+        "limitations": [
+          "早期开发，只支持 macOS 26+",
+          "14 星"
+        ],
+        "comparison": "直接对标 t3-code：功能对齐，换成原生实现。和 tastecode（面向创意工作）、relay（CLI 间的交接）相比，coincide 侧重统一 UI 里的切换。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "open-duet-anil-matcha",
+      "name": "Open Duet (Anil-matcha)",
+      "summary": "开源可自托管多 Agent 团队，负责人分派任务、带记忆与审批。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "多智能体"
+      ],
+      "source_url": "https://github.com/Anil-matcha/open-duet",
+      "preview_url": "https://suparagent.ai",
+      "post_url": "https://x.com/kelvin_sznx/status/2117704580720968183",
+      "author": "Anil-matcha",
+      "models": [],
+      "first_seen": "2026-11-03",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 后端加 TypeScript 前端，有桌面端、移动端，可用 Docker 自托管；可选 Docker 隔离的 Agent 电脑；仓库现名 Suparagent。",
+        "method": "创建带名字的 Agent，各有职责、工作区、记忆和 routines；多个 Agent 组成团队协作；Ask first 模式下，执行需审批的动作前先暂停；引擎自带，可以是 CLI 或 API。",
+        "features": [
+          "对话、记忆、routines、审批放在一处",
+          "可选隔离的 Agent 电脑",
+          "桌面应用、自托管、托管服务三种形态",
+          "插件市场"
+        ],
+        "highlights": [
+          "约 7000 星，Grok Bot 开源替代中较成熟的一个",
+          "自带引擎，不绑定模型"
+        ],
+        "limitations": [
+          "安装包未签名、属实验性质，有已知限制",
+          "有商业托管版本"
+        ],
+        "comparison": "和 openmausbot、openduet-copilotkit、rerun 同属「开源 Grok Bot 替代」：openmausbot 最像聊天应用并自带 VM，OpenDuet（CopilotKit）主动性最强，本项目团队和审批功能较全。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "openduet-copilotkit",
+      "name": "OpenDuet (CopilotKit)",
+      "summary": "可自托管的开源 agent 模板，agent 主动推进、人可随时插手。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "多智能体"
+      ],
+      "source_url": "https://github.com/CopilotKit/OpenDuet",
+      "preview_url": "https://copilotkit.ai/openduet",
+      "post_url": "https://x.com/RoundtableSpace/status/2116904343186411909",
+      "author": "CopilotKit",
+      "models": [],
+      "first_seen": "2026-11-01",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "构建在 CopilotKit 的 OpenBot（自托管 Agent 平台）之上，TypeScript、Rust、Python；线程和记忆需要 CopilotKit Intelligence 项目（免费）；有 evals/ 评测。",
+        "method": "主动型 Agent：每天先发一份晨报，扫邮件、日历和 Slack，把需要你处理的事排在前面；在自己的电脑（真实浏览器和文件）里持续工作，卡住或完成时再来找你；发送、付款、签署、删除前展示具体动作，等你选择允许一次、总是允许或拒绝。",
+        "features": [
+          "晨报",
+          "需要处理和可以等待的分拣",
+          "支持 Web、移动端、Slack、Teams",
+          "全部定制内容集中在一个文件夹"
+        ],
+        "highlights": [
+          "「主动但不越权」的交互模型",
+          "大厂级前端框架团队维护"
+        ],
+        "limitations": [
+          "早期，依赖 CopilotKit 云端服务存储线程",
+          "目前主要能读 Gmail 和日历"
+        ],
+        "comparison": "和 open-duet-anil-matcha 同名但不同项目：CopilotKit 版重主动性和个人事务，Anil-matcha 版重多 Agent 团队。和 dsh-superagent-prototype 的「少占注意力」理念相通。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "openmausbot",
+      "name": "OpenMausBot",
+      "summary": "开源的 Grok Bot 替代方案，带可供 bot 使用的虚拟机。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "bot",
+        "多智能体"
+      ],
+      "source_url": "https://github.com/milind-soni/OpenMausBot",
+      "preview_url": "https://www.openmausbot.com/",
+      "post_url": "https://x.com/kunal_twts/status/2116446073829138473",
+      "author": null,
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Electron 桌面应用加 127.0.0.1 上的 harness 服务器（server/ 下 2700+ 个文件）；bot 实际运行本机的 claude、codex、grok CLI；提供云端 Linux 桌面、隔离的本地 VM 或本机电脑三种执行环境；有 Cloudflare relay 和 companion。",
+        "method": "把 AI 做成通讯录：每个 bot 有自己的性格、模型、电脑和连接的 App；本地 harness 管理所有 Agent 进程，对话记录、key 和事件放在 ~/.openmausbot；用户在聊天里观看并审批关键动作。",
+        "features": [
+          "多 bot 通讯录式聊天",
+          "每个 bot 一台电脑（云端、VM、本机）",
+          "自定义 CLI 引擎",
+          "macOS 签名版、Windows、Ubuntu 安装包"
+        ],
+        "highlights": [
+          "2 万星，最完整的开源 Grok Bot 替代之一",
+          "沿用已有订阅，没有中间代理"
+        ],
+        "limitations": [
+          "本机控制只在通过认证的平台上开放",
+          "功能多、迭代快（0.1.151），稳定性待观察"
+        ],
+        "comparison": "和 open-duet-anil-matcha 相比，openmausbot 的聊天应用体验和 VM 更成熟。和 anymodelbot 相比，后者走模型网关加国内 IM，openmausbot 走本机 CLI 加虚拟电脑。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "relay",
+      "name": "Relay",
+      "summary": "本地 MCP，让 Claude Code/Codex/Gemini CLI/Cursor 互相交接任务与上下文。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "mcp",
+        "多智能体"
+      ],
+      "source_url": "https://github.com/atilavahedian/relay",
+      "preview_url": "https://getrelay.fun",
+      "post_url": "https://x.com/atila_vahedian/status/2119196907532959744",
+      "author": "atilavahedian",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "零依赖的 Node CLI（relay-agents）加本地 MCP 和 hooks；状态存放在 ~/.relay；官网部署在 Cloudflare Worker。",
+        "method": "在任意 Agent 里用自然语言说「交给 codex 跑测试」或「让 claude 看看」，relay 会调用真实的 CLI，并把任务、最近对话、分支、改动文件、diff 和其他 Agent 已做的事一起交过去；评审和提问只读；被 relay 启动的 Agent 不能再转交，防止循环；Agent 之间意见不一致时交给人裁决。",
+        "features": [
+          "relay watch 实时观看",
+          "relay open 接管对方会话",
+          "后台任务完成后通知",
+          "支持 Claude Code、Codex、Gemini CLI、Cursor，自定义 CLI 也可接收任务"
+        ],
+        "highlights": [
+          "极简，零依赖，不需要 API key",
+          "防循环、不静默推翻的设计很周到"
+        ],
+        "limitations": [
+          "只有 2 星，早期",
+          "Gemini 和 Cursor 的实时同步较弱"
+        ],
+        "comparison": "和 coincide、t3-code（UI 里切换）不同，relay 让 Agent 互相直接调用。和 oar-kanso 的子 Agent 交接相比，relay 面向终端用户，开箱即用。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "rerun",
+      "name": "Rerun",
+      "summary": "开源的多 Agent 协作平台，宣称可替代 Grok Bot/Dots/Duet，沿用 ChatGPT/Claude 订阅。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "多智能体"
+      ],
+      "source_url": "https://github.com/rerun-build/rerun",
+      "preview_url": "https://rerun.build",
+      "post_url": "https://x.com/rerun_build/status/2117292634196574322",
+      "author": "rerun_build",
+      "models": [],
+      "first_seen": "2026-11-03",
+      "origin": "bookmark",
+      "stars": 930,
+      "notes": "星标查询于 2026-11-10",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript pnpm monorepo（apps/、packages/），后端用 Supabase，可用 docker-compose 自托管；AGPL-3.0；模型可接 API key、Claude 或 ChatGPT 订阅，或经 Ollama、LM Studio、vLLM 等任意 OpenAI 兼容服务；工具接入有 200+ 现成集成、任意 MCP 和 Composio（2000+ App）。",
+        "method": "用自然语言说出需求后，Foreman（工头）会先问清楚，再规划并组建团队；每个 coworker 有自己的岗位、记忆、技能和一台电脑（可观看、可接管的浏览器）；按计划时间或 webhook 触发工作，彼此协作（一个找线索、一个写信、一个归档）；发送、付款、删除前先问人；用户不在时由 Foreman 按用户的规则答复 coworker。",
+        "features": [
+          "岗位模板：执行助理、数据分析、口碑管理、SDR、社媒、催收",
+          "一块看板显示所有 coworker 和任务",
+          "聊天中直接处理文件、语音、表格和审批",
+          "定时和 webhook 触发"
+        ],
+        "highlights": [
+          "Foreman 自动组建团队，在 Agent 军团类中最接近「管理者」角色",
+          "业务岗位导向，面向非开发者"
+        ],
+        "limitations": [
+          "10 月底才开源，930 星，成熟度待观察",
+          "官网上的用户证言属自述"
+        ],
+        "comparison": "和 open-duet-anil-matcha、openmausbot 同为开源 Grok Bot 替代：rerun 偏商业运营岗位，并有 Foreman 编排；openmausbot 偏个人聊天加虚拟机。和 bot-teams 的「装一个团队」相比，rerun 由 Foreman 动态组建团队。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "t3-code",
+      "name": "T3 Code",
+      "summary": "开源编程 Agent 控制台，统一操控本机 Claude Code/Codex/Cursor/OpenCode/Grok。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "多智能体",
+        "桌面"
+      ],
+      "source_url": "https://github.com/pingdotgg/t3code",
+      "preview_url": "https://t3.codes",
+      "post_url": "https://x.com/theo/status/2118949525146792151",
+      "author": "pingdotgg",
+      "models": [],
+      "first_seen": "2026-11-02",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript monorepo：本地服务器、Web 应用、Electron 桌面版，以及 iOS 和 Android 远程 App；有自研 oxlint 插件和 evals；驱动 Codex、Claude、Cursor、Grok Build、OpenCode、Antigravity、fx。",
+        "method": "agent harness 控制面板：在本机（或远程服务器）运行 t3 服务，统一启动和控制已登录的各家 Agent CLI；手机 App 远程查看和操控。",
+        "features": [
+          "一键安装，t3 service 常驻后台",
+          "移动端远程",
+          "多 provider 统一操控"
+        ],
+        "highlights": [
+          "5.4 万星，社区最大",
+          "开源免费，便于 fork，衍生出 coincide 等原生移植"
+        ],
+        "limitations": [
+          "Electron 加 Node 架构较重（coincide 正是为此做的原生版）",
+          "每个 provider 都要单独装 CLI 并登录"
+        ],
+        "comparison": "是本类基准：coincide 是它的原生版，tastecode 是创意向分支方向，relay、oar-kanso 是更底层的交接和接口。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "tastecode",
+      "name": "TasteCode",
+      "summary": "把 Codex、Claude Code、Grok、Cursor 收进一个桌面应用，面向创意网页与 3D/动效。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "桌面",
+        "多智能体"
+      ],
+      "source_url": "https://github.com/Leonxlnx/tastecode",
+      "preview_url": null,
+      "post_url": "https://x.com/LexnLin/status/2118056518096466150",
+      "author": "LexnLin",
+      "models": [],
+      "first_seen": "2026-11-05",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Electron 桌面应用（TS、Swift），本地服务器负责状态和编排；支持 Codex、Claude Code、Grok；Node 24 加 pnpm。",
+        "method": "多个编程 Agent 放在一个应用里，编排、项目状态、终端、diff、检查点和历史都在本地；provider 不支持的功能会隐藏或降级，不假装统一；内置 Design Mode，可检查和编辑网页界面。",
+        "features": [
+          "Design Mode",
+          "浏览器预览、附件、git 上下文、可读 diff",
+          "检查点和 worktree",
+          "会话搜索、置顶"
+        ],
+        "highlights": [
+          "面向创意网页、3D 和动效工作流",
+          "渲染层拿不到原始凭据，安全模型清晰"
+        ],
+        "limitations": [
+          "0.1.1 早期 beta，Windows 版未签名",
+          "只支持 3 家 provider"
+        ],
+        "comparison": "和 t3-code、coincide 相比，tastecode 多了 Design Mode，偏视觉创作。和 pointer、redraft 的网页编辑能力有交集。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "the-office-agents",
+      "name": "The Office",
+      "summary": "Claude Code 插件：把你的多个编程 Agent 放进一栋像素风办公室，实时看谁在干什么。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "plugin",
+        "像素",
+        "可视化"
+      ],
+      "source_url": "https://github.com/Makio64/theoffice-agents",
+      "preview_url": "https://theoffice.makio.io",
+      "post_url": "https://x.com/makio64/status/2119720965764731028",
+      "author": "David Ronai (makio64)",
+      "models": [
+        "Claude",
+        "Gemini",
+        "Codex"
+      ],
+      "first_seen": "2026-11-09",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Claude Code 插件（也有 Cursor、Antigravity 清单），用 three.js 加 Vite 渲染像素办公楼；读取各 Agent 本地已有的会话文件（~/.claude、~/.codex 等）；Node 24+。",
+        "method": "把每个 Agent 拟人化成办公室角色（Claude 是 Clawd、Codex 是 Dex、Gemini 是 Gem 等），子 Agent 是实习生，工作流是开会；按实时、今天、周、月、做了什么、延时回放六个视图展示多账户多 Agent 的活动。",
+        "features": [
+          "/theoffice 侧边面板",
+          "按项目和天的楼层视图",
+          "等待人处理时有举手提示",
+          "延时回放"
+        ],
+        "highlights": [
+          "趣味化的多 Agent 可观测性",
+          "纯本地，什么都不上传"
+        ],
+        "limitations": [
+          "只能看，不能控制",
+          "只有 1 星，新项目"
+        ],
+        "comparison": "和 playbasis-agent-hub 都读本地会话：Hub 偏数据分析，The Office 偏趣味可视化。和 t3-code 等控制台相比，它只做观察。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "hypergrok-trading-desk",
+      "name": "hypergrok-trading-desk",
+      "summary": "多机器人交易台示例，从研究模式起步。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "grok-bot",
+        "交易"
+      ],
+      "source_url": "https://github.com/galleonlabs/hypergrok-trading-desk",
+      "preview_url": null,
+      "post_url": "https://x.com/mr_mofun/status/2118265147680784531",
+      "author": "galleonlabs",
+      "models": [],
+      "first_seen": "2026-11-06",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent 插件包：7 个角色 profile、17 个技能、只读 Python 工具（只用标准库）；为 Grok Bot、Claude Code、Cursor、Codex、Gemini CLI、Grok Build 提供清单。",
+        "method": "多 bot 交易台共享一个 Trading Floor 群聊，流程是研究、风控、执行、复盘；默认处于研究模式，只读公开行情；接测试网钱包可以练习；主网交易需要用户自己的 API 钱包、已验证的审批控制，以及用户批准的精确交易单（ticket）。",
+        "features": [
+          "opening_bell：价格、资金费率、持仓量、价差和深度快照",
+          "desk_doctor 检查技能哈希和连通性",
+          "bootstrap 技能一键组建团队并返回回执"
+        ],
+        "highlights": [
+          "把高风险领域的人工审批写进流程",
+          "不需要 key 也能试用"
+        ],
+        "limitations": [
+          "涉及真实资金，风险自负",
+          "只支持 Hyperliquid"
+        ],
+        "comparison": "和 bot-teams 的通用团队模板相比，这是一个深度垂直的军团样板。和 anthropic-commerce-agents 一样，「写操作需人批准」。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "archimedes-reynolds",
+      "name": "Archimedes / Reynolds",
+      "summary": "用智能体探索工程设计，再调用 OpenFOAM 做真实数值仿真。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "仿真",
+        "工程",
+        "科学"
+      ],
+      "source_url": "https://github.com/InviscidAI/OpenReynolds",
+      "preview_url": "https://standardphysics.com/reynolds",
+      "post_url": "https://x.com/StandardPhys/status/2118766173986955771",
+      "author": "InviscidAI",
+      "models": [],
+      "first_seen": "2026-11-05",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 包 openreynolds：基于 Anthropic 工具调用循环，配 9 个工具，指向装有 OpenFOAM v2512 的 Linux 工作区；也有托管版（tryreynolds.com）；MIT。",
+        "method": "没有固定流水线，由 Agent 决定怎么做：写 case、划分网格、启动求解器、实时读残差、查看自己的渲染结果并交付图表和文件；代码层刻意不规定步骤顺序。",
+        "features": [
+          "无需懂 OpenFOAM，描述工程问题即可",
+          "实时读取求解器日志",
+          "公开的案例研究（含对话记录）：ONERA M6 激波、圆柱涡街、散热器、喷管"
+        ],
+        "highlights": [
+          "自报：ONERA M6 激波位置与 1979 年风洞数据相差不到 0.06 弦长，网格只用 1/7",
+          "Agent 会自己发现「求解器说收敛了但结果不对」"
+        ],
+        "limitations": [
+          "Alpha 阶段，需要登录托管账号",
+          "CFD 计算资源要求高"
+        ],
+        "comparison": "和 science-s-last-exam、rsi-inference-bench 同为 AI 做科研或工程的方向：本项目是实际做仿真的工具，后两者是评测。和 hydrogen-1-0 相比，后者是科学模型本身。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "astryx",
+      "name": "Astryx",
+      "summary": "据介绍为 Meta 开源的可定制设计系统，适合 Agent 按规范生成界面。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "设计系统",
+        "ui"
+      ],
+      "source_url": "https://github.com/meta/astryx",
+      "preview_url": "http://astryx.atmeta.com",
+      "post_url": "https://x.com/xerocooleth/status/2119517075538362564",
+      "author": "meta",
+      "models": [],
+      "first_seen": "2026-11-07",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "React 19 加 StyleX 的设计系统，pnpm monorepo（core、lab、charts、richtext、vega、多套主题），附 CLI 和 Storybook；Meta 内部用了 8 年，支撑 13000+ 个应用（README 自述）；MIT。",
+        "method": "消费方导入预编译的 CSS 和类型化组件，不需要构建插件；主题就是一组 CSS 变量覆盖；内部组件全部导出，swizzle 可以把组件源码弹出到项目里自行维护；API、文档和 CLI 一起设计，让人和 AI 用同一套参考来构建。",
+        "features": [
+          "150+ 无障碍组件",
+          "品牌级主题、暗色模式、模板",
+          "CLI 让编程 Agent 了解 Astryx",
+          "可用 className 加 Tailwind 等覆盖样式"
+        ],
+        "highlights": [
+          "Meta 内部经过大规模验证",
+          "明确面向 Agent 设计"
+        ],
+        "limitations": [
+          "仍是 Beta",
+          "必须用 React 19+"
+        ],
+        "comparison": "和 opendesigner（为项目生成设计系统）不同，Astryx 是现成的组件库。和 unslop（agent-eng）相比，一个从源头给规范，一个事后纠偏。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "axiom-stacks",
+      "name": "Axiom Stacks",
+      "summary": "用 AI agent 流水线把 Stacks Project 形式化为可验证 Lean 代码。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "形式化",
+        "数学",
+        "lean"
+      ],
+      "source_url": "https://github.com/AxiomMath/Stacks",
+      "preview_url": "https://stacks.axiommath.ai",
+      "post_url": "https://x.com/Shadowfetch/status/2118062123670712810",
+      "author": "AxiomMath",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Lean 4（v4.34.0-rc2）加 Mathlib；分 StacksCore（人工审过）和 StacksFrontier（AI Agent 写的，约 4.9 万个文件）两层；Apache-2.0。",
+        "method": "用 AI Agent 流水线把 Stacks Project（代数几何开源参考书）里所有可形式化的 tag 写成 Lean 证明，全部由 Lean 内核检查，没有 sorry 和 native_decide；声明上标注 @[stacks TAG]，以及对应的 EGA、SGA 条目（完整、更一般、部分子句或特例）。",
+        "features": [
+          "#stacks_tags 列出所有 tag 对应的声明",
+          "网站把 tag 链接到 Lean 代码和依赖",
+          "未形式化的例子和习题留给贡献者"
+        ],
+        "highlights": [
+          "自称已覆盖 Stacks Project 全部可形式化的 tag，是 AI 数学形式化的标志性成果",
+          "双层结构区分机器写和人工审的代码"
+        ],
+        "limitations": [
+          "Frontier 层代码质量和命名规范尚未经人工审阅",
+          "具体用了哪些模型和流水线，README 未详述（未查到）"
+        ],
+        "comparison": "和权重空间编程-mit、nesformer 一样，偏前沿研究展示。和 science-s-last-exam（评测）相比，本项目是 AI 产出的实际成果。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "cicada-知了",
+      "name": "Cicada / 知了",
+      "summary": "开源会议纪要与同声传译客户端，读系统声音、实时字幕与本地纪要，支持多会议平台。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "语音",
+        "同传",
+        "会议"
+      ],
+      "source_url": "https://github.com/wquguru/cicada",
+      "preview_url": "https://cicada.indaloop.app",
+      "post_url": "https://x.com/wquguru/status/2119264966125711494",
+      "author": "wquguru",
+      "models": [
+        "Ling"
+      ],
+      "first_seen": "2026-11-08",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Swift（Mac）、C#（Windows）、Linux 版、Kotlin（Android）四端原生客户端；Apple Silicon 上在本机做语音识别；其他平台接 Ling、OpenRouter、ZenMux 等 AI 服务（Ming 负责语音识别）；Apache-2.0。",
+        "method": "直接采集系统音频，不派机器人进会议，所以对方察觉不到；实时生成双语字幕和结构化纪要；按住说话键说话，翻译后的语音会送进通话；接入 AI 后会当场纠正听错的人名和术语。",
+        "features": [
+          "实时纪要：摘要、要点、结论、待办、鱼骨图、术语表",
+          "点击结论可跳回原文",
+          "同声传译后的语音回传",
+          "支持腾讯会议、飞书、Zoom、Meet、X Spaces、B 站直播等任何有声音的应用"
+        ],
+        "highlights": [
+          "四端同版本、同纪要格式",
+          "Mac 上可完全离线识别"
+        ],
+        "limitations": [
+          "手机上无法录通话类应用的音频",
+          "Windows、Linux、Android 必须有 AI key"
+        ],
+        "comparison": "和 hy-simulmt 对比：Hy-SimulMT 是同传模型，知了是终端产品（可以接各家模型）。和 argument-cat 的端侧语音演示相比，知了是成熟的生产工具。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "deeptutor",
+      "name": "DeepTutor",
+      "summary": "港大开源本地学习 Agent：吃 PDF/笔记/视频并回教、测验与追踪。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "教育",
+        "agent"
+      ],
+      "source_url": "https://github.com/HKUDS/DeepTutor",
+      "preview_url": null,
+      "post_url": "https://x.com/RoundtableSpace/status/2114631869233070376",
+      "author": "HKUDS",
+      "models": [],
+      "first_seen": "2026-10-26",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 后端（多 Agent 加 RAG，用 FAISS）、TypeScript Web 和桌面应用、CLI；1000+ 个测试文件；港大 HKUDS 出品；Apache-2.0。",
+        "method": "导入 PDF、笔记、视频建立知识库，多 Agent 协作完成讲解、出题、追踪掌握度；学习路径可以审阅调整，辅导记忆有上限；有带配音的视频课。",
+        "features": [
+          "知识库 RAG，可从断点恢复建索引",
+          "测验、题库、Anki 和日历导出",
+          "学习日志、任务板",
+          "多语言界面，支持多家 provider"
+        ],
+        "highlights": [
+          "5.8 万星，几乎每周发版，维护活跃",
+          "DeepTutor CLI 面向 Agent"
+        ],
+        "limitations": [
+          "功能庞杂，部署较重",
+          "效果依赖所接模型"
+        ],
+        "comparison": "和 janestreet-agent-skills 的苏格拉底辅导（单个技能）相比，DeepTutor 是完整的学习平台。和 teachable-figures（交互教学图示）可以互补。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "ferrite",
+      "name": "Ferrite",
+      "summary": "全 Rust 模型推理引擎，支持长上下文与 OpenAI 兼容接口。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "rust",
+        "推理"
+      ],
+      "source_url": "https://github.com/BHCC2025/ferrite",
+      "preview_url": "https://bhcc2025.github.io/ferrite",
+      "post_url": "https://x.com/BHCC2025/status/2119600818735514030",
+      "author": "BHCC2025",
+      "models": [],
+      "first_seen": "2026-11-07",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "从 HTTP 服务器到 GPU kernel 全部用 Rust：kernel 经 rustc 的 nvptx64 后端编译成 PTX，面向 GB10 sm_121a，通过一层很薄的绑定调用 CUDA driver；只服务 Qwen3.8-27B（EXL3 量化）；两台 DGX Spark 之间用 RoCE 做 TP2。",
+        "method": "用 DFlash2 投机解码；提示词缓存在每轮结束时打快照，从最长匹配处恢复，适合编程 Agent 每轮重发整段对话的场景；提供 OpenAI 兼容 API（流式、思考、工具调用、128K 上下文）。",
+        "features": [
+          "OpenAI 兼容服务",
+          "最多 4 个并发请求",
+          "提示词缓存"
+        ],
+        "highlights": [
+          "自报：两台 Spark 上代码类单请求 273 tok/s，4 请求合计 473 tok/s；与 BF16 的 KL 散度 0.021",
+          "探索 Rust 能否一路写到 GPU kernel"
+        ],
+        "limitations": [
+          "实验性质：只支持一个模型、一种 GPU",
+          "0 星，作者建议需要成熟引擎时用 TensorFold"
+        ],
+        "comparison": "和 kimi-k3-in-c（纯 C、CPU、超大模型）同为从零写推理引擎：Ferrite 追求单卡高吞吐，kimi-k3-in-c 追求极低内存。和 mlx-serve（Apple Silicon 通用服务）相比，Ferrite 是单点极致优化。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "hairdeck",
+      "name": "HairDeck",
+      "summary": "单图生成可绑定的 3D 发片（hair cards），开源权重。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "3d",
+        "图形",
+        "模型"
+      ],
+      "source_url": "https://github.com/hyz317/HairDeck",
+      "preview_url": null,
+      "post_url": "https://x.com/Stefan_3D_AI/status/2116475792331022690",
+      "author": "hyz317",
+      "models": [],
+      "first_seen": "2026-11-01",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "PyTorch 2.8（CUDA 12.8，也支持 Apple MPS）；Card VAE 把每片发片编码成一个 token，再用条件集合扩散 Transformer 联合生成整组发片；另有颜色模型和链式扩散模型生成弹簧骨骼；清华、CMU、港中文合作，Apache-2.0。",
+        "method": "从单张图片生成风格化发片（hair cards），保留每片几何和 UV，预测沿发片的颜色（含双色发和饰品），生成驱动发片的 spring-bone 骨链并完成蒙皮，导出 GLB 或 VRM。",
+        "features": [
+          "Gradio 本地 demo 和 HF Space",
+          "支持 Windows、macOS",
+          "VRM 导出",
+          "测试集评测和训练代码"
+        ],
+        "highlights": [
+          "输出直接可用于动画和引擎，契合游戏美术管线",
+          "开放了代码、权重和训练"
+        ],
+        "limitations": [
+          "需要 CUDA GPU（或 Apple Silicon）",
+          "只做风格化头发"
+        ],
+        "comparison": "和游戏类的 3d-os-scenario-skills、scenario-blender-plugin 同服务于游戏资产，HairDeck 是专用模型。和 parametric-topdown-pixel-architecture 相比，一个是神经生成，一个是程序化生成。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "hy-simulmt",
+      "name": "Hy-SimulMT",
+      "summary": "腾讯开源的实时中英同传模型（流式约 3 秒延迟）。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "同传",
+        "语音",
+        "模型"
+      ],
+      "source_url": "https://github.com/Tencent-Hunyuan/Hy-SimulMT",
+      "preview_url": "https://huggingface.co/collections/tencent/hy-simulmt",
+      "post_url": "https://x.com/aigclink/status/2114715014422724854",
+      "author": "aigclink",
+      "models": [
+        "Hy-SimulMT"
+      ],
+      "first_seen": "2026-10-26",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "腾讯混元的同传模型：仓库提供 SimulInfer 推理服务和 SimulTrain 训练工具；中英双向语音到语音，实时克隆声音（需要配 TTS 服务）；权重在 HF。",
+        "method": "边接收音频流边增量理解和翻译，在等待更多信息和尽早开口之间权衡；用 RealSI 长音频基准、真实录音和专业同传对比来评测。",
+        "features": [
+          "中英双向同传",
+          "输出文本和语音",
+          "实时声音克隆",
+          "有 Hy Translate App"
+        ],
+        "highlights": [
+          "自报 RealSI 上 StreamLAAL 约 3 秒，为对比系统中最低；GEMBA 分超过对比的开源模型和 5 个商用 API 中的 4 个"
+        ],
+        "limitations": [
+          "只支持中英",
+          "许可证是自定义的 LICENSE-Hy-SimulMT，需要确认商用条款"
+        ],
+        "comparison": "和 cicada-知了 互补：一个是模型，一个是客户端。和 argument-cat 相比，后者是端侧小模型演示。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "hydrogen-1-0",
+      "name": "Hydrogen-1.0",
+      "summary": "面向化学/材料/生命科学的开放权重模型，基于实验记录继续训练。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "科学",
+        "模型"
+      ],
+      "source_url": null,
+      "preview_url": "https://blog.deepprinciple.com/introducing-hydrogen-1.0",
+      "post_url": "https://x.com/Shadowfetch/status/2117337419716452613",
+      "author": "Deep Principle",
+      "models": [
+        "Hydrogen-1.0"
+      ],
+      "first_seen": "2026-11-02",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Deep Principle 在 GLM-5.3 基础上做后训练的科学模型（官方博客）。",
+        "method": "用化学、材料、生命科学的领域知识，加上自家实验室的实验记录和 Agent 发现轨迹做后训练，目标是学会从整个实验中学习，以及发现新材料（博客章节标题）。",
+        "features": [
+          "科学推理",
+          "实验场景应用",
+          "新材料发现"
+        ],
+        "highlights": [
+          "把真实实验室数据和轨迹纳入训练，路线有特色"
+        ],
+        "limitations": [
+          "没有代码仓库；评测数据和开放方式只看到博客，细节未查到",
+          "库内摘要称其为开放权重，未核实"
+        ],
+        "comparison": "和 archimedes-reynolds（工程仿真 Agent）、science-s-last-exam（科研评测）同属 AI for Science。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "janestreet-agent-skills",
+      "name": "Jane Street agent_skills",
+      "summary": "Jane Street 开源的 Agent 技能仓库，据帖子介绍含一个逐题追问的苏格拉底式辅导技能。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "教育"
+      ],
+      "source_url": "https://github.com/janestreet/agent_skills",
+      "preview_url": null,
+      "post_url": "https://x.com/mrgoss/status/2119930202872820057",
+      "author": "Jane Street",
+      "models": [],
+      "first_seen": "2026-11-09",
+      "origin": "daily-digest",
+      "stars": 2134,
+      "notes": "README 未能读取，技能内容依据原帖；stars 查询于 2026-11-09",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "技能仓库，目前只有一个 socratic-tutor 技能（SKILL.md）；MIT。",
+        "method": "把 LLM 变成严格的私人导师：先做诊断，建立 0–5 级技能地图，一次只问一个问题，安排间隔复习，最后做总评。",
+        "features": [
+          "兼容通用 SKILL.md 格式的 Agent",
+          "普通聊天机器人也可以直接粘贴使用"
+        ],
+        "highlights": [
+          "Jane Street 出品，方法论严谨",
+          "2500 星，用法极简"
+        ],
+        "limitations": [
+          "目前只有一个技能",
+          "没有配套评测"
+        ],
+        "comparison": "和 deeptutor（完整学习平台）、teachable-figures（交互图示）组成学习类三件套：本项目最轻，只管提问方法。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "latent-sparse-attention",
+      "name": "Latent Sparse Attention",
+      "summary": "加速超长上下文注意力的开源方法。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "推理",
+        "长上下文"
+      ],
+      "source_url": "https://github.com/Prefrontal-AI/latent-sparse-attention",
+      "preview_url": null,
+      "post_url": "https://x.com/GitGem/status/2117561120886333870",
+      "author": "Prefrontal-AI",
+      "models": [],
+      "first_seen": "2026-11-03",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "PyTorch，索引 kernel 用 Triton，Triton 做不到的部分用 CuTeDSL（经 TVM-FFI 调用）；在 SGLang 中提供服务；统一命令 lsa；配置 413 个，测试 290 个。",
+        "method": "在学到的潜空间里对 key 做分层聚类分桶，query 先给桶中心打分，只读选中的远程 key，再加 sink 和滑动窗口；注意力 kernel 本身不变，LSA 只决定读哪些 key。分两种：D-LSA 通过蒸馏现有模型的 indexer 来应用（平铺或树搜索，也有免训练的 PCA 版），N-LSA 从零只用下一 token 损失训练。",
+        "features": [
+          "D-LSA、N-LSA 训练和推理",
+          "对比基线：Full、SWA、NSA、PISA、Block Sparse",
+          "准确率、kernel 和端到端评测"
+        ],
+        "highlights": [
+          "自报：GLM-5.3-Flash 在 10M token 上单层 prefill 22.7 倍、decode 4.6 倍于其自带稀疏注意力；Qwen3.8-27B 比全注意力快 72.4 倍和 42.5 倍",
+          "N-LSA 准确率与全注意力相当"
+        ],
+        "limitations": [
+          "对 CUDA 和 nvcc 版本要求严格（不支持 CUDA 13）",
+          "数据都是论文作者自测"
+        ],
+        "comparison": "和 sensenova-loop-9b-preview（架构层面复用权重）都在提升效率：LSA 针对超长上下文的注意力，SenseNova 针对参数量和深度。和 ferrite 的推理工程相比，LSA 是算法层面的改进。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "lieflat-charts",
+      "name": "Lieflat Charts",
+      "summary": "面向 Agent 的数据可视化 Skill，统一字体留白与动效，支持报告/PPT 模式。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "可视化",
+        "设计"
+      ],
+      "source_url": "https://github.com/larashero3-dotcom/lieflat-charts",
+      "preview_url": "https://larashero3-dotcom.github.io/lieflat-charts/README.en.html",
+      "post_url": "https://x.com/lieflat_3/status/2094719194302706136",
+      "author": "lieflat_3",
+      "models": [],
+      "first_seen": "2026-10",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent Skills 格式的技能，内容是 HTML、SVG、JS 模板（约 60 个模板加色板、token 文件）。",
+        "method": "Agent 根据数据形状从目录中选图型，按语义自动选择 Mono 或三套彩色预设（青瓷蓝、椰林绿、编辑部红），一份产出只用一套色系；默认出图表，用户明确要求时才进入 PPT 模式（16:9 翻页 HTML 带动效）或报告模式（整页 HTML）。",
+        "features": [
+          "Lupi 编辑叙事型、Glance 快速判断型、Basics 基础型三种风格",
+          "力导向图等交互大图",
+          "中英双版 19 页 PPT 模板",
+          "支持自定义品牌色"
+        ],
+        "highlights": [
+          "统一的视觉语法，告别默认图表库的 AI 味",
+          "6800 星"
+        ],
+        "limitations": [
+          "许可证为 NOASSERTION",
+          "输出是 HTML，嵌入其他系统需要转换"
+        ],
+        "comparison": "和 teachable-figures 都是让 Agent 产出可视化：lieflat 做数据图表，teachable-figures 做可交互的教学实验。和 opendesigner 都在给 Agent 统一设计规范。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "ling-3-2-flash",
+      "name": "Ling-3.2-flash",
+      "summary": "蚂蚁百灵原生多模态混合专家模型（API），长上下文与文档/网页能力强。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "模型",
+        "多模态",
+        "API"
+      ],
+      "source_url": null,
+      "preview_url": null,
+      "post_url": "https://x.com/AntLingAGI/status/2118428246664761379",
+      "author": "AntLingAGI",
+      "models": [
+        "Ling-3.2-flash"
+      ],
+      "first_seen": "2026-11-04",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "蚂蚁百灵（Ling）系列的原生多模态混合专家（MoE）模型，通过 API 提供（库内摘要）。",
+        "method": "未查到技术报告细节。",
+        "features": [
+          "长上下文",
+          "文档和网页理解（据摘要）"
+        ],
+        "highlights": [
+          "cicada-知了 在非 Mac 平台支持 Ling 作为 AI 服务"
+        ],
+        "limitations": [
+          "没有源码、预览链接和技术文档，具体参数未查到"
+        ],
+        "comparison": "和 longcat-2-5、mistral-large-4 同为基础模型条目；三者中 Ling 的公开信息最少。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "longcat-2-5",
+      "name": "LongCat-2.5",
+      "summary": "美团面向长程 Agent 任务的多模态模型，国产芯片训练。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "模型",
+        "多模态",
+        "agent"
+      ],
+      "source_url": null,
+      "preview_url": "https://longcat.ai/blog/longcat-2.5",
+      "post_url": "https://x.com/Shadowfetch/status/2117097023220658641",
+      "author": "美团",
+      "models": [
+        "LongCat-2.5"
+      ],
+      "first_seen": "2026-11-02",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "美团 LongCat 系列模型；官方页描述为 1.6 万亿总参数，训练全程使用国产芯片。",
+        "method": "面向长程 Agent 任务的多模态模型（库内摘要）；官方博客页面需要 JS，正文未能读取。",
+        "features": [
+          "多模态",
+          "长程 Agent 任务"
+        ],
+        "highlights": [
+          "万亿参数规模，全程用国产芯片训练"
+        ],
+        "limitations": [
+          "评测成绩和开放方式未查到"
+        ],
+        "comparison": "和 mistral-large-4（1T 开放权重）规模接近：Mistral 强调编程和防御安全，LongCat 强调 Agent 和国产算力。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "mistral-large-4",
+      "name": "Mistral Large 4",
+      "summary": "Mistral 开放权重的大模型，主打编程与防御性网络安全。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "模型"
+      ],
+      "source_url": null,
+      "preview_url": "https://mistral.ai/news/mistral-large-4-oss",
+      "post_url": "https://x.com/Nicomonlineza/status/2117145181929513049",
+      "author": "Mistral",
+      "models": [
+        "Mistral Large 4"
+      ],
+      "first_seen": "2026-11-02",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "1 万亿参数、原生多模态模型（代号 Le Chonk），已开放权重，在欧洲训练（官方博客）。",
+        "method": "提供三种推理模式，平衡成本和性能；在编程、网络安全和推理效率上做了强化（官方博客摘要）。",
+        "features": [
+          "开放权重，可自托管",
+          "三种推理模式",
+          "编程和防御性安全"
+        ],
+        "highlights": [
+          "官方称在编程和防御安全上领先开放权重模型",
+          "主打主权 AI 和定制部署"
+        ],
+        "limitations": [
+          "基准数据来自官方，属自述",
+          "1T 参数，自托管成本极高"
+        ],
+        "comparison": "和 longcat-2-5 同为万亿级。和 kimi-k3-in-c（社区让 2.78T 模型跑在 CPU 上）相比，说明超大开放权重模型正在普及。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "nomi",
+      "name": "Nomi",
+      "summary": "开源本地 AI 视频工作台，经 MCP 让 Agent 指挥分镜与粗剪。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "视频",
+        "mcp"
+      ],
+      "source_url": "https://github.com/aqm857886159/Nomi",
+      "preview_url": "https://nomiaqm.com",
+      "post_url": "https://x.com/de2pressed/status/2119582675929608633",
+      "author": "aqm857886159",
+      "models": [],
+      "first_seen": "2026-11-07",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Electron 加 TypeScript 的桌面 AI 视频工作台（macOS、Windows）；内置 MCP 服务器；可接 Seedance、Kling、Wan、Hailuo、Nano Banana、GPT Image 等，经 APIMart、Kie.ai、火山、ModelScope、OpenAI 兼容接口或本地 ComfyUI；AGPL-3.0（v0.18.1 及以前为 Apache）。",
+        "method": "内置 Agent 把故事拆成镜头，生成关键帧和视频，铺到真实时间线上供编辑并导出 MP4；Claude Code、Codex、Cursor 也能经 MCP 指挥它；自带 key，按 provider 原价付费，不加价。",
+        "features": [
+          "分镜、参考图、生成、时间线粗剪",
+          "「让 AI 帮我接入」新 provider",
+          "本地优先，无账号、无遥测"
+        ],
+        "highlights": [
+          "把商用 AI 视频产品的工作流开源，并做到不加价",
+          "评测目录、文档庞大（约 9600 个文档文件）"
+        ],
+        "limitations": [
+          "AGPL 限制商业闭源集成",
+          "有赞助商推广（README 已披露）"
+        ],
+        "comparison": "和 claude-make-an-anime、huashu-motion 相比，nomi 有 GUI 和时间线，更适合人机协作。和 jianying-ai-mcp 相比，一个自建编辑器，一个复用剪映。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "norman-skill",
+      "name": "Norman-Skill",
+      "summary": "清华博士 N同学整理的科研 Skill 集，含论文精读（重建研究过程）、科研制图、PPT 等。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "科研",
+        "论文"
+      ],
+      "source_url": "https://github.com/N-tongxue/norman-skill",
+      "preview_url": null,
+      "post_url": "https://x.com/Fred834567/status/2119734147120058771",
+      "author": "N同学 (Norman)",
+      "models": [],
+      "first_seen": "2026-11-09",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "技能集合（无代码语言标注）：norman-fig2ppt、norman-paper-reading、norman-research-idea、norman-paper2ppt、norman-humanize 等。",
+        "method": "论文精读先还原研究过程，再做批判性证据审查、逐图精读和创新规划；研究构想技能做文献核查、新颖性评估和可执行方案设计；fig2ppt 把论文图片转成可编辑的 PowerPoint 图形。",
+        "features": [
+          "论文图片转可编辑 PPT 图形",
+          "研究过程还原式精读",
+          "研究方案设计",
+          "论文转 PPT",
+          "文字去 AI 味"
+        ],
+        "highlights": [
+          "来自真实科研场景，有版本号且持续迭代",
+          "中英双语说明"
+        ],
+        "limitations": [
+          "未声明许可证",
+          "个人维护，没有评测"
+        ],
+        "comparison": "和 catalex（论文写作 App）、janestreet-agent-skills（辅导）互补。和 teachable-figures 都偏教育和科研，但 Norman 偏研究生产力。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "opendesigner",
+      "name": "OpenDesigner",
+      "summary": "开源设计相关工具（每日精选收录）。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "设计"
+      ],
+      "source_url": "https://github.com/ckryptickunal/OpenDesigner",
+      "preview_url": "https://opendesigner.dev",
+      "post_url": "https://x.com/mostdes7gn/status/2116553750412452219",
+      "author": null,
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent 插件和技能（Claude Code、Codex、Cursor、Copilot、Gemini 等），可在 ChatGPT Project 中使用，也可脱离 AI 使用（单个 Python 文件引擎）；有 evals 和 benchmarks；MIT。",
+        "method": "有两条路：一是审计已有页面，标出每个按钮、字体、颜色和对齐违反了哪条规则，经用户同意后修复；二是读仓库、研究竞品，提出定位和三个方向，写出 AI 必须遵守的规则。每轮先给计划并写入 PROTOCOL.md，出图前先自检对比度、点击区域、字号阶梯等，附前后截图；用户重复说两次的话会变成规则。",
+        "features": [
+          "输出 DESIGN.md、PRODUCT.md",
+          "DTCG 设计 token，导出 CSS、Tailwind、Figma、Swift、Compose",
+          "品牌和新闻页",
+          "决策日志"
+        ],
+        "highlights": [
+          "从「审计」到「建系统」两条路都覆盖",
+          "多平台 token 导出"
+        ],
+        "limitations": [
+          "仓库庞大（5000+ 文件）、上手成本高",
+          "README 带有咨询预约链接（商业导流）"
+        ],
+        "comparison": "和 astryx（现成组件库）相比，OpenDesigner 为每个项目定制设计系统。和 unslop（agent-eng）都做 UI 审计，OpenDesigner 更系统化，unslop 更轻、更偏审美。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "oumi-faie",
+      "name": "Oumi FAiE",
+      "summary": "用自然语言描述任务，自动评测、造数据并训出专用小模型/agent。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "训练平台"
+      ],
+      "source_url": "https://github.com/oumi-ai/oumi",
+      "preview_url": "https://platform.oumi.ai",
+      "post_url": "https://x.com/Koukoumidis/status/2118025491131101581",
+      "author": "oumi-ai",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Oumi 开源基础模型平台（Python，2024 年起）：SFT、DPO、GRPO（用 verl）、LoRA，评测、数据合成、部署；支持 Transformers v5、TRL、vLLM；有 oumi-mcp；FAiE 是其平台产品（platform.oumi.ai）。",
+        "method": "用自然语言描述任务后，自动完成评测、造数据并训练专用的小模型或 Agent（库内摘要对 FAiE 的描述）；v0.9 加入工具调用 SFT/DPO、可执行工具环境、在任意 Oumi 环境上做 GRPO，以及多准则 RubricJudge。",
+        "features": [
+          "587 份训练配方（Qwen3.5、Gemma 4 等）",
+          "LLM-as-judge 评测",
+          "oumi deploy 部署到 Fireworks、Parasail",
+          "agentic 数据合成"
+        ],
+        "highlights": [
+          "端到端开源训练栈，9400 星，维护活跃",
+          "Agent 和工具调用训练是一等公民"
+        ],
+        "limitations": [
+          "FAiE 平台部分非开源，细节未查到",
+          "训练需要 GPU 资源"
+        ],
+        "comparison": "和 rsi-inference-bench、vybbench 等评测相比，Oumi 是训练和评测平台。和 twil-8b、sensenova-loop-9b-preview 等小模型相比，Oumi 是造这类模型的工具。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "phonic-1-语音演示",
+      "name": "Phonic-1 语音演示",
+      "summary": "SwiftUI iOS 语音对话小应用示例，适合参考语音模型接入。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "语音",
+        "ios",
+        "demo"
+      ],
+      "source_url": "https://github.com/amosgyamfi/agent_built_swiftui_apps",
+      "preview_url": "https://phonic.ai/blog/phonic-1",
+      "post_url": "https://x.com/amos_gyamfi/status/2118825762765648022",
+      "author": "amosgyamfi",
+      "models": [
+        "Phonic-1"
+      ],
+      "first_seen": "2026-11-05",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "源码仓库是作者的 SwiftUI 演示合集（GeminiSTTLLMTTS、ClassifyDetectSegment 两个工程）；Phonic-1 是 Phonic 公司的语音模型（官方博客）。",
+        "method": "仓库中的语音示例是 Gemini 的 STT、LLM、TTS 级联；与 Phonic-1 的具体对应关系未查到。",
+        "features": [
+          "iOS 语音对话 SwiftUI 示例"
+        ],
+        "highlights": [
+          "可以参考移动端语音接入写法"
+        ],
+        "limitations": [
+          "源码与 Phonic-1 的关联度未核实，仓库未声明许可证",
+          "Phonic-1 的模型细节未深入研究"
+        ],
+        "comparison": "和 cicada-知了、hy-simulmt 相比，这只是演示级别。和 argument-cat 都是移动端语音小样例。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "rsi-inference-bench",
+      "name": "RSI-Inference Bench",
+      "summary": "评测模型是否具备 Day-0 模型支持等能力的基准。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "评测",
+        "基准"
+      ],
+      "source_url": "https://github.com/apple-aiml-research/ml-rsi-inference-bench",
+      "preview_url": "https://rsi-inference.com",
+      "post_url": "https://x.com/onloglogn/status/2114624056385540407",
+      "author": "apple-aiml-research",
+      "models": [],
+      "first_seen": "2026-10-26",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Apple 研究团队的基准，运行在 Pier 上（兼容 Harbor 的编程 Agent 评测框架）；tasks/ 下约 2900 个文件；在真实 vLLM、SGLang 引擎和真实 GPU 上执行；使用 Apple Sample Code License。",
+        "method": "按一个模型在生产引擎里的生命周期出题：上线当天提供支持（Day-0）、上线后做优化、出现回归时修复；Agent 直接改真实引擎，运行它构建出的结果来评分，每个赛道各出一个分数。",
+        "features": [
+          "长程推理工程任务",
+          "Docker 环境，一条命令跑自己的 Agent",
+          "公开排行榜"
+        ],
+        "highlights": [
+          "衡量的是「Agent 能否改进推理栈本身」，方向接近 RSI（递归自我改进）",
+          "真实 GPU 执行，结果可以复现"
+        ],
+        "limitations": [
+          "跑一次需要真实 GPU，成本高",
+          "许可证限制较多（Apple Sample Code）"
+        ],
+        "comparison": "和 science-s-last-exam 同为长程 Agent 评测：RSI-Inference 面向系统工程，SLE 面向科研。和 vybbench（图像设计保真度）的评测对象完全不同。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "science-s-last-exam",
+      "name": "Science's Last Exam",
+      "summary": "把真实科研目标交给 AI agent，用专家隐藏标准打分的硬核评测。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "评测",
+        "科学"
+      ],
+      "source_url": "https://github.com/Gen-Verse/Science-Last-Exam",
+      "preview_url": "https://sciences-last-exam.org",
+      "post_url": "https://x.com/aitonomyfound/status/2118372265842610618",
+      "author": "Gen-Verse",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "评测框架：经 Harbor 运行 Claude Code 或 Codex；假设发现任务在 DiscoveryRSI 研究 harness 中运行；附带 GUI 和端到端环境；任务输入和隐藏参考资料放在 HF；代码 Apache-2.0。",
+        "method": "六项科研能力（假设发现、实验方案规划、科学计算、科学软件操作、湿实验执行、实验观察）加一项端到端研究评估；v1 共 113 个任务，涵盖 9 个学科，使用真实材料；参考答案保密，由独立评分者打分。",
+        "features": [
+          "113 个公开任务（湿实验部分仍在建设）",
+          "42 个任务有 Agent 运行回放",
+          "可提交结果"
+        ],
+        "highlights": [
+          "真正端到端的「从问题到发现」评测",
+          "隐藏参考答案，降低刷榜风险"
+        ],
+        "limitations": [
+          "部分能力项仍在建设中，样本量有限",
+          "目前只有 21 星"
+        ],
+        "comparison": "和 rsi-inference-bench 互补（科研和系统工程）。和 archimedes-reynolds、hydrogen-1-0 这些被评测对象相比，SLE 是衡量标尺。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "sensenova-loop-9b-preview",
+      "name": "SenseNova-Loop-9B-Preview",
+      "summary": "商汤开源多模态研究模型，层间权重复用，参数更省。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "模型",
+        "多模态"
+      ],
+      "source_url": "https://github.com/OpenSenseNova/SenseNova-Loop",
+      "preview_url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview",
+      "post_url": "https://x.com/thePandaily/status/2116728292912889938",
+      "author": "SenseNova",
+      "models": [
+        "SenseNova-Loop-9B"
+      ],
+      "first_seen": "2026-11-01",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "多模态解码器（输入文本和图像，输出文本）：32 个不同层，其中第 [4,28) 层这个连续块用共享权重执行两遍，共 56 次层执行；块内采用双流 manifold-constrained hyper-connections（mHC），线性注意力和全注意力按四层一组交错；约 9B 参数，推理时约等效 14.6B；Apache-2.0。",
+        "method": "通过权重循环复用获得更深的执行路径，又不复制参数；训练配方混合了长序列（最长 262,144 token）、多模态输入和监督任务轨迹，面向长上下文和 Agent 工作流。",
+        "features": [
+          "文档理解、编程、工具交互",
+          "官方示例：动效设计、PPT 设计、数据分析（由 Raccoon Work 生成）"
+        ],
+        "highlights": [
+          "Looped Transformer 加 mHC 的开源实践，用较少参数换取深度"
+        ],
+        "limitations": [
+          "Preview 版本，仓库只有 README 和示例，推理代码和基准详情需看 HF",
+          "基准数据属自述"
+        ],
+        "comparison": "和 latent-sparse-attention 在效率上的思路不同（一个做参数复用，一个做稀疏注意力）。和 twil-8b 同为约 8–9B 的开放小模型，SenseNova 有多模态并面向 Agent。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "teachable-figures",
+      "name": "Teachable Figures",
+      "summary": "让 Agent 生成可交互 2D/3D 教学图示的 Skill。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "教育",
+        "3d"
+      ],
+      "source_url": "https://github.com/ywEdAi/teachable-figures",
+      "preview_url": "https://ywedai.github.io/teachable-figures",
+      "post_url": "https://x.com/yiyibuilds/status/2116289366784168399",
+      "author": "ywEdAi",
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent 技能，附渲染工具包、经人工评审的示例（examples/、reviews/）和 Playwright 浏览器检查；JS 和 TS 写成。",
+        "method": "把一节课的结论变成学习者可以动手的实验：先预测结果，再改变原因、观察效果，最后解释新的情况。默认是引导模式，最多问 5 个问题（受众、结论和误区、输出形态、保真度、控件）；也可以直接构建，并列出所有假设。",
+        "features": [
+          "2D、3D 教学图示",
+          "可以独立输出 HTML，也可接入宿主应用的课程 schema",
+          "自学者诊断问题",
+          "浏览器自动校验"
+        ],
+        "highlights": [
+          "以因果实验为核心的教学设计，比单纯做动画更有教学价值",
+          "示例经过评审"
+        ],
+        "limitations": [
+          "许可证为 NOASSERTION（另有内容许可）",
+          "需要 Playwright"
+        ],
+        "comparison": "和 lieflat-charts（数据图表）都是可视化技能，但目标是教学。和 deeptutor、janestreet-agent-skills 组成学习工具链。和 other 类的 wedulab、tongjiang-lab（成品教学实验室）相比，它是生成这类内容的工具。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "trendradar",
+      "name": "TrendRadar",
+      "summary": "多平台热点聚合与 AI 简报，支持 MCP 查询。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "mcp",
+        "热点",
+        "内容"
+      ],
+      "source_url": "https://github.com/sansan0/TrendRadar",
+      "preview_url": null,
+      "post_url": "https://x.com/xiaomovps/status/2117629471809487189",
+      "author": "sansan0",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.12，依赖 litellm（多模型）、fastmcp（MCP 服务）、feedparser（RSS）、boto3（云存储）；多平台数据来自 newsnow API；可用 Docker 或 GitHub Actions 部署；GPL-3.0。",
+        "method": "聚合多平台热榜和 RSS，按关键词筛选，再由 AI 筛选、翻译并生成分析简报，推送到微信、飞书、钉钉、Telegram、邮件、ntfy、Bark、Slack 等；MCP 接口支持用自然语言做情感和趋势分析。",
+        "features": [
+          "多平台热点聚合",
+          "AI 简报推送",
+          "MCP 查询",
+          "本地或云端存储"
+        ],
+        "highlights": [
+          "6.4 万星，号称 30 秒部署，中文社区影响大",
+          "推送渠道齐全"
+        ],
+        "limitations": [
+          "依赖第三方 newsnow 接口",
+          "GPL 许可"
+        ],
+        "comparison": "和 zhihu-mcp（单一平台的搜索 MCP）相比，trendradar 做多平台监控。和 wewrite 的热点抓取环节有重叠。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "twil-8b",
+      "name": "TwIL-8B",
+      "summary": "webAI 基于 Granite 继续训练的开放权重推理小模型，可本机跑。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "模型",
+        "本地"
+      ],
+      "source_url": null,
+      "preview_url": "https://huggingface.co/webAI-Official/TwIL-8B",
+      "post_url": "https://x.com/Davidstout/status/2118035011236397350",
+      "author": "webAI",
+      "models": [
+        "TwIL-8B"
+      ],
+      "first_seen": "2026-11-04",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "webAI 发布的开放权重推理模型（HF 显示约 9B 参数）；库内摘要称基于 Granite 继续训练；聊天模板支持思考开关、低推理强度和工具调用。",
+        "method": "训练细节未查到。",
+        "features": [
+          "本地运行",
+          "可开关思考模式",
+          "工具调用"
+        ],
+        "highlights": [
+          "小参数推理模型，适合本机部署"
+        ],
+        "limitations": [
+          "基准和训练细节未查到"
+        ],
+        "comparison": "和 sensenova-loop-9b-preview 同量级：SenseNova 有多模态和循环架构，TwIL 偏纯文本推理。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "vybbench",
+      "name": "VybBench",
+      "summary": "测图像模型能否只改指定字体/颜色而不乱动其余画面。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "评测",
+        "图像"
+      ],
+      "source_url": "https://github.com/cocolabsai/vybbench",
+      "preview_url": "https://cocolabs.ai/research/vybbench",
+      "post_url": "https://x.com/anurahk/status/2118423168612528242",
+      "author": "cocolabsai",
+      "models": [],
+      "first_seen": "2026-11-05",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 评测包：numpy、scikit-image 做像素比对，google-genai 作为编辑结果的评判，自带 GPT 和 Recraft 适配器；数据集在 HF；Apache-2.0。",
+        "method": "测三类设计保真度：生成指定字体（145 种）、指定颜色（100 种）、无损编辑（200 个，只改要求的部分）；每个模型每题生成三次，逐次评分；可以继承 Model 类接入新模型。",
+        "features": [
+          "vybbench run、judge、score",
+          "对比 ChatGPT Image、Meta Muse、Recraft v4.1、Vyb 1.0"
+        ],
+        "highlights": [
+          "关注「差一点也不行」的设计细节",
+          "复现流程简单"
+        ],
+        "limitations": [
+          "由 Vyb 的开发商 Coco Labs 出品，存在利益相关（README 已披露）",
+          "编辑评判依赖 Gemini"
+        ],
+        "comparison": "和 rsi-inference-bench、science-s-last-exam 同为评测，但评的是图像模型。和 opendesigner、astryx 的设计规范话题相关。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "wewrite",
+      "name": "WeWrite",
+      "summary": "公众号从热点到写作排版的全流程 Skill。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "内容"
+      ],
+      "source_url": "https://github.com/imraywang/wewrite",
+      "preview_url": null,
+      "post_url": "https://x.com/xiaomovps/status/2117629471809487189",
+      "author": "imraywang",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent 技能（主入口加 9 个子技能）配合 Python CLI（wewrite），负责写作质量评分、排版转换、微信 API、生图和混合路由写作；可选 Playwright 或 camoufox 抓取；MIT。",
+        "method": "抓热点、给选题评分、写文章任务书和主张来源清单、安全地增强内容、写初稿（锚定真实信息并注入风格）、编辑判断、必要时改稿再审；配图、排版、推送草稿箱都是独立的后续动作，需要明确授权才发布；「学习我的修改」形成编辑飞轮。",
+        "features": [
+          "7 套写作人格",
+          "18 个排版主题，可从任意公众号学习新主题",
+          "改写成小红书、抖音",
+          "阅读数据回填，用来选题"
+        ],
+        "highlights": [
+          "禁止编造作者经历，强调证据边界",
+          "模块化，可只用其中一步"
+        ],
+        "limitations": [
+          "深度绑定微信公众号生态",
+          "推送草稿箱需要公众号 API 权限"
+        ],
+        "comparison": "和 social-media-skills 相比，wewrite 是中文公众号的深度垂直方案。和 trendradar 在热点抓取上有重叠。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "xerj-query-1",
+      "name": "XERJ Query-1",
+      "summary": "自然语言转可执行查询，在本地事实库找答案，支持 CPU 离线。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "rust",
+        "查询",
+        "本地"
+      ],
+      "source_url": "https://github.com/xerj-org/xerj",
+      "preview_url": "https://xerj.org/xerj-query-1",
+      "post_url": "https://x.com/d0znpp/status/2118840938147770450",
+      "author": "xerj-org",
+      "models": [],
+      "first_seen": "2026-11-05",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "XERJ 是单个 Rust 二进制的搜索引擎和 MCP 服务器（BM25、向量、混合检索，兼容 Elasticsearch API，提供 Agent 记忆和 RAG）；Query-1 是其中的模型，在 4 核 CPU 上离线运行，不需要 embedding 和 GPU。",
+        "method": "不走「检索后让 LLM 写答案」的路线，而是把问题编译成一个小程序（查找、比较、计数），在用户写入的事实库上执行；查找和比较会指向具体事实及引文片段，计数返回程序哈希；数据不足时返回 UNKNOWN，事实冲突时返回 CONFLICT。",
+        "features": [
+          "代码、文档、日志、JSONL/CSV、PDF 索引",
+          "不用 grep 的代码搜索",
+          "Corpus Hub 参考语料",
+          "修改一个事实约 2.3ms 即生效"
+        ],
+        "highlights": [
+          "自报：p50 220ms；160 题中只错 1 题（124 对、35 拒答）；每百万问约 42 美元，对比 RAG 1.34 万美元",
+          "可解释、可拒答"
+        ],
+        "limitations": [
+          "评测题来自模型自己的开发集，有偏差（作者已注明）",
+          "只适合结构化事实问答，开放式问题不适用"
+        ],
+        "comparison": "和 zhihu-mcp、trendradar 都给 Agent 提供信息，但 XERJ 处理本地私有数据。和 ferrite、mlx-serve 不同，它不是生成模型服务，而是检索加程序执行。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "ai-character-swap",
+      "name": "ai-character-swap",
+      "summary": "角色替换相关的 Agent Skill。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "视频"
+      ],
+      "source_url": "https://github.com/10291124jcjc-dotcom/ai-character-swap",
+      "preview_url": null,
+      "post_url": "https://x.com/DDJCXX/status/2114533297317622058",
+      "author": "DDJCXX",
+      "models": [],
+      "first_seen": "2026-10-26",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "单个 Claude Skill 加 Python 脚本 seedance_swap.py（只依赖 Python 3 和 ffmpeg），调用 Seedance 2.5（BytePlus ModelArk / 火山方舟 API）。",
+        "method": "选一条已经火了的视频，把里面的人换成原创 AI 角色：先按「夸张长在人身上，而不是穿在身上」的原则设计角色并建档（设定图、正脸、外貌描述），每次换人都调用同一份档案，保证一致；然后检查视频分辨率并自动放大，自动生成 @图片 对齐的提示词，提交 API、轮询、下载，最后生成左右对比视频和发布文案。",
+        "features": [
+          "角色设计和角色档案",
+          "视频检查和放大",
+          "单人或多人换脸提示词",
+          "自动生成对比视频",
+          "TikTok、IG 文案建议"
+        ],
+        "highlights": [
+          "面向短视频流量的完整工作流，附有给新手的网页版做法",
+          "明确要求角色原创，并开启 AI 标签"
+        ],
+        "limitations": [
+          "API 请求格式是参照 ComfyUI 接入代码整理的，README 建议先 dry-run",
+          "未声明许可证；存在搬运他人视频的版权风险"
+        ],
+        "comparison": "和 claude-make-an-anime、huashu-motion 同属 Agent 视频技能：本项目改造现有视频，后两者从零生成。和 gif-factory 都有角色一致性方案。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "argument-cat",
+      "name": "argument-cat",
+      "summary": "Android 本地大模型+语音的吵架猫演示。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "android",
+        "demo",
+        "本地"
+      ],
+      "source_url": "https://github.com/NamelsKing/argument-cat",
+      "preview_url": null,
+      "post_url": "https://x.com/NamelsKing/status/2117636660972474433",
+      "author": "NamelsKing",
+      "models": [],
+      "first_seen": "2026-11-03",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Kotlin 加 Jetpack Compose 的安卓应用；QVAC SDK 0.23.0 在本机推理，对话用 Qwen3.5 2B Q4_K_M，语音识别用 Whisper Tiny Q8，语音合成用 Parler Mini v1 Q8。",
+        "method": "对话模型除了生成猫的回复，还输出结构化的「是否让步」信号来驱动胜负；聊天模型和语音模型按需切换加载，不同时常驻。",
+        "features": [
+          "选一个论点和回合数（3、5、10）",
+          "语音输入后可编辑转写",
+          "猫会说话，3D 头部有动画"
+        ],
+        "highlights": [
+          "端侧多模型串联（LLM、ASR、TTS）的完整小样例",
+          "没有后端，不需要账号"
+        ],
+        "limitations": [
+          "0 星，个人演示",
+          "需要数 GB 存储；英文 TTS"
+        ],
+        "comparison": "和 cicada-知了、hy-simulmt 同涉及语音：本项目是端侧小模型的游戏化演示，后两者是生产级的翻译和字幕。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "claude-make-an-anime",
+      "name": "claude-make-an-anime",
+      "summary": "用 Claude Code 编排从故事到动画/配音/字幕的制作流程。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "动画",
+        "视频"
+      ],
+      "source_url": "https://github.com/makevoid/claude-make-an-anime",
+      "preview_url": null,
+      "post_url": "https://x.com/makevoid/status/2119459934026825969",
+      "author": "makevoid",
+      "models": [
+        "Claude Code"
+      ],
+      "first_seen": "2026-11-07",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Claude Code 插件，技能包里约 210 个文件；工具链是 Ruby 3.2（主体）、FFmpeg、ImageMagick、Python（绿幕抠像、配乐编辑）、Node 加 Chrome（用 p5 渲染标题和字幕）、可选 Swift Core Image VFX；所有付费生成走 Fal。",
+        "method": "把故事拆成角色设定图、带镜头调度的分镜、配音、配乐、标题、字幕、音效和后期 VFX，由 Claude Code 编排整条流水线；setup 和 doctor 检查环境；长度从 12 秒到整集都能做。",
+        "features": [
+          "四个示例短片（日语配音、英文字幕）",
+          "做过 12 分钟以上的纪录片",
+          "每个项目自动安装依赖"
+        ],
+        "highlights": [
+          "端到端动画制作，并能扩展到长片",
+          "演示案例丰富"
+        ],
+        "limitations": [
+          "需要 Fal 付费额度，依赖多",
+          "只有 16 星"
+        ],
+        "comparison": "和同作者的 motion-graphics-music-video-skill（纯代码出画面）相比，本项目依赖生成模型。和 nomi（AI 视频工作台 GUI）相比，本项目是纯 Agent 流水线。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "gif-factory",
+      "name": "gif-factory",
+      "summary": "按风格批量制作绘本/像素/粘土风 GIF 的 Agent Skill。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "skill",
+        "gif",
+        "视频"
+      ],
+      "source_url": "https://github.com/WoYun520/gif-factory",
+      "preview_url": null,
+      "post_url": "https://x.com/Leviwoyun/status/2119275395736584576",
+      "author": "Leviwoyun",
+      "models": [
+        "GPT Image"
+      ],
+      "first_seen": "2026-11-08",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent 技能（Codex 等能生成图片、运行脚本的 Agent）加 Python 脚本；风格文档在 styles/；362 个示例文件。",
+        "method": "选一种风格、给一张参考图，由图像模型（帖子标注 GPT Image）出帧，脚本合成为 GIF；先做一张小样，确认后沿用；能延伸成动态绘本和品牌短片。",
+        "features": [
+          "6 大类、10 个风格入口、75 个动态案例",
+          "像素小人、宠物拟人、粘土吉祥物、光栅卡、漫画动态海报",
+          "动态艺术签名（含中文草书）"
+        ],
+        "highlights": [
+          "风格化程度高、案例丰富，适合社媒素材",
+          "中文创作者友好"
+        ],
+        "limitations": [
+          "示例中有明星和动漫 IP 形象，存在肖像和版权风险",
+          "质量依赖图像模型"
+        ],
+        "comparison": "和 ai-character-swap 同为社媒视觉技能：一个做 GIF，一个做视频换人。和 lieflat-charts 都是用 Agent 技能统一视觉语法。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "huashu-motion",
+      "name": "huashu-motion",
+      "summary": "开源动效相关项目（华数 motion）。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "视频",
+        "动效"
+      ],
+      "source_url": "https://github.com/alchaincyf/huashu-motion",
+      "preview_url": null,
+      "post_url": null,
+      "author": null,
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent 技能（npx skills add），包含运行时、CLI、浏览器编辑器 studio、模板和字体；动画基于 GSAP（topics 标注）；配乐用 ABC 记谱加乐器采样，在本机合成。",
+        "method": "先读产品，给出三个方向供选择，再写出整支片子；作曲家模式按节奏单写谱，谱面标记对齐每个场景，物体落地的那一帧配音效；在编辑器里按 C 点画面并写评论，评论会带上时间点、场景、元素和源码位置，Agent 先放大截图看清，再只改那一处；标题、数字、颜色变成右侧输入框，可以自己直接改。",
+        "features": [
+          "一句话生成产品发布片",
+          "自动作曲并配音效",
+          "指着画面改，每版可撤回",
+          "便宜模型也能用（自报 DeepSeek V4.1 Flash 一支片 1.95 元）"
+        ],
+        "highlights": [
+          "「指着改」的交互把视频精修做得很顺手",
+          "配乐全部本地生成，不调用付费接口"
+        ],
+        "limitations": [
+          "样片中有对 Claude Duet、Grok Bot 的非官方粉丝自制内容",
+          "效果很依赖人当导演（作者自己也这么说）"
+        ],
+        "comparison": "和 motion-graphics-music-video-skill（从音乐生成画面）、claude-make-an-anime（叙事动画）相比，huashu-motion 专注产品宣传片，交互式精修最强。和 stageshow（agent-eng）在产品展示上有交集。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "jianying-ai-mcp",
+      "name": "jianying-ai-mcp",
+      "summary": "剪映相关的 AI MCP，用于视频剪辑工作流。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "mcp",
+        "视频"
+      ],
+      "source_url": "https://github.com/Xanthus-Sanslab/jianying-ai-mcp",
+      "preview_url": null,
+      "post_url": "https://x.com/xiaomovps/status/2117629471809487189",
+      "author": "Xanthus-Sanslab",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.12 MCP 服务，基于 pyJianYingDraft 0.3.0；附 Skill；可选用 C++ 小工具 jy-draftc 调用本机剪映的 videoeditor.dll 读取加密草稿；用 ffmpeg 抽帧和字幕，没有字幕时可调用 Whisper API。",
+        "method": "规划和执行分开：视频观察器提取元数据、字幕和代表帧；Skill 负责需求引导、理解画面，并产出紧凑的编辑清单；MCP 负责确定性地生成草稿、复用参考草稿、批量换素材和安全校验；默认 dry_run，正式发布不会覆盖同名草稿；Agent 必须真正读过代表帧，才能保存「画面理解」。",
+        "features": [
+          "从零生成草稿、按参考复用、用模板批量生成",
+          "长视频按时间段分页读取",
+          "阶段进度日志"
+        ],
+        "highlights": [
+          "安全边界设计细致（暂存、不覆盖、解密后即删）",
+          "对剪映生态很实用"
+        ],
+        "limitations": [
+          "只在 Windows 剪映专业版 10.0.5 上验证过",
+          "未声明许可证；读取加密草稿有合规灰色地带"
+        ],
+        "comparison": "和 nomi（AI 视频工作台）都是 Agent 驱动剪辑：nomi 自带时间线，本项目复用剪映。和 simcraft-perspective-illusion 的 rough-cut 技能相比，本项目更偏工程化。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "kimi-k3-in-c",
+      "name": "kimi-k3-in-c",
+      "summary": "纯 C 推理引擎，声称可在约 8GB 内存跑完整 Kimi K3。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "推理",
+        "c",
+        "本地"
+      ],
+      "source_url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
+      "preview_url": null,
+      "post_url": "https://x.com/WojakTheDev/status/2117205074963312821",
+      "author": "FareedKhan-dev",
+      "models": [
+        "Kimi K3"
+      ],
+      "first_seen": "2026-11-03",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "可移植 C99 推理引擎（整个引擎 176KB），不依赖 BLAS、框架和 GPU；支持 AVX2 和 NEON SIMD、MXFP4 量化、MoE 和线性注意力；用 Python 工具做与参考实现的一致性校验。",
+        "method": "运行 2.78 万亿参数的 Kimi K3（1.56TB 检查点）：内存不够时每一步都从磁盘流式读取权重，内存越大，常驻的部分越多，速度越快，输出逐字节一致；v1.0.0 把每个 token 的计算量减少约 8 倍（自述）。",
+        "features": [
+          "laptop 和 server 等预设",
+          "增量推理、聊天 REPL",
+          "macOS、Windows、NEON 移植"
+        ],
+        "highlights": [
+          "自报：8.24GB 峰值内存跑完整模型，8GB 笔记本约 26.5 秒/token，128GB 以上约 5.6 秒/token",
+          "1.15 万星"
+        ],
+        "limitations": [
+          "速度只适合演示和研究，无法交互使用",
+          "需要 1.56TB 磁盘和高速 NVMe"
+        ],
+        "comparison": "和 ferrite 是两个极端：ferrite 在专用 GPU 上追求吞吐，本项目在任意 CPU 上追求可运行。和 mlx-serve 的实用服务定位不同。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "mlx-serve",
+      "name": "mlx-serve",
+      "summary": "本机 MLX 服务，用于完全本地生成视频。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "本地",
+        "视频",
+        "mlx"
+      ],
+      "source_url": "https://github.com/ddalcu/mlx-serve",
+      "preview_url": null,
+      "post_url": "https://x.com/ddalcu/status/2116754307232002218",
+      "author": "ddalcu",
+      "models": [],
+      "first_seen": "2026-11-01",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Zig 后端（不依赖 Python）加 Swift macOS 应用，基于 MLX；兼容 OpenAI、Anthropic、Ollama API，监听 localhost:11234；也有 NVIDIA 的 Linux 构建和 iPhone 版。",
+        "method": "一个本地服务器统一提供对话、编程 Agent、图像、视频、音乐、语音、3D 能力；mlx-serve launch claude 可以让 Claude Code 直接跑在本地模型上，并配好真实的上下文窗口。",
+        "features": [
+          "Ollama 风格命令（run、pull、serve）",
+          "支持 FLUX.2、Qwen-Image、LTX-Video、ACE-Step、Qwen3-TTS、Hunyuan3D 等",
+          "30 种语言转写和会议纪要",
+          "自带 Web 控制台"
+        ],
+        "highlights": [
+          "Mac 上的一站式本地 AI 栈，离线、无需账号",
+          "Claude Code、Codex 可以无缝切到本地模型"
+        ],
+        "limitations": [
+          "应用需要 macOS 26.2+ 和 Apple Silicon",
+          "许可证在 GitHub 上标为 NOASSERTION（README 称 MIT）"
+        ],
+        "comparison": "和 ferrite、kimi-k3-in-c 相比，mlx-serve 最偏实用，覆盖模态也最广。和 nomi 等视频工具可以配合，做本地生成。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "motion-graphics-music-video-skill",
+      "name": "motion-graphics-music-video-skill",
+      "summary": "用 Claude + Swift/Metal 从音乐轨生成动态视觉的 Skill（无图/视频模型版）。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "skill",
+        "视频",
+        "swift"
+      ],
+      "source_url": "https://github.com/makevoid/motion-graphics-music-video-skill-noimage",
+      "preview_url": null,
+      "post_url": "https://x.com/makevoid/status/2118814727346262292",
+      "author": "makevoid",
+      "models": [
+        "Claude Opus"
+      ],
+      "first_seen": "2026-11-07",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Claude Code 技能和插件（-noimage 分支）：用 Swift 的 Core Graphics、Core Text、Metal 着色器和粒子、AVFoundation 导出、Swift 合成器；用 Ruby 协调并写场景描述；用本地 Python 做音频分析、分轨、抠图和混音。",
+        "method": "输入一首歌和一段创意提示，分析节拍后用代码绘制全部画面（不用图像或视频模型），渲染成 MV；Fal 音频能力保留但默认不用。",
+        "features": [
+          "9 个示例 MV",
+          "默认不需要 Fal key",
+          "分轨和转写（可选）"
+        ],
+        "highlights": [
+          "零生成模型成本，渲染快",
+          "作者称迭代少、效果稳定"
+        ],
+        "limitations": [
+          "只支持 macOS",
+          "作者自己说测试次数不多"
+        ],
+        "comparison": "和 huashu-motion 都是代码生成动效加配乐：本项目由音乐驱动画面，huashu 由画面驱动配乐。和 claude-make-an-anime（同作者、依赖生成模型）形成对照。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "nesformer",
+      "name": "nesformer",
+      "summary": "把 NES CPU 模拟器写进 Qwen3.5-4B 权重，让模型自己跑 NES 游戏。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "研究",
+        "demo",
+        "模型"
+      ],
+      "source_url": "https://github.com/dbreunig/nesformer",
+      "preview_url": "https://simonwillison.net/2026/Oct/30/nesformer",
+      "post_url": "https://x.com/tgarciai/status/2117005639960408313",
+      "author": "dbreunig",
+      "models": [
+        "Qwen3.5-4B"
+      ],
+      "first_seen": "2026-10-31",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "把 NES 的 6502 CPU、2KB 工作 RAM 和卡带程序 ROM 编译进标准 Qwen3_5ForCausalLM（Qwen3.5-4B）检查点；复用 Qwenputer 的 q35 编译器；Python、numpy、numba，可以在 transformers 中运行。",
+        "method": "权重不是训练出来的，每一个都由编译器算出；核心技巧是把模型的 Gated DeltaNet 状态当作机器内存；运行时模型逐 token 预测 CPU 执行日志，宿主程序负责画面、手柄和 vblank 中断。",
+        "features": [
+          "运行《超级马里奥兄弟》1-1 等测试游戏",
+          "与传统 6502 模拟器逐帧对比校验",
+          "numpy、numba、HF 三种引擎"
+        ],
+        "highlights": [
+          "证明标准 LLM 架构可以「编译」出确定性计算",
+          "附带的测试游戏每一帧都与参考模拟器完全一致（自述）"
+        ],
+        "limitations": [
+          "纯研究展示，速度远低于普通模拟器",
+          "许可证为 NOASSERTION（pyproject 写的是 MIT）"
+        ],
+        "comparison": "和权重空间编程-mit 同属「在权重里编程」的研究方向。和 axiom-stacks 一样是前沿研究展示，不是实用工具。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "simcraft-perspective-illusion",
+      "name": "simcraft perspective-illusion",
+      "summary": "给 Agent 的视频技能：制造透视错觉镜头效果。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "skill",
+        "视频"
+      ],
+      "source_url": "https://github.com/dotslashsimran/simcraft",
+      "preview_url": null,
+      "post_url": "https://x.com/simranrambles/status/2119097166191096197",
+      "author": "simranrambles",
+      "models": [],
+      "first_seen": "2026-11-08",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "simcraft 技能合集（24 个 Claude Code 技能）中的 perspective-illusion 视频技能；依赖 Python 3.9+、Node 18+（Playwright 渲染）、ffmpeg。",
+        "method": "把日式透视错觉风格的插画做成 3D 循环：平面场景展开出纵深；每个技能都写明「哪里会出问题、怎么检查结果、怎么区分好和够好」。",
+        "features": [
+          "perspective-illusion 透视错觉循环",
+          "code-loop：无缝循环检测",
+          "reverse-engineer-video：拆解爆款视频的分镜",
+          "rough-cut、clean-audio、repo-timelapse 等"
+        ],
+        "highlights": [
+          "每个技能都带验证标准和真实脚本",
+          "覆盖视频、工程、学习、设计、规划"
+        ],
+        "limitations": [
+          "个人技能集合，质量不完全一致",
+          "只有图像生成需要 API key"
+        ],
+        "comparison": "和 huashu-motion、motion-graphics-music-video-skill 同属代码驱动的视频技能，本项目更偏特定风格效果，以及拆解和粗剪这类工具活。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "social-media-skills",
+      "name": "social-media-skills",
+      "summary": "社交媒体内容运营相关 Skill 合集。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "内容"
+      ],
+      "source_url": "https://github.com/blacktwist/social-media-skills",
+      "preview_url": null,
+      "post_url": "https://x.com/xiaomovps/status/2117629471809487189",
+      "author": "blacktwist",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "技能合集（skills/ 下 27 个文件，Shell 校验脚本 validate-skills.sh），提供 Claude 插件清单；MIT。",
+        "method": "先用 social-media-context-sms 记录平台、受众、内容支柱和语气，其余技能共用这份上下文；分为策略、创作、分析三层。",
+        "features": [
+          "内容策略、内容日历、平台策略",
+          "单帖、长串、轮播、配文、钩子写作",
+          "内容改编",
+          "数据分析类技能"
+        ],
+        "highlights": [
+          "共享上下文的模块化设计，风格一致",
+          "覆盖文字类和视觉类平台"
+        ],
+        "limitations": [
+          "纯提示词技能，没有数据接口",
+          "以英文平台为主"
+        ],
+        "comparison": "和 wewrite（公众号全流程，带 CLI 和发布）相比，本项目更轻、更通用。和 trendradar（热点监控）可以串成选题加写作。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "zhihu-mcp",
+      "name": "zhihu-mcp",
+      "summary": "知乎搜索与直答能力的社区 MCP。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "mcp",
+        "知乎"
+      ],
+      "source_url": "https://github.com/we1005/zhihu-mcp",
+      "preview_url": null,
+      "post_url": "https://x.com/xiaomovps/status/2117629471809487189",
+      "author": "we1005",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python MCP 服务（FastMCP v1，MCP SDK 1.30），核心网络逻辑只用标准库；需要用户自己的知乎 Cookie；附带 zse 签名、验证码等逆向脚本（zse.py、captcha_solver.py）。",
+        "method": "对接知乎主站搜索和知乎直答（FAST、DEEP_SEARCH、AUTO），提供 11 个工具：搜索、读原文、按赞数和时间筛选后并发抓取、多话题监控去重、AI 直答及来源卡片回查；本地页面管理 Cookie。",
+        "features": [
+          "11 个 MCP 工具",
+          "多话题监控",
+          "Codex、Claude Desktop 配置示例",
+          "调用前检查登录状态"
+        ],
+        "highlights": [
+          "中文知识源接入 Agent，实测记录完整"
+        ],
+        "limitations": [
+          "基于逆向接口，可能违反平台条款、随时失效",
+          "未声明许可证，只有 4 星"
+        ],
+        "comparison": "和 trendradar（多平台热榜）互补：本项目深挖单一平台内容。和 xerj-query-1（本地事实库）相比，本项目取的是外部网络内容。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "权重空间编程-mit",
+      "name": "权重空间编程 (MIT)",
+      "summary": "让大模型直接改小模型权重的研究展示（帖中称极小参数改动带来能力提升）。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "研究",
+        "模型"
+      ],
+      "source_url": null,
+      "preview_url": "https://huggingface.co/RikiyaT/Qwen3.5-0.8B-weight-space-programming",
+      "post_url": "https://x.com/rikiyatakehi/status/2117313742891327994",
+      "author": "MIT",
+      "models": [
+        "GPT Astra",
+        "Qwen3.5"
+      ],
+      "first_seen": "2026-11-03",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "源码未见 GitHub 仓库；编辑后模型和 diff 发布在 Hugging Face（RikiyaT/Qwen3.5-0.8B-weight-space-programming，日志在 RikiyaT/lm_understand-logs）；研究博客：Sparks of Weight-Space Programming（2026-11-02）",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "MIT CSAIL 研究（Rikiya Takehi、Jayden Teoh、Alex Zhang、Omar Khattab，2026-11-02 发布的博客《Sparks of Weight-Space Programming》）：让 GPT-6 Astra 不用梯度、不经训练，直接读写神经网络权重；编辑后的模型和逐位一致的 diff 已发布在 HF。",
+        "method": "把权重以文本形式交给 Astra，或给它一个 Python 环境去查看较大的网络；在 Qwen3.5-0.8B 实验中，用 50 次前向的预算，Astra 把推理死循环定位到第 15、19 层 MLP 写入的一个方向，并从这两层 down_proj 的 64 个输出列中减去它（131,072 个权重，占 0.016%）。",
+        "features": [
+          "8 个实验：从权重识别小网络的训练内容、修复或编写游戏策略、编辑 LLM",
+          "编辑后的检查点和 sha256 校验",
+          "可复现的评测脚本"
+        ],
+        "highlights": [
+          "自报 MATH-500 从 7.9% 到 48.1%，GSM8K 从 13.8% 到 67.1%，IFEval 从 21.0% 到 62.3%；HF 上的独立复跑 MATH-500 为 51.0%",
+          "在策略网络实验中，改 3.5% 的权重即达到 100% 成功率（自述）"
+        ],
+        "limitations": [
+          "收益主要来自修复复读循环，并非注入新知识（VentureBeat 和作者都这样解释）",
+          "最强的一次尝试用了 158 轮对话、20 小时，尚未证明比常规训练更省"
+        ],
+        "comparison": "和 nesformer 同属「在权重空间里编程」：nesformer 用编译器确定性地写权重，本研究让 LLM 推理后修改权重。和 latent-sparse-attention 等算法论文相比，更偏可解释性和模型修复。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "3d-periodic-table",
+      "name": "3D Periodic Table",
+      "summary": "交互式 3D 元素周期表。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "教育",
+        "3d",
+        "化学"
+      ],
+      "source_url": null,
+      "preview_url": "https://sael.net/periodic-table",
+      "post_url": "https://x.com/RyanSael/status/2114706108317372821",
+      "author": "RyanSael",
+      "models": [],
+      "first_seen": "2026-10-26",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "sael.net 上的 WebGL 网页（具体框架未查到），源码未公开。",
+        "method": "118 种元素按周期表位置排列成柱体，柱高对应所选属性（电离能、原子半径、电负性、熔点、密度等）；点击某个元素可以看原子内部（原子核、轨道和电子排布）。",
+        "features": [
+          "属性切换后柱高随之变化",
+          "原子结构视图",
+          "可见光谱",
+          "键盘操作"
+        ],
+        "highlights": [
+          "把元素周期律做成可直观感受的立体图，教学直观"
+        ],
+        "limitations": [
+          "源码和数据来源未查到"
+        ],
+        "comparison": "和 ring-city 出自同一作者（sael.net），风格一致。和 wedulab、tongjiang-lab 同属理科交互教学，本项目只做元素周期表这一个主题。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "ai-visibility-wrapped",
+      "name": "AI Visibility Wrapped",
+      "summary": "输入网站，查看各大 AI 助手是否在买家问题中推荐它。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "营销",
+        "分析"
+      ],
+      "source_url": null,
+      "preview_url": "https://supereo.app/ai-visibility-checker?v=wrapped&ad=wrappedlong",
+      "post_url": "https://x.com/speedrunjaen/status/2118695886490374458",
+      "author": "speedrunjaen",
+      "models": [],
+      "first_seen": "2026-11-05",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "supereo 的商业 SaaS 页面，内部实现未查到。",
+        "method": "输入网站和工作邮箱，系统生成 20 个买家问题，分别问 ChatGPT、Claude、Perplexity、Gemini、Google AI Mode 和 AI Overviews 共 6 个引擎，统计你的网站被推荐的频率，并展示每一条回答。",
+        "features": [
+          "免费审计，约 2 分钟（自述）",
+          "问题和竞品可以修改"
+        ],
+        "highlights": [
+          "面向 GEO（生成式引擎优化）的轻量体检"
+        ],
+        "limitations": [
+          "需要提供工作邮箱，本质是获客工具",
+          "20 个问题样本小，结果有随机性"
+        ],
+        "comparison": "库内暂无同类 GEO 工具。和 trendradar 都是监控类，但对象不同（一个看 AI 怎么推荐你，一个看社交热榜）。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "atlas-of-physics",
+      "name": "Atlas of Physics",
+      "summary": "把高中物理笔记做成可交互可视化网站。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "教育",
+        "物理",
+        "可视化"
+      ],
+      "source_url": null,
+      "preview_url": "https://atlas-of-physics.vercel.app",
+      "post_url": "https://x.com/nathan_liow/status/2115872171226718427",
+      "author": "nathan_liow",
+      "models": [],
+      "first_seen": "2026-10-30",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "交互式 3D 教科书网站（部署在 Vercel），技术栈和源码未查到。",
+        "method": "概念可视化、交互、练习三步，配 AP 风格练习题并即时评分。",
+        "features": [
+          "覆盖 AP 物理、微积分、生物、化学、统计、美国史、宏观经济、政府",
+          "教师端",
+          "Premium 付费"
+        ],
+        "highlights": [
+          "从个人物理笔记发展到多学科 AP 课程（库内摘要称起源于高中物理笔记）"
+        ],
+        "limitations": [
+          "闭源并有付费墙",
+          "面向美国 AP 体系，和中国课标不对口"
+        ],
+        "comparison": "和 wedulab（多学科虚拟实验室）、tongjiang-lab（中学理化 3D）同类。和 cn-math-taxonomy（中国课标知识图谱加诊断）相比，本项目偏讲解，cn-math-taxonomy 偏诊断。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "duodesk",
+      "name": "DuoDesk",
+      "summary": "跨 Windows/Mac 共享键鼠剪贴板与拖文件的开源桌面工具。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "桌面",
+        "多机"
+      ],
+      "source_url": "https://github.com/0xCodez/DuoDesk",
+      "preview_url": "https://getduodesk.vercel.app",
+      "post_url": "https://x.com/0xMovez/status/2116538107017212194",
+      "author": "0xMovez",
+      "models": [
+        "Claude Opus 5.5"
+      ],
+      "first_seen": "2026-11-01",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "多平台原生实现：windows（C#）、mac、linux、android（Kotlin），共享 JS 层加各平台 helper；设备之间加密直连，没有云端；支持 Wi-Fi、USB、蓝牙、Wi-Fi Direct 和热点，提供 Nix flake；GPL-3.0。",
+        "method": "每台设备都装一次，用配对码配对一次；所有功能默认关闭，开启后才加载；自动选择并迁移连接通道；Mesh 模式可以让多台设备同时协同。",
+        "features": [
+          "一套键鼠控制多台电脑、副屏、以窗口打开另一台电脑的应用",
+          "文件、剪贴板、摄像头、声音、终端共享",
+          "在电脑上接手机电话、短信，用手机摄像头",
+          "平板当副屏、手机当手柄"
+        ],
+        "highlights": [
+          "跨 Mac、Windows、Linux、Android 全组合，不需要账号和遥测",
+          "是 TwinDesk 的重新设计版本（Aurora）"
+        ],
+        "limitations": [
+          "仓库 2026-10-30 才创建，成熟度待验证",
+          "库内记录作者用 Claude Opus 开发，大型多平台代码的质量还需检验"
+        ],
+        "comparison": "库内没有直接对手；功能上相当于开源版的 Synergy、Barrier 加上 Phone Link 的合体。和 phone-computer-use 子类（Agent 控制设备）不同，它服务人的跨设备协同。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "flexitac-gen",
+      "name": "FlexiTac-Gen",
+      "summary": "根据夹爪 STL 定制触觉传感器并生成可制造电路文件。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "硬件",
+        "机器人"
+      ],
+      "source_url": "https://github.com/FlexiTac/FlexiTac_Hardware_Repo",
+      "preview_url": "https://flexitac.github.io/flexitac-gen",
+      "post_url": "https://x.com/binghao_huang/status/2118755383799865586",
+      "author": "FlexiTac",
+      "models": [],
+      "first_seen": "2026-11-05",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "哥伦比亚大学 FlexiTac 开源触觉方案：Arduino 固件逐行逐列扫描 16×32 阵列，以 2Mbaud 串口输出帧（帧头 0xAA55 加 512 字节）；Python 包 flexitac 负责刷固件、读数据和显示热力图；FlexiTac-Gen 是浏览器端工具，为你的夹爪设计传感器的两块 FPC。",
+        "method": "上传夹爪的 STL 文件后，在浏览器里生成柔性电路的制造文件；Python 端先用前几帧做基线，减去基线后再阈值化、归一化，显示成热力图。",
+        "features": [
+          "定制 FPC 生成",
+          "pip 安装后用 CLI 看热力图和原始流",
+          "硬件组装教程"
+        ],
+        "highlights": [
+          "把触觉传感器从「实验室定制」降到「可下单制造」",
+          "论文级项目（Binghao Huang、Yunzhu Li）"
+        ],
+        "limitations": [
+          "仓库未声明许可证",
+          "需要自己焊接组装硬件"
+        ],
+        "comparison": "库内唯一的机器人硬件项目。和 threepp（C++ 3D 库，可用于机器人可视化）只有间接关联。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "gr8r-studio",
+      "name": "Gr8r Studio",
+      "summary": "开源项目与任务管理工具，作者称大量使用 Claude Opus 开发。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "项目管理"
+      ],
+      "source_url": "https://github.com/gr8rstudio/gr8r-studio",
+      "preview_url": "https://gr8r-taskmanagement.vercel.app",
+      "post_url": "https://x.com/zahragr8r/status/2119429323757441320",
+      "author": "gr8rstudio",
+      "models": [
+        "Claude Opus"
+      ],
+      "first_seen": "2026-11-07",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Vite 打包，纯 ES Modules 加 CSS，没有 UI 框架和运行时依赖（只用 lucide 图标子集）；分层：core、data，ui、shell、views，actions；有 ESLint、Prettier 和 CI。",
+        "method": "状态集中在 store 里，actions 修改状态后重新渲染（共享 action 表）；种子数据驱动演示工作区。",
+        "features": [
+          "首页、收件箱、我的任务",
+          "项目的看板、列表、表格、日历、时间线、文件视图",
+          "成员和团队、活动、命令面板、拖拽、快捷键"
+        ],
+        "highlights": [
+          "零框架但结构清晰，适合学习原生前端架构",
+          "1881 星"
+        ],
+        "limitations": [
+          "纯前端，没有后端和持久化（只是演示数据）",
+          "未声明许可证"
+        ],
+        "comparison": "和 terminus-notes、quairone 同为效率类应用，但它只是 UI 壳。和 agent-fleet 子类里带看板的 Agent 管理工具相比，它不涉及 Agent。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "hacker-papers",
+      "name": "Hacker Papers",
+      "summary": "受 HackerTube 启发，把 arXiv 论文做成可浏览合集。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "论文",
+        "合集"
+      ],
+      "source_url": null,
+      "preview_url": "https://academy.dair.ai/papers/collections/hacker-papers",
+      "post_url": "https://x.com/omarsar0/status/2117053859516285354",
+      "author": "omarsar0",
+      "models": [],
+      "first_seen": "2026-11-02",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "DAIR.AI Academy 网站上的合集，抓取与排序管线未查到。",
+        "method": "统计在 Hacker News 上被不同的人反复提及的 arXiv 论文，按提及持续时间排序。",
+        "features": [
+          "按领域、年份过滤",
+          "可按最多人数、最长热度、遗珠、最近提及排序",
+          "附相关 HN 讨论串"
+        ],
+        "highlights": [
+          "用社区长期讨论来筛选论文，能避开一时的热点"
+        ],
+        "limitations": [
+          "受 HN 社区偏好影响（偏 CS 和 AI）"
+        ],
+        "comparison": "和 hackerbooks 思路相同（HN 书单），对象换成了论文。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "hackerbooks",
+      "name": "HackerBooks",
+      "summary": "从 Hacker News 帖子抽出的书单库。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "书单",
+        "合集"
+      ],
+      "source_url": null,
+      "preview_url": "https://hackerbooks.org",
+      "post_url": "https://x.com/vikingmute/status/2117069310640497073",
+      "author": "vikingmute",
+      "models": [],
+      "first_seen": "2026-11-02",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "静态站，用 Open Library 作为封面和元数据的兜底来源；书名提取管线未查到。",
+        "method": "从 2007 到 2026 年的 HN 评论中抽取书名，按推荐人数排序，并按主题分类。",
+        "features": [
+          "上千本书，分为编程、科学、心理、商业、历史等几十个主题",
+          "Top、Rising、Trends 榜单"
+        ],
+        "highlights": [
+          "主题覆盖广，「被多少不同的人推荐」作为指标比较可靠"
+        ],
+        "limitations": [
+          "抽取准确率未披露"
+        ],
+        "comparison": "和 hacker-papers 是姊妹思路：一个做书，一个做论文。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "leonlin-demos",
+      "name": "LeonLin Demos",
+      "summary": "作者用 Opus/Astra 等做的 demo 合集页。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "demo",
+        "合集"
+      ],
+      "source_url": null,
+      "preview_url": "https://leonlin.de/demos",
+      "post_url": "https://x.com/LexnLin/status/2114129704525713541",
+      "author": "LexnLin",
+      "models": [
+        "Claude Opus 5.5",
+        "GPT Astra"
+      ],
+      "first_seen": "2026-10-25",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "作者的作品集页面，作品主要是 three.js、着色器和纯代码动画，由 Claude Opus 5.5、GPT-6 Astra 生成。",
+        "method": "按点赞数排序展示 AI 写出的 demo，部分附 Live 链接或源码仓库。",
+        "features": [
+          "如：3808 棵树加 250 万草丛的森林、无引擎复刻塞尔达场景、纯代码广告片和配乐、浏览器海洋"
+        ],
+        "highlights": [
+          "展示了前沿模型在零素材条件下写图形和动效代码的上限"
+        ],
+        "limitations": [
+          "是作品集，不是可复用的工具；只有部分作品开源"
+        ],
+        "comparison": "和 game 类的 portals、solstice 等 AI 生成作品同属一类展示。和 huashu-motion 等技能相比，本项目是成品而非方法。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "lex-fridman-中文学习站",
+      "name": "Lex Fridman 中文学习站",
+      "summary": "把 Lex Fridman 播客大量期次转成可检索文字稿的学习站。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "播客",
+        "学习",
+        "文稿"
+      ],
+      "source_url": null,
+      "preview_url": "https://lex.qiaomu.ai",
+      "post_url": "https://x.com/vista8/status/2114642314249568529",
+      "author": "vista8",
+      "models": [],
+      "first_seen": "2026-10-26",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "静态站，带 RSS，支持简体、繁体、英文；文稿来自官方 Transcript、存档或机器转写，中文精读由 AI 生成；源码未查到。",
+        "method": "每一期播客做一个独立页面，聚合官方音频、YouTube 视频、英文文稿和中文精读文章。",
+        "features": [
+          "约 507 期全收录（页面所示）",
+          "可检索，记录已看",
+          "中文精读"
+        ],
+        "highlights": [
+          "长访谈的中文化学习入口，信息组织完整"
+        ],
+        "limitations": [
+          "精读由 AI 生成，可能有误",
+          "版权方面属于二次创作，存在灰色地带"
+        ],
+        "comparison": "和 hacker-papers、hackerbooks 同属知识聚合站。和 wewrite（写作）相比，本项目是消费端的产品。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "linkswift",
+      "name": "LinkSwift",
+      "summary": "本地获取多家网盘直链、配合多线程下载的浏览器工具。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "网盘",
+        "下载"
+      ],
+      "source_url": "https://github.com/hmjz100/LinkSwift",
+      "preview_url": null,
+      "post_url": "https://x.com/chrysanthemumXX/status/2114656531824431181",
+      "author": "hmjz100",
+      "models": [],
+      "first_seen": "2026-10-26",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "油猴（Tampermonkey、ScriptCat）用户脚本，单文件 JS，基于「网盘直链下载助手」修改；AGPL-3.0。",
+        "method": "在网盘网页上调用服务商公开的接口取得文件直链，再推送给 IDM、Aria2、Motrix、ABDM 等下载器，或者复制成 cURL 命令。",
+        "features": [
+          "支持百度、阿里、移动、天翼、迅雷、光鸭、夸克、UC、123 九家网盘",
+          "多下载器推送",
+          "界面美化"
+        ],
+        "highlights": [
+          "3.9 万星，维护活跃"
+        ],
+        "limitations": [
+          "依赖各家接口，经常失效",
+          "README 强调「不破解限速」，但实际使用可能违反服务商条款；配套的「会员青春版」脚本风险更高"
+        ],
+        "comparison": "库内没有同类工具。属于用户脚本工具，和 Agent、LLM 无关。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "omarchytv",
+      "name": "OmarchyTV",
+      "summary": "给电视/PC 的主题与 AI TUI/MCP 插件项目。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "电视",
+        "mcp"
+      ],
+      "source_url": "https://github.com/piermark/omarchytv",
+      "preview_url": null,
+      "post_url": "https://x.com/MarcoPorro/status/2114645014437626143",
+      "author": "piermark",
+      "models": [],
+      "first_seen": "2026-10-26",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Android TV 启动器（Java）加 LG webOS、Samsung Tizen 版本，另有 PC 插件（JS、Python）、手机伴侣 App 和原生 MCP 服务；APK 有签名；README 写的是 MIT，GitHub 识别为 NOASSERTION。",
+        "method": "把 Omarchy（Linux 平铺桌面）的风格搬到电视主屏：平铺启动器、32 套主题和壁纸、实时星空屏保（Omarchy Pulse）；手机可以当游戏手柄或无线安装器，电脑和电视之间可以联动。",
+        "features": [
+          "TUI 风格的 AI 助手",
+          "街机模式",
+          "桌面联动",
+          "MCP 服务器"
+        ],
+        "highlights": [
+          "跨三大电视系统，版本迭代快（2.15）",
+          "不 root，随时可以切回原生桌面"
+        ],
+        "limitations": [
+          "Beta 版，部分电视缺功能",
+          "库内摘要里的「AI TUI/MCP」只是附加功能，核心是电视启动器"
+        ],
+        "comparison": "库内没有同类项目。和 duodesk 都做多设备联动：duodesk 偏生产力，本项目偏客厅娱乐。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "quairone",
+      "name": "QuairOne",
+      "summary": "个人知识库/笔记产品，作者用来替代卡顿的 Obsidian。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "笔记",
+        "知识库"
+      ],
+      "source_url": "https://github.com/villatothesea/QuairOne",
+      "preview_url": "https://quairone.pages.dev",
+      "post_url": "https://x.com/VillaHasNoGift/status/2119664379037880330",
+      "author": "VillaHasNoGift",
+      "models": [],
+      "first_seen": "2026-11-09",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "主程序正在开源拆分；GitHub 仓库目前只有 README，PDF/EPUB 插件已开源（MIT）",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Windows 桌面阅读器和编辑器，采用插件架构：宿主负责窗口、面板和大纲，每种格式是一个插件，经由 stdio 上的行分隔 JSON 协议（reader-sdk）通信，插件崩溃不会影响宿主；PDF 插件用 hayro 栅格化。",
+        "method": "本地优先：Markdown、文本、PDF、EPUB 和代码文件都存放在自己的磁盘上；格式插件在应用内下载。",
+        "features": [
+          "多格式阅读和编辑",
+          "大纲",
+          "插件隔离"
+        ],
+        "highlights": [
+          "插件进程隔离的设计稳健"
+        ],
+        "limitations": [
+          "主程序还在开源拆分中，GitHub 仓库（villatothesea/QuairOne）当前只有 README，已发布的只有 PDF、EPUB 插件",
+          "只支持 Windows"
+        ],
+        "comparison": "和 terminus-notes（云端 Notion 替代）相对：本项目是本地阅读器。和 gr8r-studio 同属效率工具。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "ring-city",
+      "name": "Ring City",
+      "summary": "AI 生成的巨型环形城市互动规划/探索页。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "demo",
+        "城市",
+        "可视化"
+      ],
+      "source_url": null,
+      "preview_url": "https://sael.net/ring-city",
+      "post_url": "https://x.com/RyanSael/status/2116088797847003587",
+      "author": "RyanSael",
+      "models": [],
+      "first_seen": "2026-10-30",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "sael.net 的 WebGL 交互场景（框架未查到）。",
+        "method": "虚构一座直径 5.6 英里的环形城市，用 36 根空心混凝土腿架在火山口湖上方 560 米处；拖动时间轴可以回放 2035 到 2055 年的建造过程。",
+        "features": [
+          "驾驶、无人机、超级高铁、空中出租车等多种视角",
+          "昼夜和动漫风格",
+          "讲解模式"
+        ],
+        "highlights": [
+          "完成度很高的「推演式」城市可视化"
+        ],
+        "limitations": [
+          "纯展示性质，源码未查到"
+        ],
+        "comparison": "和 3d-periodic-table 同作者。和 game 类的 portals、solstice 这类 3D 场景接近，但没有玩法。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "steal-antrofrog",
+      "name": "Steal (antrofrog)",
+      "summary": "作者分享的可复用设计/资源页。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "设计"
+      ],
+      "source_url": null,
+      "preview_url": "https://antrofrog.com/steal",
+      "post_url": "https://x.com/antrofrog_/status/2116166661950861380",
+      "author": "antrofrog_",
+      "models": [],
+      "first_seen": "2026-10-30",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "2026-11-10 复查页面 404",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "未查到：2026-11-10 访问 antrofrog.com/steal 时返回 404。",
+        "method": "未查到。",
+        "features": [
+          "未查到"
+        ],
+        "highlights": [
+          "未查到"
+        ],
+        "limitations": [
+          "页面已失效，建议复核后删除或替换链接"
+        ],
+        "comparison": "原定位是设计资源页，可以和 uiarc 对照，但目前无法验证。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "terminus-notes",
+      "name": "Terminus Notes",
+      "summary": "开源 Notion 替代，可自托管并接自己的 Claude。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "笔记"
+      ],
+      "source_url": null,
+      "preview_url": "https://www.terminus.build",
+      "post_url": "https://x.com/WinstonGu_/status/2117336804705927410",
+      "author": "WinstonGu_",
+      "models": [],
+      "first_seen": "2026-11-03",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "宣称开源，源码在 Terminus 平台需登录查看，未见公开 GitHub",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "运行在 Terminus Navigator 平台上（自称「AI Agent 操作系统」，可在浏览器里用和创建 AI 应用、Agent、技能），Notes 是平台的官方应用；公开 GitHub 未查到。",
+        "method": "在平台上运行，免下载、免 API key（自述）；库内摘要称可以自托管、接入自己的 Claude，但官网首页没有确认这一点。",
+        "features": [
+          "Notes 笔记",
+          "同平台还有 Notion、GitHub、Gmail 等连接器和应用"
+        ],
+        "highlights": [
+          "应用、Agent、技能一体的平台"
+        ],
+        "limitations": [
+          "「开源」说法无法验证，源码需要登录"
+        ],
+        "comparison": "和 quairone（本地、离线）相对，本项目是云平台应用。可以拿来和 Notion 对比，但库内没有对应条目。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "theysay",
+      "name": "TheySay",
+      "summary": "开源应用，用来替代刷 X 和 Discord 的信息流。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "信息流"
+      ],
+      "source_url": "https://github.com/laike9m/TheySay",
+      "preview_url": null,
+      "post_url": "https://x.com/laike9m_/status/2117079231771595008",
+      "author": "laike9m",
+      "models": [],
+      "first_seen": "2026-11-02",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Electron 桌面应用（main.js 加 renderer），用 Playwright 测试；登录状态保留在本地会话里；发布在 GitHub Releases，自动更新；许可证为 NOASSERTION。",
+        "method": "在 1×1 到 4×4 的网格里并排展示多个 X、Threads 账号和 Discord 频道，用聊天气泡按时间顺序显示，取代信息流。",
+        "features": [
+          "卡片可以拖拽、调整大小、置顶帖子",
+          "自动识别美股、ETF、币种代码并高亮",
+          "屏蔽关键词、按账号通知、未读计数",
+          "导入导出 JSON 配置"
+        ],
+        "highlights": [
+          "主动订阅、没有推荐算法的阅读方式，适合盯盘和关注科技动态"
+        ],
+        "limitations": [
+          "依赖网页登录态抓取，平台改版或违反条款都有风险"
+        ],
+        "comparison": "和 trendradar（多平台热榜和 AI 简报）相比，本项目看指定账号，trendradar 看热榜。和 zhihu-mcp 同样依赖登录态，存在合规风险。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "uiarc",
+      "name": "UIArc",
+      "summary": "Arc UI：面向 shadcn/Next.js 的 React 动效组件库，可经 MCP 供 Agent 调用（含付费 Pro）。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "设计",
+        "ui"
+      ],
+      "source_url": null,
+      "preview_url": "https://uiarc.dev",
+      "post_url": "https://x.com/0xFengQi/status/2114270247939424679",
+      "author": "0xFengQi",
+      "models": [],
+      "first_seen": "2026-10-25",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Arc UI：面向 shadcn 和 Next.js 的 React 动效组件库，通过 shadcn CLI 或 MCP 服务接入 Agent。注意它是组件库，不是库内摘要所说的设计参考站。",
+        "method": "提供 243 个组件和 141 个区块（官网数字），AI Agent 可以通过 MCP 调用这些组件来搭建界面。",
+        "features": [
+          "图表、仪表盘、看板、AI 聊天等区块",
+          "Pro 版一次性 249 美元"
+        ],
+        "highlights": [
+          "专门为 Agent 编程设计接入方式（MCP）"
+        ],
+        "limitations": [
+          "高级组件要付费，开源范围未查到"
+        ],
+        "comparison": "和 llm-tools 里的 opendesigner、astryx 等设计规范或技能相比，本项目直接提供组件，后两者提供设计规则。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "wedulab",
+      "name": "WeduLab",
+      "summary": "六大学科交互式虚拟实验室（站点产品）。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "教育",
+        "实验室"
+      ],
+      "source_url": null,
+      "preview_url": "https://wedulab.com/?lang=en",
+      "post_url": "https://x.com/slashui/status/2116383058735554610",
+      "author": "slashui",
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "浏览器端互动教学工具集（技术栈未查到）。",
+        "method": "每个实验室聚焦一个主题，适合课堂演示和自主探究，配有仪器、数据记录和测验。",
+        "features": [
+          "VoltLab 电路实验室",
+          "3D 等高线",
+          "大气环流粒子模拟等（官网列出物理、地理等学科）"
+        ],
+        "highlights": [
+          "适配中学和高中课堂，开箱即用"
+        ],
+        "limitations": [
+          "闭源，商业模式未查到"
+        ],
+        "comparison": "和 tongjiang-lab、atlas-of-physics 同类；wedulab 覆盖学科更广，并且偏模拟实验。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "cn-math-taxonomy",
+      "name": "cn-math-taxonomy",
+      "summary": "中小学知识图谱与题库站点，覆盖多学科知识点与先修关系。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "教育",
+        "知识图谱"
+      ],
+      "source_url": "https://github.com/xiaoyang111222/cn-math-taxonomy",
+      "preview_url": "https://math.pansgo.com",
+      "post_url": "https://x.com/hassanyehiaa/status/2118687057765937468",
+      "author": "hassanyehiaa",
+      "models": [],
+      "first_seen": "2026-11-07",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "纯静态站（HTML、JS，带 PWA 的 sw.js），数据和生成脚本用 Python（scripts/ 下 189 个文件）；内容是知识点、先修边和题库组成的知识图谱，按课标条目对齐；采用 CC BY-NC 4.0，商用需另外授权。",
+        "method": "按教育部课标和人教版教材逐条建知识点，标出先修关系（数学跨学段回溯，英语、物理、生化各自成图，物理用到的数学单独记录）；自适应前置诊断时，学生答错就沿先修边一路回溯到小学知识点。",
+        "features": [
+          "数学 870 个知识点、3627 道题，另有英语、物理、化学、生物、语文等",
+          "知识图谱浏览",
+          "在线诊断",
+          "课标条目溯源（附印刷页码）"
+        ],
+        "highlights": [
+          "7300 星，资料考据非常细（逐条注明课标版本和页码）",
+          "开放数据可以复用"
+        ],
+        "limitations": [
+          "非商用许可",
+          "部分课标条目还待核对，没有高中语文"
+        ],
+        "comparison": "和 wrong-notebook（错题管理和举一反三）互补：本项目提供知识结构和诊断，错题本负责练习闭环。和 teachable-figures、wedulab 相比，本项目偏数据层，不做可视化。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "protocol-explorer",
+      "name": "protocol-explorer",
+      "summary": "把计算机网络协议做成可交互动画的学习站。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "教育",
+        "网络",
+        "可视化"
+      ],
+      "source_url": null,
+      "preview_url": "https://protocol-explorer-alpha.vercel.app",
+      "post_url": "https://x.com/_ninetyhe/status/2117615336044544486",
+      "author": "_ninetyhe",
+      "models": [],
+      "first_seen": "2026-11-04",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "light",
+        "core_tech": "纯前端动画学习站（Vercel），逐字节解码数据包；源码未查到。",
+        "method": "用动画演示数据包在网络中的流转，并配互动课程。",
+        "features": [
+          "覆盖约 40 种协议，包括 HTTP、HTTPS、QUIC、TCP、BGP、DNS、DNSSEC、TLS、WireGuard、IPsec、Modbus 等",
+          "二十多种界面语言"
+        ],
+        "highlights": [
+          "协议覆盖广，并且逐字节解码"
+        ],
+        "limitations": [
+          "没有 JS 就无法使用；作者与源码未查到"
+        ],
+        "comparison": "和 teachable-figures 的「可操作学习」理念一致。和 3d-periodic-table、wedulab 同属交互教学，学科是计算机网络。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "tongjiang-lab",
+      "name": "tongjiang-lab",
+      "summary": "中学物理化学 3D 交互实验室。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "教育",
+        "3d"
+      ],
+      "source_url": "https://github.com/smithjohn78390/tongjiang-lab",
+      "preview_url": "http://lab.tongjiang.app",
+      "post_url": "https://x.com/slashui/status/2116383058735554610",
+      "author": "smithjohn78390",
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "2026-11-10 复查：GitHub 仓库 404，预览页无内容",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "未查到：GitHub 仓库 smithjohn78390/tongjiang-lab 返回 404（2026-11-10），预览页 lab.tongjiang.app 抓取结果为空（可能需要 JS 或已下线）。",
+        "method": "未查到（库内摘要：中学物理化学 3D 交互实验室）。",
+        "features": [
+          "未查到"
+        ],
+        "highlights": [
+          "未查到"
+        ],
+        "limitations": [
+          "源码链接已失效，开源情况无法验证"
+        ],
+        "comparison": "同类有 wedulab、atlas-of-physics，这两个都还可以访问。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "wrong-notebook",
+      "name": "wrong-notebook",
+      "summary": "AI 智能错题本：拍照识题、分类与组卷。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "教育"
+      ],
+      "source_url": "https://github.com/margrop/wrong-notebook",
+      "preview_url": null,
+      "post_url": "https://x.com/slashui/status/2116383058735554610",
+      "author": "margrop",
+      "models": [],
+      "first_seen": "2026-10-31",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": null,
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Next.js、React、Prisma 加 next-auth；多模型 SDK（OpenAI、Anthropic、Google GenAI），支持 MiniMax Code OAuth 免费渠道；KaTeX、pdfjs、docx 导出；有 Docker、桌面版、NAS 套件和安卓版；MIT（fork 自 wttwins/wrong-notebook）。",
+        "method": "拍照或导入题目后，AI 识题、解答、分析错因，打知识点标签并评 1–5 星难度，生成举一反三的变式题并自动判题，估计掌握概率，按艾宾浩斯间隔安排复习，最后组卷打印并回填结果。",
+        "features": [
+          "带语音的 SVG 分步动画讲解（可选浏览器 TTS 或多家云 TTS）",
+          "可导入 JSON、Word、Excel、CSV、PDF 题库，一次最多 2000 题",
+          "GeoGebra 动态演示",
+          "判重阈值、A/B 卷分组"
+        ],
+        "highlights": [
+          "复习闭环完整，部署方式非常多",
+          "工程化程度高（有 e2e、性能测试、AGENTS.md）"
+        ],
+        "limitations": [
+          "效果依赖所选大模型的识题能力",
+          "演示站是共享账号"
+        ],
+        "comparison": "和 cn-math-taxonomy（知识图谱和诊断）可以互补。和 deeptutor（llm-tools 里的 AI 导师）相比，本项目更聚焦 K12 错题。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "江山地图",
+      "name": "江山地图",
+      "summary": "互动历史/地理可视化站点。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "可视化",
+        "历史"
+      ],
+      "source_url": "https://github.com/DeanChensj/jiangshan-map",
+      "preview_url": "https://deanchen.me/jiangshan-map",
+      "post_url": "https://x.com/dingyi/status/2116862883179163767",
+      "author": "dingyi",
+      "models": [],
+      "first_seen": "2026-11-02",
+      "origin": "bookmark",
+      "stars": 5111,
+      "notes": "星标查询于 2026-11-10",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "纯静态前端（JS、CSS、HTML，可用 nginx 镜像部署），几何数据采用拓扑去重的 VLQ 压缩包，可导出 RFC 7946 GeoJSON（兼容 Leaflet、MapLibre、QGIS）；自有数据为 GPL-3.0，州郡层来自 CHGIS V6，禁止再分发。",
+        "method": "从公元前 403 年到现代，覆盖 18 个时期、164 个疆域快照；拖动时间轴观察疆域、政区和水系（含黄河改道）的变化；点击任意地点可以追溯古今地名沿革；边界对照谭其骧《中国历史地图集》等文献人工校订（图集本身未入库）。",
+        "features": [
+          "历代疆域和州郡政区",
+          "古地名古今对照",
+          "关隘、丝路、诗人和人物行迹（如苏轼贬谪路线）",
+          "古地名挑战问答",
+          "中、英、日多语"
+        ],
+        "highlights": [
+          "5111 星，曾登 GitHub 日榜第 2",
+          "数据许可边界写得清楚"
+        ],
+        "limitations": [
+          "疆域是示意性的，不是测绘边界",
+          "州郡层只能非商用"
+        ],
+        "comparison": "和 cn-math-taxonomy 同属中文教育开放数据。和 ring-city、3d-periodic-table 同为交互可视化，但本项目有严肃的史料支撑。",
+        "researched_at": "2026-11-10"
+      }
+    }
+  ]
+}

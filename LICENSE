@@ -1,0 +1,21 @@
+本仓库采用双重许可。
+
+内容许可（CC BY 4.0）
+---------------------
+data/ 目录中的项目简介、深度分析、横向对比，以及据此在网站上展示的文案，
+采用知识共享署名 4.0 国际许可协议（CC BY 4.0）授权。
+
+完整法律文本：
+https://creativecommons.org/licenses/by/4.0/legalcode.zh-Hans
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+引用这些分析或整理时，请署名「X 每日 AI 应用观察」，并链接到
+https://github.com/KingBright/x-daily-ai-watch 。
+
+代码许可（MIT）
+---------------
+网站与脚本代码（包括但不限于 index.html、assets/ 下的样式与脚本）
+采用 MIT 许可，全文见 LICENSE-MIT。
+
+各项目本身（名称、代码、商标、文档与演示）的版权仍归其原作者所有，
+不适用上述许可。
