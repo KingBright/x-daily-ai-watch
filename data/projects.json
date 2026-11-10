@@ -1,13 +1,13 @@
 {
   "meta": {
-    "generated_at": "2026-11-09",
+    "generated_at": "2026-11-10",
     "timezone": "America/Los_Angeles",
-    "projects_total": 133,
+    "projects_total": 134,
     "category_counts": {
       "game": 13,
       "agent-eng": 53,
       "llm-tools": 43,
-      "other": 24
+      "other": 25
     },
     "subcategory_counts": {
       "dev-efficiency": 30,
@@ -16,10 +16,11 @@
     },
     "origin_counts": {
       "bookmark": 66,
-      "daily-digest": 67
+      "daily-digest": 67,
+      "user-request": 1
     },
     "analysis_counts": {
-      "full": 105,
+      "full": 106,
       "light": 28
     },
     "analysis_updated_at": "2026-11-10"
@@ -5367,6 +5368,58 @@
           "闭源，商业模式未查到"
         ],
         "comparison": "和 tongjiang-lab、atlas-of-physics 同类；wedulab 覆盖学科更广，并且偏模拟实验。",
+        "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "wowtype",
+      "name": "WowType",
+      "summary": "给 Linux fcitx5 用的拼音输入法：整句连打、按错键纠正、简拼和中英混打，并带本机离线语音输入。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "输入法",
+        "语音",
+        "rust",
+        "fcitx5",
+        "linux"
+      ],
+      "source_url": "https://github.com/Gloridust/WowType",
+      "preview_url": null,
+      "post_url": "https://x.com/gloridust1024/status/2119884024726630771",
+      "author": "Ethan Zou (Gloridust)",
+      "models": [],
+      "first_seen": "2026-11-10",
+      "origin": "user-request",
+      "stars": 336,
+      "notes": "2026-11-10 查询 GitHub 336 星（会变化）。由用户主动提交收录，不是书签或每日精选自动扫描。公告帖附 38 秒演示视频，本次未观看，功能描述以仓库文档、源码目录和帖文为准。仓库根目录未查到独立 LICENSE 文件，README 与 core/Cargo.toml 声明代码为 MIT 或 Apache-2.0。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 拼音引擎 wowtype-core（音节图 graph.rs、束搜索 beam.rs、词频 / 语言模型 / 用户习惯打分）编成静态库，经 C ABI 链进 C++ 的 fcitx5 插件（文档要求 fcitx5 5.1 或更新）；设置界面是 Python、GTK 4、libadwaita。语音在 voice/，推理代码来自 voicekey 的 wtlocal（NOTICE.md 称经上游作者同意）；模型是微信输入法离线包，不随仓库分发，首次使用时从腾讯 CDN 下载约 100MB。词库来自开源雾凇拼音 rime-ice（GPL-3.0）。当前最新发行版为 v0.3.9（2026-11-10 发布，GitHub Releases）。代码许可证见 README 与 Cargo.toml：MIT 或 Apache-2.0。",
+        "method": "按键先切成全拼、简拼、半成品或纠错边，再在音节图上做逐位置束搜索，用词频、语言模型和本地习惯打分，最后按微信输入法 3.0 的公开行为组织横排候选（整句、句首词、词、单字）。纠错覆盖相邻键、两键按反、多按或漏按；选过的词写入本地 history.tsv，30 天衰减。设计思路参考 WeType 的公开行为和引擎符号名，README 自述拼音引擎未使用其代码、词库或模型；同时 docs/DATA.md 记录了对官方二进制格式的分析，并写明官方数据不随仓库分发。语音是按住或点按右 Alt，本机 VAD 加 wtlocal 识别后上屏。",
+        "features": [
+          "整句连打，并可只上屏前半截；半成品补全；简拼、省略韵母混打、中英混打",
+          "按错键纠正（相邻键、按反、多按、漏按；文档写明双拼模式下不做纠错）",
+          "用户习惯学习、自定义词、7 种双拼、分组模糊音、繁体、emoji、日期时间和计算器",
+          "离线语音输入（默认右 Alt）；可选中外互译（需用户自填 OpenAI 格式接口，会联网）",
+          "图形设置界面；Ubuntu / Debian 的 deb、Fedora 的 rpm、Arch 包和 Nix flake；目前安装包为 Linux x86_64"
+        ],
+        "highlights": [
+          "把 Linux 拼音输入做成接近商业输入法的手感：横排候选、图形设置、一行安装（README）",
+          "引擎带评测和调参工具（wowtype-eval 等）；文档自报完整输入、纠错和长句的 top1，以及逐键延迟",
+          "2026-11-09 发布后更新很快：2026-11-10 已到 v0.3.9，并补上 rpm 与 Arch 包；同日查询仓库 336 星。公告帖互动数据会变化，收录时可见较高转发和收藏",
+          "开源词库加自研引擎，和在 Linux 上直接封装官方微信输入法二进制的路线不同"
+        ],
+        "limitations": [
+          "作者称「最好用的 Linux 输入法」是宣传语，未经独立评测",
+          "只做 Linux x86_64 加 fcitx5；没有官方 macOS / Android / Windows 版，跨设备同步尚未落地（作者在帖中回复「还真有希望支持的，下个版本我试试」）",
+          "LIMITATIONS.md：语音只有一个识别结果，不能在候选里改，也不能选麦克风。模型来自腾讯，首次需下载；「录音不上传」「输入内容不离开电脑」为文档自述，未做独立流量审计",
+          "文档不完全一致：LIMITATIONS.md 仍写「没有用语料训练的语言模型」，DATA.md 称安装包已带自训 words.lm（自报日常句 top1 84.8%）。微信 NNLM 需自行从 macOS 微信输入法安装包提取，不随仓库分发",
+          "有用户在帖中反馈词库混入生僻网游词等（未核实）。STATUS.md 部分条目可能滞后于 v0.3.9",
+          "仓库含对微信输入法专有二进制的分析；语音模型为腾讯资产。存在条款与再分发风险，需用户自行判断。公告帖 38 秒演示视频本次未观看"
+        ],
+        "comparison": "库内没有同类系统拼音输入法。语音能力可对照 cicada-知了、hy-simulmt、phonic-1-语音演示、argument-cat，那些是会议同传、模型或演示，不是桌面输入法。和传统 Linux 方案比：Rime / 雾凇可高度定制但要写配置，WowType 用同一开源词库，但换成 Rust 引擎、纠错、横排候选和图形设置；作者自述比雾凇更少卡死，未经独立验证。和官方微信输入法比，缺云候选、账号与手机同步以及官方神经网络排序。和 fcitx5-wetypex（在 Linux 上封装 macOS 微信输入法；该项目自标早期、提示可能含官方遥测并须遵守官方条款）相比，WowType 是重写引擎、使用开源词库，同步和官方模型能力更少，但分发路径更清晰。",
         "researched_at": "2026-11-10"
       }
     },

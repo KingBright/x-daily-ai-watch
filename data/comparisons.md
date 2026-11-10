@@ -215,4 +215,4 @@
 
 - 教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图
 - 知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站
-- 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio
+- 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）

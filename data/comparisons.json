@@ -947,7 +947,7 @@
         "`other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：",
         "教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图",
         "知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站",
-        "效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio"
+        "效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）"
       ]
     }
   ]
