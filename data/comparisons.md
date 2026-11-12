@@ -2,7 +2,7 @@
 
 按子类对库内项目做横向对比，比较技术路线、核心能力、成熟度、开源情况和适用场景。每个项目的详细分析见 `projects.json` 里的 `analysis` 字段。
 
-- 更新：2026-11-10（Asia/Shanghai）；星标在 2026-11-09 至 11-10 间查询，数字会变化
+- 更新：2026-11-12（Asia/Shanghai）；既有条目的星标多在 2026-11-09 至 11-10 查询，本批新条目的星标在 2026-11-12 查询，数字会变化
 - 「自报」表示数字来自项目方的 README 或博客，未经独立验证；light 表示只有页面或帖子，没有可查的源码
 - 各类项目数量不在本文写死，以 `projects.json` 的 `projects` 数组为准（「项目库」Page 会实时计算）
 
@@ -34,16 +34,24 @@
 | viper-one-one | 网页战斗机模拟器（摘要称用 Three.js） | 飞行模拟和座舱 | light，官网抓取为空 | 未查到 | 网页模拟游戏 |
 | bee-x9 | Vercel 上的 3D 网页演示 | 机器蜜蜂展示 | light | 未查到 | AI 生成 3D 演示 |
 | 书桌之上 | three.js 游戏加 Tripo 生成 3D 素材 | 3D 解谜叙事 | light | 未查到 | 中文独立小游戏 |
+| guizang-game-skill | Agent 技能加 three.js 网页游戏，三种打包脚本 | 可复用的 3D 动作游戏流程，附演示《雾锁山门》 | ★73，刚发布 | 技能 AGPL-3.0；演示内容保留版权 | 用 AI 做可玩的网页 3D 动作游戏 |
+| pixelfx | JS 代码绘制像素特效，附 Claude Code 技能 | 文档称 244 种特效，可导出精灵表 | ★7029，两周内快速增长 | MIT（字体除外） | 2D 游戏特效和打击感 |
+| ldtk | Haxe 加 Electron 的 2D 关卡编辑器 | 快速摆关并导出到游戏项目 | ★4904，2020 年起维护 | MIT | 2D 关卡迭代 |
+| iw4l | Rust、Bevy 重写的 MW2（2009）运行时 | 读取已有正版安装中的地图和武器 | ★1200，玩法仍不完整 | Apache-2.0 | 引擎重写和模组研究（需自备正版数据） |
+| dread-and-district | 网页运输模拟（Netlify），无源码 | 奇幻物流玩法 | light | 未查到 | AI 生成的可玩演示 |
+| the-quiet-elevation | Google AI Studio 网页解谜，无源码 | 温馨解谜小品 | light | 未查到 | 短时解谜演示 |
+| earth-on-spawn | Spawn 平台上的网页 3D 地球，无源码 | 帖文称可前往真实地点，天气同步 | light | 未查到 | 探索向展示 |
+| voxel-engine | Spawn 平台上的体素破坏演示，无源码 | 浏览器内破坏体素 | light | 未查到 | 体素演示 |
 
 ### 分析
 
-这一类分成三条技术路线：一是「AI 资产流水线」，包括 3d-os-scenario-skills、scenario-blender-plugin、parametric-topdown-pixel-architecture，目标是让 Agent 产出能进引擎的资产；二是「渲染引擎和技术底座」，包括 threepp 和 solstice；三是「AI 直接写出的成品或演示」，包括 portals、poke-bonk、书桌之上等，大多是 three.js 网页。
+这一类分成三条技术路线：一是「AI 资产流水线」，包括 3d-os-scenario-skills、scenario-blender-plugin、parametric-topdown-pixel-architecture，以及后来的 pixelfx（代码像素特效）和 guizang-game-skill（可玩网页动作游戏技能）；二是「渲染引擎和技术底座」，包括 threepp、solstice，以及重写商业游戏运行时的 iw4l，外加与 AI 无关的成熟关卡编辑器 LDtk；三是「AI 直接写出的成品或演示」，包括 portals、poke-bonk、书桌之上，以及本窗口的 dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation 等，大多是网页 3D。
 
 结论 1：最成熟、最值得接入工作流的是 Scenario 的两件套。技能库覆盖整条流水线，Blender 插件的工程质量最高（测试、模糊测试、发布签名齐全），两者合起来就是「Agent 驱动 DCC」的参考实现。
 
 结论 2：渲染底座里，threepp 胜在成熟，solstice 胜在技术前沿（WebGPU 上的虚拟化几何），但后者还只是演示。想在浏览器之外做原生 3D，选 threepp；想研究 Web 端的下一代渲染，看 solstice。
 
-结论 3：成品类项目普遍只是「能玩的演示」，其中好几个只有页面或帖子，只能做 light 分析，说明 AI 做游戏目前主要停留在展示阶段。可复用的价值在方法（如 portals 的长程生成），不在代码本身。
+结论 3：成品类项目仍有不少只是「能玩的演示」（dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation 等），只能做 light 分析。但本窗口也出现了可复用的方法件：pixelfx 是可商用的像素特效库，guizang-game-skill 把一款可玩演示收成技能和打包脚本。LDtk 则是与模型无关的成熟关卡编辑器。可复用价值仍然更多在方法和工具，而不在某一款展示游戏的代码。
 
 ## 研发效率
 
@@ -81,6 +89,8 @@
 | awesome-grok-bot | awesome 列表加 CSV、JSON 目录 | 经过验证的技能和插件索引 | ★111 | NOASSERTION | 找插件 |
 | xai-plugin-marketplace | marketplace.json 索引仓库 | Grok Build 官方插件目录 | ★324，官方 | 未声明 | Grok 生态入口 |
 | aether | 云端开发机（light） | 约 20 秒拉起 devbox 跑 Agent，沿用自己的订阅 | 闭源商业 | 闭源 | 不想占用本机资源 |
+| sem | Rust CLI，tree-sitter 实体索引加 Git | 实体级 diff、影响分析和认证，面向 Agent | ★3449 | Apache-2.0 或 MIT | 让 Agent 看清改动碰了哪些代码实体 |
+| anabasis | TypeScript 加 Bun，基于 pi 自动造 harness 和考题 | 在留出题上证明变好才保留改动 | ★72，研究型 | MIT | 为难以验收的领域自动改进 harness |
 
 ### 分析
 
@@ -90,7 +100,7 @@
 
 结论 2：多个项目不约而同用「换一个干净的上下文去复核」来提高质量：elephant-goldfish-model 用无记忆评审，security-audit-skill 用新上下文证伪，pstack 强调验证。这是目前对抗 Agent 自我确认偏差最有效的套路。
 
-结论 3：安全和成本工具大多还很早期（openmoat、landmine、borg 都不到 20 星），但定位清晰。tokeneconomizer 有大厂论文背书，是成本优化里唯一有系统评测的；安全方面，openmoat（事前拦截）、stroq（事后审计）和 security-audit-skill（代码审计）可以组合使用。
+结论 3：安全和成本工具大多还很早期（openmoat、landmine、borg 都不到 20 星），但定位清晰。tokeneconomizer 有大厂论文背书，是成本优化里唯一有系统评测的；安全方面，openmoat（事前拦截）、stroq（事后审计）和 security-audit-skill（代码审计）可以组合使用。本窗口补入的 sem 是少见的高星、非技能型底座，给 Agent 提供实体级 diff 和影响分析；anabasis 则把「换干净上下文验收」用到了自动改进 harness 上，仍偏研究。
 
 ## Phone/Computer Use
 
@@ -138,12 +148,14 @@
 | hypergrok-trading-desk | 插件包：7 个角色、17 个技能、只读工具 | 交易研究台，含人工审批 | ★467 | MIT | 高风险领域的多角色协作样板 |
 | relay | 零依赖 Node CLI，加 MCP 和 hooks | 在不同 Agent 之间交接任务和上下文 | ★2 | MIT | 多种 CLI Agent 混用 |
 | the-office-agents | Claude Code 插件，three.js 像素办公室 | 把各 Agent 的会话可视化 | ★1 | MIT | 趣味化观察 |
+| recalc | Rust 加 Tauri 的本地电子表格，格子里可跑 Agent，经 MCP 协同 | 多 Agent 共享一张表，用公式和测试格验收 | ★68，早期 beta | Apache-2.0 | 评测、审阅和并排调度多个编程 Agent |
+| crommacode | 闭源原生桌面（文档自述 Rust、GPUI），钩子观察 CLI，蜂群走 git worktree | 把工具调用演成游戏，并派工蜂并行干活 | 稳定版 0.2.18（官方清单），源码未公开 | 闭源（公开仓只有文档） | 观察并编排已有的编程 CLI |
 
 ### 分析
 
-这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）。
+这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）。
 
-结论 1：控制台方向 t3-code 一家独大（5.4 万星），coincide、tastecode 都是在它的思路上做差异化（原生性能、创意场景）。几乎所有方案都选择「驱动本机已登录的 CLI」，而不是自己接模型 API，从而沿用用户已有的订阅。
+结论 1：控制台方向 t3-code 仍然体量最大（既有记录约 5.4 万星），coincide、tastecode 做原生性能和创意场景上的差异化。recalc 把控制台收成一张可公式化验收的表，crommacode 把观察做成游戏并加 worktree 蜂群，但后者暂不开放源码。除 crommacode 外，这类方案大多仍选择驱动本机已登录的 CLI，沿用用户已有的订阅。
 
 结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。
 
@@ -198,6 +210,13 @@
 | hy-simulmt | 腾讯混元流式同传模型 | 中英语音到语音同传，延迟约 3 秒（自报） | ★266 | NOASSERTION | 实时翻译 |
 | argument-cat | QVAC SDK 在端侧串联 LLM、ASR 和 TTS | 安卓离线语音对话 | ★0 | MIT | 端侧多模态样例 |
 | phonic-1-语音演示 | SwiftUI 演示合集 | iOS 语音接入示例 | light | 未声明 | 参考代码 |
+| frontier-harness-eval | 固定任务和环境，只换 harness 做对照赛 | 比较通过率、费用和耗时；v1.1 正在扩展矩阵 | ★356；README 仍为 v1.0 | 未登记许可证 | 选编程 Agent harness 时做对照 |
+| lieflat-less-ai-tone | 检测脚本加 Agent 技能，先报告再改写 | 去中文写作里的 AI 痕迹并复测 | ★7406 | CC BY-NC 4.0 | 成稿减痕（非商用） |
+| lieflat-gongwen | 语料统计得到的公文参数和自检脚本 | 七类公文的可验收写作流程 | ★2491 | PolyForm Noncommercial | 公文体裁写作（非商用） |
+| writing-dna-skill | 从语料蒸馏可再安装的风格技能 | 保存并复用某一种笔法 | ★3121 | PolyForm Noncommercial | 个人写作风格资产（非商用） |
+| lieflat-diagrams | 示意图模板加导出脚本 | 文档称 35 套模板，可出 HTML/PNG/SVG | ★20，较早 | PolyForm Noncommercial | Agent 出结构图（非商用） |
+| lieflat-code-video | 代码驱动镜头的起步项目 | 产品发布类短片的镜头和转场 | ★37，预览 | PolyForm Noncommercial（非 OSI 开源） | 学做发布片（非商用） |
+| math-to-manim | Python 工具链调用 Manim 和多种 Agent | 从题目生成数学动画影片 | ★2857 | MIT | 数学可视化教学 |
 
 ### 分析
 
@@ -207,12 +226,12 @@
 
 结论 2：最有技术含量的是「权重即程序」这条新路线：nesformer 用编译器写权重，权重空间编程-mit 让 LLM 推理后改权重，两者方向相反、互相补充。推理效率方向的 kimi-k3-in-c（极限省内存）、ferrite（全 Rust）、latent-sparse-attention（长上下文）都还以自报数据为主，生产可用性需要自己验证。
 
-结论 3：内容创作类是数量最多的一组，而且几乎都以技能或 MCP 的形式交付，说明「LLM 加确定性工具链（ffmpeg、Playwright、Metal、GSAP）」是目前做可控内容生产的主流方式。其中涉及他人肖像和 IP 的 ai-character-swap、gif-factory，以及依赖逆向接口的 zhihu-mcp，存在合规风险。
+结论 3：内容创作类是数量最多的一组，而且几乎都以技能或 MCP 的形式交付，说明「LLM 加确定性工具链（ffmpeg、Playwright、Metal、GSAP、Manim）」是目前做可控内容生产的主流方式。lieflat 的写作与可视化技能（去 AI 味、公文、风格蒸馏、示意图、代码短片）把「先测量再改、先确认再写」写进了流程，但多用非商用许可。math-to-manim 把数学影片做成可重复跑的开源工具链。评测方面，frontier-harness-eval 补上了「只换 harness、不换模型」的公开对照。其中涉及他人肖像和 IP 的 ai-character-swap、gif-factory，以及依赖逆向接口的 zhihu-mcp，存在合规风险。
 
 ## 其他（未做对比）
 
 `other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：
 
-- 教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图
-- 知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站
-- 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）
+- 教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图、cs329z（斯坦福 Agent 工程公开课）
+- 知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站、xnews（海外长文中文改写站）
+- 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）、harper（离线英文语法检查）
