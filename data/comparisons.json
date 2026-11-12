@@ -173,13 +173,53 @@
           "maturity": "light",
           "license": "未查到",
           "use_case": "体素演示"
+        },
+        {
+          "id": "three-voxel-destruction",
+          "tech": "Three.js 加 WebGPU，体素交给 three-avbd GPU 刚体求解",
+          "capability": "城市、赛道、空间站三关可破坏，有源码和在线演示",
+          "maturity": "★24，物理库仍为预览",
+          "license": "MIT",
+          "use_case": "浏览器体素破坏和 WebGPU 物理参考"
+        },
+        {
+          "id": "a-little-earth",
+          "tech": "three.js 网页步行，数据标注 Natural Earth",
+          "capability": "多处真实地点的小场景，正在扩建",
+          "maturity": "light",
+          "license": "未查到",
+          "use_case": "步行尺度的地点探索"
+        },
+        {
+          "id": "our-3d-reality",
+          "tech": "网页 3D 城市漫游（引擎未公开）",
+          "capability": "纽约中城步行游览，作者自述后来加了跑酷和语音",
+          "maturity": "light",
+          "license": "未查到",
+          "use_case": "把一座真实城市做深"
+        },
+        {
+          "id": "fable-contra",
+          "tech": "Claude Artifact 网页动作游戏",
+          "capability": "短时间重做 Contra 风格关卡",
+          "maturity": "light；预览可能过期",
+          "license": "未查到",
+          "use_case": "Fable 经典动作复刻展示"
+        },
+        {
+          "id": "sapper-minesweeper",
+          "tech": "独立托管的网页扫雷",
+          "capability": "战争主题包装的完整扫雷规则",
+          "maturity": "light",
+          "license": "未查到",
+          "use_case": "规则清晰、可验收的 Fable 演示"
         }
       ],
       "prose": [
-        "这一类分成三条技术路线：一是「AI 资产流水线」，包括 3d-os-scenario-skills、scenario-blender-plugin、parametric-topdown-pixel-architecture，以及后来的 pixelfx（代码像素特效）和 guizang-game-skill（可玩网页动作游戏技能）；二是「渲染引擎和技术底座」，包括 threepp、solstice，以及重写商业游戏运行时的 iw4l，外加与 AI 无关的成熟关卡编辑器 LDtk；三是「AI 直接写出的成品或演示」，包括 portals、poke-bonk、书桌之上，以及本窗口的 dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation 等，大多是网页 3D。",
+        "这一类分成三条技术路线：一是「AI 资产流水线」，包括 3d-os-scenario-skills、scenario-blender-plugin、parametric-topdown-pixel-architecture，以及后来的 pixelfx（代码像素特效）和 guizang-game-skill（可玩网页动作游戏技能）；二是「渲染引擎和技术底座」，包括 threepp、solstice，以及重写商业游戏运行时的 iw4l，外加与 AI 无关的成熟关卡编辑器 LDtk；三是「AI 直接写出的成品或演示」，包括 portals、poke-bonk、书桌之上，以及 dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation，再加上后来在热门帖评论里见到的 a-little-earth、our-3d-reality、fable-contra、sapper-minesweeper，大多是网页 3D。",
         "结论 1：最成熟、最值得接入工作流的是 Scenario 的两件套。技能库覆盖整条流水线，Blender 插件的工程质量最高（测试、模糊测试、发布签名齐全），两者合起来就是「Agent 驱动 DCC」的参考实现。",
-        "结论 2：渲染底座里，threepp 胜在成熟，solstice 胜在技术前沿（WebGPU 上的虚拟化几何），但后者还只是演示。想在浏览器之外做原生 3D，选 threepp；想研究 Web 端的下一代渲染，看 solstice。",
-        "结论 3：成品类项目仍有不少只是「能玩的演示」（dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation 等），只能做 light 分析。但本窗口也出现了可复用的方法件：pixelfx 是可商用的像素特效库，guizang-game-skill 把一款可玩演示收成技能和打包脚本。LDtk 则是与模型无关的成熟关卡编辑器。可复用价值仍然更多在方法和工具，而不在某一款展示游戏的代码。"
+        "结论 2：渲染底座里，threepp 胜在成熟，solstice 胜在技术前沿（WebGPU 上的虚拟化几何），但后者还只是演示。three-voxel-destruction 把 WebGPU 用在可玩的体素刚体破坏上，并开源了演示和底层求解器 three-avbd，适合对照「只有托管页的体素演示」。想在浏览器之外做原生 3D，选 threepp；想研究 Web 端下一代渲染，看 solstice；想看可玩的 WebGPU 物理，看 three-voxel-destruction。",
+        "结论 3：成品类项目仍有不少只是「能玩的演示」（dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation，以及评论里出现的 a-little-earth、our-3d-reality、fable-contra、sapper-minesweeper），只能做 light 分析。其中 three-voxel-destruction 是例外：它有 MIT 源码和自研 GPU 求解器，不是一次性提示词小品。可复用的方法件仍是 pixelfx、guizang-game-skill 和与模型无关的 LDtk。可复用价值仍然更多在方法和工具，而不在某一款展示游戏。"
       ]
     },
     {
@@ -442,13 +482,37 @@
           "maturity": "★72，研究型",
           "license": "MIT",
           "use_case": "为难以验收的领域自动改进 harness"
+        },
+        {
+          "id": "kwwk",
+          "tech": "Swift CLI 加 SwiftPM SDK，MCP 按需 tool_search",
+          "capability": "macOS 原生编程 Agent，也可嵌入应用",
+          "maturity": "★138，Homebrew 可装",
+          "license": "MIT",
+          "use_case": "要在 Apple 平台嵌 Agent 的开发者"
+        },
+        {
+          "id": "minimax-code",
+          "tech": "TypeScript 终端 Agent，官方安装器加 npm 包",
+          "capability": "用 MiniMax 或自备接口在本地改代码、跑验证",
+          "maturity": "★2223，官方维护到 v0.7.2",
+          "license": "第一方默认 MIT",
+          "use_case": "需要完整安装和文档的跨平台编码 CLI"
+        },
+        {
+          "id": "optiq-code",
+          "tech": "经 optiq serve 调本机模型的终端循环（无公开源码）",
+          "capability": "针对小模型空补丁、失败编辑和原地打转做防护",
+          "maturity": "light，分数为作者自报",
+          "license": "未查到",
+          "use_case": "在 Mac 上用本地小模型落地补丁"
         }
       ],
       "prose": [
-        "这一类可以按作用分成五层：方法论和技能层（superpowers、pstack、elephant-goldfish-model、unslop、stageshow、agents-md）；理解和审计层（understand-anything、security-audit-skill、stroq、landmine）；安全和成本层（openmoat、tokeneconomizer、agav、playbasis-agent-hub）；运行时和自治层（borg、oar-kanso、agent-autoloop、dsh-superagent-prototype、octopus-si-os、exact）；生态和目录层（Grok Bot 相关项目、xai-plugin-marketplace）。",
+        "这一类可以按作用分成五层：方法论和技能层（superpowers、pstack、elephant-goldfish-model、unslop、stageshow、agents-md）；理解和审计层（understand-anything、security-audit-skill、stroq、landmine）；安全和成本层（openmoat、tokeneconomizer、agav、playbasis-agent-hub）；运行时和自治层（borg、oar-kanso、agent-autoloop、dsh-superagent-prototype、octopus-si-os、exact，以及后来补入的 kwwk、minimax-code、optiq-code）；生态和目录层（Grok Bot 相关项目、xai-plugin-marketplace）。",
         "结论 1：技能（SKILL.md）已经成为研发效率工具的主流载体。星标最高的几个（superpowers 31.5 万、understand-anything 9.2 万、security-audit-skill 6.8 万）都是技能或插件，而且同时适配多种 harness，技能本身几乎不绑定具体 Agent。",
         "结论 2：多个项目不约而同用「换一个干净的上下文去复核」来提高质量：elephant-goldfish-model 用无记忆评审，security-audit-skill 用新上下文证伪，pstack 强调验证。这是目前对抗 Agent 自我确认偏差最有效的套路。",
-        "结论 3：安全和成本工具大多还很早期（openmoat、landmine、borg 都不到 20 星），但定位清晰。tokeneconomizer 有大厂论文背书，是成本优化里唯一有系统评测的；安全方面，openmoat（事前拦截）、stroq（事后审计）和 security-audit-skill（代码审计）可以组合使用。本窗口补入的 sem 是少见的高星、非技能型底座，给 Agent 提供实体级 diff 和影响分析；anabasis 则把「换干净上下文验收」用到了自动改进 harness 上，仍偏研究。"
+        "结论 3：安全和成本工具大多还很早期（openmoat、landmine、borg 都不到 20 星），但定位清晰。tokeneconomizer 有大厂论文背书，是成本优化里唯一有系统评测的；安全方面，openmoat（事前拦截）、stroq（事后审计）和 security-audit-skill（代码审计）可以组合使用。本窗口补入的 sem 是少见的高星、非技能型底座，给 Agent 提供实体级 diff 和影响分析；anabasis 则把「换干净上下文验收」用到了自动改进 harness 上，仍偏研究。评论里后来又出现三类可运行的 harness：minimax-code 是厂商维护的跨平台开源 CLI，体量最大；kwwk 是少见的纯 Swift 方案，适合要嵌进 macOS 应用的人；optiq-code 针对本机小模型的失败模式，但还没有公开源码，榜分数也是作者自报。"
       ]
     },
     {
@@ -668,12 +732,20 @@
           "maturity": "稳定版 0.2.18（官方清单），源码未公开",
           "license": "闭源（公开仓只有文档）",
           "use_case": "观察并编排已有的编程 CLI"
+        },
+        {
+          "id": "agent-ceo",
+          "tech": "闭源 SaaS，人和 Agent 共用组织架构（具体栈未公开）",
+          "capability": "按角色协作、升级和共用记忆，宣称带 MCP 工具",
+          "maturity": "light，页面数字为自报",
+          "license": "闭源",
+          "use_case": "公司里要跑多 Agent 组织，而不是本机编码控制台"
         }
       ],
       "prose": [
-        "这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）。",
+        "这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）；面向公司组织的商业平台则有后来见到的 agent-ceo。",
         "结论 1：控制台方向 t3-code 仍然体量最大（既有记录约 5.4 万星），coincide、tastecode 做原生性能和创意场景上的差异化。recalc 把控制台收成一张可公式化验收的表，crommacode 把观察做成游戏并加 worktree 蜂群，但后者暂不开放源码。除 crommacode 外，这类方案大多仍选择驱动本机已登录的 CLI，沿用用户已有的订阅。",
-        "结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。",
+        "结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。若目标是公司组织而不是本机编码控制台，agent-ceo 给出了「人和 Agent 共用组织规则、完成判定要分开」的产品形态，但闭源，页面上的规模数字均为自报，需要自己试用。",
         "结论 3：「团队即配置」正在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。"
       ]
     },
@@ -1081,13 +1153,21 @@
           "maturity": "★2857",
           "license": "MIT",
           "use_case": "数学可视化教学"
+        },
+        {
+          "id": "tracetrial-bench",
+          "tech": "Docker 实跑加轨迹证据，任务成功和 harness 合规分开打分",
+          "capability": "95 题、4 个 harness 的可靠性与失败归因基准",
+          "maturity": "★28，有论文和排行榜",
+          "license": "MIT",
+          "use_case": "判断失败该记在模型头上还是 harness 头上"
         }
       ],
       "prose": [
         "可以分成 7 组：模型（表中前几行）、推理和效率（kimi-k3-in-c、ferrite、mlx-serve、latent-sparse-attention、xerj-query-1）、权重和训练（nesformer、权重空间编程-mit、oumi-faie）、评测（rsi-inference-bench、science-s-last-exam、vybbench）、学习和科研（deeptutor 到 archimedes-reynolds）、内容创作（视频、动效、设计、写作），以及语音（cicada-知了、hy-simulmt、argument-cat、phonic-1）。",
         "结论 1：模型组全部是 light 分析，因为只有官方博客或 API，没有可验证的代码。开放权重小模型（twil-8b、sensenova-loop-9b-preview）适合本地实验；大模型（mistral-large-4、longcat-2-5）的价值更多在于部署选项。基准数据都是厂商自报。",
         "结论 2：最有技术含量的是「权重即程序」这条新路线：nesformer 用编译器写权重，权重空间编程-mit 让 LLM 推理后改权重，两者方向相反、互相补充。推理效率方向的 kimi-k3-in-c（极限省内存）、ferrite（全 Rust）、latent-sparse-attention（长上下文）都还以自报数据为主，生产可用性需要自己验证。",
-        "结论 3：内容创作类是数量最多的一组，而且几乎都以技能或 MCP 的形式交付，说明「LLM 加确定性工具链（ffmpeg、Playwright、Metal、GSAP、Manim）」是目前做可控内容生产的主流方式。lieflat 的写作与可视化技能（去 AI 味、公文、风格蒸馏、示意图、代码短片）把「先测量再改、先确认再写」写进了流程，但多用非商用许可。math-to-manim 把数学影片做成可重复跑的开源工具链。评测方面，frontier-harness-eval 补上了「只换 harness、不换模型」的公开对照。其中涉及他人肖像和 IP 的 ai-character-swap、gif-factory，以及依赖逆向接口的 zhihu-mcp，存在合规风险。"
+        "结论 3：内容创作类是数量最多的一组，而且几乎都以技能或 MCP 的形式交付，说明「LLM 加确定性工具链（ffmpeg、Playwright、Metal、GSAP、Manim）」是目前做可控内容生产的主流方式。lieflat 的写作与可视化技能（去 AI 味、公文、风格蒸馏、示意图、代码短片）把「先测量再改、先确认再写」写进了流程，但多用非商用许可。math-to-manim 把数学影片做成可重复跑的开源工具链。评测方面，frontier-harness-eval 补上了「只换 harness、不换模型」的公开对照；tracetrial-bench 则进一步把任务通过和 harness 轨迹是否可靠拆开计分，两者不宜直接比百分数。其中涉及他人肖像和 IP 的 ai-character-swap、gif-factory，以及依赖逆向接口的 zhihu-mcp，存在合规风险。"
       ]
     },
     {
@@ -1098,8 +1178,8 @@
       "prose": [
         "`other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：",
         "教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图、cs329z（斯坦福 Agent 工程公开课）",
-        "知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站、xnews（海外长文中文改写站）",
-        "效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）、harper（离线英文语法检查）"
+        "知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站、xnews（海外长文中文改写站）、x-article-hub（人工挑选的 X 长文归档）、musk-daily（马斯克动态日报）、what-new-ai-in-x（按模型与产品切的 X 合集档案）",
+        "效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）、cassotis-ime（跨平台开源拼音输入法「言泉」）、harper（离线英文语法检查）"
       ]
     }
   ]

@@ -2,27 +2,28 @@
   "meta": {
     "generated_at": "2026-11-12",
     "timezone": "Asia/Shanghai",
-    "projects_total": 156,
+    "projects_total": 170,
     "category_counts": {
-      "game": 21,
-      "agent-eng": 57,
-      "llm-tools": 50,
-      "other": 28
+      "game": 26,
+      "agent-eng": 61,
+      "llm-tools": 51,
+      "other": 32
     },
     "subcategory_counts": {
-      "dev-efficiency": 32,
+      "dev-efficiency": 35,
       "phone-computer-use": 12,
-      "agent-fleet": 13
+      "agent-fleet": 14
     },
     "origin_counts": {
       "bookmark": 78,
+      "reply-on-popular-post": 14,
       "daily-digest": 69,
       "bookmark+daily-digest": 8,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 123,
-      "light": 33
+      "full": 128,
+      "light": 42
     },
     "analysis_updated_at": "2026-11-12"
   },
@@ -70,6 +71,50 @@
         ],
         "comparison": "和 scenario-blender-plugin 同出 Scenario：本项目是给 Agent 的技能层，插件是 Blender 内的 UI 加本地 MCP。和 parametric-topdown-pixel-architecture 相比，后者只做程序化像素建筑，完全离线；本项目覆盖面广，但依赖云端生成。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "a-little-earth",
+      "name": "A Little Earth",
+      "summary": "在浏览器里步行探索按真实地点重建的小世界，目前已有罗马、纽约、巴黎、东京等多处，仍在扩建。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "网页游戏",
+        "3d",
+        "three.js",
+        "地理"
+      ],
+      "source_url": null,
+      "preview_url": "https://alittle.earth/",
+      "post_url": "https://x.com/the_ember_mind/status/2116200247974056414",
+      "author": "the_ember_mind",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "发现于 Earth on Spawn 帖的评论。作者说「I'll ask Fable 5.2 to take a look at my game」，所以这是已有项目，不一定由 Fable 写成。2026-11-12 打开官网：标题称可用浏览器步行探索 Rome、New York、Piz Boè、Cesena 等地，并预告更多地点；页脚写 Natural Earth 与 three.js。未查到公开源码。本次打开了站点，未完整走完各地图。作者个人站 theembermind.com。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "浏览器 3D 步行探索站，页面写明使用 three.js，地图数据来源标注为 Natural Earth。未查到公开源码、引擎细节、许可证，也未查到是否用程序化生成或手工搭建场景。",
+        "method": "把真实地点做成可步行的小场景，在浏览器里一处一处开放。公告帖称「Rome, New York, Dolomites. It's just the beginning」，并标明施工中、欢迎反馈。官网列出已开放和即将开放的地点，强调「one step at a time」。",
+        "features": [
+          "在浏览器里步行进入已开放的真实地点场景，无需另外安装",
+          "多地点逐步开放，站点带用量统计入口",
+          "作者持续收集反馈并扩建"
+        ],
+        "highlights": [
+          "和「整颗镜像地球」不同，走的是少量精修地点、慢慢增加的路线",
+          "有独立域名和可打开的预览，不是只有视频"
+        ],
+        "limitations": [
+          "无公开源码，场景精度、数据来源和生成方法无法核对",
+          "作者自己标明仍在施工，完成度会变",
+          "本次未完整体验各地图，步行手感和加载表现未验证",
+          "地点重建可能涉及地图与实景数据的使用条款"
+        ],
+        "comparison": "和 earth-on-spawn、our-3d-reality 都把真实地球做成可逛的网页 3D。earth-on-spawn 强调整颗地球、可破坏和天气同步（作者自述，无源码）；our-3d-reality 目前把纽约中城做得很完整，并有跨年活动；本项目是多地点、步行尺度的小世界，范围更小但地点更多。三者都没有公开源码。",
+        "researched_at": "2026-11-12"
       }
     },
     {
@@ -192,6 +237,49 @@
           "公告视频本次未观看，也未实际进入体验"
         ],
         "comparison": "和 portals 都是可探索的网页 3D 世界，本项目强调与真实地球对应。和 voxel-engine 同属 Matt Shumer 在 Spawn 上的 Fable 演示，一个偏体素破坏，一个偏地球探索。和 solstice 比，后者有开源渲染技术说明，本项目只有可玩页面。",
+        "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "fable-contra",
+      "name": "Fable Contra",
+      "summary": "用 Claude Fable 5.2 在约 90 分钟内重做的经典 Contra，精灵、动画、关卡和音效都由代码生成，可在浏览器试玩。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "网页游戏",
+        "fable"
+      ],
+      "source_url": null,
+      "preview_url": "https://claude.ai/artifact/3tX4R1U95SUxKUQ2Dkz3m3",
+      "post_url": "https://x.com/prasad_pilla/status/2120404011899932709",
+      "author": "prasad_pilla",
+      "models": [
+        "Claude Fable 5.2"
+      ],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "发现于 Earth on Spawn 帖的评论。作者自述约 90 分钟做出，精灵、动画、关卡和音效都从代码生成。预览是 Claude Artifact，链接可能过期或需登录。公告帖有视频，本次未观看，也未完整试玩。这是对经典游戏的再现，著作权和商标属于原权利方，只能作为技术展示，不能当作可分发的游戏成品。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "在 Claude Artifact 上发布的浏览器小游戏，作者称由 Claude Fable 5.2 生成全部精灵、动画、关卡和音效代码。未查到独立源码仓库、引擎说明和许可证。",
+        "method": "用 frontier 编程模型在短时间内重做一款经典动作游戏，作为能力展示。作者强调「90 minutes later, it took me straight back to my childhood」。制作耗时和「全部从零生成」均为自述。",
+        "features": [
+          "可在浏览器打开的 Contra 风格动作游戏",
+          "作者称画面、动画和音效都在这一次生成流程里完成"
+        ],
+        "highlights": [
+          "在镜像地球讨论下，用经典街机动作游戏补充了「短时间做出可玩关卡」的样本",
+          "有可点击的预览，不只是视频截图"
+        ],
+        "limitations": [
+          "预览依赖 Claude Artifact，可能失效或需登录，不适合当作长期分发地址",
+          "无源码，无法核对是否真的全部由模型生成",
+          "再现经典游戏，存在明显的知识产权限制，仅能作为展示",
+          "90 分钟和完成度是作者自述，本次未观看视频、也未通关验证"
+        ],
+        "comparison": "和 sapper-minesweeper、dread-and-district、guizang-game-skill 一样，都是用 Fable 一类模型快速做出的可玩演示。本项目和 sapper-minesweeper 更接近经典规则复刻；dread-and-district 和 guizang-game-skill 更偏原创玩法。与 earth-on-spawn 相比，它不追求开放世界，只把一个熟悉的动作关做出来。",
         "researched_at": "2026-11-12"
       }
     },
@@ -368,6 +456,51 @@
       }
     },
     {
+      "id": "our-3d-reality",
+      "name": "Our 3D Reality",
+      "summary": "在浏览器里步行游览按真实地图重建的地点，目前主推纽约中城，可用真实地图数据逛时代广场和帝国大厦等地。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "网页游戏",
+        "3d",
+        "地理"
+      ],
+      "source_url": null,
+      "preview_url": "https://our3dreality.com/",
+      "post_url": "https://x.com/zudasworld/status/2119915427115761893",
+      "author": "zudasworld",
+      "models": [
+        "Claude Fable 5.2"
+      ],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "发现于 Voxel Engine 帖的评论。作者称这个 3D 世界先后由 Opus 4.8、Fable 5、Opus 5、Fable 5.1、Opus 5.5 等参与搭建，Fable 5.2 新加了跑酷、音乐和语音聊天（自述，并称语音不经 ElevenLabs）。预览在 https://our3dreality.com/。2026-11-12 打开站点可见纽约中城步行游览，文案称时代广场、帝国大厦、大中央车站和 140 余座真实建筑按真实地图重建，免费、不用注册。公告帖有演示视频，本次未观看。未查到公开源码。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "浏览器可访问的 3D 步行世界。官网强调用真实地图数据重建纽约中城街区和地标，免费、无需注册。作者在评论中称场景由多个 Claude / Fable 版本迭代，Fable 5.2 加入跑酷、音乐和语音聊天。未查到公开源码、具体引擎、语音方案实现和许可证。",
+        "method": "先做一个可走的真实城市切片，再持续叠加玩法。站点还做了与真实世界同步的纽约跨年球下降提醒，并可把链接发给朋友在时代广场会合。这更像持续运营的浏览体验，而不是一次生成的短演示。",
+        "features": [
+          "在浏览器里步行游览纽约中城地标，文案称含时代广场、帝国大厦观景台、大中央车站等",
+          "可邀请朋友用链接会合；跨年球有提醒",
+          "作者自述后来加入了跑酷、音乐和语音聊天"
+        ],
+        "highlights": [
+          "在「镜像地球」热潮里，选择把一座城市做深，而不是先铺整颗星球",
+          "有可打开的网站和明确的免费说明，不只是视频"
+        ],
+        "limitations": [
+          "无公开源码，建筑精度、地图数据来源和语音实现都无法核对",
+          "跑酷和语音是作者自述，本次未观看演示视频，也未实际试玩语音",
+          "真实地标重建可能涉及地图、商标和肖像地标的使用边界",
+          "目前公开主推纽约，其他地点完成度未查到"
+        ],
+        "comparison": "和 a-little-earth、earth-on-spawn 同属真实地点网页 3D。earth-on-spawn 走整颗地球；a-little-earth 是多个精修小场景；本项目把纽约中城做成可逛、可会合的主场。三者都无公开源码。和 voxel-engine 不同，这里的重点是城市漫游而不是破坏。",
+        "researched_at": "2026-11-12"
+      }
+    },
+    {
       "id": "poke-bonk",
       "name": "Poke Bonk",
       "summary": "AI coding 做出的网页游戏，商业化表现很强。",
@@ -449,6 +582,50 @@
         ],
         "comparison": "和 solstice 对比：solstice 是人工主导的高质量渲染引擎（虚拟化几何加全局光照），portals 是 AI 量产的内容。和 moss-keeper、bee-x9 相比，portals 规模最大，开源也最完整。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "sapper-minesweeper",
+      "name": "SAPPER",
+      "summary": "用 Claude Fable 5.2 一次性提示在空项目里做成的扫雷游戏，带战争主题的三维场面，可在浏览器玩。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "网页游戏",
+        "fable"
+      ],
+      "source_url": null,
+      "preview_url": "https://minesweeperlostcausedev-9icm3.sevalla.page/",
+      "post_url": "https://x.com/razvanmuntian/status/2120099765413167525",
+      "author": "razvanmuntian",
+      "models": [
+        "Claude Fable 5.2"
+      ],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "发现于 Earth on Spawn 帖的评论。作者自述在空项目上一次性提示，约 30 分钟、约 1600 万 token 做出带 AAA 视觉的扫雷。耗时和 token 数为自报。2026-11-12 打开演示站，可见 SAPPER 主题界面、探雷/插旗操作和可选扇区。公告帖有视频，本次未观看。托管在 sevalla.page，地址可能变化。页脚写素材来自 CC0 和 Poly Haven。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "独立托管的浏览器游戏（sevalla.page）。玩法是扫雷：左键探测、右键插旗，数字表示周围雷数；界面做成战争/排爆主题，可旋转和缩放视角。作者称用 Claude Fable 5.2 对空项目一次性提示生成。未查到公开源码和许可证；页面写素材来自 CC0 与 Poly Haven。",
+        "method": "把经典扫雷规则包进三维战场表现，作为模型一shot能力的展示。作者给出约 30 分钟和约 16M token 的成本（自报）。站点可直接试玩，不必经过 Claude Artifact。",
+        "features": [
+          "浏览器内扫雷，探雷、插旗，并可在数字上清除周围格子",
+          "可选扇区、计时和完成度，视角可旋转缩放",
+          "战争主题包装和任务完成结算"
+        ],
+        "highlights": [
+          "在同类 Fable 演示里，规则完整、有独立托管地址，比只发视频更可核验",
+          "视觉包装和经典玩法结合得比较完整（以打开的页面为准）"
+        ],
+        "limitations": [
+          "无源码，无法核对生成过程和依赖",
+          "30 分钟、16M token 和「AAA 视觉」都是作者自述",
+          "托管域名偏临时，长期可用性不确定",
+          "本次打开了页面，但未完整清完雷区，也未观看演示视频"
+        ],
+        "comparison": "和 fable-contra 同是评论区出现的 Fable 经典游戏复刻：contra 走动作关，本项目走规则清晰的益智玩法，且预览不依赖 Artifact。和 dread-and-district、the-quiet-elevation 相比，它不是原创玩法，而是把扫雷重新皮肤化。若只想看模型能否在短时间交出可玩规则，这个比开放世界演示更容易验收。",
+        "researched_at": "2026-11-12"
       }
     },
     {
@@ -791,6 +968,52 @@
           "公告帖演示视频本次未观看"
         ],
         "comparison": "和 parametric-topdown-pixel-architecture 同属像素向工具，前者生成建筑和 Godot 预制体，pixelfx 专注战斗和道具特效。和 3d-os-scenario-skills 比，本项目不走 DCC，而是直接在 Canvas 里用代码画。和 solstice、threepp 比，那些是 3D 渲染底座，本项目是 2D 像素 VFX 库。",
+        "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "three-voxel-destruction",
+      "name": "three-voxel-destruction",
+      "summary": "在浏览器里用 Three.js 和 WebGPU 做的拆除风格体素破坏演示：每个体素都是 GPU 刚体，含城市、赛道和空间站三关。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "webgpu",
+        "three.js",
+        "体素",
+        "物理"
+      ],
+      "source_url": "https://github.com/sbobyn/three-voxel-destruction",
+      "preview_url": "https://three-voxel-destruction.vercel.app/",
+      "post_url": "https://x.com/nybobs/status/2104584028980707668",
+      "author": "sbobyn（nybobs）",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": 24,
+      "notes": "2026-11-12 查询 24 星、3 个 fork，许可证 MIT，主页指向 Vercel 演示。发现于 Voxel Engine（Spawn）帖的评论：作者说早些时候用 Opus 5.5 迭代出过类似效果，并提到底层物理库 three-avbd（npm / https://github.com/sbobyn/three-avbd）。评论指向的演示帖是 2026-10 左右发布的项目，不是当天新做的一次性 Fable 演示。底层 three-avbd 文档称面向有限范围的开发者预览，大场景性能和跨设备确定性仍开放。本次打开了演示站首页，未在支持 WebGPU 的机器上完整体验三关。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 网页演示，Three.js（文档写 Three 0.187.0）加 WebGPU。每个体素都作为刚体交给作者的 GPU 求解器 three-avbd。仓库含 Vite、pnpm、测试（含 GPU 测试）、多场景 HTML 和文档。需要带硬件 WebGPU 适配器的浏览器（文档：Chrome 或 Edge，以及 iOS 26 / macOS 26 上的 Safari）；WebGL 回退无法运行计算着色器求解。许可证 MIT。底层 three-avbd 另有独立仓库，文档把它定位为有限范围的开发者预览。",
+        "method": "预制三关，所有可破坏物都是体素刚体。城市关（文档称 94,000 个体素）可用锤子、激光、火箭、炸药和拆球楼；承重被切断后楼层会塌，玻璃会碎，碎石会沉降并冻结。赛道关把墙、看台和轮胎堆都做成体素，车辆可受击损坏。空间站关无重力，切开的太阳能翼会漂走。首次加载每关时会测量 GPU，并选择画质和物理能同时维持的碎块数量，目标是塌方时仍约 60 fps（自述；菜单可重测或覆盖）。",
+        "features": [
+          "浏览器内破坏城市、驾驶赛道和切割空间站，手机和平板有虚拟摇杆",
+          "飞行或步行切换，慢动作，可调画质、视野和音效",
+          "开源仓库和在线演示，底层物理是可单独引用的 three-avbd"
+        ],
+        "highlights": [
+          "在一堆无源码的 AI 体素演示旁边，这是少见「有物理求解器、有源码、有可玩演示」的项目",
+          "不是单次提示词生成的小品，而是作者自己的 WebGPU 物理和体素工具链上的展示",
+          "文档对设备限制、质量和未承诺事项（无 CCD、无跨设备按位确定性等）写得比较坦白"
+        ],
+        "limitations": [
+          "必须有可用的 WebGPU，老设备和 WebGL-only 浏览器玩不了",
+          "three-avbd 仍是预览，大场景质量和低端 GPU 目标尚未完成（作者自述）",
+          "仓库星标还少，工程完成度主要看文档和演示，而不是社区采用",
+          "本次未在本机完整跑完三关，帧率和破坏手感以作者说明为准"
+        ],
+        "comparison": "和 voxel-engine（Spawn 上的 Fable 体素演示）最直接对照：二者都是浏览器里砸体素，但本项目有 MIT 源码和自研 GPU 求解器，voxel-engine 只有托管演示。和 earth-on-spawn、guizang-game-skill 同属网页 3D，但本项目的核心是物理破坏，不是开放世界或动作技能包。想研究 WebGPU 物理，应看 three-avbd；想看 AI 一句话出体素世界，看 voxel-engine。",
         "researched_at": "2026-11-12"
       }
     },
@@ -1291,6 +1514,54 @@
       }
     },
     {
+      "id": "minimax-code",
+      "name": "MiniMax Code",
+      "summary": "MiniMax 开源的终端编程 Agent：可用官方模型或自备接口，在本地构建、测试并继续改。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "harness",
+        "cli",
+        "mcp"
+      ],
+      "source_url": "https://github.com/MiniMax-AI/minimax-code",
+      "preview_url": "https://agent.minimax.io/download",
+      "post_url": "https://x.com/Ronny_MiniMax/status/2120787379761922496",
+      "author": "MiniMax",
+      "models": [
+        "MiniMax"
+      ],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": 2223,
+      "notes": "2026-11-12 查询 2223 星、288 个 fork，主语言 TypeScript，最新发行版 v0.7.2，主页 https://agent.minimax.io/download。第一方代码默认 MIT，详见 LICENSE-STATUS.md 与第三方说明。发现于 FrontierHarness Eval 原帖评论，官方账号建议把 MiniMax Code CLI 打开 PTC（programmatic tool calling）模式加入评测。PTC 的具体行为本次未读到独立文档，不以评论为准去描述实现。官网文档另有中文站 agent.minimaxi.com。安装器不支持 Alpine / musl Linux（README）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "开源终端编程 Agent（CLI 名 mcode），TypeScript 单仓，包管理为 pnpm，兼容 Node.js 22.19+、24.2+、25 和 26。提供官方安装脚本（macOS / Linux / WSL 默认装到 ~/.minimax-code，Windows 到用户目录；无需 sudo），也可用 npm 包 @minimax-ai/code。支持 MiniMax 账号登录（中国大陆和 Global 分区），以及 BYOK：可添加 OpenAI Completions、OpenAI Responses 或 Anthropic Messages 兼容端点。功能包括技能、记忆块、MCP、内置搜索和 mcode-tools 媒体工具。第一方代码默认 MIT；依赖和资源许可见 LICENSE-STATUS.md 与 THIRD_PARTY_NOTICES.md。官网文档和下载页为 agent.minimax.io。",
+        "method": "在项目目录启动 mcode，用提示词让 Agent 改代码、跑验证，再继续追加需求。仓库提供 pocket-pet 示例：先在本地浏览器跑一个无前端依赖的宠物页，再开 CLI 按提示词迭代。Token 方案需要账号和额度；用户数据默认在 ~/.minimax（可用环境变量改）。自定义供应商保存在当前 profile 的 config.yaml。",
+        "features": [
+          "跨平台 CLI 安装器，也可用 npm 安装；登录后用 /status、/provider 查看账号和模型",
+          "支持官方 MiniMax 模型和自备兼容接口，可配上下文和输出长度限制",
+          "技能、MCP、媒体工具和托管连接器（后两项取决于账号与额度）",
+          "仓库带文档、示例和可以从提示词复现的浏览器小项目"
+        ],
+        "highlights": [
+          "厂商维护、文档和安装路径完整的开源编码 Agent，体量明显大于多数社区 harness",
+          "2026-06 建库，2026-11-12 查询已有两千余星，并持续发版到 v0.7.2",
+          "明确支持 BYOK，不只锁死自家模型"
+        ],
+        "limitations": [
+          "用官方模型改代码会产生费用，需要可用额度",
+          "安装器不支持 Alpine / musl；部分托管工具要联网和授权",
+          "评论中提到的 PTC 模式未在本次阅读的 README 里展开，细节以官方文档为准",
+          "本次未实际安装或跑基准"
+        ],
+        "comparison": "和 kwwk、optiq-code、agav、crommacode 同属编程 Agent。minimax-code 是目前库里少有的、由模型公司开源并提供完整安装器的终端 Agent；kwwk 更适合要嵌入 Swift 应用的人；optiq-code 针对本机小模型；crommacode 是闭源、游戏化的多 Agent 桌面。若要参加 frontier-harness-eval，官方评论建议带上 PTC 模式，但仍需以评测方环境为准。",
+        "researched_at": "2026-11-12"
+      }
+    },
+    {
       "id": "oar-kanso",
       "name": "OAR / Kanso",
       "summary": "botiverse 的开源 Agent 运行时，Kanso 是其上的演示产品。",
@@ -1412,6 +1683,52 @@
         ],
         "comparison": "和 stroq 同为 Agent 安全层：stroq 擅长回溯历史会话、追溯危险命令由哪段文本触发，openmoat 侧重运行时强制执行（沙箱、出网、密钥）。和 security-audit-skill 不同，后者审计代码本身。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "optiq-code",
+      "name": "OptiQ Code",
+      "summary": "在 Mac 上驱动本机本地模型的终端编程 Agent，针对小模型容易交空白补丁、改文件失败和原地打转的问题做了防护。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "harness",
+        "本地模型",
+        "cli",
+        "macos"
+      ],
+      "source_url": null,
+      "preview_url": "https://mlx-optiq.com/code",
+      "post_url": "https://x.com/latent_node/status/2119399124357550291",
+      "author": "latent_node",
+      "models": [
+        "GLM-5.3-Flash"
+      ],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "发现于 FrontierHarness Eval 原帖评论。作者自报在 Hugging Face Harness Leaderboard 的 Terminal-Bench mini + DeepSWE mini（29 题）上，用 GLM-5.3-Flash 得到 82.9，高于 Pi 和 mini-swe-agent 的 82.2。这些分数是作者自报，不是 FrontierHarness 官方榜，本次未复跑。2026-11-12 查阅产品页，未查到公开源码仓库。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "终端编程 Agent，产品页称通过 optiq serve 调用本机模型（例如 MacBook 上的 4-bit 量化，或 Mac Studio 上的 27B），在本机完成读代码、改文件、跑测试的循环，可离线。官网 mlx-optiq.com 还提供模型、云、实验室和文档入口，需登录部分功能。未查到公开源码和许可证。",
+        "method": "产品页把它写成和云端 Agent 相同的循环，但针对本地小模型的失败模式加护栏：若模型在最后一轮丢掉有效 diff，退出时尽量从 git 找回补丁，避免交空结果；若精确匹配编辑反复失败，就改为请模型重写整个文件；若反复读同一处或原地循环，会触发 stall nudge，要求先做一个可测试的小改动再跑测试。写操作需人批准。",
+        "features": [
+          "在终端里对本机项目做读、改、跑测试，直到测试通过或用户停止",
+          "针对空补丁、失败的精确编辑和循环读取做了专门处理（产品页自述）",
+          "声称可完全在本机运行，由 optiq serve 提供模型"
+        ],
+        "highlights": [
+          "定位清楚：不是再做一个通用云端 harness，而是让「你真正能在本机跑起来的小模型」把补丁落地",
+          "作者主动把成绩拿到公开 harness 讨论里对比，不过数字仍是自报"
+        ],
+        "limitations": [
+          "未查到源码，护栏是否如宣传所述无法核对",
+          "榜单分数是作者自报的另一套 mini 集，不能直接对照 FrontierHarness v1.1",
+          "目前公开材料以 Mac / optiq serve 为主，其他系统支持未查到",
+          "本次未安装，也未用本地模型复现"
+        ],
+        "comparison": "和 kwwk、minimax-code、agav 同属终端编程 Agent。minimax-code 默认走云端或官方模型，也可 BYOK；kwwk 是 Swift 原生、可嵌入；optiq-code 明确针对本机小模型的失败模式。和 frontier-harness-eval、tracetrial-bench 的关系是：后两者是评测，本项目是被拿去比分数的 harness。",
+        "researched_at": "2026-11-12"
       }
     },
     {
@@ -2046,6 +2363,54 @@
         ],
         "comparison": "和 agents-md 相比：agents-md 是个人偏好，本项目是团队级实践。和 bot-teams 相比，它更偏「写好的规则加角色库」。和 pstack 的作者有交集（Lauren Tan）。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "kwwk",
+      "name": "kwwk",
+      "summary": "用 Swift 写的原生编程 Agent：既有 macOS 终端 TUI，也可作为 SwiftPM 库嵌进应用，并支持 MCP 和工具搜索。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "swift",
+        "harness",
+        "mcp",
+        "cli",
+        "macos"
+      ],
+      "source_url": "https://github.com/EYHN/kwwk",
+      "preview_url": null,
+      "post_url": "https://x.com/EEEEYHN/status/2120752500617752850",
+      "author": "EYHN（EEEEYHN）",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": 138,
+      "notes": "2026-11-12 查询 GitHub 138 星（会变化）；最新发行版 v0.1.119。发现于 FrontierHarness Eval 原帖的引用帖。作者自述已自费跑 v1.1，成绩以附图为准，本次未复跑。同作者另有 kwwk-computer-use-core（macOS Accessibility 计算机使用运行时，查询时 68 星）。作者帖文称适合嵌入 iOS 和 macOS 原生应用；仓库 README 重点写的是 macOS 14+ CLI 与 SwiftPM SDK，本次未逐一核对 iOS 目标支持。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Swift 6.1（源码构建需 Xcode 16.3 或对应工具链）。产品分两层：Homebrew 发布的 kwwk 编码 CLI（TUI，瓶子面向 macOS 15+ 的 Apple Silicon 和 Intel，运行时要求 macOS 14+），以及可作为 SwiftPM 依赖的 KWWKAgent / KWWKAI / KWWKAuth 库。内置对接 Anthropic、ChatGPT（Codex）、GitHub Copilot、Cursor、Devin、Kimi For Coding、xAI Grok、Z.AI GLM Coding Plan、OpenRouter，以及 Anthropic / OpenAI / Gemini / OpenCode 或 OpenAI 兼容接口的 API Key。MCP 支持 stdio 和 Streamable HTTP（不支持仅 SSE），HTTP 可用 MCP OAuth（文档日期 2025-11-25）。许可证 MIT。相关仓库 kwwk-computer-use-core 是从中抽出的 macOS Accessibility 计算机使用核心，不依赖 Agent 框架。",
+        "method": "CLI 从 ~/.kwwk/oauth.json 或环境变量取凭证，也可用 /login 浏览器登录。工具默认不一次性全部声明，而由内置 tool_search（对工具名、描述和参数做 BM25）按需加载 MCP 工具，避免请求等待服务器。支持子 Agent、自定义工具、hooks（审计、脱敏、短路）、上下文压缩，以及在运行中转向。SDK 默认不读 ~/.kwwk 或环境变量，由宿主显式传入凭证、会话和技能目录。项目级 .kwwk/mcp.json 只有设置 KWWK_ALLOW_PROJECT_MCP=1 才会读取，避免打开仓库就执行其中的命令。",
+        "features": [
+          "交互式编码 TUI，也可用 kwwk mcp 增删 MCP 服务器并做浏览器 OAuth 登录",
+          "SwiftPM SDK：一次性 runOnce、子 Agent、流式事件、自定义工具和 hooks",
+          "tool_search 按需加载 MCP 工具；大结果写入本地文件再告知模型路径",
+          "KWWKAuth 可单独做供应商登录、刷新和订阅用量读取，不必带上完整 Agent 栈"
+        ],
+        "highlights": [
+          "少见的纯 Swift 编程 Agent 运行时，面向要在 Apple 平台嵌 Agent 的开发者，而不只是再做一个跨平台 CLI",
+          "工具搜索和项目级 MCP 开关说明作者有意处理工具膨胀和仓库投毒风险",
+          "2026-04 建库，更新到 2026-11-12；查询 138 星，Homebrew 可装。作者在 FrontierHarness 讨论里自费提交了 v1.1 成绩（自报）"
+        ],
+        "limitations": [
+          "官方运行时定位是 macOS；是否完整支持 iOS 应用嵌入，仓库 README 未写清楚",
+          "作者公布的 FrontierHarness 成绩是自测附图，不能当成榜单官方结果",
+          "本机电脑操控能力在独立的 kwwk-computer-use-core 里，需要辅助功能权限，且要求 macOS 14+",
+          "本次未实际安装或跑评测"
+        ],
+        "comparison": "和 anabasis、agav、minimax-code、optiq-code 同属编程 Agent harness。anabasis 自动改进 harness，kwwk 是可嵌入的 Swift 运行时；minimax-code 是厂商维护的跨平台终端 Agent，体量更大；optiq-code 针对本机小模型。电脑操控部分可与 poinky、windows-terminal 对照，但 kwwk-computer-use-core 更像可嵌入的 Accessibility 运行时，而不是完整桌面助手。",
+        "researched_at": "2026-11-12"
       }
     },
     {
@@ -2813,6 +3178,49 @@
         ],
         "comparison": "和 opencode-browse（真实浏览器）相反，走的是隔离路线。和 openmausbot 自带的 bot 虚拟机相比，windows-terminal 专注 Windows 桌面，并可接任意 MCP Agent。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "agent-ceo",
+      "name": "Agent.ceo",
+      "summary": "把人和 AI Agent 放进同一张组织架构的商业多 Agent 平台，强调角色、冲刺、升级和共用记忆。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "多agent",
+        "商业产品",
+        "mcp"
+      ],
+      "source_url": null,
+      "preview_url": "https://agent.ceo/",
+      "post_url": "https://x.com/MosheBeeri/status/2120500262242779346",
+      "author": "Moshe Beeri / Onomos",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "发现于 Dread & District 帖的评论。作者是 Onomos（Beeri B.V.）创始人，用「让争论的 Agent 和做裁定的角色分开，才能无人值守」来介绍自己的产品。Agent.ceo 是该集团的主应用，Onomos 是咨询公司，官网为 https://onomos.ai/。2026-11-12 查阅产品页：自称免费可开 3 个 Agent；并列出 9,799 次 Git 提交、8.3 万条测试断言、11 种 Agent 角色、190 个 MCP 工具等数字，均为页面自报，本次未核实。未查到公开源码。Cerebrum 研究框架在 Onomos 站点称计划开源，当时状态未查到已发布仓库。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "商业多 Agent 平台（SaaS）。产品页把它叫做 Cyborgenic Organization：人和 Agent 共用组织架构、沟通渠道和问责系统。页面提到角色、冲刺周期、阻塞升级、跨会话记忆、共享知识图谱，以及 MCP 工具。咨询公司 Onomos 的站点还谈到策略闸门、验收标准和基于证据的完成判定。未查到公开源码、具体技术栈和许可证。",
+        "method": "先定义组织与角色，再让 Agent 按角色协作，而不是在一个聊天窗口里互相争论到结束。评论里的关键论点是：争论的各方不应同时拥有「何时结束」的决定权，把裁定权分开，团队才能无人值守。产品页另有面向小企业的打包（自报约每月 50 美元，含网站和接待/预订 Agent），以及一个会因不活动而关闭的免费探索模式。",
+        "features": [
+          "把多个 Agent 放进组织角色里协作，并带记忆和升级路径（产品页自述）",
+          "有免费试用档（页面写 3 个 Agent）和付费小企业方案",
+          "宣称提供大量 MCP 工具和文档、仪表盘"
+        ],
+        "highlights": [
+          "把「多 Agent 要有独立的完成判定」说得很清楚，这和只堆聊天机器人不同",
+          "有可访问的产品和咨询站点，不是只有概念图"
+        ],
+        "limitations": [
+          "闭源商业产品，架构和安全边界无法从源码核对",
+          "提交数、测试数、角色数和工具数都是页面自报",
+          "企业咨询和自我进化平台的叙事偏宣传，需实际试用才能判断",
+          "本次未注册、未创建组织"
+        ],
+        "comparison": "和 crommacode、recalc、t3-code、rerun 同属多 Agent 管理，但本产品面向公司和组织结构，而不是本机编程 CLI 控制台。crommacode 和 recalc 管的是编码 Agent 怎么并排干活；Agent.ceo 管的是「人和 Agent 怎么在同一套组织规则下运行」。开源替代更接近 open-duet-anil-matcha、rerun 这类通用 Bot 平台，而不是 T3 Code。",
+        "researched_at": "2026-11-12"
       }
     },
     {
@@ -4668,6 +5076,51 @@
       }
     },
     {
+      "id": "tracetrial-bench",
+      "name": "TraceTrial-Bench",
+      "summary": "给编程和运维 Agent 做的可靠性基准：同时看任务是否完成，以及 harness 在轨迹里是否可靠，并把失败归因到哪一层。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "评测",
+        "开源",
+        "harness",
+        "基准"
+      ],
+      "source_url": "https://github.com/TraceLite-AI/TraceTrial-Bench",
+      "preview_url": "https://tracelite.ai/leaderboard.html",
+      "post_url": "https://x.com/traceliteai/status/2120477689777684991",
+      "author": "TraceLite AI",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": 28,
+      "notes": "2026-11-12 查询 GitHub 28 星，许可证 MIT。论文 arXiv:2610.32285，报告 https://tracelite.ai/trial-by-trace.html，数据集 https://huggingface.co/datasets/TraceLite-AI/TraceTrial-Bench。发现于 FrontierHarness Eval 原帖评论，作者强调比较 model×harness 时也应看轨迹是否完整。文中 31.1%、8.4% 以及各 harness 分数均为论文/README 自报，本次未复跑。仓库提到 Hugging Face 曾将其列为 2026-10-27 Paper of the Day 第 2，以页面当时展示为准。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.11+ 评测工具和任务集，在 Docker 中实际跑 Agent。论文设定是 95 个机制向任务，覆盖 7 个可靠性维度、40 个机制节点；论文实验为 4 个 harness（Claude Code、Codex、OpenClaw、DeepSeek Harness）× 9 个模型，共 36 种组合、3,420 次运行（README 自述）。流程分运行、规范化轨迹并提取证据、分别给 Harness 层和 Agent 层打分、再做失败归因。许可证 MIT。另有技术报告、排行榜和 Hugging Face 数据集 / Space。",
+        "method": "不只看任务校验器是否通过，还检查工具调用、上下文、执行和结束条件是否在轨迹里完整、可归因。这样可以分开三种情况：任务成功但 harness 不合规、harness 正确但模型失败、以及 harness 有缺陷但模型兜住了。社区也可提交自己的 run（需公开轨迹、配置和 scorecard），维护方只核对校验和与抬头平均数，不把它当成官方榜或独立复现。",
+        "features": [
+          "用命令行构建 harness 镜像、跑单题或论文任务清单，并生成报告",
+          "输出里同时有规则校验、规范化轨迹和分层分数",
+          "公开论文、排行榜和数据集；接受社区提交的对照实验（有声明）"
+        ],
+        "highlights": [
+          "把「模型不行」和「harness 把错误吞了」拆开，补上只看通过率时看不见的一层",
+          "README 自报：31.1% 的运行在 harness 未全部达标时仍然任务成功，两边都干净通过的只有 8.4%",
+          "工具链完整（Docker 运行、报告、社区提交规范），不是只有一篇博客"
+        ],
+        "limitations": [
+          "论文只评了 4 个 harness，不能直接外推到所有编程 Agent",
+          "分数和案例来自项目方实验，本次未复跑；跑完全部论文矩阵成本不低",
+          "仓库星标还不多，社区 run 也明确不是官方榜",
+          "评测依赖 Docker 和模型密钥，复现门槛高于只看公开表"
+        ],
+        "comparison": "和 frontier-harness-eval 最该对照着看。frontier-harness-eval 固定任务和环境，比较不同 harness 的通过率、费用和耗时；TraceTrial-Bench 进一步问「失败或侥幸成功该记在模型头上还是 harness 头上」。两者都评 harness，但问题和计分方式不同，不宜直接比榜上的百分数。和 science-s-last-exam、vybbench 等相比，本项目评的是 Agent 运行时可靠性，不是学科或推理题本身。",
+        "researched_at": "2026-11-12"
+      }
+    },
+    {
       "id": "trendradar",
       "name": "TrendRadar",
       "summary": "多平台热点聚合与 AI 简报，支持 MCP 查询。",
@@ -6000,6 +6453,52 @@
       }
     },
     {
+      "id": "musk-daily",
+      "name": "Musk Daily",
+      "summary": "用 Grok Bot 整理马斯克在 X 上的发帖、转发和回复，按主题分类，每天上午北京时间更新。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "资讯",
+        "grok-bot",
+        "x",
+        "中文"
+      ],
+      "source_url": null,
+      "preview_url": "https://musk-daily.com/",
+      "post_url": "https://x.com/jinhan261/status/2120151325711462748",
+      "author": "jinhan261",
+      "models": [
+        "Grok"
+      ],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "发现于 X News 公告帖评论。作者自述「用 Grok bot 专门抓马斯克的每日 X」。2026-11-12 打开站点：中英切换，13 个主题，时间显示为北京时间（UTC+8）。页面内嵌 JSON 显示 refresh_mode 为 notion_api，最近一次成功采集窗口写到 2026-11-11T22:07Z。未查到公开源码。站点 /about 无独立说明页。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "公开静态站（需启用 JavaScript 阅读条目），提供中英界面和 RSS。页面内嵌数据写明 schema_version 5，时区 Asia/Shanghai，refresh_mode 为 notion_api，作者范围仅 elonmusk。评论作者称用 Grok Bot 做每日抓取。未查到公开仓库、技术栈详情和许可证。",
+        "method": "把马斯克的发帖、转发、回复和文章收入每日动态，并分到最多两个主题。主题表（version 2）把 AI、汽车、机器人、Boring Company、Neuralink、航天与星链、能源与储能、X 平台、商业与经济等分开，并写了互斥规则，例如不因特斯拉身份就自动标成 AI。站点宣称北京时间每天早上更新；2026-11-12 见到的最近一次成功采集完成于 2026-11-11T22:17Z（数据自报）。",
+        "features": [
+          "按日、周和主题浏览，并可筛选本人发言、发帖、转发、回复或文章",
+          "中英界面，时间统一显示为北京时间",
+          "提供 RSS；主题分类带中英定义"
+        ],
+        "highlights": [
+          "把单一高信息密度账号做成可检索的日报，而不是再做一个通用 X 摘要站",
+          "主题边界写得比较认真，减少「什么都算 AI」的混标"
+        ],
+        "limitations": [
+          "未查到源码，抓取稳定性、漏帖和分类准确度无法核对",
+          "只覆盖 @elonmusk，不适合当作一般的 X 资讯站",
+          "依赖 Grok / X 数据接口，平台规则变化可能影响更新",
+          "归档他人帖文，引用和展示需遵守 X 条款"
+        ],
+        "comparison": "和 xnews、x-article-hub、what-new-ai-in-x 同属 X 内容整理。本站范围最窄（一个账号），更新节奏按日，分类也更细。xnews 做中文改写杂志，x-article-hub 归档长文，what-new-ai-in-x 按模型合集归堆。若只想盯马斯克动态，本站更直接。",
+        "researched_at": "2026-11-12"
+      }
+    },
+    {
       "id": "omarchytv",
       "name": "OmarchyTV",
       "summary": "给电视/PC 的主题与 AI TUI/MCP 插件项目。",
@@ -6350,6 +6849,51 @@
       }
     },
     {
+      "id": "what-new-ai-in-x",
+      "name": "What New AI in X",
+      "summary": "把 X 上的模型实测、提示词和工作流按产品和专题做成合集档案，并配有对照文章。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "资讯",
+        "x",
+        "提示词",
+        "评测",
+        "中文"
+      ],
+      "source_url": null,
+      "preview_url": "https://x.yrzhe.top/",
+      "post_url": "https://x.com/yrzhe_top/status/2120118870669209784",
+      "author": "愚人哲 / Adrian Yu（yrzhe_top）",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "发现于 X News 公告帖评论。作者自述每天让 Grok Bot 看趋势、找新模型出来后大家在做什么。2026-11-12 站点标题栏写 27 个合集、80,473 条收录（自报，且页面多处计数不完全一致，会变化）。作者个人站为 https://yrzhe.top/。未查到公开源码。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "公开中文静态站（页面带合集索引、文章和搜索）。评论作者称日常用 Grok Bot 抓趋势并找案例。未查到公开源码、具体生成管线、托管方式和许可证。个人站点 yrzhe.top 介绍作者为 AI 产品经理。",
+        "method": "把时间线上的实测、提示词、工作流和产品动态归入按模型或产品划分的合集（例如 Gemini 4、DeepSeek V4.1 Flash、Claude Fable 5.2、个人助理用法对比），并另写对照文章。条目带来源账号和时间；首页有今日头版、合集榜和实时新入条目。规模数字以站点当时展示为准。",
+        "features": [
+          "按合集、文章和单篇浏览，并可搜索模型、作者或提示词关键词",
+          "合集持续追加社区新尝试，首页展示今日新增和最近归入的条目",
+          "对照文章讨论怎么选模型、怎么写提示词、以及常见工作流"
+        ],
+        "highlights": [
+          "在同类 X 资讯站里，规模明显更大，并把「新模型出来之后大家怎么用」做成可翻的档案，而不只是每日几篇改写",
+          "来源仍指向原帖，方便回看原始讨论"
+        ],
+        "limitations": [
+          "未查到源码，合集规则、去重和是否改写原文都不透明",
+          "页面上的条数是站点自报，且不同模块数字可能不一致",
+          "内容质量取决于抓取和归类，不能当成独立评测",
+          "大量转存他人帖文，存在授权和平台条款风险"
+        ],
+        "comparison": "和 xnews、x-article-hub、musk-daily 对照：xnews 强调少而精的中文改写；x-article-hub 是人工挑选的长文库；musk-daily 只跟踪一个账号；本站是按模型与产品切开的大规模合集档案，更接近「X 上的 AI 用法索引」。",
+        "researched_at": "2026-11-12"
+      }
+    },
+    {
       "id": "wowtype",
       "name": "WowType",
       "summary": "给 Linux fcitx5 用的拼音输入法：整句连打、按错键纠正、简拼和中英混打，并带本机离线语音输入。",
@@ -6399,6 +6943,50 @@
         ],
         "comparison": "库内没有同类系统拼音输入法。语音能力可对照 cicada-知了、hy-simulmt、phonic-1-语音演示、argument-cat，那些是会议同传、模型或演示，不是桌面输入法。和传统 Linux 方案比：Rime / 雾凇可高度定制但要写配置，WowType 用同一开源词库，但换成 Rust 引擎、纠错、横排候选和图形设置；作者自述比雾凇更少卡死，未经独立验证。和官方微信输入法比，缺云候选、账号与手机同步以及官方神经网络排序。和 fcitx5-wetypex（在 Linux 上封装 macOS 微信输入法；该项目自标早期、提示可能含官方遥测并须遵守官方条款）相比，WowType 是重写引擎、使用开源词库，同步和官方模型能力更少，但分发路径更清晰。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "x-article-hub",
+      "name": "X Article Hub",
+      "summary": "人工挑选、机器归档的 X 长文库，按主题组织，并可用中英日阅读。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "资讯",
+        "x",
+        "归档",
+        "翻译"
+      ],
+      "source_url": null,
+      "preview_url": "https://x-article-hub.840727.xyz/",
+      "post_url": "https://x.com/zachzhao1984/status/2120193568912662818",
+      "author": "zachzhao1984",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "发现于 X News 公告帖评论。作者自述做了「X 长文汇集站，也支持文章翻译」。2026-11-12 查阅 About：当时归档 136 篇、120 位作者。未查到公开源码仓库。站点归档的是他人长文，阅读页回链原文；版权与授权需自行判断。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "公开站点架在 Cloudflare Workers、D1、R2、Queues、Browser Rendering 和 Workers AI 上（About 页自述），没有单独的检索集群或自建浏览器集群。编辑把 X Article URL 贴进导入器，规范化并按规范 URL 去重，爬取渲染后的页面，把原始 HTML 和 Markdown 存档，再解析成保留作者结构的文档。未查到公开源码和许可证。",
+        "method": "解析成功的文章会自动发布；AI 建议分类，编辑可改类或下架，也可改成只保留摘录或外链。排序把热度（对点赞、转发、回复、引用、收藏、浏览做对数压缩）、AI 质量评估和编辑分分开，再加时间衰减后加权；About 写明 AI 质量分可以影响排序，但不会单独决定发布。Trending 用加权，Latest 严格按时间，Editor's Picks 和 Authors 列表另算。",
+        "features": [
+          "按主题浏览、搜索，并提供 Featured、Latest、Trending 和作者页",
+          "阅读页可在中、英、日之间切换（站点界面）",
+          "提供 RSS、Sitemap 和后台；每篇保留回链原文"
+        ],
+        "highlights": [
+          "把「人来选文、机器归档和排版」写得很清楚，而不是全自动抓取时间线",
+          "2026-11-12 查阅时已有可浏览的归档和多语阅读，不像只有落地页"
+        ],
+        "limitations": [
+          "未查到源码，无法核对爬取、翻译和排序的具体实现",
+          "归档的是他人作品，存在转载和授权风险；站点虽可改为摘录或下架，不能替代原作者授权",
+          "当时规模仍小（About 自称 136 篇），覆盖面取决于编辑选稿",
+          "本次未登录后台，也未核对每篇翻译质量"
+        ],
+        "comparison": "和 xnews、what-new-ai-in-x、musk-daily 都从 X 提炼可读内容。xnews 把海外长文改写成中文杂志并开源发布流程；本站保留并翻译 X Article 原文结构，强调人工选稿和归档。what-new-ai-in-x 是按模型与产品切的大规模合集，musk-daily 只盯马斯克。库内没有第二个「X Article 归档库」。",
+        "researched_at": "2026-11-12"
       }
     },
     {
@@ -6648,6 +7236,54 @@
         ],
         "comparison": "和 cn-math-taxonomy 同属中文教育开放数据。和 ring-city、3d-periodic-table 同为交互可视化，但本项目有严肃的史料支撑。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "cassotis-ime",
+      "name": "言泉输入法（Cassotis IME）",
+      "summary": "开源中文拼音输入法：本地语言模型选词，无广告、不上传输入，现有 Windows、Linux 和 macOS 版本。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "输入法",
+        "windows",
+        "linux",
+        "macos",
+        "双拼"
+      ],
+      "source_url": "https://github.com/shenmin/cassotis-ime",
+      "preview_url": "https://www.yanquan.org/",
+      "post_url": "https://x.com/tshenmin/status/2120038147363139701",
+      "author": "shenmin（tshenmin）",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": 324,
+      "notes": "2026-11-12 查询：Windows 主仓 cassotis-ime 324 星、15 个 fork；Linux 仓 cassotis-ime-linux 13 星（官网 https://www.yanquan.org/linux）；macOS 仓 cassotis-ime-mac 16 星（官网 https://www.yanquan.org/mac）。三仓均为 GPL-3.0，最新发行版均为 v2.7.0（Windows 发行说明时间为 2026-11-11）。发现于 WowType 公告帖评论，作者向多种桌面环境的提问者分别给出 Linux / macOS 仓库。官网基准和模型体积数字为项目方自述。评论里推荐的是 Linux 与 macOS 仓，主仓链接来自其文档互相引用。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "跨平台开源拼音输入法，词库由 Cassotis Lexicon 生成，候选排序在本地 CPU 上完成。Windows 版（主仓）用 Delphi 加 TSF，支持 Windows 10/11 的 64 位和 32 位程序；Linux 版用 Free Pascal 引擎，经 IBus 和 Fcitx 5 适配器接入；macOS 版同样是 Free Pascal 引擎，前端为 InputMethodKit / AppKit，面向 Apple Silicon，文档写明 macOS 14+。官网称自 v2.0.0 起改为单个约 1.5 亿参数的字符级语言模型（项目自训、随包装、量化后由外部 Host 加载），选词不联网。三仓均为 GPL-3.0，官网 yanquan.org。",
+        "method": "整句拼音先在词库约束下搜索完整候选，再由本地语言模型结合前文和拼音做选择与同音修正。短词、一键补全和同音纠错也问同一个模型。输入至少两个完整音节且把握足够时，底部只给一个补全方案，用 Tab 或反引号接受；拿不准或被拒绝过的不再提示。用户选择和文档中反复出现的术语会进入本地学习（密码框不读，学习数据可清空）。官网自述 v2.0 把神经模型从 11 个减到 1 个，加载内存从约 447 MiB 降到约 183 MiB（自报）。",
+        "features": [
+          "整句连打、看前文选同音词，并能组合词库里没有的三到五个音节短语",
+          "全拼、首字母简拼，以及微软、小鹤、自然码、搜狗、紫光、拼音加加、智能 ABC 七种双拼，另有模糊音",
+          "原创一键补全、自定义短语、诗词补全（官网称收入 7747 句），以及符号、日期、中文数字等本地规则",
+          "无广告、不捆绑、不上传输入；Windows / Linux / macOS 分仓发布，词库与学习数据留在本机"
+        ],
+        "highlights": [
+          "把「本地、干净、可查证」作为输入法产品原则，并公开 Windows、Linux、macOS 源码和构建脚本",
+          "v2.0 起收成单一本地语言模型，而不是继续堆叠加模型（官方自述的架构清理）",
+          "Windows 主仓 2026-02 创建，2026-11-12 查询 324 星，版本更新到 v2.7.0"
+        ],
+        "limitations": [
+          "官网称实验性项目；Linux、macOS 仓星标仍少，桌面环境兼容性需自己验证（见各仓 COMPATIBILITY.md）",
+          "准确率和内存占用数字来自项目方基准与官网，未经独立评测",
+          "没有云候选和跨设备同步，这是设计选择，不是缺失后的等价替代",
+          "Linux / macOS 是从 Windows 引擎移植，三端体验不必视为完全一致"
+        ],
+        "comparison": "和 wowtype 都是开源拼音输入法，且都强调整句连打、双拼和本地习惯学习。wowtype 只做 Linux x86_64 的 fcitx5，引擎是 Rust，并带离线语音；言泉覆盖 Windows / Linux / macOS，用 Pascal/Delphi 引擎加本地语言模型，没有语音输入。言泉更接近传统桌面输入法全家桶，wowtype 更接近在 Linux 上追赶商业输入法手感。",
+        "researched_at": "2026-11-12"
       }
     }
   ]
