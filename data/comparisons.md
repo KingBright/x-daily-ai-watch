@@ -47,6 +47,8 @@
 | our-3d-reality | 网页 3D 城市漫游（引擎未公开） | 纽约中城步行游览，作者自述后来加了跑酷和语音 | light | 未查到 | 把一座真实城市做深 |
 | fable-contra | Claude Artifact 网页动作游戏 | 短时间重做 Contra 风格关卡 | light；预览可能过期 | 未查到 | Fable 经典动作复刻展示 |
 | sapper-minesweeper | 独立托管的网页扫雷 | 战争主题包装的完整扫雷规则 | light | 未查到 | 规则清晰、可验收的 Fable 演示 |
+| worldlabs-atlas | 闭源世界模型，托管应用加 API，输出视频/关键帧/高斯泼溅，可转网格 | 从图片或灰盒生成可漫游 3D 世界 | light，2026-11-12 全面开放 | 闭源 | 场景级资产、关卡原型、影视预演 |
+| mela-tycoon | Fable 5.2 全自动开发的网页模拟经营，Blender 脚本出 3D 资产 | 印度庙会版过山车大亨，带游客模拟和自测机器人 | light；源码私有 | 未公开 | 观察 Agent 自产资产+自测的游戏闭环 |
 
 ### 分析
 
@@ -99,6 +101,8 @@
 | kwwk | Swift CLI 加 SwiftPM SDK，MCP 按需 tool_search | macOS 原生编程 Agent，也可嵌入应用 | ★138，Homebrew 可装 | MIT | 要在 Apple 平台嵌 Agent 的开发者 |
 | minimax-code | TypeScript 终端 Agent，官方安装器加 npm 包 | 用 MiniMax 或自备接口在本地改代码、跑验证 | ★2223，官方维护到 v0.7.2 | 第一方默认 MIT | 需要完整安装和文档的跨平台编码 CLI |
 | optiq-code | 经 optiq serve 调本机模型的终端循环（无公开源码） | 针对小模型空补丁、失败编辑和原地打转做防护 | light，分数为作者自报 | 未查到 | 在 Mac 上用本地小模型落地补丁 |
+| magpie | Go 本地网关加菜单栏应用 | 任意 Agent 换任意模型，额度用完自动切账号/模型 | ★35k | MIT | 多 Agent、多提供商、多账号混用 |
+| archify | Agent 技能，产出单文件交互 HTML | 想法/代码库转可交互架构图和一页式图解，带源码溯源 | ★96k | Apache-2.0/MIT | 理解和讲解系统架构 |
 
 ### 分析
 
@@ -128,6 +132,8 @@
 | aura-autopilot | Python Agent 加 UE5、Unity、Godot、Roblox 插件 | 在游戏引擎里自动试玩和测试 | ★831 | Apache-2.0 | 游戏 QA |
 | poinky | Swift，常驻 Mac 刘海区 | 看屏幕、语音回答、画示意图 | ★9 | MIT | 桌面伴随式助手 |
 | hermes-voice | Home Assistant 集成加刷机的 Echo | 旧 Echo 变成 Agent 的语音入口 | ★627 | MIT | 智能家居语音 |
+| moli | Rust 自研无头浏览器（V8），CDP/WebDriver 三协议 | 低内存网页抓取、语义树导出和自动化 | ★23.5k；自报成功率 80.7% | Apache-2.0/MIT | Agent 批量抓取和浏览器自动化后端 |
+| smitline | 自托管 MCP 服务，OpenAI 实时语音加 Twilio/SignalWire | 代用户打电话、进 Zoom/Teams/Meet 开会并回报 | ★109，较新 | Apache-2.0 | 预约、询价、代参会做记录 |
 
 ### 分析
 
@@ -159,16 +165,19 @@
 | recalc | Rust 加 Tauri 的本地电子表格，格子里可跑 Agent，经 MCP 协同 | 多 Agent 共享一张表，用公式和测试格验收 | ★68，早期 beta | Apache-2.0 | 评测、审阅和并排调度多个编程 Agent |
 | crommacode | 闭源原生桌面（文档自述 Rust、GPUI），钩子观察 CLI，蜂群走 git worktree | 把工具调用演成游戏，并派工蜂并行干活 | 稳定版 0.2.18（官方清单），源码未公开 | 闭源（公开仓只有文档） | 观察并编排已有的编程 CLI |
 | agent-ceo | 闭源 SaaS，人和 Agent 共用组织架构（具体栈未公开） | 按角色协作、升级和共用记忆，宣称带 MCP 工具 | light，页面数字为自报 | 闭源 | 公司里要跑多 Agent 组织，而不是本机编码控制台 |
+| herdr | 单 Rust 二进制终端复用器，后台 server 加 socket API | 断线不停工、多机统一面板、标出卡住的 Agent | ★50.6k | Apache-2.0 | 远程长跑多个编程 CLI |
+| omnigraph | Rust 图数据库，Lance 存储，Git 式分支合并，Cedar 策略 | 多 Agent 共享记忆的版本控制和混合检索 | ★2k | MIT | 多 Agent 共用知识/记忆，需要审查合并 |
+| agent-teams-ai | Electron 桌面应用，MCP 接入多家 CLI | 看板式自治 Agent 团队，互发消息互评审 | ★2.5k | AGPL-3.0 | 本机组建可视化的编码 Agent 团队 |
 
 ### 分析
 
-这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）；面向公司组织的商业平台则有后来见到的 agent-ceo。
+这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面、herdr 终端复用器、agent-teams-ai 看板式自治团队），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）；面向公司组织的商业平台则有后来见到的 agent-ceo。
 
 结论 1：控制台方向 t3-code 仍然体量最大（既有记录约 5.4 万星），coincide、tastecode 做原生性能和创意场景上的差异化。recalc 把控制台收成一张可公式化验收的表，crommacode 把观察做成游戏并加 worktree 蜂群，但后者暂不开放源码。除 crommacode 外，这类方案大多仍选择驱动本机已登录的 CLI，沿用用户已有的订阅。
 
 结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。若目标是公司组织而不是本机编码控制台，agent-ceo 给出了「人和 Agent 共用组织规则、完成判定要分开」的产品形态，但闭源，页面上的规模数字均为自报，需要自己试用。
 
-结论 3：「团队即配置」正在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。
+结论 3：多 Agent 的瓶颈正从「能不能并行」转向「共享状态和协调」：omnigraph 给共享记忆加上 Git 式分支和合并检查，herdr 把「哪个 Agent 卡住了」做成一等状态。「团队即配置」也在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。
 
 ## 大模型工具
 

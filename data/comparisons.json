@@ -213,6 +213,22 @@
           "maturity": "light",
           "license": "未查到",
           "use_case": "规则清晰、可验收的 Fable 演示"
+        },
+        {
+          "id": "worldlabs-atlas",
+          "tech": "闭源世界模型，托管应用加 API，输出视频/关键帧/高斯泼溅，可转网格",
+          "capability": "从图片或灰盒生成可漫游 3D 世界",
+          "maturity": "light，2026-11-12 全面开放",
+          "license": "闭源",
+          "use_case": "场景级资产、关卡原型、影视预演"
+        },
+        {
+          "id": "mela-tycoon",
+          "tech": "Fable 5.2 全自动开发的网页模拟经营，Blender 脚本出 3D 资产",
+          "capability": "印度庙会版过山车大亨，带游客模拟和自测机器人",
+          "maturity": "light；源码私有",
+          "license": "未公开",
+          "use_case": "观察 Agent 自产资产+自测的游戏闭环"
         }
       ],
       "prose": [
@@ -506,6 +522,22 @@
           "maturity": "light，分数为作者自报",
           "license": "未查到",
           "use_case": "在 Mac 上用本地小模型落地补丁"
+        },
+        {
+          "id": "magpie",
+          "tech": "Go 本地网关加菜单栏应用",
+          "capability": "任意 Agent 换任意模型，额度用完自动切账号/模型",
+          "maturity": "★35k",
+          "license": "MIT",
+          "use_case": "多 Agent、多提供商、多账号混用"
+        },
+        {
+          "id": "archify",
+          "tech": "Agent 技能，产出单文件交互 HTML",
+          "capability": "想法/代码库转可交互架构图和一页式图解，带源码溯源",
+          "maturity": "★96k",
+          "license": "Apache-2.0/MIT",
+          "use_case": "理解和讲解系统架构"
         }
       ],
       "prose": [
@@ -615,6 +647,22 @@
           "maturity": "★627",
           "license": "MIT",
           "use_case": "智能家居语音"
+        },
+        {
+          "id": "moli",
+          "tech": "Rust 自研无头浏览器（V8），CDP/WebDriver 三协议",
+          "capability": "低内存网页抓取、语义树导出和自动化",
+          "maturity": "★23.5k；自报成功率 80.7%",
+          "license": "Apache-2.0/MIT",
+          "use_case": "Agent 批量抓取和浏览器自动化后端"
+        },
+        {
+          "id": "smitline",
+          "tech": "自托管 MCP 服务，OpenAI 实时语音加 Twilio/SignalWire",
+          "capability": "代用户打电话、进 Zoom/Teams/Meet 开会并回报",
+          "maturity": "★109，较新",
+          "license": "Apache-2.0",
+          "use_case": "预约、询价、代参会做记录"
         }
       ],
       "prose": [
@@ -740,13 +788,37 @@
           "maturity": "light，页面数字为自报",
           "license": "闭源",
           "use_case": "公司里要跑多 Agent 组织，而不是本机编码控制台"
+        },
+        {
+          "id": "herdr",
+          "tech": "单 Rust 二进制终端复用器，后台 server 加 socket API",
+          "capability": "断线不停工、多机统一面板、标出卡住的 Agent",
+          "maturity": "★50.6k",
+          "license": "Apache-2.0",
+          "use_case": "远程长跑多个编程 CLI"
+        },
+        {
+          "id": "omnigraph",
+          "tech": "Rust 图数据库，Lance 存储，Git 式分支合并，Cedar 策略",
+          "capability": "多 Agent 共享记忆的版本控制和混合检索",
+          "maturity": "★2k",
+          "license": "MIT",
+          "use_case": "多 Agent 共用知识/记忆，需要审查合并"
+        },
+        {
+          "id": "agent-teams-ai",
+          "tech": "Electron 桌面应用，MCP 接入多家 CLI",
+          "capability": "看板式自治 Agent 团队，互发消息互评审",
+          "maturity": "★2.5k",
+          "license": "AGPL-3.0",
+          "use_case": "本机组建可视化的编码 Agent 团队"
         }
       ],
       "prose": [
-        "这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）；面向公司组织的商业平台则有后来见到的 agent-ceo。",
+        "这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面、herdr 终端复用器、agent-teams-ai 看板式自治团队），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）；面向公司组织的商业平台则有后来见到的 agent-ceo。",
         "结论 1：控制台方向 t3-code 仍然体量最大（既有记录约 5.4 万星），coincide、tastecode 做原生性能和创意场景上的差异化。recalc 把控制台收成一张可公式化验收的表，crommacode 把观察做成游戏并加 worktree 蜂群，但后者暂不开放源码。除 crommacode 外，这类方案大多仍选择驱动本机已登录的 CLI，沿用用户已有的订阅。",
         "结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。若目标是公司组织而不是本机编码控制台，agent-ceo 给出了「人和 Agent 共用组织规则、完成判定要分开」的产品形态，但闭源，页面上的规模数字均为自报，需要自己试用。",
-        "结论 3：「团队即配置」正在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。"
+        "结论 3：多 Agent 的瓶颈正从「能不能并行」转向「共享状态和协调」：omnigraph 给共享记忆加上 Git 式分支和合并检查，herdr 把「哪个 Agent 卡住了」做成一等状态。「团队即配置」也在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。"
       ]
     },
     {

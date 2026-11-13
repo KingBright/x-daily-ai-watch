@@ -1,31 +1,31 @@
 {
   "meta": {
-    "generated_at": "2026-11-12",
+    "generated_at": "2026-11-13",
     "timezone": "Asia/Shanghai",
-    "projects_total": 170,
+    "projects_total": 179,
     "category_counts": {
-      "game": 26,
-      "agent-eng": 61,
+      "game": 28,
+      "agent-eng": 68,
       "llm-tools": 51,
       "other": 32
     },
     "subcategory_counts": {
-      "dev-efficiency": 35,
-      "phone-computer-use": 12,
-      "agent-fleet": 14
+      "dev-efficiency": 37,
+      "phone-computer-use": 14,
+      "agent-fleet": 17
     },
     "origin_counts": {
       "bookmark": 78,
-      "reply-on-popular-post": 14,
-      "daily-digest": 69,
+      "reply-on-popular-post": 15,
+      "daily-digest": 77,
       "bookmark+daily-digest": 8,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 128,
-      "light": 42
+      "full": 135,
+      "light": 44
     },
-    "analysis_updated_at": "2026-11-12"
+    "analysis_updated_at": "2026-11-13"
   },
   "projects": [
     {
@@ -411,6 +411,54 @@
         ],
         "comparison": "和 parametric-topdown-pixel-architecture 都服务 2D 关卡生产：后者偏程序化出建筑，LDtk 是通用手工关卡编辑器。和 3d-os-scenario-skills、scenario-blender-plugin 比，那些是 3D/DCC 的 AI 流水线。在游戏工具里，LDtk 属于少有的、与模型无关的成熟底座。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "mela-tycoon",
+      "name": "Mela Tycoon",
+      "summary": "用 Claude Fable 5.2 一个提示词两小时做出的印度庙会版《过山车大亨》网页模拟经营游戏，含 62 个 Blender 脚本生成的 3D 模型。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "模拟经营",
+        "网页游戏",
+        "fable",
+        "blender",
+        "一次成型"
+      ],
+      "source_url": null,
+      "preview_url": "https://mela-tycoon.darshanpania.me/",
+      "post_url": "https://x.com/i_m_Pania/status/2120913115659608451",
+      "author": "Darshan Pania",
+      "models": [
+        "Claude Fable 5.2"
+      ],
+      "first_seen": "2026-11-12",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "作者 X 长文自述：提交历史显示 18:34 首次提交、20:42 可玩；仓库为私有，未查到公开源码。2026-11-13 访问预览页返回 200。所有数量和「零 bug」均为作者自述。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Claude Fable 5.2（xHigh effort）全自动开发的浏览器游戏；Blender 脚本批量生成 3D 模型并渲染图标，音效与音乐用代码生成。具体前端框架、渲染库和许可证未查到（私有仓库）。",
+        "method": "一个开放式提示词让模型先构思玩法，再在环境里的 Blender 生成资产、新建私有仓库并完整实现，不做代码评审。另写了一个自动玩游戏的机器人验证每个关卡都能通关。上线后游戏内「提建议」按钮收集想法，每天两次由 Claude 分拣、作者批准后当天实现上线（自述）。",
+        "features": [
+          "在空地上铺路、建游乐设施和摊位、雇人、定价，经营限定天数的庙会",
+          "每个游客有名字、饥渴、预算和评价（自述）",
+          "12 种游乐设施、4 场表演、17 种摊位，含可逐段搭建的龙形过山车（自述）",
+          "昼夜变化、停电、流浪牛、小偷等本地化事件；支持手机触控"
+        ],
+        "highlights": [
+          "展示了「Agent 自己用 Blender 产资产+自测通关」的完整游戏生产闭环",
+          "文化本地化细节丰富，不是简单换皮",
+          "玩家建议驱动的每日自动迭代机制有参考价值"
+        ],
+        "limitations": [
+          "源码私有，无法核实实现质量和数量声明",
+          "所有指标为作者自述，本次未实玩到通关",
+          "依赖高价模型和高 effort，复制成本未公开"
+        ],
+        "comparison": "和 fable-contra、sapper-minesweeper、dread-and-district 同属 Fable 一次成型的网页成品，但 Mela Tycoon 是系统更深的模拟经营，并自带 Blender 资产流水线和自测机器人；方法上可对照 guizang-game-skill（可复用技能）——后者是方法件，本项目是成品展示。",
+        "researched_at": "2026-11-13"
       }
     },
     {
@@ -836,6 +884,52 @@
         ],
         "comparison": "和 earth-on-spawn 是同一作者、同一平台上的两个演示，本项目聚焦体素破坏。和 solstice、threepp 比，那些有可查的渲染实现，本项目只能看成品。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "worldlabs-atlas",
+      "name": "World Labs Atlas",
+      "summary": "World Labs 的新一代世界模型，今日向所有人开放：从图片或灰盒场景生成可探索的 3D 世界，输出关键帧、视频或 3D 高斯泼溅，并可转网格进游戏。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "世界模型",
+        "3d",
+        "高斯泼溅",
+        "api",
+        "商业产品"
+      ],
+      "source_url": null,
+      "preview_url": "https://worldlabs.ai/atlas",
+      "post_url": "https://x.com/theworldlabs/status/2120942033401717108",
+      "author": "World Labs",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "2026-11-12 发帖宣布全面开放（帖子约 1458 赞、1117 收藏，2026-11-13 查询）。官网列出 Viewfinder、Chisel、Splats to Mesh、Relight 四个工具和开发者 API（含 Blender 集成）。评论里 @grok 的回复称按积分计费（1000 积分=1 美元），该说法未在官网核实。闭源，未查到模型参数、训练细节。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "闭源世界模型（World Labs 自研 Atlas），托管 Web 应用加开发者 API。输出形式为关键帧、视频片段和 3D Gaussian Splatting，另有 splat 转网格工具；官网称支持 Blender 集成。模型架构、参数量、许可证未查到。",
+        "method": "从一张或多张照片/生成图重建场景（Viewfinder），或先用 Chisel 灰盒搭出结构再由模型补全外观；生成结果是三维一致的场景，可自由移动相机渲染镜头，再经 Splats to Mesh 得到带真实几何的网格，接入游戏、仿真和 DCC 工具。",
+        "features": [
+          "Viewfinder：从照片或生成图重建可漫游场景，设置相机路径并渲染视频",
+          "Chisel：灰盒搭建场景结构，移动物体后所有视角同步更新",
+          "Splats to Mesh：把高斯泼溅转成可用于游戏和交互环境的网格",
+          "Relight 重新打光，以及开发者 API 和 Blender 集成"
+        ],
+        "highlights": [
+          "顶级 3D 世界模型团队的正式开放，不是演示视频",
+          "从灰盒到网格的整条链路直接对接游戏资产流程",
+          "官方视频和发帖互动量很高，属当天最热门的 AI 3D 发布之一"
+        ],
+        "limitations": [
+          "闭源付费服务，计费细则需自行登录确认",
+          "生成场景的质量、尺度和可编辑性本次未亲测",
+          "高斯泼溅转网格后的拓扑质量和像素风格适配未知"
+        ],
+        "comparison": "和 scenario-blender-plugin、3d-os-scenario-skills 同属「AI 资产流水线」，但后两者是让 Agent 驱动现有 DCC 工具，Atlas 是直接用世界模型生成整个场景；和 our-3d-reality、earth-on-spawn 这类网页 3D 成品不同，Atlas 是生产工具。想要可控的单资产选 Scenario，想要整片可漫游场景选 Atlas。",
+        "researched_at": "2026-11-13"
       }
     },
     {
@@ -1333,6 +1427,52 @@
         ],
         "comparison": "和 dsh-superagent-prototype 同源（都基于 DeepSeek Harness），但它是面向个人的通用助手。和 rerun、bot-teams 相比，它侧重单人多 bot，不做团队编排。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "archify",
+      "name": "Archify",
+      "summary": "给 Claude Code、Codex、Cursor 等用的 Agent 技能：把想法、计划或代码库变成可交互的 HTML 图和一页式图解，带源码引用。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "可视化",
+        "架构图",
+        "html"
+      ],
+      "source_url": "https://github.com/tt-a1i/archify",
+      "preview_url": "https://archify.si",
+      "post_url": "https://x.com/supimcn/status/2120725034666967421",
+      "author": "tt-a1i",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "daily-digest",
+      "stars": 95936,
+      "notes": "星标 95,936（2026-11-13 查询）；仓库同时含 Apache-2.0 和 MIT 许可文件（以仓库为准）。发现于转述帖。README 提到第三方在线服务和付费方案与 Archify 无关。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "JavaScript/Node 项目，以 Agent skill 形式分发（llms.txt 一句话安装），产物是单文件交互式 HTML；仓库含 viewer、benchmarks、integrations、examples、website 等目录，多语言 README。",
+        "method": "用户用自然语言描述或让 Agent 读仓库，Agent 按 Archify 技能生成结构化图描述并渲染成交互 HTML，可继续对话增量修改（加鉴权、高亮缓存未命中路径、切主题）。「一页式图解」模式先给结论，再一问一面板，图和步骤联动；仓库片段固定到提交并可打开源码卡片。",
+        "features": [
+          "从一句话或整个代码库生成可点击、可追踪路径的架构图",
+          "一页式 explainer：结论优先、表格/步骤/图表/代码混排、带编号引用",
+          "导出 PNG/WebP/JPG 长图或 PDF，四种风格、明暗主题",
+          "针对单个面板追问并只重写该面板"
+        ],
+        "highlights": [
+          "约 9.6 万星，是当前最热门的 Agent 可视化技能之一",
+          "图中节点能链接到固定提交的源码，便于核对",
+          "覆盖 Cursor、Claude Code、Codex CLI、OpenCode 等"
+        ],
+        "limitations": [
+          "图的正确性依赖 Agent 读代码的准确度，仍需人工核对",
+          "产物是静态 HTML，不随代码自动更新",
+          "双许可证文件，商用前需确认具体适用范围"
+        ],
+        "comparison": "和 understand-anything（理解代码库）、lieflat-diagrams（出图技能）同类；understand-anything 偏代码理解问答，lieflat-diagrams 偏中文图表样式，Archify 胜在交互式 HTML、源码溯源和一页式图解。",
+        "researched_at": "2026-11-13"
       }
     },
     {
@@ -2455,6 +2595,52 @@
       }
     },
     {
+      "id": "magpie",
+      "name": "magpie",
+      "summary": "菜单栏应用加本地网关：任意编程 Agent 换任意模型（如 Claude Code 跑 Kimi、Codex 跑 DeepSeek），额度用完自动切到下一个账号或模型。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "go",
+        "网关",
+        "模型路由",
+        "多账号"
+      ],
+      "source_url": "https://github.com/yetone/magpie",
+      "preview_url": "https://usemagpie.ai",
+      "post_url": "https://x.com/tobiadonadon_/status/2120984941903413392",
+      "author": "yetone",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "daily-digest",
+      "stars": 35428,
+      "notes": "星标 35,428（2026-11-13 查询）；MIT；作者 yetone（亦为 avante.nvim 作者，此关联未在本次 README 中核实，仅按用户名）。README 写明由 Kimi 赞助。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Go 编写（main.go、internal/），本地 HTTP 网关加菜单栏/窗口/TUI/Web UI/CLI 多种前端，支持 macOS、Windows、Linux、Docker、Termux；有插件仓库 magpie-community/plugins。MIT。",
+        "method": "各 Agent 的模型配置散落在不同文件和格式里，magpie 只改每个 Agent 配置里「关键的那一个键」，把请求指到本地网关；网关再按提供商、账号和路由组转发。某账号额度用尽时切到同提供商下一个账号，路由组可切换到别的模型/提供商，Agent 端看不到报错。可选在本机对提示词里的密钥、密码、邮箱做脱敏再发出、回包时还原。",
+        "features": [
+          "一个列表里给任意 Agent 选任意模型（Claude Code、Codex、Gemini CLI、OpenCode 等）",
+          "同一提供商或已登录订阅（Claude、ChatGPT、Copilot、Gemini、Grok）可跨 Agent 复用",
+          "额度耗尽自动切换账号或模型",
+          "本地隐私脱敏（默认关闭）；卸载时恢复各 Agent 原配置"
+        ],
+        "highlights": [
+          "3.5 万星，发行包签名公证并带 GitHub 构建证明",
+          "把多 Agent、多提供商、多账号的配置统一到一处",
+          "安装脚本考虑了代理、镜像和无桌面环境"
+        ],
+        "limitations": [
+          "跨 Agent 复用订阅可能触及部分厂商条款，需自行评估",
+          "单账号且无路由组时仍会把错误抛给 Agent",
+          "网关是本机单点，出问题会影响所有 Agent"
+        ],
+        "comparison": "和 anymodelbot（任意模型接入 Bot）、tokeneconomizer（省 token）同在研发效率；anymodelbot 面向 Bot 平台，magpie 面向本机编程 CLI 的模型切换和额度兜底；和 tokeneconomizer 的压缩上下文思路互补而非替代。",
+        "researched_at": "2026-11-13"
+      }
+    },
+    {
       "id": "pstack",
       "name": "pstack",
       "summary": "Cursor 生态的 agent 工作流/验证技能栈，配合 poteto-mode 使用。",
@@ -2755,6 +2941,53 @@
       }
     },
     {
+      "id": "moli",
+      "name": "Moli",
+      "summary": "Lexmount 出品、用 Rust 写的 AI Agent 专用无头浏览器：按需布局渲染，内存远小于 Chrome，兼容 CDP 和 WebDriver。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "rust",
+        "无头浏览器",
+        "browser-use",
+        "cdp",
+        "skill"
+      ],
+      "source_url": "https://github.com/lexmount/moli",
+      "preview_url": "https://github.com/lexmount/moli",
+      "post_url": "https://x.com/tobiadonadon_/status/2120984941903413392",
+      "author": "Lexmount",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "daily-digest",
+      "stars": 23548,
+      "notes": "星标 23,548（2026-11-13 查询）；Apache-2.0 / MIT 双许可。README 基准（自报）：任务成功率 Chrome 99.9%/697 MiB，Moli 80.7%/92 MiB，Lightpanda 43.8%/34 MiB，Obscura 39.5%/39 MiB；Moli 单任务中位 CPU 时间 100.6 ms（自报）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 实现的完整浏览器运行时，上百个 moli-* crate（DOM、CSS 解析、布局、绘制、V8 脚本、fetch、存储、WebCrypto、WebMCP 等），JS 用 V8；同一端点支持 CDP、WebDriver Classic 和 WebDriver BiDi，Playwright 可直接 connectOverCDP。Apache-2.0/MIT。",
+        "method": "默认只做 DOM 优先的轻量运行，需要时才开启布局和渲染（--layout）、才拉取图片字体等资源（--resource），以此在兼容性和资源占用之间取平衡。CLI 可直接把页面导出成 Markdown 或精简「语义树」给模型，也能截图、出 PDF；附带 skills 让 Agent 自装自用。",
+        "features": [
+          "moli fetch：页面转 Markdown 或模型友好的语义树，支持 --eval 交互后导出",
+          "按需布局：视口/整页截图、分页 PDF",
+          "moli serve：CDP + WebDriver 三协议自动化服务器",
+          "提供 Agent skill，一句提示词完成安装和使用"
+        ],
+        "highlights": [
+          "在 Chrome 与 Lightpanda 之间找到「较高成功率+低内存」的折中（自报基准）",
+          "整套浏览器组件自研，工程体量大",
+          "直接兼容 Playwright 生态"
+        ],
+        "limitations": [
+          "任务成功率仍明显低于 Chrome（自报 80.7% 对 99.9%）",
+          "复杂站点兼容性需实测",
+          "基准由项目方自建，未独立复现"
+        ],
+        "comparison": "和 opencode-browse、pointer 等 Browser Use 方案相比，Moli 处在更底层——它是浏览器引擎本身，可作为这些 Agent 工具的后端；和库内手机侧方案（mika、phongent）不在一个层面。追求兼容性用 Chrome，追求低资源批量抓取试 Moli。",
+        "researched_at": "2026-11-13"
+      }
+    },
+    {
       "id": "opencode-browse",
       "name": "OpenCode Browse",
       "summary": "让编程 Agent 操作你已登录的浏览器标签页，登录/付款交还给你。",
@@ -3013,6 +3246,55 @@
       }
     },
     {
+      "id": "smitline",
+      "name": "Smitline",
+      "summary": "让任何 AI Agent 打电话、进 Zoom/Teams/Meet 开会的自托管 MCP 服务：实时语音对话，结果、要点和费用回传给发起的聊天。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "mcp",
+        "电话",
+        "会议",
+        "语音",
+        "docker"
+      ],
+      "source_url": "https://github.com/kaelorlabs/smitline",
+      "preview_url": "https://smitline.com",
+      "post_url": "https://x.com/kiruthickrosan2/status/2120868425816027629",
+      "author": "Kaelor Labs",
+      "models": [
+        "OpenAI GPT-Live"
+      ],
+      "first_seen": "2026-11-12",
+      "origin": "daily-digest",
+      "stars": 109,
+      "notes": "星标 109（2026-11-13 查询）；Apache-2.0。帖子称 Claude Code 让它给真实餐厅打电话下单，用时 89 秒、花费 0.11 美元（自报）。托管版 Smitline Cloud 由 Kaelor Labs 运营。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python + Node 混合仓库，一个 Docker 容器运行（另有 meeting runtime、daemon、control panel 镜像和 compose 配置）；实时语音用 OpenAI GPT-Live，电话线路走用户自己的 SignalWire 或 Twilio；对外提供 MCP、CLI 和 REST API；会议部分包含 joinly 目录。Apache-2.0。",
+        "method": "发起 Agent 先写一份简报（目标、要问清的事、可同意的范围、需保密的内容），Smitline 按简报拨号或入会，开场说明身份和来意并声明自己是 AI 助理，实时对话时不越出简报授权；超出范围（如额外维修费）就带回给用户。本地面板显示实时转写，用户可随时用自己手机接管。结束后把结果、细节、待办、全文转写和费用回传。",
+        "features": [
+          "用自己的号码给餐厅、商家、个人打电话",
+          "以参会者身份加入 Zoom、Teams、Google Meet，被点名时回答",
+          "实时转写面板，可随时人工接管",
+          "支持 Claude Code、Codex、Cursor、Claude Desktop 等任何能用 MCP/CLI/REST 的 Agent"
+        ],
+        "highlights": [
+          "设计上内置安全边界：身份声明、简报授权、超范围回报",
+          "密钥只在本机设置页输入，不进聊天",
+          "开源自托管与托管云两种用法"
+        ],
+        "limitations": [
+          "依赖 OpenAI 实时语音和 Twilio/SignalWire，有持续成本",
+          "AI 外呼在不同地区可能有法规限制，需自行确认",
+          "项目较新、星标少，长期维护未知"
+        ],
+        "comparison": "和 hermes-voice（语音交互 Agent）同涉语音，但 hermes-voice 面向与用户本人对话，Smitline 让 Agent 代表用户对外打电话和开会；库内此前没有电话/会议型 Agent 工具。",
+        "researched_at": "2026-11-13"
+      }
+    },
+    {
       "id": "hermes-voice",
       "name": "hermes-voice",
       "summary": "经 Home Assistant 把旧 Echo 变成 Hermes Agent 语音入口。",
@@ -3178,6 +3460,53 @@
         ],
         "comparison": "和 opencode-browse（真实浏览器）相反，走的是隔离路线。和 openmausbot 自带的 bot 虚拟机相比，windows-terminal 专注 Windows 桌面，并可接任意 MCP Agent。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "agent-teams-ai",
+      "name": "Agent Teams AI",
+      "summary": "跨平台桌面应用：把 Claude Code、Codex、OpenCode、Cursor 等组成自治团队，Agent 自己领任务、互发消息、互相评审，人只看看板下高层指令。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "electron",
+        "看板",
+        "多agent",
+        "mcp",
+        "agpl"
+      ],
+      "source_url": "https://github.com/777genius/agent-teams-ai",
+      "preview_url": "https://agentteams.live/",
+      "post_url": "https://x.com/x777genius/status/2120855629275582627",
+      "author": "777genius（Ilya Zel')",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "reply-on-popular-post",
+      "stars": 2473,
+      "notes": "发现于 Avi Chawla「1000+ Agent 协作」热门长文的评论，作者自荐。星标 2,473（2026-11-13 查询）；AGPL-3.0。README 称支持 300+ 模型、200+ 提供商、免登录免费模型，均为自述。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript + Electron（electron-vite），pnpm monorepo，含 agent-teams-controller、mcp-server、landing 等子包；可检测本机 Claude Code、Codex、OpenCode 运行时，并在 UI 中接入 Cursor、SuperGrok、GitHub Copilot、Z.AI、MiniMax、Kiro 等。AGPL-3.0。",
+        "method": "把用户设为「老板」，Agent 作为团队成员：在看板上建任务，Agent 自主认领、彼此通过消息协调并互相 review，人只在看板层下达高层命令。通过 MCP server 和控制器把各家 CLI Agent 接进同一套任务和消息总线。",
+        "features": [
+          "组建多个 Agent 团队，按角色分工",
+          "看板式任务流：认领、进行中、评审、完成",
+          "Agent 之间互发消息、互相代码评审",
+          "免注册免 key 的免费模型起步，也可接已有订阅"
+        ],
+        "highlights": [
+          "把「Agent 军团」做成可视化看板，门槛低",
+          "对接的 CLI 和模型提供商覆盖面广",
+          "同作者还有 review-router-ai、agent-notifications 等配套工具"
+        ],
+        "limitations": [
+          "AGPL-3.0，商用集成需注意许可证",
+          "覆盖面大，各适配器的稳定性未逐一验证",
+          "Windows 可能触发 SmartScreen，安装体验因平台而异"
+        ],
+        "comparison": "和 t3-code、crommacode、recalc 同属 Agent 军团管理；t3-code 是驱动多个 CLI 的聊天式控制台，recalc 用表格验收，crommacode 游戏化观察，而 agent-teams-ai 突出「Agent 自治+看板」。和 herdr 相比，它管任务和协作，herdr 只管终端。和 agent-ceo 相比，它开源且面向本机编码团队。",
+        "researched_at": "2026-11-13"
       }
     },
     {
@@ -3360,6 +3689,54 @@
         ],
         "comparison": "和 tastecode、relay、t3-code 同为多 Agent 桌面或工作区，CrommaCode 的差异是游戏化观察加上 worktree 蜂群。和 playbasis-agent-hub 比，本项目不只统计用量。和 recalc 比，recalc 用共享表格验收，CrommaCode 用钩子可视化并派工蜂。和 bot-teams、the-office-agents 比，那些偏角色或群聊编排，不是围着现有编程 CLI 的原生桌面。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "omnigraph",
+      "name": "Omnigraph",
+      "summary": "面向多 Agent 共享记忆的开源图数据库：带类型本体、向量+全文+图混合检索，以及 Git 式分支/合并/时间旅行，防止并发 Agent 覆盖彼此写入。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "rust",
+        "图数据库",
+        "agent记忆",
+        "git模型",
+        "cedar",
+        "lance"
+      ],
+      "source_url": "https://github.com/ModernRelay/omnigraph",
+      "preview_url": "https://www.omnigraph.dev/",
+      "post_url": "https://x.com/_avichawla/status/2120827572779171870",
+      "author": "ModernRelay",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "daily-digest",
+      "stars": 2033,
+      "notes": "星标 2,033（2026-11-13 查询）；MIT。来自 Avi Chawla 的 X 长文实测（Claude Code 与 Codex 并发写同一记录的演示），文中实验结果为作者自述。Omnigraph Cloud 为私有预览。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 编写（crates/ workspace），存储用开放版本化格式 Lance，可放本地盘或 S3 兼容存储（MinIO、R2、Azure 预览）；.pg 文件声明类型化 schema；单运行时内做图遍历+向量 ANN+全文 BM25+RRF 融合检索；Cedar 策略在服务端对每次写入做鉴权；提供 CLI、omnigraph-server、Studio 和 agent skill。MIT。",
+        "method": "把 Git 模型搬到 Agent 记忆：每个 Agent 或任务在自己的分支上写，合并时与 merge base 做三方比较，若 main 上同一记录已被改动则拒绝合并（divergent_update），要求 Agent 刷新后重试，从而避免「丢失更新」。再用 Cedar 策略限定只有评审者能合并进 main。集群配置用 cluster.yaml 声明，plan/apply 类似 Terraform。",
+        "features": [
+          "类型化本体：节点/边类型、键和约束在每次写入时强制执行",
+          "混合检索：图遍历、向量、全文在一个查询里融合",
+          "分支、三方合并、差异审查、整图时间旅行（--snapshot 读历史）",
+          "Cedar 策略即代码、Bearer 鉴权和审计；附 Claude Code/Codex 可用的 skill"
+        ],
+        "highlights": [
+          "直击多 Agent 并发写共享记忆的「丢失更新」问题，方案清晰",
+          "存算分离加开放 Lance 格式，不锁死数据",
+          "有 Studio、cookbooks、llms.txt，工程完整度高"
+        ],
+        "limitations": [
+          "冲突按记录而非字段判断，不同字段并发修改也会被拒（文中承认会多一次重试）",
+          "需要预先建模 schema，对临时记忆场景偏重",
+          "云版本仍在私有预览，大规模性能数据未独立验证"
+        ],
+        "comparison": "和 relay（Agent 间交接上下文）、bot-teams（团队即配置）同属多 Agent 基础设施，但 Omnigraph 解决的是共享状态一致性；库内此前没有同类「带版本控制的 Agent 记忆数据库」。和 recalc 用电子表格做共享工作面相比，Omnigraph 更偏后端数据层。",
+        "researched_at": "2026-11-13"
       }
     },
     {
@@ -3697,6 +4074,53 @@
         ],
         "comparison": "和 playbasis-agent-hub 都读本地会话：Hub 偏数据分析，The Office 偏趣味可视化。和 t3-code 等控制台相比，它只做观察。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "herdr",
+      "name": "herdr",
+      "summary": "用 Rust 写的「编程 Agent 运行时」终端复用器：后台常驻、断线不停工、跨多台机器统一面板，并标出哪个 Agent 卡住了。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "rust",
+        "终端",
+        "tmux替代",
+        "多agent",
+        "skill"
+      ],
+      "source_url": "https://github.com/herdrdev/herdr",
+      "preview_url": "https://herdr.dev/",
+      "post_url": "https://x.com/TheArthiAI/status/2120690022919831706",
+      "author": "herdrdev",
+      "models": [],
+      "first_seen": "2026-11-12",
+      "origin": "daily-digest",
+      "stars": 50618,
+      "notes": "星标 50,618（2026-11-13 GitHub API 查询）；Apache-2.0；仓库创建于 2026-03-27。发现于 GitHub Trending 转述帖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "单一 Rust 二进制（Cargo workspace，crates/ 目录），无 Electron，在用户现有终端里运行；后台 server + 客户端架构，提供 CLI 和 socket API，带 agent skill（skills/ 目录）和插件市场。支持 Claude Code、Codex、Cursor、OpenCode、Grok 等。Apache-2.0。",
+        "method": "herdr 不包装 Agent，而是「拥有它们的终端」：终端由后台 server 托管，客户端关闭或 SSH 断开时进程继续跑；重启后恢复布局并能续接受支持 Agent 的会话。通过识别每个 pane 的状态把它标成 working / blocked / idle，Agent 也能通过 socket API 开新 pane、互相发提示、等待另一个 Agent 真正卡住。",
+        "features": [
+          "detach/reattach：关电脑或断 SSH 不停工，ctrl+b q 分离、herdr 重连",
+          "多台机器（本机和已保存的 SSH 主机）合并在一个窗口和一张 Agent 列表",
+          "每个 pane 标出工作中/阻塞/空闲，Agent 需要回答时提醒",
+          "Agent 可经 CLI/socket API 自己开 pane、互发提示；tmux 式快捷键加鼠标拖拽分屏；插件扩展"
+        ],
+        "highlights": [
+          "5 万星级别，GitHub Trending 常客",
+          "单 Rust 二进制，跨 macOS/Linux/Windows，有 Homebrew、mise 安装",
+          "把「Agent 被卡住需要人」做成一等公民状态"
+        ],
+        "limitations": [
+          "机器重启后原进程不会存活，只能恢复布局和部分会话",
+          "是终端层工具，不负责任务分配、评审等编排逻辑",
+          "状态识别依赖对各 Agent 输出的适配，非支持列表内的 Agent 效果未知"
+        ],
+        "comparison": "和 t3-code、coincide、tastecode 同为编程 Agent 控制台，但 herdr 是终端复用器形态（tmux 替代），不做 GUI 聊天；比 crommacode 的游戏化观察更朴素、开源；和 agent-teams-ai 的看板式「自治团队」相比，herdr 只托管终端不做任务编排。需要远程长跑 Agent 选 herdr，需要可视化团队管理看 agent-teams-ai。",
+        "researched_at": "2026-11-13"
       }
     },
     {
