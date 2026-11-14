@@ -2,7 +2,7 @@
 
 按子类对库内项目做横向对比，比较技术路线、核心能力、成熟度、开源情况和适用场景。每个项目的详细分析见 `projects.json` 里的 `analysis` 字段。
 
-- 更新：2026-11-12（Asia/Shanghai）；既有条目的星标多在 2026-11-09 至 11-10 查询，本批新条目的星标在 2026-11-12 查询，数字会变化
+- 更新：2026-11-14（Asia/Shanghai）；2026-11-14 新条目的星标在 2026-11-13（美西时间）查询；既有条目的星标多在 2026-11-09 至 11-10 查询，本批新条目的星标在 2026-11-12 查询，数字会变化
 - 「自报」表示数字来自项目方的 README 或博客，未经独立验证；light 表示只有页面或帖子，没有可查的源码
 - 各类项目数量不在本文写死，以 `projects.json` 的 `projects` 数组为准（「项目库」Page 会实时计算）
 
@@ -49,6 +49,7 @@
 | sapper-minesweeper | 独立托管的网页扫雷 | 战争主题包装的完整扫雷规则 | light | 未查到 | 规则清晰、可验收的 Fable 演示 |
 | worldlabs-atlas | 闭源世界模型，托管应用加 API，输出视频/关键帧/高斯泼溅，可转网格 | 从图片或灰盒生成可漫游 3D 世界 | light，2026-11-12 全面开放 | 闭源 | 场景级资产、关卡原型、影视预演 |
 | mela-tycoon | Fable 5.2 全自动开发的网页模拟经营，Blender 脚本出 3D 资产 | 印度庙会版过山车大亨，带游客模拟和自测机器人 | light；源码私有 | 未公开 | 观察 Agent 自产资产+自测的游戏闭环 |
+| 孤枪入夜 | three.js（WebGLRenderer、GLTFLoader）网页游戏，Tripo 从立绘生成 3D 角色与场景 | 俯视角暗黑三国动作肉鸽首章，手机横屏可玩，双骨 IK 握枪 | light；无源码，模型分工来自转发者 | 未公开 | 研究「立绘→3D 角色→可战斗」的单人资产管线 |
 
 ### 分析
 
@@ -57,6 +58,8 @@
 结论 1：最成熟、最值得接入工作流的是 Scenario 的两件套。技能库覆盖整条流水线，Blender 插件的工程质量最高（测试、模糊测试、发布签名齐全），两者合起来就是「Agent 驱动 DCC」的参考实现。
 
 结论 2：渲染底座里，threepp 胜在成熟，solstice 胜在技术前沿（WebGPU 上的虚拟化几何），但后者还只是演示。three-voxel-destruction 把 WebGPU 用在可玩的体素刚体破坏上，并开源了演示和底层求解器 three-avbd，适合对照「只有托管页的体素演示」。想在浏览器之外做原生 3D，选 threepp；想研究 Web 端下一代渲染，看 solstice；想看可玩的 WebGPU 物理，看 three-voxel-destruction。
+
+2026-11-14 补入的孤枪入夜把 three.js + Tripo 的组合推进到带 IK 握枪和动作的 3D 角色战斗，是「AI 资产管线」与「成品」交界处的样本，但没有源码。
 
 结论 3：成品类项目仍有不少只是「能玩的演示」（dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation，以及评论里出现的 a-little-earth、our-3d-reality、fable-contra、sapper-minesweeper），只能做 light 分析。其中 three-voxel-destruction 是例外：它有 MIT 源码和自研 GPU 求解器，不是一次性提示词小品。可复用的方法件仍是 pixelfx、guizang-game-skill 和与模型无关的 LDtk。可复用价值仍然更多在方法和工具，而不在某一款展示游戏。
 
@@ -103,6 +106,7 @@
 | optiq-code | 经 optiq serve 调本机模型的终端循环（无公开源码） | 针对小模型空补丁、失败编辑和原地打转做防护 | light，分数为作者自报 | 未查到 | 在 Mac 上用本地小模型落地补丁 |
 | magpie | Go 本地网关加菜单栏应用 | 任意 Agent 换任意模型，额度用完自动切账号/模型 | ★35k | MIT | 多 Agent、多提供商、多账号混用 |
 | archify | Agent 技能，产出单文件交互 HTML | 想法/代码库转可交互架构图和一页式图解，带源码溯源 | ★96k | Apache-2.0/MIT | 理解和讲解系统架构 |
+| aws-emulator | Rust workspace，每服务一 crate，Smithy 模型生成协议层；AWS 自述全部由 Agent 编写 | 本地/CI 离线模拟 200+ AWS 服务，服务器模式与 Rust 嵌入模式 | ★7.2k，GA，按服务公布 fidelity 分数 | CC0-1.0 | 无账号测试 AWS 应用；研究「规格+测试+合并闸」约束 Agent 写大型软件 |
 
 ### 分析
 
@@ -112,7 +116,7 @@
 
 结论 2：多个项目不约而同用「换一个干净的上下文去复核」来提高质量：elephant-goldfish-model 用无记忆评审，security-audit-skill 用新上下文证伪，pstack 强调验证。这是目前对抗 Agent 自我确认偏差最有效的套路。
 
-结论 3：安全和成本工具大多还很早期（openmoat、landmine、borg 都不到 20 星），但定位清晰。tokeneconomizer 有大厂论文背书，是成本优化里唯一有系统评测的；安全方面，openmoat（事前拦截）、stroq（事后审计）和 security-audit-skill（代码审计）可以组合使用。本窗口补入的 sem 是少见的高星、非技能型底座，给 Agent 提供实体级 diff 和影响分析；anabasis 则把「换干净上下文验收」用到了自动改进 harness 上，仍偏研究。评论里后来又出现三类可运行的 harness：minimax-code 是厂商维护的跨平台开源 CLI，体量最大；kwwk 是少见的纯 Swift 方案，适合要嵌进 macOS 应用的人；optiq-code 针对本机小模型的失败模式，但还没有公开源码，榜分数也是作者自报。
+结论 3：安全和成本工具大多还很早期（openmoat、landmine、borg 都不到 20 星），但定位清晰。tokeneconomizer 有大厂论文背书，是成本优化里唯一有系统评测的；安全方面，openmoat（事前拦截）、stroq（事后审计）和 security-audit-skill（代码审计）可以组合使用。本窗口补入的 sem 是少见的高星、非技能型底座，给 Agent 提供实体级 diff 和影响分析；anabasis 则把「换干净上下文验收」用到了自动改进 harness 上，仍偏研究。2026-11-14 补入的 aws-emulator 是迄今最大的「Agent 写全部代码、人只写规格和校验」工业样本，可与 anabasis、octopus-si-os 的研究路线对照。评论里后来又出现三类可运行的 harness：minimax-code 是厂商维护的跨平台开源 CLI，体量最大；kwwk 是少见的纯 Swift 方案，适合要嵌进 macOS 应用的人；optiq-code 针对本机小模型的失败模式，但还没有公开源码，榜分数也是作者自报。
 
 ## Phone/Computer Use
 
@@ -134,6 +138,7 @@
 | hermes-voice | Home Assistant 集成加刷机的 Echo | 旧 Echo 变成 Agent 的语音入口 | ★627 | MIT | 智能家居语音 |
 | moli | Rust 自研无头浏览器（V8），CDP/WebDriver 三协议 | 低内存网页抓取、语义树导出和自动化 | ★23.5k；自报成功率 80.7% | Apache-2.0/MIT | Agent 批量抓取和浏览器自动化后端 |
 | smitline | 自托管 MCP 服务，OpenAI 实时语音加 Twilio/SignalWire | 代用户打电话、进 Zoom/Teams/Meet 开会并回报 | ★109，较新 | Apache-2.0 | 预约、询价、代参会做记录 |
+| tencent-browserskill | Rust bsk CLI/守护进程 + MV3 扩展，WebSocket 加 CDP，独立可见 Agent Window | 在已登录的 Chrome/Edge 里读写页面、导出表格、网站调试，人可随时接管 | ★10.4k | MIT | 任意 Shell 型 Agent 处理需要登录态的网页任务 |
 
 ### 分析
 
@@ -141,7 +146,7 @@
 
 结论 1：手机方向分成两条路。mika 走「手机本机运行」，免 Root、免电脑，星标最高；pinky 和 poki 走「电脑控制手机」加 MCP，方便接入现有编程 Agent。其中 pinky 的安全设计（付款前停下等确认、录屏、网关强制执行规则）在同类中最完整。
 
-结论 2：浏览器方向的共识是「复用用户已登录的真实会话」，同时把登录、付款这类敏感步骤交还给人（opencode-browse）。pointer、redraft 这类小工具解决的是指代精度和可视化编辑，属于前端开发的辅助，不是通用浏览器 Agent。
+结论 2：浏览器方向的共识是「复用用户已登录的真实会话」，同时把登录、付款这类敏感步骤交还给人（opencode-browse）。tencent-browserskill（腾讯，1 万星）把这条路做得最完整：独立可见 Agent 窗口、共享控制、本地配对认证，并与具体 Agent 解耦。pointer、redraft 这类小工具解决的是指代精度和可视化编辑，属于前端开发的辅助，不是通用浏览器 Agent。
 
 结论 3：隔离和上下文成本是 Computer Use 的两大短板，库里已有针对性的工具：windows-terminal 用 QEMU 做隔离，image-context-manager 压缩截图。这两个都很早期（个位数星标），但方向值得跟进。
 
@@ -168,6 +173,7 @@
 | herdr | 单 Rust 二进制终端复用器，后台 server 加 socket API | 断线不停工、多机统一面板、标出卡住的 Agent | ★50.6k | Apache-2.0 | 远程长跑多个编程 CLI |
 | omnigraph | Rust 图数据库，Lance 存储，Git 式分支合并，Cedar 策略 | 多 Agent 共享记忆的版本控制和混合检索 | ★2k | MIT | 多 Agent 共用知识/记忆，需要审查合并 |
 | agent-teams-ai | Electron 桌面应用，MCP 接入多家 CLI | 看板式自治 Agent 团队，互发消息互评审 | ★2.5k | AGPL-3.0 | 本机组建可视化的编码 Agent 团队 |
+| antigravity-dynamic-workflows | Antigravity 内置技能生成 Python 编排脚本（parallel/pipeline/phase），子 Agent 返回 JSON Schema 结果 | 审批后运行的确定性多 Agent 工作流，可保存复用，可给每个 Agent 开 worktree | light；2026-11-13 上线，效率数字为 Google 自报 | 闭源（Google AI Pro/Ultra） | 批量审查、逐文件修复、审查-修复-复核循环 |
 
 ### 分析
 
@@ -177,7 +183,7 @@
 
 结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。若目标是公司组织而不是本机编码控制台，agent-ceo 给出了「人和 Agent 共用组织规则、完成判定要分开」的产品形态，但闭源，页面上的规模数字均为自报，需要自己试用。
 
-结论 3：多 Agent 的瓶颈正从「能不能并行」转向「共享状态和协调」：omnigraph 给共享记忆加上 Git 式分支和合并检查，herdr 把「哪个 Agent 卡住了」做成一等状态。「团队即配置」也在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。
+结论 3：多 Agent 的瓶颈正从「能不能并行」转向「共享状态和协调」：omnigraph 给共享记忆加上 Git 式分支和合并检查，herdr 把「哪个 Agent 卡住了」做成一等状态。大厂也开始把编排做成脚本：antigravity-dynamic-workflows 让 Agent 生成可审阅的 Python 编排脚本，用确定性控制流代替提示词里的协作约定。「团队即配置」也在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。
 
 ## 大模型工具
 
@@ -236,6 +242,11 @@
 | lieflat-code-video | 代码驱动镜头的起步项目 | 产品发布类短片的镜头和转场 | ★37，预览 | PolyForm Noncommercial（非 OSI 开源） | 学做发布片（非商用） |
 | math-to-manim | Python 工具链调用 Manim 和多种 Agent | 从题目生成数学动画影片 | ★2857 | MIT | 数学可视化教学 |
 | tracetrial-bench | Docker 实跑加轨迹证据，任务成功和 harness 合规分开打分 | 95 题、4 个 harness 的可靠性与失败归因基准 | ★28，有论文和排行榜 | MIT | 判断失败该记在模型头上还是 harness 头上 |
+| agent-initiative-benchmark | 合成公司 PageMantle（11 个模拟服务，Parquet+DuckDB/SQLite），两名盲评 LLM 打分 | 测主动型 Agent 何时出手、发给谁、何时沉默，并报告成本和时延 | ★1（新公开），仓库含 8 个示例任务；分数自报 | Apache-2.0 | 为值守式工作 Agent 选模型 |
+| llama-cpp | C/C++ 加 ggml 可插拔硬件后端，GGUF 量化 | 跨硬件本地推理，v1.0.0 起公共 C API 语义化版本 | ★13.5 万，3.5 年 | MIT | 本地/端侧推理的通用底座 |
+| edge0 | latent-MoE 开放权重（145B/120B，Q3_K/NVFP4）+ SSD 流式权重、预测式路由的推理栈 | 单张 24GB 级 NVIDIA 卡本地跑 100B 级编程模型 | ★1.1 万；基准和速度自报，Mac 版引擎未发布 | Apache-2.0 | 离线本地编程 Agent |
+| claude-obsidian | Claude Code 插件：15 个技能、3 个只读 Agent、Python 事务层 | 资料入库→带出处的链接笔记与知识图谱，问答、健康检查 | ★1.6 万，v3.0.1 | MIT | 个人/团队 LLM Wiki |
+| ingar30-reviewer | Python 流水线，Codex 或 Claude Code 后端，24 个审稿模板 | 本地确定性 PDF 解析后多审稿人并行评审，编辑汇总报告 | ★262 | MIT | 经济学论文投稿前自查 |
 
 ### 分析
 
@@ -245,7 +256,7 @@
 
 结论 2：最有技术含量的是「权重即程序」这条新路线：nesformer 用编译器写权重，权重空间编程-mit 让 LLM 推理后改权重，两者方向相反、互相补充。推理效率方向的 kimi-k3-in-c（极限省内存）、ferrite（全 Rust）、latent-sparse-attention（长上下文）都还以自报数据为主，生产可用性需要自己验证。
 
-结论 3：内容创作类是数量最多的一组，而且几乎都以技能或 MCP 的形式交付，说明「LLM 加确定性工具链（ffmpeg、Playwright、Metal、GSAP、Manim）」是目前做可控内容生产的主流方式。lieflat 的写作与可视化技能（去 AI 味、公文、风格蒸馏、示意图、代码短片）把「先测量再改、先确认再写」写进了流程，但多用非商用许可。math-to-manim 把数学影片做成可重复跑的开源工具链。评测方面，frontier-harness-eval 补上了「只换 harness、不换模型」的公开对照；tracetrial-bench 则进一步把任务通过和 harness 轨迹是否可靠拆开计分，两者不宜直接比百分数。其中涉及他人肖像和 IP 的 ai-character-swap、gif-factory，以及依赖逆向接口的 zhihu-mcp，存在合规风险。
+结论 3：内容创作类是数量最多的一组，而且几乎都以技能或 MCP 的形式交付，说明「LLM 加确定性工具链（ffmpeg、Playwright、Metal、GSAP、Manim）」是目前做可控内容生产的主流方式。lieflat 的写作与可视化技能（去 AI 味、公文、风格蒸馏、示意图、代码短片）把「先测量再改、先确认再写」写进了流程，但多用非商用许可。math-to-manim 把数学影片做成可重复跑的开源工具链。推理底座方面，llama-cpp 发布 v1.0.0 给出 API 稳定承诺，edge0 则用 latent-MoE 加流式权重把 100B 级开放权重模型压到单卡（数据自报）。评测方面，agent-initiative-benchmark 首次把「该不该说话、发给谁」计分，与只比 harness 的 frontier-harness-eval 互补；frontier-harness-eval 补上了「只换 harness、不换模型」的公开对照；tracetrial-bench 则进一步把任务通过和 harness 轨迹是否可靠拆开计分，两者不宜直接比百分数。其中涉及他人肖像和 IP 的 ai-character-swap、gif-factory，以及依赖逆向接口的 zhihu-mcp，存在合规风险。
 
 ## 其他（未做对比）
 
@@ -253,4 +264,5 @@
 
 - 教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图、cs329z（斯坦福 Agent 工程公开课）
 - 知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站、xnews（海外长文中文改写站）、x-article-hub（人工挑选的 X 长文归档）、musk-daily（马斯克动态日报）、what-new-ai-in-x（按模型与产品切的 X 合集档案）
+- 算法可视化：astar-visualizer（Antigravity 生成的 C++ A* 寻路可视化，评论区发现）
 - 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）、cassotis-ime（跨平台开源拼音输入法「言泉」）、harper（离线英文语法检查）

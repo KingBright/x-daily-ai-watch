@@ -1,31 +1,31 @@
 {
   "meta": {
-    "generated_at": "2026-11-13",
+    "generated_at": "2026-11-14",
     "timezone": "Asia/Shanghai",
-    "projects_total": 179,
+    "projects_total": 189,
     "category_counts": {
-      "game": 28,
-      "agent-eng": 68,
-      "llm-tools": 51,
-      "other": 32
+      "game": 29,
+      "agent-eng": 71,
+      "llm-tools": 56,
+      "other": 33
     },
     "subcategory_counts": {
-      "dev-efficiency": 37,
-      "phone-computer-use": 14,
-      "agent-fleet": 17
+      "dev-efficiency": 38,
+      "phone-computer-use": 15,
+      "agent-fleet": 18
     },
     "origin_counts": {
       "bookmark": 78,
-      "reply-on-popular-post": 15,
-      "daily-digest": 77,
+      "reply-on-popular-post": 16,
+      "daily-digest": 86,
       "bookmark+daily-digest": 8,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 135,
-      "light": 44
+      "full": 143,
+      "light": 46
     },
-    "analysis_updated_at": "2026-11-13"
+    "analysis_updated_at": "2026-11-14"
   },
   "projects": [
     {
@@ -1201,6 +1201,58 @@
       }
     },
     {
+      "id": "孤枪入夜",
+      "name": "暗黑三国 · 孤枪入夜",
+      "summary": "个人开发者用 AI 全流程做的网页 3D 暗黑三国动作肉鸽首章，赵云单枪七进七出，电脑和手机浏览器免下载试玩。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "three.js",
+        "3d",
+        "网页游戏",
+        "tripo",
+        "动作",
+        "肉鸽",
+        "ai生成美术"
+      ],
+      "source_url": null,
+      "preview_url": "https://sanguo.finiyang.com/",
+      "post_url": "https://x.com/FiniYang/status/2121212247515287740",
+      "author": "Fini.Yang（@FiniYang）",
+      "models": [
+        "DeepSeek-V4.1-Flash（作者长文提及，配合 dsh-game-studio）",
+        "Gemini 4 Carbon（作者长文提及）",
+        "Tripo（3D 资产）"
+      ],
+      "first_seen": "2026-11-13",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "试玩站 2026-11-13 复查可访问（HTTP 200）。游戏本体无源码；作者关联开源项目 DSH 游戏工坊 https://github.com/ZSeven-W/dsh-game-studio（未深入研究）与游戏墙 https://finiking.github.io/dsh-games/wall/。转发帖（@Dav338876）列出 Claude Opus 5.5/Fable 5.2、GPT-6 Astra 等分工，未经作者原帖确认。作者称全套 3D 资产不到 900 Tripo 积分（自述），评论区含 Tripo 邀请推广链接。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "网页前端单页应用（Vite 风格打包，主包约 975KB），打包内容可见 three.js 的 WebGLRenderer 与 GLTFLoader；3D 角色和场景由 Tripo 从 2D 立绘生成（10K 四边面），PWA manifest 支持手机横屏。作者长文提到用 DSH 让 Agent 写代码并拉起无头 Chrome 自动试玩验收。",
+        "method": "「单张立绘 → Tripo 3D 资产 → 减面与修骨 → three.js 场景」的单人资产管线，配合双骨 IK 让双手握住同一根枪杆；玩法上打完小怪选「军魂」叠 Buff 的肉鸽循环。",
+        "features": [
+          "俯视角暗黑风 3D 动作，首章「黄天」线上试玩",
+          "银枪三式、七进七出等招式，手机横屏搓招",
+          "肉鸽式 Buff 选择",
+          "作者承诺后续发布全流程教程（提示词、建模、减面、修骨）"
+        ],
+        "highlights": [
+          "个人开发者用 AI 跑通完整 3D 动作游戏资产管线，美术统一度较高",
+          "免下载、手机电脑都能玩",
+          "作者坦白记录了披风拉伸、滑步、IK 握枪等实际踩坑"
+        ],
+        "limitations": [
+          "无源码，技术细节主要来自作者帖子与打包产物",
+          "目前只有首章试玩",
+          "各模型具体分工来自转发者，未经作者确认；资产成本为自述"
+        ],
+        "comparison": "与库内 guizang-game-skill（雾锁山门，Agent 技能产出 three.js 游戏）、书桌之上（three.js + Tripo 素材）、mela-tycoon 同属「AI 做网页 3D 游戏」，孤枪入夜的看点是从立绘到可战斗 3D 角色（含 IK 和动作）的资产管线；想学可复用技能看 guizang-game-skill，想看 AI 3D 角色动作能做到什么程度看孤枪入夜。",
+        "researched_at": "2026-11-14"
+      }
+    },
+    {
       "id": "guizang-game-skill",
       "name": "歸藏 Game Skill（雾锁山门）",
       "summary": "给编程 Agent 用的 3D 动作游戏技能，附可在浏览器里玩的演示《雾锁山门》。",
@@ -1253,6 +1305,56 @@
         ],
         "comparison": "和 portals、bee-x9、moss-keeper 同属 AI 写出的网页 3D 作品，但本项目把流程收成可安装的 skill，并提供三种打包方式。和 3d-os-scenario-skills、scenario-blender-plugin 比，那些走 DCC/引擎资产流水线，本项目目标是直接产出可玩的单页游戏。和 claude-make-an-anime、motion-graphics-music-video-skill 同为创作向技能，题材分别是动画、音乐视频和 3D 动作游戏。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "aws-emulator",
+      "name": "AWS Emulator",
+      "summary": "AWS 官方开源的本地 AWS API 模拟器（Rust），无需账号即可在本机或 CI 里跑 SDK/CLI 调用；全部代码由自主 Agent 编写和测试。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "rust",
+        "aws",
+        "本地模拟",
+        "ci",
+        "agent写的代码",
+        "cc0"
+      ],
+      "source_url": "https://github.com/aws/aws-emulator",
+      "preview_url": "https://docs.aws.amazon.com/emulator/latest/userguide/what-is-service.html",
+      "post_url": "https://x.com/AWSNewsroom/status/2120583168998732100",
+      "author": "AWS",
+      "models": [
+        "Amazon Bedrock AgentCore 上的 Agent（具体模型未查到）"
+      ],
+      "first_seen": "2026-11-13",
+      "origin": "daily-digest",
+      "stars": 7194,
+      "notes": "星标 7,194（2026-11-13 GitHub API 查询）；CC0-1.0；GA 于 2026-11-11，11-13 在 X 上被二次热传（@rustaceans_rs、@InkByte）。「所有代码由 Agent 编写」「数百个 Agent 分三队」为 AWS 自述。默认开启遥测。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust Cargo workspace，每个 AWS 服务一个 crate（services/ 下 437 个目录），由各服务的 Smithy 模型 JSON 经 build.rs 生成线协议与路由；core/router 是把所有服务挂到同一 HTTPS 端点（127.0.0.1:9297，自签证书）的二进制，core/embedded 提供进程内嵌入模式；vendor/ 下是共享的 InMemoryEngine 与代码生成框架（EmulatorCore v0.1.0）。Linux 提供 RPM/Deb 包，macOS/Windows 走 Docker。CC0-1.0。",
+        "method": "以 Smithy 规格为唯一事实来源自动生成协议层，Agent 只在 ops/ 下逐个实现操作；AWS 自述由 Bedrock AgentCore 上的数百个 Agent 分三队写测试（对照真实 AWS）、找差异、修代码，每个改动过自动合并闸（编译、安全、规范、与真实 AWS 的一致性）。已知缺口以文件形式放在 issues/things-that-do-not-work，修好后移到 things-that-now-work，每次发布公布各服务 fidelity 分数。",
+        "features": [
+          "服务器模式：设环境变量把 AWS CLI 或任意 SDK 指向本地端点，离线测试 S3、Lambda、DynamoDB、SQS 等",
+          "嵌入模式：Rust 测试里一测一实例，直接把模拟器的 HTTP client 塞给 SDK，无需端点和证书",
+          "提供 aws-emulator Agent 技能，可让编程 Agent 自己装好并配置",
+          "按服务公布 fidelity 分数，并用 issues 目录追踪不支持的 API"
+        ],
+        "highlights": [
+          "AWS 官方出品、CC0 公有领域许可，覆盖 200+ 服务（自述）",
+          "迄今最大规模的「人写规格与校验、Agent 写全部代码」公开样本，可直接翻代码看 Agent 产出质量",
+          "坦白列出不能用的部分（things-that-do-not-work），工程诚信度高"
+        ],
+        "limitations": [
+          "官方明确不能用于生产或安全测试，IAM 等不完整",
+          "从源码构建需要 100GB 以上磁盘和多核机器，嵌入模式首次编译很重",
+          "默认开启遥测；「全部由 Agent 编写」与 fidelity 数据为 AWS 自述"
+        ],
+        "comparison": "库内没有同类云模拟器（外部可对照 LocalStack：后者人写、覆盖热门服务更久，AWS Emulator 官方出品且按 Smithy 全量生成）。作为「Agent 写大型软件」的方法样本，可与 octopus-si-os、anabasis 这类研究 Agent 自主开发的项目对照：AWS Emulator 是落到 GA 产品的工业实例，靠规格+测试+合并闸约束 Agent。",
+        "researched_at": "2026-11-14"
       }
     },
     {
@@ -2899,6 +3001,55 @@
       }
     },
     {
+      "id": "tencent-browserskill",
+      "name": "BrowserSkill（腾讯）",
+      "summary": "腾讯开源的浏览器操控工具：bsk CLI + 守护进程 + Chrome/Edge 扩展，让任意能调 Shell 的 Agent 在你已登录的真实浏览器里读页面、点按钮、填表和排错。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "browser-use",
+        "rust",
+        "typescript",
+        "chrome扩展",
+        "cdp",
+        "skill",
+        "mcp"
+      ],
+      "source_url": "https://github.com/Tencent/BrowserSkill",
+      "preview_url": "https://browserskill.weixin.qq.com/",
+      "post_url": "https://x.com/awe0_io/status/2121270910925844911",
+      "author": "Tencent",
+      "models": [],
+      "first_seen": "2026-11-13",
+      "origin": "daily-digest",
+      "stars": 10384,
+      "notes": "星标 10,384（2026-11-13 GitHub API 查询）；MIT；仓库创建于 2026-06-22，README 称 2026 年 9 月曾登 GitHub Trending 全语言日榜第 4。本次因中文帖再度热传（38 赞、36 收藏）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 写的 bsk CLI 与守护进程（crates/bsk-cli、bsk-protocol，同一二进制），TypeScript 写的 MV3 浏览器扩展（apps/extension）与 UI/i18n 包（pnpm workspace）；CLI↔守护进程走 Unix socket/命名管道上的 JSON Lines，守护进程↔扩展走本地回环 WebSocket（默认 52800 端口），扩展用 CDP + WebExtension API 操作标签页；支持远程模式（认证 WSS、设备配对）。附 SKILL.md、MCP 文档、DeepSeek Harness 插件与 evals/。MIT。",
+        "method": "不另起无头浏览器，而是复用用户日常浏览器的登录态：任务默认在单独可见的 Agent Window 中进行，需要时可显式借用已有标签页并在结束后归还；人和 Agent 共享控制，人在编辑时 Agent 暂停、之后核对改动再继续。扩展握手校验 Origin，并用 nonce 绑定的 HMAC 做本地配对认证。",
+        "features": [
+          "读取页面文本和控件，点击、输入、填表、拖拽、管理标签页，整页/可见区截图，本地模式上传下载",
+          "把已加载的表格和列表导出为 JSON/CSV，保留列名、来源 frame 和合并单元格信息",
+          "网站调试：关联操作、请求、响应、控制台和页面变化，检查慢接口和重复请求",
+          "支持 Codex、Claude Code、Cursor、OpenClaw、CodeBuddy、Hermes 等，bsk install-skill 一键装技能"
+        ],
+        "highlights": [
+          "大厂出品、约 1 万星，文档非常完整（架构、配对、远程、审计、录屏等专题）",
+          "独立 Agent Window + 共享控制，兼顾自动化与人工接管",
+          "本地守护进程有配对和 HMAC 认证，安全设计比一般 CDP 直连工具认真"
+        ],
+        "limitations": [
+          "让 Agent 操作已登录的真实账号，存在误操作和提示注入风险，需要自己限定范围",
+          "仅支持 Chromium 系（Chrome、Edge）",
+          "远程模式需要自己部署 TLS 与守护进程"
+        ],
+        "comparison": "与库内 opencode-browse、pinky 等浏览器 Agent 相比，BrowserSkill 的差异是「复用真实已登录浏览器 + 独立可见 Agent 窗口 + 共享控制」，且与具体 Agent 解耦（任何能跑 Shell 的 Agent 都能用）；moli、smitline 偏桌面/系统级 Computer Use。需要在登录态网站上干活选 BrowserSkill，需要隔离无头环境选沙盒类方案。",
+        "researched_at": "2026-11-14"
+      }
+    },
+    {
       "id": "mika",
       "name": "Mika",
       "summary": "跑在安卓本机的 Phone Agent，无需 Root/电脑，可操作任意 App。",
@@ -3484,7 +3635,7 @@
       "first_seen": "2026-11-12",
       "origin": "reply-on-popular-post",
       "stars": 2473,
-      "notes": "发现于 Avi Chawla「1000+ Agent 协作」热门长文的评论，作者自荐。星标 2,473（2026-11-13 查询）；AGPL-3.0。README 称支持 300+ 模型、200+ 提供商、免登录免费模型，均为自述。",
+      "notes": "发现于 Avi Chawla「1000+ Agent 协作」热门长文的评论，作者自荐。星标 2,473（2026-11-13 查询）；AGPL-3.0。README 称支持 300+ 模型、200+ 提供商、免登录免费模型，均为自述。 2026-11-13 再次出现在 Jeremy Nguyen「Reviewer 多 Agent 审稿」热门帖评论区，作者自荐其 research 团队模板。",
       "analysis": {
         "depth": "full",
         "core_tech": "TypeScript + Electron（electron-vite），pnpm monorepo，含 agent-teams-controller、mcp-server、landing 等子包；可检测本机 Claude Code、Codex、OpenCode 运行时，并在 UI 中接入 Cursor、SuperGrok、GitHub Copilot、Z.AI、MiniMax、Kiro 等。AGPL-3.0。",
@@ -3689,6 +3840,58 @@
         ],
         "comparison": "和 tastecode、relay、t3-code 同为多 Agent 桌面或工作区，CrommaCode 的差异是游戏化观察加上 worktree 蜂群。和 playbasis-agent-hub 比，本项目不只统计用量。和 recalc 比，recalc 用共享表格验收，CrommaCode 用钩子可视化并派工蜂。和 bot-teams、the-office-agents 比，那些偏角色或群聊编排，不是围着现有编程 CLI 的原生桌面。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "antigravity-dynamic-workflows",
+      "name": "Google Antigravity Dynamic Workflows",
+      "summary": "Google Antigravity 新功能：/run-workflow 让 Agent 写一段 Python 脚本，用 parallel()/pipeline() 编排多个子 Agent，审批后运行并可保存复用。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "多agent",
+        "编排",
+        "gemini",
+        "ide",
+        "闭源",
+        "python"
+      ],
+      "source_url": null,
+      "preview_url": "https://antigravity.google/docs/dynamic-workflows",
+      "post_url": "https://x.com/antigravity/status/2121327669534933025",
+      "author": "Google Antigravity",
+      "models": [
+        "Gemini 4 Carbon",
+        "Gemini 4 Argon",
+        "Gemini 4 Hydrogen",
+        "flash / flash_lite 档"
+      ],
+      "first_seen": "2026-11-13",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "闭源产品功能，仅 Google AI Pro / Ultra 计划可用（App 与 CLI）。原帖 1,636 赞（2026-11-13 查询）。同期发布的 Orchestrator（Carbon 规划、Hydrogen 执行）称少用 24% 额度、快 19%，为 Google 自报。评论区有用户报告 CLI 1.5.8 的 invoke_subagent 不认 Gemini 4 模型名（google-antigravity/antigravity-cli issue #1551）。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Antigravity App/CLI 内置 run-workflow 技能；工作流脚本在独立 Python 进程中运行（自带 Python，可用 ANTIGRAVITY_PYTHON 换解释器，要求 ≥3.8）。脚本 API：phase()、log()、agent(prompt, schema, role, type_name, workspace, model)、parallel()、pipeline()、trajectory()。子 Agent 结果经 finish 工具按 JSON Schema 校验后返回。闭源。",
+        "method": "把「多 Agent 协作」从提示词里的口头约定改成确定性脚本：主 Agent 根据自然语言需求生成编排脚本 → 用户审批脚本 → 后台运行，每个子 Agent 在独立会话里完成并返回结构化结果，主对话上下文保持干净；workspace=\"branch\" 给并行 Agent 各开一个 git worktree，parallel 中一项失败会取消其余项。",
+        "features": [
+          "/run-workflow 自然语言生成并运行编排脚本，运行前展示脚本供审批",
+          "parallel() 并发、pipeline() 串行，按 phase 实时显示日志和 Agent 卡片",
+          "子 Agent 可指定模型档位（flash_lite/flash/pro）、类型（self/research/自定义）和隔离工作区",
+          "脚本可保存为 .py 反复运行；与 Orchestrator、/swarm、/boost、/teamwork 分工"
+        ],
+        "highlights": [
+          "Google 官方把「脚本化编排」做成一等功能，审批对象是脚本而不是零散命令",
+          "结构化 JSON Schema 交接，减少 prompt drift 和主上下文污染",
+          "文档完整，给出与 Subagents、/swarm、/teamwork 的选型表"
+        ],
+        "limitations": [
+          "闭源，且只对付费的 Google AI Pro/Ultra 开放",
+          "效率数据（Orchestrator 少 24% 额度、快 19%）为 Google 自报",
+          "上线首日已有用户报告子 Agent 模型名映射 bug；子 Agent 之间不能直接通信，需要互相协商时要改用 /swarm"
+        ],
+        "comparison": "与 agent-teams-ai（看板式自治团队，Agent 互发消息）和 herdr（只托管终端）不同，Dynamic Workflows 用一段可审阅的 Python 脚本定死控制流，更接近 omnigraph 的图式编排但内置在 IDE 里；需要可复现的批量审查/修复流水线选它，需要开放式协作选 agent-teams-ai 或 Antigravity 自己的 /swarm。",
+        "researched_at": "2026-11-14"
       }
     },
     {
@@ -4219,6 +4422,66 @@
       }
     },
     {
+      "id": "agent-initiative-benchmark",
+      "name": "Agent Initiative Benchmark（Deepnote）",
+      "summary": "Deepnote 开源的「主动型 Agent」基准：在合成公司 PageMantle 的 Slack 里测 12 个前沿模型何时该出手、说什么、发给谁、何时该闭嘴。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "评测",
+        "benchmark",
+        "主动agent",
+        "合成数据",
+        "slack"
+      ],
+      "source_url": "https://github.com/deepnote/agent-initiative-benchmark",
+      "preview_url": "https://deepnote.com/research/benchmark",
+      "post_url": "https://x.com/jakubjurovych/status/2121256499552915586",
+      "author": "Deepnote Research（Jakub Jurovych）",
+      "models": [
+        "GPT-6 Astra",
+        "GPT-6.1 Sol",
+        "GPT-6 Luna",
+        "Claude Fable 5.2",
+        "Claude Fable 5.1",
+        "Claude Opus 5.5",
+        "Claude Sonnet 5.5",
+        "Claude Haiku 5.5",
+        "Gemini 4 Argon",
+        "Grok 4.7",
+        "DeepSeek V4.1 Flash",
+        "Mistral Large 4"
+      ],
+      "first_seen": "2026-11-13",
+      "origin": "daily-digest",
+      "stars": 1,
+      "notes": "GitHub 仓库 Apache-2.0，星标 1（2026-11-13 查询，刚公开）；数据集在 Hugging Face：deepnote/pagemantle-company-dataset。原帖 542 赞、628 收藏。仓库目前只含 8 个可运行示例任务（每类一个），完整 50 题未见全部公开。所有分数为 Deepnote 自报。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 包（pyproject.toml，src/、tasks/、tests/），11 个服务（Slack、Notion、Linear、HubSpot、Stripe、Google Calendar、PostHog、GA、Search Console、BigQuery、Snowflake）各有模拟 API：数仓与分析数据是 Parquet+DuckDB，其余为 SQLite；工具形状和限制模仿真实 API。合成公司数据约 10GB，放在 Hugging Face。两个盲评 LLM 打分。Apache-2.0。",
+        "method": "先用代码固定事实（人员、客户、合同、时间线与关联），再让模型在事实框架内生成对话、文档和工单，一个事件扇出成多系统记录；每道题是在只读基线上的小叠加。Agent 只拿到最新 Slack 对话和「有用就帮」的指令，180 秒模型响应预算内跨 11 个服务调查后选择：频道发言、线程回复、私信或沉默。两个不知被测模型身份的评审按介入决策、证据、清晰度、受众位置 0–10 分打分。",
+        "features": [
+          "50 个职场情境、8 类任务（Find/Explain/Analyze/Verify/Decide/Diagnose/Coordinate/Guard）",
+          "把「该沉默时沉默」单独计分，10 道题正确答案是不说话",
+          "同时报告分数、单任务成本、响应时间和工具调用数，并画成本/时间前沿",
+          "开源模拟服务与示例任务，可用来测试自己的 Agent"
+        ],
+        "highlights": [
+          "自报结果：GPT-6 Astra 8.97、GPT-6.1 Sol 8.65（$0.11/题）、Claude Fable 5.2 8.17（$1.87/题），Grok 4.7 4.51 垫底",
+          "发现「模型擅长帮忙、不擅长不帮忙」：需要沉默时平均只有 6/10 次能忍住",
+          "工具调用最多的 Gemini 4 Argon、Grok 4.7 得分最低，多因超时未回复"
+        ],
+        "limitations": [
+          "只有 50 题、单一推理强度、固定快照，作者自己也列为局限",
+          "评分依赖 LLM 评审，存在评审偏差",
+          "公开仓库目前只有 8 个示例任务；只比模型不比 harness，换提示或工具策略结果会变"
+        ],
+        "comparison": "与库内 frontier-harness-eval（固定模型比 harness）和 tracetrial-bench（区分任务成功与 harness 合规）互补：Agent Initiative Benchmark 固定 harness 比模型，并首次把「何时沉默、发给谁」纳入评分。选主动式值守 Agent 的模型看它，选编程 Agent 外壳看 frontier-harness-eval。",
+        "researched_at": "2026-11-14"
+      }
+    },
+    {
       "id": "archimedes-reynolds",
       "name": "Archimedes / Reynolds",
       "summary": "用智能体探索工程设计，再调用 OpenFOAM 做真实数值仿真。",
@@ -4429,6 +4692,58 @@
         ],
         "comparison": "和 janestreet-agent-skills 的苏格拉底辅导（单个技能）相比，DeepTutor 是完整的学习平台。和 teachable-figures（交互教学图示）可以互补。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "edge0",
+      "name": "Edge0（145B / 120B 端侧模型与推理框架）",
+      "summary": "Edge0 发布开放权重的 145B/120B latent-MoE 模型和配套流式 MoE 推理框架，主打单张消费级 NVIDIA 显卡本地跑 100B 级编程 Agent。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "开放权重",
+        "moe",
+        "端侧",
+        "推理引擎",
+        "量化",
+        "c++"
+      ],
+      "source_url": "https://github.com/Edge0-AI/Edge0",
+      "preview_url": "https://huggingface.co/Edge0",
+      "post_url": "https://x.com/SamuelZengML/status/2120939739431972922",
+      "author": "Edge0 AI（Samuel Zeng 等）",
+      "models": [
+        "Edge0-145B",
+        "Edge0-120B",
+        "Edge0-35B-A3B-preview"
+      ],
+      "first_seen": "2026-11-13",
+      "origin": "daily-digest",
+      "stars": 10953,
+      "notes": "星标 10,953（2026-11-13 GitHub API 查询）；Apache-2.0；README 新闻标注 145B/120B 发布于 2026-11-13，X 原帖发于 2026-11-12 10:00 PST，1,449 赞。团队在评论区称 Apple Silicon 版引擎约一周后上 GitHub（截至查询时 145B/120B 仅支持 Linux/Windows + NVIDIA CUDA 13）。所有性能和基准数据为自报。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "C++ 实现。edge0-infer 提供统一的 serve/chat 命令并按模型目录选择引擎：145B/120B 跑在 edge0-strata（Strata 的分支）上，35B 旧版跑在基于 GGML 的原生引擎（Metal/CPU/Vulkan，覆盖 iOS、Android）。模型派生自 Qwen3.8-Flash-Next，原生 4bit 训练，发布 Q3_K 与 NVFP4 两种权重；48 层、512 专家、每 token 激活 K=10。附论文 paper/main.pdf（arXiv 2609.18063）。Apache-2.0。",
+        "method": "latent MoE：把专家放到低维 latent 空间（145B 为 1792 维）以压缩显存，权重从 SSD 流式加载，并用训练过的路由器提前一步预测下一步要加载的专家，从而在 24GB 显存级别的消费卡上跑 100B 级模型；可用 --vram-reserve-mib 和内存残留策略在显存/内存不足时降级运行。",
+        "features": [
+          "一张 RTX 4090/5090 本地运行 145B 模型，提供本地 API server 可接入编程 Agent",
+          "Q3_K 与 NVFP4 两种权重，支持 128K–256K 上下文（自报）",
+          "35B 旧版可在 Mac、iPhone、Android 上运行",
+          "公开速度表：RTX 5090 D 上 145B Q3_K 代理解码 121.2 tok/s、16K 预填 3554.9 tok/s（自报）"
+        ],
+        "highlights": [
+          "把「100B 级开放权重 + 单卡本地跑」做成完整工程，附论文与多语言文档",
+          "自报 Terminal-Bench 2.1 得分 86.5%，高于 Claude Opus 4.6 的 78.2%",
+          "约 1.1 万星，发布当天在 X 上热度很高"
+        ],
+        "limitations": [
+          "基准与速度数字均为团队自报，未见独立复现",
+          "145B/120B 目前只支持 Linux/Windows + NVIDIA CUDA 13，Mac 版引擎尚未发布",
+          "权重为团队自定义量化格式，必须使用其推理引擎（团队在评论区确认）"
+        ],
+        "comparison": "与 llama-cpp（通用底座）相比，edge0 是为自家 latent-MoE 模型定制的流式推理栈，换来的是在单卡上跑更大的模型；与库内 latent-sparse-attention（长上下文注意力研究）、kimi-k3-in-c（单模型 C 实现）同属推理效率方向，但 edge0 同时提供了可用的模型权重。要本地跑最强编程模型选 edge0，要广泛兼容选 llama-cpp。",
+        "researched_at": "2026-11-14"
       }
     },
     {
@@ -5375,6 +5690,59 @@
       }
     },
     {
+      "id": "ingar30-reviewer",
+      "name": "Reviewer（多 Agent 论文审稿）",
+      "summary": "用 Codex 或 Claude Code 跑的可复现多 Agent 学术论文审稿流水线（面向经济学论文）：本地解析 PDF、按需选审稿人、校验结构化结论，最后由编辑汇总报告。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "科研",
+        "论文审稿",
+        "多agent",
+        "python",
+        "codex",
+        "claude-code"
+      ],
+      "source_url": "https://github.com/Ingar30/reviewer",
+      "preview_url": null,
+      "post_url": "https://x.com/JeremyNguyenPhD/status/2121200381317570777",
+      "author": "Ingar30",
+      "models": [
+        "GPT-6.1 Sol（默认）",
+        "GPT-6 Luna",
+        "Claude Opus 5.5",
+        "Claude Sonnet 5.5"
+      ],
+      "first_seen": "2026-11-13",
+      "origin": "daily-digest",
+      "stars": 262,
+      "notes": "星标 262（2026-11-13 GitHub API 查询）；MIT；仓库创建于 2026-05-14。经 Jeremy Nguyen 推荐帖传播（175 赞、226 收藏）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.12 项目（src/economics_paper_reviewer、scripts/review_paper.py），后端二选一：已登录的 Codex CLI 或 Claude Code CLI；prompts/templates 下 24 个审稿模板（识别策略、稳健性、数值、理论逻辑、文献、复现、功效与多重检验、语法、交叉引用等审计），schemas/ 约束 JSON 输出，tests/ 与 benchmarks/ 配套。MIT。",
+        "method": "确定性本地 PDF 解析（文本、坐标、页面图、表格、图、引用、交叉引用），不用 OCR 服务或 LLM 修补、不编造缺失值；先做解析质量预检，再选出所有可能相关的审稿人（不确定时全员上场），逐个校验结构化 JSON 结果，保守去重但保留证据，最后由编辑 Agent 先列正确性与可审计性问题再谈定位和改进，并对报告做冒烟检查。",
+        "features": [
+          "一条命令审一篇 PDF，报告写到 outputs/<paper_id>/report.md",
+          "20 余个专项审稿角色，按论文内容自动选人",
+          "中间产物（解析结果、提示、日志、路由决策）全部落盘可复查",
+          "可断点续跑，后端选择会被记住；支持 uv 运行"
+        ],
+        "highlights": [
+          "流程强调可复现与可审计，解析失败时让审稿人返回 cannot_verify 而不是瞎猜",
+          "README 明确告知隐私边界：解析文本会发给 OpenAI 或 Anthropic",
+          "把「多 Agent 评审」用在代码之外的严肃场景"
+        ],
+        "limitations": [
+          "主要面向经济学论文，其他学科需改模板",
+          "审稿内容会发给模型提供方，保密稿件不宜使用",
+          "审稿质量未见与人类审稿的系统对比；星标较少，社区尚小"
+        ],
+        "comparison": "库内没有同类论文审稿工具；与 deeptutor、science-s-last-exam 同属科研方向，但 Reviewer 是生产流程而非学习或评测；评论区有人推荐 agent-teams-ai 的 research 团队模板，后者更通用但没有这套解析和结构化校验。",
+        "researched_at": "2026-11-14"
+      }
+    },
+    {
       "id": "science-s-last-exam",
       "name": "Science's Last Exam",
       "summary": "把真实科研目标交给 AI agent，用专家隐藏标准打分的硬核评测。",
@@ -5882,6 +6250,57 @@
       }
     },
     {
+      "id": "claude-obsidian",
+      "name": "claude-obsidian",
+      "summary": "开源「AI 第二大脑」：把论文、文章、转录丢进 Obsidian 库，Claude Code 自动读、写带出处的链接笔记并织成知识图谱，基于 Karpathy 的 LLM Wiki 模式。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "obsidian",
+        "知识库",
+        "pkm",
+        "skill",
+        "claude-code",
+        "python"
+      ],
+      "source_url": "https://github.com/AgriciDaniel/claude-obsidian",
+      "preview_url": null,
+      "post_url": "https://x.com/pauliusztin_/status/2121234125113770138",
+      "author": "Agrici Daniel",
+      "models": [
+        "Claude（Claude Code）",
+        "兼容 Codex、OpenCode、Gemini 等"
+      ],
+      "first_seen": "2026-11-13",
+      "origin": "daily-digest",
+      "stars": 16446,
+      "notes": "星标 16,446（2026-11-13 GitHub API 查询）；MIT；v3.0.1；仓库创建于 2026-04-07。发现于 Paul Iusztin 推荐帖（89 赞）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Claude Code 插件形态：15 个 Agent Skills（wiki-ingest、wiki-query、wiki-lint、wiki-fold、autoresearch、canvas、obsidian-bases 等）+ 3 个只读 Agent（wiki-ingest、wiki-lint、verifier）+ hooks；Python 包 claude_obsidian 实现事务层（transaction.py 约 5,100 行）、链接解析、lint 引擎、检索评测，可选 Ollama。产物是纯 Markdown 的 Obsidian 库。另有 GEMINI.md、ZCODE.md 适配其他工具。MIT。",
+        "method": "把 LLM Wiki 模式工程化：原始资料放 inbox/ 永不改动，Agent 读后生成带出处的链接页、索引和内容地图；所有写入只能经过事务层——进程级互斥锁、前置 SHA-256 哈希校验、持久化日志、逐文件原子替换、整操作确定性回滚/恢复，Agent 只能提议修改，防止 AI 覆盖或丢失笔记。",
+        "features": [
+          "Capture：资料丢进 inbox/ 自动整理成链接笔记，原文保留可回溯",
+          "Ask：基于库内已有知识带引用回答，不改任何文件",
+          "Save：按需把有价值的回答存为新笔记",
+          "Check：健康检查找死链、孤立页和缺失元数据；可在 Graph view 或 Canvas 中浏览"
+        ],
+        "highlights": [
+          "1.6 万星，有测试 CI、SHA256SUMS、发布清单，工程化程度高",
+          "事务层设计认真（哈希预检 + 日志 + 回滚），解决了 AI 维护知识库最怕的误覆盖问题",
+          "纯本地 Markdown，无云数据库、无遥测（自述）"
+        ],
+        "limitations": [
+          "除本地文件外，内容会发给你所用的 AI 服务",
+          "主要为 Claude Code 设计，其他工具的适配程度不一",
+          "大型库的检索质量和成本未查到独立评测"
+        ],
+        "comparison": "与库内 understand-anything（为代码库建知识图谱）思路相近但对象是个人资料；与 x-article-hub 这类人工归档相比，claude-obsidian 让 Agent 持续维护并带事务保护。想做个人/团队 LLM Wiki 选它，想理解代码库选 understand-anything。",
+        "researched_at": "2026-11-14"
+      }
+    },
+    {
       "id": "gif-factory",
       "name": "gif-factory",
       "summary": "按风格批量制作绘本/像素/粘土风 GIF 的 Agent Skill。",
@@ -6049,6 +6468,55 @@
         ],
         "comparison": "和 ferrite 是两个极端：ferrite 在专用 GPU 上追求吞吐，本项目在任意 CPU 上追求可运行。和 mlx-serve 的实用服务定位不同。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "llama-cpp",
+      "name": "llama.cpp v1.0.0",
+      "summary": "本地大模型推理基础库 llama.cpp 与 ggml 同步发布 v1.0.0，开始严格语义化版本，对公共 C API 的破坏性改动必升主版本号。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "c++",
+        "推理引擎",
+        "本地推理",
+        "ggml",
+        "量化"
+      ],
+      "source_url": "https://github.com/ggml-org/llama.cpp",
+      "preview_url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+      "post_url": "https://x.com/ggerganov/status/2121246103312212124",
+      "author": "ggml-org（Georgi Gerganov，Hugging Face llama.cpp 团队）",
+      "models": [
+        "150+ 架构变体（自述）"
+      ],
+      "first_seen": "2026-11-13",
+      "origin": "daily-digest",
+      "stars": 134882,
+      "notes": "星标 134,882（2026-11-13 GitHub API 查询）；MIT。v1.0.0 发布于 2026-11-13；原帖 3,261 赞。评论区提醒 1.0 移除了 llama_set_warmup 等废弃调用，现有 C 绑定需迁移检查；llama-server 新增 MCP 工具调用在客户端断开/超时时发取消（PR #32025）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "纯 C/C++ 实现，底层张量库 ggml 以可动态加载的后端插件支持 CPU、Metal、CUDA、Vulkan 等几乎所有硬件；GGUF 模型格式与多级量化；附 llama-server（OpenAI 兼容 API，已接入 MCP 工具调用）等示例。发布渠道含 Docker、Debian、Homebrew、conda-forge、MacPorts、Winget、XCFramework。MIT。",
+        "method": "v1.0.0 的核心是治理而非新功能：libllama 与 libggml 公共头文件（include/）纳入语义化版本——破坏公共 C API 升 MAJOR，向后兼容的功能/后端/模型支持升 MINOR，纯修复升 PATCH；同时借 HF Buckets/HF Jobs 和 NVIDIA、AMD、Qualcomm、Arm、IBM、Intel 捐赠的自托管 runner 扩大 CI，保证每个合入 master 的改动正确。",
+        "features": [
+          "在消费级到服务器硬件上跑多模态 LLM，支持主流推测解码",
+          "GGUF 量化格式与 FP8 KV cache 等内存优化（新闻摘要提及）",
+          "llama-server 提供 OpenAI 兼容接口与 MCP 工具调用",
+          "库 API/ABI 从 1.0 起有稳定性承诺，下游可按主版本锁定"
+        ],
+        "highlights": [
+          "13.5 万星，本地 AI 生态的事实标准底座",
+          "3.5 年后首次给出 API 稳定承诺，对 Ollama、LM Studio 等下游意义大",
+          "官方声明在开发中审慎使用 LLM，同时坚持掌控架构与实现细节"
+        ],
+        "limitations": [
+          "1.0 删除了部分废弃接口，老绑定需迁移",
+          "这次是版本与治理里程碑，性能提升需看各后端更新日志",
+          "「支持 150+ 架构」为官方自述；官方桌面应用目前只有 macOS 和 Windows（评论区有人问 Linux）"
+        ],
+        "comparison": "与库内 mlx-serve（只针对 Apple MLX）、ferrite（全 Rust 推理）、kimi-k3-in-c（单模型极限省内存）相比，llama.cpp 是覆盖面最广、最成熟的通用底座；edge0 的旧版原生引擎就是基于 GGML 构建的。要跨平台部署选 llama.cpp，只在 Mac 上追求 MLX 性能可看 mlx-serve。",
+        "researched_at": "2026-11-14"
       }
     },
     {
@@ -6467,6 +6935,56 @@
         ],
         "comparison": "库内暂无同类 GEO 工具。和 trendradar 都是监控类，但对象不同（一个看 AI 怎么推荐你，一个看社交热榜）。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "astar-visualizer",
+      "name": "ASTAR Visualizer",
+      "summary": "作者用 Google Antigravity 约 5 分钟生成的 C++17 交互式加权图 A* 寻路可视化程序，基于自己的 astar-algorithm-cpp 库和 SDL3、Cairo。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "c++",
+        "sdl3",
+        "cairo",
+        "算法可视化",
+        "寻路",
+        "antigravity"
+      ],
+      "source_url": "https://github.com/justinhj/astar-visualizer",
+      "preview_url": null,
+      "post_url": "https://x.com/justinhj/status/2121229515292823991",
+      "author": "justinhj（Justin Heyes-Jones）",
+      "models": [
+        "Gemini 4（经 Google Antigravity Orchestrator，具体档位未查到）"
+      ],
+      "first_seen": "2026-11-13",
+      "origin": "reply-on-popular-post",
+      "stars": 0,
+      "notes": "发现于 Google 官方 Antigravity Orchestrator 发布帖（2,969 赞）的评论区，作者自荐。仓库创建于 2026-11-13，星标 0（2026-11-13 查询）；未声明许可证。「5 分钟做完」为作者自述。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "C++17 + CMake（≥3.20），SDL3 负责窗口和输入，Cairo 负责 2D 绘制；寻路用作者自己的 header-only 库 stlastar.h/fsa.h（CMake 配置时自动下载）；src/ 拆成 graph、astar_runner、renderer、main，附 ctest 测试。未声明许可证。",
+        "method": "在随机生成的加权图上逐步运行 AStarSearch，把 Open 表、Closed 节点、边松弛和最终路径实时画出来；边权按欧氏距离乘 1.0x–4.2x，保证欧氏启发式仍可采纳且一致，迫使 A* 绕开重边。",
+        "features": [
+          "左键设起点、右键设终点，实时逐步动画",
+          "12–220 节点，RADIAL、ORGANIC、MESH 三种拓扑",
+          "HUD 显示 GRAPH/STEP/STATE/COST 与 Open/Closed/Path 计数，悬停查看 g/h/f",
+          "播放速度调节、单步模式、边权标记开关"
+        ],
+        "highlights": [
+          "作者是经典 C++ A* 库的维护者，可视化建立在成熟库之上",
+          "原生跨平台程序而非网页 demo，结构清晰、带测试",
+          "展示了 Orchestrator 类工具快速产出原生 C++ 程序的能力"
+        ],
+        "limitations": [
+          "刚创建、0 星，未声明许可证",
+          "只是教学/演示工具，不是通用寻路库",
+          "生成耗时为作者自述"
+        ],
+        "comparison": "库内没有同类算法可视化工具；对游戏开发可作为 A* 教学参照，和 ldtk 等游戏工具不属同一层面。",
+        "researched_at": "2026-11-14"
       }
     },
     {
