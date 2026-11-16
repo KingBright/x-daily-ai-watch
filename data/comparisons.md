@@ -53,6 +53,7 @@
 | godotprompter | 基于 Superpowers 的 Agent 技能插件，59 个 Godot 4.x 技能，多宿主清单 | 让编程 Agent 按 Godot 规范写 GDScript/C#（状态机、联机、着色器等） | ★964，v1.17，跟进到 Godot 4.8 | MIT | 用 Agent 做 Godot 游戏的团队 |
 | qingming-3d | three.js r128 单页，同提示词交给 8 个前沿模型各自一轮生成 | 3D《清明上河图》长卷加 token/用时/规模对照表 | 新建，0 星；规模多为模型自报 | 未声明代码许可 | 对比前沿模型程序化大场景能力 |
 | idol | 单图条件 DiT + 八叉树/Gaussian 解码器，DINOv3 与 FLUX.2 VAE 编码 | 一张图出最多约 105 万 Gaussian 的 3DGS .ply，7.2GB 显存 | ★1.1k（SDK），HF 2.3k 赞；基准自测 | Apache-2.0 | 照片/概念图转 3D 资产（评论区发现） |
+| port-of-halvard | 无构建 three.js r169 网页，canvas 纹理 + 手写 GLSL 水面/天空，Opus 5.5 规划、Fable 5.2 实现 | 写实集装箱港口：船、岸桥装卸、约 7500 个实例化集装箱、镜面水面 | 新建，1 星；「30 分钟」为自报 | MIT | 研究前沿模型纯代码程序化大场景 |
 
 ### 分析
 
@@ -67,6 +68,8 @@
 2026-11-15 补入三项：godotprompter 把「领域技能」路线带到 Godot 引擎编码（59 个技能），属于方法件；评论区发现的 idol 是开源单图转 3D 高斯泼溅模型，可作为 AI 资产流水线的生成端，与闭源的 worldlabs-atlas 形成物体级/场景级的开源/闭源对照；qingming-3d 是同提示词多模型的 three.js 大场景对照，有完整源码和 token 日志，更像评测样本而非单个演示。
 
 结论 3：成品类项目仍有不少只是「能玩的演示」（dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation，以及评论里出现的 a-little-earth、our-3d-reality、fable-contra、sapper-minesweeper），只能做 light 分析。其中 three-voxel-destruction 是例外：它有 MIT 源码和自研 GPU 求解器，不是一次性提示词小品。可复用的方法件仍是 pixelfx、guizang-game-skill 和与模型无关的 LDtk。可复用价值仍然更多在方法和工具，而不在某一款展示游戏。
+
+2026-11-16 补入 port-of-halvard：Fable 5.2 纯代码写实港口，有 MIT 源码和 PROMPT.md 制作记录，归入「可读源码的程序化场景」样本，与只有托管页的 Fable 演示形成对照。
 
 ## 研发效率
 
@@ -186,6 +189,10 @@
 | antigravity-dynamic-workflows | Antigravity 内置技能生成 Python 编排脚本（parallel/pipeline/phase），子 Agent 返回 JSON Schema 结果 | 审批后运行的确定性多 Agent 工作流，可保存复用，可给每个 Agent 开 worktree | light；2026-11-13 上线，效率数字为 Google 自报 | 闭源（Google AI Pro/Ultra） | 批量审查、逐文件修复、审查-修复-复核循环 |
 | plannotator | Bun/TS 单仓：浏览器审阅面板 + 10 余种 Agent 插件/hook + Inbox | 批注计划/HTML/diff 并一键回传 Agent，汇总多 Agent 待决事项 | ★1.1 万，v0.28 | MIT/Apache-2.0 | 人在回路审阅多 Agent 产出 |
 | tokay | SwiftUI iOS 应用 + RexKit 协议包 + libghostty-vt 终端 + APNs 通知器 | 手机上回答 Agent、批权限提示、开终端，灵动岛显示进度 | 新建，0 星，未上架 | MIT | 离开电脑时照看 Rex 上的编程 Agent（评论区发现） |
+| agentes-chat | Bun/Hono/Drizzle/Postgres 服务端 + React Web + Expo 手机 + Tauri 桌面 | 人和 Agent 同在频道协作，路由器分派，预算、审批、Agent 自带电脑和浏览器 | ★1.5k（一周） | AGPL-3.0 + 商业许可 | 团队级自托管「AI 同事」工作区 |
+| clawd-on-desk | Electron 桌宠 + 各 Agent hooks + 手机 PWA | 20 多种编程 Agent 状态可视化，权限气泡审批，Telegram/飞书远程批 | ★6.7k | AGPL-3.0（美术另有版权） | 桌面常驻看「谁在等我」 |
+| shoal | Node 24 + node-pty/ConPTY 服务端，Vite 前端，Tauri 2 外壳 | Windows 上并排跑 Claude Code/Codex/agy，待验收卡片，换 Agent 交接卡 | ★14，v0.1.10 | MIT | Windows 单机多 CLI 工作台 |
+| hf-agent-manager | 私有 HF Docker Space + /data 存储桶，终端与对话阅读器双视图 | 云端并排运行多种 CLI，会话互相通信，跨设备续看 | ★73 | Apache-2.0 | 云端常驻、多设备照看编程 Agent（评论区发现） |
 
 ### 分析
 
@@ -198,6 +205,8 @@
 结论 3：多 Agent 的瓶颈正从「能不能并行」转向「共享状态和协调」：omnigraph 给共享记忆加上 Git 式分支和合并检查，herdr 把「哪个 Agent 卡住了」做成一等状态。大厂也开始把编排做成脚本：antigravity-dynamic-workflows 让 Agent 生成可审阅的 Python 编排脚本，用确定性控制流代替提示词里的协作约定。「团队即配置」也在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。
 
 2026-11-15 补入：plannotator（1.1 万星）不管调度，只管「人审阅 Agent 产出并把批注回传」，并用 Inbox 汇总多 Agent 待决事项，是控制台方向之外的审阅层；评论区发现的 tokay 把 Rex 上的 Agent 状态搬到 iPhone 通知与灵动岛，与 t3-code 的移动端遥控同方向但更原生、更窄。由此「人在回路」的入口正在从终端扩展到浏览器批注和手机通知。
+
+2026-11-16 补入四项：agentes-chat 把通用 Bot 平台推进到「团队聊天里的 AI 同事」，预算和审批做成一等公民；clawd-on-desk（6.7k 星）与 tokay、herdr 一起说明「谁在等我」的提醒层正分化到桌面、手机和终端；shoal 是 Windows 专用的多 CLI 工作台，加入待验收与交接卡；评论区发现的 hf-agent-manager 把控制台搬到私有 HF Space，补上云端常驻这一形态。
 
 ## 大模型工具
 
@@ -262,6 +271,10 @@
 | claude-obsidian | Claude Code 插件：15 个技能、3 个只读 Agent、Python 事务层 | 资料入库→带出处的链接笔记与知识图谱，问答、健康检查 | ★1.6 万，v3.0.1 | MIT | 个人/团队 LLM Wiki |
 | ingar30-reviewer | Python 流水线，Codex 或 Claude Code 后端，24 个审稿模板 | 本地确定性 PDF 解析后多审稿人并行评审，编辑汇总报告 | ★262 | MIT | 经济学论文投稿前自查 |
 | mirobody | Python + PostgreSQL + Docker，离线 LOINC/UCUM 标准化引擎 + MCP 服务器 | 化验单/可穿戴/基因数据统一标准化，回答逐数溯源 | ★1.5k，PyPI 发布 | Apache-2.0 | 自托管个人健康记录给 Agent 查询 |
+| rea-video | Python CLI + Agent 技能，ffmpeg 离线分析 + 可选视频模型 | 逐镜头判定实拍/AI/代码并给复刻法，输出报告与分层 VIDEO.md | ★9.2k | Apache-2.0 | 拆解爆款视频、做复刻方案 |
+| hyperframes | TS/Bun 框架，可寻址动画的 HTML 确定性渲染为 MP4，多 Agent 插件 | 写 HTML 出视频，约 450 个组件，Remotion 等迁移 | ★8.5 万，HeyGen 出品 | Apache-2.0（Pro 另付费） | Agent 批量做宣传片、解说、动态字幕 |
+| yogurt | 桌面应用，whisper.cpp + llama.cpp 本地模型，只读本地 MCP | 不进会议的本地录音转写、纪要、跨会议问答 | ★1.7k | MIT | 注重隐私的会议纪要 |
+| weight-space-index | Python + Rust SIMD 内核，直接读 .safetensors，带 MCP | 静态盲读权重编辑、外科式改写、跨模型神经元移植 | 新建，0 星；基准全为自报 | Apache-2.0 | 研究权重空间编程与可解释性（评论区发现） |
 
 ### 分析
 
@@ -274,6 +287,8 @@
 结论 3：内容创作类是数量最多的一组，而且几乎都以技能或 MCP 的形式交付，说明「LLM 加确定性工具链（ffmpeg、Playwright、Metal、GSAP、Manim）」是目前做可控内容生产的主流方式。lieflat 的写作与可视化技能（去 AI 味、公文、风格蒸馏、示意图、代码短片）把「先测量再改、先确认再写」写进了流程，但多用非商用许可。math-to-manim 把数学影片做成可重复跑的开源工具链。推理底座方面，llama-cpp 发布 v1.0.0 给出 API 稳定承诺，edge0 则用 latent-MoE 加流式权重把 100B 级开放权重模型压到单卡（数据自报）。评测方面，agent-initiative-benchmark 首次把「该不该说话、发给谁」计分，与只比 harness 的 frontier-harness-eval 互补；frontier-harness-eval 补上了「只换 harness、不换模型」的公开对照；tracetrial-bench 则进一步把任务通过和 harness 轨迹是否可靠拆开计分，两者不宜直接比百分数。其中涉及他人肖像和 IP 的 ai-character-swap、gif-factory，以及依赖逆向接口的 zhihu-mcp，存在合规风险。
 
 2026-11-15 补入的 mirobody 是库内第一个健康数据项目：核心是离线 LOINC/UCUM 标准化与逐数溯源，再通过 MCP 给 Agent 用，延续了「LLM + 确定性工具链」的结论。
+
+2026-11-16 补入四项：rea-video（拆解视频）与 hyperframes（HTML 渲染视频，8.5 万星）构成内容创作组里「拆解→重做」的两端，继续印证「LLM + 确定性工具链」结论；yogurt 是全本地会议纪要，可与 cicada-知了 对照；评论区发现的 weight-space-index 把 权重空间编程-mit 的交互式分析做成静态工具，但数字全部自报，待复现。
 
 ## 其他（未做对比）
 

@@ -261,6 +261,14 @@
           "maturity": "★1.1k（SDK），HF 2.3k 赞；基准自测",
           "license": "Apache-2.0",
           "use_case": "照片/概念图转 3D 资产（评论区发现）"
+        },
+        {
+          "id": "port-of-halvard",
+          "tech": "无构建 three.js r169 网页，canvas 纹理 + 手写 GLSL 水面/天空，Opus 5.5 规划、Fable 5.2 实现",
+          "capability": "写实集装箱港口：船、岸桥装卸、约 7500 个实例化集装箱、镜面水面",
+          "maturity": "新建，1 星；「30 分钟」为自报",
+          "license": "MIT",
+          "use_case": "研究前沿模型纯代码程序化大场景"
         }
       ],
       "prose": [
@@ -269,7 +277,8 @@
         "结论 2：渲染底座里，threepp 胜在成熟，solstice 胜在技术前沿（WebGPU 上的虚拟化几何），但后者还只是演示。three-voxel-destruction 把 WebGPU 用在可玩的体素刚体破坏上，并开源了演示和底层求解器 three-avbd，适合对照「只有托管页的体素演示」。想在浏览器之外做原生 3D，选 threepp；想研究 Web 端下一代渲染，看 solstice；想看可玩的 WebGPU 物理，看 three-voxel-destruction。",
         "2026-11-14 补入的孤枪入夜把 three.js + Tripo 的组合推进到带 IK 握枪和动作的 3D 角色战斗，是「AI 资产管线」与「成品」交界处的样本，但没有源码。",
         "2026-11-15 补入三项：godotprompter 把「领域技能」路线带到 Godot 引擎编码（59 个技能），属于方法件；评论区发现的 idol 是开源单图转 3D 高斯泼溅模型，可作为 AI 资产流水线的生成端，与闭源的 worldlabs-atlas 形成物体级/场景级的开源/闭源对照；qingming-3d 是同提示词多模型的 three.js 大场景对照，有完整源码和 token 日志，更像评测样本而非单个演示。",
-        "结论 3：成品类项目仍有不少只是「能玩的演示」（dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation，以及评论里出现的 a-little-earth、our-3d-reality、fable-contra、sapper-minesweeper），只能做 light 分析。其中 three-voxel-destruction 是例外：它有 MIT 源码和自研 GPU 求解器，不是一次性提示词小品。可复用的方法件仍是 pixelfx、guizang-game-skill 和与模型无关的 LDtk。可复用价值仍然更多在方法和工具，而不在某一款展示游戏。"
+        "结论 3：成品类项目仍有不少只是「能玩的演示」（dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation，以及评论里出现的 a-little-earth、our-3d-reality、fable-contra、sapper-minesweeper），只能做 light 分析。其中 three-voxel-destruction 是例外：它有 MIT 源码和自研 GPU 求解器，不是一次性提示词小品。可复用的方法件仍是 pixelfx、guizang-game-skill 和与模型无关的 LDtk。可复用价值仍然更多在方法和工具，而不在某一款展示游戏。",
+        "2026-11-16 补入 port-of-halvard：Fable 5.2 纯代码写实港口，有 MIT 源码和 PROMPT.md 制作记录，归入「可读源码的程序化场景」样本，与只有托管页的 Fable 演示形成对照。"
       ]
     },
     {
@@ -911,6 +920,38 @@
           "maturity": "新建，0 星，未上架",
           "license": "MIT",
           "use_case": "离开电脑时照看 Rex 上的编程 Agent（评论区发现）"
+        },
+        {
+          "id": "agentes-chat",
+          "tech": "Bun/Hono/Drizzle/Postgres 服务端 + React Web + Expo 手机 + Tauri 桌面",
+          "capability": "人和 Agent 同在频道协作，路由器分派，预算、审批、Agent 自带电脑和浏览器",
+          "maturity": "★1.5k（一周）",
+          "license": "AGPL-3.0 + 商业许可",
+          "use_case": "团队级自托管「AI 同事」工作区"
+        },
+        {
+          "id": "clawd-on-desk",
+          "tech": "Electron 桌宠 + 各 Agent hooks + 手机 PWA",
+          "capability": "20 多种编程 Agent 状态可视化，权限气泡审批，Telegram/飞书远程批",
+          "maturity": "★6.7k",
+          "license": "AGPL-3.0（美术另有版权）",
+          "use_case": "桌面常驻看「谁在等我」"
+        },
+        {
+          "id": "shoal",
+          "tech": "Node 24 + node-pty/ConPTY 服务端，Vite 前端，Tauri 2 外壳",
+          "capability": "Windows 上并排跑 Claude Code/Codex/agy，待验收卡片，换 Agent 交接卡",
+          "maturity": "★14，v0.1.10",
+          "license": "MIT",
+          "use_case": "Windows 单机多 CLI 工作台"
+        },
+        {
+          "id": "hf-agent-manager",
+          "tech": "私有 HF Docker Space + /data 存储桶，终端与对话阅读器双视图",
+          "capability": "云端并排运行多种 CLI，会话互相通信，跨设备续看",
+          "maturity": "★73",
+          "license": "Apache-2.0",
+          "use_case": "云端常驻、多设备照看编程 Agent（评论区发现）"
         }
       ],
       "prose": [
@@ -918,7 +959,8 @@
         "结论 1：控制台方向 t3-code 仍然体量最大（既有记录约 5.4 万星），coincide、tastecode 做原生性能和创意场景上的差异化。recalc 把控制台收成一张可公式化验收的表，crommacode 把观察做成游戏并加 worktree 蜂群，但后者暂不开放源码。除 crommacode 外，这类方案大多仍选择驱动本机已登录的 CLI，沿用用户已有的订阅。",
         "结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。若目标是公司组织而不是本机编码控制台，agent-ceo 给出了「人和 Agent 共用组织规则、完成判定要分开」的产品形态，但闭源，页面上的规模数字均为自报，需要自己试用。",
         "结论 3：多 Agent 的瓶颈正从「能不能并行」转向「共享状态和协调」：omnigraph 给共享记忆加上 Git 式分支和合并检查，herdr 把「哪个 Agent 卡住了」做成一等状态。大厂也开始把编排做成脚本：antigravity-dynamic-workflows 让 Agent 生成可审阅的 Python 编排脚本，用确定性控制流代替提示词里的协作约定。「团队即配置」也在出现：bot-teams 用 markdown 定义团队，hypergrok 用角色加技能加审批组合团队，说明多 Agent 的价值正在从运行时转向可复用的组织模板。",
-        "2026-11-15 补入：plannotator（1.1 万星）不管调度，只管「人审阅 Agent 产出并把批注回传」，并用 Inbox 汇总多 Agent 待决事项，是控制台方向之外的审阅层；评论区发现的 tokay 把 Rex 上的 Agent 状态搬到 iPhone 通知与灵动岛，与 t3-code 的移动端遥控同方向但更原生、更窄。由此「人在回路」的入口正在从终端扩展到浏览器批注和手机通知。"
+        "2026-11-15 补入：plannotator（1.1 万星）不管调度，只管「人审阅 Agent 产出并把批注回传」，并用 Inbox 汇总多 Agent 待决事项，是控制台方向之外的审阅层；评论区发现的 tokay 把 Rex 上的 Agent 状态搬到 iPhone 通知与灵动岛，与 t3-code 的移动端遥控同方向但更原生、更窄。由此「人在回路」的入口正在从终端扩展到浏览器批注和手机通知。",
+        "2026-11-16 补入四项：agentes-chat 把通用 Bot 平台推进到「团队聊天里的 AI 同事」，预算和审批做成一等公民；clawd-on-desk（6.7k 星）与 tokay、herdr 一起说明「谁在等我」的提醒层正分化到桌面、手机和终端；shoal 是 Windows 专用的多 CLI 工作台，加入待验收与交接卡；评论区发现的 hf-agent-manager 把控制台搬到私有 HF Space，补上云端常驻这一形态。"
       ]
     },
     {
@@ -1381,6 +1423,38 @@
           "maturity": "★1.5k，PyPI 发布",
           "license": "Apache-2.0",
           "use_case": "自托管个人健康记录给 Agent 查询"
+        },
+        {
+          "id": "rea-video",
+          "tech": "Python CLI + Agent 技能，ffmpeg 离线分析 + 可选视频模型",
+          "capability": "逐镜头判定实拍/AI/代码并给复刻法，输出报告与分层 VIDEO.md",
+          "maturity": "★9.2k",
+          "license": "Apache-2.0",
+          "use_case": "拆解爆款视频、做复刻方案"
+        },
+        {
+          "id": "hyperframes",
+          "tech": "TS/Bun 框架，可寻址动画的 HTML 确定性渲染为 MP4，多 Agent 插件",
+          "capability": "写 HTML 出视频，约 450 个组件，Remotion 等迁移",
+          "maturity": "★8.5 万，HeyGen 出品",
+          "license": "Apache-2.0（Pro 另付费）",
+          "use_case": "Agent 批量做宣传片、解说、动态字幕"
+        },
+        {
+          "id": "yogurt",
+          "tech": "桌面应用，whisper.cpp + llama.cpp 本地模型，只读本地 MCP",
+          "capability": "不进会议的本地录音转写、纪要、跨会议问答",
+          "maturity": "★1.7k",
+          "license": "MIT",
+          "use_case": "注重隐私的会议纪要"
+        },
+        {
+          "id": "weight-space-index",
+          "tech": "Python + Rust SIMD 内核，直接读 .safetensors，带 MCP",
+          "capability": "静态盲读权重编辑、外科式改写、跨模型神经元移植",
+          "maturity": "新建，0 星；基准全为自报",
+          "license": "Apache-2.0",
+          "use_case": "研究权重空间编程与可解释性（评论区发现）"
         }
       ],
       "prose": [
@@ -1388,7 +1462,8 @@
         "结论 1：模型组全部是 light 分析，因为只有官方博客或 API，没有可验证的代码。开放权重小模型（twil-8b、sensenova-loop-9b-preview）适合本地实验；大模型（mistral-large-4、longcat-2-5）的价值更多在于部署选项。基准数据都是厂商自报。",
         "结论 2：最有技术含量的是「权重即程序」这条新路线：nesformer 用编译器写权重，权重空间编程-mit 让 LLM 推理后改权重，两者方向相反、互相补充。推理效率方向的 kimi-k3-in-c（极限省内存）、ferrite（全 Rust）、latent-sparse-attention（长上下文）都还以自报数据为主，生产可用性需要自己验证。",
         "结论 3：内容创作类是数量最多的一组，而且几乎都以技能或 MCP 的形式交付，说明「LLM 加确定性工具链（ffmpeg、Playwright、Metal、GSAP、Manim）」是目前做可控内容生产的主流方式。lieflat 的写作与可视化技能（去 AI 味、公文、风格蒸馏、示意图、代码短片）把「先测量再改、先确认再写」写进了流程，但多用非商用许可。math-to-manim 把数学影片做成可重复跑的开源工具链。推理底座方面，llama-cpp 发布 v1.0.0 给出 API 稳定承诺，edge0 则用 latent-MoE 加流式权重把 100B 级开放权重模型压到单卡（数据自报）。评测方面，agent-initiative-benchmark 首次把「该不该说话、发给谁」计分，与只比 harness 的 frontier-harness-eval 互补；frontier-harness-eval 补上了「只换 harness、不换模型」的公开对照；tracetrial-bench 则进一步把任务通过和 harness 轨迹是否可靠拆开计分，两者不宜直接比百分数。其中涉及他人肖像和 IP 的 ai-character-swap、gif-factory，以及依赖逆向接口的 zhihu-mcp，存在合规风险。",
-        "2026-11-15 补入的 mirobody 是库内第一个健康数据项目：核心是离线 LOINC/UCUM 标准化与逐数溯源，再通过 MCP 给 Agent 用，延续了「LLM + 确定性工具链」的结论。"
+        "2026-11-15 补入的 mirobody 是库内第一个健康数据项目：核心是离线 LOINC/UCUM 标准化与逐数溯源，再通过 MCP 给 Agent 用，延续了「LLM + 确定性工具链」的结论。",
+        "2026-11-16 补入四项：rea-video（拆解视频）与 hyperframes（HTML 渲染视频，8.5 万星）构成内容创作组里「拆解→重做」的两端，继续印证「LLM + 确定性工具链」结论；yogurt 是全本地会议纪要，可与 cicada-知了 对照；评论区发现的 weight-space-index 把 权重空间编程-mit 的交互式分析做成静态工具，但数字全部自报，待复现。"
       ]
     },
     {

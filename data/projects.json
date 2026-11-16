@@ -1,31 +1,31 @@
 {
   "meta": {
-    "generated_at": "2026-11-15",
+    "generated_at": "2026-11-16",
     "timezone": "Asia/Shanghai",
-    "projects_total": 198,
+    "projects_total": 207,
     "category_counts": {
-      "game": 32,
-      "agent-eng": 76,
-      "llm-tools": 57,
+      "game": 33,
+      "agent-eng": 80,
+      "llm-tools": 61,
       "other": 33
     },
     "subcategory_counts": {
       "dev-efficiency": 41,
       "phone-computer-use": 15,
-      "agent-fleet": 20
+      "agent-fleet": 24
     },
     "origin_counts": {
       "bookmark": 78,
-      "reply-on-popular-post": 18,
-      "daily-digest": 93,
+      "reply-on-popular-post": 20,
+      "daily-digest": 100,
       "bookmark+daily-digest": 8,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 152,
+      "full": 161,
       "light": 46
     },
-    "analysis_updated_at": "2026-11-15"
+    "analysis_updated_at": "2026-11-16"
   },
   "projects": [
     {
@@ -689,6 +689,57 @@
         ],
         "comparison": "与 hard-rock-hero 同为可玩网页游戏；poke-bonk 完成度和内容量更高，但有 IP 风险。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "port-of-halvard",
+      "name": "Port of Halvard（Fable 5.2 集装箱港口）",
+      "summary": "Claude Fable 5.2 在一次会话里用纯代码做出的浏览器写实集装箱港口：船、岸桥、约 7500 个集装箱、水面反射和天空全部程序生成，没有任何模型或图片文件。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "three.js",
+        "程序化生成",
+        "fable-5.2",
+        "webgl",
+        "glsl",
+        "场景"
+      ],
+      "source_url": "https://github.com/Moh4696/sea-port",
+      "preview_url": "https://moh4696.github.io/sea-port/",
+      "post_url": "https://x.com/exploraX_/status/2121656886797709445",
+      "author": "m0h（GitHub：Moh4696，X：exploraX_）",
+      "models": [
+        "Claude Fable 5.2（实现）",
+        "Claude Opus 5.5（规划）"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "daily-digest",
+      "stars": 1,
+      "notes": "原帖 2026-11-14 发布（73 赞），源码和演示链接在作者回复里；PROMPT.md 自述「30 分钟、一个会话」（自报）。星标 1（2026-11-16 查询）。评论区有人指出开场有贴图 z-fighting 闪烁。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "无构建的 ES Modules 网页，vendored three.js r169；src/ 下按资产拆模块（ship、cranes、containers、water、sky、boats、port、shots、tex、materials）；纹理全部用 canvas 绘制，水面和天空是手写 GLSL；tools/ 下 Python Playwright 截图与逐帧录制 1080p60 视频。MIT。",
+        "method": "在 Claude Code 桌面版里先用 Opus 5.5 规划、再由 Fable 5.2 实现，输入是另一条 X 帖的港口视频截图和变电站静帧；所有资产按代码程序化生成，集装箱用一个实例化盒子加逐实例颜色/褪色/锈迹/五种虚构标志；预设镜头表驱动漫游，录制脚本按精确场景时间逐帧渲染。",
+        "features": [
+          "262 米集装箱船（放样船体、文字、锈迹、吃水线）、4 台岸桥（其中 2 台真实装卸到卡车）",
+          "约 7500 个实例化集装箱，带轮胎吊、拖船、引航船、浮标、灯塔、海鸥、雷达",
+          "手写水面着色器：行波法线、平面镜面反射、太阳闪光、船尾浪",
+          "URL 参数切镜头、调太阳高度、隐藏 HUD；可导出静帧和 60fps 视频"
+        ],
+        "highlights": [
+          "仓库里没有任何下载模型或图片，完整展示 Fable 5.2 的程序化大场景能力",
+          "PROMPT.md 记录了模型分工、输入和日期，可复现性好",
+          "附带逐帧精确的录制工具，适合做宣传片"
+        ],
+        "limitations": [
+          "自由镜头可穿模；内陆背景只是雾中方块；卡车循环重生在远景可见（作者自列）",
+          "是场景演示不是游戏，没有玩法",
+          "开场纹理重叠闪烁（评论指出）"
+        ],
+        "comparison": "与库内 qingming-3d（同提示词多模型的 three.js 大场景对照）、earth-on-spawn、voxel-engine（只有托管页的 Fable 演示）相比，它有完整 MIT 源码和制作记录；与 three-voxel-destruction 一样属于可读源码的 three.js 样本，但重点是写实材质与程序化资产而不是物理。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -3927,6 +3978,62 @@
       }
     },
     {
+      "id": "hf-agent-manager",
+      "name": "Agent Manager（Hugging Face）",
+      "summary": "Hugging Face 内部自用后开源的私有云端编程 Agent 管理器：在一个 Docker Space 里从浏览器并排运行 Claude Code、Codex、Antigravity、opencode、Hermes 等，换设备也能接着看。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "huggingface",
+        "spaces",
+        "docker",
+        "claude-code",
+        "codex",
+        "远程"
+      ],
+      "source_url": "https://github.com/huggingface/agent-manager",
+      "preview_url": "https://huggingface.co/spaces/lvwerra/agent-manager-template",
+      "post_url": "https://x.com/_lewtun/status/2121901394185617724",
+      "author": "Hugging Face（lvwerra、lewtun 等）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "Antigravity CLI",
+        "opencode",
+        "Hermes",
+        "OpenClaw",
+        "fx"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "reply-on-popular-post",
+      "stars": 73,
+      "notes": "评论区发现：@deepfates 关于「Agent 生态碎片化、到底该锁定哪一个」的热帖（368 赞、84 回复）下，HF 的 Lewis Tunstall 回复推荐。星标 73（2026-11-16 查询），仓库创建于 2026-07-07。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Docker Space 应用（JavaScript）：server/（会话、终端、阅读器、移动端、状态检查点等模块，带大量测试）、web/ 前端、entrypoint.sh 与 session.bashrc；私有存储桶挂载到 /data 持久化文件、登录态和对话。Apache-2.0。",
+        "method": "把各家 CLI 跑在你自己的私有 HF Space 里，浏览器端既能开原生终端，也能切到格式化的对话阅读器（解析各 Agent 的转录格式）；会话可共享项目目录，通过本地 API 互相发现、发消息和等待；也能把笔记本或远程服务器上的 Agent 接进同一视图。",
+        "features": [
+          "按项目分组、并排查看多个会话，Overview 显示谁在工作、谁在等你回复",
+          "终端与对话阅读器切换，支持搜索和历史",
+          "文件浏览编辑、上传截图，统一管理技能并让 Agent 互相通信",
+          "token 用量与费用估算、定时发送提示、设备通知，在设置里直接升级各 CLI"
+        ],
+        "highlights": [
+          "大厂内部自用，部署就是「复制一个 Space」",
+          "代码和登录态都在你自己的私有 Space 与存储桶里",
+          "支持的 CLI 种类多，包括 Hermes、OpenClaw"
+        ],
+        "limitations": [
+          "依赖 Hugging Face 账号和 Space 运行费用（需自行确认计费）",
+          "分组只是界面组织，不隔离文件或凭据（官方说明）",
+          "Codex 只能用设备码登录，ChatGPT 登录会跳 localhost"
+        ],
+        "comparison": "与库内 aether（20 秒拉起云端开发机跑 Claude Code/Codex）同为云端运行，但 Agent Manager 重点是多会话管理和对话阅读；与 t3-code、shoal 这类本机控制台相比，它跑在云端、可跨设备；与 herdr 跨机统一面板的目标相近，但用浏览器而非终端。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
       "id": "agent-teams-ai",
       "name": "Agent Teams AI",
       "summary": "跨平台桌面应用：把 Claude Code、Codex、OpenCode、Cursor 等组成自治团队，Agent 自己领任务、互发消息、互相评审，人只看看板下高层指令。",
@@ -4056,6 +4163,56 @@
         ],
         "comparison": "和 hypergrok-trading-desk（单个垂直团队）相比，bot-teams 是目录平台。和 grokbot-field-notes 的角色库相比，bot-teams 能一键安装。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "clawd-on-desk",
+      "name": "Clawd on Desk",
+      "summary": "像素桌宠形式的编程 Agent 状态监视器：实时反映 Claude Code、Codex、Cursor 等 20 多种 Agent 的会话状态，需要确认时弹出卡片一键允许或拒绝。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "桌宠",
+        "electron",
+        "claude-code",
+        "codex",
+        "权限审批",
+        "像素"
+      ],
+      "source_url": "https://github.com/rullerzhou-afk/clawd-on-desk",
+      "preview_url": "https://clawdondesk.com/",
+      "post_url": "https://x.com/laogeai/status/2121828149835260027",
+      "author": "鹿鹿（rullerzhou-afk）",
+      "models": [
+        "Claude Code、Codex、Copilot、Gemini CLI、Antigravity、Cursor、Grok Build、Kimi Code 等 Agent"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "daily-digest",
+      "stars": 6750,
+      "notes": "星标 6750（2026-11-16 查询），仓库创建于 2026-03-18，当天中文推荐帖重新带火。Clawd 角色归 Anthropic 所有，属非官方同人项目；美术素材不在 AGPL 范围内。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Electron 桌面应用（JavaScript），hooks/ 目录给各 Agent 注册钩子，agents/ 存各家适配，另有 PWA 手机只读页、extensions、themes；支持 Windows（x64/ARM64）、macOS、Linux、Remote SSH 和 WSL。代码 AGPL-3.0，美术素材保留版权。",
+        "method": "首次启动自动给 Claude Code 和 Codex 注册 hooks，其他 Agent 在设置里一键安装集成；钩子把会话事件推给桌宠，桌宠用动画表现「工作中/等你/完成」，权限请求以浮动气泡或全局热键批准，也可转到 Telegram、飞书审批或推到 Slack；未集成的工具可走自定义 HTTP 上报。",
+        "features": [
+          "20 多种编程 Agent 会话并排追踪，HUD 和仪表盘一键跳到对应终端",
+          "权限气泡：允许/拒绝或自动批准，带额度圆环",
+          "离开电脑时用 Telegram/飞书审批、Slack 通知或手机 PWA 查看",
+          "多主题（像素螃蟹、三花猫、云宝），可导入 Codex Pet 或自制主题"
+        ],
+        "highlights": [
+          "6.7k 星，支持的 Agent 数量在同类里最多",
+          "把「哪个 Agent 在等我」做成桌面常驻、低打扰的提示",
+          "有私有本地 Recap、7 种界面语言和完整指南"
+        ],
+        "limitations": [
+          "AGPL-3.0，且角色美术版权不开放",
+          "各 Agent 功能有差异（官方有已知限制清单）",
+          "只看状态和审批，不负责调度或分配任务"
+        ],
+        "comparison": "与库内 the-office-agents（像素办公室看多 Agent）同为可视化监控，但 Clawd 是独立桌面应用、覆盖 Agent 更多且能直接审批；与 herdr（终端里标出卡住的 Agent）、tokay（iPhone 灵动岛）解决同一个「谁在等我」问题，分别落在终端、手机和桌面。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -4513,6 +4670,58 @@
       }
     },
     {
+      "id": "shoal",
+      "name": "Shoal（浅水虾多 Agent 工作台）",
+      "summary": "Windows 本机多 Agent 工作台：在一个网页或 Tauri 桌面端里并排管理 Claude Code、Codex、Antigravity CLI 的原生会话，做完进「待验收」，额度用完可一键生成交接卡换另一家接着干。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "windows",
+        "tauri",
+        "claude-code",
+        "codex",
+        "antigravity",
+        "node-pty"
+      ],
+      "source_url": "https://github.com/qianshuixia/Shoal",
+      "preview_url": null,
+      "post_url": "https://x.com/qianshuixia2026/status/2121812753589641708",
+      "author": "浅水虾（qianshuixia）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "Antigravity CLI（Gemini 4）"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "daily-digest",
+      "stars": 14,
+      "notes": "星标 14（2026-11-16 查询），v0.1.10。作者长文里 508 个会话、约 7 亿 token、缓存命中 91.74% 等数字均为自报；作者提醒不要用脚本后台批量调无头 agy，否则账号可能被停用。三家 CLI 默认以跳过审批的全权限模式启动。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript：server/（Node 24 直接跑 .ts，node-pty + ConPTY 承载原生交互会话）、web/（Vite 前端）、desktop/（Tauri 2 外壳，自带固定版本 node.exe）、hooks/、skills/、e2e/（Playwright）；服务只监听 127.0.0.1，校验 Host/Origin，hook 回调用每次启动随机 token。MIT。",
+        "method": "不重写 Agent，而是把三家官方 CLI 的原生终端会话放进统一面板，靠各家 hooks 判断会话在工作还是在等人；每轮结束把最后一条回复变成结果卡片进入「待验收」，可以写反馈继续或通过；换 Agent 时自动生成交接卡在原地续上。",
+        "features": [
+          "按项目归类，单/双屏直跑 Claude Code、Codex、agy，活跃会话置顶",
+          "顶栏实时显示三家额度圆环和缓存命中率，右侧看 Git Diff、单文件放弃改动",
+          "做完进「待验收」，断粮一键换 Agent 并带交接卡",
+          "一键启动/停止脚本、崩溃日志保留、重启不自动续跑避免误耗额度"
+        ],
+        "highlights": [
+          "针对 Windows 原生终端和 agy 的路径/hook 坑做了大量处理",
+          "交接卡把「换模型续干」做成一等功能",
+          "作者公开了真实日志调优过程，可参考"
+        ],
+        "limitations": [
+          "只支持 Windows，且工作台路径不能含空格",
+          "默认跳过审批、关闭 Codex 沙箱，风险高，只能在信任目录用",
+          "个人项目，安装包无签名，14 星"
+        ],
+        "comparison": "与库内 t3-code、coincide（多 Agent 控制台，coincide 也能中途换 Agent）相比，Shoal 专注 Windows 和三家原生 CLI，并加入「待验收」流程；与 herdr（跨机终端复用）相比更偏单机 GUI；与 relay（Agent 互相交接的 MCP）思路相近，但交接由工作台生成卡片完成。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
       "id": "t3-code",
       "name": "T3 Code",
       "summary": "开源编程 Agent 控制台，统一操控本机 Claude Code/Codex/Cursor/OpenCode/Grok。",
@@ -4690,6 +4899,64 @@
         ],
         "comparison": "与库内 t3-code（多 Agent 控制台，含移动端遥控）相比，Tokay 只做手机端且绑定 Rex；与 herdr（终端里看哪个 Agent 卡住）思路一致，但把「需要你」的状态搬到 iPhone 通知和灵动岛。",
         "researched_at": "2026-11-15"
+      }
+    },
+    {
+      "id": "agentes-chat",
+      "name": "agentes.chat",
+      "summary": "开源可自托管的「Slack + AI 同事」：人和 Agent 在同一频道/私信里协作，Agent 有角色、负责人、预算、自己的电脑和浏览器，敏感操作先在聊天里请人审批。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "自托管",
+        "团队协作",
+        "mcp",
+        "claude-code",
+        "codex",
+        "agpl",
+        "bun"
+      ],
+      "source_url": "https://github.com/agentes-chat/agentes-chat",
+      "preview_url": "https://agentes.chat",
+      "post_url": "https://x.com/xuzhenai/status/2121959683628192026",
+      "author": "Codari Global, LLC",
+      "models": [
+        "Claude",
+        "ChatGPT/Codex",
+        "Gemini",
+        "Grok",
+        "DeepSeek",
+        "Kimi",
+        "OpenRouter"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "daily-digest",
+      "stars": 1517,
+      "notes": "星标 1517（2026-11-16 查询），仓库创建于 2026-11-09；另有付费托管版 agentes.chat Cloud，修改后闭源使用需商业许可。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 单仓：服务端 Bun + Hono + Drizzle + PostgreSQL（pgvector），Web 端 React + Vite + TanStack，手机端 Expo，桌面端 Tauri；apps/ 分 server/web/desktop/mobile，packages/ 含 adapters、engine、providers、modules 等。Docker Compose 一键部署并接入 Tailscale HTTPS。AGPL-3.0-only（setup CLI 为 MIT），另有商业许可。",
+        "method": "把 Agent 建成工作区成员而不是侧栏机器人：每个 Agent 有角色、指令、模型、月预算（每次调用前检查）和负责人；无人 @ 的消息交给「路由器」，由代码筛候选、小模型或规则挑最多 4 个 Agent 回答；合并、部署、回滚和连接器标记为敏感的动作在聊天里生成审批卡，批准后按原样只执行一次。",
+        "features": [
+          "频道、线程、私信里人与 Agent 混合协作，Agent 自己判断是否该回答",
+          "按组织接入 MCP 连接器，按 Agent 授权作用域；支持 SKILL.md 技能和定时/事件触发的 Routines",
+          "Agent 自带电脑和可接管的浏览器（Beta），也可在接入的电脑上调用 Claude Code/Codex",
+          "记忆、Wiki、Drive、任务看板、统一通知箱，Web/桌面/手机三端"
+        ],
+        "highlights": [
+          "开源一周星标约 1.5k（2026-11-16 查询）",
+          "预算与审批是一等公民：每次模型调用记账，敏感动作必须人批准",
+          "可从 Grok Bot、OpenMausBot、OpenClaw 等导入 Agent、技能和记忆",
+          "14 种界面语言，文档和 ADR 齐全"
+        ],
+        "limitations": [
+          "AGPL-3.0 加商业许可、CLA 与署名条款，改造后闭源商用受限",
+          "浏览器、邮箱、Codex 等多项能力仍是 Beta 或测试中",
+          "功能面很大、仓库很新，长期稳定性未知"
+        ],
+        "comparison": "与库内 openmausbot、open-duet-anil-matcha、rerun（单人或小团队 Bot 平台）相比，agentes-chat 把多 Agent 放进团队聊天并强调预算/审批；与 agent-ceo（商业组织架构平台）目标相近但可完全自托管；与 t3-code、agent-teams-ai 这类本机编程控制台不同，它面向整个团队的日常工作。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -5379,6 +5646,57 @@
         ],
         "comparison": "和 archimedes-reynolds（工程仿真 Agent）、science-s-last-exam（科研评测）同属 AI for Science。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "hyperframes",
+      "name": "HyperFrames（HeyGen）",
+      "summary": "HeyGen 开源的「写 HTML 出视频」框架：把 HTML/CSS/媒体和可寻址动画确定性渲染成 MP4，并给 Claude Code、Codex、Cursor、Gemini CLI 提供成套技能和约 450 个现成组件。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "视频",
+        "skill",
+        "html",
+        "agent-plugin",
+        "motion-graphics",
+        "heygen"
+      ],
+      "source_url": "https://github.com/heygen-com/hyperframes",
+      "preview_url": "https://hyperframes.heygen.com",
+      "post_url": "https://x.com/de2pressed/status/2122096748202201408",
+      "author": "HeyGen",
+      "models": [
+        "Claude Code、Codex、Cursor、Gemini CLI 等编程 Agent",
+        "Pro 版接 HeyGen 视频/图像/语音/音乐模型"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "daily-digest",
+      "stars": 84755,
+      "notes": "星标 84755（2026-11-16 查询），仓库创建于 2026-03-10，当天在多条「Fable 5.2 视频工作室」合集帖中出现。/reverse-any-video、/style-sampling 为 Pro 功能。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript/Bun 单仓（packages/、registry/、skills/、themes/、examples/），CLI `npx hyperframes`（init/preview/render）需 Node 22+ 与 FFmpeg；同时打包成 Claude Code、Codex、Cursor、Gemini 插件和 skills.sh 技能；另有免费桌面 Studio。Apache-2.0。",
+        "method": "把视频当成网页：每一帧都是可寻址时间点的 HTML 渲染结果，动画必须可 seek，因此渲染确定、可复现；技能教 Agent 走「规划→写合法 HTML→接可寻址动画→加媒体→lint→预览→渲染」的闭环，组件库提供转场、字幕、图表、地图、3D 和镜头运动；frame.md 把网页设计规范翻译成适合镜头的版本。",
+        "features": [
+          "HTML/CSS/JS 确定性渲染为 MP4，本地 CLI 或云端渲染",
+          "9 个技能（核心 6 个 + Figma、Slideshow、Remotion 迁移按需安装）",
+          "约 450 个可编辑源码组件：转场、动态字幕、图表、地图、3D、镜头运动",
+          "Remotion、Motion Canvas、Lottie、Three.js 项目迁移并逐帧对照"
+        ],
+        "highlights": [
+          "8.5 万星，大厂出品，插件覆盖主流编程 Agent",
+          "「视频即网页」让 LLM 擅长的 HTML 直接变成成片",
+          "版本化插件和 skills update 机制，技能与 CLI 版本对齐"
+        ],
+        "limitations": [
+          "逆向任意视频、风格采样等高级技能要 HyperFrames Pro",
+          "依赖 Node 22+ 和 FFmpeg，复杂 3D/实拍仍需外部素材",
+          "技能注册表可能比 main 滞后数小时（官方说明）"
+        ],
+        "comparison": "与库内 lieflat-code-video、huashu-motion、motion-graphics-music-video-skill（单个动效技能）相比，它是完整渲染框架加组件库；与 nomi（本地视频工作台）互补：nomi 管分镜粗剪，HyperFrames 负责把代码动效渲成成片；和 rea-video 可组成「拆解→重做」链路。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -6543,6 +6861,58 @@
       }
     },
     {
+      "id": "weight-space-index",
+      "name": "Weight-Space Index（wsi）",
+      "summary": "权重空间的「反编译器和符号表」：不跑前向、不训练，直接对 .safetensors 做静态分析、找电路、比较检查点并外科式改权重，可作为 MCP 给 LLM 用。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "权重编辑",
+        "可解释性",
+        "rust",
+        "simd",
+        "mcp",
+        "safetensors"
+      ],
+      "source_url": "https://github.com/krexito/weight-space-index",
+      "preview_url": null,
+      "post_url": "https://x.com/krexillo/status/2121933709863710847",
+      "author": "Krex（GitHub：krexito）",
+      "models": [
+        "GPT-2 124M",
+        "Qwen3.5-0.8B",
+        "LiquidAI LFM3-1.7B"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "reply-on-popular-post",
+      "stars": 0,
+      "notes": "评论区发现：@rikiyatakehi「Weight-Space Programming」爆款帖（约 5.6 万赞）下作者自荐。仓库 2026-11-15 创建，0 星（2026-11-16 查询）。README 里所有准确率和毫秒级耗时都是作者自测（自报），尚无第三方复现。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 包 wsi（indexer、query、compare、mcp_server、cli、rust_accel）+ rust/ 多线程 SIMD 内核 + 附带的 wsr（Weight-Space Reading and Programming）沙箱；直接读取 .safetensors，提供 MCP 服务器。Apache-2.0。",
+        "method": "把词表当锚点给神经元建「语义和弦」索引，用 SVD、投影和逐头/逐神经元分解静态识别编辑类型（神经元重连、正交子空间擦除、词表行缩放、层消融等）；按「触发词→旧概念」定位少量 MLP 神经元并代数改写输出投影；跨模型时用共享 BPE 词作为 Rosetta 桥做小规模岭回归，把大模型神经元移植到小模型。",
+        "features": [
+          "盲读：只给 .safetensors 就判断改了什么、改到哪些神经元",
+          "外科式事实改写（如 8/36864 个 GPT-2 神经元）并检查保护探针",
+          "复现 MIT「权重空间编程」p50c 等编辑，静态识别被改的 128 个神经元",
+          "跨架构神经元移植（Qwen3.5/LFM3 → GPT-2），MCP 服务器给 Agent 调用"
+        ],
+        "highlights": [
+          "把原本 LLM 要交互 8–20 小时的权重分析压到几十毫秒（自报）",
+          "Rust SIMD 内核加 MCP，适合让 Agent 直接调用",
+          "覆盖 Transformer 之外的 LFM3 混合架构（自报）"
+        ],
+        "limitations": [
+          "所有基准为作者自测，盲读只在封闭的 8 类编辑族上验证",
+          "只在 0.1B–1.7B 小模型上演示，大模型可行性未查到",
+          "刚创建、0 星，README 表述偏营销，需自行复现"
+        ],
+        "comparison": "与库内 权重空间编程-mit（让前沿 LLM 交互式改权重的研究）直接相关：wsi 把那些分析步骤做成确定性静态工具，并能复现其公开检查点；与 nesformer（把模拟器编译进权重）同属「权重即程序」，一个是写入，一个是读取和编辑。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
       "id": "xerj-query-1",
       "name": "XERJ Query-1",
       "summary": "自然语言转可执行查询，在本地事实库找答案，支持 CPU 离线。",
@@ -6583,6 +6953,58 @@
         ],
         "comparison": "和 zhihu-mcp、trendradar 都给 Agent 提供信息，但 XERJ 处理本地私有数据。和 ferrite、mlx-serve 不同，它不是生成模型服务，而是检索加程序执行。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "yogurt",
+      "name": "Yogurt（FrigadeHQ）",
+      "summary": "开源免费的本地 AI 会议纪要应用（Granola 替代）：不往会议里加机器人，直接录麦克风和系统声音，转写、总结和问答全部在本机完成。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "本地模型",
+        "会议纪要",
+        "whisper",
+        "llama.cpp",
+        "mcp",
+        "隐私"
+      ],
+      "source_url": "https://github.com/FrigadeHQ/yogurt",
+      "preview_url": "https://yogurt.so",
+      "post_url": "https://x.com/benou_irl/status/2121966471379087670",
+      "author": "Frigade",
+      "models": [
+        "Whisper large-v3-turbo（whisper.cpp）",
+        "Apple SpeechAnalyzer",
+        "Gemma 4、gpt-oss 等本地开放权重模型"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "daily-digest",
+      "stars": 1655,
+      "notes": "星标 1655（2026-11-16 查询），仓库创建于 2026-11-10。首次需下载约 5GB 起、最高 14GB 以上模型（官方 FAQ）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript pnpm 单仓（app/、packages/、catalog/、site/），桌面应用支持 macOS 14.4+（Apple Silicon）、Windows 10 x64、Ubuntu 22.04 AppImage，至少 8GB 内存；转写用 whisper.cpp（Mac 上叠加 Apple SpeechAnalyzer 实时字），总结与问答用 llama.cpp 跑本地开放权重模型；内置只读本地 MCP 服务器。MIT。",
+        "method": "通过检测哪个应用在用麦克风（浏览器会议看标签页标题或日历事件）提示录音，录下麦克风与系统音频而不加入会议机器人；本地转写后用本地模型生成纪要，问答链接回原始片段；MCP 访问默认关闭，开启后走 0600 权限的 socket 或随机命名管道，只读。",
+        "features": [
+          "实时转写与会后总结，支持 99 种语言的多语模式",
+          "Mac 上读取 Zoom/Teams/Meet 的发言人名",
+          "跨会议带出处问答、文件夹与全文搜索、Markdown 导出",
+          "本地只读 MCP，让你的助手应用读取纪要"
+        ],
+        "highlights": [
+          "完全离线可用，无需账号，MIT",
+          "按机器性能自动挑选能跑好的模型",
+          "MCP 访问的安全设计写得很细（socket 权限、命名管道）"
+        ],
+        "limitations": [
+          "模型下载大（约 5–14GB+），低配机器体验受限",
+          "发言人识别和日历只在 Mac 上可用",
+          "不进会议意味着需要你自己告知对方正在录音"
+        ],
+        "comparison": "与库内 cicada-知了（会议纪要 + 同声传译客户端）定位最接近：Yogurt 强调全本地模型和 MCP 接入，知了侧重实时同传和多平台；与 smitline（让 Agent 自己进会议打电话）方向相反，Yogurt 只做人类会议的本地记录。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -7111,6 +7533,57 @@
         ],
         "comparison": "和权重空间编程-mit 同属「在权重里编程」的研究方向。和 axiom-stacks 一样是前沿研究展示，不是实用工具。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "rea-video",
+      "name": "rea-video",
+      "summary": "给编程 Agent 用的「视频逆向」技能和 CLI：逐镜头判断画面是实拍、AI 生成还是代码做的，并给出复刻方法，输出人看的报告和给 Agent 读的分层 VIDEO.md。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "视频",
+        "claude-code",
+        "codex",
+        "ffmpeg",
+        "python"
+      ],
+      "source_url": "https://github.com/JuneYaooo/rea-video",
+      "preview_url": "https://www.reavideo.ai/",
+      "post_url": "https://x.com/Xelioxd/status/2122001398032437715",
+      "author": "JuneYaooo",
+      "models": [
+        "可选视频理解模型（Gemini、豆包）",
+        "Claude Code/Codex 作为执行 Agent"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "daily-digest",
+      "stars": 9196,
+      "notes": "星标 9196（2026-11-16 查询），仓库创建于 2026-10-29；当天还出现在多条「Fable 5.2 视频工作室」合集帖里。各案例的准确率由作者报告给出（自报）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.10+ 包 rea_video（约 40 个模块：shots、classify、audio、speech、prosody、transitions、overlay、vlm、videomd、report、remake 等）+ skills/rea-video 技能 + .claude-plugin；依赖 ffmpeg，视觉模型可选。Apache-2.0。",
+        "method": "先用 ffmpeg 和离线分析切镜头、提取字幕/贴纸/剪辑节奏/音频（人声或 AI 声、BGM 与 BPM、音效位置），再由 Agent 复核（可接视频模型）判定每个镜头的制作方式；结果写成开放的 VIDEO.md 分层格式，Agent 只读回答问题所需的层，省 token；复刻配方见姊妹项目 capsule-cinema。",
+        "features": [
+          "逐镜头判定实拍 / AI 生成 / 代码动效 / 3D，并给出复刻建议",
+          "字幕时间轴导出 SRT/ASS，记录颜色、描边和入场方式",
+          "剪辑点、节奏、是否卡点；人声/AI 配音、音乐 BPM 与音效位置",
+          "双输出：report.html/PDF 给人看，VIDEO.md 给 Agent 读"
+        ],
+        "highlights": [
+          "一句话安装：让 Agent 读仓库 URL 自行安装和执行",
+          "VIDEO.md 分层格式是可复用的开放规范",
+          "作者给出多类案例（AI MV、实拍开箱、产品宣传片），并说明平台转码会干扰离线判定"
+        ],
+        "limitations": [
+          "不接视觉模型时判定精度下降，作者自己的案例里离线工具曾把 35% 实拍误判为 AI（自报）",
+          "案例视频被重新压缩，复跑结果会和文档不同",
+          "复刻依赖外部视频生成模型和另一个仓库"
+        ],
+        "comparison": "与库内 nomi（本地视频工作台、指挥分镜粗剪）、claude-make-an-anime（从故事做动画）这类「生成」工具方向相反，rea-video 做「拆解」；和 hyperframes 的 /reverse-any-video（需 Pro）同题，但它免费开源、输出开放格式。",
+        "researched_at": "2026-11-16"
       }
     },
     {
