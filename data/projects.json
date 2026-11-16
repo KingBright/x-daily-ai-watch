@@ -2,28 +2,28 @@
   "meta": {
     "generated_at": "2026-11-16",
     "timezone": "Asia/Shanghai",
-    "projects_total": 207,
+    "projects_total": 228,
     "category_counts": {
-      "game": 33,
-      "agent-eng": 80,
-      "llm-tools": 61,
-      "other": 33
+      "game": 40,
+      "agent-eng": 85,
+      "llm-tools": 62,
+      "other": 41
     },
     "subcategory_counts": {
-      "dev-efficiency": 41,
-      "phone-computer-use": 15,
-      "agent-fleet": 24
+      "dev-efficiency": 42,
+      "phone-computer-use": 16,
+      "agent-fleet": 27
     },
     "origin_counts": {
-      "bookmark": 78,
-      "reply-on-popular-post": 20,
-      "daily-digest": 100,
-      "bookmark+daily-digest": 8,
+      "bookmark": 94,
+      "reply-on-popular-post": 25,
+      "daily-digest": 98,
+      "bookmark+daily-digest": 10,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 161,
-      "light": 46
+      "full": 175,
+      "light": 53
     },
     "analysis_updated_at": "2026-11-16"
   },
@@ -71,6 +71,93 @@
         ],
         "comparison": "和 scenario-blender-plugin 同出 Scenario：本项目是给 Agent 的技能层，插件是 Blender 内的 UI 加本地 MCP。和 parametric-topdown-pixel-architecture 相比，后者只做程序化像素建筑，完全离线；本项目覆盖面广，但依赖云端生成。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "waldo-stripes-soft",
+      "name": "3D Where's Waldo（Waldo Stripes Soft）",
+      "summary": "浏览器里的 3D「威利在哪里」：一座海边节日小镇、1 万多个动画小人全部由代码生成，每次进入 Waldo 位置都不同。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "浏览器游戏",
+        "3d",
+        "程序化生成",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://waldo-stripes-soft.vercel.app",
+      "post_url": "https://x.com/gokayfem/status/2121386947289768406",
+      "author": "gokayfem（fal 创意工程负责人）",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "页面 2026-11-15 访问正常（200）。帖子称无图片和模型文件、全部代码生成（自述）。未找到源码。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "托管在 Vercel 的网页 3D 游戏；具体引擎、使用的模型未查到（作者未说明）。",
+        "method": "程序化生成整座小镇与上万个带动画的人群，随机放置目标人物，玩家计时寻找。",
+        "features": [
+          "海边节日小镇场景",
+          "1 万+ 动画人物（自述）",
+          "每次访问随机藏点、计时挑战"
+        ],
+        "highlights": [
+          "把大规模人群渲染做成了简单好懂的玩法",
+          "零外部资产（自述）"
+        ],
+        "limitations": [
+          "无源码，技术细节和性能数据均未查到",
+          "玩法单一，偏演示"
+        ],
+        "comparison": "与 qingming-3d、port-of-halvard 一样是「纯代码程序化大场景」，但这里的重点是大规模人群而非建筑；没有源码，只能做 light，与 port-of-halvard 的可读源码形成对照。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
+      "id": "room-at-dawn",
+      "name": "6:51 — a room at dawn",
+      "summary": "three.js 纯代码做的写实清晨卧室：程序化几何与贴图、CPU 路径追踪烘焙光照，可行走，另附 4K HDR 短片。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "three.js",
+        "程序化生成",
+        "路径追踪",
+        "写实渲染"
+      ],
+      "source_url": "https://github.com/Leonxlnx/room-at-dawn",
+      "preview_url": null,
+      "post_url": "https://x.com/LexnLin/status/2120910881697436028",
+      "author": "LeonLin（@LexnLin）",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 84,
+      "notes": "星标 2026-11-15（美西）查询，MIT。无在线预览，需本地 npm run dev 运行；4K HDR 短片在 Release 附件。作者在库内已有 tastecode、leonlin-demos 两条记录。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "three.js + Vite；three-mesh-bvh 加速的 CPU 路径追踪器（Web Worker）离线烘焙光照，按顶点存辐照度与主方向（public/bake/gi.bin）；HDR 管线含接触 AO、bloom、胶片调色；离线电影渲染器用抖动子帧做抗锯齿、薄透镜景深、180° 快门，再经 ffmpeg 输出 HDR10/SDR。MIT。",
+        "method": "没有实时光源：先全路径追踪一遍，再用下一事件估计 + 多重重要性采样做最终聚集，把天光穿过窗户的效果烘到顶点上，法线贴图依然能着色；家具、布料、植物、窗外树木（约 11.8 万片叶）都用带种子的程序化生成；风是时间的纯函数，便于离线逐帧采样。",
+        "features": [
+          "可第一人称行走、下蹲、播放片中镜头",
+          "程序化家具、羽绒被、绿萝、窗外树",
+          "重新烘焙光照与电影渲染脚本",
+          "45 秒 4K HDR10 短片"
+        ],
+        "highlights": [
+          "在浏览器里做到接近离线渲染的写实度，且全部可读",
+          "为集显（Radeon 780M）调过自适应分辨率"
+        ],
+        "limitations": [
+          "声音为录制素材（Kevin MacLeod 等），非代码生成",
+          "重新烘焙需 20–30 分钟 CPU 时间",
+          "只是一个房间，不是游戏玩法"
+        ],
+        "comparison": "与 crimson-loong（风格化东方奇幻、实时程序化）相对，room-at-dawn 走写实 + 离线烘焙路线；与 solstice（Rust/wgpu 虚拟化几何）同为渲染技术参考，但更偏美术和光照。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -194,6 +281,47 @@
         ],
         "comparison": "和 portals 同为 emollick 用前沿模型生成的可玩网页世界：portals 是大量程序化 3D 门厅，本项目是运输模拟。和 雾锁山门（guizang-game-skill）、the-quiet-elevation、earth-on-spawn 同属本窗口的 AI 游戏展示，后几者分别强调可复用技能、解谜体验和镜像地球。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "dreamwaze",
+      "name": "Dreamwaze",
+      "summary": "three.js 做的梦境风迷宫漫游小游戏，可随意游荡也可计时挑战。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "浏览器游戏",
+        "three.js",
+        "迷宫",
+        "评论区发现",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://dreamwaze.vercel.app/",
+      "post_url": "https://x.com/alldayonrepete/status/2121720044799614988",
+      "author": "@alldayonrepete",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "在 gokayfem 的 3D Where's Waldo 热门帖评论区由作者自荐（2 赞，很小众）。页面 2026-11-15 访问正常。未找到源码。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "three.js 网页游戏（作者自述），部署在 Vercel；其余未查到。",
+        "method": "把纸笔 2D 迷宫变成梦境风格的 3D 场景，玩家第一人称穿行，可计时。",
+        "features": [
+          "多个梦境风迷宫世界",
+          "自由漫游或计时模式"
+        ],
+        "highlights": [
+          "小而完整的可玩作品，适合作为轻量 3D 游戏参考"
+        ],
+        "limitations": [
+          "无源码，技术细节未查到",
+          "作者自述「本周做的」，完成度和后续维护未知"
+        ],
+        "comparison": "与同帖的 waldo-stripes-soft 一样是 light 网页 3D 小游戏，玩法从「找人」换成「走迷宫」；没有源码，参考价值低于 crimson-loong、room-at-dawn。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -473,6 +601,53 @@
       }
     },
     {
+      "id": "inkline-town",
+      "name": "Inkline Town",
+      "summary": "浏览器里的墨线风等距城镇经营游戏，像小型 Anno：按任期当市长，铺路、建产业链、把村落发展成城市。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源可读",
+        "浏览器游戏",
+        "模拟经营",
+        "pixijs",
+        "webgpu",
+        "ecs"
+      ],
+      "source_url": "https://github.com/SandroMaglione/inkline-town",
+      "preview_url": "https://inkline.typeonce.games",
+      "post_url": "https://x.com/SandroMaglione/status/2121480187514867932",
+      "author": "Sandro Maglione",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 94,
+      "notes": "星标 2026-11-15（美西）查询。书签帖称已从 three.js 迁到 PixiJS 3D（WebGPU），像素级一致、性能更好（自述）。仓库未声明许可证。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript + PixiJS 3D（WebGPU）渲染，作者自研 Ritmo ECS；Alchemy 部署；仓库有 asset-lab、map-lab、effects-lab 等调试页，scripts/ 下有平衡、浏览器、模型比例等检查脚本，.agents/skills 目录说明开发中使用 Agent。未声明许可证。",
+        "method": "实体组件系统驱动的经济模拟：伐木→锯木→家具、农场→磨坊→面包房等产业链，搬运工沿路运货，市场派人送货；街道有「宜居度」，影响住宅升级；每张地图按种子生成岛屿，一个任期结束给出判定与故事。全部建筑和人物以 3D 细线条实时绘制。",
+        "features": [
+          "任期制玩法（45/60/90 分钟）与城镇阶层升级",
+          "完整产业链与运输模拟",
+          "宜居度、公园布置、服务覆盖",
+          "随机岛屿地图，存档留在本地"
+        ],
+        "highlights": [
+          "统一的墨线画风，美术风格辨识度高",
+          "工程上有大量自动检查脚本和平衡模型文档",
+          "可直接在浏览器免费游玩"
+        ],
+        "limitations": [
+          "未声明许可证，不能当开源代码复用",
+          "小团队/个人项目，星标少",
+          "迁移到 WebGPU 后对旧浏览器兼容性未查到"
+        ],
+        "comparison": "与 mela-tycoon（Fable 全自动开发的模拟经营，源码私有）同属模拟经营，inkline-town 源码可读、玩法系统更完整；画风路线可与 painted-valley（手绘背景+赛璐璐人物）对照，两者都证明「统一的风格化渲染」比堆细节更出效果。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
       "id": "ldtk",
       "name": "LDtk",
       "summary": "《死亡细胞》主设计师开发的开源 2D 关卡编辑器，适合快速摆关和迭代。",
@@ -649,6 +824,55 @@
         ],
         "comparison": "和 a-little-earth、earth-on-spawn 同属真实地点网页 3D。earth-on-spawn 走整颗地球；a-little-earth 是多个精修小场景；本项目把纽约中城做成可逛、可会合的主场。三者都无公开源码。和 voxel-engine 不同，这里的重点是城市漫游而不是破坏。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "painted-valley",
+      "name": "Painted Valley",
+      "summary": "Fable 5.2 做的吉卜力风可漫游山谷：手绘背景式着色 + 赛璐璐描线人物，开源在 Patch 上，可作为风格化游戏起点。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "three.js",
+        "风格化渲染",
+        "npr",
+        "fable-5.2",
+        "游戏起点"
+      ],
+      "source_url": "https://patch.gg/blendi/painted-valley",
+      "preview_url": "https://patch.gg/blendi/painted-valley",
+      "post_url": "https://x.com/BlendiByl/status/2120694003230560585",
+      "author": "Blendi（Patch 联合创始人）",
+      "models": [
+        "Claude Fable 5.2"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "源码托管在 Patch（patch.gg，可 remix），不在 GitHub。代码 MIT、美术 CC0（页面自述）；正式演示的 5 段环境音来自 Sonniss GDC 包，不在仓库里。原帖引用了 pixelfx 作者的帖子。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "three.js（仅 WebGL2）+ Rapier 物理（Apache-2.0）；人物用 Patch 的 MakeHuman CC0 模型与 Quaternius 动画库；地面两张 ambientCG 贴图，其余均为代码生成；tools/ 用 Playwright 无头跑截图、帧时、首访与音频切片。",
+        "method": "用「省略」来模拟手绘背景：每个物体只有亮色、暗色和短过渡，共享一套调色板；草地是顺坡笔触和按出生点视角排布的色点，远景不加细纹以免闪烁；远山用高度图步进烘成一条「颜料带」，积云用球堆光线步进成立方体贴图；建筑细节在着色器里按墙面坐标绘制；最后小型 Kuwahara 滤波收成笔触。人物则走赛璐璐：三阶平涂 + 按 alpha 编号描线。",
+        "features": [
+          "约 2 公里山谷，可走到村庄、河边、高山湖",
+          "中午到日落四个时段切换",
+          "第一/第三人称、手柄支持",
+          "关闭/开启绘画滤镜对比"
+        ],
+        "highlights": [
+          "把「手绘背景 + 赛璐璐人物」的分工讲得很清楚，可直接借鉴到像素/日漫风格的游戏",
+          "明确是「起点而不是滤镜」，可 remix 改成自己的游戏",
+          "许可清晰（代码 MIT、美术 CC0），附逐项来源"
+        ],
+        "limitations": [
+          "只测过 RTX 4090 1080p；无夜晚、云不动、房子不能进（页面自述）",
+          "源码在 Patch 而非 GitHub，生态较小",
+          "完整环境音需自行获取"
+        ],
+        "comparison": "与 inkline-town（墨线风经营）一样以统一风格化渲染取胜；与 crimson-loong、room-at-dawn 的「零资产」不同，painted-valley 少量使用 CC0 人物和动画资产，换来可玩的角色控制；对 rpg-core 的高清风格化目标最有参考价值。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -1059,9 +1283,9 @@
       "author": "World Labs",
       "models": [],
       "first_seen": "2026-11-12",
-      "origin": "daily-digest",
+      "origin": "bookmark+daily-digest",
       "stars": null,
-      "notes": "2026-11-12 发帖宣布全面开放（帖子约 1458 赞、1117 收藏，2026-11-13 查询）。官网列出 Viewfinder、Chisel、Splats to Mesh、Relight 四个工具和开发者 API（含 Blender 集成）。评论里 @grok 的回复称按积分计费（1000 积分=1 美元），该说法未在官网核实。闭源，未查到模型参数、训练细节。",
+      "notes": "2026-11-12 发帖宣布全面开放（帖子约 1458 赞、1117 收藏，2026-11-13 查询）。官网列出 Viewfinder、Chisel、Splats to Mesh、Relight 四个工具和开发者 API（含 Blender 集成）。评论里 @grok 的回复称按积分计费（1000 积分=1 美元），该说法未在官网核实。闭源，未查到模型参数、训练细节。 2026-11-16 书签补充：World Labs 成员 @joseit 的发布帖（https://x.com/joseit/status/2120951461547008106）给出 atlas.worldlabs.ai 入口，流程为在 Chisel 里自己或让 Agent 搭 3D 灰盒布局，再由 Atlas 生成世界并可自由换风格（帖子自述）。",
       "analysis": {
         "depth": "light",
         "core_tech": "闭源世界模型（World Labs 自研 Atlas），托管 Web 应用加开发者 API。输出形式为关键帧、视频片段和 3D Gaussian Splatting，另有 splat 转网格工具；官网称支持 Blender 集成。模型架构、参数量、许可证未查到。",
@@ -1217,6 +1441,48 @@
         ],
         "comparison": "和 parametric-topdown-pixel-architecture 同属像素向工具，前者生成建筑和 Godot 预制体，pixelfx 专注战斗和道具特效。和 3d-os-scenario-skills 比，本项目不走 DCC，而是直接在 Canvas 里用代码画。和 solstice、threepp 比，那些是 3D 渲染底座，本项目是 2D 像素 VFX 库。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "resoundle",
+      "name": "resoundle",
+      "summary": "输入一种风格，约 90 秒生成一整套风格统一的游戏 UI 音效（悬停、选择、返回、错误、开关）。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "ai音效",
+        "游戏ui",
+        "音频生成",
+        "评论区发现",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://resoundle.com",
+      "post_url": "https://x.com/kchecker/status/2121462951794405529",
+      "author": "未查到（回复者称是熟人在做）",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "在 crimson-loong 热门帖（@chetaslua，约 3.7k 赞）评论区发现，回复者称「熟人在做」，非作者本人。页面 2026-11-15 访问正常。闭源，定价未查到。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "闭源 Web 服务；使用的音频生成模型未查到。",
+        "method": "以一个风格描述为条件，一次生成整套 UI 音效，保证各音效「同一个声音」的一致性，而不是逐个单独生成。",
+        "features": [
+          "悬停、选择、返回、错误、打开、关闭等成套 UI 音",
+          "约 90 秒出一套（站点自述）"
+        ],
+        "highlights": [
+          "直击游戏 UI 音效风格不统一的痛点",
+          "对小团队/独立游戏省时"
+        ],
+        "limitations": [
+          "无源码，模型、授权条款和定价均未查到",
+          "只覆盖 UI 音效，不含环境声和战斗音"
+        ],
+        "comparison": "库内游戏类此前没有音频生成工具；与 pixelfx（代码生成像素特效）同属「游戏资产流水线」的单项工具，一个管视觉打击感，一个管 UI 声音。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -1517,6 +1783,54 @@
         ],
         "comparison": "和 portals、bee-x9、moss-keeper 同属 AI 写出的网页 3D 作品，但本项目把流程收成可安装的 skill，并提供三种打包方式。和 3d-os-scenario-skills、scenario-blender-plugin 比，那些走 DCC/引擎资产流水线，本项目目标是直接产出可玩的单页游戏。和 claude-make-an-anime、motion-graphics-music-video-skill 同为创作向技能，题材分别是动画、音乐视频和 3D 动作游戏。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "crimson-loong",
+      "name": "赤龍 Crimson Loong",
+      "summary": "Fable 5.2 用纯 three.js 做的 90 秒双龙动画短片，单个 HTML 文件，网格、贴图、配乐全部由代码生成。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源可读",
+        "three.js",
+        "程序化生成",
+        "单文件",
+        "fable-5.2"
+      ],
+      "source_url": "https://github.com/ChetasLua/crimson-loong",
+      "preview_url": "https://chetaslua.github.io/crimson-loong/",
+      "post_url": "https://x.com/chetaslua/status/2121176151234330707",
+      "author": "Chetaslua",
+      "models": [
+        "Claude Fable 5.2"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 192,
+      "notes": "星标 2026-11-15（美西）查询。源码链接见作者自回复 https://x.com/chetaslua/status/2121176153667125296 。仓库未声明代码许可证（three.js 部分为 MIT）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "three.js r180 内联，无其他库、无任何资产文件、无网络请求；src/ 下按序拼接的脚本：SDF 建模、程序化贴图、光线步进积云、喀斯特山石、建筑、植被、龙（鳞片着色器）、水面平面镜像、特效、HDR 后期、Web Worker 合成音频；tools/ 有无头 Chrome 逐帧捕获、性能探针和图像 diff。",
+        "method": "整片是「电影时间的纯函数」，任意帧可单独渲染；需要记忆的效果（湖面涟漪、落叶、灯笼摆动）在加载时预建查表；配乐和音效在 Worker 里合成；按帧耗时自动降内部分辨率维持 60 fps（自述）。",
+        "features": [
+          "90 秒循环叙事短片：红龙、白龙空战、入湖、夺珠",
+          "全程序化：山、建筑、植被、云、水、龙、音乐",
+          "可离线从本地文件运行",
+          "暂停、开声、指针扰动镜头"
+        ],
+        "highlights": [
+          "真正零资产，比生成 3D 资产的同类作品更彻底",
+          "分层脚本 + 测试工具链，可读可学",
+          "苹果芯片笔记本上 60 fps、最高 3.7 MP（自述）"
+        ],
+        "limitations": [
+          "是短片不是可玩游戏",
+          "未声明代码许可证",
+          "模型生成过程（提示词、轮次）未公开"
+        ],
+        "comparison": "与 port-of-halvard、room-at-dawn 同属「Fable/前沿模型纯代码程序化场景」：crimson-loong 偏东方奇幻与动画叙事，room-at-dawn 偏写实室内与烘焙光照，port-of-halvard 偏大规模实例化工业场景。三者都有源码，是研究程序化美术的好样本。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -2374,6 +2688,53 @@
         ],
         "comparison": "和 tokeneconomizer 互补：Hub 负责看清花在哪，TokenEconomizer 负责自动省。和 stroq 都读本地会话，stroq 看安全，Hub 看效率。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "refactoring-ui-skill",
+      "name": "Refactoring UI Skill",
+      "summary": "把《Refactoring UI》拆成 151 条可追溯规则的 Claude 技能，给 AI 写的界面做约束和诊断走查。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "ui设计",
+        "tailwind",
+        "claude-code",
+        "cursor"
+      ],
+      "source_url": "https://github.com/edisonmbli/refactoring-ui-skill",
+      "preview_url": null,
+      "post_url": "https://x.com/EianLu/status/2121407780061909486",
+      "author": "edisonmbli",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 468,
+      "notes": "星标 2026-11-15（美西）查询。书签是 @EianLu 引用 @longhaiqwe123 推荐帖（https://x.com/longhaiqwe123/status/2121235282133729365）；仓库地址来自 @longhaiqwe123 2026-10-09 的回复。非官方项目，与原书作者无关；GitHub 许可证标 NOASSERTION（见仓库 LICENSE 与 ATTRIBUTION.md）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent Skill（SKILL.md 约 220 行 + 14 个按需加载的引用文件）+ Python 3.9 零依赖脚本（generate_palette、check_contrast、emit_tokens）；提供 Claude Code 插件市场清单、Cursor 规则；自带 eval/（8 个页面用例、打分脚本）。",
+        "method": "做「约束层 + 诊断层」而不是生成：每条规则写成六段式（规则、为什么、怎么做、数值、Tailwind 写法、失败长什么样）；走查时先在桌面和移动两种宽度渲染，再按「层级→间距→排版→色彩→深度→图像→收尾」固定顺序扫，产出带规则号和严重度的问题表；颜色只写占位符，必须从项目自己的 token 解析，避免默认靛蓝。",
+        "features": [
+          "151 条规则逐条追踪（覆盖矩阵防遗漏）",
+          "页面走查：P0/P1 问题表 + 系统性问题",
+          "生成色阶、检查对比度、导出设计 token",
+          "已有设计系统优先，只映射不覆盖"
+        ],
+        "highlights": [
+          "规则粒度细且可追溯，适合让编码 Agent 自查 UI",
+          "有可运行的 eval 用例集，不只是提示词",
+          "多宿主可用（Claude Code 插件、普通技能、其他助手）"
+        ],
+        "limitations": [
+          "只覆盖 Web UI，基于一本书的规则，书外扩展单独标注",
+          "非官方，许可证需自行确认",
+          "效果依赖宿主 Agent 能否真的渲染页面并截图"
+        ],
+        "comparison": "与 modern-web-guidance（四大浏览器厂商的 Web API 指南技能）同属「领域知识技能」，一个管 API 写法、一个管视觉设计；与 llm-tools 里的 norman-skill、opendesigner 等设计类技能相比，它不负责生成，而是给生成结果做规则化评审，可与生成类工具串联。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -3692,9 +4053,9 @@
       "author": "JosssphZhou",
       "models": [],
       "first_seen": "2026-11-06",
-      "origin": "daily-digest",
-      "stars": null,
-      "notes": null,
+      "origin": "bookmark+daily-digest",
+      "stars": 1356,
+      "notes": "2026-11-16 书签补充：@openmys 发帖宣布 Poki 0.4.0 Beta（https://x.com/openmys/status/2121298524730167576），支持一定条件下的后台任务、不抢占前台焦点，前端完全重做（帖子自述）；星标 1356（2026-11-15 美西查询）。该帖评论区有作者自荐的同类项目 xphoneuse。",
       "analysis": {
         "depth": "full",
         "core_tech": "Swift 和 Objective-C 写的 iPhone 端应用（借助 UI Automation 开发者模式）、Rust 加 TS 写的 Mac 端本地 MCP 服务器和 Agent；需要手机上的 VPN 类 App 把 10.7.0.1 路由回手机；AGPL-3.0。",
@@ -3807,6 +4168,55 @@
         ],
         "comparison": "和 hermes-voice（语音交互 Agent）同涉语音，但 hermes-voice 面向与用户本人对话，Smitline 让 Agent 代表用户对外打电话和开会；库内此前没有电话/会议型 Agent 工具。",
         "researched_at": "2026-11-13"
+      }
+    },
+    {
+      "id": "xphoneuse",
+      "name": "XPhoneUse",
+      "summary": "把真实手机镜像到电脑并交给 Agent 操作：安卓和 iPhone 都支持，iPhone 无需 Xcode 和开发者账号，内置 MCP。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "rust",
+        "mcp",
+        "phone-use",
+        "ios",
+        "android",
+        "评论区发现"
+      ],
+      "source_url": "https://github.com/kindlejiang/xphoneuse",
+      "preview_url": "https://xphoneuse.com",
+      "post_url": "https://x.com/kindle_jiang/status/2121509502734471460",
+      "author": "kindlejiang",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "reply-on-popular-post",
+      "stars": 4,
+      "notes": "在 Poki 0.4.0 发布帖（@openmys，约 470 赞）评论区由作者自荐。星标 2026-11-15（美西）查询，很小众。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust workspace（xphoneuse-core、-ios、-cli、-copilot 等 crate）+ Web 前端（bun、shadcn）桌面应用，Windows/macOS/Linux 安装包；安卓走 scrcpy（ADB 上 H.264），iPhone 走 iOS 17+ 的 CoreDevice USB 隧道（RTP/H.264），AirPlay 兜底；WebCodecs 解码；应用内嵌 MCP 服务（127.0.0.1:7070/mcp）；MIT。",
+        "method": "「真机而非模拟器」：镜像画面 + 真实输入（点按、滑动、硬件键、非 ASCII 文本经剪贴板或 AgentInput 键盘），再通过 MCP、CLI 和技能把这些能力暴露给 Claude、Codex、WorkBuddy 等 Agent；iPhone 侧由应用自动打开开发者模式并安装开发者镜像。",
+        "features": [
+          "安卓 + iPhone 实时镜像与控制",
+          "截图、录屏、宏录制回放",
+          "双向文件管理、地图选点定位模拟",
+          "OCR 草拟回复（Copilot）",
+          "MCP、Python/Rust CLI、现成技能"
+        ],
+        "highlights": [
+          "iPhone 免 Xcode、免开发者账号、免 XCTest（自述）",
+          "全部本地，MCP 只监听回环地址",
+          "功能面比同类更全（定位模拟、文件、宏）"
+        ],
+        "limitations": [
+          "极早期，星标个位数，稳定性未知",
+          "iPhone 能力依赖 iOS 17+ 的私有隧道协议，系统更新可能失效",
+          "未查到安全护栏（如付款前确认）设计"
+        ],
+        "comparison": "与 poki（iPhone 端 UI Automation + Mac MCP）、pinky（Go 桌面应用、付款前停下确认）同走「电脑控制真机 + MCP」路线；xphoneuse 的差异是跨三种桌面系统、iPhone 免 Xcode，以及宏/定位/文件等工具更全，但成熟度远低于 pinky 和 poki。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -4124,6 +4534,54 @@
       }
     },
     {
+      "id": "agentrun",
+      "name": "AgentRun（Parcha）",
+      "summary": "Parcha 开源的 Agent 平台：在 Claude Code、Codex、OpenCode、pi 之上加自我学习、可恢复运行和统一控制台。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "自我改进",
+        "控制台",
+        "durable-execution",
+        "claude-code",
+        "codex"
+      ],
+      "source_url": "https://github.com/Parcha-ai/agentrun",
+      "preview_url": "https://agentrun.ai",
+      "post_url": "https://x.com/HeLi8866/status/2121680551547670533",
+      "author": "Parcha Labs",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 1145,
+      "notes": "星标 2026-11-15（美西）查询。书签原帖为中文转介帖，未附链接，仓库按帖中名称和描述检索确认。注意与阿里云 Serverless-Devs 的同名 AgentRun 不是同一项目。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "JavaScript/TypeScript 单仓（apps/console 等），npm 包 @parcha/agentrun，Node 24+；本机一条命令启动 server + runner（端口 7340，数据在 ~/.agentrun），可选 Docker 沙箱、Linux 桌面、安卓手机、浏览器作为执行环境；也有托管的 AgentRun Cloud。Apache-2.0。",
+        "method": "不换 harness，而是包在外面：每次运行结束后让 Agent 把可复用的经验沉淀为笔记、技能或无需循环的工作流，下次从那里开始（Learning 标签可见）；所有运行存在同一存储里，服务器中途被杀也能续跑；控制台统一做审批、花费上限和失败追踪。还支持「先让强模型学会，再交给便宜模型」的交接。",
+        "features": [
+          "接入已有的 Claude Code、Codex、OpenCode、pi 配置与登录",
+          "运行后自动学习：笔记、技能、工作流",
+          "可恢复的持久运行与多种执行环境（沙箱/桌面/手机/浏览器）",
+          "审批、花费上限、统一控制台",
+          "模板：KYB 尽调、代码审查等"
+        ],
+        "highlights": [
+          "把「Agent 反复重新摸索同一件事」当作成本问题来解决",
+          "案例数据：代码审查每次 0.18 美元、抓到真 bug 为 Greptile 的 1.6 倍；商户分类成本 0.89→0.12 美元（均为自报）",
+          "YC 公司出品，开源与托管两种用法"
+        ],
+        "limitations": [
+          "所有效果数字为项目方自报，样本小（代码审查 30 个 PR）",
+          "学习本身也消耗 token，收益依赖任务重复度",
+          "与同名项目（阿里云 AgentRun）易混淆"
+        ],
+        "comparison": "与 hf-agent-manager、t3-code 这类控制台相比，agentrun 的重点不是并排显示多个 CLI，而是「跨运行学习 + 可恢复执行」；与 dev-efficiency 里的 tokeneconomizer（省 token）目标相近，但走的是沉淀技能而非压缩上下文；与 agentes-chat 的预算/审批相比，更偏后台运行平台。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
       "id": "bot-teams",
       "name": "Bot Teams",
       "summary": "现成多机器人团队模板，一条提示词安装。",
@@ -4163,6 +4621,52 @@
         ],
         "comparison": "和 hypergrok-trading-desk（单个垂直团队）相比，bot-teams 是目录平台。和 grokbot-field-notes 的角色库相比，bot-teams 能一键安装。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "bowl",
+      "name": "Bowl（STARSRC）",
+      "summary": "面向 AI Agent 沙箱和开发环境的远程 POSIX 虚拟磁盘：FUSE 挂载，盘级零拷贝 Fork、Diff 和三路 Merge。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "go",
+        "文件系统",
+        "fuse",
+        "沙箱",
+        "早期"
+      ],
+      "source_url": "https://github.com/starsrc/Bowl",
+      "preview_url": null,
+      "post_url": "https://x.com/fanxing321/status/2121636086070079762",
+      "author": "STARSRC（@fanxing321）",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 52,
+      "notes": "星标 2026-11-15（美西）查询。作者帖称「还未发布 v1.0 可用版本」，README 标为 Pre-release，未发布首个可用 Release。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Go（1.26）；客户端基于 hanwen/go-fuse/v2 暴露标准挂载点，经 ConnectRPC HTTP/2（1 条元信息连接 + 8 条数据分片连接）访问存储服务；服务端全局元数据与血缘 DAG 存 PostgreSQL 18，单盘数据由 StoreActor 串行微批写入 Pebble KV 与 64 MiB 追加写 .pack 容器；Prometheus、OpenTelemetry。MIT。",
+        "method": "把「Linux 文件系统挂载」和「类 Git 的盘级分支」合到一起：基于不可变提交切面瞬间 fork 写时复制分支盘；用 PostgreSQL 持久化单调递增的 writer_epoch 和软租约实现单写者栅栏，防止脑裂；多节点可只读挂载；支持 diff --patch 和带策略的三路 merge。",
+        "features": [
+          "完整远程 POSIX 语义（rename2、fallocate、xattr、flock 等）",
+          "零拷贝 Fork、结构化 Diff、三路 Merge 与冲突预检",
+          "单写者 Epoch 栅栏 + 多读者只读挂载",
+          "全链路可观测，仓库附 drive9/JuiceFS 对比基准"
+        ],
+        "highlights": [
+          "设计文档完整，适用场景直接写明「Agent 改坏就丢弃分支盘，验证后 merge 回主盘」",
+          "仓库内有可复现的基准脚本和原始结果"
+        ],
+        "limitations": [
+          "尚未发布可用版本，协议、表结构、存储格式都可能不兼容变更，README 明确不建议生产使用",
+          "依赖 PostgreSQL 18 与 Linux FUSE，部署门槛高于单机方案",
+          "星标少，社区很早期"
+        ],
+        "comparison": "与 layerfs 目标相同（给多个 Agent 可分叉、可合并的工作区），layerfs 单机轻量、已有 DSH 集成和公开基准；bowl 走服务端集中存储、多节点只读分发，更像云原生沙箱底座但还没到可用版本。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -4362,6 +4866,55 @@
         ],
         "comparison": "与 agent-teams-ai（看板式自治团队，Agent 互发消息）和 herdr（只托管终端）不同，Dynamic Workflows 用一段可审阅的 Python 脚本定死控制流，更接近 omnigraph 的图式编排但内置在 IDE 里；需要可复现的批量审查/修复流水线选它，需要开放式协作选 agent-teams-ai 或 Antigravity 自己的 /swarm。",
         "researched_at": "2026-11-14"
+      }
+    },
+    {
+      "id": "layerfs",
+      "name": "LayerFS",
+      "summary": "给 AI 编程 Agent 用的 Rust 文件系统：每次工具调用挂载完整可写工作区，共享去重历史，可分支、回滚、合并。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "rust",
+        "文件系统",
+        "fuse",
+        "sqlite",
+        "并行agent",
+        "dsh"
+      ],
+      "source_url": "https://github.com/Ephemeral-AI-Lab/layerfs",
+      "preview_url": "https://layerfs.ai",
+      "post_url": "https://x.com/yifanxu_ephai/status/2121450568761975008",
+      "author": "Ephemeral AI Lab",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 2805,
+      "notes": "星标 2026-11-15（美西）查询。书签帖是作者分享一次 Rust SQLite 引擎任务报告（221 个 worktree，原始 11.4 GB 去重后 4.93 GB，自报）。目前通过 DeepSeek Harness 插件 dsh-layerfs 使用；2.0.0 在 layerfs_v2_0_0 分支开发。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust（Cargo workspace）+ FUSE；单个 SQLite 文件做 Store，保存所有 Branch、Commit 和按块去重的内容对象，无数据库服务；JS SDK 拆为 @layerfs/agent、@layerfs/backend、@layerfs/runtime；Linux 原生，macOS 经 DSH、Windows 经 WSL2。MIT。",
+        "method": "文件类工具调用直接在进程内写 Store；Bash 调用时在沙箱守护进程里挂载一个 Workspace（已提交根 + 自己的 overlay），执行后提交改动再卸载。Branch 是可写的提交线，发布到 main 形成 Layer；同文件冲突默认拒绝，可用 .lww 规则指定最新者胜；每一步都是可回退的检查点。",
+        "features": [
+          "每个 Agent/每次调用一个完整可写工作区，不复制基础树",
+          "自动检查点、分支、回滚、合并、发布",
+          "内容分块去重，追加写对象存储",
+          "大文件小改动只按改动计成本",
+          "与 DeepSeek Harness 集成，Work/History 面板实时看每个 Agent 的分支"
+        ],
+        "highlights": [
+          "公开基准齐全：fs-bench 比 Cloudflare 方案快 1.71 倍、157 个快照仅 100 MB（比 Btrfs+zstd 小 19.9 倍）、pjdfstest 0 意外失败（均为 1.0.0 自测）",
+          "把「多 Agent 并行改同一仓库」的隔离问题下沉到文件系统层",
+          "约 2.8 千星，迭代快"
+        ],
+        "limitations": [
+          "Store 只有 Disposable 配置，无断电/崩溃持久性，README 明确不应作为唯一数据副本",
+          "顺序写、顺序读、随机写慢于 libfuse 直通（0.31×/0.81×/0.40×，自测）",
+          "目前主要通过 DSH 插件使用，1.1.0 对 1.0.0 有破坏性 API 变更"
+        ],
+        "comparison": "与 bowl 同为「给 Agent 沙箱用的可分叉文件系统」：layerfs 是单 SQLite Store + 本地 FUSE，偏单机多 Agent；bowl 是 PostgreSQL + Pebble 的远程虚拟磁盘，偏云原生多节点。与 omnigraph（给共享记忆做 Git 式分支）互补：一个管文件，一个管知识；也是 crommacode 等「worktree 蜂群」的底层替代方案。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -5517,6 +6070,54 @@
         ],
         "comparison": "和 science-s-last-exam、vybbench、rsi-inference-bench 同属评测，但本项目测的是 harness 而不是模型或推理引擎。和 agav、dsh-superagent-prototype 等具体 harness 形成对照：那些是被测对象，本项目是裁判。库内没有第二个同等规模的多 harness 对照基准。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "gemini-4-hydrogen",
+      "name": "Gemini 4 Hydrogen",
+      "summary": "Google 2026-11-12 发布的 Gemini 4 快速档模型，面向日常编程和 Agent 工作流，1M 上下文，取代 Flash 系列。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "模型",
+        "google",
+        "gemini",
+        "agent",
+        "api"
+      ],
+      "source_url": null,
+      "preview_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "post_url": "https://x.com/GoogleAI/status/2120940683233984862",
+      "author": "Google DeepMind",
+      "models": [
+        "Gemini 4 Hydrogen"
+      ],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "资料来自 Google 博客、AI Studio 文档与 DeepMind 模型卡（2026-11-15 检索）；VentureBeat 引用 Artificial Analysis 独立测试（Intelligence Index 51）。闭源，无权重。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "闭源模型，模型 ID gemini-4-hydrogen；统一 1M token 上下文、最长 1M 输出；四档思考强度（low/medium/high 默认/xhigh）；在 AI Studio、Gemini API、Gemini 应用、搜索和 Antigravity 中提供。架构与参数量未查到。",
+        "method": "定位为 Carbon/Argon 之下的快速执行模型：强调并行批量读文件和搜索、出错后能调整、减少编造；与更强模型组成多模型工作流。",
+        "features": [
+          "编程：仓库内调试、修 bug、代码问答",
+          "开放式 Agent 任务：研究、数据分析",
+          "多模态知识工作",
+          "免费档可用；付费 1.5/7.5 美元每百万输入/输出 token，缓存输入 0.075"
+        ],
+        "highlights": [
+          "Terminal-Bench 4.1 57%（3.8 Flash 为 18.2%）、HLE-Diamond 58.8%、完成任务速度 2.5 倍（Google 自报）",
+          "Artificial Analysis Intelligence Index 51，高于 Argon 的 50（第三方）",
+          "全上下文统一价格"
+        ],
+        "limitations": [
+          "价格是 3.8 Flash 推介价的 2 倍，单任务成本高于同档 Haiku 5.5 等（据 VentureBeat 表）",
+          "Terminal-Bench 仍低于 Claude Sonnet 5.5 的 63.9%（Google 自己的表）",
+          "多数基准为厂商自报"
+        ],
+        "comparison": "与库内 antigravity-dynamic-workflows 直接相关（其工作流可选用 Hydrogen）；与 mistral-large-4、longcat-2-5 等模型条目一样只能做 light；qingming-3d 里有 Hydrogen 生成大场景的对照样本可参考。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -7965,6 +8566,49 @@
       }
     },
     {
+      "id": "dessn",
+      "name": "Dessn",
+      "summary": "把生产代码库变成协作设计画布：自研 Rust 版 HTML 渲染器跑在浏览器 WebGPU 里，可在画布上直接操作真实应用。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "设计工具",
+        "webgpu",
+        "rust",
+        "商业产品",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://dessn.ai",
+      "post_url": "https://x.com/eminimnim/status/2121249063576228036",
+      "author": "Dessn（@eminimnim 联合创始人）",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "帖子称 WebGPU 画布以 120 fps 渲染约 7000 个真实 HTML/CSS 页面、200 万以上元素，并与 Chrome 渲染器「完全一致」（均为自述，未验证）。闭源。评论区有人发布开源实现 gpucanvas。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "闭源；帖子称用 Rust 写了一个支持全部 CSS 属性的 HTML 渲染器，运行在浏览器内的 WebGPU 画布上，并有自研打包器把代码库拆成适配画布的 HTML/CSS/JS（自述）。",
+        "method": "「在生产代码上做设计」：把真实组件放到无限画布上，每一帧都是可点击的完整应用，在画布上探索、原型，再产出可合并的代码。",
+        "features": [
+          "生产代码库转协作设计画布",
+          "真实组件原型与交互",
+          "产出可合并的代码（官网说法）"
+        ],
+        "highlights": [
+          "把设计稿和真实代码合一，避免设计与实现脱节",
+          "性能数字亮眼（自述）"
+        ],
+        "limitations": [
+          "闭源，渲染一致性与性能均为自述",
+          "定价与可用性未查到"
+        ],
+        "comparison": "与评论区发现的开源项目 gpucanvas 思路相近（WebGPU 画布承载真实 DOM），gpucanvas 是开源库、借 Chrome HTML-in-Canvas 能力；Dessn 自研完整渲染管线并做成设计产品。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
       "id": "duodesk",
       "name": "DuoDesk",
       "summary": "跨 Windows/Mac 共享键鼠剪贴板与拖文件的开源桌面工具。",
@@ -8047,6 +8691,53 @@
         ],
         "comparison": "库内唯一的机器人硬件项目。和 threepp（C++ 3D 库，可用于机器人可视化）只有间接关联。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "gpui-kit",
+      "name": "GPUI Kit",
+      "summary": "长桥开源的 Rust 桌面应用框架，基于 Zed 的 GPUI，提供 75+ 组件、WASM、无障碍和 UI 集成测试。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "rust",
+        "gui",
+        "桌面应用",
+        "组件库"
+      ],
+      "source_url": "https://github.com/longbridge/gpui-kit",
+      "preview_url": "https://gpui-kit.com",
+      "post_url": "https://x.com/5422m4n/status/2121747218243666121",
+      "author": "Longbridge",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 20777,
+      "notes": "星标 2026-11-15（美西）查询。书签是一条回复帖（作者 @5422m4n 推荐），非项目方原帖。许可证 GitHub 标为 NOASSERTION，仓库含 LICENSE-APACHE。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust；构建在 Zed 编辑器的 GPUI（GPU 加速即时/保留混合 UI 框架）之上。分三层 crate：gpui-base（无样式行为与状态）、gpui-component（完整样式组件系统）、gpui-kit（统一依赖并锁定匹配的 GPUI 版本）；可选 gpui-shell 加载 JavaScript 扩展；AccessKit 无障碍；支持 wasm32-unknown-unknown。许可证见仓库 LICENSE-APACHE（GitHub 标 NOASSERTION）。",
+        "method": "把长桥证券桌面端 Longbridge Pro 内部沉淀的组件抽成开源框架：行为和视觉分层，应用只依赖一个 crate；用无头窗口驱动真实组件做 UI 集成测试；仓库自带 AGENTS.md、CLAUDE.md 和 examples/ai_recipes 给 AI 辅助开发做验收清单。",
+        "features": [
+          "75+ 组件与原语：表单、导航、浮层、数据展示、编辑、布局",
+          "虚拟滚动数据表、变高虚拟列表、Dock 布局",
+          "20 万行级代码编辑器（Tree-sitter + LSP）、Markdown/HTML 渲染、图表",
+          "WebAssembly 运行与 AccessKit 无障碍",
+          "gpui-shell 让 Rust 宿主以脚本加载面板，能力需显式授权"
+        ],
+        "highlights": [
+          "约 2.1 万星，来自真实商业桌面应用（README 自述从第一天用于 Longbridge Pro）",
+          "少见的「Rust 原生 + GPU 渲染 + 完整组件生态」组合，120 FPS 为自报",
+          "对 AI 编码友好：附 Agent 规则与验收配方"
+        ],
+        "limitations": [
+          "依赖 GPUI，GPUI 本身仍在演进，升级可能有破坏性变化",
+          "性能数字（120 FPS、20 万行编辑器稳定）为自报",
+          "偏桌面工具类应用，不是游戏 UI 方案"
+        ],
+        "comparison": "库内没有同类 Rust 桌面 UI 框架。与闭源的 crommacode（自述也用 Rust + GPUI）同一技术底座，可作为其开源参照；与 islandcn、mdxcn 这类 React/shadcn 组件不同，GPUI Kit 面向原生桌面而非 Web。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -8329,6 +9020,53 @@
         ],
         "comparison": "库内没有同类工具。属于用户脚本工具，和 Agent、LLM 无关。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "mole",
+      "name": "Mole",
+      "summary": "Tw93 的开源 Mac/PC 清理工具：一条 mo 命令完成深度清理、卸载残留、磁盘分析、系统维护和实时监控。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "cli",
+        "macos",
+        "windows",
+        "系统清理"
+      ],
+      "source_url": "https://github.com/tw93/Mole",
+      "preview_url": "https://mole.fit",
+      "post_url": "https://x.com/HiTw93/status/2121521233221275758",
+      "author": "Tw93",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 75192,
+      "notes": "星标 2026-11-15（美西）查询。书签帖为作者介绍近期 Mac/Windows/Linux 更新，重点是对 AI 工具缓存的清理和安全保护。仓库是免费 CLI；Mole for Mac/Windows 原生应用为单独下载。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "主体为 Shell（另有 Go 组件，含 golangci 配置），Homebrew 或脚本安装，macOS 12+，Windows、Linux 在独立分支；同时提供 Claude/Cursor/DSH/Gemini CLI 的技能与插件清单；GPL-3.0。",
+        "method": "把 CleanMyMac、AppCleaner、DaisyDisk、iStat Menus 四类工作流合进一个终端命令：按已知路径规则清理缓存/日志/孤儿数据，卸载时连同 LaunchAgents 和偏好一起删除，用交互式 TUI 做磁盘分析，并提供系统维护与实时监控。",
+        "features": [
+          "深度清理缓存、日志、残留与 AI 工具缓存",
+          "智能卸载应用及其残留",
+          "交互式磁盘分析，找大文件",
+          "刷新 DNS、QuickLook 等系统维护",
+          "CPU/内存/磁盘/网络实时监控"
+        ],
+        "highlights": [
+          "约 7.5 万星，更新频繁",
+          "多语言文档和安全审计说明（SECURITY_AUDIT.md）",
+          "可被编程 Agent 作为技能调用"
+        ],
+        "limitations": [
+          "清理类工具有误删风险，原生应用才有删除前审阅",
+          "GPL-3.0 许可，二次分发有传染性要求",
+          "与 AI/游戏开发无直接关系，属效率工具"
+        ],
+        "comparison": "库内 other 类效率工具（duodesk、quairone、harper 等）都不是系统清理类，没有直接同类；与 dev-efficiency 无关。",
+        "researched_at": "2026-11-16"
       }
     },
     {
@@ -8690,6 +9428,48 @@
       }
     },
     {
+      "id": "watched-earth",
+      "name": "Watched",
+      "summary": "输入地球上任意地点，查看本周有哪些卫星经过它，以及它们真实拍到的公开影像。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "卫星",
+        "可视化",
+        "网页工具",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://www.watched.earth",
+      "post_url": "https://x.com/kano955/status/2120955254707794143",
+      "author": "Armaan Gupta（据评论区 @grok 回复）",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "帖子约 1.27 万赞、1.84 万收藏（2026-11-15 查询）。作者姓名来自评论区 @grok 的回复，未在站点核实；@grok 回复称影像来自 Sentinel、Landsat 等公开源。未找到源码。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "网页应用（旧域名 overflight-psi.vercel.app，部署在 Vercel）；据评论区说法轨道计算在浏览器内完成；具体框架、数据源接口未查到。",
+        "method": "根据卫星轨道根数推算过去 7 天经过指定地点的卫星，再匹配这些卫星拍摄的公开影像展示给用户。",
+        "features": [
+          "任意地点查询过境卫星",
+          "展示对应的真实公开影像",
+          "分享与深链接"
+        ],
+        "highlights": [
+          "选题强（「本周有什么在看着你」），传播性极好",
+          "免费、无需注册"
+        ],
+        "limitations": [
+          "无源码，数据源与准确性未核实",
+          "与 AI/游戏开发无直接关系"
+        ],
+        "comparison": "评论区发现的 azmth 是同主题的实时卫星 3D 地球；watched 侧重「某地被拍到了什么」，azmth 侧重「此刻卫星在哪」。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
       "id": "wedulab",
       "name": "WeduLab",
       "summary": "六大学科交互式虚拟实验室（站点产品）。",
@@ -8917,6 +9697,48 @@
       }
     },
     {
+      "id": "azmth",
+      "name": "azmth",
+      "summary": "免费的实时卫星 3D 地球：显示 1.68 万+ 颗在轨卫星，看星链列车、空间站和今晚从头顶经过的卫星。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "卫星",
+        "3d",
+        "可视化",
+        "评论区发现",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://azmth.space",
+      "post_url": "https://x.com/samuel_nbr/status/2121253647929745756",
+      "author": "@samuel_nbr",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "reply-on-popular-post",
+      "stars": null,
+      "notes": "在 watched.earth 热门帖（@kano955，约 1.27 万赞）评论区发现，回复本身互动很少；回复者是否为作者未核实。页面 2026-11-15 访问正常。未找到源码。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "网页 3D 地球（具体引擎未查到）；卫星数据源未查到。",
+        "method": "按轨道数据实时推算并在 3D 地球上绘制全部在轨卫星，并计算用户所在地的过境。",
+        "features": [
+          "16,800+ 颗卫星实时位置（站点自述）",
+          "星链列车、ISS、天宫等",
+          "本地过境预报"
+        ],
+        "highlights": [
+          "免注册、即开即用"
+        ],
+        "limitations": [
+          "无源码，数据准确性未核实",
+          "与 AI/游戏开发无直接关系"
+        ],
+        "comparison": "与 watched-earth 同主题：azmth 看「卫星现在在哪」，watched 看「某地被拍到了什么」。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
       "id": "cn-math-taxonomy",
       "name": "cn-math-taxonomy",
       "summary": "中小学知识图谱与题库站点，覆盖多学科知识点与先修关系。",
@@ -8956,6 +9778,142 @@
         ],
         "comparison": "和 wrong-notebook（错题管理和举一反三）互补：本项目提供知识结构和诊断，错题本负责练习闭环。和 teachable-figures、wedulab 相比，本项目偏数据层，不做可视化。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "gpucanvas",
+      "name": "gpucanvas",
+      "summary": "开源 WebGPU 无限画布：把数千个真实 DOM/React 节点交给 GPU 绘制，可编辑、跑着色器特效，并给 AI Agent 提供可读视图。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "webgpu",
+        "react",
+        "无限画布",
+        "设计工具",
+        "评论区发现"
+      ],
+      "source_url": "https://github.com/berkantay/gpucanvas",
+      "preview_url": "https://berkantay.github.io/gpucanvas/",
+      "post_url": "https://x.com/berkant_thedev/status/2121267896324325447",
+      "author": "Berkant Ay",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "reply-on-popular-post",
+      "stars": 482,
+      "notes": "在 Dessn 热门帖（@eminimnim，约 3.2k 赞）评论区发现，该回复约 306 赞、425 收藏。星标 2026-11-15（美西）查询，2026-11-12 创建。演示需 Chrome 157+。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript + React，WebGPU 一次实例化绘制所有节点，WGSL 着色器；依赖 Chrome 的 HTML-in-Canvas 能力；Bun 构建，demo 用 Vite；MIT。",
+        "method": "平移缩放完全不碰 DOM，GPU 只画节点纹理，点击和输入仍转发到真实元素；编辑器支持逐层选中到任意元素或 React 组件；Agent 视图把画布内容导出为带 id 的精简 JSON 树和区域截图，让 Agent 能「读」和「指」。",
+        "features": [
+          "5000 个实时 React 屏幕的无限画布（演示）",
+          "选择、移动、缩放、对齐参考线",
+          "WGSL 特效：玻璃透镜、冰霜、冲击波、故障、VHS",
+          "节点快照、像素 diff、历史胶片条",
+          "Agent 光标、箭头、评论钉、实时光标"
+        ],
+        "highlights": [
+          "开源且有 DOM 对照基准演示，可现场测帧率",
+          "专门为 AI Agent 设计读取与标注接口"
+        ],
+        "limitations": [
+          "依赖 Chrome 157+ 的新 API，跨浏览器不可用",
+          "很新（2026-11-12 创建），API 不稳定",
+          "性能对比为作者录制演示"
+        ],
+        "comparison": "与 dessn（闭源、自研 Rust HTML 渲染器）同题；gpucanvas 借浏览器原生能力、开源可嵌入，dessn 完整自研并做成产品。与 plannotator 的批注面板相比，gpucanvas 是更底层的画布库。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
+      "id": "islandcn",
+      "name": "islandcn",
+      "summary": "开源的 React 版「灵动岛」组件，用 shadcn 安装，上传、计时、来电、打车、音乐等活动收进顶部动画胶囊。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "react",
+        "shadcn",
+        "ui组件",
+        "动效"
+      ],
+      "source_url": "https://github.com/opencoredev/islandcn",
+      "preview_url": "https://islandcn.dev",
+      "post_url": "https://x.com/leodev/status/2121226904418304404",
+      "author": "Leo（opencoredev）",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 734,
+      "notes": "星标 2026-11-15（美西）查询，2026-11-13 创建。作者称花了数千美元 AI 推理（自述）。仿 Apple 外观与动效，但不含 Apple 资产，与 Apple 无关。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Next.js + React + TypeScript，shadcn registry 分发（island-core 引擎 + 各预设各一个文件）；提供 llms.txt 与 .well-known/agent-skills，附可选 islandcn-skill 给编程 Agent 安装；MIT。",
+        "method": "引擎负责活动栈和四种呈现（idle、compact、split、expanded）；弹簧动画参数按真机灵动岛逐帧录像拟合；业务方用 useIsland().start/update/end 驱动活动，预设只是在引擎上的一个文件。",
+        "features": [
+          "上传、计时、正在播放、来电、ETA、录音、近场传输、电量等预设",
+          "长按、提醒、减少动效支持",
+          "Playground 可视化调参并复制安装命令与代码",
+          "/lab 播放所有过渡"
+        ],
+        "highlights": [
+          "把系统级交互做成 Web 组件，且有 Agent 安装技能",
+          "动效拟合真机录像，细节考究"
+        ],
+        "limitations": [
+          "拟合用的录像不在仓库，/compare 对比页和相关测试无法运行（README 自述）",
+          "仅 React；新项目，API 可能变动",
+          "仿 Apple 设计，商业使用需注意商标问题"
+        ],
+        "comparison": "与 mdxcn 同为 shadcn 生态的组件，mdxcn 做文档内容块，islandcn 做应用内状态提示；与 tokay（iOS 原生灵动岛显示 Agent 进度）功能形态相近，但 islandcn 是 Web 组件库。",
+        "researched_at": "2026-11-16"
+      }
+    },
+    {
+      "id": "mdxcn",
+      "name": "mdxcn",
+      "summary": "shadcn-labs 的开源 MDX 组件集：提示框、步骤、终端、字符图表、时间线，用 shadcn CLI 复制源码。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "mdx",
+        "shadcn",
+        "文档",
+        "组件库"
+      ],
+      "source_url": "https://github.com/shadcn-labs/mdxcn",
+      "preview_url": "https://mdxcn.dev",
+      "post_url": "https://x.com/ianneo_ai/status/2121581704603418835",
+      "author": "shadcn-labs",
+      "models": [],
+      "first_seen": "2026-11-15",
+      "origin": "bookmark",
+      "stars": 609,
+      "notes": "星标 2026-11-15（美西）查询。书签帖推荐给写 README 和产品文档的人。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Next.js + React + TypeScript；shadcn registry 格式分发；支持 MDX、Comark 块和 Knap 过滤器，并提供官方 ASCII 围栏写法用于 README 和 PR；站点附 llms.txt、skill.md、openapi.json；MIT。",
+        "method": "用字形（glyph）而不是 SVG/canvas 画图表和示意图，让同一份内容既能在 MDX 里渲染，也能以纯文本 ASCII 出现在 README 与 PR；组件内可直接写 Markdown 列表、表格和强调。",
+        "features": [
+          "提示框、步骤、终端、图表、时间线等组件",
+          "文档内实时预览",
+          "圆角、字形、配色、强调色可配",
+          "给 Agent 的 skill.md 与 llms.txt"
+        ],
+        "highlights": [
+          "「文本即图形」，在纯 Markdown 环境也能降级显示",
+          "与 shadcn/ui 工作流一致，复制源码即用"
+        ],
+        "limitations": [
+          "只面向 React/MDX 站点（社区有 Vue 移植，非官方）",
+          "字符图表表达力有限，不适合复杂数据可视化"
+        ],
+        "comparison": "与 islandcn 同属 shadcn 生态组件；与 llm-tools 里的 lieflat-diagrams、stack-diagram（AI 出图技能）相比，mdxcn 是人写文档时用的组件，不负责生成。",
+        "researched_at": "2026-11-16"
       }
     },
     {

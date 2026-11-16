@@ -2,7 +2,7 @@
 
 按子类对库内项目做横向对比，比较技术路线、核心能力、成熟度、开源情况和适用场景。每个项目的详细分析见 `projects.json` 里的 `analysis` 字段。
 
-- 更新：2026-11-15（Asia/Shanghai）；2026-11-15 新条目的星标在 2026-11-14（美西时间）查询；2026-11-14 新条目的星标在 2026-11-13（美西时间）查询；既有条目的星标多在 2026-11-09 至 11-10 查询，本批新条目的星标在 2026-11-12 查询，数字会变化
+- 更新：2026-11-16（Asia/Shanghai）；2026-11-16 每周书签新条目的星标在 2026-11-15（美西时间）查询；2026-11-15 新条目的星标在 2026-11-14（美西时间）查询；2026-11-14 新条目的星标在 2026-11-13（美西时间）查询；既有条目的星标多在 2026-11-09 至 11-10 查询，本批新条目的星标在 2026-11-12 查询，数字会变化
 - 「自报」表示数字来自项目方的 README 或博客，未经独立验证；light 表示只有页面或帖子，没有可查的源码
 - 各类项目数量不在本文写死，以 `projects.json` 的 `projects` 数组为准（「项目库」Page 会实时计算）
 
@@ -54,6 +54,13 @@
 | qingming-3d | three.js r128 单页，同提示词交给 8 个前沿模型各自一轮生成 | 3D《清明上河图》长卷加 token/用时/规模对照表 | 新建，0 星；规模多为模型自报 | 未声明代码许可 | 对比前沿模型程序化大场景能力 |
 | idol | 单图条件 DiT + 八叉树/Gaussian 解码器，DINOv3 与 FLUX.2 VAE 编码 | 一张图出最多约 105 万 Gaussian 的 3DGS .ply，7.2GB 显存 | ★1.1k（SDK），HF 2.3k 赞；基准自测 | Apache-2.0 | 照片/概念图转 3D 资产（评论区发现） |
 | port-of-halvard | 无构建 three.js r169 网页，canvas 纹理 + 手写 GLSL 水面/天空，Opus 5.5 规划、Fable 5.2 实现 | 写实集装箱港口：船、岸桥装卸、约 7500 个实例化集装箱、镜面水面 | 新建，1 星；「30 分钟」为自报 | MIT | 研究前沿模型纯代码程序化大场景 |
+| inkline-town | TypeScript + PixiJS 3D（WebGPU）+ 自研 Ritmo ECS | 墨线风等距城镇经营，产业链与运输模拟，任期制 | ★94，可在线玩 | 未声明许可（源码可读） | 风格化模拟经营参考 |
+| crimson-loong | 单 HTML，three.js r180 内联，SDF 建模、光线步进云、Worker 合成音频 | 90 秒双龙动画短片，零资产 | ★192 | 未声明（three.js MIT） | 纯代码程序化美术与叙事 |
+| painted-valley | three.js WebGL2 + Rapier，少量 CC0 人物/动画，Kuwahara 收笔 | 吉卜力风可漫游山谷，手绘背景 + 赛璐璐人物 | Patch 上开源，可 remix | 代码 MIT、美术 CC0 | 风格化（日漫/手绘）游戏起点 |
+| room-at-dawn | three.js + three-mesh-bvh CPU 路径追踪烘焙到顶点 + 离线 HDR 电影渲染 | 写实清晨卧室，可行走，4K HDR 短片 | ★84 | MIT | 浏览器写实光照与程序化室内 |
+| waldo-stripes-soft | Vercel 托管网页 3D（引擎未查到） | 1 万+ 动画小人的找 Waldo 小镇 | light，无源码 | 未查到 | 大规模人群演示 |
+| dreamwaze | three.js 网页（作者自述） | 梦境风 3D 迷宫漫游、计时 | light，评论区发现 | 未查到 | 轻量 3D 小游戏 |
+| resoundle | 闭源 Web 服务（模型未查到） | 一种风格生成整套游戏 UI 音效 | light，评论区发现 | 闭源 | 游戏 UI 音效统一风格 |
 
 ### 分析
 
@@ -70,6 +77,8 @@
 结论 3：成品类项目仍有不少只是「能玩的演示」（dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation，以及评论里出现的 a-little-earth、our-3d-reality、fable-contra、sapper-minesweeper），只能做 light 分析。其中 three-voxel-destruction 是例外：它有 MIT 源码和自研 GPU 求解器，不是一次性提示词小品。可复用的方法件仍是 pixelfx、guizang-game-skill 和与模型无关的 LDtk。可复用价值仍然更多在方法和工具，而不在某一款展示游戏。
 
 2026-11-16 补入 port-of-halvard：Fable 5.2 纯代码写实港口，有 MIT 源码和 PROMPT.md 制作记录，归入「可读源码的程序化场景」样本，与只有托管页的 Fable 演示形成对照。
+
+2026-11-16 每周书签补入：painted-valley、inkline-town 代表「统一风格化渲染」路线（手绘背景 + 赛璐璐人物、墨线等距），说明画面观感更多来自统一的着色规则而非堆细节，对 rpg-core 的高清风格化目标参考价值最高；crimson-loong 与 room-at-dawn 都是可读源码的纯代码场景，前者风格化实时、后者写实离线烘焙，与 port-of-halvard 一起组成「程序化场景」的三种取向；waldo-stripes-soft、dreamwaze 只有托管页，仅 light。评论区发现的 resoundle 是库内第一个游戏音频生成工具，补上资产流水线里的声音一环。
 
 ## 研发效率
 
@@ -118,6 +127,7 @@
 | open-code-review | Go CLI，确定性流水线（选文件、打包、规则匹配、定位与反思）+ 工具型 LLM Agent | PR 行级结构化审查、全仓扫描、委托宿主 Agent 审查 | ★5.1 万，阿里内部两年生产验证；基准自报 | Apache-2.0 | 进 CI 的 AI 代码审查 |
 | modern-web-guidance | TS CLI + 技能/插件，按需检索 250 个 Web 特性指南，Baseline 兼容数据 | 让 Agent 用现代 Web API 替代旧写法，legacy-scan 扫描 | ★6k（源码仓），四大浏览器厂商维护；评测提升自报 | Apache-2.0 | 前端开发 Agent |
 | stack-diagram | Agent 技能：Python 脚本抓官方图标、模板生成单文件 HTML、Playwright 渲染自查 | 一句话出带官方 Logo 的云架构风格图（HTML/PNG/TSX） | ★2.5k，2026-11 创建 | MIT | 文档和方案里的技术栈图 |
+| refactoring-ui-skill | Agent 技能（SKILL.md + 14 个按需引用）+ 零依赖 Python 脚本 + eval 用例 | 151 条 UI 设计规则约束与页面走查，带规则号和严重度 | ★468 | 未声明（NOASSERTION） | 让编码 Agent 自查 Web UI 设计 |
 
 ### 分析
 
@@ -131,6 +141,8 @@
 
 2026-11-15 补入的审查与知识类工具：open-code-review（阿里，5.1 万星）用「确定性流水线 + Agent」解决漏文件和行号漂移，是库内第一个可直接进 CI 的成熟 PR 审查 CLI，改变了审查/审计层「多为早期小项目」的格局；modern-web-guidance 由四大浏览器厂商维护，并带有「有无技能」对照评测，是领域知识型技能里证据最充分的；stack-diagram 与 archify 同属架构可视化，但更轻、更偏出图。
 
+2026-11-16 补入 refactoring-ui-skill：和 modern-web-guidance 一样属于「领域知识技能」，但管的是视觉设计而不是 API 写法；它只做约束和诊断，不负责生成，正好可以串在 UI 生成工具之后做验收。
+
 ## Phone/Computer Use
 
 范围：agent-eng/phone-computer-use
@@ -140,7 +152,7 @@
 | mika | 安卓无障碍服务加隐藏虚拟屏，在手机本机运行 | 操作任意 App，不需要 Root 或电脑 | ★7.9k | Apache-2.0 | 个人安卓自动化 |
 | phongent | Mika 的分支，加 iOS 主控和局域网群控 | 多台手机分派任务 | ★356 | Apache-2.0 | 手机群控和批量操作 |
 | pinky | Go 桌面应用（GPU 自绘），go-ios 加安卓 helper，MCP | 任意 Agent 操控 iPhone 或安卓，付款前停下等人确认，带录屏 | ★1.5k | Apache-2.0 | 需要安全护栏的 Phone Use |
-| poki | iPhone 端 UI Automation 加 Mac 端 MCP | 在 Mac 上让 Agent 操作真实 iPhone | ★806 | AGPL-3.0 | iOS 自动化 |
+| poki | iPhone 端 UI Automation 加 Mac 端 MCP | 在 Mac 上让 Agent 操作真实 iPhone，0.4.0 起支持后台任务 | ★1.4k（2026-11-15） | AGPL-3.0 | iOS 自动化 |
 | opencode-browse | Chromium 扩展加 MCP，用 Playwright | 接管已登录的标签页，登录和付款交还给人 | ★427 | MIT | 在真实浏览器会话里跑 Agent |
 | pointer | Chrome 扩展加本地 bridge，MCP 和 hook | 点选元素，把结构、样式和截图交给 Agent | ★1，刚发布 | MIT | 前端改 UI 时精确指代 |
 | redraft | Chrome 扩展加本地 Claude Code bridge | 多 Agent 现场改网页版式 | ★5 | MIT | 网页设计探索 |
@@ -152,6 +164,7 @@
 | moli | Rust 自研无头浏览器（V8），CDP/WebDriver 三协议 | 低内存网页抓取、语义树导出和自动化 | ★23.5k；自报成功率 80.7% | Apache-2.0/MIT | Agent 批量抓取和浏览器自动化后端 |
 | smitline | 自托管 MCP 服务，OpenAI 实时语音加 Twilio/SignalWire | 代用户打电话、进 Zoom/Teams/Meet 开会并回报 | ★109，较新 | Apache-2.0 | 预约、询价、代参会做记录 |
 | tencent-browserskill | Rust bsk CLI/守护进程 + MV3 扩展，WebSocket 加 CDP，独立可见 Agent Window | 在已登录的 Chrome/Edge 里读写页面、导出表格、网站调试，人可随时接管 | ★10.4k | MIT | 任意 Shell 型 Agent 处理需要登录态的网页任务 |
+| xphoneuse | Rust 桌面应用：安卓 scrcpy、iPhone CoreDevice 隧道，内嵌 MCP | 免 Xcode 操控 iPhone/安卓，宏、定位模拟、文件管理 | ★4，评论区发现 | MIT | 跨 Windows/macOS/Linux 的真机 Phone Use |
 
 ### 分析
 
@@ -162,6 +175,8 @@
 结论 2：浏览器方向的共识是「复用用户已登录的真实会话」，同时把登录、付款这类敏感步骤交还给人（opencode-browse）。tencent-browserskill（腾讯，1 万星）把这条路做得最完整：独立可见 Agent 窗口、共享控制、本地配对认证，并与具体 Agent 解耦。pointer、redraft 这类小工具解决的是指代精度和可视化编辑，属于前端开发的辅助，不是通用浏览器 Agent。
 
 结论 3：隔离和上下文成本是 Computer Use 的两大短板，库里已有针对性的工具：windows-terminal 用 QEMU 做隔离，image-context-manager 压缩截图。这两个都很早期（个位数星标），但方向值得跟进。
+
+2026-11-16：poki 发布 0.4.0 Beta（后台任务、不抢前台），星标升到约 1.4 千；其发布帖评论区由作者自荐的 xphoneuse 走同一条「电脑控制真机 + MCP」路线，三系统通用、iPhone 免 Xcode 且工具更全，但极早期，安全护栏未见说明，选型上仍是 pinky（护栏）和 poki（iOS 成熟度）优先。
 
 ## Agent 军团管理
 
@@ -193,6 +208,9 @@
 | clawd-on-desk | Electron 桌宠 + 各 Agent hooks + 手机 PWA | 20 多种编程 Agent 状态可视化，权限气泡审批，Telegram/飞书远程批 | ★6.7k | AGPL-3.0（美术另有版权） | 桌面常驻看「谁在等我」 |
 | shoal | Node 24 + node-pty/ConPTY 服务端，Vite 前端，Tauri 2 外壳 | Windows 上并排跑 Claude Code/Codex/agy，待验收卡片，换 Agent 交接卡 | ★14，v0.1.10 | MIT | Windows 单机多 CLI 工作台 |
 | hf-agent-manager | 私有 HF Docker Space + /data 存储桶，终端与对话阅读器双视图 | 云端并排运行多种 CLI，会话互相通信，跨设备续看 | ★73 | Apache-2.0 | 云端常驻、多设备照看编程 Agent（评论区发现） |
+| agentrun | JS/TS 单仓，npm 一键起 server + runner，包住 Claude Code/Codex/OpenCode/pi | 跨运行自我学习（笔记/技能/工作流）、可恢复执行、审批与花费上限 | ★1.1k；案例数字自报 | Apache-2.0 | 重复性 Agent 任务降本、后台持久运行 |
+| layerfs | Rust + FUSE，单 SQLite Store，分块去重，Branch/Commit/Layer | 每次工具调用一个完整可写工作区，自动检查点、分支、合并 | ★2.8k，v1.1.0；基准自测 | MIT | 多 Agent 并行改同一仓库的隔离与回滚 |
+| bowl | Go + go-fuse，PostgreSQL 18 元数据 + Pebble/.pack 存储，ConnectRPC | 远程 POSIX 虚拟磁盘，零拷贝 Fork/Diff/三路 Merge，单写者栅栏 | ★52，未发布可用版本 | MIT | 云原生 Agent 沙箱工作区（研究阶段） |
 
 ### 分析
 
@@ -207,6 +225,8 @@
 2026-11-15 补入：plannotator（1.1 万星）不管调度，只管「人审阅 Agent 产出并把批注回传」，并用 Inbox 汇总多 Agent 待决事项，是控制台方向之外的审阅层；评论区发现的 tokay 把 Rex 上的 Agent 状态搬到 iPhone 通知与灵动岛，与 t3-code 的移动端遥控同方向但更原生、更窄。由此「人在回路」的入口正在从终端扩展到浏览器批注和手机通知。
 
 2026-11-16 补入四项：agentes-chat 把通用 Bot 平台推进到「团队聊天里的 AI 同事」，预算和审批做成一等公民；clawd-on-desk（6.7k 星）与 tokay、herdr 一起说明「谁在等我」的提醒层正分化到桌面、手机和终端；shoal 是 Windows 专用的多 CLI 工作台，加入待验收与交接卡；评论区发现的 hf-agent-manager 把控制台搬到私有 HF Space，补上云端常驻这一形态。
+
+2026-11-16 每周书签补入三项，都落在结论 3「共享状态和协调」上：layerfs 与 bowl 把多 Agent 隔离下沉到文件系统层（前者单机 SQLite、已有 DSH 集成和公开基准；后者服务端集中存储、多节点，但尚未可用），与 omnigraph（共享记忆的分支合并）构成「文件 + 知识」两层底座；agentrun 则在 harness 外层做跨运行学习和可恢复执行，把「Agent 反复摸索同一件事」当成本问题解决，案例数字为自报。
 
 ## 大模型工具
 
@@ -275,6 +295,7 @@
 | hyperframes | TS/Bun 框架，可寻址动画的 HTML 确定性渲染为 MP4，多 Agent 插件 | 写 HTML 出视频，约 450 个组件，Remotion 等迁移 | ★8.5 万，HeyGen 出品 | Apache-2.0（Pro 另付费） | Agent 批量做宣传片、解说、动态字幕 |
 | yogurt | 桌面应用，whisper.cpp + llama.cpp 本地模型，只读本地 MCP | 不进会议的本地录音转写、纪要、跨会议问答 | ★1.7k | MIT | 注重隐私的会议纪要 |
 | weight-space-index | Python + Rust SIMD 内核，直接读 .safetensors，带 MCP | 静态盲读权重编辑、外科式改写、跨模型神经元移植 | 新建，0 星；基准全为自报 | Apache-2.0 | 研究权重空间编程与可解释性（评论区发现） |
+| gemini-4-hydrogen | 闭源，1M 上下文，四档思考强度 | Gemini 4 快速档，面向编程和 Agent 工作流 | light；基准多为 Google 自报，AA 指数 51 为第三方 | 闭源 | 需要速度与成本平衡的 Agent 主力模型 |
 
 ### 分析
 
@@ -290,6 +311,8 @@
 
 2026-11-16 补入四项：rea-video（拆解视频）与 hyperframes（HTML 渲染视频，8.5 万星）构成内容创作组里「拆解→重做」的两端，继续印证「LLM + 确定性工具链」结论；yogurt 是全本地会议纪要，可与 cicada-知了 对照；评论区发现的 weight-space-index 把 权重空间编程-mit 的交互式分析做成静态工具，但数字全部自报，待复现。
 
+2026-11-16 补入 gemini-4-hydrogen：与模型组其他条目一样只能 light；值得注意的是第三方 Artificial Analysis 指数（51）已高于同家族的 Argon，但单任务成本也高于同档对手，选型要看任务是否吃推理深度。
+
 ## 其他（未做对比）
 
 `other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：
@@ -297,4 +320,7 @@
 - 教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图、cs329z（斯坦福 Agent 工程公开课）
 - 知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站、xnews（海外长文中文改写站）、x-article-hub（人工挑选的 X 长文归档）、musk-daily（马斯克动态日报）、what-new-ai-in-x（按模型与产品切的 X 合集档案）
 - 算法可视化：astar-visualizer（Antigravity 生成的 C++ A* 寻路可视化，评论区发现）
-- 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）、cassotis-ime（跨平台开源拼音输入法「言泉」）、harper（离线英文语法检查）
+- 前端/桌面组件：gpui-kit（Rust + GPUI 桌面框架，2 万星）、islandcn（React 灵动岛组件）、mdxcn（MDX 文档组件）
+- 画布与设计：dessn（闭源，自研 Rust HTML 渲染器的设计画布）、gpucanvas（开源 WebGPU 无限画布，评论区发现）
+- 卫星可视化：watched-earth（某地本周被哪些卫星拍到）、azmth（实时卫星 3D 地球，评论区发现）
+- 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）、mole（Mac/PC 清理 CLI，7.5 万星）、cassotis-ime（跨平台开源拼音输入法「言泉」）、harper（离线英文语法检查）
