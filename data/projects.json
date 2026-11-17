@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "2026-11-16",
+    "generated_at": "2026-11-17",
     "timezone": "Asia/Shanghai",
-    "projects_total": 228,
+    "projects_total": 231,
     "category_counts": {
-      "game": 40,
+      "game": 43,
       "agent-eng": 85,
       "llm-tools": 62,
       "other": 41
@@ -17,15 +17,15 @@
     "origin_counts": {
       "bookmark": 94,
       "reply-on-popular-post": 25,
-      "daily-digest": 98,
+      "daily-digest": 101,
       "bookmark+daily-digest": 10,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 175,
-      "light": 53
+      "full": 176,
+      "light": 55
     },
-    "analysis_updated_at": "2026-11-16"
+    "analysis_updated_at": "2026-11-17"
   },
   "projects": [
     {
@@ -202,6 +202,55 @@
         ],
         "comparison": "和 earth-on-spawn、our-3d-reality 都把真实地球做成可逛的网页 3D。earth-on-spawn 强调整颗地球、可破坏和天气同步（作者自述，无源码）；our-3d-reality 目前把纽约中城做得很完整，并有跨年活动；本项目是多地点、步行尺度的小世界，范围更小但地点更多。三者都没有公开源码。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "aura-underground",
+      "name": "Aura Underground",
+      "summary": "Michael Modena（Forged）用自研 Rust/WebGPU 引擎和名为 Flow 的多 Agent 工作流，在约一周内为家族贴膜品牌做出的浏览器夜间竞速游戏。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "webgpu",
+        "rust",
+        "浏览器游戏",
+        "竞速",
+        "闭源",
+        "opus-5.5"
+      ],
+      "source_url": null,
+      "preview_url": "https://underground.auravinyl.com/",
+      "post_url": "https://x.com/forgeddotbuild/status/2122336388771385539",
+      "author": "Michael Modena / Forged（@forgeddotbuild）",
+      "models": [
+        "Claude Opus 5.5（主导，作者自述）",
+        "ElevenLabs（音乐/音效，作者自述）"
+      ],
+      "first_seen": "2026-11-16",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "无公开源码。引擎与 Flow 工作流为作者自述，未开源、未经独立验证。页面自述可在浏览器及手机上玩、可组装车辆并用 Aura 贴膜、可与其他玩家同场。制作周期（11 月 4–11/12 日做游戏，此前一周做引擎）和「可移植到原生并在 Vulkan 上做 RTX 光追」均为作者自述。2026-11-16 另有较高互动的介绍帖：https://x.com/hakimieiqbal/status/2122329321775718405。本次打开官网返回 200，未完整试玩。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "浏览器可玩的 3D 竞速游戏，托管在 underground.auravinyl.com。作者自述引擎为自研 Rust + WebGPU，可移植到原生平台并在 Vulkan 上做硬件光追；美术经 Blender 工作流，音乐和音效用 ElevenLabs。无公开源码和许可证。本次打开官网返回 200。",
+        "method": "作者自述把近 20 年互动体验经验编码进名为 Flow 的工作流：用网页应用把办公室内多台 Mac 连起来，经多 Agent 循环和自定义技能分工；由前沿模型主导（以 Opus 5.5 为主）生成资产、UI、音效和音乐，再在自研引擎上做成可玩的竞速游戏。具体技能清单、Agent 分工和人工改动量未公开。",
+        "features": [
+          "在浏览器里夜间城市竞速，页面自述也支持手机、触控和键盘",
+          "页面自述可组装车辆并用 Aura 真实贴膜方案包裹",
+          "页面自述可与其他玩家在线同场"
+        ],
+        "highlights": [
+          "不是引擎演示，而是为真实品牌（Aura Vinyl）上线的可玩网页竞速",
+          "把自研 WebGPU 引擎和多 Agent 制作管线绑在一起，当天介绍帖互动较高",
+          "作者有多年网页互动经验（自述参与过 2017–2019 Spotify Wrapped）"
+        ],
+        "limitations": [
+          "引擎、游戏和 Flow 工作流均未开源，技术细节只能依据作者自述",
+          "制作周期、光追能力和在线同场等均为页面或作者自述，本次未完整试玩验证",
+          "无公开许可证，无法作为工程样本复用"
+        ],
+        "comparison": "和 solstice 同属 Rust + WebGPU 浏览器 3D，但 solstice 是开源的程序化植被渲染演示，本项目是面向品牌的可玩竞速成品，引擎和 Flow 均未开源。和 port-of-halvard、qingming-3d、painted-valley 等 three.js 网页场景不同，它走的是自研引擎和多 Agent 制作管线。和 mela-tycoon 一样展示「用 Agent 流水线在较短时间内做出可玩游戏」，但本项目强调自研引擎和线上可玩。",
+        "researched_at": "2026-11-17"
       }
     },
     {
@@ -409,6 +458,116 @@
         ],
         "comparison": "和 sapper-minesweeper、dread-and-district、guizang-game-skill 一样，都是用 Fable 一类模型快速做出的可玩演示。本项目和 sapper-minesweeper 更接近经典规则复刻；dread-and-district 和 guizang-game-skill 更偏原创玩法。与 earth-on-spawn 相比，它不追求开放世界，只把一个熟悉的动作关做出来。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "frogxteps",
+      "name": "FrogXteps",
+      "summary": "一人指挥 Claude 多 Agent，用 Unreal Engine 5.9 在四天内为 Epic AI MegaJam 做出的第三人称动作游戏：一只毒箭蛙穿着史莱姆机甲攻进城堡。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "unreal",
+        "jam",
+        "3d",
+        "动作",
+        "claude-code",
+        "无源码"
+      ],
+      "source_url": null,
+      "preview_url": "https://v3rt0x.itch.io/frogxsteps",
+      "post_url": "https://x.com/v3rt0x_/status/2122148601228853597",
+      "author": "v3rt0x（X：@v3rt0x_）",
+      "models": [
+        "Claude Fable 5.2",
+        "Claude Opus 5.5",
+        "Claude Sonnet 5.5",
+        "Claude Haiku 5.5",
+        "GPT Image 2.6 / 2.5",
+        "Seedream 5.5"
+      ],
+      "first_seen": "2026-11-16",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "无公开源码。itch.io 提供 Windows 64 位下载版，不是浏览器游戏。制作日志：https://frogxteps-devlog.vercel.app/ ；预告片：https://www.youtube.com/watch?v=bLXfKd88G84 。制作日数、体积、同时运行的 Agent 数和工具名单来自制作日志与 itch 页，均为作者自报。本次打开 itch 与制作日志均为 200，未下载试玩。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Unreal Engine 5.9 的 Windows 第三人称动作游戏，在 itch.io 分发（解压即玩，不安装）。制作日志写明：设计与代码主要由 Claude Code 中的 Fable 5.2 / Opus 5.5 完成，辅助为 Sonnet 5.5 与 Haiku 5.5；概念图用 GPT Image 与 Seedream 等；模型经 Tripo、Hyper3D 再在 Blender 5.3 收尾；材质 PBRgen / fal Patina；动作 Meshy、GEM-X、NVIDIA Kimodo；音频 Stable Audio 3，语音 ElevenLabs Eleven v4。工作区归功于 stefan_3d_ai。无公开源码和许可证。",
+        "method": "作者自任导演：选题、每轮试玩并指出最差的手感；由一名主导 Agent 负责设计和代码（大部分时间是 Fable 5.2，中间和收尾曾换成 Opus 5.5），建造 Agent 按书面计划写代码、改关卡和打包。周六最多同时 9 个 Agent（外观、特效、动画、玩法、评审、检查、设计、3D 模型等）。另有不参与制作、只看截图和数值的评审 Agent。四天里出了 50 个可玩版本（制作日志自报），并公开了带时间线截图的制作日志。",
+        "features": [
+          "第三人称动作：五种蛙角色（战士、弓手、枪手、剑士、刺客）可在关卡中解救并切换",
+          "史莱姆可变成破门的凝胶机甲（Ironclad）或攀爬摆荡的形态（Clinger）",
+          "导演剪辑和未删减版两种难度，失败后喊 Cut 重拍，结束时用最佳帧做海报",
+          "itch.io 提供 Windows 下载；另有公开制作日志和预告片"
+        ],
+        "highlights": [
+          "作者的第一款 3D 游戏和第一款 Unreal 作品，却交出可下载的完整 Jam 成品，而不是网页 Demo",
+          "制作日志按小时记录迭代和工具分工，比多数「AI 做了个游戏」的展示更可核对",
+          "明确披露所用生成式工具和 AI 参与范围"
+        ],
+        "limitations": [
+          "无公开源码，无法核对代码或复用工程结构",
+          "仅有 Windows 构建，不能在浏览器里直接玩",
+          "四天、50 个版本、同时 9 个 Agent、864.7 MB 等数字来自制作日志自报；本次未下载试玩",
+          "依赖大量外部生成服务，复现成本高"
+        ],
+        "comparison": "和 mela-tycoon 一样是「一人指挥多 Agent、在几天内做出可玩 3D 游戏」，但本项目用的是 Unreal Engine 5.9 而不是网页栈，并附详细制作日志。和 dread-and-district、earth-on-spawn 同属无源码的 AI 游戏展示，完整程度更高（Windows 构建、五种角色、Jam 主题玩法）。库内尚无其他 UE5 + Claude Code 的完整 Jam 成品可对照。",
+        "researched_at": "2026-11-17"
+      }
+    },
+    {
+      "id": "gtagentclinic",
+      "name": "GTAgentClinic",
+      "summary": "ETH 医疗 AI 实验室开源的 3D 医院模拟：人可以亲自值班，也可以让 Claude Code、Codex 或本地模型经 MCP/REST 扮演住院医师。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "3d",
+        "three.js",
+        "webgpu",
+        "mcp",
+        "医疗",
+        "agent",
+        "研究原型"
+      ],
+      "source_url": "https://github.com/eth-medical-ai-lab/GTAgentClinic",
+      "preview_url": "https://gtagentclinic.ai/demo/",
+      "post_url": "https://x.com/Michael_D_Moor/status/2122317559563211132",
+      "author": "ETH Medical AI Lab（Michael Moor 等）",
+      "models": [
+        "Claude（Claude Code / Anthropic API）",
+        "Codex / OpenAI API",
+        "OpenAI 兼容本地模型（如 vLLM）"
+      ],
+      "first_seen": "2026-11-16",
+      "origin": "daily-digest",
+      "stars": 4,
+      "notes": "星标 4（2026-11-17 查询）。README 徽章称 111 个可玩病例、51 个在病例库、1300+ 单元测试通过、仓库约 3.0M tokens，均为项目自报，本次未跑测试。浏览器演示对话为脚本，不含 LLM NPC。官网与 README 明确：仅供研究，病例与评分尚未经临床专家验证，不可用于临床或教学。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 单仓（npm 包名 agentclinic-hospital，版本 0.3.0）：Node 服务端做权威模拟，客户端是 React 19 + three.js 0.187（优先 WebGPURenderer，自动回退 WebGL 2），用 WebSocket 同步，另提供 REST 和 MCP（@modelcontextprotocol/sdk）。LLM 接入包括 @anthropic-ai/sdk、@openai/codex-sdk 和 OpenAI 兼容接口。角色与动作来自 Microsoft Rocketbox（MIT），贴图 ambientCG、天空 Poly Haven（CC0）。代码 Apache-2.0，临床病例 CC BY 4.0。需 Node.js 22.12+，推荐 Chrome 或 Edge。",
+        "method": "服务端持有隐藏的病例真相（诊断、生理、未出结果的检验），经 information firewall 只把已观察状态发给客户端和 Agent，浏览器包不引用 content/。人类与 Agent 共用同一套 Action（问诊、检查、开单、写病历、处置等）。Agent 有两种玩法：clinical actions 读文本观察并选动作、由引擎带动画；embodied 用视觉模型看游戏画面，并用 WASD 和键鼠操作。模拟按种子可复现；人类局按加速墙钟走时，Agent 局按动作耗时步进。",
+        "features": [
+          "第一人称、过肩或俯视在急诊科走动、问诊、检查、开检验并在护士站读心电图",
+          "可让 AI 住院医师值班：跟随查房，或观看它自己的游戏画面",
+          "人类或外部 Agent 经 MCP / REST 接入，可选 Claude Code 登录、Anthropic/OpenAI API 或本地兼容接口",
+          "提供无需安装的浏览器演示（对话为脚本）；完整版一行 npm start 在本地打开",
+          "带评分和复盘（项目定位为 OSCE 式评分，病例尚未临床验证）"
+        ],
+        "highlights": [
+          "把 2024 年的 AgentClinic 文本基准做成可探索的 3D 具身医院，人和 Agent 走同一套动作接口",
+          "文档和工程较完整：DESIGN / AI_AGENTS / SECURITY、信息防火墙、贡献指南和引用文件",
+          "ETH 医疗 AI 实验室出品，明确写成研究原型而不是成品游戏"
+        ],
+        "limitations": [
+          "项目自述仅供研究，病例与评分尚未经临床专家验证，不可用于临床或教学",
+          "浏览器演示没有 LLM NPC；完整体验需本机安装且要自备模型额度",
+          "仓库新建（2026-11-15），星标尚少；徽章上的病例数和测试数均为自报，本次未跑测试",
+          "多人模式仍在规划（设计文档）"
+        ],
+        "comparison": "和 aura-autopilot（给 UE/Unity/Godot 的自动试玩 agent）都让外部 Agent 进入游戏空间，但本项目是专为临床推理设计的 3D 医院：同一套 Action 同时服务人类玩家、REST 和 MCP，并带信息防火墙和评分。和 dread-and-district、earth-on-spawn 等只有托管页的 AI 游戏演示不同，它有完整 Apache-2.0 源码、可复现安装和科研向文档。库内没有其他「可玩的医疗模拟 + Agent 评测环境」。",
+        "researched_at": "2026-11-17"
       }
     },
     {

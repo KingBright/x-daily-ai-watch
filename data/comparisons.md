@@ -61,6 +61,9 @@
 | waldo-stripes-soft | Vercel 托管网页 3D（引擎未查到） | 1 万+ 动画小人的找 Waldo 小镇 | light，无源码 | 未查到 | 大规模人群演示 |
 | dreamwaze | three.js 网页（作者自述） | 梦境风 3D 迷宫漫游、计时 | light，评论区发现 | 未查到 | 轻量 3D 小游戏 |
 | resoundle | 闭源 Web 服务（模型未查到） | 一种风格生成整套游戏 UI 音效 | light，评论区发现 | 闭源 | 游戏 UI 音效统一风格 |
+| gtagentclinic | React 19 + three.js 0.187（WebGPU，回退 WebGL 2），Node 权威模拟，MCP/REST 接入 Agent | 3D 急诊科可玩，也可让 AI 住院医师值班并评分 | 新建，★4；研究原型 v0.3.0 | 代码 Apache-2.0，病例 CC BY 4.0 | 具身临床 Agent 评测与教学原型（非临床用途） |
+| aura-underground | 自研 Rust + WebGPU 引擎（作者自述），Flow 多 Agent 管线，闭源托管页 | 浏览器夜间城市竞速，页面自述可换装贴膜和在线同场 | light，无源码；制作周期为自报 | 未公开 | 品牌向可玩竞速，观察自研引擎 + Agent 管线 |
+| frogxteps | Unreal Engine 5.9，一人指挥 Claude Code 多 Agent（日志自述） | 第三人称动作：蛙+史莱姆机甲攻城，五种角色，Windows 下载 | light，无源码；四天 Jam 成品 | 未公开 | 看 UE5 + 多 Agent 在 Jam 周期里能做到哪一步 |
 
 ### 分析
 
@@ -79,6 +82,8 @@
 2026-11-16 补入 port-of-halvard：Fable 5.2 纯代码写实港口，有 MIT 源码和 PROMPT.md 制作记录，归入「可读源码的程序化场景」样本，与只有托管页的 Fable 演示形成对照。
 
 2026-11-16 每周书签补入：painted-valley、inkline-town 代表「统一风格化渲染」路线（手绘背景 + 赛璐璐人物、墨线等距），说明画面观感更多来自统一的着色规则而非堆细节，对 rpg-core 的高清风格化目标参考价值最高；crimson-loong 与 room-at-dawn 都是可读源码的纯代码场景，前者风格化实时、后者写实离线烘焙，与 port-of-halvard 一起组成「程序化场景」的三种取向；waldo-stripes-soft、dreamwaze 只有托管页，仅 light。评论区发现的 resoundle 是库内第一个游戏音频生成工具，补上资产流水线里的声音一环。
+
+2026-11-17 每日精选补入三项：gtagentclinic 是库内第一个「人与 Agent 共用动作接口」的开源 3D 医院，把临床评测从文本基准做成具身环境，文档和工程完整，但明确还不是经过验证的教学或临床工具；aura-underground 把自研 Rust/WebGPU 引擎和多 Agent 管线用到可玩的品牌竞速上，完成度高但完全闭源；frogxteps 是 UE5 Jam 的可下载成品，附详细制作日志，补上库内此前缺少的 Unreal + Claude Code 完整游戏样本。
 
 ## 研发效率
 

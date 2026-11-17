@@ -325,6 +325,30 @@
           "maturity": "light，评论区发现",
           "license": "闭源",
           "use_case": "游戏 UI 音效统一风格"
+        },
+        {
+          "id": "gtagentclinic",
+          "tech": "React 19 + three.js 0.187（WebGPU，回退 WebGL 2），Node 权威模拟，MCP/REST 接入 Agent",
+          "capability": "3D 急诊科可玩，也可让 AI 住院医师值班并评分",
+          "maturity": "新建，★4；研究原型 v0.3.0",
+          "license": "代码 Apache-2.0，病例 CC BY 4.0",
+          "use_case": "具身临床 Agent 评测与教学原型（非临床用途）"
+        },
+        {
+          "id": "aura-underground",
+          "tech": "自研 Rust + WebGPU 引擎（作者自述），Flow 多 Agent 管线，闭源托管页",
+          "capability": "浏览器夜间城市竞速，页面自述可换装贴膜和在线同场",
+          "maturity": "light，无源码；制作周期为自报",
+          "license": "未公开",
+          "use_case": "品牌向可玩竞速，观察自研引擎 + Agent 管线"
+        },
+        {
+          "id": "frogxteps",
+          "tech": "Unreal Engine 5.9，一人指挥 Claude Code 多 Agent（日志自述）",
+          "capability": "第三人称动作：蛙+史莱姆机甲攻城，五种角色，Windows 下载",
+          "maturity": "light，无源码；四天 Jam 成品",
+          "license": "未公开",
+          "use_case": "看 UE5 + 多 Agent 在 Jam 周期里能做到哪一步"
         }
       ],
       "prose": [
@@ -335,7 +359,8 @@
         "2026-11-15 补入三项：godotprompter 把「领域技能」路线带到 Godot 引擎编码（59 个技能），属于方法件；评论区发现的 idol 是开源单图转 3D 高斯泼溅模型，可作为 AI 资产流水线的生成端，与闭源的 worldlabs-atlas 形成物体级/场景级的开源/闭源对照；qingming-3d 是同提示词多模型的 three.js 大场景对照，有完整源码和 token 日志，更像评测样本而非单个演示。",
         "结论 3：成品类项目仍有不少只是「能玩的演示」（dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation，以及评论里出现的 a-little-earth、our-3d-reality、fable-contra、sapper-minesweeper），只能做 light 分析。其中 three-voxel-destruction 是例外：它有 MIT 源码和自研 GPU 求解器，不是一次性提示词小品。可复用的方法件仍是 pixelfx、guizang-game-skill 和与模型无关的 LDtk。可复用价值仍然更多在方法和工具，而不在某一款展示游戏。",
         "2026-11-16 补入 port-of-halvard：Fable 5.2 纯代码写实港口，有 MIT 源码和 PROMPT.md 制作记录，归入「可读源码的程序化场景」样本，与只有托管页的 Fable 演示形成对照。",
-        "2026-11-16 每周书签补入：painted-valley、inkline-town 代表「统一风格化渲染」路线（手绘背景 + 赛璐璐人物、墨线等距），说明画面观感更多来自统一的着色规则而非堆细节，对 rpg-core 的高清风格化目标参考价值最高；crimson-loong 与 room-at-dawn 都是可读源码的纯代码场景，前者风格化实时、后者写实离线烘焙，与 port-of-halvard 一起组成「程序化场景」的三种取向；waldo-stripes-soft、dreamwaze 只有托管页，仅 light。评论区发现的 resoundle 是库内第一个游戏音频生成工具，补上资产流水线里的声音一环。"
+        "2026-11-16 每周书签补入：painted-valley、inkline-town 代表「统一风格化渲染」路线（手绘背景 + 赛璐璐人物、墨线等距），说明画面观感更多来自统一的着色规则而非堆细节，对 rpg-core 的高清风格化目标参考价值最高；crimson-loong 与 room-at-dawn 都是可读源码的纯代码场景，前者风格化实时、后者写实离线烘焙，与 port-of-halvard 一起组成「程序化场景」的三种取向；waldo-stripes-soft、dreamwaze 只有托管页，仅 light。评论区发现的 resoundle 是库内第一个游戏音频生成工具，补上资产流水线里的声音一环。",
+        "2026-11-17 每日精选补入三项：gtagentclinic 是库内第一个「人与 Agent 共用动作接口」的开源 3D 医院，把临床评测从文本基准做成具身环境，文档和工程完整，但明确还不是经过验证的教学或临床工具；aura-underground 把自研 Rust/WebGPU 引擎和多 Agent 管线用到可玩的品牌竞速上，完成度高但完全闭源；frogxteps 是 UE5 Jam 的可下载成品，附详细制作日志，补上库内此前缺少的 Unreal + Claude Code 完整游戏样本。"
       ]
     },
     {
