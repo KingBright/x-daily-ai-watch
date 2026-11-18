@@ -2,28 +2,28 @@
   "meta": {
     "generated_at": "2026-11-18",
     "timezone": "Asia/Shanghai",
-    "projects_total": 240,
+    "projects_total": 292,
     "category_counts": {
-      "game": 44,
-      "agent-eng": 90,
-      "llm-tools": 64,
-      "other": 42
+      "game": 56,
+      "agent-eng": 101,
+      "llm-tools": 73,
+      "other": 62
     },
     "subcategory_counts": {
-      "dev-efficiency": 45,
-      "phone-computer-use": 17,
-      "agent-fleet": 28
+      "dev-efficiency": 51,
+      "phone-computer-use": 19,
+      "agent-fleet": 31
     },
     "origin_counts": {
-      "bookmark": 94,
+      "bookmark": 146,
       "reply-on-popular-post": 25,
-      "daily-digest": 110,
-      "bookmark+daily-digest": 10,
+      "daily-digest": 109,
+      "bookmark+daily-digest": 11,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 185,
-      "light": 55
+      "full": 223,
+      "light": 69
     },
     "analysis_updated_at": "2026-11-18"
   },
@@ -205,6 +205,51 @@
       }
     },
     {
+      "id": "athenaion",
+      "name": "Athenaion",
+      "summary": "纯代码搭建的大型古希腊三维世界，不使用外部 3D 资产，可用编码 Agent 继续扩展。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "three.js",
+        "程序化生成"
+      ],
+      "source_url": "https://github.com/Leonxlnx/athenaion",
+      "preview_url": null,
+      "post_url": "https://x.com/LexnLin/status/2111592989545951522",
+      "author": "LexnLin",
+      "models": [
+        "Claude Opus 5.5",
+        "Claude Code"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 717,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。仓库描述称 zero assets，由 Claude Code（Opus 5.5）制作。未查到官方托管试玩页。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "three.js 大型程序化场景，不使用外部三维资产。许可证 MIT。作者自述用 Claude Code 和 Opus 5.5 建造。",
+        "method": "书签帖同时给出提示词、仓库和费用说明，并提到先生成多张参考图再迭代（费用为作者自报）。",
+        "features": [
+          "可探索的大型古希腊风格世界",
+          "纯代码几何与材质",
+          "源码公开，可用 Agent 继续改"
+        ],
+        "highlights": [
+          "体量明显大于作者的单房间或单短片作品",
+          "源码完整，适合研究「用 Agent 长期维护一个大世界」"
+        ],
+        "limitations": [
+          "未查到公开托管试玩页",
+          "规模和费用数字为作者自报",
+          "在普通设备上的性能未验证"
+        ],
+        "comparison": "同作者 Walking Block、6:51、procedural-alpine-lake 都是纯代码场景，Athenaion 走的是可漫游的大世界，而不是一条短片时间轴。和 Papertrails 的纸艺无限拼接相比，它更追求完整建筑与文明景观。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "aura-underground",
       "name": "Aura Underground",
       "summary": "Michael Modena（Forged）用自研 Rust/WebGPU 引擎和名为 Flow 的多 Agent 工作流，在约一周内为家族贴膜品牌做出的浏览器夜间竞速游戏。",
@@ -337,6 +382,135 @@
           "没有 MCP 时只能后台跑 Blender，交互式看视口会受限"
         ],
         "comparison": "和 3d-os-scenario-skills、scenario-blender-plugin 同属「Agent 驱动 DCC」：Scenario 两件套是更完整的多部门流水线加官方插件，工程质量（测试、签名）也更成熟；blender-skills 则专注 Blender 5.x 专业工作流，以技能包形式接入已有编码 Agent，不必换一套平台。和 guizang-game-skill（可玩网页游戏技能）不同，它产出的是 DCC 资产而不是游戏本身。已经在用 Blender 做游戏资产的人可以直接装；要从建模到引擎做整条托管流水线仍看 Scenario。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "brush-and-blade",
+      "name": "Brush and Blade",
+      "summary": "八位画师风格的像素格斗网页游戏，带 AI 对手和必杀，代码与试玩都公开。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "试玩",
+        "像素",
+        "格斗"
+      ],
+      "source_url": "https://github.com/emollick/brush-and-blade",
+      "preview_url": "https://brush-and-blade.netlify.app",
+      "post_url": "https://x.com/emollick/status/2099918099310903648",
+      "author": "emollick",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 12,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。这是较旧的书签，此前全量扫描未覆盖到。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "开源像素格斗网页游戏，MIT 许可。仓库说明为八位画师风格、带 AI 对手、必杀和动画精灵展示。具体引擎细节以仓库为准，正文较短。",
+        "method": "把可玩的格斗演示和源码一起发布，提供 Netlify 试玩页。",
+        "features": [
+          "浏览器试玩",
+          "AI 对手",
+          "特殊攻击与精灵展示",
+          "源码公开"
+        ],
+        "highlights": [
+          "同时有源码和试玩，符合「可打开看、可动手玩」的偏好",
+          "像素格斗在库内同类很少"
+        ],
+        "limitations": [
+          "星标很少，文档不厚",
+          "AI 对手强度和平台兼容性未验证"
+        ],
+        "comparison": "和 Hard Rock Hero 同属可玩的风格化动作小品，但本项目是 2D 格斗且开源；Hard Rock Hero 是节奏游戏且为 light/闭源。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "carriage",
+      "name": "Carriage",
+      "summary": "用 Gemini 4 Argon 做的哥特维多利亚马车 three.js 网站，作者后来又让同一模型重构了整站。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "three.js",
+        "light"
+      ],
+      "source_url": "https://github.com/thebuggeddev/carriage",
+      "preview_url": null,
+      "post_url": "https://x.com/thebuggeddev/status/2110627037266477497",
+      "author": "thebuggeddev",
+      "models": [
+        "Gemini 4 Argon"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 10,
+      "notes": "星标 2026-11-17（美西）查询。仓库几乎没有说明，许可证未在 GitHub 上标明。书签是作者回应「Argon 不能做正经代码」的重构演示。未查到托管试玩页。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "three.js 网页场景。仓库描述为 Gothic Victorian Carriage，用 Gemini 4 Argon 开发。README 和许可证信息不足。",
+        "method": "先生成 3D 马车网站，再让同一模型做整站重构和改进，用来回应「Argon 不适合真实代码工作」的批评。",
+        "features": [
+          "开源的 three.js 马车场景",
+          "作者用同一模型做重构演示"
+        ],
+        "highlights": [
+          "是一个可核对的「模型能不能改自己写的前端」样本"
+        ],
+        "limitations": [
+          "文档几乎没有，星标很少",
+          "许可证未声明",
+          "没有查到公开试玩页"
+        ],
+        "comparison": "体量和完成度不如 Walking Block、Papertrails 或 Painted Valley，更像模型能力的举证演示，而不是完整游戏。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "cozy-country",
+      "name": "Cozy Country",
+      "summary": "无战斗的田园沙盒：自己画地形和河流、摆放房屋和动植物，再走进去逛。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "商业产品",
+        "沙盒",
+        "试玩待确认",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://nimianlegends.com/cozycountry",
+      "post_url": "https://x.com/protopop/status/2122372528215625819",
+      "author": "protopop（Nimian Legends）",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "官网写支持自建自然景观、动态水系和进入建筑。帖子标签写 PC / Mac / Android。源码未查到，按商业产品做简要分析。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "未查到源码和技术栈。官网属于 Nimian Legends。",
+        "method": "偏创作沙盒：先塑造地形和水系，再铺植物、石头和房屋，最后用角色走进自己搭的世界。",
+        "features": [
+          "动态河流、泉水和湖泊随地形流动（官网说法）",
+          "抬升、降低、平整地形，铺路和悬崖",
+          "放置可进入的房屋，可点火、坐下（官网说法）",
+          "官网称有超过 10 万平方公里可探索（自报，未验证）"
+        ],
+        "highlights": [
+          "明确做成无敌人、无压力的田园沙盒，和常见生存建造不同",
+          "和库内偏程序化展示的 three.js 小品不是同一类产品"
+        ],
+        "limitations": [
+          "闭源，技术栈和定价未查到",
+          "「10 万平方公里」等规模数字为官网自报，未验证",
+          "书签帖是制作中的池塘演示，本次未完整试玩"
+        ],
+        "comparison": "和 Inkline Town 同属可经营或可建造的田园向，但 Inkline Town 是开源的任期市长经营，Cozy Country 是闭源的地形绘画与漫游沙盒。和 Painted Valley 那种可散步的风景演示相比，它更强调玩家自己改造地形。",
         "researched_at": "2026-11-18"
       }
     },
@@ -507,6 +681,46 @@
         ],
         "comparison": "和 sapper-minesweeper、dread-and-district、guizang-game-skill 一样，都是用 Fable 一类模型快速做出的可玩演示。本项目和 sapper-minesweeper 更接近经典规则复刻；dread-and-district 和 guizang-game-skill 更偏原创玩法。与 earth-on-spawn 相比，它不追求开放世界，只把一个熟悉的动作关做出来。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "forge-fly",
+      "name": "Forge Fly",
+      "summary": "不用 3D 引擎、不用多边形、约 32 KB 代码的浏览器战斗机小品，可在 UI8 Forge 上试玩。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "试玩",
+        "light",
+        "小游戏"
+      ],
+      "source_url": null,
+      "preview_url": "https://remix.ui8.ai/fly",
+      "post_url": "https://x.com/creativedash/status/2122000830895386680",
+      "author": "creativedash",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "原帖称「No 3D engine, no polygons, 32 KB of code」（自报）。试玩页会跳到 UI8 Forge 分享链。评论区有人问源码，Grok 回复称没有公开 GitHub。本次未声称已玩过或已看视频。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "作者自述没有 3D 引擎、没有多边形，整份演示约 32 KB 代码（自报）。源码未公开，具体绘制方式未查到。",
+        "method": "把战斗机演示发在 UI8 Forge 上供人试玩或 remix。",
+        "features": [
+          "浏览器试玩",
+          "体积很小（自报 32 KB）"
+        ],
+        "highlights": [
+          "用极小代码量做出可飞的战斗演示，和常见 three.js 大场景形成对照"
+        ],
+        "limitations": [
+          "无公开源码",
+          "32 KB、无多边形等说法为自报，未验证",
+          "技术细节未查到"
+        ],
+        "comparison": "库内 Viper One One 是更完整的网页战斗机模拟；本项目更像技术小品。和 Custom Robo 那类有角色对战的 3D 演示也不同。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -1084,6 +1298,55 @@
       }
     },
     {
+      "id": "papertrails",
+      "name": "Papertrails",
+      "summary": "浏览器里可漫游的无限纸艺世界：走到哪，树木和房屋就像立体书一样从地面翻起来。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "three.js",
+        "试玩",
+        "程序化生成",
+        "Fable"
+      ],
+      "source_url": "https://github.com/xikhar/papertrails",
+      "preview_url": "https://xikhar.github.io/papertrails/",
+      "post_url": "https://x.com/xikhar/status/2122682962647122403",
+      "author": "xikhar（Shikhar）",
+      "models": [
+        "Claude Fable 5.2",
+        "Claude Opus 5.5"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 35,
+      "notes": "星标 2026-11-17（美西）查询。README 很短，主要指向试玩页；制作流程细节来自作者原帖及他人转述，未把原帖视频当作已观看。许可证 MIT。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "three.js 浏览器场景；许可证 MIT。作者自述用 Fable 5.2 与 Opus 5.5 制作。场景物件先集中画在素材图集上，再裁成纸片并加上类似铰链的旋转结构，角色走近时纸片从地面翻起。无限地图按随机种子组合已有素材。",
+        "method": "作者在原帖中公开了提示词和工作流（帖子称 Full prompt and workflow steps below）。转述还提到：先写纸张纤维、剪纸边缘和镜头规范，用参考图和统一色板约束风格，并让子 Agent 分头做场景、由独立评审对照参考图修改。上述流程为作者或转述自报，未在仓库里看到完整流水线代码。",
+        "features": [
+          "浏览器直接试玩，无需注册",
+          "白天/夜晚与多种地形氛围",
+          "程序化组合的可探索地图",
+          "源码与 GitHub Pages 试玩页"
+        ],
+        "highlights": [
+          "把立体书翻页感做成可行走的世界，而不是只做一段动画",
+          "源码和试玩都公开，适合对照库内其他纯代码 three.js 场景",
+          "作者公开工作流，方便研究风格统一问题"
+        ],
+        "limitations": [
+          "仓库 README 几乎只有试玩链接和截图，实现细节要自己读代码",
+          "工作流与风格对照效果为自报或转述，未独立验证",
+          "项目刚发布，星标和文档都还很少"
+        ],
+        "comparison": "与库内 Painted Valley、赤龍、6:51 a room at dawn、room-at-dawn 同属纯代码或代码生成的 three.js 场景。Painted Valley 授权更宽松、更适合当风格化起点；6:51 强在写实烘焙光照；Papertrails 的差异是「沿路径不断弹出的纸艺世界」和无限拼接，而不是单场景写实或短片。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "poke-bonk",
       "name": "Poke Bonk",
       "summary": "AI coding 做出的网页游戏，商业化表现很强。",
@@ -1351,6 +1614,135 @@
       }
     },
     {
+      "id": "spinward",
+      "name": "Spinward",
+      "summary": "浏览器里设计和漫游自己的太空圆柱殖民地：铺街道、分区、调光照和一日循环。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "试玩",
+        "light",
+        "沙盒"
+      ],
+      "source_url": null,
+      "preview_url": "https://playspinward.com",
+      "post_url": "https://x.com/MaxXWilliamson/status/2119953174312161438",
+      "author": "MaxXWilliamson",
+      "models": [
+        "Claude Fable"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "书签帖是 three.js 相关的制作过程片段，并提到 Fable 通过 MCP 使用网格和程序化建筑风格。试玩站 playspinward.com。源码未查到。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "书签帖感谢 three.js，并提到用 Fable 的网格/地貌工具和程序化建筑风格（经 MCP）。完整技术栈和源码未查到。",
+        "method": "在圆柱世界里用笔刷铺路、分区、做地标和农田，再调整日照、镜面采光和外观。",
+        "features": [
+          "多种街道网格（方形、径向、六边形、旧城区等）",
+          "抬升、改风格、公园、工业和农田",
+          "一日循环和窗外天空",
+          "可拍照、可随机生成外观"
+        ],
+        "highlights": [
+          "把奥尼尔圆柱殖民地做成可编辑可漫游的网页工具，题材少见"
+        ],
+        "limitations": [
+          "源码未查到",
+          "制作流程为作者自述",
+          "本次未完整验证所有建造工具"
+        ],
+        "comparison": "和 Cozy Country 同属建造后再走进去逛，但背景是太空圆柱而不是田园。和 Watched、azmth 的地球/卫星可视化不是一类。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "ten-balls",
+      "name": "Ten Balls",
+      "summary": "浏览器里的十球投篮小游戏：按住蓄力、松开投出，空心球三分，连中加倍。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "试玩",
+        "小游戏",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://kamran.fyi/hoops",
+      "post_url": "https://x.com/nilbuild/status/2120285564511666580",
+      "author": "nilbuild（Kamran Ahmed）",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "试玩页标题为 Ten Balls。源码未查到。作者同一天还有 Diffity、stick-scene 等书签。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "浏览器小游戏，技术栈未查到，源码未查到。",
+        "method": "每回合十次投篮，按住蓄力、松开出手；空心进球得三分，三连中分数加倍（页面说明）。",
+        "features": [
+          "浏览器即玩",
+          "记录分数、最佳和命中率",
+          "键鼠或空格操作"
+        ],
+        "highlights": [
+          "规则清楚、体积很小，适合当「把模型用来做完整小游戏」的例子"
+        ],
+        "limitations": [
+          "源码未查到",
+          "没有关卡或长线内容",
+          "技术实现无法核实"
+        ],
+        "comparison": "比库内 Inkline Town、Hard Rock Hero 等完整一些的网页游戏轻得多，更接近一个实验小品，和作者的 stick-scene（生成讲解动画）不是同一类工具。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "littleprince",
+      "name": "The Little Prince: Across the Stars",
+      "summary": "把《小王子》做成可探索星球的 3D 剧情网页游戏，目前可在电脑浏览器试玩，源码尚未公开。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "试玩",
+        "剧情",
+        "light",
+        "three.js"
+      ],
+      "source_url": null,
+      "preview_url": "https://littleprince.dev",
+      "post_url": "https://x.com/Saccc_c/status/2109962425512734739",
+      "author": "Saccc_c",
+      "models": [
+        "Claude Opus 5.5"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "作者自报用 16 天、结合 Tripo 和 Blender，把故事中的星球做成可探索 3D 场景，并称后续会开源。本次未查到公开仓库。站点提示建议 Chrome 或 Edge，电脑游玩，移动端暂不支持。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "3D 网页剧情游戏，作者自述结合 Tripo 与 Blender 生成场景。完整技术栈未查到，源码未公开。",
+        "method": "用大模型把《小王子》各星球做成可探索场景，再发布为中文网页游戏。",
+        "features": [
+          "浏览器剧情探索（电脑）",
+          "中文界面",
+          "作者称将开源制作流程（尚未查到仓库）"
+        ],
+        "highlights": [
+          "把经典故事做成可走的 3D 网页体验，完成度看起来高于一般演示"
+        ],
+        "limitations": [
+          "源码未查到，开源承诺尚未兑现",
+          "移动端不支持（站点说明）",
+          "制作周期和工具组合为作者自报；本次未完整体验剧情"
+        ],
+        "comparison": "和「书桌之上」同属用生成资产做的中文 3D 叙事探索，本项目体量和故事完整度目标更高，但同样还没有源码。和纯代码场景（6:51、Walking Block）路线不同。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "the-quiet-elevation",
       "name": "The Quiet Elevation",
       "summary": "用 Gemini 4 Carbon 在 Google AI Studio 里做的一款温馨解谜小游戏。",
@@ -1470,6 +1862,55 @@
         ],
         "comparison": "和 earth-on-spawn 是同一作者、同一平台上的两个演示，本项目聚焦体素破坏。和 solstice、threepp 比，那些有可查的渲染实现，本项目只能看成品。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "walking-block",
+      "name": "Walking Block",
+      "summary": "用代码生成的八足苏联板楼在暮色田野里行走，可在浏览器里播放 45 秒短片或自由观察。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "three.js",
+        "程序化生成",
+        "Fable",
+        "短片"
+      ],
+      "source_url": "https://github.com/Leonxlnx/walking-block",
+      "preview_url": null,
+      "post_url": "https://x.com/LexnLin/status/2122359035751989341",
+      "author": "LexnLin",
+      "models": [
+        "Claude Fable 5.2",
+        "Claude Opus 5.5"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 43,
+      "notes": "星标 2026-11-17（美西）查询。同日书签里另有仓库链接帖 https://x.com/LexnLin/status/2122359036372791396。代码 MIT；配乐与音效为第三方许可，详见仓库 audio/CREDITS.md。本地 npm start 在 127.0.0.1:5177 预览，未查到公开托管试玩页。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "three.js；几何、贴图和着色器全部程序化生成，不使用外部 3D 资产或图片贴图。模块包括楼体、八条带 IK 的腿、底盘、环境和特效。后期有环境光遮蔽、高度雾、景深、bloom、胶片颗粒和运动模糊。时间是纯函数，任意帧可独立重渲。作者自述单帧约 540 万三角形，在集成显卡 Radeon 780M 上离线逐帧渲染（自报）。许可证：代码 MIT，音频为 CC-BY / CC0 等第三方许可。",
+        "method": "作者自述以 Fable 5.2 为主 Agent，Fable 5.2 / Opus 5.5 为子 Agent，对照静帧和分镜迭代；参考图不在仓库中。配乐与音效用脚本下载并混合免费授权录音。也提供 Chrome + ffmpeg 的离线渲染和封装命令。",
+        "features": [
+          "实时播放 45 秒时间轴（空格暂停，方向键寻帧）",
+          "固定机位与自由轨道相机，可用 scale 降低负载",
+          "离线渲染 1080p30 影片并混音",
+          "模块化场景与 Agent 约定写在 mods/README.md"
+        ],
+        "highlights": [
+          "把一座会走路的巨型板楼做成可重现的纯代码场景，而不是烘焙好的影片",
+          "时间纯函数让任意帧可复现，适合研究和改镜",
+          "与作者其他程序化场景是同一路线的又一次加码"
+        ],
+        "limitations": [
+          "未查到公开托管的试玩页，需要本地运行",
+          "场景很重，弱 GPU 可能只能降尺度观看",
+          "音频不随 MIT 代码一并自由使用，需遵守 CREDITS"
+        ],
+        "comparison": "同作者的 6:51 a room at dawn、athenaion 和 procedural-alpine-lake 都是纯代码三维场景。6:51 偏写实室内路径追踪烘焙；athenaion 是可漫游的大型古希腊世界；Walking Block 更接近赤龍那种「一个场景导出短片」，但体量和机械结构更复杂。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -1652,6 +2093,47 @@
       }
     },
     {
+      "id": "procedural-alpine-lake",
+      "name": "procedural-alpine-lake",
+      "summary": "用代码渲染的 60 秒高山湖泊电影：程序化地形、GPU 侵蚀、森林、水面和 Python 合成配乐。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "程序化生成",
+        "短片"
+      ],
+      "source_url": "https://github.com/Leonxlnx/procedural-alpine-lake",
+      "preview_url": null,
+      "post_url": "https://x.com/LexnLin/status/2112584673675051166",
+      "author": "LexnLin",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 69,
+      "notes": "星标 2026-11-17（美西）查询。GitHub 未标许可证。这是较早的书签，此前扫描未覆盖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "程序化地形加 GPU 侵蚀、森林、水体和天空；配乐用 Python 合成。仓库描述为 60 秒电影，全部由代码渲染。许可证未在 GitHub 标明。",
+        "method": "把地形、侵蚀、植被、水和声音都写成可复现的代码，再离线或实时渲染成短片。",
+        "features": [
+          "程序化地形与侵蚀",
+          "代码合成配乐",
+          "源码公开"
+        ],
+        "highlights": [
+          "在作者一系列纯代码风景里，这条更强调地貌生成和整段配乐都是算出来的"
+        ],
+        "limitations": [
+          "未查到托管试玩页",
+          "许可证未声明",
+          "文档较简"
+        ],
+        "comparison": "和 Walking Block、6:51、athenaion 是同一作者的纯代码场景线。本项目是户外地貌短片，6:51 是室内写实，Walking Block 是机械巨构，athenaion 是可漫游大世界。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "resoundle",
       "name": "resoundle",
       "summary": "输入一种风格，约 90 秒生成一整套风格统一的游戏 UI 音效（悬停、选择、返回、错误、开关）。",
@@ -1782,6 +2264,48 @@
         ],
         "comparison": "和 solstice 都是原生图形栈：threepp 更通用、更成熟，solstice 更前沿、更专一。对比网页向的 portals、viper-one-one，threepp 适合原生或仿真场景。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "tibo-dog",
+      "name": "tibo.dog",
+      "summary": "Grok Bot 负责人 poteto 做的免费网页幸存者游戏：操作 Tibo 和最多三只狗，坚持 15 分钟。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "试玩",
+        "幸存者",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://tibo.dog",
+      "post_url": "https://x.com/poteto/status/2117043478140276847",
+      "author": "poteto",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "官网称可在浏览器和 X 帖子内游玩，支持 27 种语言。源码未查到。作者原帖提到四天内约 1150 个 PR、用 lint 规则固化问题、并用 TLA+ 找并发问题（均为自报）。本次未声称已玩过。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "浏览器 2.5D 像素风幸存者游戏，技术栈和源码未查到。官网称也可嵌在 X 帖子里玩。",
+        "method": "自动开火的土豆武器，玩家负责移动和冲刺，与害虫和 Boss 作战，存活 15 分钟即胜（官网说法）。",
+        "features": [
+          "免费网页游玩，可嵌进 X 帖",
+          "最多三只狗同伴",
+          "自称 27 种语言（自报）"
+        ],
+        "highlights": [
+          "把幸存者套路做成可在帖子里直接玩的轻量游戏",
+          "作者公开了用大量 PR、lint 和 TLA+ 约束 Agent 的做法（自报），对研究 Agent 工程也有参考"
+        ],
+        "limitations": [
+          "源码未查到",
+          "制作周期和 PR 数量均为作者自报",
+          "玩法和数值本次未完整验证"
+        ],
+        "comparison": "和 Hard Rock Hero、Poke Bonk、FrogXteps 一样是 AI 辅助做成的可玩作品，但 tibo.dog 走的是幸存者自动射击，并且强调能嵌在 X 里玩。Aura Underground 是竞速，路线不同。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -2312,6 +2836,49 @@
       }
     },
     {
+      "id": "beautifulrust",
+      "name": "BeautifulRust",
+      "summary": "三个技能加一份经过测试的 Clippy 配置，让编程 Agent 按惯用法写、审和把其他语言迁成 Rust。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "rust",
+        "skill"
+      ],
+      "source_url": "https://github.com/morganlinton/BeautifulRust",
+      "preview_url": "https://www.beautifulrust.dev",
+      "post_url": "https://x.com/Eleazar39456213/status/2122303903450694069",
+      "author": "morganlinton",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 2046,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。书签是介绍帖，不是作者原帖。官方称适用于 Claude Code、Codex、Copilot、Cursor 和 Gemini CLI。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent Skills 加一份经过测试的 Clippy 配置。三个技能分别覆盖：写代码时按最佳实践生成、审查已有 Rust、把其他语言改写成地道 Rust。许可证 MIT。有独立文档站。",
+        "method": "不靠一次性提示词，而是把惯用法写成可安装的技能和检查配置，让不同 Agent 共用同一套标准。",
+        "features": [
+          "写作、审查、迁移三类技能",
+          "可共享的 Clippy 配置",
+          "多编程 Agent 安装方式",
+          "文档站点"
+        ],
+        "highlights": [
+          "针对「能跑但不像 Rust」这个常见问题，而不是再做一个通用编码 Agent",
+          "技能加静态检查，比只写一段风格说明更可执行"
+        ],
+        "limitations": [
+          "不能代替真实的代码评审和性能测试",
+          "「地道」仍有主观空间",
+          "对复杂 unsafe 或底层性能场景的覆盖未验证"
+        ],
+        "comparison": "与 rust-anything 互补：一个管风格和惯用法，一个管对照旧行为的迁移验收。和 Refactoring UI Skill 类似，都是把规则书做成技能，只是领域从界面改成了 Rust。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "captureflow",
       "name": "CaptureFlow",
       "summary": "开源录屏分享工具，支持 Agent 经 MCP 录浏览器/桌面演示。",
@@ -2395,6 +2962,97 @@
         ],
         "comparison": "和 norman-skill（科研技能包）互补：一个是写论文的工作台，一个是科研技能。和 perch 一样是「原生 App 加本地 Agent CLI」路线，perch 面向 PR 审查。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "craft-anything",
+      "name": "Craft Anything",
+      "summary": "用本地编程 Agent 研究已有软件并重做一版的桌面工具；默认只看访客能看到的部分，深模式可调用更多分析工具。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "早期alpha",
+        "编程Agent"
+      ],
+      "source_url": "https://github.com/storytold/craft-anything",
+      "preview_url": null,
+      "post_url": "https://x.com/mylifcc/status/2122133046757622011",
+      "author": "storytold（ArtCraft）",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 35899,
+      "notes": "星标 2026-11-17（美西）查询。GitHub 标 Apache-2.0，部分介绍称也可选 MIT。项目处于 early alpha。官方说明应只用于你拥有或被允许研究的软件，并称不会绕过 DRM、登录或反作弊。书签介绍里的「像素级复刻」「320 个工具」等来自转述或项目自报。本条只做产品层说明，不展开逆向步骤。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 桌面应用（egui）加 CLI 和 MCP 服务，也有部分 WebAssembly 查看器。流程是 Study → Build → Check → Ready。默认 Clean room 只使用访客能看到的信息；Deep 模式会动用更多内置分析能力，并在已安装 Ghidra 时调用它。构建阶段运行你本机已登录的编程 Agent（文档以 Claude Code 为主，也提到其他适配，成熟度不一）。许可证以仓库标明的 Apache-2.0 为准。",
+        "method": "先观察目标软件或网站，再让本机 Agent 做一版自己的实现，并对照原作检查（网站可在几种宽度下比较）。项目自称用于理解和工作，而不是绕过保护。",
+        "features": [
+          "桌面端、CLI 和 MCP 三种用法",
+          "Clean room 与 Deep 两种观察模式",
+          "用本机已登录的编程 Agent 来构建",
+          "对照检查并迭代（文档说明）",
+          "Windows / macOS / Linux 安装包（仍为 alpha）"
+        ],
+        "highlights": [
+          "把「看懂现有软件，再在自己的项目里重做能力」收成一条工作流",
+          "默认 Clean room，并写明不以绕过保护为目的",
+          "星标很高，但官方自己标成 early alpha"
+        ],
+        "limitations": [
+          "仍是早期 alpha，行为检查和部分 Agent 适配并不完整（项目 STATUS 自述）",
+          "必须在有权研究的软件上使用，不能当作破解或抄袭商业产品的工具",
+          "书签转述的能力范围可能夸大，应以仓库文档为准"
+        ],
+        "comparison": "和 rust-anything 都强调「对照验收」，但 rust-anything 面对的是你自己的旧代码迁到 Rust；Craft Anything 面向的是研究已有软件并重做。和 SkillEvaluator 也不同，它不是评技能，而是一条研究-重建-核对流水线。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "diffity",
+      "name": "Diffity",
+      "summary": "Mac 和 Linux 上的代码评审桌面应用，用来看你或 Agent 写的改动，并把批注交给 Claude Code 修改。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "桌面应用",
+        "代码评审"
+      ],
+      "source_url": "https://github.com/nilbuild/diffity",
+      "preview_url": "https://diffity.com",
+      "post_url": "https://x.com/nilbuild/status/2122402196096684199",
+      "author": "nilbuild",
+      "models": [
+        "Claude Code"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 919,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。官网与 README 均写支持 Mac（13.3+）和 Linux；书签帖宣布 Linux 可用。AI 功能需要已登录的 Claude Code 和 Node.js。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "桌面应用（Mac / Linux），以 GitHub 风格展示 diff，并可把评论发给本机 Claude Code。GitHub 令牌存在系统钥匙串，也可用 GitHub CLI 登录。许可证 MIT。",
+        "method": "先在本机看工作区或 PR 的改动并写评论，再让 Claude 按评论改代码、在线程里回复，或直接让 Claude 先审一遍。",
+        "features": [
+          "对行、文件或整个 diff 写评论并交给 Claude 修",
+          "在线程里 @claude 追问",
+          "让 Claude 先做一轮评审",
+          "查看提交范围和任意文件",
+          "向 GitHub 发表评审"
+        ],
+        "highlights": [
+          "把「Agent 写完、人来审、再让 Agent 改」收成一个专门的审代码窗口",
+          "Linux 支持补齐后更适合跨平台团队"
+        ],
+        "limitations": [
+          "没有 Windows 安装包（文档未写支持）",
+          "AI 功能绑定 Claude Code",
+          "对超大 diff 的性能未验证"
+        ],
+        "comparison": "库内多数研发效率工具是技能、评测或交付平台，很少有专门的「人审 Agent 代码」桌面客户端。和 LoopForge 的人工审批相比，Diffity 更像本机的 PR 审阅器，而不是流水线门禁。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -2487,6 +3145,51 @@
         ],
         "comparison": "和 windows-terminal 一样给 Agent 一个「可观察的运行环境」，但 Exact 面向应用开发。在研发效率类里，它是唯一改造应用框架本身的项目，其余多为技能或外挂工具。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "genex-desktop",
+      "name": "Genex",
+      "summary": "用 AI 在 Unreal、Unity、Godot 或网页里做游戏的开源桌面应用：Agent 负责搭引擎、构建并试玩。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "游戏开发",
+        "桌面应用",
+        "多智能体"
+      ],
+      "source_url": "https://github.com/genex-games/genex-desktop",
+      "preview_url": "https://genex.games/desktop",
+      "post_url": "https://x.com/genex_games/status/2112276766718845024",
+      "author": "genex-games",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 881,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。支持 macOS、Linux，Windows 为预览且安装包未签名（README 说明）。项目自称 early，预期有粗糙之处。较早书签，此前扫描未覆盖。书签发布时版本为 0.1.10。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "游戏开发桌面应用，驱动本机或云端模型（Claude Code、ChatGPT 订阅或本地模型），用多 Agent（主 Agent、工人、评审，可混合模型）在 Unreal、Unity、Godot、Roblox Studio 或浏览器里建项目、构建并试玩。可用本机 Blender 插件做资产，也可经工具路由接 Meshy、Tripo、ElevenLabs 等。许可证 MIT。",
+        "method": "把「写需求、改一版、看是否能玩」收成带视觉检查的多 Agent 工作流，而不是只在 IDE 里聊天。",
+        "features": [
+          "多引擎搭建与自动试玩",
+          "多 Agent 和视觉评审",
+          "本机或订阅或本地模型",
+          "资产插件和外部模型路由",
+          "macOS / Linux 安装包，Windows 预览"
+        ],
+        "highlights": [
+          "少有把「玩得起来吗」做成闭环的开源游戏开发 Agent 应用",
+          "不绑死单一引擎"
+        ],
+        "limitations": [
+          "官方承认仍早，Windows 包未签名",
+          "外部资产服务可能产生费用",
+          "实际能完成的游戏规模未验证"
+        ],
+        "comparison": "和 GodotPrompter、Blender Agent Skills、3D OS 都服务游戏制作，但 Genex 是跨引擎的桌面交付环（构建+试玩），而不是单一编辑器插件。和 LoopForge 同属交付，只是领域换成游戏。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -3172,6 +3875,52 @@
       }
     },
     {
+      "id": "swamp",
+      "name": "Swamp",
+      "summary": "让 Agent 把任务拆成可复用的 Behavior，再连成可重复执行的工作流，减少每次重新规划带来的消耗和随机性。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "工作流",
+        "skill",
+        "AGPL"
+      ],
+      "source_url": "https://github.com/swamp-club/swamp",
+      "preview_url": "https://swamp-club.com/manual/explanation/how-swamp-works",
+      "post_url": "https://x.com/aigclink/status/2122533040064991472",
+      "author": "swamp-club",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 959,
+      "notes": "星标 2026-11-17（美西）查询。许可证 AGPL-3.0。书签帖称 Token 消耗减少 8 倍、速度提升 2 倍，均为转述/自报，未独立验证。数据默认放在 .swamp/。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "CLI 加 TypeScript 行为类型和 YAML 行为定义、工作流。行为类型定义方法和输入输出模式，定义文件只填具体配置；工作流是带依赖的 DAG，步骤间可用 CEL 表达式引用上一步的数据。密钥用 vault 表达式在运行时注入。技能会写入 Claude Code、Cursor、OpenCode、Codex、Gemini/Antigravity 等工具的技能目录。许可证 GNU AGPL-3.0。",
+        "method": "先教 Agent 用技能把问题拆成可复用行为，再把行为连成可审查、可分享、可再跑的工作流。之后重复任务不必每次重新读说明和规划。",
+        "features": [
+          "行为类型与定义分离",
+          "工作流依赖、并行步骤和人工审批",
+          "远程 worker 执行",
+          "为多种编程 Agent 安装技能",
+          "数据与密钥和配置分开"
+        ],
+        "highlights": [
+          "直接针对 Skill 每次重读、重规划又慢又贵的问题",
+          "工作流是可审查的 YAML，而不是只存在对话里的计划",
+          "AGPL 对二次分发有强约束，这点很清楚"
+        ],
+        "limitations": [
+          "效率数字为转述/自报，未验证",
+          "AGPL 对闭源或托管分发不友好",
+          "要把现有 Skill 迁进来需要先建模，有学习成本"
+        ],
+        "comparison": "和 LoopForge 都想把 Agent 工作固化成可重复流程，但 LoopForge 是自托管的多编码 CLI 交付平台，带审批和记账；Swamp 更轻，核心是行为和工作流这套语言。和 SkillEvaluator 不同，Swamp 不评测技能有没有用，而是把重复技能编译成确定性流程。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "tokeneconomizer",
       "name": "TokenEconomizer",
       "summary": "微软/伯克利开源：给 Claude Code/Codex 省 token 的仓库精简记忆与按需加载。",
@@ -3819,6 +4568,52 @@
       }
     },
     {
+      "id": "rust-anything",
+      "name": "rust-anything",
+      "summary": "给编程 Agent 用的增量 Rust 改写工具：先录下旧程序行为，每改一块就回放对比，确认没改坏再继续。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "rust",
+        "迁移",
+        "skill",
+        "MCP"
+      ],
+      "source_url": "https://github.com/erkamyaman/rust-anything",
+      "preview_url": "https://crates.io/crates/rust-anything",
+      "post_url": "https://x.com/geekbb/status/2122697767688532379",
+      "author": "erkamyaman",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 1553,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。README 写可处理 TypeScript/JavaScript、Python、C、Go、Ruby、Java 的 CLI、HTTP 服务和库；PHP 与 C# 为预览。加速倍数、38251 条用例、0 mismatch 等均为项目自报。工具不负责翻译代码，Rust 由人或编程 Agent 写。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust CLI（也可 cargo install / npm 装预编译二进制）。流程是：给原程序做性能画像、选定要迁移的单元、生成桥接和 Rust crate 骨架、录制原实现在生成用例和自定义输入上的输出，再把这些用例回放到 Rust 实现上。最后还有格式化、Clippy、unsafe、错误处理和行为不一致的门禁。通过 rust-anything setup 注册到 Claude Code、Codex、Cursor、Gemini CLI；也提供 MCP 和 Claude Code 插件。许可证 MIT。",
+        "method": "不做自动翻译，只提供「先迁哪、怎么桥接、怎样证明行为一致」。人和 Agent 写 Rust，工具负责计划和验收。可以整应用逐步迁完，也可以只加速热点路径。",
+        "features": [
+          "多语言 CLI、服务和库的增量迁移",
+          "行为录制与回放验收",
+          "为 Agent 提供技能、MCP 和安装命令",
+          "最终质量门禁（格式、Clippy、unsafe、行为）"
+        ],
+        "highlights": [
+          "把「改写会不会改坏行为」变成可重复的验收，而不是靠模型记忆",
+          "明确承认只能抓住录音覆盖到的行为",
+          "安装和 Agent 集成路径很完整"
+        ],
+        "limitations": [
+          "录音覆盖不到的行为（并发、时序、未触发分支等）抓不住，README 也写了这一限制",
+          "加速倍数和用例数字为自报",
+          "PHP/C# 仍是预览；生成的 Rust 质量仍取决于 Agent 或作者"
+        ],
+        "comparison": "和 BeautifulRust 都服务「让 Agent 写出像样的 Rust」，但分工不同：BeautifulRust 用技能和 Clippy 配置管文风与惯用法；rust-anything 管的是对照旧实现做行为验收的迁移过程。和 LoopForge、SkillEvaluator 这种平台或评测也不一样，它是迁代码时的专用夹具。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "security-audit-skill",
       "name": "security-audit-skill",
       "summary": "Cloudflare 开源：让编程 Agent 分阶段审计代码并交叉验证。",
@@ -4132,6 +4927,51 @@
       }
     },
     {
+      "id": "coucou",
+      "name": "Coucou",
+      "summary": "在 Mac 灵动岛和 iPhone 锁屏上看管编程 Agent：批准操作、查看状态，支持 Claude Code、Codex、Cursor 等。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "macOS",
+        "iPhone",
+        "编程Agent"
+      ],
+      "source_url": "https://github.com/louis-cfm/coucou",
+      "preview_url": "https://louis-cfm.github.io/coucou/",
+      "post_url": "https://x.com/RijviOnChain/status/2112812118252904787",
+      "author": "Louis-CFM",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 7309,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。这是较早的书签，此前扫描未覆盖。支持的终端以仓库说明为准。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Mac 刘海/灵动岛和 iPhone 上的轻量伴侣应用，用来监视和批准本机编程 Agent 的请求。仓库说明覆盖 Claude Code、Codex、Cursor、Gemini CLI、Antigravity 等。许可证 MIT。",
+        "method": "不替代 Agent，只把「它在干什么、要不要批准」送到最容易看到的系统位置，包括锁屏。",
+        "features": [
+          "Mac 灵动岛状态",
+          "iPhone 锁屏批准",
+          "多种编程 Agent",
+          "开源，有介绍站"
+        ],
+        "highlights": [
+          "专门解决「Agent 在后台跑、人不知道该不该点批准」",
+          "同时照顾桌面和手机，这在库里很少见",
+          "星标已经不低，说明需求真实"
+        ],
+        "limitations": [
+          "主要面向 Apple 设备",
+          "它是监控和批准层，不提供自己的 Agent 运行时",
+          "和各 CLI 的适配完整度要按版本核对"
+        ],
+        "comparison": "和 Poki、Pinky、XPhoneUse 同属「让人在手机或本机更方便地管 Agent」，但 Coucou 不管完整的手机屏幕接管，只做缺口和锁屏上的监视与批准。和 islandcn 那种网页灵动岛组件也不是一类。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "mika",
       "name": "Mika",
       "summary": "跑在安卓本机的 Phone Agent，无需 Root/电脑，可操作任意 App。",
@@ -4276,6 +5116,50 @@
           "要完成本机差事仍需自备模型额度，或使用 ChatGPT Plus/Pro"
         ],
         "comparison": "和 tencent-browserskill、moli、opencode-browse 一样能操作网页，但 Nod 是带桌面应用、审批和 Vault 的完整个人助手，目标是替你跑真实差事，而不是给别的 Agent 当浏览器后端。和 aura-autopilot（游戏引擎里试玩）、xphoneuse（真机手机控制）不在同一场景。想要本机个人助理选 Nod；想把已登录浏览器交给编程 Agent 选 BrowserSkill。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "obscura",
+      "name": "Obscura",
+      "summary": "用 Rust 写的无头浏览器引擎，走 Chrome DevTools Protocol，给 Agent 和自动化提供轻量浏览器，而不必再拉起一整份 Chromium。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "rust",
+        "浏览器",
+        "Agent"
+      ],
+      "source_url": "https://github.com/h4ckf0r0day/obscura",
+      "preview_url": "https://obscura.sh",
+      "post_url": "https://x.com/HeLi8866/status/2122279075997990927",
+      "author": "h4ckf0r0day",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 36228,
+      "notes": "星标 2026-11-17（美西）查询。许可证 Apache-2.0。仓库定位是 The headless browser for AI agents and web scraping。书签介绍把「反爬」「淘汰 Chromium」说得很满，属于转述，下面按官方文档写能力边界。本条只做产品层说明。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 无头浏览器：用 V8 跑 JavaScript，并暴露 Chrome DevTools Protocol，便于 Puppeteer、Playwright 这类客户端接入。自带原生渲染，可截图、录屏和导出光栅 PDF。许可证 Apache-2.0。官方讨论也写了它并不是完整的 Chromium 替代。",
+        "method": "用更小的 Rust 引擎代替再拉起一份 Chromium，把浏览器能力交给 Agent 或自动化脚本。",
+        "features": [
+          "CDP 兼容，方便沿用现有自动化客户端",
+          "截图、录屏和 PDF",
+          "面向 Agent 的无头浏览",
+          "官方文档和架构说明"
+        ],
+        "highlights": [
+          "星标很高，说明「给 Agent 一个更轻的浏览器」需求很大",
+          "明确走 CDP，迁移成本比自创协议低"
+        ],
+        "limitations": [
+          "官方写明对长尾 CSS、部分 Web API、媒体播放、GPU/合成效果和 WebGL 等并不与 Chromium 对等",
+          "书签里的「反爬神器」说法是转述，不应当成已验证能力",
+          "用来做未授权采集或绕过保护不在本库讨论范围"
+        ],
+        "comparison": "库内 Phone/Computer Use 项目多是手机镜像（Poki、Pinky、XPhoneUse）或桌面助手（Nod）。Obscura 是底层无头浏览引擎，更接近给这些 Agent 换一个更轻的浏览器，而不是一个完整的 Phone Use 产品。",
         "researched_at": "2026-11-18"
       }
     },
@@ -4998,6 +5882,48 @@
       }
     },
     {
+      "id": "autoswarm",
+      "name": "AutoSwarm",
+      "summary": "港大等团队的多 Agent 协作框架，想打通各 Agent 的上下文，让它们一起完成任务。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "多智能体",
+        "论文"
+      ],
+      "source_url": "https://github.com/HKUDS/AutoSwarm",
+      "preview_url": "https://arxiv.org/abs/2610.33048",
+      "post_url": "https://x.com/huang_chao4969/status/2122322496942977044",
+      "author": "HKUDS",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 2632,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。书签是介绍帖。论文预印本 arXiv:2610.33048。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "多 Agent 统一协作框架，目标是打破各 Agent 之间的上下文壁垒。许可证 MIT，附带论文。具体协议和记忆实现以仓库与论文为准。",
+        "method": "把多个 Agent 放进同一套协作环境，共享必要上下文并一起执行，而不是各跑各的会话。",
+        "features": [
+          "统一调度多个 Agent",
+          "强调上下文打通",
+          "开源实现和论文"
+        ],
+        "highlights": [
+          "同时有代码和论文，比纯产品介绍更容易核对思路",
+          "和「把所有 Agents 监工起来」这类需求直接对应"
+        ],
+        "limitations": [
+          "实际效果和论文数字需自行验证",
+          "与现成编程终端（Claude Code、Codex）的接入深度要以文档为准",
+          "生产部署复杂度未在本条验证"
+        ],
+        "comparison": "和 AgentRun、eve、LoopForge 都在「管多个 Agent」这条线上。AgentRun 管现成编程 CLI 的恢复和自我改进；eve 是用目录定义自己的 Agent；LoopForge 是带审批和记账的交付平台。AutoSwarm 更偏研究型的跨 Agent 上下文打通。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "bot-teams",
       "name": "Bot Teams",
       "summary": "现成多机器人团队模板，一条提示词安装。",
@@ -5233,6 +6159,48 @@
       }
     },
     {
+      "id": "eta",
+      "name": "Eta",
+      "summary": "自称零第三方依赖的一体式多 Agent 运行时，把循环、工具和界面收在一起。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "多智能体",
+        "运行时"
+      ],
+      "source_url": "https://github.com/0xfe-project/eta",
+      "preview_url": "https://eta.0xfe.tech",
+      "post_url": "https://x.com/object_nullll/status/2121260856055152690",
+      "author": "0xfe-project",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 228,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。仓库描述为 self-contained 0-vendor multi-agent all-in-one endomorphic agent loop/runtime/harness/app。书签是用户使用体验帖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "一体式多 Agent 运行时，强调自包含、不绑特定厂商。许可证 MIT。站点 eta.0xfe.tech。实现语言和架构细节以仓库为准。",
+        "method": "把 Agent 循环、运行时和界面做成一个应用，而不是再包一层现成终端。",
+        "features": [
+          "多 Agent 运行时",
+          "自称无第三方供应商绑定",
+          "有网站和源码"
+        ],
+        "highlights": [
+          "走「自己实现一整套循环」而不是编排 Claude Code / Codex",
+          "体积和定位都比大型交付平台更紧"
+        ],
+        "limitations": [
+          "星标和生态还小",
+          "「零供应商」的边界要自己核对依赖",
+          "书签是体验帖，缺少系统评测"
+        ],
+        "comparison": "和 eve、AgentRun、dusk bot 都想提供可长期跑的 Agent 环境。eve 用目录组织指令和技能；AgentRun 管理现成编程 CLI；Eta 更接近从零做运行时。成熟度目前低于这些更完整的产品。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "antigravity-dynamic-workflows",
       "name": "Google Antigravity Dynamic Workflows",
       "summary": "Google Antigravity 新功能：/run-workflow 让 Agent 写一段 Python 脚本，用 parallel()/pipeline() 编排多个子 Agent，审批后运行并可保存复用。",
@@ -5357,7 +6325,7 @@
         "取决于所选执行器：CodeBuddy、Codex、Claude Code、OpenCode、Cursor CLI、Antigravity、Kimi Code、Pi、DeepSeek Harness、ZCode"
       ],
       "first_seen": "2026-11-17",
-      "origin": "daily-digest",
+      "origin": "bookmark+daily-digest",
       "stars": 3169,
       "notes": "星标 3169（2026-11-18 查询）。许可证为 MIT，但附有第三方组件声明（LICENSE 为 NOASSERTION）。聊天工作台目前是中文，管理页支持中英。默认 Compose 通过宿主机 Docker socket 起沙箱，文档写明适合受信任团队，不是多租户隔离。X 帖提到 v0.4.0（2026-11-17）。",
       "analysis": {
@@ -5980,6 +6948,50 @@
       }
     },
     {
+      "id": "duskbot",
+      "name": "dusk bot",
+      "summary": "可在自己电脑上跑的 Grok Bot 替代：每个机器人有独立记忆和电脑环境，可用你已有的模型订阅；源码是非商用许可。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "源码可得",
+        "非商用许可",
+        "桌面应用",
+        "多智能体"
+      ],
+      "source_url": "https://github.com/DuskBotAI/duskbot",
+      "preview_url": "https://dusk.bot",
+      "post_url": "https://x.com/buildwithsid/status/2122351854793433106",
+      "author": "DuskBotAI（@buildwithsid）",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 327,
+      "notes": "星标 2026-11-17（美西）查询。原帖写 free open source，但仓库实际是 PolyForm Noncommercial 1.0.0：个人和非商用可看、可改、可分享，商用需另购许可。桌面版支持 Mac/Windows/Linux；评论区提到 Android 应用当时仍待发布。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "本地桌面应用，把一批长期运行的机器人组成团队，各自有记忆和电脑环境。模型调用走你已有的 ChatGPT、Claude 或 Grok 等订阅或密钥，产品不向你另收模型费（官方说明）。许可证为 PolyForm Noncommercial，不是 OSI 意义下的完全开源。",
+        "method": "对标 Grok Bot 的「一队长期机器人」体验，但跑在自己的机器和自己的模型订阅上。",
+        "features": [
+          "多机器人团队和各自的记忆",
+          "本机电脑环境",
+          "使用已有模型订阅",
+          "个人使用免费，桌面端跨系统"
+        ],
+        "highlights": [
+          "给想要 Grok Bot 这类体验、但希望数据在自己机器上的人一条路",
+          "许可边界写得清楚，比「完全开源」的宣传更准确"
+        ],
+        "limitations": [
+          "不是宽松开源，商用受限",
+          "与 Grok Bot、OpenMausBot 等相比，生态和成熟度还早",
+          "移动端当时尚未就绪（评论区说法）"
+        ],
+        "comparison": "库内已有 OpenMausBot 等开源 Grok Bot 替代。dusk bot 更强调现成桌面产品和沿用你已有的模型订阅，但许可更紧。和 Nod（n8n 个人助手，偏研究预览、有沙箱和权限确认）也不一样：Nod 是 Apache 开源的个人助手，dusk bot 是非商用许可的机器人团队产品。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "herdr",
       "name": "herdr",
       "summary": "用 Rust 写的「编程 Agent 运行时」终端复用器：后台常驻、断线不停工、跨多台机器统一面板，并标出哪个 Agent 卡住了。",
@@ -6353,6 +7365,50 @@
       }
     },
     {
+      "id": "cinetic",
+      "name": "Cinetic",
+      "summary": "用编码 Agent 指导、用代码生成的电影感发布片和动效技能，声音也可由代码生成。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "动效",
+        "视频"
+      ],
+      "source_url": "https://github.com/Leonxlnx/cinetic",
+      "preview_url": null,
+      "post_url": "https://x.com/LexnLin/status/2111618614444892331",
+      "author": "LexnLin",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 1274,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。v1.1 称默认节奏更稳、文案更短，声音用 earshot 一类代码生成。较早书签，此前扫描未覆盖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "面向编程 Agent 的技能，用代码生成电影感的发布视频和动效。v1.1 调整文案长度和默认节奏，声音用代码生成。许可证 MIT。",
+        "method": "不直接让模型「做一条视频」，而是由 Agent 按技能约束生成可改的代码时间轴。",
+        "features": [
+          "代码化的发布片和动效",
+          "可调节奏和文案长度",
+          "声音也可代码化",
+          "开源技能"
+        ],
+        "highlights": [
+          "把发布视频变成可版本管理的代码，而不是一段不可改的渲染结果",
+          "与 earshot 形成影像和声音的组合"
+        ],
+        "limitations": [
+          "最终成片风格仍依赖模型和提示",
+          "未查到一键托管预览",
+          "不替代专业剪辑软件"
+        ],
+        "comparison": "和 HyperFrames、rea-video、gmclip 都做视频，但 Cinetic 走的是「技能 + 代码生成动效」。gmclip 剪的是已有录像；Cinetic 从代码里长出片子。和 stick-scene 相比完成度更高、也更重。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "deeptutor",
       "name": "DeepTutor",
       "summary": "港大开源本地学习 Agent：吃 PDF/笔记/视频并回教、测验与追踪。",
@@ -6628,6 +7684,51 @@
         ],
         "comparison": "和游戏类的 3d-os-scenario-skills、scenario-blender-plugin 同服务于游戏资产，HairDeck 是专用模型。和 parametric-topdown-pixel-architecture 相比，一个是神经生成，一个是程序化生成。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "harness2",
+      "name": "Harness²",
+      "summary": "Google Research 的递归式 Agent 套件优化框架：在模型权重不变的前提下，对照多次执行来改进提示词、工具和编排。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "研究",
+        "Google",
+        "agent harness"
+      ],
+      "source_url": "https://github.com/google-research/harness2",
+      "preview_url": null,
+      "post_url": "https://x.com/openmys/status/2112029451550953899",
+      "author": "Google Research",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 24308,
+      "notes": "星标 2026-11-17（美西）查询。许可证 Apache-2.0。书签是有人把它接入 JEV 的回复，不是官方发布帖。文档强调这是研究框架。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "在开放世界、任务事先未写入套件设计的前提下，做递归的 harness 优化，且不改模型权重。任务层用对比式 Propose–Probe–Compose：提出修改、在同一任务上探测效果、再根据行为对照合成新套件，不依赖标准答案。套件层再把学到的经验和已采纳的套件写进持久的 improvement harness，指导下一次改进。许可证 Apache-2.0。",
+        "method": "把「提示词、工具、记忆、技能、编排」看成可迭代的系统，用执行对照而不是人工标注来改进它。",
+        "features": [
+          "任务级与套件级两层递归",
+          "无需标准答案的对比改进",
+          "可插入的基准和文档",
+          "高星开源研究代码"
+        ],
+        "highlights": [
+          "直接针对「套件比模型更能决定 Agent 表现」这个问题",
+          "方法写得很清楚，不是又一个聊天框架",
+          "星标很高，影响面大"
+        ],
+        "limitations": [
+          "研究框架，不是开箱即用的产品 Agent",
+          "计算开销和效果数字需看论文与基准，本条不做验证",
+          "书签是第三方接入示例，官方支持范围以仓库为准"
+        ],
+        "comparison": "和 SkillEvaluator 都关心「这套机制到底有没有变好」，但 SkillEvaluator 评的是单个技能装上前后的差异，Harness² 评并改的是整个执行套件，而且可以在没有标准答案时继续改进。和 LoopForge 的流程固化也不同，这里强调的是递归自我改进。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -7643,6 +8744,49 @@
       }
     },
     {
+      "id": "scarlettkc-2-0",
+      "name": "ScarletKc 2.0",
+      "summary": "作者发布的本地可跑模型，书签是一段用户用它写体素地球的反馈，不是完整的评测报告。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "模型",
+        "light",
+        "Hugging Face"
+      ],
+      "source_url": "https://huggingface.co/ScarletKc/ScarletKc-2.0",
+      "preview_url": "https://huggingface.co/ScarletKc/ScarletKc-2.0-GGUF",
+      "post_url": "https://x.com/ScarletKc/status/2122557981581783104",
+      "author": "ScarletKc",
+      "models": [
+        "ScarletKc-2.0"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "书签是模型作者转述 Hugging Face 讨论区的用户反馈，属自报/他评，未做独立评测。另有 GGUF 量化版本。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "托管在 Hugging Face 的开源权重及 GGUF 量化版本。架构和参数量以模型卡为准，本条未做完整核验。",
+        "method": "面向本地聊天和写代码。书签里的对比来自一名用户用同一题目分别生成体素地球页面。",
+        "features": [
+          "Hugging Face 权重",
+          "GGUF 量化便于本地跑",
+          "作者和用户讨论可见"
+        ],
+        "highlights": [
+          "有实际用户拿具体生成任务做对照，比纯跑分宣传具体"
+        ],
+        "limitations": [
+          "只做了简要收录，没有独立评测",
+          "单条用户反馈不能代表整体水平",
+          "许可和商用条款需看模型卡"
+        ],
+        "comparison": "和库内 Gemini 4 Hydrogen、Ling 3.2 Flash 等模型条目一样按 light 处理：只记录来源和定位，不做排名。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "science-s-last-exam",
       "name": "Science's Last Exam",
       "summary": "把真实科研目标交给 AI agent，用专家隐藏标准打分的硬核评测。",
@@ -7765,6 +8909,48 @@
         ],
         "comparison": "和 lieflat-charts（数据图表）都是可视化技能，但目标是教学。和 deeptutor、janestreet-agent-skills 组成学习工具链。和 other 类的 wedulab、tongjiang-lab（成品教学实验室）相比，它是生成这类内容的工具。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "topview-3d-builder",
+      "name": "Topview 3D Builder",
+      "summary": "在 ChatGPT 或 Claude 里用语言或参考图搭可编辑的 3D 场景，调镜头后再导出视频。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "3D",
+        "视频"
+      ],
+      "source_url": "https://github.com/topviewai/topview-3d-builder",
+      "preview_url": null,
+      "post_url": "https://x.com/Lucy_love_AI/status/2112004108475666686",
+      "author": "topviewai",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 285,
+      "notes": "星标 2026-11-17（美西）查询。许可证 Apache-2.0。书签是发布介绍。较早收藏，此前扫描未覆盖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "开源工具，让大模型对话里出现可编辑的 3D 场景：摆放人物和物体、切换相机、调整构图，再导出视频。许可证 Apache-2.0。与 Topview 产品线相关，具体宿主以仓库为准。",
+        "method": "先把分镜做成可改的 3D 预演，再出片，而不是只靠文生视频碰运气。",
+        "features": [
+          "语言或参考图搭场景",
+          "编辑相机和构图",
+          "导出视频",
+          "源码公开"
+        ],
+        "highlights": [
+          "把「先导戏、再生成」这条更可控的视频工作流开源出来"
+        ],
+        "limitations": [
+          "和托管服务的关系、账号或额度要以文档为准",
+          "场景复杂度和导出质量未在本条验证",
+          "文档偏短"
+        ],
+        "comparison": "和 Cinetic 都服务「做出一段像样的片子」，但 Cinetic 是代码生成动效，Topview 3D Builder 是可编辑的 3D 预演再出视频。和 rea-video、HyperFrames 的平台型生成也不同。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -8305,6 +9491,94 @@
       }
     },
     {
+      "id": "earshot",
+      "name": "earshot",
+      "summary": "给编程 Agent 用的本地听音和做声工具：能听、能评、也能用代码合成声音，只靠 CPU。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "音频",
+        "skill",
+        "编程Agent"
+      ],
+      "source_url": "https://github.com/Leonxlnx/earshot",
+      "preview_url": null,
+      "post_url": "https://x.com/LexnLin/status/2111229504874246441",
+      "author": "LexnLin",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 5108,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。v0.2 增加把声音转成代码。同主题书签还有 https://x.com/LexnLin/status/2111229509467078873。较早收藏，此前扫描未覆盖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "本地、仅 CPU 的音频工具，让编程 Agent 能听取、评价和生成声音，并在 v0.2 把真实声音转成代码。许可证 MIT。",
+        "method": "把听觉能力接到编码 Agent 的工具箱里，使声音也可以被检查和程序化复现。",
+        "features": [
+          "听和评声音",
+          "代码合成声音",
+          "把录音转成代码（v0.2）",
+          "CPU 本地运行"
+        ],
+        "highlights": [
+          "星标已经较高，说明「Agent 不会听」是真实痛点",
+          "和作者的 Cinetic、纯代码场景是同一条「能被代码复现的媒体」路线"
+        ],
+        "limitations": [
+          "音质和复杂音乐的还原程度要自己听",
+          "未查到托管演示（需本地跑）",
+          "和商业音频工作站不是同一类产品"
+        ],
+        "comparison": "库内 gmclip 是本地转写和像改文档一样剪长视频，且当时仅支持 Apple 芯片 Mac。earshot 专注声音的听、评和代码化，更轻，也不绑特定芯片。和 Cinetic 搭配时，Cinetic 负责影像节奏，earshot 负责声音。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "edulab",
+      "name": "edulab",
+      "summary": "一套教育技能：把一道题变成可交互的讲解网页，或生成解说视频，覆盖立体几何和解析几何等。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "教育",
+        "数学"
+      ],
+      "source_url": "https://github.com/wy51ai/edulab",
+      "preview_url": null,
+      "post_url": "https://x.com/akokoi1/status/2108777697614901706",
+      "author": "wy51ai",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 1812,
+      "notes": "星标 2026-11-17（美西）查询。许可证 Apache-2.0。可用 npx skills add wy51ai/edulab 安装。计算核心依赖 sympy。这不是库内已有的 WeduLab 站点。较早书签，此前扫描未覆盖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "多个教育技能加 Python 计算内核（如立体几何的 geometry_kernel.py，依赖 sympy）。支持从文字、题目图片或随机参数出题，再生成独立的交互讲解页。解析几何技能用 Canvas 和 KaTeX，滑条驱动几何关系。许可证 Apache-2.0。",
+        "method": "先用内核求出可验证的答案和取值范围，再渲染成可操作的课页，避免「画面和最终答案对不上」。",
+        "features": [
+          "文字、图片、随机三种入口",
+          "立体几何与解析几何等技能",
+          "可命令行直接生成 HTML",
+          "可作为技能或插件安装"
+        ],
+        "highlights": [
+          "把解题和交互演示绑在同一套计算内核上，这点比纯「让模型画画」可靠",
+          "开源，可检查推导"
+        ],
+        "limitations": [
+          "目前学科覆盖以仓库已发布技能为准，不是全科",
+          "几何题型再复杂也可能超出内核设计",
+          "生成页的观感需要自己看"
+        ],
+        "comparison": "不要和 WeduLab 混淆：WeduLab 是学科虚拟实验室网站（light，源码未查到）；edulab 是可安装的开源出题与讲题技能。和 cn-math-taxonomy 相比，后者偏知识图谱和诊断，edulab 偏单题交互讲解。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "gif-factory",
       "name": "gif-factory",
       "summary": "按风格批量制作绘本/像素/粘土风 GIF 的 Agent Skill。",
@@ -8398,6 +9672,48 @@
       }
     },
     {
+      "id": "hand-drawn-storybook-animation-skill",
+      "name": "hand-drawn storybook animation skill",
+      "summary": "开源技能：按教程把提示词、配音和流程串起来，生成手绘风格的故事动画。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "动画"
+      ],
+      "source_url": "https://github.com/lhlGitHub/hand-drawn-storybook-animation-skill",
+      "preview_url": null,
+      "post_url": "https://x.com/HaileyAILabs/status/2111353362931425613",
+      "author": "lhlGitHub / HaileyAILabs",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 131,
+      "notes": "星标 2026-11-17（美西）查询。GitHub 未标许可证。介绍帖 https://x.com/HaileyAILabs/status/2111265099096973334 称不会画画、不会剪辑也能做出手绘动画，技能已开源。较早书签。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "开源 Agent 技能，配合文章里的提示词和配音接入，生成手绘故事书风格动画。许可证未在 GitHub 标明。",
+        "method": "把流程拆成可跟着做的步骤和可安装的技能，而不是只发成品视频。",
+        "features": [
+          "技能安装",
+          "配套图文说明",
+          "面向手绘/绘本风格短片"
+        ],
+        "highlights": [
+          "对想做绘本或亲子向短视频的人很具体",
+          "有源码，不是只卖课"
+        ],
+        "limitations": [
+          "许可证未声明",
+          "成品质量和配音接入依赖外部服务",
+          "没有独立的完整编辑器"
+        ],
+        "comparison": "和 Cinetic、stick-scene 都是生成动画的技能。Cinetic 偏代码化电影感发布片，stick-scene 是火柴人讲解，本项目专做手绘绘本风。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "huashu-motion",
       "name": "huashu-motion",
       "summary": "开源动效相关项目（华数 motion）。",
@@ -8437,6 +9753,48 @@
         ],
         "comparison": "和 motion-graphics-music-video-skill（从音乐生成画面）、claude-make-an-anime（叙事动画）相比，huashu-motion 专注产品宣传片，交互式精修最强。和 stageshow（agent-eng）在产品展示上有交集。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "inference-optimisation-skill",
+      "name": "inference-optimisation-skill",
+      "summary": "帮助在任意硬件和量化设置上，逐步把本地大模型推理速度调上去的 Agent 技能。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "推理优化"
+      ],
+      "source_url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+      "preview_url": null,
+      "post_url": "https://x.com/0xSero/status/2122484978730852641",
+      "author": "sybil-solutions（书签转帖 @0xSero）",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 945,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。原帖自称至少赚了 10 万美元，属自报，未验证。技能覆盖 decode、speculative decoding、prefill、KV、启动和 TTFT 等方向。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent 技能，用来在本地推理栈上做爬山式优化：解码、推测解码、预填充、KV 缓存、启动时间和首 token 时间等。许可证 MIT。不绑定单一硬件或量化方案（仓库描述）。",
+        "method": "让 Agent 按可观察的速度指标反复改配置或参数，而不是一次性给一份「推荐设置」。",
+        "features": [
+          "覆盖多种推理性能环节",
+          "面向本机部署",
+          "开源技能"
+        ],
+        "highlights": [
+          "直接解决本地跑模型时最痛的速度问题",
+          "不限于某一家推理引擎的宣传口径"
+        ],
+        "limitations": [
+          "收益数字为发帖者自报，未验证",
+          "优化效果取决于硬件、模型和现有栈，不能保证普遍加速",
+          "用错参数也可能换来质量下降，需要自己验收"
+        ],
+        "comparison": "库内大模型工具很少专门做本机推理调参。它和 SkillEvaluator 不同：一个是评技能有没有用，一个是把推理性能调优本身做成技能。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -8838,6 +10196,48 @@
       }
     },
     {
+      "id": "stick-scene",
+      "name": "stick-scene",
+      "summary": "输入一句话就能生成火柴人讲解动画的技能，适合把抽象概念画成短演示。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "动画"
+      ],
+      "source_url": "https://github.com/nilbuild/stick-scene",
+      "preview_url": "https://kamran.fyi/stick-scene",
+      "post_url": "https://x.com/nilbuild/status/2122486391615676774",
+      "author": "nilbuild",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 324,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。用法是 /stick-scene 加提示词。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent 技能：根据提示词生成火柴人动画的代码并播放。有演示页。许可证 MIT。",
+        "method": "把「画一个能讲清楚的小动画」收成一条斜杠命令，降低讲解成本。",
+        "features": [
+          "提示词生成讲解动画",
+          "演示页",
+          "开源技能"
+        ],
+        "highlights": [
+          "专门服务解释和演示，而不是做完整动画电影",
+          "和作者的 Ten Balls、Diffity 一样，都是小而完整的工具"
+        ],
+        "limitations": [
+          "表现力受火柴人形式限制",
+          "复杂概念可能仍要手改代码",
+          "和具体 Agent 的安装方式要以仓库为准"
+        ],
+        "comparison": "和 Colorfigures、Cinetic、hand-drawn-storybook-animation-skill 都是生成视觉讲解。Colorfigures 做可点击物件，Cinetic 做更完整的动态影片，stick-scene 最轻，强调火柴人讲解。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "zhihu-mcp",
       "name": "zhihu-mcp",
       "summary": "知乎搜索与直答能力的社区 MCP。",
@@ -8965,6 +10365,48 @@
       }
     },
     {
+      "id": "3dgarden",
+      "name": "3D Garden",
+      "summary": "免费的手作 3D 模型库，提供针对网页优化的 GLB/glTF，可用于 Three.js、游戏引擎和商业项目。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "素材库",
+        "three.js",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://3dgarden.app",
+      "post_url": "https://x.com/3dgardenapp/status/2121955123920560324",
+      "author": "3dgardenapp",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "官网自称 900+ 手作模型，免费且允许商业使用。同一模型还有中文介绍书签 https://x.com/BeyondTheBoxCN/status/2122314492805554508。源码未查到。模型数量以站点当前为准。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "在线 3D 素材库，提供优化过的 GLB/glTF。源码和技术栈未查到。",
+        "method": "按场景主题组织模型，下载后可放入 Three.js、Babylon、Blender、Unity、Godot 等。",
+        "features": [
+          "分类浏览（城堡、自然、像素、纸板等）",
+          "网页优化的轻量 GLB",
+          "官网称可用于商业项目（需以站点许可为准）"
+        ],
+        "highlights": [
+          "对做独立游戏和网页场景很直接",
+          "风格统一的成套素材，比零散的模型市场好找"
+        ],
+        "limitations": [
+          "不是开源引擎或工具，是素材站",
+          "许可和数量以页面为准，未逐条核对",
+          "质量参差需要自己看"
+        ],
+        "comparison": "和库内偏程序化生成的场景（Papertrails、Painted Valley）路线相反：这里直接提供现成模型。和 PHC Pixel Heat City 同属游戏美术资源，一个是 3D GLB，一个是 2D 等距像素。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "3d-periodic-table",
       "name": "3D Periodic Table",
       "summary": "交互式 3D 元素周期表。",
@@ -9002,6 +10444,48 @@
         ],
         "comparison": "和 ring-city 出自同一作者（sael.net），风格一致。和 wedulab、tongjiang-lab 同属理科交互教学，本项目只做元素周期表这一个主题。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "3d-tiles-renderer-js",
+      "name": "3DTilesRendererJS",
+      "summary": "在 Three.js、Babylon.js 等引擎里渲染 3D Tiles 的 JavaScript 库，有火星等托管示例。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "three.js",
+        "gis",
+        "nasa"
+      ],
+      "source_url": "https://github.com/NASA-AMMOS/3DTilesRendererJS",
+      "preview_url": "https://nasa-ammos.github.io/3DTilesRendererJS/three/mars.html",
+      "post_url": "https://x.com/dextune/status/2122215590672617603",
+      "author": "NASA-AMMOS",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 2542,
+      "notes": "星标 2026-11-17（美西）查询。许可证 Apache-2.0。与 Re:Earth Visualizer 同一天被收藏。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "JavaScript 3D Tiles 渲染器，支持 three.js、Babylon.js 等，覆盖 3D Tiles 规范的大部分特性。许可证 Apache-2.0。提供 Three.js 示例和托管的火星示例。",
+        "method": "把 3D Tiles 流式加载和渲染接到常用 Web 3D 引擎，供地球或行星数据可视化使用。",
+        "features": [
+          "多引擎支持",
+          "规范特性覆盖较全",
+          "公开火星示例"
+        ],
+        "highlights": [
+          "NASA 相关团队维护，适合作为 3D Tiles 在网页里的基准实现",
+          "和地球/行星数据工作直接相关"
+        ],
+        "limitations": [
+          "是渲染库，不是开箱即用的 GIS 产品",
+          "大数据集性能取决于数据和设备"
+        ],
+        "comparison": "与 Re:Earth Visualizer 互补：一个是引擎级渲染库，一个是可分享的 WebGIS 产品。和 three.js 游戏场景项目不是同一用途。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -9133,6 +10617,93 @@
       }
     },
     {
+      "id": "bootvine",
+      "name": "Bootvine",
+      "summary": "把 Linux 开机时刷屏的日志，画成一棵正在完成的服务树，用来看启动进度和慢任务。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "linux",
+        "rust"
+      ],
+      "source_url": "https://codeberg.org/wvhulle/bootvine",
+      "preview_url": null,
+      "post_url": "https://x.com/midudev/status/2122360985369419967",
+      "author": "wvhulle",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "源码在 Codeberg，不在 GitHub，故无 GitHub 星标。可 cargo install --locked --git https://codeberg.org/wvhulle/bootvine。书签是 midudev 的介绍帖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 实现的 Linux 启动画面，把 systemd（或 OpenRC）尚未完成的单元画成树，并展示已完成但较慢的任务时间线。也覆盖休眠恢复、关机、LUKS 提示和失败原因。",
+        "method": "用图形化进度替代传统的逐行启动日志。",
+        "features": [
+          "启动、恢复、关机进度",
+          "慢任务时间线",
+          "LUKS 与失败原因",
+          "cargo 安装后再执行 bootvine install"
+        ],
+        "highlights": [
+          "把人人都见过、却很少有人改的开机日志做成更可读的界面",
+          "源码公开，实现完整"
+        ],
+        "limitations": [
+          "只适用于 Linux 启动流程",
+          "发行版和显示驱动兼容性要自己试",
+          "不是 AI 项目"
+        ],
+        "comparison": "和 Mole 同属系统体验类小工具，但 Mole 是清理与磁盘分析，Bootvine 只改启动过程的呈现。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "cui",
+      "name": "CUI",
+      "summary": "无依赖的 C99 立即模式 UI 库，约 150 个控件，带弹性动画和完整键盘支持；另有社区维护的 Rust 绑定 cui-rs。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "c",
+        "rust",
+        "gui"
+      ],
+      "source_url": "https://github.com/yappologistic/CUI",
+      "preview_url": null,
+      "post_url": "https://x.com/IIInoki/status/2121970299860336828",
+      "author": "yappologistic；Rust 绑定 by Inokinoki",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 1132,
+      "notes": "星标 2026-11-17（美西）查询，CUI 1132 星；Rust 绑定 https://github.com/Inokinoki/cui-rs 当时 15 星。CUI 许可证 MIT。书签作者是绑定作者，针对 CUI 1.4.0。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "纯 C99 立即模式 UI，无外部依赖，支持 Windows、macOS、Linux。仓库称约 150 个控件，带弹簧动画和完整键盘支持。cui-rs 为安全 Rust 绑定。CUI 许可证 MIT。",
+        "method": "用立即模式在原生端画现代控件，再由社区用 Rust 绑定接进 Rust 应用。",
+        "features": [
+          "大量现成控件",
+          "无依赖，便于嵌入",
+          "跨三大桌面系统",
+          "可选 Rust 绑定"
+        ],
+        "highlights": [
+          "在「又一个 GUI 框架」里少见地坚持零依赖 C",
+          "书签同时带出可用的 Rust 绑定，方便 Rust 开发者试用"
+        ],
+        "limitations": [
+          "立即模式对复杂应用的结构约束要自己适应",
+          "cui-rs 仍很新，自定义渲染后端可能不完整（绑定作者自述）",
+          "不是 Web 或移动优先方案"
+        ],
+        "comparison": "与 GPUI Kit、NSGo 对比：CUI 最薄、最底层；GPUI Kit 组件和生态最完整；NSGo 走原生控件而不是自己画。和 islandcn、mdxcn、rubber-hose-ui 这些 Web 组件不是一类。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "cockpit-ui",
       "name": "Cockpit UI",
       "summary": "把普通表单控件做成 1990 年代巨型机器人动画座舱：十一件可访问的自定义元素，其中一件是用全息机体表示 AI Agent 状态。",
@@ -9177,6 +10748,50 @@
           "没有声音；切入动画会短暂挡住控件"
         ],
         "comparison": "和 islandcn、mdxcn 同属可单独引入的前端组件，但 Cockpit UI 是高度主题化的「动画座舱」装饰层，不是通用设计系统。和 dessn、gpucanvas 这些画布工具也不同，它只提供一套可访问的自定义元素。适合要做 Agent 控制台或游戏菜单的风格化点缀；要做生产级设计系统应看其他组件库。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "colorfigures",
+      "name": "Colorfigures",
+      "summary": "把日常物件画成可点击的手绘等距插画的 Claude 技能，也可在演示页里试用。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "skill",
+        "插画",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://colorfigures.vercel.app",
+      "post_url": "https://x.com/Aprilzz423/status/2111839048230666590",
+      "author": "April Zhu（@Aprilzz423）",
+      "models": [
+        "Claude"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "技能介绍页 https://april-zhu.com/colorfigures 。较早书签，此前扫描未覆盖。未把第三方镜像仓库当作官方源码。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Claude 技能：用自然语言描述物件，生成带可点击部件的手绘等距插画。演示部署在 Vercel。官方 GitHub 未查到。",
+        "method": "把「会动的手绘说明书」做成技能，让 Agent 直接出可交互的教学或空状态插画。",
+        "features": [
+          "描述生成可交互插画",
+          "官方技能页和演示",
+          "适合教学和产品空状态"
+        ],
+        "highlights": [
+          "技能产出的不是静图，而是能点的物件",
+          "和后来的 Iso UI 组成作者的两条视觉线"
+        ],
+        "limitations": [
+          "官方源码未查到",
+          "生成质量和授权以官网为准",
+          "演示页不是完整设计系统"
+        ],
+        "comparison": "和 stick-scene 都是「让 Agent 画出能说明问题的图」，但 Colorfigures 是手绘等距物件，stick-scene 是火柴人讲解动画。和 Teachable Figures 一类教学插画技能更近。",
         "researched_at": "2026-11-18"
       }
     },
@@ -9519,6 +11134,266 @@
       }
     },
     {
+      "id": "ink-studio",
+      "name": "Ink Studio",
+      "summary": "把 SDF 形体烘焙成像素风高斯溅射，并带动画、粒子和物理的工具包，输出帧和运行时数据。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "高斯溅射",
+        "像素",
+        "工具"
+      ],
+      "source_url": "https://github.com/siliconjungle/shapeshift-labs-ink-studio",
+      "preview_url": null,
+      "post_url": "https://x.com/JungleSilicon/status/2122245074608435600",
+      "author": "siliconjungle（@JungleSilicon）",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 357,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。仓库全名 shapeshift-labs-ink-studio。需要自备视口或编辑器 UI。书签称免费开源，并带动画、几何节点、雕刻和体素等套件。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Node.js 工具包：在符号距离场里雕刻实体，再烘焙成像素风高斯溅射，并提供动画、粒子、物理和程序化环境。可输出 PNG/APNG 帧和运行时世界数据。许可证 MIT。不自带完整编辑器界面。",
+        "method": "把「像素风三维」做成一条从造型到溅射烘焙再到动画的工具链，供自己的视口或游戏使用。",
+        "features": [
+          "SDF 雕刻与溅射烘焙",
+          "动画和物理",
+          "无头渲染和 CLI",
+          "输出帧或运行时数据"
+        ],
+        "highlights": [
+          "专门服务像素风高斯溅射，而不是通用 NeRF/Splat 查看器",
+          "源码完整，适合研究这条少见的美术管线"
+        ],
+        "limitations": [
+          "没有现成的完整 GUI，需要自己接视口",
+          "学习曲线明显高于普通素材站",
+          "实时性能要按数据量自测"
+        ],
+        "comparison": "和 pixelfx、Scenario 的 Blender 插件都涉及风格化或生成资产，但 Ink Studio 聚焦「像素风高斯溅射」这条窄管线，不是通用美术插件，也不是可玩关卡。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "isoui",
+      "name": "Iso UI",
+      "summary": "April Zhu 的等距线性 UI 插画集，带交互动画，可适配浅色/深色和品牌色，与早期的 Colorfigures 风格相反。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "设计",
+        "插画",
+        "skill",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://april-zhu.com/isoui",
+      "post_url": "https://x.com/Aprilzz423/status/2122301486428570094",
+      "author": "April Zhu（@Aprilzz423）",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "官方页称基于 Tolga Cohce 的 iso-figure（MIT），插画为作者作品。未查到官方 GitHub。站点体积很大。具体授权和售卖方式以官网为准。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "等距矢量 UI 插画，可点击或按回车播放动画，并切换浅色平涂或深色强调。未查到官方源码仓库。页面写明基于 iso-figure。",
+        "method": "为产品里常见的空状态、错误、成功和登录页提供可互动的等距插画，并能改品牌色。",
+        "features": [
+          "交互动画",
+          "浅色/深色两套风格",
+          "可设品牌色",
+          "官方介绍和演示页"
+        ],
+        "highlights": [
+          "专门补「产品里最容易用库存图凑合」的那几类页面",
+          "和作者更早的手绘彩色 Colorfigures 形成一套深浅两种语言"
+        ],
+        "limitations": [
+          "官方源码未查到",
+          "授权和价格需看官网，可能不是随意开源",
+          "无法核对实现细节"
+        ],
+        "comparison": "和 Colorfigures 是同一作者的两种插画语言：Colorfigures 手绘彩色，Iso UI 干净等距线稿。和 islandcn、cockpit-ui、rubber-hose-ui 这些可安装的控件库不同，这是插画资产。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "jiff",
+      "name": "Jiff",
+      "summary": "BurntSushi 的 Rust 日期时间库 1.0，强调时区、夏令时和不容易用错的 API。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "rust",
+        "基础库"
+      ],
+      "source_url": "https://github.com/burntsushi/jiff",
+      "preview_url": null,
+      "post_url": "https://x.com/don_tech1/status/2122608177690939436",
+      "author": "BurntSushi",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 3180,
+      "notes": "星标 2026-11-17（美西）查询。许可证 Unlicense。书签是 1.0 发布介绍，不是作者原帖。这是基础库，不是 AI 项目。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 日期时间库，处理时区、夏令时和日历运算，API 设计强调少踩坑。许可证 Unlicense。1.0 表示公共 API 已稳定。",
+        "method": "用一套更现代的时间库替代历史包袱较多的 chrono，或补齐 time 库的不足（介绍方的对比，需结合官方文档理解）。",
+        "features": [
+          "时区和夏令时",
+          "1.0 稳定 API",
+          "与 Rust 工具链集成简单（cargo add jiff）"
+        ],
+        "highlights": [
+          "作者是 ripgrep 作者，库的工程信誉高",
+          "1.0 对依赖选型有实际意义"
+        ],
+        "limitations": [
+          "不是 AI 或 Agent 工具",
+          "是否全面替代 chrono 要看具体场景和生态适配"
+        ],
+        "comparison": "库内其他 Rust 基础设施如 GPUI Kit、Kiri 面向 UI 或容器；Jiff 只解决时间处理。收录是因为书签明确指向这个 1.0 发布。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "kiri",
+      "name": "Kiri",
+      "summary": "用 Rust 写的轻量容器运行时，兼容 Docker API、Compose 和 buildx，在 macOS、Windows 和 Linux 上可作为 Docker Desktop 的替代。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "rust",
+        "容器",
+        "docker"
+      ],
+      "source_url": "https://github.com/libracoder/kiri",
+      "preview_url": "https://runkiri.com",
+      "post_url": "https://x.com/GithubProjects/status/2121976520197746784",
+      "author": "libracoder",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 10206,
+      "notes": "星标 2026-11-17（美西）查询。许可证 Apache-2.0。官网和文档称容器启动约比 Docker Desktop 快 80 倍、空闲后虚拟机休眠等，均为项目自报。书签链到 osp.fyi/kiri。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 实现的 Docker Engine API 兼容运行时。macOS/Windows 上在小型 Linux 虚拟机里跑，Linux 上直接用宿主机内核。虚拟机里的 PID 1 是很小的 Rust agent，用 clone3 进入命名空间和 cgroup 启动容器，不使用 dockerd、containerd 或 runc。许可证 Apache-2.0。第一次启动会建立 kiri Docker context。",
+        "method": "保持 docker CLI、Compose、buildx 可用，只替换下面的引擎，降低桌面 Docker 的体积和启动开销。",
+        "features": [
+          "兼容 docker、Compose、buildx 和登录",
+          "本地域名和自签 HTTPS",
+          "一键 Kubernetes 和 Linux 虚拟机",
+          "原生窗口和菜单栏",
+          "多语言界面，可从 OrbStack 或 Docker Desktop 导入"
+        ],
+        "highlights": [
+          "真正替换引擎，而不是再包一层 Electron 桌面",
+          "架构说明清楚，适合作为容器运行时的学习样本",
+          "星标已经过万"
+        ],
+        "limitations": [
+          "性能数字为自报，需在自己机器上对照",
+          "与 Docker 生态的边角兼容性要自行验证",
+          "不是 AI 项目，而是基础设施工具"
+        ],
+        "comparison": "库内没有同类容器运行时。它和 Agent 沙箱（LayerFS、Bowl）解决的不是同一层问题：Kiri 是本机 Docker 替代，LayerFS/Bowl 是给 Agent 工具调用做可分支的文件系统。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "lastbook",
+      "name": "Lastbook",
+      "summary": "可离线使用的生存与重建知识库，包含手册、影像、百科、离线地图，以及可选的本地模型，源码 MIT 开源。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "离线",
+        "知识库"
+      ],
+      "source_url": "https://github.com/Immortal-Protocols/lastbook",
+      "preview_url": "https://lastbook.org",
+      "post_url": "https://x.com/farbood/status/2122413856693858581",
+      "author": "Immortal-Protocols（@farbood）",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 1834,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。完整数据包体积很大，评论区有人反馈下载很慢。页面数量等为项目或转述自报，未验证。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "离线桌面知识库（Mac、Windows、Linux），把手册、视频、百科、离线地图和可选本地模型打包在一起。程序源码 MIT。数据包需单独下载，体积远大于源码本身。",
+        "method": "在断网或应急场景下，用预先打包的知识和可选本地 AI 查阅，而不是依赖在线搜索。",
+        "features": [
+          "离线手册、影像和百科",
+          "离线地图",
+          "可选本地模型",
+          "跨系统客户端，源码公开"
+        ],
+        "highlights": [
+          "把「断网也能查」做成完整产品，而不只是一份 PDF 列表",
+          "源码开放，方便审阅和贡献"
+        ],
+        "limitations": [
+          "完整数据下载量很大，对网络和磁盘要求高",
+          "内容质量和地区覆盖要自己判断",
+          "「重建社会」是定位，不是已验证的应急认证"
+        ],
+        "comparison": "和库内知识聚合站（hacker-papers、lex-fridman 中文学习站、elon-musk-cn）不同，Lastbook 强调离线完整打包，而不是在线阅读或检索访谈。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "learn-arduino",
+      "name": "Learn Arduino",
+      "summary": "按电路一步步带入门 Arduino 的网页应用，作者称用 Opus 5.5 制作。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "教育",
+        "硬件",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://learn-arduino-red.vercel.app",
+      "post_url": "https://x.com/DilumSanjaya/status/2112587730542854263",
+      "author": "DilumSanjaya",
+      "models": [
+        "Claude Opus 5.5"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "源码未查到。本次抓取预览页返回 403，未能核对其完整课程内容，故只做简要分析。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Vercel 上的入门教学站。技术栈和源码未查到。预览页本次抓取失败（403）。",
+        "method": "把硬件入门拆成一个电路一个步骤。",
+        "features": [
+          "分步电路学习（作者自述）",
+          "网页访问"
+        ],
+        "highlights": [
+          "选题具体，面向「硬件看起来很吓人」的入门障碍"
+        ],
+        "limitations": [
+          "源码未查到",
+          "预览页本次无法打开，内容未核对",
+          "课程完整度和正确性未验证"
+        ],
+        "comparison": "和 edulab、Magic English Buddy、WeduLab 同属教学，但对象是 Arduino 电路。在未能打开页面之前，无法和那些可核对的开源课页做同等深度对比。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "leonlin-demos",
       "name": "LeonLin Demos",
       "summary": "作者用 Opus/Astra 等做的 demo 合集页。",
@@ -9638,6 +11513,49 @@
       }
     },
     {
+      "id": "magic-english-buddy",
+      "name": "Magic English Buddy",
+      "summary": "开源的儿童英语阅读学习助手，把分级课文、跟读、练习和生词复习做成一场冒险。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "教育",
+        "儿童"
+      ],
+      "source_url": "https://github.com/xckevin/magic-english-buddy",
+      "preview_url": "https://xckevin.github.io/magic-english-buddy/",
+      "post_url": "https://x.com/fhwofjow51260/status/2122311598673125496",
+      "author": "xckevin",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 572,
+      "notes": "星标 2026-11-17（美西）查询。GitHub 许可证标 NOASSERTION，以仓库文件为准。介绍称 7 个等级、90 篇分级课文，属项目说明，未逐课验证。书签是推荐帖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "开源儿童英语学习应用，含分级阅读、跟读、练习和复习，并有成就或卡牌一类的游戏化反馈。有 GitHub Pages 预览。许可证在 GitHub 上未清晰识别。",
+        "method": "把阅读学习设计成闯关冒险，而不是单词表堆叠。",
+        "features": [
+          "分级课文",
+          "跟读和练习",
+          "生词复习",
+          "公开预览和源码"
+        ],
+        "highlights": [
+          "对象明确是儿童英语，产品形态完整",
+          "同时有源码和可打开的页面"
+        ],
+        "limitations": [
+          "课程数量和效果为项目自述，未做教学评估",
+          "儿童产品的隐私和内容安全需自行检查",
+          "许可证未在 GitHub 明确识别"
+        ],
+        "comparison": "和 cn-math-taxonomy、edulab、WeduLab 同属教育工具。后两者偏数理交互课页或实验室，本项目专做英语分级阅读冒险。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "mole",
       "name": "Mole",
       "summary": "Tw93 的开源 Mac/PC 清理工具：一条 mo 命令完成深度清理、卸载残留、磁盘分析、系统维护和实时监控。",
@@ -9731,6 +11649,49 @@
       }
     },
     {
+      "id": "nsgo",
+      "name": "NSGo",
+      "summary": "用 Go 写界面逻辑、各平台用原生控件绘制的跨平台 UI 引擎，0.1.0 已发布。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "go",
+        "跨平台",
+        "gui"
+      ],
+      "source_url": "https://github.com/nsgo-dev/nsgo",
+      "preview_url": "https://nsgo.dev/",
+      "post_url": "https://x.com/oneo666/status/2122262842825199661",
+      "author": "oneo / nsgo-dev",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 533,
+      "notes": "星标 2026-11-17（美西）查询。GitHub 许可证标 NOASSERTION，以仓库文件为准。书签宣布 0.1.0。文档称支持 macOS、iOS、tvOS、watchOS、Windows、Linux、Android、Web 及部分小程序（有的为试验性）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Go 作为后端和 UI 逻辑（信号、memo、flexbox 布局），每个平台用自己的原生视图绘制。构建工具可按目标交叉编译。许可证在 GitHub 上未清晰识别。",
+        "method": "一次编写 Go 代码，再编译到各平台，而不是用 WebView 统一渲染。",
+        "features": [
+          "多平台原生绘制",
+          "信号式状态和 flex 布局",
+          "文档站和 0.1.0 发布包"
+        ],
+        "highlights": [
+          "在 Rust GUI（GPUI Kit）和 C UI（CUI）之外，多了一条 Go 原生跨平台路线",
+          "目标平台清单很全，包括若干小程序"
+        ],
+        "limitations": [
+          "0.1.0 仍早，兼容性和组件完整度需自测",
+          "许可证未在 GitHub 明确识别",
+          "小程序等目标为试验性"
+        ],
+        "comparison": "和 GPUI Kit、CUI 同属非 Web 的跨平台 UI。GPUI Kit 是 Rust + GPU 渲染的完整桌面组件生态；CUI 是无依赖的 C99 立即模式；NSGo 是 Go 逻辑加各平台原生控件。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "omarchytv",
       "name": "OmarchyTV",
       "summary": "给电视/PC 的主题与 AI TUI/MCP 插件项目。",
@@ -9773,6 +11734,92 @@
       }
     },
     {
+      "id": "phc-pixel-heat-city",
+      "name": "PHC Pixel Heat City",
+      "summary": "仍在制作中的等距像素城市美术包，可在 itch.io 下载当前进度，包含建筑、路面、车辆和角色动画。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "像素",
+        "素材包",
+        "itch.io",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://pixel-salvaje.itch.io/phc-pixel-heat-city",
+      "post_url": "https://x.com/Pixel_Salvaje/status/2122419863843139735",
+      "author": "Pixel_Salvaje",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "itch 页写明当前仍在建设，城市地图未完成；现可下载地板、道路、车辆、已展示建筑和一位 8 向角色动画等。不是完整可玩游戏。早期支持与后续扩展说明见页面。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "2D 等距像素美术资源包，发布在 itch.io。不是游戏引擎或可玩游戏。",
+        "method": "按周更新素材，先提供可下载的建筑、道路、车辆和角色，城市总图仍在制作。",
+        "features": [
+          "等距建筑和道路",
+          "多方向车辆和角色动画",
+          "itch 分发，可跟进度"
+        ],
+        "highlights": [
+          "对做像素城市游戏是直接可复用的零件"
+        ],
+        "limitations": [
+          "尚未完成，不能当成完整游戏或完整城市包",
+          "许可和商业条款以 itch 页为准",
+          "无源码"
+        ],
+        "comparison": "和 3D Garden 同属美术资源，但一个是 3D GLB，一个是 2D 等距像素。和 Inkline Town 那种已经能玩的像素城镇游戏不是一类。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "phonebox",
+      "name": "PhoneBox",
+      "summary": "把闲置安卓手机变成电脑桌面副屏和触控面板，本机安装，不用 Root，也不走云端。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "安卓",
+        "桌面",
+        "副屏"
+      ],
+      "source_url": "https://github.com/ersinkoc/phonebox",
+      "preview_url": "https://ersinkoc.github.io/phonebox/",
+      "post_url": "https://x.com/Gorden_Sun/status/2122341734499983739",
+      "author": "ersinkoc",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 2725,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。README 写支持 Windows、Linux、macOS，Android 7 及以上，USB 或配对 Wi-Fi。小组件数量以仓库当前说明为准（介绍里有 115/116 种等不同说法）。书签是中文介绍帖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "在电脑上跑服务，把安卓旧手机当成有线或 Wi-Fi 副屏和触控板。不用 Root，不强制云账号。提供多类小组件和模板，可显示系统状态等。许可证 MIT。",
+        "method": "一条命令在电脑安装，手机作为面板显示小组件，用来看资源、控制媒体或辅助开发。",
+        "features": [
+          "USB 或配对 Wi-Fi",
+          "大量小组件和现成模板",
+          "横屏或竖屏",
+          "本机运行，不依赖云端"
+        ],
+        "highlights": [
+          "把吃灰的安卓机变成有用的桌面配件，场景很具体",
+          "安装和使用门槛低"
+        ],
+        "limitations": [
+          "不是给 Agent 接管手机屏幕的 Phone Use 工具",
+          "远程稳定性和安全性要自己评估",
+          "小组件数量在不同介绍里不完全一致"
+        ],
+        "comparison": "不要和 Poki、Pinky、XPhoneUse 混淆：那些是让 Agent 操作真机；PhoneBox 是人用的桌面副屏。和 Mole 这种清理工具也只是同属本机效率类。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "quairone",
       "name": "QuairOne",
       "summary": "个人知识库/笔记产品，作者用来替代卡顿的 Obsidian。",
@@ -9812,6 +11859,49 @@
       }
     },
     {
+      "id": "reearth-visualizer",
+      "name": "Re:Earth Visualizer",
+      "summary": "开源 WebGIS 平台，用 Cesium 把常见 GIS 数据做成可嵌入、可分享的交互地图故事。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "gis",
+        "地图"
+      ],
+      "source_url": "https://github.com/reearth/reearth-visualizer",
+      "preview_url": "https://reearth.io/product/visualizer",
+      "post_url": "https://x.com/dextune/status/2122336387034694005",
+      "author": "Re:Earth",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 485,
+      "notes": "星标 2026-11-17（美西）查询。许可证 Apache-2.0。书签是项目介绍帖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "基于 Cesium 的 WebGIS，展示常见 GIS 数据类型，支持在地图上绘制并做成可嵌入的故事。许可证 Apache-2.0。",
+        "method": "把 GIS 数据做成可分享的交互叙事，而不是只提供一个开发库。",
+        "features": [
+          "多种 GIS 数据上图",
+          "绘制与叙事",
+          "可嵌入分享",
+          "开源，有产品页"
+        ],
+        "highlights": [
+          "面向「把地图讲出来」，不只是渲染瓦片",
+          "和纯 3D Tiles 渲染库形成互补"
+        ],
+        "limitations": [
+          "需要一定 GIS 背景",
+          "大规模数据和性能要结合自己的数据验证",
+          "不是 AI 项目"
+        ],
+        "comparison": "和 3DTilesRendererJS 都做三维地理可视化，但 3DTilesRendererJS 是给 Three.js / Babylon 用的渲染库，Re:Earth Visualizer 是带故事和分享的 WebGIS 产品。和 Watched、azmth 的卫星轨道/过顶可视化也不一样。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "ring-city",
       "name": "Ring City",
       "summary": "AI 生成的巨型环形城市互动规划/探索页。",
@@ -9848,6 +11938,90 @@
         ],
         "comparison": "和 3d-periodic-table 同作者。和 game 类的 portals、solstice 这类 3D 场景接近，但没有玩法。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "rubber-hose-ui",
+      "name": "Rubber Hose UI",
+      "summary": "复刻 1930 年代橡皮管卡通风格的网页控件，每个控件一个文件，无依赖。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "组件库",
+        "卡通"
+      ],
+      "source_url": "https://github.com/finktheartist/rubber-hose-ui",
+      "preview_url": "https://rubber-hose-ui.vercel.app",
+      "post_url": "https://x.com/ricouii/status/2122504134939353310",
+      "author": "finktheartist",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 145,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。与库内 Cockpit UI 为同一作者。仓库称 11 个常用控件，各自独立、无依赖。书签是推荐帖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "无构建、无依赖的网页控件，每个控件一个文件，视觉模仿 1920–30 年代橡皮管动画。许可证 MIT。有 Vercel 演示。",
+        "method": "把装饰性很强的卡通美学做成可直接复制进页面的独立控件，而不是一套设计系统框架。",
+        "features": [
+          "约 11 个常用控件",
+          "单文件、无依赖",
+          "公开演示和源码"
+        ],
+        "highlights": [
+          "风格非常明确，和通用组件库完全不是一条路",
+          "和作者的 Cockpit UI 一样，强调可单独拿走"
+        ],
+        "limitations": [
+          "数量少，不覆盖完整后台系统",
+          "无障碍和多浏览器适配需自行验证",
+          "强风格也意味着很难融入现代扁平产品"
+        ],
+        "comparison": "与同一作者的 Cockpit UI 最接近：都是无依赖、强主题的独立网页控件。Cockpit 是九十年代机甲座舱，Rubber Hose 是早期卡通橡皮管。和 islandcn、mdxcn 的 shadcn 复制式组件相比，这两个更像视觉玩具，也更难中性复用。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "square-circle-perceptron",
+      "name": "Square or circle perceptron",
+      "summary": "在浏览器里亲手画正方形或圆形、做标注和训练，观察一个简单感知机如何学会分类。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "教育",
+        "演示",
+        "light"
+      ],
+      "source_url": null,
+      "preview_url": "https://square-circle-perceptron.deed.page",
+      "post_url": "https://x.com/Artoftheproblem/status/2121588090053808466",
+      "author": "Artoftheproblem",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "作者把它当作理解经典 Rosenblatt 感知机的入门实验。源码未查到，页面发布在 deed.page。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "浏览器交互演示。源码和技术栈未查到。",
+        "method": "先让人看到未训练时无法分辨，再画样本、标注、训练或一键加入 50 个形状，然后观察置信度变化，也可重置。",
+        "features": [
+          "手绘样本",
+          "训练与批量加样本",
+          "查看置信度",
+          "可忘掉全部重来"
+        ],
+        "highlights": [
+          "把感知机入门做成两三分钟就能完成的实验，适合教学"
+        ],
+        "limitations": [
+          "源码未查到",
+          "只覆盖极简的二分类，不是现代深度学习教程",
+          "托管在第三方页面，长期可用性未知"
+        ],
+        "comparison": "和 atlas-of-physics、3d-periodic-table、protocol-explorer 同属把抽象概念做成可摸的演示，这个是机器学习史上的最小实验，体量更小，也没有开源仓库。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -10396,6 +12570,49 @@
       }
     },
     {
+      "id": "elon-musk-cn",
+      "name": "elon-musk-cn",
+      "summary": "把数百段马斯克公开访谈做成可搜索、可跳转时间戳的中文精读站。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "中文",
+        "访谈"
+      ],
+      "source_url": "https://github.com/joeseesun/elon-musk-cn",
+      "preview_url": "https://elon.qiaomu.ai",
+      "post_url": "https://x.com/vista8/status/2122269630232510904",
+      "author": "vista8（向阳乔木 / joeseesun）",
+      "models": [],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 6,
+      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。仓库称 651 个视频页和 586 篇中文精读（自报，会变化）。书签说地址见评论区，站点与仓库已核对。作者还有 lex.qiaomu.ai 和 xnews 等站。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "静态或生成式内容站，把公开访谈转成中文精读，并带视频时间戳跳转、预言/语录追踪。许可证 MIT。数据规模以仓库当前说明为准。",
+        "method": "在已有数据基础上做中文加工和检索，做成可读可搜的网站。",
+        "features": [
+          "中文精读",
+          "时间戳跳播",
+          "检索与语录/预言追踪",
+          "源码公开"
+        ],
+        "highlights": [
+          "比只转载视频更适合查阅",
+          "和作者其他中文学习站是同一产品线"
+        ],
+        "limitations": [
+          "星标很少，属于个人站点",
+          "精读由 AI 生成的部分需自行核对",
+          "条目数量为自报，会变化"
+        ],
+        "comparison": "和库内 lex-fridman-中文学习站、musk-daily、xnews 都是同一作者或同一类中文信息站。lex 站偏播客学习，musk-daily 偏动态日报，本项目专做访谈精读和跳转。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "gpucanvas",
       "name": "gpucanvas",
       "summary": "开源 WebGPU 无限画布：把数千个真实 DOM/React 节点交给 GPU 绘制，可编辑、跑着色器特效，并给 AI Agent 提供可读视图。",
@@ -10604,6 +12821,49 @@
         ],
         "comparison": "同类有 wedulab、atlas-of-physics，这两个都还可以访问。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "waggles",
+      "name": "waggles",
+      "summary": "thtbee 的 three.js 可探索演示合集，包含人形机器人和镜头实验室等可点开的小世界。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "three.js",
+        "演示合集"
+      ],
+      "source_url": "https://github.com/thtbee/waggles",
+      "preview_url": "https://thtbee.github.io/waggles/",
+      "post_url": "https://x.com/thtbee_/status/2110390964028330106",
+      "author": "thtbee_",
+      "models": [
+        "Gemini 4 Argon"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "bookmark",
+      "stars": 66,
+      "notes": "星标 2026-11-17（美西）查询。书签包含机器人演示和后来复刻 RyanSael 镜头实验室的帖子。许可证 GitHub 标 NOASSERTION。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "three.js（作者还提到结合 Blender）演示合集，托管在 GitHub Pages。许可证未在 GitHub 清晰标明。",
+        "method": "用 Gemini 4 Argon 等模型做可交互的三维小品，并收集在同一个仓库和站点里。镜头实验室是对 @RyanSael 演示的复刻尝试。",
+        "features": [
+          "多个可打开的演示世界",
+          "公开源码和 Pages 预览",
+          "包含机器人和光学/镜头类演示"
+        ],
+        "highlights": [
+          "比单条演示帖更适合收藏：一个入口能看到作者一系列实验"
+        ],
+        "limitations": [
+          "合集本身不是完整游戏或产品",
+          "许可证不清晰",
+          "各演示完成度不一"
+        ],
+        "comparison": "和库内 leonlin-demos 类似，都是作者演示合集。LeonLin 的合集页是 light 且当时未附源码；waggles 有仓库。单个完成度通常低于 Walking Block 或 Papertrails 这种单作品深挖。",
+        "researched_at": "2026-11-18"
       }
     },
     {

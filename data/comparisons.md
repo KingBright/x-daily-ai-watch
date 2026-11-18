@@ -2,7 +2,7 @@
 
 按子类对库内项目做横向对比，比较技术路线、核心能力、成熟度、开源情况和适用场景。每个项目的详细分析见 `projects.json` 里的 `analysis` 字段。
 
-- 更新：2026-11-16（Asia/Shanghai）；2026-11-16 每周书签新条目的星标在 2026-11-15（美西时间）查询；2026-11-15 新条目的星标在 2026-11-14（美西时间）查询；2026-11-14 新条目的星标在 2026-11-13（美西时间）查询；既有条目的星标多在 2026-11-09 至 11-10 查询，本批新条目的星标在 2026-11-12 查询，数字会变化
+- 更新：2026-11-18（Asia/Shanghai）；2026-11-17（美西）全量书签补录条目的星标在 2026-11-17（美西时间）查询；2026-11-16 每周书签新条目的星标在 2026-11-15（美西时间）查询；2026-11-15 新条目的星标在 2026-11-14（美西时间）查询；2026-11-14 新条目的星标在 2026-11-13（美西时间）查询；既有条目的星标多在 2026-11-09 至 11-10 查询，本批新条目的星标在 2026-11-12 查询，数字会变化
 - 「自报」表示数字来自项目方的 README 或博客，未经独立验证；light 表示只有页面或帖子，没有可查的源码
 - 各类项目数量不在本文写死，以 `projects.json` 的 `projects` 数组为准（「项目库」Page 会实时计算）
 
@@ -65,6 +65,18 @@
 | aura-underground | 自研 Rust + WebGPU 引擎（作者自述），Flow 多 Agent 管线，闭源托管页 | 浏览器夜间城市竞速，页面自述可换装贴膜和在线同场 | light，无源码；制作周期为自报 | 未公开 | 品牌向可玩竞速，观察自研引擎 + Agent 管线 |
 | frogxteps | Unreal Engine 5.9，一人指挥 Claude Code 多 Agent（日志自述） | 第三人称动作：蛙+史莱姆机甲攻城，五种角色，Windows 下载 | light，无源码；四天 Jam 成品 | 未公开 | 看 UE5 + 多 Agent 在 Jam 周期里能做到哪一步 |
 | blender-skills | 28 个 Agent Skills（Python），可选 Blender MCP，面向 Blender 5.2 LTS+/5.3 | 建模到导出的完整 3D 管线技能，对照页展示有/无技能差异（效果自述） | ★1966；测试与 5.3 验证为自述 | MIT | 已有编码 Agent、要用 Blender 做游戏资产 |
+| papertrails | three.js 程序化纸片场景，Fable 5.2 + Opus 5.5（作者自述） | 可漫游的无限纸艺世界，立体书翻页感 | ★35，刚发布；工作流为自报 | MIT | 风格化网页漫游，研究 AI 美术工作流 |
+| walking-block | three.js 纯代码场景，时间纯函数，可离线渲成 45 秒片 | 八足苏联板楼行走的可重现短片/观察器 | ★43；需本地运行 | MIT（音频另有许可） | 研究复杂程序化场景和可复现渲染 |
+| cozy-country | 未查到源码，Nimian Legends 商业田园沙盒 | 画地形、摆房屋再走进去逛，无战斗 | light，闭源 | 未查到 | 无压力建造漫游 |
+| ten-balls | 未查到源码的浏览器投篮小游戏 | 十球蓄力投篮，空心三分、连中加倍 | light | 未查到 | 极小可玩小品 |
+| tibo-dog | 未查到源码的网页幸存者，可嵌在 X 帖里玩 | 自动开火，带最多三只狗，存活 15 分钟 | light；制作数据为自报 | 未公开 | 可分享的轻量幸存者 |
+| forge-fly | 作者自报无 3D 引擎、约 32 KB 代码，托管在 UI8 Forge | 浏览器战斗机小品 | light，无公开源码 | 未公开 | 极小体积技术演示 |
+| spinward | 书签称 three.js + Fable MCP，源码未查到 | 设计并漫游太空圆柱殖民地 | light | 未查到 | 少见题材的网页建造漫游 |
+| brush-and-blade | 开源像素格斗网页游戏 | 八画师风格、AI 对手和必杀 | ★12，体量小但可玩可看源码 | MIT | 想要开源 2D 格斗小品时 |
+| littleprince | 作者自述 Opus + Tripo + Blender，源码尚未公开 | 《小王子》星球探索剧情网页游戏 | light，电脑浏览器可玩 | 未公开 | 中文 3D 叙事体验 |
+| athenaion | three.js 纯代码大型古希腊世界，Claude Code / Opus 5.5（自述） | 可探索的零资产大场景 | ★717 | MIT | 用 Agent 长期维护大世界的参考 |
+| carriage | three.js 哥特马车站，Gemini 4 Argon 生成并重构 | 模型能力举证演示 | light，★10，文档很少 | 未声明 | 看模型能否改自己写的前端 |
+| procedural-alpine-lake | 程序化地形、GPU 侵蚀与 Python 合成配乐 | 60 秒高山湖泊电影 | ★69；许可证未声明 | 未声明 | 纯代码地貌短片 |
 
 ### 分析
 
@@ -87,6 +99,8 @@
 2026-11-17 每日精选补入三项：gtagentclinic 是库内第一个「人与 Agent 共用动作接口」的开源 3D 医院，把临床评测从文本基准做成具身环境，文档和工程完整，但明确还不是经过验证的教学或临床工具；aura-underground 把自研 Rust/WebGPU 引擎和多 Agent 管线用到可玩的品牌竞速上，完成度高但完全闭源；frogxteps 是 UE5 Jam 的可下载成品，附详细制作日志，补上库内此前缺少的 Unreal + Claude Code 完整游戏样本。
 
 2026-11-17 补入 blender-skills：28 个面向 Blender 5.x 的专业工作流技能，把「Agent 驱动 DCC」从 Scenario 两件套扩展到「把技能装进已有编码 Agent」这条更轻的路径；测试和对照效果为自述。
+
+2026-11-18 书签全量补录：papertrails 把立体书翻页做成可走的无限世界，是「AI 直接写出的演示」里风格最明确的新样本之一；同一作者线补上 walking-block、athenaion、procedural-alpine-lake，分别对应机械巨构短片、可漫游大世界和地貌电影。tibo-dog、forge-fly、spinward、cozy-country、littleprince 等可玩或可逛作品多为 light。brush-and-blade 虽小，但是少见的开源像素格斗。
 
 ## 研发效率
 
@@ -139,6 +153,12 @@
 | nvidia-skillevaluator | Python CLI，三层门禁（静态检查 / 去重 / 沙箱对照实验） | 评 Agent Skill 与插件的安全、重叠和是否真能提升 Agent | ★3346，NVIDIA，Experimental | Apache-2.0 | 给技能仓库加 CI 门禁、做 Verified Skills |
 | vercel-eve | TypeScript 约定目录框架（指令/工具/技能/频道/日程），npm 包 eve | 从零定义可检查、可部署的耐久 Agent，可加 Web Chat | ★5941，Vercel；当天有 1.0.1 讨论 | Apache-2.0 | 要做成可托管 Agent 产品，而不是编排现成 CLI |
 | stitch-skills | Agent Skills + Stitch MCP，三个设计/构建/工具插件 | 在 Stitch 里生成界面并导出 React / React Native | ★1.0 万；代码约三个月未更新 | Apache-2.0 | 已在用 Google Stitch 的编码 Agent 工作流 |
+| rust-anything | Rust CLI + 行为录制回放，桥接旧代码与 Rust 移植，含 MCP/技能 | 增量把多语言应用迁到 Rust 并验收行为 | ★1553，MIT；用例数字为自报 | MIT | 要用 Agent 改写但怕改坏行为 |
+| beautifulrust | 三个 Agent 技能 + 测试过的 Clippy 配置 | 写、审、把其他语言改成较地道的 Rust | ★2046，有文档站 | MIT | 纠正「能跑但不像 Rust」 |
+| swamp | CLI + TypeScript 行为类型和 YAML 工作流，CEL 传数据，AGPL | 把重复任务编成可再跑的行为和工作流 | ★959；效率数字为转述/自报 | AGPL-3.0 | 不想每次重新规划 Skill |
+| diffity | Mac/Linux 桌面 diff 审阅器，把批注交给本机 Claude Code | 人审 Agent 代码并让它按评论修改 | ★919；无 Windows 包 | MIT | 本机审 Agent 提交 |
+| craft-anything | Rust 桌面/CLI/MCP，Study→Build→Check，默认真访客可见信息 | 研究有权查看的软件并让本机 Agent 重做一版 | ★3.6 万，early alpha | Apache-2.0 | 只用于有权研究的软件；不是破解工具 |
+| genex-desktop | 多 Agent 桌面应用，对接 UE/Unity/Godot 等并自动试玩 | 用订阅或本地模型做游戏、构建和试玩 | ★881，仍早；Windows 包未签名 | MIT | 想要跨引擎的游戏开发 Agent 闭环 |
 
 ### 分析
 
@@ -155,6 +175,8 @@
 2026-11-16 补入 refactoring-ui-skill：和 modern-web-guidance 一样属于「领域知识技能」，但管的是视觉设计而不是 API 写法；它只做约束和诊断，不负责生成，正好可以串在 UI 生成工具之后做验收。
 
 2026-11-17 补入三项：nvidia-skillevaluator 给技能生态补上「技能本身好不好、有没有真的提升 Agent」的评测门禁；vercel-eve 是从约定目录从零定义可部署 Agent 的框架，和编排现成 CLI 的平台不同；stitch-skills 把 Google Stitch 设计流程技能化，但依赖 Stitch MCP，且查询时代码已约三个月未更新。
+
+2026-11-18 补录把「让 Agent 写得像样、改得不坏、流程可再跑」三条路写清楚了：BeautifulRust 管 Rust 惯用法，rust-anything 管对照旧行为的迁移验收，Swamp 把重复 Skill 编成工作流。Diffity 补上本机审 Agent 代码的桌面工具。Craft Anything 星标很高但仍是 early alpha，且只适用于有权研究的软件。Genex 则把构建和试玩收成跨引擎的游戏开发闭环。
 
 ## Phone/Computer Use
 
@@ -179,6 +201,8 @@
 | tencent-browserskill | Rust bsk CLI/守护进程 + MV3 扩展，WebSocket 加 CDP，独立可见 Agent Window | 在已登录的 Chrome/Edge 里读写页面、导出表格、网站调试，人可随时接管 | ★10.4k | MIT | 任意 Shell 型 Agent 处理需要登录态的网页任务 |
 | xphoneuse | Rust 桌面应用：安卓 scrcpy、iPhone CoreDevice 隧道，内嵌 MCP | 免 Xcode 操控 iPhone/安卓，宏、定位模拟、文件管理 | ★4，评论区发现 | MIT | 跨 Windows/macOS/Linux 的真机 Phone Use |
 | n8n-nod | TypeScript + Electron，本机容器里的 Linux 工作区与 Chromium，PostgreSQL + Vault | 在真实网站跑差事，行动先审批，密钥不进模型 | ★2347，n8n 官方，research preview；评测数字自报 | Apache-2.0 | 本机个人 Computer Use 助手 |
+| coucou | Mac 灵动岛 + iPhone 锁屏伴侣，监视并批准编程 Agent | 在最容易看到的系统位置批准操作 | ★7309 | MIT | Apple 用户盯着后台 Agent |
+| obscura | Rust 无头浏览器，V8 + CDP，可截图和导出 PDF | 给 Agent 或自动化一个更轻的浏览器 | ★3.6 万；并非完整 Chromium 替代 | Apache-2.0 | 要轻量无头浏览；不是反爬教程 |
 
 ### 分析
 
@@ -193,6 +217,8 @@
 2026-11-16：poki 发布 0.4.0 Beta（后台任务、不抢前台），星标升到约 1.4 千；其发布帖评论区由作者自荐的 xphoneuse 走同一条「电脑控制真机 + MCP」路线，三系统通用、iPhone 免 Xcode 且工具更全，但极早期，安全护栏未见说明，选型上仍是 pinky（护栏）和 poki（iOS 成熟度）优先。
 
 2026-11-17 补入 n8n-nod：n8n 官方的本机个人助手，自带沙箱电脑、浏览器、审批和 Vault，产品完整度高于大多数「给别的 Agent 当浏览器后端」的库；评测数字为自报，状态仍是 research preview。
+
+2026-11-18 补录 coucou 和 obscura。前者是 Apple 设备上的批准/监视层，不管完整的手机屏幕接管；后者是给 Agent 用的轻量无头浏览引擎，不能把它理解成反爬教程，也不是 Chromium 的完整替代。
 
 ## Agent 军团管理
 
@@ -228,6 +254,9 @@
 | layerfs | Rust + FUSE，单 SQLite Store，分块去重，Branch/Commit/Layer | 每次工具调用一个完整可写工作区，自动检查点、分支、合并 | ★2.8k，v1.1.0；基准自测 | MIT | 多 Agent 并行改同一仓库的隔离与回滚 |
 | bowl | Go + go-fuse，PostgreSQL 18 元数据 + Pebble/.pack 存储，ConnectRPC | 远程 POSIX 虚拟磁盘，零拷贝 Fork/Diff/三路 Merge，单写者栅栏 | ★52，未发布可用版本 | MIT | 云原生 Agent 沙箱工作区（研究阶段） |
 | tencent-loopforge | Go 平台 + Docker 沙箱，编排 10 种编码 CLI；可选 Local 模式 | 可视化 SOP（Agent/脚本/人工门）和 Main Bot 聊天交付，带审批收件箱 | ★3169，腾讯，v0.4.0 前后 | MIT（含第三方声明） | 团队要把 AI 编码做成可重复交付流程 |
+| autoswarm | 港多 Agent 协作框架，强调打通上下文，附论文 | 让多个 Agent 共享上下文一起干活 | ★2632，研究型 | MIT | 研究跨 Agent 上下文，而不是现成交付平台 |
+| duskbot | 本地机器人团队桌面应用，复用已有模型订阅 | 对标 Grok Bot 的长期机器人体验 | ★327；PolyForm 非商用许可 | 非商用许可 | 想把数据放在自己机器上；商用需另谈 |
+| eta | 自称零供应商绑定的一体式多 Agent 运行时 | 自己实现循环，而不是编排现成 CLI | ★228，生态仍小 | MIT | 想从零跑一套运行时的实验 |
 
 ### 分析
 
@@ -246,6 +275,8 @@
 2026-11-16 每周书签补入三项，都落在结论 3「共享状态和协调」上：layerfs 与 bowl 把多 Agent 隔离下沉到文件系统层（前者单机 SQLite、已有 DSH 集成和公开基准；后者服务端集中存储、多节点，但尚未可用），与 omnigraph（共享记忆的分支合并）构成「文件 + 知识」两层底座；agentrun 则在 harness 外层做跨运行学习和可恢复执行，把「Agent 反复摸索同一件事」当成本问题解决，案例数字为自报。
 
 2026-11-17 补入 tencent-loopforge：腾讯把 SOP、沙箱和人工审批做成自托管交付平台，也可 Local 装进现有助手；和 shoal / hf-agent-manager 的并排终端、plannotator 的审阅层形成「编排 / 工作台 / 批注」分工。默认 Docker socket 安装只适合受信任团队。
+
+2026-11-18 补录 AutoSwarm（研究型上下文打通）、dusk bot（本地机器人团队，非商用许可，和完全开源的 OpenMausBot 不是同一类许可）和 Eta（更早期的一体运行时）。
 
 ## 大模型工具
 
@@ -317,6 +348,15 @@
 | gemini-4-hydrogen | 闭源，1M 上下文，四档思考强度 | Gemini 4 快速档，面向编程和 Agent 工作流 | light；基准多为 Google 自报，AA 指数 51 为第三方 | 闭源 | 需要速度与成本平衡的 Agent 主力模型 |
 | paper-orchestra | Python 多 Agent 流水线（大纲/文献/分节/润色/绘图）+ 会议 LaTeX 模板 | 把想法和实验记录写成投稿级稿件，可选出图 | ★3025，Google Cloud AI Research；数据集未随仓发布 | Apache-2.0 | 学术稿件第一版，不能替代真正研究 |
 | gmclip | Rust + Tauri + SolidJS，OS 编解码，本地 Parakeet 转写，内置 MCP | 按词剪长录像，一份素材出竖屏和横屏，人与 Agent 共用命令 | 新建，★1，仅 macOS Apple silicon 预发布 | Apache-2.0 或 MIT | 本机把口播/录像剪成 Shorts，并让 Agent 协助 |
+| stick-scene | Agent 技能，提示词生成火柴人讲解动画 | 把概念画成短演示 | ★324，有演示页 | MIT | 快速做解释型小动画 |
+| inference-optimisation-skill | 对本机推理栈做爬山式调参的技能 | 覆盖解码、推测解码、KV、TTFT 等 | ★945；收益数字为发帖自报 | MIT | 本地部署觉得慢、想让 Agent 调参 |
+| scarlettkc-2-0 | Hugging Face 权重及 GGUF | 本地聊天和写代码（用户反馈为他评） | light，无独立评测 | 以模型卡为准 | 仅作来源记录，不做排名 |
+| earshot | 本地 CPU 音频工具，让 Agent 听、评并用代码做声 | v0.2 可把录音转成代码 | ★5108 | MIT | 给编码 Agent 补上听觉和可复现声音 |
+| cinetic | 技能驱动的代码化发布片和动效，声音也可代码生成 | 把宣传片变成可改的代码时间轴 | ★1274 | MIT | 要可版本管理的动效，而不是一次渲染 |
+| harness2 | Google Research 递归改进 Agent 套件，不改模型权重 | Propose–Probe–Compose，可无标准答案 | ★2.4 万，研究框架 | Apache-2.0 | 研究如何改进整个 harness |
+| edulab | 教育技能 + sympy 内核，出交互讲题页 | 立体几何、解析几何等，可从图片出题 | ★1812；与站点 WeduLab 不是同一项目 | Apache-2.0 | 要把单题做成可验证的交互课页 |
+| topview-3d-builder | 在对话里搭可编辑 3D 场景再导出视频 | 先导戏、再出片 | ★285 | Apache-2.0 | 想先有可改分镜，再生成视频 |
+| hand-drawn-storybook-animation-skill | 手绘绘本风动画技能，配合图文教程 | 降低绘本短片门槛 | ★131；许可证未声明 | 未声明 | 做手绘故事动画 |
 
 ### 分析
 
@@ -336,14 +376,18 @@
 
 2026-11-17 补入两项：paper-orchestra 是学术写作的完整多 Agent 流水线，和写作风格技能、ingar30-reviewer（审稿）互补；gmclip 把本地剪辑做成人和 Agent 共用的命令表，继续印证内容创作组「LLM + 确定性工具链」的结论，不过目前只支持 Mac 预发布。
 
+2026-11-18 补录里最值得看的是 Harness² 和 earshot：前者是改进整个 Agent 套件的研究框架，后者给编码 Agent 补上本地听觉和可复现声音。Cinetic、stick-scene 和手绘绘本技能继续扩展「用技能做视频/动画」；edulab 是可验证的讲题技能，不要和站点 WeduLab 混为一谈。inference-optimisation-skill 的收益数字为发帖自报。
+
 ## 其他（未做对比）
 
 `other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：
 
-- 教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图、cs329z（斯坦福 Agent 工程公开课）
-- 知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站、xnews（海外长文中文改写站）、x-article-hub（人工挑选的 X 长文归档）、musk-daily（马斯克动态日报）、what-new-ai-in-x（按模型与产品切的 X 合集档案）
+- 教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、edulab 是另一项目（开源讲题技能，不要和 WeduLab 站点搞混）、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图、cs329z（斯坦福 Agent 工程公开课）、magic-english-buddy（儿童英语阅读冒险）、learn-arduino（入门站，本次页面 403）、square-circle-perceptron（感知机手绘实验）
+- 知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站、xnews（海外长文中文改写站）、x-article-hub（人工挑选的 X 长文归档）、musk-daily（马斯克动态日报）、elon-musk-cn（马斯克访谈中文精读与跳转）、what-new-ai-in-x（按模型与产品切的 X 合集档案）、lastbook（离线生存知识库）
 - 算法可视化：astar-visualizer（Antigravity 生成的 C++ A* 寻路可视化，评论区发现）
-- 前端/桌面组件：gpui-kit（Rust + GPUI 桌面框架，2 万星）、islandcn（React 灵动岛组件）、mdxcn（MDX 文档组件）、cockpit-ui（九十年代机甲座舱风 Web Component，含 Agent 全息状态）
-- 画布与设计：dessn（闭源，自研 Rust HTML 渲染器的设计画布）、gpucanvas（开源 WebGPU 无限画布，评论区发现）
+- 前端/桌面组件：gpui-kit（Rust + GPUI 桌面框架，2 万星）、islandcn（React 灵动岛组件）、mdxcn（MDX 文档组件）、cockpit-ui（九十年代机甲座舱风 Web Component，含 Agent 全息状态）、rubber-hose-ui（同一作者的橡皮管卡通控件）、cui（零依赖 C99 UI，附 cui-rs）、nsgo（Go + 各平台原生控件，0.1.0）
+- 画布与设计：dessn（闭源，自研 Rust HTML 渲染器的设计画布）、gpucanvas（开源 WebGPU 无限画布，评论区发现）、isoui 与 colorfigures（April Zhu 的两套 UI 插画语言）、ink-studio（像素风高斯溅射工具包）
 - 卫星可视化：watched-earth（某地本周被哪些卫星拍到）、azmth（实时卫星 3D 地球，评论区发现）
-- 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）、mole（Mac/PC 清理 CLI，7.5 万星）、cassotis-ime（跨平台开源拼音输入法「言泉」）、harper（离线英文语法检查）
+- 地图与三维地理：reearth-visualizer（可分享的 WebGIS 故事）、3d-tiles-renderer-js（3D Tiles 渲染库，有火星示例）
+- 素材与演示合集：3dgarden（免费网页优化 GLB）、phc-pixel-heat-city（制作中的等距像素城市包）、waggles（three.js 演示合集）
+- 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）、mole（Mac/PC 清理 CLI，7.5 万星）、cassotis-ime（跨平台开源拼音输入法「言泉」）、harper（离线英文语法检查）、phonebox（安卓旧机当桌面副屏）、kiri（Rust 容器运行时，Docker API 兼容）、jiff（Rust 1.0 日期时间库）、bootvine（Linux 启动进度树）
