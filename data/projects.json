@@ -2,27 +2,28 @@
   "meta": {
     "generated_at": "2026-11-18",
     "timezone": "Asia/Shanghai",
-    "projects_total": 292,
+    "projects_total": 293,
     "category_counts": {
       "game": 56,
-      "agent-eng": 101,
+      "agent-eng": 102,
       "llm-tools": 73,
       "other": 62
     },
     "subcategory_counts": {
       "dev-efficiency": 51,
       "phone-computer-use": 19,
-      "agent-fleet": 31
+      "agent-fleet": 32
     },
     "origin_counts": {
       "bookmark": 146,
       "reply-on-popular-post": 25,
       "daily-digest": 109,
       "bookmark+daily-digest": 11,
+      "user-request": 1,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 223,
+      "full": 224,
       "light": 69
     },
     "analysis_updated_at": "2026-11-18"
@@ -6009,6 +6010,58 @@
         ],
         "comparison": "与 layerfs 目标相同（给多个 Agent 可分叉、可合并的工作区），layerfs 单机轻量、已有 DSH 集成和公开基准；bowl 走服务端集中存储、多节点只读分发，更像云原生沙箱底座但还没到可用版本。",
         "researched_at": "2026-11-16"
+      }
+    },
+    {
+      "id": "anthropic-building-always-on-agents",
+      "name": "Building always-on agents（Anthropic）",
+      "summary": "Anthropic 官方指南：常驻 Agent 并不是一直在跑，而是用收件箱、定时器、记忆、权限和发件箱这五个构件，在一次次短运行之间保持状态并主动行动。这是指南，不是开源成品。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "指南",
+        "Anthropic",
+        "常驻Agent",
+        "架构",
+        "非开源成品"
+      ],
+      "source_url": "https://claude.com/resources/articles/building-always-on-agents",
+      "preview_url": "https://claude.com/resources/articles/building-always-on-agents",
+      "post_url": null,
+      "author": "Anthropic（William Hu）",
+      "models": [],
+      "first_seen": "2026-11-18",
+      "origin": "user-request",
+      "stars": null,
+      "notes": "用户于 2026-11-18（太平洋时间）要求收录。已核对官方页面 title 为 Building always-on agents | Claude by Anthropic，canonical 为 https://claude.com/resources/articles/building-always-on-agents；页面 JSON-LD datePublished 与 meta article:published_time 均为 2026-11-13。作者 William Hu。这是架构指南，不是代码仓库。文中 Opus 5.5 成本数字为 Anthropic 自报。分析以官网正文为准，未用第三方转述替代原文，也未观看视频。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "这是一篇架构指南，不是可运行的开源实现。官方原文在 claude.com/resources/articles/building-always-on-agents，发布日期以官方页面 JSON-LD 与 article:published_time 为准，为 2026-11-13。核心主张是「always-on」是用户体验：Agent 多数时间在睡，被事件唤醒后完成一次 run，再把经过写入记忆后睡去。run 发生在 session（消息和工具调用的记录）里。外围由五个构件组成：event inbox、timers、memory、permissions、outbox。文中对照的产品机制包括 Claude Code 的 auto memory、auto mode 和 deferred tool calls，以及 Messages API 的 memory tool。文中称在某一长程编程基准上，Opus 5.5 比 Opus 5 每道已解任务便宜 78%，一般工作负载便宜 40%，为 Anthropic 自报。",
+        "method": "所有事件先进入持久化收件箱（文中建议每用户一个，并用来源的唯一 ID 去重），再由同一时间只有一个活跃 worker 的服务拉取并开始 run。继续先前工作的事件（例如用户回复）恢复已有 session，其余开新 session。处理器应尽快确认事件，深度检查（如提示注入）放到 run 里做。定时器分为 follow-up 和 schedule，单独持久化，由调度器到期后写入收件箱并唤醒 worker，而不是直接开跑。记忆独立存储，只保存无法再查到的内容；每次 run 先加载精简的系统提示、工具定义和记忆，并建议配合提示缓存。权限方面，用环境外的代理为出站请求注入凭证，用分类器挡住高风险动作，必要时把工具调用推迟：当前 run 结束、session 停在调用中，用户批复作为新的收件箱事件回来，worker 在等待期间可以处理其他事件。输出可通过 send 工具直接送达；需要控制节奏或从投递失败中恢复时，再用正式的 outbox 和 dispatcher。",
+        "features": [
+          "把 always-on 明确成「多数时间休眠、事件唤醒的短 run」，run 发生在 session 里",
+          "五个构件：event inbox、timers、memory、permissions、outbox",
+          "收件箱持久化、按来源 ID 去重、单活跃 worker，并可把连续消息合并进一次 run",
+          "定时器分 follow-up 与 schedule，到期后写入收件箱，而不是直接开跑",
+          "记忆保存用户指令、用户笔记、已发消息和任务进度；只存无法再查到的内容，其余用指针",
+          "权限：环境外凭证代理、高风险分类器，以及可推迟的工具调用",
+          "发件箱控制投递节奏和失败恢复；建议用评测来平衡打扰程度"
+        ],
+        "highlights": [
+          "把产品体验和运行时实现拆开，避免把「一直在线」理解成一个永不退出的进程",
+          "五个构件的职责清楚，尤其是「定时器不直接开跑、事件以收件箱为真相来源」，对崩溃后重试有明确建议",
+          "推迟审批时结束当前 run，让 worker 去处理其他事件，而不是把整个 Agent 堵住",
+          "直接对照已有产品机制（Claude Code auto mode / deferred tool calls、Messages API memory tool），不是只停留在口号"
+        ],
+        "limitations": [
+          "这是指南，本页没有附带可运行的参考实现或仓库",
+          "文中 Opus 5.5 成本数字为 Anthropic 自报；基准只写了「one long-horizon coding benchmark」，未给出可复核的公开编号",
+          "run 进行中又来新事件时，文中给出推迟到下次、并入当前、打断重来三种策略，没有指定默认",
+          "记忆的 dreaming 整理和更细的评测方法指向其他文章或「建议自建」，本指南未展开",
+          "权限方案多处参照 Claude Code 的现有能力，迁到自建系统时仍要自己实现分类器和凭证代理"
+        ],
+        "comparison": "和库内 Eta 最近，因为 Eta 也把常驻体验做成唤醒、工作、再休眠，并有 Inbox 审批、定时 routine、任务和会话。差别首先在可靠性：指南要求收件箱作为真相来源，worker 中途退出后应由新 worker 重试同一事件；Eta 在进程重启时会把进行中的回复、未答提问、任务 run 和 routine 标失败。指南把定时器单独持久化，到期后写入收件箱；Eta 的 routine 是进程内时钟，错过的时间不补跑。指南把长期记忆写成可在每次 run 加载的文件或对象存储，并强调只存不能再查到的内容；Eta 的产品账本是 SQLite，长期记忆是可选的 PostgreSQL sidecar，不配置就没有记忆工具。权限上，指南建议在 Agent 环境外用代理注入凭证，并对高风险动作分类、可推迟等待批准；Eta 以宿主机用户跑会话，审批列表走 Inbox，但 ACP 文档写明权限请求会被直接允许，也没有同等的凭证代理。输出上，指南用 outbox 控制节奏和重试；Eta 主要写回对话时间线或 routine 报告。指南是架构处方，Eta 是可安装的个人工作台。若按这篇指南衡量 Eta，最值得补的是崩溃后可重试的事件队列，而不是再做一个永远不退出的进程。",
+        "researched_at": "2026-11-18"
       }
     },
     {

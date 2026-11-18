@@ -1308,6 +1308,14 @@
           "use_case": "想把数据放在自己机器上；商用需另谈"
         },
         {
+          "id": "anthropic-building-always-on-agents",
+          "tech": "官方架构指南，不是开源成品；五个构件：inbox、timers、memory、permissions、outbox",
+          "capability": "用短 run 和持久化队列做出常驻体验，收件箱为真相来源",
+          "maturity": "2026-11-13 发布",
+          "license": "指南，无附带仓库",
+          "use_case": "要按官方处方设计常驻 Agent，而不是找现成产品"
+        },
+        {
           "id": "eta",
           "tech": "单个 Bun 宿主；默认自研 harness，也可经 OAR/ACP 接入 Claude Code、Codex、OpenCode、pi",
           "capability": "一人指挥常驻小队：任务需确认，记忆是可选 sidecar，会话以宿主用户身份跑",
@@ -1325,7 +1333,7 @@
         "2026-11-16 补入四项：agentes-chat 把通用 Bot 平台推进到「团队聊天里的 AI 同事」，预算和审批做成一等公民；clawd-on-desk（6.7k 星）与 tokay、herdr 一起说明「谁在等我」的提醒层正分化到桌面、手机和终端；shoal 是 Windows 专用的多 CLI 工作台，加入待验收与交接卡；评论区发现的 hf-agent-manager 把控制台搬到私有 HF Space，补上云端常驻这一形态。",
         "2026-11-16 每周书签补入三项，都落在结论 3「共享状态和协调」上：layerfs 与 bowl 把多 Agent 隔离下沉到文件系统层（前者单机 SQLite、已有 DSH 集成和公开基准；后者服务端集中存储、多节点，但尚未可用），与 omnigraph（共享记忆的分支合并）构成「文件 + 知识」两层底座；agentrun 则在 harness 外层做跨运行学习和可恢复执行，把「Agent 反复摸索同一件事」当成本问题解决，案例数字为自报。",
         "2026-11-17 补入 tencent-loopforge：腾讯把 SOP、沙箱和人工审批做成自托管交付平台，也可 Local 装进现有助手；和 shoal / hf-agent-manager 的并排终端、plannotator 的审阅层形成「编排 / 工作台 / 批注」分工。默认 Docker socket 安装只适合受信任团队。",
-        "2026-11-18 补录 AutoSwarm（研究型上下文打通）、dusk bot（本地机器人团队，非商用许可，和完全开源的 OpenMausBot 不是同一类许可）和 Eta（更早期的一体运行时）。 同日晚间按源码补读 Eta：它默认自研循环，但也可以把会话交给 Claude Code 等；长期记忆并不是 README 所说的「一份 SQLite」，而是可选的 PostgreSQL sidecar。它适合当可检查的个人常驻小队，不能替代 LoopForge 的沙箱 SOP，也不替代 AgentRun 的可恢复 CLI 编排。"
+        "2026-11-18 补录 AutoSwarm（研究型上下文打通）、dusk bot（本地机器人团队，非商用许可，和完全开源的 OpenMausBot 不是同一类许可）和 Eta（更早期的一体运行时）。 同日晚间按源码补读 Eta：它默认自研循环，但也可以把会话交给 Claude Code 等；长期记忆并不是 README 所说的「一份 SQLite」，而是可选的 PostgreSQL sidecar。它适合当可检查的个人常驻小队，不能替代 LoopForge 的沙箱 SOP，也不替代 AgentRun 的可恢复 CLI 编排。 2026-11-18 收录 Anthropic 官方指南 Building always-on agents（不是开源成品）。它把常驻理解成睡眠-唤醒的短 run，并用收件箱作为崩溃后可重试的真相来源；按这篇指南看，Eta 最缺的是可重试的事件队列，而不是一个永不退出的进程。"
       ]
     },
     {

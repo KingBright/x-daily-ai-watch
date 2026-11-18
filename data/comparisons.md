@@ -256,6 +256,7 @@
 | tencent-loopforge | Go 平台 + Docker 沙箱，编排 10 种编码 CLI；可选 Local 模式 | 可视化 SOP（Agent/脚本/人工门）和 Main Bot 聊天交付，带审批收件箱 | ★3169，腾讯，v0.4.0 前后 | MIT（含第三方声明） | 团队要把 AI 编码做成可重复交付流程 |
 | autoswarm | 港多 Agent 协作框架，强调打通上下文，附论文 | 让多个 Agent 共享上下文一起干活 | ★2632，研究型 | MIT | 研究跨 Agent 上下文，而不是现成交付平台 |
 | duskbot | 本地机器人团队桌面应用，复用已有模型订阅 | 对标 Grok Bot 的长期机器人体验 | ★327；PolyForm 非商用许可 | 非商用许可 | 想把数据放在自己机器上；商用需另谈 |
+| anthropic-building-always-on-agents | 官方架构指南，不是开源成品；五个构件：inbox、timers、memory、permissions、outbox | 用短 run 和持久化队列做出常驻体验，收件箱为真相来源 | 2026-11-13 发布 | 指南，无附带仓库 | 要按官方处方设计常驻 Agent，而不是找现成产品 |
 | eta | 单个 Bun 宿主；默认自研 harness，也可经 OAR/ACP 接入 Claude Code、Codex、OpenCode、pi | 一人指挥常驻小队：任务需确认，记忆是可选 sidecar，会话以宿主用户身份跑 | ★229，v0.4.0；安装包未签名 | MIT（SearXNG 等另有许可） | 想自托管一队可检查的个人 Agent，而不是替换团队 SOP |
 
 ### 分析
@@ -276,7 +277,7 @@
 
 2026-11-17 补入 tencent-loopforge：腾讯把 SOP、沙箱和人工审批做成自托管交付平台，也可 Local 装进现有助手；和 shoal / hf-agent-manager 的并排终端、plannotator 的审阅层形成「编排 / 工作台 / 批注」分工。默认 Docker socket 安装只适合受信任团队。
 
-2026-11-18 补录 AutoSwarm（研究型上下文打通）、dusk bot（本地机器人团队，非商用许可，和完全开源的 OpenMausBot 不是同一类许可）和 Eta（更早期的一体运行时）。 同日晚间按源码补读 Eta：它默认自研循环，但也可以把会话交给 Claude Code 等；长期记忆并不是 README 所说的「一份 SQLite」，而是可选的 PostgreSQL sidecar。它适合当可检查的个人常驻小队，不能替代 LoopForge 的沙箱 SOP，也不替代 AgentRun 的可恢复 CLI 编排。
+2026-11-18 补录 AutoSwarm（研究型上下文打通）、dusk bot（本地机器人团队，非商用许可，和完全开源的 OpenMausBot 不是同一类许可）和 Eta（更早期的一体运行时）。 同日晚间按源码补读 Eta：它默认自研循环，但也可以把会话交给 Claude Code 等；长期记忆并不是 README 所说的「一份 SQLite」，而是可选的 PostgreSQL sidecar。它适合当可检查的个人常驻小队，不能替代 LoopForge 的沙箱 SOP，也不替代 AgentRun 的可恢复 CLI 编排。 2026-11-18 收录 Anthropic 官方指南 Building always-on agents（不是开源成品）。它把常驻理解成睡眠-唤醒的短 run，并用收件箱作为崩溃后可重试的真相来源；按这篇指南看，Eta 最缺的是可重试的事件队列，而不是一个永不退出的进程。
 
 ## 大模型工具
 
