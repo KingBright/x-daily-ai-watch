@@ -6161,13 +6161,16 @@
     {
       "id": "eta",
       "name": "Eta",
-      "summary": "自称零第三方依赖的一体式多 Agent 运行时，把循环、工具和界面收在一起。",
+      "summary": "本机一体式多 Agent 工作台：一人指挥一组常驻 Agent；默认跑自研 harness，也可把会话交给 Claude Code、Codex、OpenCode、pi 或本机配置的 ACP 代理。产品账本在一份 SQLite 里，会话内容是文件，长期记忆需另开可选 sidecar。",
       "category": "agent-eng",
       "subcategory": "agent-fleet",
       "tags": [
         "开源",
         "多智能体",
-        "运行时"
+        "运行时",
+        "自托管",
+        "BYOK",
+        "Bun"
       ],
       "source_url": "https://github.com/0xfe-project/eta",
       "preview_url": "https://eta.0xfe.tech",
@@ -6176,27 +6179,38 @@
       "models": [],
       "first_seen": "2026-11-17",
       "origin": "bookmark",
-      "stars": 228,
-      "notes": "星标 2026-11-17（美西）查询。许可证 MIT。仓库描述为 self-contained 0-vendor multi-agent all-in-one endomorphic agent loop/runtime/harness/app。书签是用户使用体验帖。",
+      "stars": 229,
+      "notes": "星标 229，于 2026-11-17 晚间（太平洋时间）查询 GitHub API。许可证 MIT；编译宿主内嵌的 SearXNG 为 AGPL-3.0-or-later，Eta Sans 字体不在 MIT 范围内（仓库 THIRD_PARTY_NOTICES.md）。最新正式发布 v0.4.0（GitHub 显示 2026-11-17 18:15 UTC，即 2026-11-17 10:15 太平洋时间）。2026-11-17 晚间补做源码与文档深读，依据 main 提交 b78f2457d01860cf4c149829740cc5a7cdf27de2（2026-11-18 05:22 UTC，即 2026-11-17 21:22 太平洋时间）。只阅读公开文档和源码，未安装、未运行其程序。书签原帖仍是使用体验帖。",
       "analysis": {
         "depth": "full",
-        "core_tech": "一体式多 Agent 运行时，强调自包含、不绑特定厂商。许可证 MIT。站点 eta.0xfe.tech。实现语言和架构细节以仓库为准。",
-        "method": "把 Agent 循环、运行时和界面做成一个应用，而不是再包一层现成终端。",
+        "core_tech": "主要是 TypeScript，宿主是单个 Bun 进程，入口在 apps/eta/src/main.ts，由 apps/eta/src/host.ts 组装。默认会话跑 packages/eta-core、eta-harness 等自研循环；也可经 @eta/runtime-oar 把运行交给 claude、codex、opencode、pi，或经 @eta/runtime-acp 交给数据目录里 acp.json 所列的 ACP 代理（host.ts 与 docs/architecture/runtimes.md 可证）。产品数据在 ~/.eta/eta.sqlite，会话是 sessions/<id>/meta.json 与 journal.jsonl，不把全文抄进 SQLite（docs/architecture/data.md）。许可证 MIT；编译后的宿主内嵌 SearXNG（AGPL-3.0-or-later），Eta Sans 字体不在 MIT 范围内。当前最新发布为 v0.4.0；本次查询时 GitHub 约 229 星、9 个 fork、18 个开放 issue，main 提交为 b78f245。",
+        "method": "一人在工作台里指挥一组常驻 Agent：Agent 是人设和模型配置，不是容器；会话跑在某个 project（某台机器上的一个目录）里。对话按 @、管家或私聊规则唤醒，同一会话串行、跨会话并行；Agent 互 @ 受 5 次预算限制（apps/eta/src/conversations/routing.ts 中的 WAKE_BUDGET）。需要用户点头的工具走审批中间件和 Inbox（apps/eta/src/approval-middleware.ts）。任务由 Agent 起草，用户确认后再在执行者自己的新会话里跑。定时 routine 是带 brief 的短会话，背后没有独立 Agent。可再挂只跑会话的 eta-daemon，配对时需核对指纹。",
         "features": [
-          "多 Agent 运行时",
-          "自称无第三方供应商绑定",
-          "有网站和源码"
+          "一人指挥多 Agent 的 Web 工作台，另有实验性桌面端和可选 TUI",
+          "默认自研循环，也可使用 Claude Code、Codex、OpenCode、pi，或本机 acp.json 里的 ACP 代理",
+          "用自己的 ChatGPT / Grok 订阅（设备码）、Gemini 密钥或任意 OpenAI 兼容端点；模型流量经宿主管辖的 CLIProxyAPI 子进程",
+          "任务看板：Agent 起草、用户确认后再跑；每台机器默认最多 2 个并发任务，可在 1–20 之间调整（迁移 0034-task-runs.sql）",
+          "可配置的工具审批、收件箱提问，以及时间线上可见的工具活动",
+          "可选的长期记忆 sidecar（mem0 + PostgreSQL/pgvector）；不配 --memory-url 则不挂载记忆功能和页面",
+          "可用 eta-daemon 把会话放到其他机器，配对需指纹确认",
+          "定时 routine、可发布的静态站点 artifact，以及 MCP 与插件"
         ],
         "highlights": [
-          "走「自己实现一整套循环」而不是编排 Claude Code / Codex",
-          "体积和定位都比大型交付平台更紧"
+          "把「Grok Bot 这类常驻小队」做成可自托管、可打开数据库和源码的工作台，许可是 MIT，比 dusk bot 的非商用许可宽松",
+          "默认自己实现循环，同时又留下把现成编程 CLI 接进来的缝，不是只能二选一",
+          "访问控制写得比较具体：非回环监听会自动打开 token 门、有 Origin 检查，预览和分享走能力 URL 和 CSP sandbox（docs/architecture/access.md）",
+          "升级会先备份数据库，新版本起不来会自行退回（README 自述，本次未实际验证）"
         ],
         "limitations": [
-          "星标和生态还小",
-          "「零供应商」的边界要自己核对依赖",
-          "书签是体验帖，缺少系统评测"
+          "README 和 docs/self-hosting.md 写「记忆就是一份 SQLite、不用另起服务」，与 apps/eta/src/host.ts、docs/architecture/memory.md、docs/architecture/data.md 和 memory/client.ts 不一致：长期记忆是可选的 HTTP sidecar，数据在 PostgreSQL，不配则没有记忆功能和工具；SQLite 只是产品账本",
+          "「零供应商 / 0-vendor」是对「不必用官方托管、密钥你自带」的宣传。源码依赖 Bun、CLIProxyAPI（@cpajs/cpa）、可选 SearXNG 和 mem0 等，模型仍要指向你配置的上游",
+          "会话以宿主机用户身份跑，没有 LoopForge 那种默认 Docker 沙箱；ACP 文档写明权限请求会被直接允许。不适合当多租户或跑不可信任务",
+          "进程重启会把进行中的回复、未答提问、任务 run 和 routine 标失败（docs/architecture/data.md），不是 AgentRun 那种强调中途可恢复",
+          "Agent 互 @ 在一条用户消息下最多再唤醒 5 次，之后只进上下文，大团队扇出有硬顶",
+          "仍早期：v0.4.0，生态和星标远小于 OpenMausBot 或 LoopForge；macOS 与 Windows 安装包尚未签名（docs/self-hosting.md）；桌面应用是实验性的，关掉或电脑休眠就会停；Captain 协调器在 apps/eta/src/captain 里有实现，但对应架构文档未查到（docs/architecture/captain.md 返回 404）",
+          "本次只阅读公开文档和源码，未安装、未运行、未做性能评测"
         ],
-        "comparison": "和 eve、AgentRun、dusk bot 都想提供可长期跑的 Agent 环境。eve 用目录组织指令和技能；AgentRun 管理现成编程 CLI；Eta 更接近从零做运行时。成熟度目前低于这些更完整的产品。",
+        "comparison": "和 dusk bot、OpenMausBot 最近：都想在自己的机器上养一队常驻机器人并沿用已有模型订阅。Eta 是 MIT 的单体 Bun 宿主加 Web，默认自研循环，也可选接 Claude Code 等；dusk bot 是非商用许可的桌面产品；OpenMausBot 更成熟，强调给每个 bot 云桌面或本地 VM。和 AgentRun 都支持 Claude Code、Codex、OpenCode、pi，但 AgentRun 包在现成 CLI 外面做学习、断点恢复和统一控制台；Eta 先有自己的会话与任务板，外部运行时是可选缝。和 LoopForge 都有审批和多 Agent 分工，但 LoopForge 是团队交付平台（SOP、Docker 沙箱、成本记账），Eta 是个人工作台，隔离弱得多，不能当成它的替代。AutoSwarm 是研究型上下文打通框架，和 Eta 这种带 UI 的产品工作台不是一类。若你要的是可检查、可带走的个人多 Agent 小队，值得在常开的机器上试用 eta-host；若你要的是可恢复的 CLI 编排或带沙箱的团队 SOP，应继续用 AgentRun 或 LoopForge，而不是用 Eta 替换它们。",
         "researched_at": "2026-11-18"
       }
     },
