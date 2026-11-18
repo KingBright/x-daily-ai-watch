@@ -1,31 +1,31 @@
 {
   "meta": {
-    "generated_at": "2026-11-17",
+    "generated_at": "2026-11-18",
     "timezone": "Asia/Shanghai",
-    "projects_total": 231,
+    "projects_total": 240,
     "category_counts": {
-      "game": 43,
-      "agent-eng": 85,
-      "llm-tools": 62,
-      "other": 41
+      "game": 44,
+      "agent-eng": 90,
+      "llm-tools": 64,
+      "other": 42
     },
     "subcategory_counts": {
-      "dev-efficiency": 42,
-      "phone-computer-use": 16,
-      "agent-fleet": 27
+      "dev-efficiency": 45,
+      "phone-computer-use": 17,
+      "agent-fleet": 28
     },
     "origin_counts": {
       "bookmark": 94,
       "reply-on-popular-post": 25,
-      "daily-digest": 101,
+      "daily-digest": 110,
       "bookmark+daily-digest": 10,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 176,
+      "full": 185,
       "light": 55
     },
-    "analysis_updated_at": "2026-11-17"
+    "analysis_updated_at": "2026-11-18"
   },
   "projects": [
     {
@@ -289,6 +289,55 @@
         ],
         "comparison": "同类代码生成 3D 展示有 portals（开源，规模大得多）和 moss-keeper（单文件、开源）；BEE-X9 只能看成品。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "blender-skills",
+      "name": "Blender Agent Skills",
+      "summary": "把专业 Blender 工作流做成 28 个 Agent 技能，覆盖建模到导出的整条 3D 管线，可供 Claude Code、Codex、Cursor 等直接调用。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "blender",
+        "3d",
+        "python",
+        "游戏资产"
+      ],
+      "source_url": "https://github.com/EL4CTEO/blender-skills",
+      "preview_url": "https://el4cteo.github.io/blender-skills/comparison/",
+      "post_url": "https://x.com/Yashpatil/status/2122565629714551093",
+      "author": "EL4CTEO",
+      "models": [
+        "不绑定模型；技能供 Claude Code、Codex、OpenCode、Gemini CLI、GitHub Copilot、Cursor 使用"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "daily-digest",
+      "stars": 1966,
+      "notes": "星标 1966（2026-11-18 查询）。README 称面向 Blender 5.2 LTS+，并在 5.3 上验证；「每个脚本都在真实 Blender 里测试过」、67 个无头测试、对照页效果，均为项目自述，本次未跑测试。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 技能包，MIT。skills/ 下 28 个技能（blender-core 负责跑代码、分派任务和 5.x API 规则，其余覆盖硬表面、雕刻、UV、PBR、绑定、动画、导出等）。提供 Claude 插件市场安装，以及 install/install.sh 与 install.ps1，默认写入 ~/.claude/skills 和 ~/.agents/skills。可选配合 Blender MCP 在已打开的 Blender 里工作，否则后台启动 Blender。仓库含 tools/validate_skills.py、tools/run_tests.py、docs/ 对照页。",
+        "method": "把「在 Blender 里怎样才算专业流程」写成可被编程 Agent 加载的技能，而不是另做一套插件 UI。Agent 先走 blender-core 的 5.x API 规则，再按任务路由到建模、材质、绑定或导出等技能；有 MCP 就操作当前场景，没有就在后台跑 Blender。项目还提供有/无技能的对照页，说明同一模型和提示下的差异（效果为项目自述）。",
+        "features": [
+          "28 个技能覆盖场景、建模、UV、PBR、绑定、动画、服饰毛发、优化、导出（Roblox/Unity/Unreal/Godot/USD/Web）等",
+          "也包含风格化 NPR、环境套件、天气与时间、视频编辑和资产 QA",
+          "安装脚本支持多种 Agent；可用 --project 做单仓库安装",
+          "提供技能校验和无头 Blender 测试入口，以及在线对照页"
+        ],
+        "highlights": [
+          "把完整的游戏向 Blender 管线技能化，比单点「让 Agent 写段 bpy」完整得多",
+          "安装覆盖主流编码 Agent，不一定非要 MCP",
+          "约 1966 星（2026-11-18 查询），有对照演示页"
+        ],
+        "limitations": [
+          "需要本机 Blender 5.2 LTS 或更新；项目建议 5.3 以获得完整导出和合成特性",
+          "测试数量、5.3 验证和对照效果均为项目自述，本次未复现",
+          "没有 MCP 时只能后台跑 Blender，交互式看视口会受限"
+        ],
+        "comparison": "和 3d-os-scenario-skills、scenario-blender-plugin 同属「Agent 驱动 DCC」：Scenario 两件套是更完整的多部门流水线加官方插件，工程质量（测试、签名）也更成熟；blender-skills 则专注 Blender 5.x 专业工作流，以技能包形式接入已有编码 Agent，不必换一套平台。和 guizang-game-skill（可玩网页游戏技能）不同，它产出的是 DCC 资产而不是游戏本身。已经在用 Blender 做游戏资产的人可以直接装；要从建模到引擎做整条托管流水线仍看 Scenario。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -2897,6 +2946,56 @@
       }
     },
     {
+      "id": "nvidia-skillevaluator",
+      "name": "SkillEvaluator（NVIDIA）",
+      "summary": "NVIDIA 开源的 Agent Skill / 插件评测框架：先做安全与格式检查，再查技能是否重叠，最后对比装上技能前后对 Agent 表现的实际影响。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "评测",
+        "python",
+        "cli",
+        "安全",
+        "nvidia"
+      ],
+      "source_url": "https://github.com/NVIDIA/SkillEvaluator",
+      "preview_url": "https://docs.nvidia.com/skills/skillevaluator/",
+      "post_url": "https://x.com/Moblacksoil/status/2122561116887040273",
+      "author": "NVIDIA",
+      "models": [
+        "不绑定特定模型；Tier 2/3 可用 NVIDIA Build 等提供商"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "daily-digest",
+      "stars": 3346,
+      "notes": "星标 3346（2026-11-18 查询）。官方支持级别为 Experimental，无 SLA。论文 arXiv:2608.20614，博客见 NVIDIA Developer。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.12–3.14，PyPI 包 skillevaluator（也可用 uv），Apache-2.0。源码按 Tier 拆分（src/skillevaluator/tier1、tier2、tier3），另有 CLI、CI 模板、Docker、harness 检查、embedding 与评测报告。针对 Agent Skills 规范（agentskills.io），也是 NVIDIA Verified Skills 管线的一部分。文档在 docs.nvidia.com。",
+        "method": "三层可独立运行的流水线。Tier 1 Validation：技能是否安全、格式正确、与 harness 兼容，quality-check / --no-llm 可不配密钥；1.0.1 起 validate 默认包含 harness-check（技能能否被 Agent 加载）。Tier 2 Deduplication：用 embedding 和对话模型检查指导是否重复，可选技能目录做跨技能对比。Tier 3 Live Agent Evaluation：在 Docker 沙箱里跑受支持的 Agent，对比安装技能前后的任务结果。validate 默认同跑三层；Tier 1 是硬门，Tier 2 默认可阻断，Tier 3 默认不阻断，除非加 --block-on-agent-eval。也可接入 GitHub/GitLab CI。",
+        "features": [
+          "命令行 quality-check / validate / doctor，以及 skillevaluator ci init 生成仓库检查 PR",
+          "静态质量与安全扫描、技能重叠检测、合成评测集生成",
+          "在沙箱中对真实 Agent 做有/无技能对照实验，并输出报告",
+          "可按层安装：只需第一层时不必配密钥和 Docker"
+        ],
+        "highlights": [
+          "把「技能写得好不好」和「技能有没有真的帮到 Agent」分成可单独跑的门禁，这在技能生态里还比较少见",
+          "NVIDIA 出品，文档、论文、CI 模板和源码结构都比较完整",
+          "GitHub 约 3346 星（2026-11-18 查询），当天仍在提交"
+        ],
+        "limitations": [
+          "官方标明 Experimental，社区支持、无企业 SLA",
+          "完整三层需要提供商密钥，Tier 3 还要 Docker，可能产生模型费用",
+          "自带对照技能与分数可能随版本变化，README 已提示 scores can differ by release"
+        ],
+        "comparison": "和 frontier-harness-eval（固定模型比不同编程 harness）、agent-initiative-benchmark（固定 harness 比模型何时该开口）同属评测，但 SkillEvaluator 评的是 Agent Skill/插件本身，并带不依赖密钥的静态门禁。和 security-audit-skill（让 Agent 审代码）方向相反：它是用来审技能的。技能作者和要建 Verified Skills 流水线的团队更适合用它。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "stageshow",
       "name": "Stageshow",
       "summary": "给编程 Agent 的界面示意与动效技能，先定风格再录屏自改，减少 AI 味。",
@@ -2938,6 +3037,55 @@
         ],
         "comparison": "和 unslop 都在去 AI 味：unslop 改已有界面，stageshow 从零做展示素材。和 huashu-motion、motion-graphics-music-video-skill（大模型工具类）在动效上有交集。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "stitch-skills",
+      "name": "Stitch Skills（Google Labs）",
+      "summary": "Google Labs 为 Stitch MCP 准备的 Agent 技能库：让 Claude Code、Cursor、Gemini CLI 等按统一技能规范做界面设计，并转成 React / React Native 代码。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "设计",
+        "mcp",
+        "typescript",
+        "google-labs"
+      ],
+      "source_url": "https://github.com/google-labs-code/stitch-skills",
+      "preview_url": "https://stitch.withgoogle.com/docs/mcp/setup",
+      "post_url": "https://x.com/EngMoElgaraihy/status/2122531903475417370",
+      "author": "Google Labs（google-labs-code）",
+      "models": [
+        "经 Stitch MCP 供 Codex、Antigravity、Gemini CLI、Claude Code、Cursor、OpenCode 等使用"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "daily-digest",
+      "stars": 10113,
+      "notes": "星标 10113（2026-11-18 查询）。仓库写明不是官方支持的 Google 产品。查询时最近一次 push 为 2026-08-17，当天热度主要来自 GitHub 趋势和社交传播，代码本身已有约三个月未更新。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 技能库，Apache-2.0，遵循 Agent Skills 规范。三个插件：stitch-design、stitch-build、stitch-utilities，技能目录含 SKILL.md、scripts/、resources/、examples/。需先配置 Stitch MCP。可用 Codex marketplace、npx plugins / npx skills 安装；OpenCode 需手动拷贝技能并改名以符合 kebab-case。",
+        "method": "把「设计系统和生成规范」写成技能，让编码 Agent 先通过 Stitch MCP 做屏、管设计系统，再把结果转成组件，而不是直接在代码里自由发挥 UI。generate-design 的技能要求先增强提示词、对齐已有设计系统，并且不把颜色字体写进生成提示（交给 manage-design-system）。也可以从现有前端代码反提 DESIGN.md 或导入 Stitch。",
+        "features": [
+          "从文本或图片生成、编辑界面，并管理 Stitch 设计系统",
+          "从现有前端代码提取 DESIGN.md，或把代码/HTML 上传到 Stitch",
+          "把 Stitch 屏幕转成 React 或 React Native 组件，以及 shadcn/Vite 仪表盘流程",
+          "辅助技能：提示词增强、多页面站点循环、偏「高级感」的 taste-design、Remotion 演示视频"
+        ],
+        "highlights": [
+          "Google Labs 出品，专门把 Stitch 设计工具接到主流编码 Agent",
+          "技能按设计/构建/工具拆插件，安装路径覆盖多种 harness",
+          "约 1.0 万星（2026-11-18 查询），是当天讨论度很高的技能包"
+        ],
+        "limitations": [
+          "必须先配好 Stitch MCP 和凭证，离开 Stitch 生态就无法使用核心设计能力",
+          "不是官方支持的 Google 产品；查询时代码已约三个月未更新",
+          "选择性安装时技能有相互依赖，OpenCode 还要改技能命名才能加载"
+        ],
+        "comparison": "和 refactoring-ui-skill（用规则走查已有 UI）、stageshow（从零做展示风格）同属设计向技能，但 Stitch Skills 依赖 Google Stitch MCP，走的是「在设计工具里生成再导出代码」。和 modern-web-guidance（现代 Web API 知识）互补：一个管接口写法，一个管视觉生成。已经在用 Stitch 的团队最合适；只想约束 AI 界面风格选 Refactoring UI Skill 更轻。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -3355,6 +3503,56 @@
         ],
         "comparison": "和 agent-autoloop 最接近：dsh 有授权模型和面板，autoloop 更轻、可接任意 CLI。和 aether 相比，dsh 自托管、事件驱动，aether 是云端 SaaS。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "vercel-eve",
+      "name": "eve（Vercel）",
+      "summary": "Vercel 开源的文件系统优先 Agent 框架：用约定目录写指令、工具、技能、频道和日程，把 Agent 做成可检查、可扩展、可持久运行的项目。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "typescript",
+        "框架",
+        "harness",
+        "skill",
+        "vercel"
+      ],
+      "source_url": "https://github.com/vercel/eve",
+      "preview_url": "https://eve.dev",
+      "post_url": "https://x.com/useleszboy/status/2122688671119794267",
+      "author": "Vercel",
+      "models": [
+        "默认 openai/gpt-6-luna-fast",
+        "也可指定 Vercel AI Gateway 上的其他模型"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "daily-digest",
+      "stars": 5941,
+      "notes": "星标 5941（2026-11-18 查询）。当天 X 上有 eve@1.0 / 1.0.1 的讨论（例如去掉可选依赖以加快 npx eve@latest）。仓库 issue 很多（查询时约 925 个开放 issue），需自行判断成熟度。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript monorepo（pnpm + Turbo）：核心包 packages/eve，另有 eve-computer-use、eve-agent-browser、eve-agent-desktop、eve-recall、eve-git、eve-custom-skills、eve-self-modification 等。Agent 用约定目录作者：agent/instructions.md（必填系统提示）、可选 agent.ts、tools/、skills/、channels/、schedules/。工具用 defineTool 和 zod。Apache-2.0。文档在 eve.dev，并随 npm 包发布到 node_modules/eve/docs 供编程 Agent 本地阅读。初始化：npx eve@latest init。",
+        "method": "把 Agent 的能力落到文件系统里的约定位置，而不是埋在一段不可检查的配置里。开发者用 markdown 写常驻指令，用 TypeScript 写带 schema 的工具，按需加载技能，用频道接 HTTP/Slack/Discord/Web Chat，用 cron 文件做定时任务。框架负责在这些约定上持久运行；Web Chat 可通过 npx eve link / add channel/web 接到 Vercel 项目并做团队登录。",
+        "features": [
+          "npx eve@latest init 脚手架，默认高推理的 gpt-6-luna-fast，也可换模型",
+          "约定目录：指令、typed tools、按需技能、消息频道、定时任务",
+          "可加人在回路、子 Agent；可部署 Web Chat（Sign in with Vercel）",
+          "包内附带完整文档，方便编码 Agent 在本地查阅"
+        ],
+        "highlights": [
+          "Vercel 官方框架，定位是「用文件系统当作者界面」的耐久 Agent，而不是又一个聊天 SDK",
+          "扩展包覆盖电脑使用、浏览器、记忆和 Git，说明它想做成可运营的运行时而不只是示例",
+          "约 5941 星（2026-11-18 查询），当天有 1.0.1 发布说明"
+        ],
+        "limitations": [
+          "脚手架默认绑在 Vercel AI Gateway 模型上，Web Chat 的团队登录也偏向 Vercel 项目",
+          "查询时仓库有大量开放 issue，生产落地需要自己评估",
+          "「耐久 / 工作流」的具体运行时保证要以官方文档为准，本次未跑通端到端部署"
+        ],
+        "comparison": "和 minimax-code、kwwk 一样是用来「跑一个编码/通用 Agent」的外壳，但 eve 更强调约定目录和可部署频道，而不是一个现成的终端编程助手。和 LoopForge、shoal、hf-agent-manager 不同：那些编排已有的 Claude Code/Codex CLI，eve 是让你从零定义自己的 Agent。要造可托管的 Agent 产品用 eve；要把现有编码 CLI 管成流水线用 LoopForge。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -4020,6 +4218,65 @@
         ],
         "comparison": "和 opencode-browse、pointer 等 Browser Use 方案相比，Moli 处在更底层——它是浏览器引擎本身，可作为这些 Agent 工具的后端；和库内手机侧方案（mika、phongent）不在一个层面。追求兼容性用 Chrome，追求低资源批量抓取试 Moli。",
         "researched_at": "2026-11-13"
+      }
+    },
+    {
+      "id": "n8n-nod",
+      "name": "Nod（n8n）",
+      "summary": "n8n 开源的本机个人 Agent：自带沙箱电脑和浏览器，能在真实网站上追发票、准备会议、取消试用，行动前先征求同意。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "computer-use",
+        "browser-use",
+        "electron",
+        "typescript",
+        "mcp",
+        "个人助手",
+        "n8n"
+      ],
+      "source_url": "https://github.com/n8n-io/nod",
+      "preview_url": "https://nod.n8n.io/",
+      "post_url": "https://x.com/0xpipimd/status/2122657251483668612",
+      "author": "n8n GmbH",
+      "models": [
+        "OpenAI",
+        "Anthropic",
+        "Gemini",
+        "OpenRouter",
+        "Amazon Bedrock",
+        "Vertex AI",
+        "Azure",
+        "自建服务",
+        "ChatGPT Plus/Pro 登录"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "daily-digest",
+      "stars": 2347,
+      "notes": "星标 2347（2026-11-18 查询）。状态为 research preview。README 给出的 98% 任务完成率、678 次运行 0 次不安全操作、LongMemEval-S 93.2%、WhisperBench 0/216 条错误记忆，均为项目自报，评测方法见官网文档，本次未复现。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 单仓（pnpm workspace）：桌面端 Electron（desktop/），服务端 Pi runtime，Linux workspace 与 Chromium 浏览器各跑在容器里，状态存 PostgreSQL；另有 Vault、记忆、日程和 Usage。可从应用、Telegram、WhatsApp 接入。Apache-2.0。提供 macOS 14+ 安装包（Apple silicon / Intel），Windows 11 与 Linux x64 为 preview。源码含 evals/、docs/、connectors（MCP / HTTP / CLI）。",
+        "method": "把「自己的电脑」和「真实浏览器」交给本机 Agent，但每一步会改状态的网站操作和应用动作都先对照用户规则；覆盖不到的就停下来等人点头。密码、验证码和卡片由 Vault 在页面上私下填写，不进模型上下文。记忆只从用户自己的消息里学，不从它读过的网页或邮件里学。可按时检查价格等变化并汇报。",
+        "features": [
+          "在真实网站上跑差事（追发票、准备通话摘要、取消试用等），草稿可按用户文风写",
+          "行动审批、规则检查，以及把密钥留在 Vault 里、不送给模型",
+          "可选 OpenAI、Anthropic、Gemini 等 20 多家，或 ChatGPT Plus/Pro 登录，也可接自建模型",
+          "本机或服务器部署，文件、记忆和登录态留在本地；Usage 记录操作、登录和 API 费用"
+        ],
+        "highlights": [
+          "n8n 官方出品的个人 Computer Use 产品，而不是又一个浏览器脚本库",
+          "安全模型写得比较清楚：审批、Vault、记忆来源和数据去向都有专门文档",
+          "自报评测数字较完整，并提供可自行运行的 evals（数字仍为自报）"
+        ],
+        "limitations": [
+          "官方状态是 research preview，Windows 与 Linux 仍为预览",
+          "评测数字（98%、0 次不安全操作、93.2% 记忆召回等）均为项目自报，本次未复现",
+          "要完成本机差事仍需自备模型额度，或使用 ChatGPT Plus/Pro"
+        ],
+        "comparison": "和 tencent-browserskill、moli、opencode-browse 一样能操作网页，但 Nod 是带桌面应用、审批和 Vault 的完整个人助手，目标是替你跑真实差事，而不是给别的 Agent 当浏览器后端。和 aura-autopilot（游戏引擎里试玩）、xphoneuse（真机手机控制）不在同一场景。想要本机个人助理选 Nod；想把已登录浏览器交给编程 Agent 选 BrowserSkill。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -5074,6 +5331,57 @@
         ],
         "comparison": "与 bowl 同为「给 Agent 沙箱用的可分叉文件系统」：layerfs 是单 SQLite Store + 本地 FUSE，偏单机多 Agent；bowl 是 PostgreSQL + Pebble 的远程虚拟磁盘，偏云原生多节点。与 omnigraph（给共享记忆做 Git 式分支）互补：一个管文件，一个管知识；也是 crommacode 等「worktree 蜂群」的底层替代方案。",
         "researched_at": "2026-11-16"
+      }
+    },
+    {
+      "id": "tencent-loopforge",
+      "name": "LoopForge（腾讯）",
+      "summary": "腾讯开源的自托管编码 Agent 交付平台：用 Docker 沙箱跑 CodeBuddy、Claude Code、Codex 等 CLI，把可重复的 SOP 和人工审批门做成交付流程。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "go",
+        "docker",
+        "sop",
+        "多agent",
+        "claude-code",
+        "自托管",
+        "腾讯"
+      ],
+      "source_url": "https://github.com/Tencent/LoopForge",
+      "preview_url": "https://loopforge.cn",
+      "post_url": "https://x.com/Xcodenew/status/2122830187465449772",
+      "author": "腾讯",
+      "models": [
+        "取决于所选执行器：CodeBuddy、Codex、Claude Code、OpenCode、Cursor CLI、Antigravity、Kimi Code、Pi、DeepSeek Harness、ZCode"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "daily-digest",
+      "stars": 3169,
+      "notes": "星标 3169（2026-11-18 查询）。许可证为 MIT，但附有第三方组件声明（LICENSE 为 NOASSERTION）。聊天工作台目前是中文，管理页支持中英。默认 Compose 通过宿主机 Docker socket 起沙箱，文档写明适合受信任团队，不是多租户隔离。X 帖提到 v0.4.0（2026-11-17）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Go 平台（cmd/、internal/，含 SOP 引擎、MCP、Git、审批、可观测性）+ Web 前端，Docker Compose 一键安装（默认 0.0.0.0:8090，含 MySQL）。执行器是 10 种编码 Agent CLI；工作区是按需 Docker 沙箱。另有 LoopForge Local（npx loopforge-cli，把内置工作流装进 Claude Code 等）。主体 MIT，第三方组件保留原许可。提供中英文 README、设计文档和 API。",
+        "method": "两种用法：和 Main Bot 聊天，它打开带仓库的沙箱、按项目角色委派子 Agent、必要时开 PR；或者跑 SOP——把 Agent、脚本、人工门、子 SOP、预览构建排成可重复的交付图，失败可退回指定步骤。规划、实现、评审、测试各用自己的提示词、执行器、模型和 MCP。关键步骤停在人工审批。Local 模式则不跑平台服务，把内置交付工作流直接装进已有助手。",
+        "features": [
+          "聊天工作台：按会话选执行器和权限，可排队和中途 Steer，侧栏预览生成文件",
+          "可视化 SOP 设计器，内置后端/前端/修 bug/产品提案模板，带版本发布",
+          "运行观察与 Needs review 收件箱，以及定时任务、度量和 token 成本记账",
+          "LoopForge Local：npx 安装后在 Claude Code 等里用 /start-devflow 跑内置流程"
+        ],
+        "highlights": [
+          "腾讯出品，把「可重复 SOP + 人工门 + 沙箱」做成团队交付平台，而不只是多终端并排",
+          "同时提供完整自托管平台和单人 Local 模式",
+          "文档把执行器凭据、Docker socket 信任边界和账户模型写得比较清楚"
+        ],
+        "limitations": [
+          "默认安装通过 Docker socket 控宿主机，文档明确不适合不受信任的多租户",
+          "聊天工作台目前只有中文；部分平台能力（需求澄清、通知摘要等）仍绑定 CodeBuddy 模型",
+          "查询时开放 issue 较多（约 185 个），团队接入需要自己做安全与权限评估"
+        ],
+        "comparison": "和 shoal、hf-agent-manager、agentes-chat 一样管理多个编码 Agent，但 LoopForge 的重点是可版本化的 SOP 和审批门，而不是并排终端。和 plannotator（人审阅产出）互补：一个管「怎么交付」，一个管「怎么批注」。和 vercel-eve 对比：eve 是从零定义自己的 Agent，LoopForge 是编排现成的 Claude Code/Codex 等 CLI。团队要标准化 AI 交付选 LoopForge；个人只要本机工作台选 shoal。",
+        "researched_at": "2026-11-18"
       }
     },
     {
@@ -7151,6 +7459,56 @@
       }
     },
     {
+      "id": "paper-orchestra",
+      "name": "PaperOrchestra",
+      "summary": "Google Cloud AI Research 开源的多智能体框架：把研究想法和实验记录整理成符合会议模板的投稿级 LaTeX 稿，并可检索文献、生成图表。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "python",
+        "多agent",
+        "论文",
+        "latex",
+        "google-research"
+      ],
+      "source_url": "https://github.com/google-research/paper-orchestra",
+      "preview_url": "https://yiwen-song.github.io/paper_orchestra/",
+      "post_url": "https://x.com/velaris_j/status/2122711241181343869",
+      "author": "Google Cloud AI Research（Yiwen Song、Yale Song、Tomas Pfister、Jinsung Yoon）",
+      "models": [
+        "默认 gemini-3.1-pro-preview（写作与反思）",
+        "也可配置 OpenAI"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "daily-digest",
+      "stars": 3025,
+      "notes": "星标 3025（2026-11-18 查询）。仓库声明 This is not an officially supported Google product。评测数据集不在本仓，README 称稍后单独发布。论文 arXiv:2604.05018。代码里写作流水线默认模型为 gemini-3.1-pro-preview。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.11（Conda 环境 paper_orchestra），Apache-2.0。核心在 methods/：paper_writer.py 串起 OutlineAgent、HybridLiteratureAgent、SectionWritingAgent、ContentRefinementAgent，可选 plotting_agent；文献检索用 Semantic Scholar。提供 CLI、Bash 入口、会议 LaTeX 模板（如 CVPR 2025）、Streamlit 前端和 autoraters/ 自动评价脚本。需要 Gemini（Vertex 或 API key）或 OpenAI key。",
+        "method": "把论文写作拆成分工明确的智能体流水线：先根据想法和实验日志列大纲，再检索并综合文献，按节撰写，然后反思润色，可选地从代码出图，最后套会议模板导出 LaTeX/PDF。单篇写作失败会重试最多 3 次。它处理的是已有研究材料到稿件的距离，而不是代替做实验。",
+        "features": [
+          "从原始材料目录生成符合目标会议模板的 LaTeX 稿",
+          "自动检索、筛选并写入相关文献",
+          "可选绘图工作流，生成图表并纳入稿件",
+          "提供 Streamlit 交互演示和 autoraters 评价脚本"
+        ],
+        "highlights": [
+          "Google Cloud AI Research 的研究代码，有项目主页和 arXiv 论文",
+          "角色分工清楚，模板可自行添加",
+          "约 3025 星（2026-11-18 查询），当天在 GitHub 趋势上出现"
+        ],
+        "limitations": [
+          "不是官方支持的 Google 产品；不能替代真正的研究和同行评审",
+          "用于生成论文的数据集不在本仓库，README 称稍后单独发布",
+          "依赖外部模型与 Semantic Scholar 额度，质量取决于输入材料"
+        ],
+        "comparison": "和 wewrite、写作蒸馏器.skill 等写作技能不同，PaperOrchestra 是面向学术投稿的完整多 Agent 流水线（大纲、文献、分节、润色、绘图、LaTeX 模板）。和 ingar30-reviewer（投稿前多审稿人评审）互补：一个起草，一个审稿。需要出会议稿的第一版用它；只想改文风或做笔记用写作类技能即可。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "phonic-1-语音演示",
       "name": "Phonic-1 语音演示",
       "summary": "SwiftUI iOS 语音对话小应用示例，适合参考语音模型接入。",
@@ -7990,6 +8348,56 @@
       }
     },
     {
+      "id": "gmclip",
+      "name": "gmclip",
+      "summary": "把长录像当文档来剪的 macOS 开源剪辑器：改逐字稿就等于剪视频，同一套命令同时给界面、CLI 和内置 MCP，方便 Claude Code 等 Agent 直接上手。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "rust",
+        "tauri",
+        "mcp",
+        "视频",
+        "macos"
+      ],
+      "source_url": "https://github.com/aj47/gmclip-video",
+      "preview_url": "https://gmclip.com",
+      "post_url": "https://x.com/techfren/status/2122753924692332871",
+      "author": "aj47（X：@techfren）",
+      "models": [
+        "本地语音转写：Parakeet TDT、Silero VAD",
+        "剪辑 Agent 可用 Claude Code、Codex 等（不内置云端模型）"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "daily-digest",
+      "stars": 1,
+      "notes": "星标 1（2026-11-18 查询）。仓库 2026-11-17 创建。README 写明 pre-release：仅支持 macOS 13+ Apple silicon，无签名安装包，需从源码构建；Windows 代码存在但尚未支持。许可为 Apache-2.0 或 MIT 二选一。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust workspace（crates/ 含 core、media、render、mcp、cli、analysis、ml 等）+ Tauri 壳 + SolidJS 界面。解码编码走操作系统编解码器，不用 ffmpeg。语音转写在本地用 Parakeet TDT 和 Silero VAD，首次运行下载模型。内置 MCP 服务器（gmclip-app mcp）与单命令调用（gmclip-app call）。双许可 Apache-2.0 或 MIT。另有 spec/、threat-model、evals/ 和 fuzz。",
+        "method": "把「剪辑」收成一份可撤销的命令表：人在界面里划掉逐字稿里的词就是在剪，CLI 和 MCP 调用同一份命令，所以 Agent 除了改所有者设置外能做人和界面能做的一切。Agent 用 commands_search / command_describe 发现能力，经事务编辑，用 see 查看渲染帧。密钥、预算、文件权限和让 Agent 看素材等所有者操作必须由本人在机器上点击确认。",
+        "features": [
+          "按词剪辑，一份素材同时出 9:16 和 16:9，并可烧录字幕",
+          "本地转写，不把长视频默认送到云端",
+          "UI、CLI、MCP 共用命令表，Agent 可搜索命令、撤销和查看帧",
+          "所有者操作（密钥、预算、文件访问、是否让 Agent 看画面）需要本机点击确认"
+        ],
+        "highlights": [
+          "从设计上就按 Agent 可操作的编辑器来做，而不是事后加一个插件",
+          "工程完整：有规格、威胁模型、evals 和 fuzz，Rust 核心也分得清楚",
+          "当天刚开源，官网和源码都可访问"
+        ],
+        "limitations": [
+          "预发布：仅 macOS 13+ Apple silicon，无签名安装包，格式和命令还会变",
+          "Windows 尚未支持；星标很少，项目非常新",
+          "规格里引用的部分规划/研究文档不在本仓库"
+        ],
+        "comparison": "和 jianying-ai-mcp（给剪映加 MCP）、rea-video（拆解视频并写复刻方案）、hyperframes（用 HTML 渲染出片）都和视频有关，但 gmclip 是面向创作者的本地剪辑应用，剪的是自己的长录像，并且人和 Agent 走同一套命令。要自动出宣传片选 hyperframes；要拆解别人的成片选 rea-video；要在本机把采访/口播剪成 Shorts 并让 Agent 帮忙，选 gmclip。",
+        "researched_at": "2026-11-18"
+      }
+    },
+    {
       "id": "huashu-motion",
       "name": "huashu-motion",
       "summary": "开源动效相关项目（华数 motion）。",
@@ -8722,6 +9130,54 @@
         ],
         "comparison": "和 wedulab（多学科虚拟实验室）、tongjiang-lab（中学理化 3D）同类。和 cn-math-taxonomy（中国课标知识图谱加诊断）相比，本项目偏讲解，cn-math-taxonomy 偏诊断。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "cockpit-ui",
+      "name": "Cockpit UI",
+      "summary": "把普通表单控件做成 1990 年代巨型机器人动画座舱：十一件可访问的自定义元素，其中一件是用全息机体表示 AI Agent 状态。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "ui",
+        "web-components",
+        "设计",
+        "skill"
+      ],
+      "source_url": "https://github.com/finktheartist/cockpit-ui",
+      "preview_url": "https://cockpit-ui-kit.vercel.app",
+      "post_url": "https://x.com/crtvTeknologist/status/2122762509731983372",
+      "author": "finktheartist（X：@crtvTeknologist）",
+      "models": [
+        "美术生成用了 GPT Image 和 Seedance（经 Higgsfield）；组件运行时不调用模型"
+      ],
+      "first_seen": "2026-11-17",
+      "origin": "daily-digest",
+      "stars": 6,
+      "notes": "星标 6（2026-11-18 查询）。仓库 2026-11-17 创建。README 写明画作和全息短片用 GPT Image 与 Seedance（经 Higgsfield）为项目生成；未使用既有动画或游戏角色。作者自述尚未在 Safari、Firefox、真机或真实屏幕阅读器上试过。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "无构建、无依赖的原生自定义元素（每个控件一个 JS 文件，内含画作和一份约 12KB 的共享 core）。MIT。提供 gallery 演示、registry.json、llms.txt，以及 skills/cockpit-ui/ 给编程 Agent 的制作技能。可用 npx shadcn add 或直接拷贝文件。仓库有 tools/build.mjs、docs.mjs 和对 gallery 做真实触控/键盘的 test.mjs。",
+        "method": "用赛璐璐风格的手绘零件充当滑块、开关、清单和按钮，底下仍是真实的表单控件（键盘、屏幕阅读器和 form 可用）。状态变化会触发音效文字、两帧冲击和切入镜头。Agent 状态控件用机体全息姿态和颜色表示 running/working 等。制作流程也被写成技能，并附 making-of 记录。",
+        "features": [
+          "11 个控件：发射确认、旋钮、检查单、安全锁、模式、警报、标签、Agent 全息、加载、步进器、呼号输入",
+          "每个控件单文件，可单独引入；首个文件设置 window.Cockpit，其余复用同一时钟",
+          "提供 Agent 用的 llms.txt、安装提示词，以及可复用的 cockpit-ui 技能",
+          "画廊可在线试用，也可用本地静态服务器打开"
+        ],
+        "highlights": [
+          "完成度高的风格化 UI 套件，不是只出几张概念图",
+          "把 AI Agent 状态做成可嵌入的全息机体，并考虑到无障碍和 reduced motion",
+          "当天开源，演示和源码都可用"
+        ],
+        "limitations": [
+          "只在无头 Chromium 里测过，尚未在 Safari、Firefox、真机或真实屏幕阅读器上验证（作者自述）",
+          "为深色背景绘制；标签画在图里，不能翻译或随意改文案；单个文件体积较大（因为内嵌画作，Agent 控件约 2.8MB）",
+          "没有声音；切入动画会短暂挡住控件"
+        ],
+        "comparison": "和 islandcn、mdxcn 同属可单独引入的前端组件，但 Cockpit UI 是高度主题化的「动画座舱」装饰层，不是通用设计系统。和 dessn、gpucanvas 这些画布工具也不同，它只提供一套可访问的自定义元素。适合要做 Agent 控制台或游戏菜单的风格化点缀；要做生产级设计系统应看其他组件库。",
+        "researched_at": "2026-11-18"
       }
     },
     {
