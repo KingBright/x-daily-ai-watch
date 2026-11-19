@@ -1,32 +1,32 @@
 {
   "meta": {
-    "generated_at": "2026-11-18",
+    "generated_at": "2026-11-19",
     "timezone": "Asia/Shanghai",
-    "projects_total": 293,
+    "projects_total": 301,
     "category_counts": {
       "game": 56,
-      "agent-eng": 102,
-      "llm-tools": 73,
-      "other": 62
+      "agent-eng": 107,
+      "llm-tools": 75,
+      "other": 63
     },
     "subcategory_counts": {
-      "dev-efficiency": 51,
-      "phone-computer-use": 19,
-      "agent-fleet": 32
+      "dev-efficiency": 53,
+      "phone-computer-use": 20,
+      "agent-fleet": 34
     },
     "origin_counts": {
       "bookmark": 146,
-      "reply-on-popular-post": 25,
-      "daily-digest": 109,
+      "reply-on-popular-post": 26,
+      "daily-digest": 116,
       "bookmark+daily-digest": 11,
       "user-request": 1,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 224,
-      "light": 69
+      "full": 230,
+      "light": 71
     },
-    "analysis_updated_at": "2026-11-18"
+    "analysis_updated_at": "2026-11-19"
   },
   "projects": [
     {
@@ -3515,6 +3515,53 @@
       }
     },
     {
+      "id": "papilot",
+      "name": "Papilot",
+      "summary": "开源的智能体 LaTeX 编辑器：在排版后的 PDF 上圈选批注，交给你已有的编程 Agent 改稿，再对照排好的前后页决定接受或拒绝。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "latex",
+        "写作",
+        "桌面应用",
+        "typescript"
+      ],
+      "source_url": "https://github.com/PapilotAI/papilot",
+      "preview_url": "https://papilot.ai/",
+      "post_url": "https://x.com/PapilotAI/status/2123031942656667697",
+      "author": "PapilotAI",
+      "models": [
+        "不绑定单一模型；可接 Claude、Codex、Cursor、Copilot、Grok、Antigravity、Pi 等编程 Agent"
+      ],
+      "first_seen": "2026-11-18",
+      "origin": "daily-digest",
+      "stars": 363,
+      "notes": "星标 363（2026-11-19 查询）。官网与仓库均为 v0.11.0。提供 Mac/Windows/Linux 安装包和 npm CLI。文档确认支持从 Overleaf 导入，并可以登录后保持与 Overleaf 同步。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "MIT 许可的跨平台 LaTeX 编辑器，当前发布为 0.11.0。仓库以 TypeScript 为主，含 desktop、engine、src、site、skills、tests，用 Vite 构建，也可 npm 全局安装（需 Node.js 22.22+）或用 Nix flake。本机需 Git 以及 TeX Live / MacTeX。不内置大模型，而是接入用户已有的编程 Agent（文档列出 Pi、Codex、Claude、Cursor、GitHub Copilot、Grok、Antigravity、Kimi、GLM、DeepSeek、Qwen、OpenCode、Qoder、CodeBuddy、WorkBuddy 等）。文件落在本地，变更进入 Git 历史。可从 arXiv、Overleaf 分享链接和公开 GitHub 仓库导入；选择 Keep in sync with Overleaf 并登录后，可与 Overleaf 保持同步。",
+        "method": "把审稿界面从 .tex 源码差异改到已排版的 PDF：在页面上标句子、公式或图并写下意图，由 Agent 定位并修改对应源文件，再用排版后的前后对照让你接受、拒绝或再评论。",
+        "features": [
+          "在 PDF 上圈选批注，不必先打开 .tex",
+          "以排版后的页面对照审阅 Agent 改动，而不是只看源码 diff",
+          "跨平台桌面应用和 CLI，可用 Git 协作，并支持 Overleaf 导入与同步"
+        ],
+        "highlights": [
+          "交互模型清楚：人盯页面和故事，Agent 去改源码",
+          "不绑定一家模型，沿用已有编程 Agent 登录或密钥",
+          "工程完整：多语言文档、CI、安装包、指南里把导入限制（如 64 MB、5000 文件）写明白了"
+        ],
+        "limitations": [
+          "仍然依赖本机 TeX 发行版和 Git，首次配置不算零门槛",
+          "导入匿名 Overleaf 链接只是快照；持续同步需要登录，且有体积和文件数限制",
+          "星标和下载量仍属早期阶段，未见到独立的大规模写作评测"
+        ],
+        "comparison": "和 catalex 最接近：都是本地论文工作台加编程 Agent，草稿由人批准。Catalex 目前主要是 macOS，分析里写明批注不会同步到 Overleaf；Papilot 有 Windows/Linux 包，文档写了 Overleaf 登录同步。paper-orchestra 是从想法到投稿稿的多 Agent 流水线，不是对着 PDF 逐段改的交互编辑器。",
+        "researched_at": "2026-11-19"
+      }
+    },
+    {
       "id": "perch",
       "name": "Perch",
       "summary": "原生桌面应用，把 GitHub、代码浏览与 Claude/Codex 放同一窗口。",
@@ -3697,6 +3744,55 @@
         ],
         "comparison": "和 frontier-harness-eval（固定模型比不同编程 harness）、agent-initiative-benchmark（固定 harness 比模型何时该开口）同属评测，但 SkillEvaluator 评的是 Agent Skill/插件本身，并带不依赖密钥的静态门禁。和 security-audit-skill（让 Agent 审代码）方向相反：它是用来审技能的。技能作者和要建 Verified Skills 流水线的团队更适合用它。",
         "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "nvidia-skillspector",
+      "name": "SkillSpector（NVIDIA）",
+      "summary": "NVIDIA 开源的 Agent Skill / MCP 技能安全扫描器：安装前检查提示注入、泄密、供应链和越权等风险，并给出风险评分。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "python",
+        "cli",
+        "skill",
+        "mcp",
+        "安全",
+        "nvidia"
+      ],
+      "source_url": "https://github.com/NVIDIA/SkillSpector",
+      "preview_url": "https://docs.nvidia.com/skills/scanning-agent-skills",
+      "post_url": "https://x.com/MrBrainCaffeine/status/2123109208598217101",
+      "author": "NVIDIA",
+      "models": [
+        "可选；静态扫描可不调用模型，语义分析可接自己的模型"
+      ],
+      "first_seen": "2026-11-18",
+      "origin": "daily-digest",
+      "stars": 26827,
+      "notes": "星标 26827（2026-11-19 查询）。仓库创建于 2026-03，当天仍有提交；本次因 X 上的介绍补入项目库。README 中 31,132 个技能子集上 26.1% 存在漏洞、5.2% 呈恶意倾向的数字为项目自报，未独立复现。当前发布版本可见 v2.13.6（2026-11-16）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.12+（文档建议 3.12/3.13，因 yara-python 轮子限制），Apache-2.0。CLI 可用 uv/pip/Docker 安装，也提供 MCP、Pi 和 OpenCode 扩展。扫描 Git 仓库、URL、zip、目录或单文件。官方文档写明 71 种漏洞模式、17 个类别，覆盖提示注入、数据外传、提权、供应链、过度代理、输出处理、系统提示泄漏、记忆投毒、工具误用、rogue agent、抗拒绝、触发滥用、危险代码（AST）、污点跟踪、YARA、MCP 最小权限和 MCP 工具投毒等。两阶段：快速静态分析，可选 LLM 语义评估。SC4 会查 OSV.dev，断网则离线回退。输出终端、JSON、Markdown、SARIF，并给出 0–100 风险分。可用 baseline 压制已知误报。源码主体在 src/skillspector，另有 docs、extensions、skills/skill-inspector、tests、langgraph.json 与 model_registry.yaml。它也是 NVIDIA Verified Skills 流水线里的安全层，通过的技能会进入 NVIDIA 技能目录。",
+        "method": "先对技能包做静态模式与依赖检查，再按需调用模型做意图层面的语义分析，最后汇总成分数和建议。设计目标是在安装前回答「这个技能能不能装」，而不是装上之后再评效果。",
+        "features": [
+          "多种输入形态和报告格式，可接入 CI（含 SARIF）",
+          "静态检查可在 --no-llm 下完全本地运行，深度分析需自备模型",
+          "可作为 MCP / Pi / OpenCode 工具，在 Agent 会话里扫描技能"
+        ],
+        "highlights": [
+          "NVIDIA 官方维护，星标规模在技能安全工具里非常突出",
+          "和 SkillEvaluator 同一流水线：一个管安全扫描，一个管评测与发布",
+          "文档把分析边界、资源上限和已知限制写得比较清楚，不是只给宣传数字"
+        ],
+        "limitations": [
+          "研究报告中的漏洞比例为自报，扫描结果不能替代人工判断",
+          "更深的语义分析依赖外部模型与密钥；官方也写明对无法证明的运行时行为和提供方故障会标不完整",
+          "在较新的 Python（3.14/3.15）上安装 YARA 可能需要本地编译，文档已提示相关失败"
+        ],
+        "comparison": "和昨天入库的 nvidia-skillevaluator 配套：SkillSpector 回答「安不安全、能不能装」，SkillEvaluator 在此之上做格式/重叠检查，并对比装上技能前后 Agent 是否真的变好。security-audit-skill 审的是代码仓库，不是 skill 包供应链。若只要轻量本地扫描，也有更小的社区扫描器，但模式覆盖和工程完整度明显不如本项目。",
+        "researched_at": "2026-11-19"
       }
     },
     {
@@ -5604,6 +5700,56 @@
       }
     },
     {
+      "id": "openrocode",
+      "name": "openRocode",
+      "summary": "开源机器人 Agent 套件：把机械臂控制做成「三维电脑操控」——模型只看相机画面并点击或写短程序，几何、安全护栏和记录由套件负责。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "python",
+        "机器人",
+        "computer-use",
+        "mujoco",
+        "cli"
+      ],
+      "source_url": "https://github.com/wrencanfly/openRocode",
+      "preview_url": "https://github.com/wrencanfly/openRocode",
+      "post_url": "https://x.com/noahatwhere/status/2123212999607611426",
+      "author": "wrencanfly（@noahatwhere）",
+      "models": [
+        "Claude",
+        "GPT",
+        "任意 OpenAI 兼容端点"
+      ],
+      "first_seen": "2026-11-18",
+      "origin": "daily-digest",
+      "stars": 2,
+      "notes": "星标 2（2026-11-19 查询）。README 标明状态为 alpha，Apache-2.0，Python 3.11+，仿真器为 MuJoCo。作者称核心约 700 行，测试 40 个、约 8 秒跑完且不需 API 密钥，以上为项目自述。未查到完整的真机适配清单。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.11+，Apache-2.0，状态为 alpha。仿真用 MuJoCo。模型经 Anthropic API 使用 Claude，或经任意 OpenAI 兼容端点（官方示例提到 OpenAI、Qwen、DeepSeek、vLLM、LiteLLM）。核心是约 700 行的循环、事件、钩子与控制通道，工具、安全、记录、仪表盘和机器人本体都是插件。模型看不到也写不出世界坐标，深度、标定和坐标系留在套件内，工具只讲像素、厘米和「在前相机里往左」。目录含 rocode/、docs/、tests/、DESIGN.md。仪表盘是 Python 标准库提供的纯 HTML/JavaScript，只监听 127.0.0.1，控制请求需要页面携带的令牌。",
+        "method": "模型看标注过的相机图，用 move_to 点选抓取点，或把需要循环和检查的步骤交给 run_code；所有动作都经过同一套参数校验、力/工作空间护栏和急停，不会自动重试物理动作。全过程记成版本化 trace，可用 rocode bench 在相同任务和布局上对比不同模型。操作者可随时插入说明、暂停或停止。",
+        "features": [
+          "按像素点选和相对相机方向微调，而不让模型做三维坐标运算",
+          "逐步工具调用与受护栏的 run_code 可以混用",
+          "记录完整轨迹，并提供对照不同模型的仪表盘"
+        ],
+        "highlights": [
+          "把 Computer Use 的「指屏幕、受护栏执行、全程留痕」清楚搬到机械臂上",
+          "安全不依赖模型自觉：力限制、工作空间检查、急停和禁止自动重试都在套件里",
+          "文档和演示资产完整，测试可以在无密钥情况下跑"
+        ],
+        "limitations": [
+          "仍是 alpha，星标很少，公开演示围绕 MuJoCo 仿真，未查到完整真机适配说明",
+          "要跑真实对照实验仍需模型 API 密钥",
+          "仪表盘只绑本机回环地址，不是多用户远程控制台"
+        ],
+        "comparison": "和 tencent-browserskill、n8n-nod、obscura 一样属于「模型看画面、套件负责执行和护栏」，但对象从浏览器/桌面换成了仿真机械臂。库内此前没有同类机器人 Computer Use 套件。coucou 一类工具是盯着编程 Agent 的状态，并不控制机械臂。",
+        "researched_at": "2026-11-19"
+      }
+    },
+    {
       "id": "phongent",
       "name": "phongent",
       "summary": "开源多设备手机群控，可给设备下发任务或由主控 AI 分配。",
@@ -6212,6 +6358,52 @@
       }
     },
     {
+      "id": "grokbot-deskpet",
+      "name": "Desk Pet",
+      "summary": "非官方的 macOS 桌面宠物：每个 Grok Bot 对应一只像素宠物，在桌面上显示它在思考、工作、完成还是在等你。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "macos",
+        "rust",
+        "tauri",
+        "typescript",
+        "grok-bot"
+      ],
+      "source_url": "https://github.com/junlee30/grokbot-deskpet",
+      "preview_url": "https://github.com/junlee30/grokbot-deskpet/releases/latest",
+      "post_url": "https://x.com/sjunlee/status/2122862885592530964",
+      "author": "junlee30（@sjunlee）",
+      "models": [],
+      "first_seen": "2026-11-18",
+      "origin": "daily-digest",
+      "stars": 0,
+      "notes": "星标 0（2026-11-19 查询）。Apache-2.0。仓库创建于 2026-11-17。作者声明与 xAI / Grok Bot 无隶属关系。应用尚未使用 Apple Developer ID 签名，首次打开需在系统设置中放行。默认邮箱是 ntfy.sh，也可改用自建 ntfy。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "macOS 菜单栏应用（Apple Silicon 与 Intel），桌面端是 Tauri 2 + Rust + TypeScript（desktop/）。Bot 侧是可独立使用的 npm 包 deskpet-publish，Grok Bot 通过一段可粘贴的 skill 安装；也可用 npx 给其他能跑命令的 Agent 使用。状态经 ntfy（默认 ntfy.sh，可改为自建）传输，内容在离开 Bot 电脑前用 XChaCha20-Poly1305 加密，Desk Pet 用保存在 macOS 钥匙串里的密钥解密。配对码含随机主题名和 256 位密钥。仓库还有 protocol/、docs/（PROTOCOL、DESIGN、DEVELOPMENT）、skill/ 和 SECURITY.md。Apache-2.0。",
+        "method": "Bot 与 Mac 不能直连，便在双方都能访问的邮箱相遇，且邮箱只看到密文。Desk Pet 丢弃解密失败、重放或超过 10 分钟的消息。宠物只显示短状态（如「正在跑测试」），README 写明不会发送用户提示词、回复、工具参数或文件内容。点击宠物打开对应 Grok Bot 对话。",
+        "features": [
+          "每个 Bot 一只可拖动的桌面宠物，状态包括思考、工作、并行助手、等你、出错、完成和休眠",
+          "菜单栏显示有多少 Bot 在等待，并可选「需要你」通知",
+          "一端加密的配对与发布协议，可用公共或自建 ntfy"
+        ],
+        "highlights": [
+          "专为 Grok Bot 团队做的一眼可见状态层，安装可以用一句话交给 Bot 自己完成",
+          "协议把加密、重放保护和邮箱可见范围写进了文档",
+          "支持从本机 Grok Bot 复制头像；没有 Grok Bot 时用自己的像素机器人"
+        ],
+        "limitations": [
+          "只支持 macOS，应用尚未签名，星标为 0，仍是刚发布的非官方副作用",
+          "免费 ntfy.sh 有每日消息限额；忙碌状态若 Bot 忘记上报 done，要 10 分钟才会自行变闲",
+          "只显示状态，不能在宠物上批准工具调用或阅读对话内容"
+        ],
+        "comparison": "和 the-office-agents 一样用像素形象看多个 Agent 在干什么，但 Desk Pet 盯的是 Grok Bot 桌面状态，而不是编辑器里的编程 Agent 办公室。coucou 在灵动岛和锁屏上批准操作，能力更偏控制；Desk Pet 不负责批准。clawd-on-desk、tokay 也属于「谁在等我」提醒层，本项目把这一层做成桌面宠物，并默认走可替换的 ntfy 邮箱。",
+        "researched_at": "2026-11-19"
+      }
+    },
+    {
       "id": "eta",
       "name": "Eta",
       "summary": "本机一体式多 Agent 工作台：一人指挥一组常驻 Agent；默认跑自研 harness，也可把会话交给 Claude Code、Codex、OpenCode、pi 或本机配置的 ACP 代理。产品账本在一份 SQLite 里，会话内容是文件，长期记忆需另开可选 sidecar。",
@@ -6774,6 +6966,55 @@
         ],
         "comparison": "与库内 t3-code、coincide（多 Agent 控制台，coincide 也能中途换 Agent）相比，Shoal 专注 Windows 和三家原生 CLI，并加入「待验收」流程；与 herdr（跨机终端复用）相比更偏单机 GUI；与 relay（Agent 互相交接的 MCP）思路相近，但交接由工作台生成卡片完成。",
         "researched_at": "2026-11-16"
+      }
+    },
+    {
+      "id": "stitch-loop",
+      "name": "Stitch Loop（Google Labs）",
+      "summary": "Google Labs 的常驻产品 Agent：接上代码库和线上指标，按目标持续提出改进、在沙箱里改代码并开出待你审批的 PR。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "闭源",
+        "google",
+        "mcp",
+        "cli",
+        "产品发布",
+        "安全"
+      ],
+      "source_url": null,
+      "preview_url": "https://stitch.google.com/loop/waitlist",
+      "post_url": "https://x.com/stitchbygoogle/status/2123100817863663686",
+      "author": "Google Labs（@stitchbygoogle）",
+      "models": [
+        "Gemini 4 Carbon",
+        "CodeMender"
+      ],
+      "first_seen": "2026-11-18",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "2026-11-18 正式宣布全球候补，符合条件的 Google AI Ultra 用户优先。无公开源码。集成数量、默认循环等均来自官方博客，未独立验证。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Google Labs 实验产品，闭源托管。连接 GitHub，并通过官方所称的 180 多项集成、自定义 MCP 或本地 CLI 上传接入日志、用户行为和反馈。默认带安全、延迟、无障碍三类循环，也可自建循环。安全循环搭配 Gemini 4 Carbon 与 DeepMind 的 CodeMender。在隔离云沙箱写代码并开 GitHub PR。提供 Stitch CLI 和 MCP，可供 Google Antigravity 等编程 Agent 拉取产品上下文；也可在 Slack 用 @stitch。",
+        "method": "每个循环走四步：根据产品证据提出改进建议；给出带权衡和范围的方案（适用时含视觉方案）；你选定方向后在沙箱构建并开 PR（相关时附截图或视频）；再根据线上数据反思，目标达成后继续盯着指标是否回落。官方强调必须人工审查后才合并。",
+        "features": [
+          "上线后按可量化目标持续优化，而不是只在开发阶段写代码",
+          "内置安全、延迟、无障碍循环，并可自建如结账转化一类目标",
+          "作为其他编程 Agent 的上下文服务层（CLI / MCP），也可在 Slack 收每日摘要、建新循环"
+        ],
+        "highlights": [
+          "把「监测—修改—观察」做成面向精益团队的正式产品实验",
+          "安全循环把 Gemini 4 Carbon 与 CodeMender 接到同一条开 PR 的人审流程里",
+          "与已有的 Stitch 设计工具衔接，覆盖从想法到上线后维护"
+        ],
+        "limitations": [
+          "目前只有候补名单，不是立即可用的公开产品",
+          "无公开源码，无法核实现场评测或沙箱是否真能复现生产故障",
+          "依赖 Google 账号与生态（GitHub、Slack、Antigravity 等），迁移成本未知"
+        ],
+        "comparison": "和 tencent-loopforge 都做「沙箱改代码 + 人审」，但 LoopForge 是开源自托管 SOP 交付平台，Stitch Loop 是 Google 托管的上线后持续优化实验，要排队且看不到实现。anthropic-building-always-on-agents 是常驻 Agent 的架构指南，本项目更像把那套思路做成看线上指标的产品。stitch-skills 只覆盖设计阶段技能，管不到上线之后。vercel-eve 则是开源、文件系统优先的可持久 Agent 框架，要自建而不是候补托管服务。",
+        "researched_at": "2026-11-19"
       }
     },
     {
@@ -7711,6 +7952,56 @@
       }
     },
     {
+      "id": "genie-4",
+      "name": "Genie 4（Project Genie）",
+      "summary": "Google DeepMind 新一代世界模型，已在 Project Genie 上线：可在探索中用文本改环境，并第一次带上实时原生音频。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "闭源",
+        "google",
+        "world-model",
+        "多模态",
+        "音频",
+        "产品发布"
+      ],
+      "source_url": null,
+      "preview_url": "https://labs.google/projectgenie",
+      "post_url": "https://x.com/GoogleDeepMind/status/2123117733709586849",
+      "author": "Google DeepMind / Google Labs",
+      "models": [
+        "Genie 4",
+        "Genie 3",
+        "Gemini"
+      ],
+      "first_seen": "2026-11-18",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "官方博文与 @GoogleDeepMind、@Google、@demishassabis 同步宣布。符合条件的 Google AI Ultra 订阅者今日可在 Project Genie 使用，Pro 用户可在同一页面候补。无公开源码或权重。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Google DeepMind 的世界模型 Genie 4，集成在浏览器端的 Project Genie。可在同一会话中用自然语言编辑环境，并首次搭配实时原生音频（环境声与角色对白）。配套的 Project Genie agent 调度谷歌多模态模型，生成初始视觉风格和背景配乐；探索过程中也可引入 Gemini，观察画面并给出建议或触发事件。画廊可发布、探索和再混世界。Genie 3 仍留在模型选择器中，官方称单次生成探索时长从 60 秒提升到 3 分钟，并支持世界串联与 360° 全景图作为种子。输出带 SynthID 水印，输入输出经安全审查。闭源。",
+        "method": "先生成可走进去的交互世界，再在探索过程中用文本提示改天气、加入角色或扭转情节，音频随画面变化。Agent 把自然语言愿景编排成视觉和配乐，而不只是一次出图。",
+        "features": [
+          "会话中途用文本实时改世界，而不是整段重生成后再看",
+          "实时原生音频与对白，以及可发布再混的社区画廊",
+          "Project Genie agent 用对话共同构建世界；Genie 3 仍可用于更长行程和全景种子"
+        ],
+        "highlights": [
+          "官方把这次更新定位为从演示走向可共同创作的工具：边走边改，并第一次加上原生声音",
+          "同时升级 Genie 3 的时长、全景接地和可提示事件，模型可以按任务选型",
+          "责任声明比较明确：水印、安全审查，并承认长期场景保持等仍是研究问题"
+        ],
+        "limitations": [
+          "仅向符合条件的 Google AI Ultra 用户开放，Pro 用户需排队",
+          "无公开源码或权重，无法本地复现",
+          "官方承认仍属前沿研究，正在解决相机延迟、复杂物理交互、实时音频精度和长期场景保持等问题；这些限制来自官方博文，具体数值未在博文中给出"
+        ],
+        "comparison": "库内此前没有可交互世界模型产品。同日在官方帖评论区出现的 hy-nomas 是开源可自托管的对照：Genie 4 强在闭源产品体验和实时走进世界，Hy-Nomas 强在可下载权重、按片段用文本和相机轨迹续写视频。两者都还没有被第三方系统评测过长期一致性。",
+        "researched_at": "2026-11-19"
+      }
+    },
+    {
       "id": "hairdeck",
       "name": "HairDeck",
       "summary": "单图生成可绑定的 3D 发片（hair cards），开源权重。",
@@ -7796,6 +8087,55 @@
         ],
         "comparison": "和 SkillEvaluator 都关心「这套机制到底有没有变好」，但 SkillEvaluator 评的是单个技能装上前后的差异，Harness² 评并改的是整个执行套件，而且可以在没有标准答案时继续改进。和 LoopForge 的流程固化也不同，这里强调的是递归自我改进。",
         "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "hy-nomas",
+      "name": "Hy-Nomas（腾讯混元）",
+      "summary": "腾讯混元开源的交互式世界生成模型：按视频片段续写同一世界，可用文本指令和相机轨迹多轮引导。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "world-model",
+        "视频",
+        "pytorch",
+        "腾讯",
+        "huggingface"
+      ],
+      "source_url": "https://github.com/Tencent-Hunyuan/Hy-Nomas",
+      "preview_url": "https://hy-nomas.hy.tencent.com/",
+      "post_url": "https://x.com/hynomas/status/2123141102316425443",
+      "author": "腾讯混元（Tencent Hunyuan）",
+      "models": [
+        "Hy-Nomas",
+        "Qwen2.5-VL-7B-Instruct"
+      ],
+      "first_seen": "2026-11-18",
+      "origin": "reply-on-popular-post",
+      "stars": 586,
+      "notes": "星标 586（2026-11-19 查询）。在 Google DeepMind 发布 Genie 4 的官方帖评论区作为开源对照被推荐。权重在 Hugging Face tencent/Hy-Nomas；技术报告 arXiv:2610.36729。许可 Apache-2.0。默认 8 步、720×1280、24 FPS 等是配置说明，文档写明不是基准成绩。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Apache-2.0 的开源视频世界生成系统。生成主干是分段自回归的稠密多模态扩散变换器（MMDiT），文本编码器来自 Qwen/Qwen2.5-VL-7B-Instruct 的语言模型部分，相机条件用外参矩阵经交叉注意力注入，视频解码器是微调后的 PixelUMM；片段之间用持久 KV 缓存传递上下文。推理配置示例为 8 步去噪、720×1280、24 FPS。仓库含 apps（Web Demo）、hymm、kernel、configs、docker、captioning_harness、tests 等。标准推理配置使用 8 路序列并行，文档默认按一组 8 GPU 启动；另有单卡 RTX 4090 路径（INT8 DiT 与 KV、FP8 解码、CPU offload、历史帧预算）。在线 Demo 还需要单独的 Nomas-PE 提示词增强服务，与单卡推理声明不是同一范围。",
+        "method": "世界按视频片段往前长：用户用文本说明主体、动作、风格或环境，也可同时给相机轨迹。新片段从潜空间噪声出发，借助历史 KV 缓存保持同一世界的连续性，而不是一次生成一段无法续写的短片。",
+        "features": [
+          "多轮文本引导，可中途改物体、风格、场景或动作",
+          "相机轨迹控制视角和运动",
+          "提供在线 Demo，以及 Docker / 源码安装和单卡低显存配置"
+        ],
+        "highlights": [
+          "在 Genie 4 这类闭源世界模型之外，给出可下载的开源实现和权重",
+          "把文本、相机和分段 KV 缓存写进同一套可复现的推理配置",
+          "文档区分了标准多卡、单卡量化路径和 Demo 所需的额外服务，没有把它们混成同一句「一张卡就能玩」"
+        ],
+        "limitations": [
+          "标准高质量推理默认要 8 张 GPU；单卡路径有量化、卸载和传输延迟，系统内存也会随历史归档增长",
+          "它生成的是可续写视频片段，不是像 Project Genie 那样在世界里实时走动",
+          "在线 Demo 另需 Nomas-PE 服务资源；第三方模型与组件另有许可证"
+        ],
+        "comparison": "和同日发布的 genie-4 是目前库内仅有的一对交互世界生成对照。Genie 4 是闭源产品，强调走进世界并实时改环境和音频，但要 Ultra 订阅；Hy-Nomas 可自托管、有源码和权重，交互方式是文本加相机按片段续写。库内此前没有同类开源世界模型。",
+        "researched_at": "2026-11-19"
       }
     },
     {
@@ -12972,6 +13312,54 @@
         ],
         "comparison": "和 cn-math-taxonomy（知识图谱和诊断）可以互补。和 deeptutor（llm-tools 里的 AI 导师）相比，本项目更聚焦 K12 错题。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "xiaoai-doubao",
+      "name": "小爱变豆包",
+      "summary": "把小米小爱音箱 Pro 改成孩子的英语口语玩伴：唤醒豆包用英语对话，原来的小爱技能还能用，家长可在网页上看聊天记录。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "教育",
+        "儿童",
+        "语音",
+        "硬件",
+        "豆包"
+      ],
+      "source_url": "https://github.com/rolazd/xiaoai-doubao",
+      "preview_url": null,
+      "post_url": "https://x.com/KOF97AI/status/2122958283489341708",
+      "author": "rolazd",
+      "models": [
+        "豆包（火山引擎实时语音）"
+      ],
+      "first_seen": "2026-11-18",
+      "origin": "daily-digest",
+      "stars": 286,
+      "notes": "星标 286（2026-11-19 查询）。MIT。基于 kslr/xiaoai-plus 和 idootop/open-xiaoai。X 介绍帖来自 @KOF97AI，仓库所有者为 rolazd，未核实是否同一人。README 提醒刷机有变砖、失去保修和可能违反小米用户协议的风险；语音会发给火山引擎，该服务收费。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "MIT 许可。音箱端是 C++ 程序（xiaoai-plus/，交叉编译后在音箱上运行），记忆后台和家长页是 Python（server/），另有分步改装脚本（setup/）和给编程 Agent 看的 AGENTS.md。底层接入能力来自 kslr/xiaoai-plus，后者又基于 idootop/open-xiaoai。本项目加上儿童英语玩伴、认人和纠正、跨天记忆、家长网页、企业微信日报，以及对孩子声音的唤醒调优。对话走火山引擎的豆包实时语音。认人、记忆和家长页需要另行准备一台服务器和域名；不配服务器仍可对话，只是不认人、不记得上次。",
+        "method": "保留原「小爱同学」唤醒，另设「豆包豆包」进入英语陪练。豆包只用简单英语，孩子说错了不直接批评，而是在回答里带出正确说法；孩子说中文，就用简单英语复述后再继续。可先确认是哪个孩子，并在有服务器时记得上次话题。家长在手机网页上查看或删除记录，也可把当日概况发到企业微信。",
+        "features": [
+          "两个助手共存：豆包陪练英语，小爱继续开灯放歌",
+          "针对儿童口语的等待、纠错和认人记忆",
+          "可选的家长网页和日报；也可用 Claude Code / Codex 按仓库说明一步步改装"
+        ],
+        "highlights": [
+          "把闲置音箱变成无屏幕的英语环境，目标很具体",
+          "文档把风险、费用、数据去向和适用机型写得很直白",
+          "在已有开源刷机基础上补了儿童场景，而不是从零实现底层"
+        ],
+        "limitations": [
+          "目前官方支持主要是系统版本 1.62.2 的「小米智能音箱 Pro」；刷机可能变砖、失去保修，也可能违反厂商协议",
+          "孩子说话会发给火山引擎，服务收费，免费额度用完后的月费需以官网账单为准",
+          "认人、记忆和家长页要自备服务器；不接受小米系统升级，否则改装会被冲掉"
+        ],
+        "comparison": "和 magic-english-buddy 都面向儿童英语，但路线不同：后者是屏幕上的分级阅读冒险，本项目是实体音箱上的口语对话，并保留原厂助手。没有屏幕跟读课文，隐私和刷机风险也更高。",
+        "researched_at": "2026-11-19"
       }
     },
     {

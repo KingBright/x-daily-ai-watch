@@ -881,6 +881,22 @@
           "maturity": "★881，仍早；Windows 包未签名",
           "license": "MIT",
           "use_case": "想要跨引擎的游戏开发 Agent 闭环"
+        },
+        {
+          "id": "nvidia-skillspector",
+          "tech": "Python CLI / MCP，静态规则加可选 LLM 语义分析，输出 SARIF",
+          "capability": "安装 Agent 技能前扫描提示注入、泄密和供应链风险",
+          "maturity": "★2.7 万，NVIDIA 官方，是 SkillEvaluator 的安全层",
+          "license": "Apache-2.0",
+          "use_case": "先判断技能能不能装"
+        },
+        {
+          "id": "papilot",
+          "tech": "跨平台 LaTeX 编辑器，对接已有编程 Agent，在已排版 PDF 上审阅",
+          "capability": "圈选页面让 Agent 改 .tex，对照排版结果接受或拒绝",
+          "maturity": "★363，v0.11.0，可与 Overleaf 同步",
+          "license": "MIT",
+          "use_case": "写论文时不想盯着源码 diff"
         }
       ],
       "prose": [
@@ -891,7 +907,8 @@
         "2026-11-15 补入的审查与知识类工具：open-code-review（阿里，5.1 万星）用「确定性流水线 + Agent」解决漏文件和行号漂移，是库内第一个可直接进 CI 的成熟 PR 审查 CLI，改变了审查/审计层「多为早期小项目」的格局；modern-web-guidance 由四大浏览器厂商维护，并带有「有无技能」对照评测，是领域知识型技能里证据最充分的；stack-diagram 与 archify 同属架构可视化，但更轻、更偏出图。",
         "2026-11-16 补入 refactoring-ui-skill：和 modern-web-guidance 一样属于「领域知识技能」，但管的是视觉设计而不是 API 写法；它只做约束和诊断，不负责生成，正好可以串在 UI 生成工具之后做验收。",
         "2026-11-17 补入三项：nvidia-skillevaluator 给技能生态补上「技能本身好不好、有没有真的提升 Agent」的评测门禁；vercel-eve 是从约定目录从零定义可部署 Agent 的框架，和编排现成 CLI 的平台不同；stitch-skills 把 Google Stitch 设计流程技能化，但依赖 Stitch MCP，且查询时代码已约三个月未更新。",
-        "2026-11-18 补录把「让 Agent 写得像样、改得不坏、流程可再跑」三条路写清楚了：BeautifulRust 管 Rust 惯用法，rust-anything 管对照旧行为的迁移验收，Swamp 把重复 Skill 编成工作流。Diffity 补上本机审 Agent 代码的桌面工具。Craft Anything 星标很高但仍是 early alpha，且只适用于有权研究的软件。Genex 则把构建和试玩收成跨引擎的游戏开发闭环。"
+        "2026-11-18 补录把「让 Agent 写得像样、改得不坏、流程可再跑」三条路写清楚了：BeautifulRust 管 Rust 惯用法，rust-anything 管对照旧行为的迁移验收，Swamp 把重复 Skill 编成工作流。Diffity 补上本机审 Agent 代码的桌面工具。Craft Anything 星标很高但仍是 early alpha，且只适用于有权研究的软件。Genex 则把构建和试玩收成跨引擎的游戏开发闭环。",
+        "2026-11-19 补入两项：nvidia-skillspector 把技能安全扫描做成可进 CI 的高星官方工具，和 nvidia-skillevaluator 分工明确——一个问能不能装，一个问装了有没有变好；研究报告中的漏洞比例为自报。papilot 把学术写作的人机界面从 .tex 差异改到排版后的 PDF，和 catalex 同类，但跨平台并在文档中支持 Overleaf 同步。"
       ]
     },
     {
@@ -1050,6 +1067,14 @@
           "maturity": "★3.6 万；并非完整 Chromium 替代",
           "license": "Apache-2.0",
           "use_case": "要轻量无头浏览；不是反爬教程"
+        },
+        {
+          "id": "openrocode",
+          "tech": "Python + MuJoCo，把机械臂做成三维 Computer Use；模型只看像素和厘米",
+          "capability": "点选或写短程序，套件负责几何、护栏、急停和留痕",
+          "maturity": "★2，alpha；公开演示以仿真为主",
+          "license": "Apache-2.0",
+          "use_case": "在仿真里试验「模型开车/开臂」的套件"
         }
       ],
       "prose": [
@@ -1059,7 +1084,8 @@
         "结论 3：隔离和上下文成本是 Computer Use 的两大短板，库里已有针对性的工具：windows-terminal 用 QEMU 做隔离，image-context-manager 压缩截图。这两个都很早期（个位数星标），但方向值得跟进。",
         "2026-11-16：poki 发布 0.4.0 Beta（后台任务、不抢前台），星标升到约 1.4 千；其发布帖评论区由作者自荐的 xphoneuse 走同一条「电脑控制真机 + MCP」路线，三系统通用、iPhone 免 Xcode 且工具更全，但极早期，安全护栏未见说明，选型上仍是 pinky（护栏）和 poki（iOS 成熟度）优先。",
         "2026-11-17 补入 n8n-nod：n8n 官方的本机个人助手，自带沙箱电脑、浏览器、审批和 Vault，产品完整度高于大多数「给别的 Agent 当浏览器后端」的库；评测数字为自报，状态仍是 research preview。",
-        "2026-11-18 补录 coucou 和 obscura。前者是 Apple 设备上的批准/监视层，不管完整的手机屏幕接管；后者是给 Agent 用的轻量无头浏览引擎，不能把它理解成反爬教程，也不是 Chromium 的完整替代。"
+        "2026-11-18 补录 coucou 和 obscura。前者是 Apple 设备上的批准/监视层，不管完整的手机屏幕接管；后者是给 Agent 用的轻量无头浏览引擎，不能把它理解成反爬教程，也不是 Chromium 的完整替代。",
+        "2026-11-19 补入 openrocode：把 Computer Use 的指屏幕、护栏和全程留痕搬到仿真机械臂上，是库内第一个这类机器人套件。它仍是 alpha，未查到完整真机适配说明，和浏览器/桌面操控工具不互相替代。"
       ]
     },
     {
@@ -1322,6 +1348,22 @@
           "maturity": "★229，v0.4.0；安装包未签名",
           "license": "MIT（SearXNG 等另有许可）",
           "use_case": "想自托管一队可检查的个人 Agent，而不是替换团队 SOP"
+        },
+        {
+          "id": "stitch-loop",
+          "tech": "Google Labs 托管的常驻产品 Agent，接 GitHub 和线上指标，沙箱改代码后开 PR",
+          "capability": "按目标持续建议、构建、观察，默认同伴安全/延迟/无障碍循环",
+          "maturity": "2026-11-18 宣布，候补中，无源码",
+          "license": "闭源实验",
+          "use_case": "要上线后自动盯产品指标，并能接受排队"
+        },
+        {
+          "id": "grokbot-deskpet",
+          "tech": "Tauri 桌面宠物 + 加密 ntfy 通道，专看 Grok Bot 状态",
+          "capability": "一眼看出哪个 Bot 在思考、工作或等你",
+          "maturity": "★0，macOS，非官方且未签名",
+          "license": "Apache-2.0",
+          "use_case": "只想在桌面上盯 Grok Bot，不负责批准操作"
         }
       ],
       "prose": [
@@ -1333,7 +1375,8 @@
         "2026-11-16 补入四项：agentes-chat 把通用 Bot 平台推进到「团队聊天里的 AI 同事」，预算和审批做成一等公民；clawd-on-desk（6.7k 星）与 tokay、herdr 一起说明「谁在等我」的提醒层正分化到桌面、手机和终端；shoal 是 Windows 专用的多 CLI 工作台，加入待验收与交接卡；评论区发现的 hf-agent-manager 把控制台搬到私有 HF Space，补上云端常驻这一形态。",
         "2026-11-16 每周书签补入三项，都落在结论 3「共享状态和协调」上：layerfs 与 bowl 把多 Agent 隔离下沉到文件系统层（前者单机 SQLite、已有 DSH 集成和公开基准；后者服务端集中存储、多节点，但尚未可用），与 omnigraph（共享记忆的分支合并）构成「文件 + 知识」两层底座；agentrun 则在 harness 外层做跨运行学习和可恢复执行，把「Agent 反复摸索同一件事」当成本问题解决，案例数字为自报。",
         "2026-11-17 补入 tencent-loopforge：腾讯把 SOP、沙箱和人工审批做成自托管交付平台，也可 Local 装进现有助手；和 shoal / hf-agent-manager 的并排终端、plannotator 的审阅层形成「编排 / 工作台 / 批注」分工。默认 Docker socket 安装只适合受信任团队。",
-        "2026-11-18 补录 AutoSwarm（研究型上下文打通）、dusk bot（本地机器人团队，非商用许可，和完全开源的 OpenMausBot 不是同一类许可）和 Eta（更早期的一体运行时）。 同日晚间按源码补读 Eta：它默认自研循环，但也可以把会话交给 Claude Code 等；长期记忆并不是 README 所说的「一份 SQLite」，而是可选的 PostgreSQL sidecar。它适合当可检查的个人常驻小队，不能替代 LoopForge 的沙箱 SOP，也不替代 AgentRun 的可恢复 CLI 编排。 2026-11-18 收录 Anthropic 官方指南 Building always-on agents（不是开源成品）。它把常驻理解成睡眠-唤醒的短 run，并用收件箱作为崩溃后可重试的真相来源；按这篇指南看，Eta 最缺的是可重试的事件队列，而不是一个永不退出的进程。"
+        "2026-11-18 补录 AutoSwarm（研究型上下文打通）、dusk bot（本地机器人团队，非商用许可，和完全开源的 OpenMausBot 不是同一类许可）和 Eta（更早期的一体运行时）。 同日晚间按源码补读 Eta：它默认自研循环，但也可以把会话交给 Claude Code 等；长期记忆并不是 README 所说的「一份 SQLite」，而是可选的 PostgreSQL sidecar。它适合当可检查的个人常驻小队，不能替代 LoopForge 的沙箱 SOP，也不替代 AgentRun 的可恢复 CLI 编排。 2026-11-18 收录 Anthropic 官方指南 Building always-on agents（不是开源成品）。它把常驻理解成睡眠-唤醒的短 run，并用收件箱作为崩溃后可重试的真相来源；按这篇指南看，Eta 最缺的是可重试的事件队列，而不是一个永不退出的进程。",
+        "2026-11-19 补入 stitch-loop 和 grokbot-deskpet。Stitch Loop 是大厂把「上线后按指标持续改产品」做成候补产品，可与 LoopForge 的开源自托管 SOP、Anthropic 常驻指南对照，但目前看不到实现，也无法验证沙箱是否复现生产故障。Desk Pet 把「谁在等我」做成 Grok Bot 的桌面宠物，和 the-office-agents、coucou、clawd-on-desk 同属观察层，但不批准工具调用，且默认走可替换的 ntfy 邮箱。"
       ]
     },
     {
@@ -1924,6 +1967,22 @@
           "maturity": "★131；许可证未声明",
           "license": "未声明",
           "use_case": "做手绘故事动画"
+        },
+        {
+          "id": "genie-4",
+          "tech": "DeepMind 世界模型，集成在 Project Genie；实时改环境并带原生音频",
+          "capability": "走进生成世界并用文本修改，可发布到画廊再混",
+          "maturity": "2026-11-18 上线，仅 Ultra（Pro 可候补），无源码",
+          "license": "闭源",
+          "use_case": "要体验可走进并实时修改的世界"
+        },
+        {
+          "id": "hy-nomas",
+          "tech": "分段自回归 MMDiT + Qwen 文本编码器 + 相机条件，开源权重",
+          "capability": "按视频片段用文本和相机轨迹续写同一世界",
+          "maturity": "★586，可单卡量化推理；标准配置偏多卡",
+          "license": "Apache-2.0",
+          "use_case": "要自托管或对照闭源世界模型"
         }
       ],
       "prose": [
@@ -1935,7 +1994,8 @@
         "2026-11-16 补入四项：rea-video（拆解视频）与 hyperframes（HTML 渲染视频，8.5 万星）构成内容创作组里「拆解→重做」的两端，继续印证「LLM + 确定性工具链」结论；yogurt 是全本地会议纪要，可与 cicada-知了 对照；评论区发现的 weight-space-index 把 权重空间编程-mit 的交互式分析做成静态工具，但数字全部自报，待复现。",
         "2026-11-16 补入 gemini-4-hydrogen：与模型组其他条目一样只能 light；值得注意的是第三方 Artificial Analysis 指数（51）已高于同家族的 Argon，但单任务成本也高于同档对手，选型要看任务是否吃推理深度。",
         "2026-11-17 补入两项：paper-orchestra 是学术写作的完整多 Agent 流水线，和写作风格技能、ingar30-reviewer（审稿）互补；gmclip 把本地剪辑做成人和 Agent 共用的命令表，继续印证内容创作组「LLM + 确定性工具链」的结论，不过目前只支持 Mac 预发布。",
-        "2026-11-18 补录里最值得看的是 Harness² 和 earshot：前者是改进整个 Agent 套件的研究框架，后者给编码 Agent 补上本地听觉和可复现声音。Cinetic、stick-scene 和手绘绘本技能继续扩展「用技能做视频/动画」；edulab 是可验证的讲题技能，不要和站点 WeduLab 混为一谈。inference-optimisation-skill 的收益数字为发帖自报。"
+        "2026-11-18 补录里最值得看的是 Harness² 和 earshot：前者是改进整个 Agent 套件的研究框架，后者给编码 Agent 补上本地听觉和可复现声音。Cinetic、stick-scene 和手绘绘本技能继续扩展「用技能做视频/动画」；edulab 是可验证的讲题技能，不要和站点 WeduLab 混为一谈。inference-optimisation-skill 的收益数字为发帖自报。",
+        "2026-11-19 补入库内第一对交互世界生成对照：genie-4 是闭源产品，强调走进世界、实时改环境和原生音频，但只有 Ultra（及 Pro 候补）能用；评论区发现的 hy-nomas 提供开源实现和权重，用文本和相机按片段续写视频，标准推理偏多卡。两者都还没有被第三方系统评过长期一致性，官方也承认世界保持仍是研究问题。"
       ]
     },
     {
@@ -1945,7 +2005,7 @@
       "rows": [],
       "prose": [
         "`other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：",
-        "教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、edulab 是另一项目（开源讲题技能，不要和 WeduLab 站点搞混）、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图、cs329z（斯坦福 Agent 工程公开课）、magic-english-buddy（儿童英语阅读冒险）、learn-arduino（入门站，本次页面 403）、square-circle-perceptron（感知机手绘实验）",
+        "教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、edulab 是另一项目（开源讲题技能，不要和 WeduLab 站点搞混）、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图、cs329z（斯坦福 Agent 工程公开课）、magic-english-buddy（儿童英语阅读冒险）、xiaoai-doubao（把小爱音箱改成英语口语玩伴，有刷机和云端语音风险）、learn-arduino（入门站，本次页面 403）、square-circle-perceptron（感知机手绘实验）",
         "知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站、xnews（海外长文中文改写站）、x-article-hub（人工挑选的 X 长文归档）、musk-daily（马斯克动态日报）、elon-musk-cn（马斯克访谈中文精读与跳转）、what-new-ai-in-x（按模型与产品切的 X 合集档案）、lastbook（离线生存知识库）",
         "算法可视化：astar-visualizer（Antigravity 生成的 C++ A* 寻路可视化，评论区发现）",
         "前端/桌面组件：gpui-kit（Rust + GPUI 桌面框架，2 万星）、islandcn（React 灵动岛组件）、mdxcn（MDX 文档组件）、cockpit-ui（九十年代机甲座舱风 Web Component，含 Agent 全息状态）、rubber-hose-ui（同一作者的橡皮管卡通控件）、cui（零依赖 C99 UI，附 cui-rs）、nsgo（Go + 各平台原生控件，0.1.0）",
