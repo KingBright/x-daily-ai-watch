@@ -161,6 +161,8 @@
 | genex-desktop | 多 Agent 桌面应用，对接 UE/Unity/Godot 等并自动试玩 | 用订阅或本地模型做游戏、构建和试玩 | ★881，仍早；Windows 包未签名 | MIT | 想要跨引擎的游戏开发 Agent 闭环 |
 | nvidia-skillspector | Python CLI / MCP，静态规则加可选 LLM 语义分析，输出 SARIF | 安装 Agent 技能前扫描提示注入、泄密和供应链风险 | ★2.7 万，NVIDIA 官方，是 SkillEvaluator 的安全层 | Apache-2.0 | 先判断技能能不能装 |
 | papilot | 跨平台 LaTeX 编辑器，对接已有编程 Agent，在已排版 PDF 上审阅 | 圈选页面让 Agent 改 .tex，对照排版结果接受或拒绝 | ★363，v0.11.0，可与 Overleaf 同步 | MIT | 写论文时不想盯着源码 diff |
+| onlook | Electron + React 19 画布，git worktree 跑真实 dev server，接入 Claude Code 或 Codex | 在真实产品界面上并列探索并改代码，差异作为可审 PR | ★27413，YC W25；官方包目前仅 macOS | Apache-2.0 | 设计师要在真实 Web 产品上做界面探索 |
+| agent-thinking-meter | 标准库 Python CLI，读本机 Claude Code / Codex / Antigravity 日志 | 统计工具步还带不带推理、每回合工具次数，只输出聚合计数 | 新建，★0；案例数字为自报 | MIT | 用自己的日志验证「模型是不是更懒了」 |
 
 ### 分析
 
@@ -181,6 +183,8 @@
 2026-11-18 补录把「让 Agent 写得像样、改得不坏、流程可再跑」三条路写清楚了：BeautifulRust 管 Rust 惯用法，rust-anything 管对照旧行为的迁移验收，Swamp 把重复 Skill 编成工作流。Diffity 补上本机审 Agent 代码的桌面工具。Craft Anything 星标很高但仍是 early alpha，且只适用于有权研究的软件。Genex 则把构建和试玩收成跨引擎的游戏开发闭环。
 
 2026-11-19 补入两项：nvidia-skillspector 把技能安全扫描做成可进 CI 的高星官方工具，和 nvidia-skillevaluator 分工明确——一个问能不能装，一个问装了有没有变好；研究报告中的漏洞比例为自报。papilot 把学术写作的人机界面从 .tex 差异改到排版后的 PDF，和 catalex 同类，但跨平台并在文档中支持 Overleaf 同步。
+
+2026-11-20 补入 onlook 和 agent-thinking-meter。Onlook 把「在渲染结果上圈选、交给已有 Agent 改源码」做成设计师向的本地画布（对象是正在跑的 Web 应用，而不是 papilot 的 PDF），官方包目前只有 macOS。agent-thinking-meter 则补上一块库内没有的观测：不看代码或技能，只量本机日志里工具调用前还是否在推理。
 
 ## Phone/Computer Use
 
@@ -267,6 +271,8 @@
 | eta | 单个 Bun 宿主；默认自研 harness，也可经 OAR/ACP 接入 Claude Code、Codex、OpenCode、pi | 一人指挥常驻小队：任务需确认，记忆是可选 sidecar，会话以宿主用户身份跑 | ★229，v0.4.0；安装包未签名 | MIT（SearXNG 等另有许可） | 想自托管一队可检查的个人 Agent，而不是替换团队 SOP |
 | stitch-loop | Google Labs 托管的常驻产品 Agent，接 GitHub 和线上指标，沙箱改代码后开 PR | 按目标持续建议、构建、观察，默认同伴安全/延迟/无障碍循环 | 2026-11-18 宣布，候补中，无源码 | 闭源实验 | 要上线后自动盯产品指标，并能接受排队 |
 | grokbot-deskpet | Tauri 桌面宠物 + 加密 ntfy 通道，专看 Grok Bot 状态 | 一眼看出哪个 Bot 在思考、工作或等你 | ★0，macOS，非官方且未签名 | Apache-2.0 | 只想在桌面上盯 Grok Bot，不负责批准操作 |
+| linger | TypeScript 本机个人 Agent + 自研 PolyStrata MoE 推理，Cua/Playwright 操控桌面和浏览器 | 本地或已有订阅上跑 Another Me：记忆 wiki、主动提醒、team.md 多 Agent | ★1540，2026-11-19 开源；速度与「接近 Claude」为自报 | Apache-2.0 加托管/品牌附加条款 | 要在自己电脑上跑带本地大模型的个人 Agent 团队 |
+| mastra-factory | 薄 TypeScript 模板 + npm 包 @mastra/factory，Postgres，可选 Slack；默认可走 Mastra 平台 | 把 GitHub/Linear/Jira 的 issue 变成可审批的计划、实现和 PR | 模板仓 ★52；238/630 周 PR 数为团队自报 | 声明 Apache-2.0（根目录未见 LICENSE 文件） | 已在用 Mastra、想从看板或 Slack 开软件工厂的团队 |
 
 ### 分析
 
@@ -289,6 +295,8 @@
 2026-11-18 补录 AutoSwarm（研究型上下文打通）、dusk bot（本地机器人团队，非商用许可，和完全开源的 OpenMausBot 不是同一类许可）和 Eta（更早期的一体运行时）。 同日晚间按源码补读 Eta：它默认自研循环，但也可以把会话交给 Claude Code 等；长期记忆并不是 README 所说的「一份 SQLite」，而是可选的 PostgreSQL sidecar。它适合当可检查的个人常驻小队，不能替代 LoopForge 的沙箱 SOP，也不替代 AgentRun 的可恢复 CLI 编排。 2026-11-18 收录 Anthropic 官方指南 Building always-on agents（不是开源成品）。它把常驻理解成睡眠-唤醒的短 run，并用收件箱作为崩溃后可重试的真相来源；按这篇指南看，Eta 最缺的是可重试的事件队列，而不是一个永不退出的进程。
 
 2026-11-19 补入 stitch-loop 和 grokbot-deskpet。Stitch Loop 是大厂把「上线后按指标持续改产品」做成候补产品，可与 LoopForge 的开源自托管 SOP、Anthropic 常驻指南对照，但目前看不到实现，也无法验证沙箱是否复现生产故障。Desk Pet 把「谁在等我」做成 Grok Bot 的桌面宠物，和 the-office-agents、coucou、clawd-on-desk 同属观察层，但不批准工具调用，且默认走可替换的 ntfy 邮箱。
+
+2026-11-20 补入 Linger 和 Mastra Factory。Linger 把本机大模型推理、记忆、主动行动和桌面操控收成一支个人 Agent 团队，和 Eta、n8n-nod、OpenMausBot 同属「跑在自己电脑上」，差异是自研 MoE 推理和夜间规则自更新；速度和对标 Claude 的说法均为自报，许可也限制对外托管。Factory 则和 LoopForge、Stitch Loop 一样做 issue-to-PR 的交付工厂，但工作流绑在 Mastra 自己的看板和 Slack 上，公开模板仓很薄，引擎在 npm 包里。
 
 ## 大模型工具
 
@@ -371,6 +379,8 @@
 | hand-drawn-storybook-animation-skill | 手绘绘本风动画技能，配合图文教程 | 降低绘本短片门槛 | ★131；许可证未声明 | 未声明 | 做手绘故事动画 |
 | genie-4 | DeepMind 世界模型，集成在 Project Genie；实时改环境并带原生音频 | 走进生成世界并用文本修改，可发布到画廊再混 | 2026-11-18 上线，仅 Ultra（Pro 可候补），无源码 | 闭源 | 要体验可走进并实时修改的世界 |
 | hy-nomas | 分段自回归 MMDiT + Qwen 文本编码器 + 相机条件，开源权重 | 按视频片段用文本和相机轨迹续写同一世界 | ★586，可单卡量化推理；标准配置偏多卡 | Apache-2.0 | 要自托管或对照闭源世界模型 |
+| product-demo-agent-toolkit | TypeScript 工具包 + 本地 Studio，驱动你已有的编程 Agent 录真实产品 | 按人的节奏走流程并配旁白，可在不重拍的情况下改参数 | ★15，新建 | MIT | 给客户拍真实产品操作演示 |
+| easyclip | 本机 ffmpeg + Claude 技能/MCP，模型只看很短的摘要表 | 从链接或文件剪竖屏 Shorts，带政策检查；Pro 另付费 | ★2，评论区发现；免费版有限额 | MIT（免费版） | 用 Claude 从长录像/直播切 Shorts |
 
 ### 分析
 
@@ -394,6 +404,8 @@
 
 2026-11-19 补入库内第一对交互世界生成对照：genie-4 是闭源产品，强调走进世界、实时改环境和原生音频，但只有 Ultra（及 Pro 候补）能用；评论区发现的 hy-nomas 提供开源实现和权重，用文本和相机按片段续写视频，标准推理偏多卡。两者都还没有被第三方系统评过长期一致性，官方也承认世界保持仍是研究问题。
 
+2026-11-20 补入两项内容创作工具，继续印证「LLM 加确定性工具链」：product-demo-agent-toolkit 录的是真实产品界面，和 hyperframes / lieflat-code-video 的代码生成画面不同；easyclip 与 gmclip 一样从长视频剪短片，但走 Claude 技能/MCP，并把人脸布局、字幕等放进付费档。
+
 ## 其他（未做对比）
 
 `other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：
@@ -401,7 +413,7 @@
 - 教育交互：cn-math-taxonomy（知识图谱加诊断）、wrong-notebook（错题闭环）、wedulab、edulab 是另一项目（开源讲题技能，不要和 WeduLab 站点搞混）、atlas-of-physics、protocol-explorer、3d-periodic-table、江山地图、cs329z（斯坦福 Agent 工程公开课）、magic-english-buddy（儿童英语阅读冒险）、xiaoai-doubao（把小爱音箱改成英语口语玩伴，有刷机和云端语音风险）、learn-arduino（入门站，本次页面 403）、square-circle-perceptron（感知机手绘实验）
 - 知识聚合：hacker-papers、hackerbooks、lex-fridman-中文学习站、xnews（海外长文中文改写站）、x-article-hub（人工挑选的 X 长文归档）、musk-daily（马斯克动态日报）、elon-musk-cn（马斯克访谈中文精读与跳转）、what-new-ai-in-x（按模型与产品切的 X 合集档案）、lastbook（离线生存知识库）
 - 算法可视化：astar-visualizer（Antigravity 生成的 C++ A* 寻路可视化，评论区发现）
-- 前端/桌面组件：gpui-kit（Rust + GPUI 桌面框架，2 万星）、islandcn（React 灵动岛组件）、mdxcn（MDX 文档组件）、cockpit-ui（九十年代机甲座舱风 Web Component，含 Agent 全息状态）、rubber-hose-ui（同一作者的橡皮管卡通控件）、cui（零依赖 C99 UI，附 cui-rs）、nsgo（Go + 各平台原生控件，0.1.0）
+- 前端/桌面组件：gpui-kit（Rust + GPUI 桌面框架，2 万星）、islandcn（React 灵动岛组件）、mdxcn（MDX 文档组件）、cockpit-ui（九十年代机甲座舱风 Web Component，含 Agent 全息状态）、rubber-hose-ui（同一作者的橡皮管卡通控件）、pinball-ui（同一作者的弹球机风零依赖控件，含技能）、cui（零依赖 C99 UI，附 cui-rs）、nsgo（Go + 各平台原生控件，0.1.0）
 - 画布与设计：dessn（闭源，自研 Rust HTML 渲染器的设计画布）、gpucanvas（开源 WebGPU 无限画布，评论区发现）、isoui 与 colorfigures（April Zhu 的两套 UI 插画语言）、ink-studio（像素风高斯溅射工具包）
 - 卫星可视化：watched-earth（某地本周被哪些卫星拍到）、azmth（实时卫星 3D 地球，评论区发现）
 - 地图与三维地理：reearth-visualizer（可分享的 WebGIS 故事）、3d-tiles-renderer-js（3D Tiles 渲染库，有火星示例）

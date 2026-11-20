@@ -1,32 +1,33 @@
 {
   "meta": {
-    "generated_at": "2026-11-19",
+    "generated_at": "2026-11-20",
     "timezone": "Asia/Shanghai",
-    "projects_total": 301,
+    "projects_total": 308,
     "category_counts": {
       "game": 56,
-      "agent-eng": 107,
-      "llm-tools": 75,
-      "other": 63
+      "agent-eng": 111,
+      "llm-tools": 77,
+      "other": 64
     },
     "subcategory_counts": {
-      "dev-efficiency": 53,
+      "dev-efficiency": 55,
       "phone-computer-use": 20,
-      "agent-fleet": 34
+      "agent-fleet": 36
     },
     "origin_counts": {
       "bookmark": 146,
       "reply-on-popular-post": 26,
-      "daily-digest": 116,
+      "daily-digest": 121,
       "bookmark+daily-digest": 11,
+      "daily-digest+reply-on-popular-post": 2,
       "user-request": 1,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 230,
+      "full": 237,
       "light": 71
     },
-    "analysis_updated_at": "2026-11-19"
+    "analysis_updated_at": "2026-11-20"
   },
   "projects": [
     {
@@ -3375,6 +3376,58 @@
       }
     },
     {
+      "id": "onlook",
+      "name": "Onlook",
+      "summary": "开源的设计师向桌面工具：在无限画布上跑你的真实仓库和 dev server，接上已有的 Claude Code 或 Codex，把界面改动变成可审阅的 Git PR。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "typescript",
+        "electron",
+        "设计",
+        "claude-code",
+        "codex",
+        "桌面应用",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/onlook-dev/onlook",
+      "preview_url": "https://onlook.com",
+      "post_url": "",
+      "author": "Onlook（onlook-dev，YC W25）",
+      "models": [
+        "Claude Code",
+        "ChatGPT/Codex"
+      ],
+      "first_seen": "2026-11-19",
+      "origin": "daily-digest",
+      "stars": 27413,
+      "notes": "星标 27413（2026-11-20 查询）。项目 2024 年就已存在，2026-11-19 以 Launch HN 的形式宣布整套产品重建为「agentic design tool」并继续 Apache-2.0 开源。当日未查到官方账号的 X 发布帖，主发布场是 https://news.ycombinator.com/item?id=50562320。官方桌面安装包目前只有 macOS（Apple silicon 与 Intel）；Windows 和 Linux 还在等名单。官方下载默认打开用量分析，从源码构建会先询问，可在设置中关闭或设 STUDIO_TELEMETRY=0。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Electron 桌面应用，界面是 React 19 + React Flow + Zustand + CodeMirror，设计系统用 Astryx；用 git worktree 隔离工作副本，用 node-pty 拉起项目自己的 dev server 和终端。仓库是 Bun + Turborepo 单体，apps/ 含 studio、chat-ui、git-ui 等。不自带模型，而是把 Claude Code 或 ChatGPT/Codex 的输出收成一份类型化事件日志，再用自己的聊天 UI 画出来，并给 Agent 一组画布专用工具。许可 Apache-2.0；图标等品牌资源另有资产声明，fork 时需替换。",
+        "method": "打开本地 Git 仓库或从 GitHub 导入后，Onlook 建一个 worktree、启动该项目原有的 dev server，把真实页面嵌进无限画布的多个 frame（可并排手机/平板/桌面）。向页面注入脚本以绘制选区并读取元素，这样点「把这个改成卡片布局」时 Agent 知道「这个」是哪个节点。Agent 在真实代码上改文件，热更新反映到画布，差异作为普通 git diff，可一键开 PR。也可以在仓库外用 Artifact 做一次性 HTML 草图并导出。",
+        "features": [
+          "在真实代码库上可视化设计和并列探索多种布局、状态和流程",
+          "接入已有的 Claude Code 或 Codex 订阅，并用 MCP 补充上下文；可同时开多个任务和仓库标签",
+          "工作副本走 git worktree，不直接改原目录；支持从零新建代码库和一键开 PR",
+          "可将单帧导出为独立 HTML、PNG、JPEG 或 PDF，便于分享"
+        ],
+        "highlights": [
+          "把设计画布建在「正在跑的真实应用」而不是静态 mock 上，避免设计稿再实现一遍",
+          "明确选择不自研 Agent，而是复用用户已付费的 Claude Code / Codex，降低模型和订阅锁定",
+          "体量很大（查询时约 2.7 万星、100+ 贡献者，官方自述），从源码构建无需 Onlook 账号或云密钥"
+        ],
+        "limitations": [
+          "官方安装包目前只支持 macOS，Windows/Linux 仍在等待名单；从源码构建的文档也以 Mac 为主",
+          "依赖项目自己的 dev server，对非 Web 或启动复杂的仓库可能要先排除故障",
+          "官方下载默认采集产品用量；品牌图标对 fork 不适用，需按 ASSETS.md 替换"
+        ],
+        "comparison": "和 stitch-skills、pointer、redraft 一样让 Agent 对着真实界面改代码，但 Onlook 是完整的本地设计画布和工作树工作流，而不是浏览器扩展或 Stitch 技能包。和 papilot 类似「在渲染结果上圈选、让已有 Agent 去改源码」，只是对象从排版 PDF 换成了正在跑的 Web 应用。和 genex-desktop 都是带画布的桌面创作环境，Onlook 专做 Web 界面，Genex 专做游戏引擎。设计师要在真实产品上探索界面选 Onlook；只要给页面元素加点选上下文，用 pointer 就够。",
+        "researched_at": "2026-11-20"
+      }
+    },
+    {
       "id": "open-code-review",
       "name": "Open Code Review（阿里）",
       "summary": "阿里开源的 AI 代码审查 CLI（ocr）：确定性工程流水线加工具型 LLM Agent，输出钉到具体行的结构化审查意见，可接 Claude Code/Codex/Cursor/Kimi Code。",
@@ -4140,6 +4193,56 @@
         ],
         "comparison": "和 dsh-superagent-prototype 思路相近（事件到工单再到 Agent），但它更轻、更通用，dsh 绑定 DeepSeek Harness 和单个仓库。和 openduet-copilotkit 等编排器相比，它重在后台常驻加人工审批，不提供可视化面板。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "agent-thinking-meter",
+      "name": "agent-thinking-meter",
+      "summary": "读取本机 Claude Code、Codex CLI 和 Antigravity 的会话日志，按来源、日期和模型统计工具调用步骤里还有没有推理过程。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "python",
+        "cli",
+        "可观测性",
+        "claude-code",
+        "codex",
+        "antigravity"
+      ],
+      "source_url": "https://github.com/Duan-zx/agent-thinking-meter",
+      "preview_url": "",
+      "post_url": "https://x.com/Duan920618/status/2123280732030484785",
+      "author": "Duan-zx（@Duan920618）",
+      "models": [
+        "不调用模型；统计 Claude Code、Codex CLI、Antigravity 日志中的推理痕迹"
+      ],
+      "first_seen": "2026-11-19",
+      "origin": "daily-digest+reply-on-popular-post",
+      "stars": 0,
+      "notes": "星标 0（2026-11-20 查询）。仓库创建于 2026-11-19。作者在一条讨论帖下开源。案例研究基于作者自己的 Antigravity 日志，其中 11-17 前后 Gemini 4 Carbon 工具步推理比例下降的数字为作者自报；README 称该回归已于 2026-11-19 在服务端修复。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "单个 Python 3.9+ 脚本（agent_thinking_meter.py，约 26KB），只用标准库，MIT。读取本机日志：Claude Code 的 ~/.claude/projects/**/*.jsonl、Codex 的 ~/.codex/sessions/**/*.jsonl、Antigravity 的 transcript_full.jsonl。推理口径按来源不同：Claude Code 用 API 消息里的 thinking tokens，Codex 用模型回复的 reasoning tokens，Antigravity 只用 thought-summary 字符数（日志不记 token）。带 tests/ 和一篇案例研究文档。",
+        "method": "遍历本地日志，只统计「至少调用了一次工具的模型步骤」里有没有推理、推理有多少、以及每个用户回合的工具调用次数。输出按来源、日期（或小时）和模型聚合，可写成表格或 CSV。为避免恢复会话被算两次，Claude Code 按 message / tool-use / 用户消息 id 合并，Codex 按 response id 去重。不打印、不写入提示词、代码、想法或路径，也不发起网络请求。",
+        "features": [
+          "一条命令完成本机三家编码 Agent 的推理覆盖率和每回合工具次数统计",
+          "可按来源、模型、时间范围和粒度（日/小时/全部）过滤，并导出 CSV",
+          "只输出聚合计数，默认不泄露提示词和代码",
+          "文档说明各列含义、来源不可比，并附 Antigravity 回归案例"
+        ],
+        "highlights": [
+          "问题很具体：用自己的日志验证「这周是不是更懒了」，而不是再做一个通用仪表盘",
+          "隐私和使用限制写得很清楚，包括恢复会话去重和 Antigravity 旧版不记模型名",
+          "从真实回归（作者用于向 Google 反馈）里长出来，而不是空的演示脚本"
+        ],
+        "limitations": [
+          "查询时还没有星标，Gemini CLI 和 Cursor 等来源尚未支持",
+          "可见推理只是代理指标，不能衡量推理质量；不同来源的百分比不能直接比较",
+          "日志格式未公开且会随版本变化，某一来源可能突然读不出数据；首次跑很久的历史可能要几分钟"
+        ],
+        "comparison": "和 nvidia-skillevaluator、open-code-review、security-audit-skill 同属研发效率里的「用证据说话」，但它不看代码或技能，只看本机会话日志里工具步是否还带推理。库内没有同等的跨 Claude Code / Codex / Antigravity 推理覆盖率计量表。若要评技能好不好用 SkillEvaluator；若要查「模型是不是在工具调用前不思考了」用这个脚本。",
+        "researched_at": "2026-11-20"
       }
     },
     {
@@ -6561,6 +6664,65 @@
       }
     },
     {
+      "id": "linger",
+      "name": "Linger",
+      "summary": "Simplex AI 开源的本机个人 Agent：自研 PolyStrata 推理引擎在消费级显卡上跑百亿级 MoE，并编排桌面、浏览器和多 Agent 团队，数据和记忆留在本机。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "typescript",
+        "本地模型",
+        "桌面应用",
+        "多agent",
+        "computer-use",
+        "记忆",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/simplexai-labs/linger",
+      "preview_url": "https://heylinger.com",
+      "post_url": "https://x.com/zhangboknight/status/2123237197050794364",
+      "author": "Simplex AI / Tony Zhang（@zhangboknight）",
+      "models": [
+        "Qwen3.8-Flash-Next",
+        "Qwen3.8-27B",
+        "Qwen3.6-35B-A3B",
+        "LFM2.5-24B-A2B",
+        "Gemma 4 26B-A4B",
+        "Flint 40B-A2.5B",
+        "Claude Code",
+        "Codex",
+        "Pi"
+      ],
+      "first_seen": "2026-11-19",
+      "origin": "daily-digest",
+      "stars": 1540,
+      "notes": "星标 1540（2026-11-20 查询）。2026-11-19 由创始人 Tony Zhang（曾为 DeepSeek 早期核心成员，自述）宣布开源。许可证为基于 Apache-2.0 的 Linger Open Source License：不可未经授权把源码做成对外托管服务，也不可去掉前端 Logo/版权；出品方保留日后改许可的权利。README 中的速度、SimplexAI/AIHOT 分数和「接近 Claude Opus/Sonnet」对照均为自报，且部分在「用更大显卡限制显存来模拟该档机器」的条件下测得。macOS 安装包尚未签名。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript pnpm monorepo（apps/ 含 teamhub、web、desktop、computer、voice-runtime、linger-installer；packages/ 含文档与知识格式）。本机推理走独立的 PolyStrata 引擎（基于开源 Strata，专为 MoE 把高频 expert 留在 GPU、其余放内存或 SSD）。Agent 桌面操控用 Cua（Linux 上为 AT-SPI/xdotool），浏览器用 Playwright，记忆检索来自 Hindsight，协同文档用 BlockNote + Yjs + Hocuspocus，语音走 LiveKit，后台任务用 River。可接本地模型，也可把 Claude Code、Codex 或 Pi 接到已有订阅。主体许可是 Apache-2.0 加附加条款。文档在 docs.heylinger.com。",
+        "method": "本机 Computer Daemon 主动向外打一条 WebSocket，不对外开端口；Runtime 在每个 Context 的工作区里直接调 LLM Gateway，经 teamhub CLI 回写房间，并在 Guardrail（规则检查再加一次 LLM 审核；文档写明 Pi 不做这层审核）之后才调用桌面、浏览器或 Shell。名叫 Another Me 的主 Agent 会读收件箱、日历和 Slack，夜间把邮件、聊天和会议归档成本机 wiki 供所有 Agent 检索；名为 Dreaming 的夜间步骤根据你的回应改写一小份规则，不重新训练。多 Agent 任务写一份共用的 team.md；长任务可交给后台副本，本地模型由调度器按「你正在等的事先跑」排队。",
+        "features": [
+          "桌面应用覆盖 macOS（Apple silicon，14+）、Windows x64 和 Linux x64，也可用 Docker Compose 给多台电脑共用一台服务器",
+          "Model Autopilot：检测本机硬件、推荐并安装能放下且至少 64K 上下文的模型，用真实问答验收后才算安装成功",
+          "本机 wiki/记忆、主动提醒（Another Me）、多 Agent 团队、任务委派、语音会议转写，以及已登录的日常 Chrome/系统应用操控",
+          "可选用本地开源模型（官方表格列有 Qwen、LFM、Gemma、Flint、Ornith、Tiel 等）或已有的 Claude Code / Codex / Pi 订阅"
+        ],
+        "highlights": [
+          "把「模型与 harness 协同设计」做成产品：自报可在 12GB 显卡 + 64GB 内存上跑 125B 的 Qwen3.8-Flash-Next",
+          "个人 Agent 同时覆盖本地推理、长期记忆、主动行动和桌面/浏览器操控，而不只是又一个聊天壳",
+          "架构文档把权限、工作区只读分区和守卫写得比较清楚；源码目录完整，可用 Docker 从源码搭起来"
+        ],
+        "limitations": [
+          "「Claude-class / 接近 Opus 或 Sonnet」以及各项 tok/s、SimplexAI 分数均为自报，且部分在模拟档位上测得，真实机器可能更慢",
+          "许可证限制对外托管和前端品牌，出品方还可事后收紧条款；macOS 包未签名，首次打开需去掉隔离属性",
+          "创始人自己也说产品仍早、有不少不完整之处；守卫对 Pi 运行时是关闭的，把系统级控制权交给 Agent 需要自己评估风险"
+        ],
+        "comparison": "和 n8n-nod、openmausbot、eta、duskbot 一样把个人 Agent 放在自己的电脑上，但 Linger 的差异是自研本机 MoE 推理（PolyStrata）加记忆 wiki 和主动提醒，而不只是接云端订阅。桌面操控接近 phone-computer-use 里的 Cua/Playwright 路线，却收在一支可编排的 Agent 团队里，更接近 agent-teams-ai、eta 的「一人指挥一队」。和 tencent-loopforge、stitch-loop 比：后两者面向软件交付或线上产品指标，Linger 面向个人日常事务。要在消费级电脑上本地跑大模型个人助手选 Linger；要团队 SOP 和沙箱交付选 LoopForge。",
+        "researched_at": "2026-11-20"
+      }
+    },
+    {
       "id": "tencent-loopforge",
       "name": "LoopForge（腾讯）",
       "summary": "腾讯开源的自托管编码 Agent 交付平台：用 Docker 沙箱跑 CodeBuddy、Claude Code、Codex 等 CLI，把可重复的 SOP 和人工审批门做成交付流程。",
@@ -6609,6 +6771,56 @@
         ],
         "comparison": "和 shoal、hf-agent-manager、agentes-chat 一样管理多个编码 Agent，但 LoopForge 的重点是可版本化的 SOP 和审批门，而不是并排终端。和 plannotator（人审阅产出）互补：一个管「怎么交付」，一个管「怎么批注」。和 vercel-eve 对比：eve 是从零定义自己的 Agent，LoopForge 是编排现成的 Claude Code/Codex 等 CLI。团队要标准化 AI 交付选 LoopForge；个人只要本机工作台选 shoal。",
         "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "mastra-factory",
+      "name": "Mastra Factory",
+      "summary": "Mastra 把它用来维护自身框架的软件工厂开源：把 GitHub/Linear/Jira 的 issue 变成计划、实现和待审 PR，并可在 Slack 里 @ 调遣 Agent。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "typescript",
+        "软件工厂",
+        "slack",
+        "github",
+        "多agent",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/mastra-ai/template-factory",
+      "preview_url": "https://factory.mastra.ai",
+      "post_url": "https://x.com/calcsam/status/2123507050961568025",
+      "author": "Mastra（mastra-ai）",
+      "models": [
+        "可配置；默认可接模型 API 或已有订阅，文档提到后续将支持 Claude Code、Codex 等 harness"
+      ],
+      "first_seen": "2026-11-19",
+      "origin": "daily-digest",
+      "stars": 52,
+      "notes": "星标 52（2026-11-20 查询）仅统计模板仓 mastra-ai/template-factory；真正的引擎在 npm 包 @mastra/factory，模板仓只有 8 个文件。package.json 声明 Apache-2.0，但模板仓根目录未放 LICENSE 文件，GitHub 许可字段为空。Show HN 在 2026-11-18，X 上 11-19 持续讨论。团队自报：Factory 上周开并合并 238 个 PR，人类合并 630 个；框架周下载近 400 万。文档写默认走 Mastra 平台认证和沙箱，也可用 npm create factory -- --no-platform 自托管。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "对外入口是 npm create factory，拉起的模板（TypeScript，Node.js ≥22.19）只做一件事：读环境变量并构造 MastraFactory（@mastra/factory）和 Mastra（@mastra/core）。存储和向量检索默认 PostgreSQL + pgvector（@mastra/pg），密钥用 FACTORY_CREDENTIAL_ENCRYPTION_KEY 加密。可选 SlackIntegration，GitHub/Linear/Jira 在 UI 里配置。沙箱：本机 mastra dev 默认 LocalFactorySandbox，部署到 Mastra 平台则用平台沙箱；也可自选 sandbox。模板声明 Apache-2.0。文档和总览视频在 factory.mastra.ai。",
+        "method": "Factory 是一份可配置的 Agent 看板：从 GitHub / Linear / Jira 同步 issue，按团队约定的阶段（他们自己常用 triage → plan → build → review → shipped）开会话；人可以在 Web UI 或 Slack 里 @ 启动、审批计划再让 Agent 改代码并开 PR。引擎不在模板里，而在 @mastra/factory：负责持久会话、带引用的 markdown wiki、PR 评论信号和沙箱里的编码循环。模板的 src/mastra/index.ts 把数据库、加密密钥、Slack 和 publicUrl 显式注入后调用 prepare()/finalize()。",
+        "features": [
+          "从 issue 到计划、实现、评审和 PR 的可配置流水线，阶段策略由安装的看板决定",
+          "可在 Slack 里发起和跟进会话，也可只用 Web UI",
+          "接入 GitHub、Linear、Jira，模型密钥和集成凭据加密存放",
+          "可部署到 Mastra 平台，或 npm run build && npm start 自托管；也提供 --no-platform 的自托管模板"
+        ],
+        "highlights": [
+          "不是演示用框架，而是维护方把自己每周合并大量 PR 的工厂开源出来",
+          "模板非常薄，配置集中在一个入口文件，真正逻辑在可版本化的 @mastra/factory 包里",
+          "同时支持托管平台和自托管，并强调计划和审批，而不是 Agent 直接推 main"
+        ],
+        "limitations": [
+          "238/630 的周 PR 数和「近 4M 周下载」均为团队自报，且对象是 Mastra 自身而不是任意仓库",
+          "默认路径依赖 Mastra 平台的认证、数据库和沙箱；完全自托管要另配 Postgres、密钥和回调 URL",
+          "公开模板仓星标很少、无根目录 LICENSE 文件；文档提到默认编码循环是 mastracode，对 Claude Code/Codex 的支持仍在进行中"
+        ],
+        "comparison": "和 tencent-loopforge、stitch-loop 同属「把 issue 变成可审批 PR」的交付工厂：LoopForge 是自托管 SOP + 多种现成 CLI 沙箱，Stitch Loop 是 Google 托管的常驻产品 Agent，Factory 则绑在 Mastra 自己的 durable agent 和看板/Slack 工作流上。和 shoal、hf-agent-manager、t3-code 的并排终端不同，Factory 管的是跨会话的工作项和审批，而不是屏幕上的多个 CLI。已经在用 Mastra、又想从 Slack 里开工厂的团队更合适；只想在本机并排赶活选 shoal 或 t3-code。",
+        "researched_at": "2026-11-20"
       }
     },
     {
@@ -7756,6 +7968,57 @@
         ],
         "comparison": "和 janestreet-agent-skills 的苏格拉底辅导（单个技能）相比，DeepTutor 是完整的学习平台。和 teachable-figures（交互教学图示）可以互补。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "easyclip",
+      "name": "EasyClip",
+      "summary": "用本机 ffmpeg 分析长视频、只让 Claude 读一份很短的摘要表，从而剪出竖屏 Shorts 的技能和 MCP；免费版有限额，进阶能力放在付费 Pro 里。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "python",
+        "skill",
+        "mcp",
+        "视频",
+        "claude",
+        "评论区发现"
+      ],
+      "source_url": "https://github.com/sushant049/easyclip",
+      "preview_url": "https://github.com/sushant049/easyclip",
+      "post_url": "https://x.com/sushantkr49/status/2123307262970359979",
+      "author": "Sushant Kumar（@sushantkr49）",
+      "models": [
+        "Claude Code",
+        "Claude Desktop"
+      ],
+      "first_seen": "2026-11-19",
+      "origin": "daily-digest+reply-on-popular-post",
+      "stars": 2,
+      "notes": "星标 2（2026-11-20 查询）。在一条讨论帖下由作者自荐。免费版 MIT 开源；README 用大量篇幅推销 EasyClip Pro（一次付费、12 个月更新、最多 3 台电脑）。「两小时直播的 token 消耗大约等于一条聊天」等省 token 说法为自述。政策检查只是启发式，作者也写明不是法律建议。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python，MIT（免费版）。给 Claude Code 的插件/技能（skills/ 下 clip-director、ingest-probe、moment-finder、policy-guard、reel-cutter）和 MCP 服务（mcp/，uv 运行），Claude Desktop 可用 .mcpb 扩展。本地依赖 ffmpeg 与 yt-dlp，用 setup.sh / setup.ps1 安装。视频分析、剪切和封装都在本机；Claude 只看作者所说的约 5 行摘要表，不看视频帧。另有 scripts/ch.py 可不用 Agent 直接跑。",
+        "method": "analyze 对文件或链接做时长、响度曲线、镜头切割和过场检测（可缓存），find_moments 选出带铺垫的精彩片段，make_clip 做成 1080×1920 竖屏（模糊或裁切布局、hook 文案、响度归一）。policy_check 在发布前给出 PASS/WARN/BLOCK（过场电影、剧透标题、音乐和授权风险等启发式）。Pro 再加批量出片、摄像头布局、按句子对齐、用转写重排、直播聊天高峰、逐词字幕、回顾片和缩略图等。",
+        "features": [
+          "免费版 5 个 MCP 工具：分析、找高光、剪一条竖屏、政策检查和安装诊断",
+          "支持 YouTube / Twitch / Kick 链接或本地文件，剪辑在本机完成",
+          "也可用 CLI 不经过 Agent 执行同样步骤",
+          "付费 Pro 提供批量导出、转写重排、字幕、回顾片和频道预设等"
+        ],
+        "highlights": [
+          "关键设计是「重活给 ffmpeg，模型只看很短的表」，从结构上把 token 和隐私成本压下去",
+          "高光会带上铺垫，而不是只剪最响的一瞬间，并附带发布前的政策检查",
+          "免费版源码、技能和 MCP 都公开，可单独当本地剪辑脚本用"
+        ],
+        "limitations": [
+          "免费版明显被当成 Pro 的漏斗：最多 3 个高光、一次只剪一条，人脸布局和字幕等都要付费",
+          "项目很新、星标很少，片源版权和平台条款仍要用户自己负责",
+          "目前按 README 只接 Claude Code / Claude Desktop，不是通用的多 Agent 工具"
+        ],
+        "comparison": "和 gmclip 一样走「本机分析 + Agent 协助剪短视频」：gmclip 是 macOS 桌面应用，强调一词一切、横竖屏一起出；EasyClip 是 Claude 技能/MCP，强调链接进、竖屏 Shorts 出，并拆了免费/付费档。和 product-demo-agent-toolkit、hyperframes 不同，它加工的是已有长视频，而不是录产品或用代码生成画面。已经在用 Claude 剪直播/游戏录像的人可以试 EasyClip；要本机通用剪辑桌面应用看 gmclip。",
+        "researched_at": "2026-11-20"
       }
     },
     {
@@ -10469,6 +10732,54 @@
       }
     },
     {
+      "id": "product-demo-agent-toolkit",
+      "name": "product-demo-agent-toolkit",
+      "summary": "Chapter 开源的产品演示视频工具包：让你已有的编程 Agent 按人的节奏录产品流程，并提供可在不重拍的情况下改参数的本地工作室。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "typescript",
+        "视频",
+        "skill",
+        "产品演示"
+      ],
+      "source_url": "https://github.com/chapter-dev-pty-ltd/product-demo-agent-toolkit",
+      "preview_url": "https://chapter.dev",
+      "post_url": "https://x.com/FarleySchaefer/status/2123299488743960989",
+      "author": "Chapter（chapter-dev-pty-ltd）",
+      "models": [
+        "使用你已有的编程 Agent，不绑定单一模型"
+      ],
+      "first_seen": "2026-11-19",
+      "origin": "daily-digest",
+      "stars": 15,
+      "notes": "星标 15（2026-11-20 查询）。作者 2026-11-19 在 X 宣布开源。许可为 MIT。npm 包名 @chapterdev/product-demo-agent-toolkit。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript，MIT。用 npx @chapterdev/product-demo-agent-toolkit setup 安装，仓库含 src/、skills/、docs/、AGENTS.md 和 CLAUDE.md，面向 Claude Code 等编程 Agent。工具包负责指针轨迹、按人速打字、点击/键盘音效、背景音乐、浏览器外框和 1080p/60fps 输出；另带一个本地 Studio（product-demo-agent-toolkit studio）在浏览器里改时间线和参数。不捆绑某个大模型。",
+        "method": "Agent 先探索本地跑着的产品并写出可编辑脚本，再按脚本录屏。旁白先说出来，点击、键入和拖拽对齐到对应的词，避免后期配音对不齐。指针按手的方式移动而不是瞬移，并根据画面是否已经稳定来等待，而不是盲等固定秒数。录完后可在 Studio 里改光标颜色、背景、音效等配置，不必重拍；也可以继续在 Studio 里和本机 Agent 对话做修改。",
+        "features": [
+          "一键安装后，可用自然语言让 Agent 为本地产品流程拍演示视频",
+          "人速指针、打字、停顿、点击音和背景音乐等默认，输出 1080p 60fps",
+          "先探索再写脚本，旁白与操作对齐",
+          "本地 Studio 可在不重拍的情况下预览和调整配置，并继续让 Agent 改视频"
+        ],
+        "highlights": [
+          "针对「Agent 拍出来的演示像机器人」这一具体问题，而不是再做一套通用视频模型",
+          "脚本可先给人权编辑，Studio 把后期小改从重拍里拆出来",
+          "MIT，走用户已有的 Agent，不另收模型订阅"
+        ],
+        "limitations": [
+          "星标还很少，发布当天互动也偏低，生产稳定性需要自己验证",
+          "主要假设是「产品可以在本地浏览器里走一遍」；原生桌面或无法脚本化的流程未必适用",
+          "未查到独立的第三方评测或大量公开样片"
+        ],
+        "comparison": "和 hyperframes、lieflat-code-video 一样用 Agent 做产品向视频，但本项目录的是真实产品界面，而不是用 HTML/代码生成画面。和 gmclip、easyclip 比：后两者从已有长视频里剪短片，它则从「走一遍产品」生成演示。要给客户看真实操作流程选这个工具包；要批量做动画解说选 hyperframes。",
+        "researched_at": "2026-11-20"
+      }
+    },
+    {
       "id": "rea-video",
       "name": "rea-video",
       "summary": "给编程 Agent 用的「视频逆向」技能和 CLI：逐镜头判断画面是实拍、AI 生成还是代码做的，并给出复刻方法，输出人看的报告和给 Agent 读的分层 VIDEO.md。",
@@ -12224,6 +12535,53 @@
         ],
         "comparison": "不要和 Poki、Pinky、XPhoneUse 混淆：那些是让 Agent 操作真机；PhoneBox 是人用的桌面副屏。和 Mole 这种清理工具也只是同属本机效率类。",
         "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "pinball-ui",
+      "name": "Pinball UI",
+      "summary": "把开关、滑杆、发送、删除等控件做成可访问的弹球机零件：照片机身、实时铬合金小球和实录声音，单文件、零依赖。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "web-components",
+        "ui",
+        "skill"
+      ],
+      "source_url": "https://github.com/finktheartist/pinball-ui",
+      "preview_url": "https://pinball-ui.vercel.app",
+      "post_url": "https://x.com/crtvTeknologist/status/2123468650002653350",
+      "author": "FinkTheArtist（@crtvTeknologist）",
+      "models": [
+        "照片用 GPT Image（经 Higgsfield）和 Gemini 图像工具生成（作者自述）；声音用 ElevenLabs（作者自述）"
+      ],
+      "first_seen": "2026-11-19",
+      "origin": "daily-digest",
+      "stars": 2,
+      "notes": "星标 2（2026-11-20 查询）。仓库创建于 2026-11-19。与同一作者前一日收录的 cockpit-ui 是同一类「把普通表单做成主题化 Web Component」作品。照片和声音的生成工具为 README 自述。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "零依赖 Web Component，MIT。七个控件各一个文件（自定义元素），照片和录音内嵌其中；共享的 core.js 提供时钟、WebGL 上下文、小球着色器和声音，约 300KB。可用 shadcn CLI 或直接拷贝。仓库带 build.mjs（把核心、照片和声音盖进各控件文件）、从 spec 生成文档/registry/llms.txt 的脚本，以及用无头 Chromium 做真实触控/键盘事件的 test.mjs。skills/pinball-ui/ 是给编程 Agent 复刻这套工艺的技能。",
+        "method": "机身是正上方拍摄的生成照片，点亮态由同一张底片改光，对齐到像素后靠交叉淡化开灯。会动的部分用整页共享的 WebGL 画：铬合金小球（反射周围和一道小暖色房间，划痕随滚动转动）、弹簧、分数鼓、灯的发热。小球有简单物理（踢出、被拉向终点、撞墙、在座里晃停）。声音是多条实录，同类动作不会完全同响。控件下面仍是真正的表单控件，可键盘操作并进入 <form>。",
+        "features": [
+          "七个控件：开关、滑杆、发射杆（发送）、翻页计数器、落靶（多选）、排水道（删除/撤销）、弹出撞柱（按钮）",
+          "单文件分发，无构建步骤；可用 CSS 变量改尺寸和页底色",
+          "为 Agent 提供 llms.txt、安装行和「复制提示词」，避免 Agent 把控件重画一遍",
+          "附制作技能、making-of 记录和自动化测试/截图工具"
+        ],
+        "highlights": [
+          "把主题化表单控件做到「照片 + 实时物理 + 实录声音」，完成度明显高于普通 CSS 小品",
+          "对辅助功能和表单值有意识：键盘、name、input/change，而不是纯装饰动画",
+          "把制作流程收成技能和提示词，方便 Agent 按同一套规矩做新零件"
+        ],
+        "limitations": [
+          "单个文件 430–890KB，因为照片和声音都打在文件里；只应加载页面用到的控件",
+          "作者写明尚未在 Safari/Firefox、真机或读屏器上试过，也还没在手机上听过声音；无 WebGL 时能用但什么都不画",
+          "照片是固定的，表单 reset 还不会把控件复位；发射杆的球会在页面上层飞过约一秒，且未适配 prefers-reduced-motion"
+        ],
+        "comparison": "和同一作者的 cockpit-ui、rubber-hose-ui 一样把普通表单做成一套零依赖的主题 Web Component，并都带给 Agent 用的说明。Pinball UI 更强调物理、实录声音和照片级机身，座舱风的 cockpit-ui 则带一个表示 Agent 状态的全息机体。要复古弹球触感选这个；要机甲仪表盘或 Agent 状态件选 cockpit-ui。和 islandcn、mdxcn 这类设计系统组件不是同一条路。",
+        "researched_at": "2026-11-20"
       }
     },
     {
