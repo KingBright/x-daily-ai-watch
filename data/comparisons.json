@@ -925,7 +925,8 @@
         "2026-11-17 补入三项：nvidia-skillevaluator 给技能生态补上「技能本身好不好、有没有真的提升 Agent」的评测门禁；vercel-eve 是从约定目录从零定义可部署 Agent 的框架，和编排现成 CLI 的平台不同；stitch-skills 把 Google Stitch 设计流程技能化，但依赖 Stitch MCP，且查询时代码已约三个月未更新。",
         "2026-11-18 补录把「让 Agent 写得像样、改得不坏、流程可再跑」三条路写清楚了：BeautifulRust 管 Rust 惯用法，rust-anything 管对照旧行为的迁移验收，Swamp 把重复 Skill 编成工作流。Diffity 补上本机审 Agent 代码的桌面工具。Craft Anything 星标很高但仍是 early alpha，且只适用于有权研究的软件。Genex 则把构建和试玩收成跨引擎的游戏开发闭环。",
         "2026-11-19 补入两项：nvidia-skillspector 把技能安全扫描做成可进 CI 的高星官方工具，和 nvidia-skillevaluator 分工明确——一个问能不能装，一个问装了有没有变好；研究报告中的漏洞比例为自报。papilot 把学术写作的人机界面从 .tex 差异改到排版后的 PDF，和 catalex 同类，但跨平台并在文档中支持 Overleaf 同步。",
-        "2026-11-20 补入 onlook 和 agent-thinking-meter。Onlook 把「在渲染结果上圈选、交给已有 Agent 改源码」做成设计师向的本地画布（对象是正在跑的 Web 应用，而不是 papilot 的 PDF），官方包目前只有 macOS。agent-thinking-meter 则补上一块库内没有的观测：不看代码或技能，只量本机日志里工具调用前还是否在推理。"
+        "2026-11-20 补入 onlook 和 agent-thinking-meter。Onlook 把「在渲染结果上圈选、交给已有 Agent 改源码」做成设计师向的本地画布（对象是正在跑的 Web 应用，而不是 papilot 的 PDF），官方包目前只有 macOS。agent-thinking-meter 则补上一块库内没有的观测：不看代码或技能，只量本机日志里工具调用前还是否在推理。",
+        "2026-11-21 补入 seo-skills 和 geo-sleuth，都继续印证「技能是研发效率工具的主流载体」，但一个走向可合并的 SEO/GEO 改动（部分 MCP 连到作者的付费产品），一个是少见的、用脚本排序、模型只做裁决的照片地理定位技能，案例误差为项目自述。"
       ]
     },
     {
@@ -1102,7 +1103,8 @@
         "2026-11-16：poki 发布 0.4.0 Beta（后台任务、不抢前台），星标升到约 1.4 千；其发布帖评论区由作者自荐的 xphoneuse 走同一条「电脑控制真机 + MCP」路线，三系统通用、iPhone 免 Xcode 且工具更全，但极早期，安全护栏未见说明，选型上仍是 pinky（护栏）和 poki（iOS 成熟度）优先。",
         "2026-11-17 补入 n8n-nod：n8n 官方的本机个人助手，自带沙箱电脑、浏览器、审批和 Vault，产品完整度高于大多数「给别的 Agent 当浏览器后端」的库；评测数字为自报，状态仍是 research preview。",
         "2026-11-18 补录 coucou 和 obscura。前者是 Apple 设备上的批准/监视层，不管完整的手机屏幕接管；后者是给 Agent 用的轻量无头浏览引擎，不能把它理解成反爬教程，也不是 Chromium 的完整替代。",
-        "2026-11-19 补入 openrocode：把 Computer Use 的指屏幕、护栏和全程留痕搬到仿真机械臂上，是库内第一个这类机器人套件。它仍是 alpha，未查到完整真机适配说明，和浏览器/桌面操控工具不互相替代。"
+        "2026-11-19 补入 openrocode：把 Computer Use 的指屏幕、护栏和全程留痕搬到仿真机械臂上，是库内第一个这类机器人套件。它仍是 alpha，未查到完整真机适配说明，和浏览器/桌面操控工具不互相替代。",
+        "2026-11-21 补入三条不同方向：karpo-browser 把逐步网页动作交给决策模型，和 opencode-browse / tencent-browserskill 的「通用大模型直接点选」不同，基准为自报；pocket-dev 让人用手机接着指挥本机编码 Agent，和 coucou 同属监视/接续层，但提供终端和 Git；phil 是轻量的电脑控安卓实现，护栏完整度仍不如 pinky。"
       ]
     },
     {
@@ -1410,7 +1412,8 @@
         "2026-11-17 补入 tencent-loopforge：腾讯把 SOP、沙箱和人工审批做成自托管交付平台，也可 Local 装进现有助手；和 shoal / hf-agent-manager 的并排终端、plannotator 的审阅层形成「编排 / 工作台 / 批注」分工。默认 Docker socket 安装只适合受信任团队。",
         "2026-11-18 补录 AutoSwarm（研究型上下文打通）、dusk bot（本地机器人团队，非商用许可，和完全开源的 OpenMausBot 不是同一类许可）和 Eta（更早期的一体运行时）。 同日晚间按源码补读 Eta：它默认自研循环，但也可以把会话交给 Claude Code 等；长期记忆并不是 README 所说的「一份 SQLite」，而是可选的 PostgreSQL sidecar。它适合当可检查的个人常驻小队，不能替代 LoopForge 的沙箱 SOP，也不替代 AgentRun 的可恢复 CLI 编排。 2026-11-18 收录 Anthropic 官方指南 Building always-on agents（不是开源成品）。它把常驻理解成睡眠-唤醒的短 run，并用收件箱作为崩溃后可重试的真相来源；按这篇指南看，Eta 最缺的是可重试的事件队列，而不是一个永不退出的进程。",
         "2026-11-19 补入 stitch-loop 和 grokbot-deskpet。Stitch Loop 是大厂把「上线后按指标持续改产品」做成候补产品，可与 LoopForge 的开源自托管 SOP、Anthropic 常驻指南对照，但目前看不到实现，也无法验证沙箱是否复现生产故障。Desk Pet 把「谁在等我」做成 Grok Bot 的桌面宠物，和 the-office-agents、coucou、clawd-on-desk 同属观察层，但不批准工具调用，且默认走可替换的 ntfy 邮箱。",
-        "2026-11-20 补入 Linger 和 Mastra Factory。Linger 把本机大模型推理、记忆、主动行动和桌面操控收成一支个人 Agent 团队，和 Eta、n8n-nod、OpenMausBot 同属「跑在自己电脑上」，差异是自研 MoE 推理和夜间规则自更新；速度和对标 Claude 的说法均为自报，许可也限制对外托管。Factory 则和 LoopForge、Stitch Loop 一样做 issue-to-PR 的交付工厂，但工作流绑在 Mastra 自己的看板和 Slack 上，公开模板仓很薄，引擎在 npm 包里。"
+        "2026-11-20 补入 Linger 和 Mastra Factory。Linger 把本机大模型推理、记忆、主动行动和桌面操控收成一支个人 Agent 团队，和 Eta、n8n-nod、OpenMausBot 同属「跑在自己电脑上」，差异是自研 MoE 推理和夜间规则自更新；速度和对标 Claude 的说法均为自报，许可也限制对外托管。Factory 则和 LoopForge、Stitch Loop 一样做 issue-to-PR 的交付工厂，但工作流绑在 Mastra 自己的看板和 Slack 上，公开模板仓很薄，引擎在 npm 包里。",
+        "2026-11-21 补入 unified-dev 和评论区发现的 Argo。前者把 worktree 隔离做成原生 macOS 控制台的核心，可与 t3-code、coincide 对照，但只支持 macOS 26 的 Apple silicon。Argo 是带多端客户端的自托管 Bot 平台，更接近 linger / agentes-chat / OpenMausBot 这一侧，不过仍是 beta、星标很少。"
       ]
     },
     {
@@ -2046,7 +2049,8 @@
         "2026-11-17 补入两项：paper-orchestra 是学术写作的完整多 Agent 流水线，和写作风格技能、ingar30-reviewer（审稿）互补；gmclip 把本地剪辑做成人和 Agent 共用的命令表，继续印证内容创作组「LLM + 确定性工具链」的结论，不过目前只支持 Mac 预发布。",
         "2026-11-18 补录里最值得看的是 Harness² 和 earshot：前者是改进整个 Agent 套件的研究框架，后者给编码 Agent 补上本地听觉和可复现声音。Cinetic、stick-scene 和手绘绘本技能继续扩展「用技能做视频/动画」；edulab 是可验证的讲题技能，不要和站点 WeduLab 混为一谈。inference-optimisation-skill 的收益数字为发帖自报。",
         "2026-11-19 补入库内第一对交互世界生成对照：genie-4 是闭源产品，强调走进世界、实时改环境和原生音频，但只有 Ultra（及 Pro 候补）能用；评论区发现的 hy-nomas 提供开源实现和权重，用文本和相机按片段续写视频，标准推理偏多卡。两者都还没有被第三方系统评过长期一致性，官方也承认世界保持仍是研究问题。",
-        "2026-11-20 补入两项内容创作工具，继续印证「LLM 加确定性工具链」：product-demo-agent-toolkit 录的是真实产品界面，和 hyperframes / lieflat-code-video 的代码生成画面不同；easyclip 与 gmclip 一样从长视频剪短片，但走 Claude 技能/MCP，并把人脸布局、字幕等放进付费档。"
+        "2026-11-20 补入两项内容创作工具，继续印证「LLM 加确定性工具链」：product-demo-agent-toolkit 录的是真实产品界面，和 hyperframes / lieflat-code-video 的代码生成画面不同；easyclip 与 gmclip 一样从长视频剪短片，但走 Claude 技能/MCP，并把人脸布局、字幕等放进付费档。",
+        "2026-11-21 补入两款开放权重模型（均为 light，因没有训练源码）和一项 Muse 视频技能。Inkling 2 Mini 用 looped MoE 做可本机运行的编程模型，AA Index 20.1 为第三方指数，其余多数基准为官方自报；DaisyRose-27B 则在 Qwen3.8-27B 上只做 RL（自述）。stickman-video-director 继续内容创作组「技能 + ffmpeg 等确定性工具」的路线，但绑定 Muse。"
       ]
     },
     {
