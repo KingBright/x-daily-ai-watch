@@ -1,33 +1,33 @@
 {
   "meta": {
-    "generated_at": "2026-11-21",
+    "generated_at": "2026-11-22",
     "timezone": "Asia/Shanghai",
-    "projects_total": 318,
+    "projects_total": 324,
     "category_counts": {
-      "game": 56,
-      "agent-eng": 118,
-      "llm-tools": 80,
+      "game": 57,
+      "agent-eng": 122,
+      "llm-tools": 81,
       "other": 64
     },
     "subcategory_counts": {
-      "dev-efficiency": 57,
-      "phone-computer-use": 23,
-      "agent-fleet": 38
+      "dev-efficiency": 59,
+      "phone-computer-use": 24,
+      "agent-fleet": 39
     },
     "origin_counts": {
       "bookmark": 146,
       "reply-on-popular-post": 26,
-      "daily-digest": 130,
+      "daily-digest": 136,
       "bookmark+daily-digest": 11,
       "daily-digest+reply-on-popular-post": 3,
       "user-request": 1,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 245,
+      "full": 251,
       "light": 73
     },
-    "analysis_updated_at": "2026-11-20"
+    "analysis_updated_at": "2026-11-22"
   },
   "projects": [
     {
@@ -2178,6 +2178,51 @@
       }
     },
     {
+      "id": "sprite-stacking",
+      "name": "sprite-stacking",
+      "summary": "给编码 Agent 用的精灵堆叠技能：从俯视、侧视、前视、后视四张正交像素图雕刻出可旋转的假 3D 切片条，并导出转盘、场景查看器和十六向精灵表。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "像素",
+        "python",
+        "2d"
+      ],
+      "source_url": "https://github.com/danielwh2/sprite-stacking",
+      "preview_url": null,
+      "post_url": "https://x.com/dwhitedesign/status/2124308492135592253",
+      "author": "Daniel White（@dwhitedesign）",
+      "models": [],
+      "first_seen": "2026-11-21",
+      "origin": "daily-digest",
+      "stars": 369,
+      "notes": "2026-11-22 查询 GitHub API：369 星，2026-11-20 建仓。作者当天发演示视频。仓库内有独立 HTML 查看器，未查到已部署的在线预览。作者注明精灵堆叠是既有独立游戏技法，本技能补的是四视图雕刻和 Agent 工作流。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent Skill（SKILL.md）加 Python CLI（views_to_slices.py，依赖 Pillow 和 NumPy）以及零依赖的 HTML 查看器。用技能 CLI（npx skills add）装进 Claude Code、Codex、Cursor、OpenCode、Gemini CLI、Pi 等。切片渲染是把每层旋转、按俯仰压扁并上移 1 像素。可选输出法线贴图切片条和自检发光遮罩。MIT。测试脚本 tests/check.py。",
+        "method": "先得到一行四张正交视图（俯、侧、前、后）。雕刻时只有四视图都覆盖到的体素才保留（视觉外壳）；再把体积切成从地面到顶部的扁平层带。没有现成图时，技能要求 Agent 用短 Python 脚本自己画视图。查看器提供转盘、场景（含程序化道具和 Y 排序）、切片扫描、爆炸视图，以及驾驶/风摆/碎裂等播放模式，并可以导出十六方向烘焙精灵表。文档写明优先适配项目里已有的渲染器，不要再另起一套画布。",
+        "features": [
+          "从四视图或现成切片条生成可旋转的假 3D 像素物体",
+          "CLI 可调层数、圆形雕刻、朝向、共享调色板，并输出法线和发光条",
+          "独立 HTML 查看器：光照/天气、投影阴影、十六向精灵表导出，可拖入切片条"
+        ],
+        "highlights": [
+          "把经典精灵堆叠做成可复用的 Agent 技能，而不是只发一张演示图",
+          "雕刻加检查加渲染的步骤写得很具体，并提醒必须先看过转盘再交付",
+          "查看器功能比技能体积看起来更完整，适合直接验收切片质量"
+        ],
+        "limitations": [
+          "四视图外壳雕刻对凹陷和复杂遮挡会丢细节，效果取决于视图是否正交、比例是否一致",
+          "仓库很小，没有在线托管演示；把物体接到 Godot/Unity/Phaser 仍要按项目里已有渲染器改",
+          "若没有图像生成，视图质量取决于 Agent 自己画像素图的能力"
+        ],
+        "comparison": "和 pixelfx、blender-skills、stickman-video-director、hand-drawn-storybook-animation-skill 同属「给编码 Agent 用的游戏/视觉技能」。pixelfx 是用代码画 244 种像素特效并导出精灵表，不管假 3D；blender-skills 走的是真 3D 资产管线；后两个偏向视频和动画叙事。只要可旋转的像素道具或载具、并且想留在 2D 切片而不是上 Blender，选 sprite-stacking；要打击感和特效库，选 pixelfx；要进入引擎的三维资产，选 blender-skills。",
+        "researched_at": "2026-11-22"
+      }
+    },
+    {
       "id": "three-voxel-destruction",
       "name": "three-voxel-destruction",
       "summary": "在浏览器里用 Three.js 和 WebGPU 做的拆除风格体素破坏演示：每个体素都是 GPU 刚体，含城市、赛道和空间站三关。",
@@ -3195,6 +3240,58 @@
       }
     },
     {
+      "id": "clickhouse-loom",
+      "name": "Loom（ClickHouse）",
+      "summary": "ClickHouse 开源的自托管 MCP 服务：为 Claude Code、Codex、Cursor 等编码 Agent 提供共享长期记忆、带引用的文档检索，以及挂在文件和符号上的代码索引。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "python",
+        "mcp",
+        "记忆",
+        "代码索引",
+        "clickhouse",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/ClickHouse/loom",
+      "preview_url": "https://clickhouse.github.io/loom/",
+      "post_url": "https://x.com/mm_zzm44854/status/2124309912515960969",
+      "author": "ClickHouse",
+      "models": [
+        "claude-sonnet-5",
+        "gpt-5",
+        "bge-small"
+      ],
+      "first_seen": "2026-11-21",
+      "origin": "daily-digest",
+      "stars": 180,
+      "notes": "2026-11-22 查询 GitHub API：180 星，2026-10-08 建仓，文档和代码体量很大（约 8009 个文件）。当天 X 上多为转述官方基准的帖，未见 ClickHouse 官方账号原帖。评测数字均来自仓库 README，属自报。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 为主的自托管服务，数据默认放在 ClickHouse，也可在首次启动时为实时记忆和知识状态选用 Postgres。通过 MCP、HTTP 以及 Python/TypeScript SDK 接入；提供 Claude Code 与 Codex 插件（会话钩子、技能和代码分流）、Cursor 插件，以及 Helm 部署。记忆平面（docs/architecture/memory-architecture.md）把事实写进 loom.memory，用 embedding、冲突裁决、版本和后台 worker 做检索与派生数据。另有结构代码索引（定义、调用方、改动影响）。Apache-2.0。默认镜像带 CPU 上的本地 bge-small 嵌入和假 LLM；真正抽取和回答需配置 OpenAI、Gemini 等提供方。",
+        "method": "插件在会话开始注入相关记忆，并用生命周期钩子记录工具调用和会话摘要，不必靠模型自己记得去保存。记忆可挂到具体文件和符号上，重构后跟随，代码被改动时会标记，Agent 读改这些文件时再浮出。团队部署用命名空间、角色和 JWT；对话录制默认关闭。官方在 ClickHouse 代码库上用 Claude Code（claude-sonnet-5）做了配对评测，并在 LongMemEval-S 上对比检索记忆与全文历史。",
+        "features": [
+          "跨会话、跨 Agent 的共享长期记忆，带版本、冲突标记和回滚",
+          "代码索引：查定义、调用方和改动影响，并与记忆互相链接",
+          "文档检索（含 PDF/docx/pptx 抽取）和带引用的问答",
+          "仪表盘汇总记忆、仓库、任务和运行；支持 Docker 与 Kubernetes"
+        ],
+        "highlights": [
+          "数据库厂商做的 Agent 记忆/代码智能基础设施，而不是又一个聊天 Agent",
+          "官方自报：编码问答质量 0.84 对 0.78、模型费用低约 20%；文件定位 96.4% 对 91.4%；用 gpt-5 阅读器时记忆方案比全文历史少 91% 提示 token。另称 memory.ask 在全部 500 道 LongMemEval-S 上准确率 96.6%。文档写明结果只适用于被测工作负载，记忆对比的准确率差没有做统计显著性检验",
+          "工程完整：架构文档、基准产物、OpenSSF Scorecard、多语言文档和安装脚本"
+        ],
+        "limitations": [
+          "不是单 Agent 的进程内短记忆库，也不是 Agent 框架；需要自托管，并单独配置嵌入和 LLM 密钥（Agent 自己的订阅不会自动带过来）",
+          "基准数字为官方自报，编码测试规模为 24 题×3 次和 36 题×10 次配对运行，费用不含 Loom 服务端模型调用、托管和索引",
+          "提供工具并不保证模型会调用；单用户模式应保持仅本机访问"
+        ],
+        "comparison": "和 tokeneconomizer、omnigraph、elephant-goldfish-model、vercel-eve 都处理 Agent 记忆或上下文，但分工不同。TokenEconomizer 做仓库精简和按需加载以省 token；Omnigraph 是带分支合并的多 Agent 图数据库；EGM 用无记忆子 Agent 做设计评审；eve 用约定目录持久化 Agent。Loom 把共享记忆、文档检索和代码索引做成可接多种编码 Agent 的自托管 MCP。要给 Claude Code/Codex/Cursor 补跨会话团队记忆和代码定位，看 Loom；只想压缩当前仓库上下文，看 TokenEconomizer；要图结构的共享状态，看 Omnigraph。",
+        "researched_at": "2026-11-22"
+      }
+    },
+    {
       "id": "minimax-code",
       "name": "MiniMax Code",
       "summary": "MiniMax 开源的终端编程 Agent：可用官方模型或自备接口，在本地构建、测试并继续改。",
@@ -3519,6 +3616,59 @@
         ],
         "comparison": "和 stroq 同为 Agent 安全层：stroq 擅长回溯历史会话、追溯危险命令由哪段文本触发，openmoat 侧重运行时强制执行（沙箱、出网、密钥）。和 security-audit-skill 不同，后者审计代码本身。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "tracer-opensre",
+      "name": "OpenSRE（Tracer Cloud）",
+      "summary": "开源的 CI/CD 可靠性 Agent：读取失败的流水线、区分是 CI 问题还是代码问题，并把修复推到 PR 上供人审查；同一套 Agent 也可排查生产故障。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "python",
+        "cicd",
+        "sre",
+        "cli",
+        "自托管"
+      ],
+      "source_url": "https://github.com/Tracer-Cloud/opensre",
+      "preview_url": "https://www.opensre.com/",
+      "post_url": "https://x.com/TheArthiAI/status/2124120728849297568",
+      "author": "Tracer Cloud（Tracer-Cloud）",
+      "models": [
+        "Anthropic",
+        "OpenAI",
+        "Gemini",
+        "Ollama",
+        "OpenRouter"
+      ],
+      "first_seen": "2026-11-21",
+      "origin": "daily-digest",
+      "stars": 13993,
+      "notes": "2026-11-22 查询 GitHub API：13993 星，2026-01-13 建仓。当天多次出现在 GitHub 趋势和 X 推荐里，不是全新发布。README 标明 Public Alpha，交互式 shell 需登录，首次启动会启用托管模型；也可自备模型并自托管。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python CLI/Agent，代码按四层包划分并由 CI 的 import linter 强制依赖方向：surfaces 与 gateway（交互与网关）、tools 与 integrations（能力）、core 与 infrastructure（运行时）、最底层 config。README 写明已去掉旧的 graph/chain 框架层，现架构见 AGENTS.md。可接 60 余种集成（GitHub、Slack、Datadog、Grafana、Kubernetes、PagerDuty、MCP 等）和多家模型（Anthropic、OpenAI、Gemini、Ollama、OpenRouter、Bedrock、NVIDIA NIM 等）。Apache-2.0。部署可选本机安装脚本、自托管容器，以及官方 Cloud / EC2 网关。",
+        "method": "CI 失败、告警到达或用户提问时，先拉取失败检查、日志、近期提交和关联的指标/追踪，可选地在把内容送给外部模型前掩码敏感标识，再在工具循环里验证假设，把 CI 自身故障和代码故障分开。然后给出带证据的回答，把修复推到 PR 分支等人审，或建议并可选执行处置，最后把摘要发到 Slack、PagerDuty 或 Telegram。",
+        "features": [
+          "交互式 shell（opensre）和无交互的 opensre ask，以及可嵌入的 Python API",
+          "调查失败的 CI 运行并推送修复到 PR，供人审查",
+          "统计失败率、主分支变红时长等 CI 成本，并可用同一 Agent 查生产故障",
+          "接日志、指标、追踪、K8s 和告警等现有运维栈"
+        ],
+        "highlights": [
+          "把「修红了的构建」做成可自托管的开源 Agent，而不是通用聊天机器人",
+          "仓库体量大、分层清晰，并强调用真实云场景的端到端测试来约束流水线这种难复现的任务",
+          "当天仍在 GitHub 趋势上出现，星标已过万"
+        ],
+        "limitations": [
+          "官方标注 Public Alpha，API 和集成仍可能变，核心流程「可用但尚未完全稳定」",
+          "交互式 shell 需要登录；首次启动会启用托管模型。自托管和自备模型是另设路径，不是打开即完全离线",
+          "第一方产品分析和 Sentry 默认开启、需 OPENSRE_NO_TELEMETRY=1 才能退出"
+        ],
+        "comparison": "库内几乎没有同类的 CI/CD 可靠性 Agent。更近的参照是 tracetrial-bench（给运维/编程 Agent 做轨迹可靠性评测，不是产品）和 open-code-review（进 CI 的 PR 审查 CLI，管的是补丁质量而不是流水线为什么红）。aws-emulator 则是在本地模拟 AWS API，方便在 CI 里跑云调用。要把失败构建查清楚并提交修复，看 OpenSRE；要审 Agent 写出的 PR，看 open-code-review；要先在离线环境里复现云 API，看 aws-emulator。",
+        "researched_at": "2026-11-22"
       }
     },
     {
@@ -5139,6 +5289,59 @@
         ],
         "comparison": "和 awesome-grok-bot（社区目录，面向 Grok Bot）互补。和 pstack 所在的 cursor/plugins 是同类的官方插件仓库。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "replit-amuse",
+      "name": "Amuse（Replit）",
+      "summary": "Replit 开源的本机个人助手：能做带出处的检索、可旁观和接管的实时浏览器、提醒与目标规划，以及可继续使用的小应用，在发送、提交和付款前弹出审批卡。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "typescript",
+        "自托管",
+        "浏览器",
+        "审批",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/replit/amuse",
+      "preview_url": null,
+      "post_url": "https://x.com/amasad/status/2124277564596519355",
+      "author": "Replit Missions / Amjad Masad（@amasad）",
+      "models": [
+        "gpt-6.2-sol",
+        "gpt-6-luna",
+        "gpt-image-2",
+        "gpt-4o-mini-transcribe",
+        "gpt-4o-mini-tts"
+      ],
+      "first_seen": "2026-11-21",
+      "origin": "daily-digest",
+      "stars": 131,
+      "notes": "2026-11-22 查询 GitHub API：131 星，2026-11-19 建仓。当天 Replit CEO @amasad 发帖宣布开源。仓库未提供公开托管演示，需本机 Docker 或源码运行。默认模型名取自 README / .env.example。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript pnpm monorepo：apps/server（Express + Agent 循环）、apps/web（React + Vite）、lib/db（Drizzle + PostgreSQL 14+）。实时浏览器用本机或容器内 Chromium；凭证保险库为 AES-256-GCM，密钥在首次运行写入 .data/secret.key，模型只看到占位符。记忆和工作区文件沿用 OpenClaw 布局（SOUL.md、IDENTITY.md、USER.md、MEMORY.md 等）。Apache-2.0。需要 OpenAI API Key；可通过 OPENAI_BASE_URL 接兼容接口。默认 Agent 为 gpt-6.2-sol，短步骤用 gpt-6-luna，另用 gpt-image-2、转写和 TTS 模型。",
+        "method": "单人本机 Web 应用，无登录，默认只监听 127.0.0.1，并拒绝跨站改请求。Agent 走工具循环：网络请求只能到达公网地址，经本地代理检查每一跳。发送、提交、付款、改记忆和新建日程等动作先经过 sentinel，再弹出审批卡，范围可以是一次、本任务、本站点或始终允许；付款每次都要问，且不被旧批准覆盖。付款检测含按钮文案、价格和结账地址等启发式，文档要求人工复核每张卡。",
+        "features": [
+          "可旁观、接管或中止的聊天内实时浏览器，并做带出处的网页检索",
+          "提醒、监视器和后台心跳，只在有必要时找你；目标会拆成步骤并持续推进",
+          "审批卡覆盖发送、表单提交、付款和新日程；加密保险库保存登录与密钥",
+          "可把文档、PDF、图片、播客做成带数据的小应用，并支持语音对话"
+        ],
+        "highlights": [
+          "Replit 官方开源的个人助手，强调行动前审批和本机数据，而不是云端托管 Bot",
+          "安全模型写得很具体：回环绑定、跨站拒绝、密钥只在已确认主机的认证头或登录框里替换，生成页面有 CSP sandbox",
+          "有单元测试、类型检查、依赖审计、Docker 构建和密钥扫描的 CI，以及会花真实 API 额度的端到端套件"
+        ],
+        "limitations": [
+          "只服务一台电脑上的一个人，没有登录；把端口暴露到网络就等于交出代理权和已存凭证",
+          "默认只接 OpenAI 模型，不提供 MCP；通知只在 Amuse 标签页打开时出现，还没有手机推送",
+          "Docker Compose 路径下浏览器不走 Chromium 自带沙箱，隔离边界是容器；付款检测是启发式"
+        ],
+        "comparison": "和 n8n-nod、linger、argo、duskbot 一样都是本机个人 Agent，但 Amuse 把可旁观的实时浏览器和发送/付款审批卡做成产品核心，并且明确只用 OpenAI、不做 MCP。Nod 自带沙箱电脑和浏览器，更偏替你跑完网站流程；Linger 强调本机 MoE 推理和多 Agent 团队；Argo 提供多端客户端和托管版。要一套可读的本机审批实现、并能看着浏览器工作，看 Amuse；要自带电脑沙箱或本地模型，看 Nod 或 Linger。",
+        "researched_at": "2026-11-22"
       }
     },
     {
@@ -7664,6 +7867,53 @@
         ],
         "comparison": "和 playbasis-agent-hub 都读本地会话：Hub 偏数据分析，The Office 偏趣味可视化。和 t3-code 等控制台相比，它只做观察。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "tmux-island",
+      "name": "TmuxIsland",
+      "summary": "macOS 灵动岛风格的菜单：为跑在 tmux 里的多个 AI Agent 显示状态，一点或一个快捷键跳到对应窗格，并可直接在岛上点选审批选项。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "swift",
+        "macos",
+        "tmux",
+        "桌面应用",
+        "审批"
+      ],
+      "source_url": "https://github.com/kgrandemange/tmux-island",
+      "preview_url": "https://kgrandemange.github.io/tmux-island/",
+      "post_url": "https://x.com/grandemange_k/status/2124110390325920213",
+      "author": "kgrandemange（@grandemange_k）",
+      "models": [],
+      "first_seen": "2026-11-21",
+      "origin": "daily-digest",
+      "stars": 2,
+      "notes": "2026-11-22 查询 GitHub API：2 星，2026-11-20 建仓。作者当天发原文并附官网。需 macOS 14+ Apple silicon；未做 Apple 公证，非 Homebrew 安装时首次启动会提示。README 称没有网络代码。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "原生 macOS 应用，Swift + SwiftUI。不绑定某一款终端，只通过 tmux 命令交换信息：list-panes、capture-pane、list-clients 读取，select-window、select-pane、switch-client、send-keys 跳转和应答。状态机在 StateResolver.swift / Screen.swift，被测试覆盖；TmuxService 管多 socket 的 tmux 服务器，ClaudeUsage 读官方会话状态和上下文占用，IslandController 做缺口上的非激活窗口。MIT。Homebrew cask 或从源码用 Swift 构建。作者写明用 Claude Code 参与开发，发布由 GitHub Actions 从打标签的源码构建并附 SHA-256。",
+        "method": "按可靠性依次判断 Agent 状态：先读 Claude Code 官方会话文件（busy/idle/shell，shell 表示本轮结束但后台 shell 或子 Agent 仍在跑，显示蓝环且不误报完成）；若安装了钩子则用 UserPromptSubmit/Notification/Stop；否则用窗格屏幕文本识别「esc to interrupt」「Do you want to…」等，从而覆盖 Codex、Gemini CLI、OpenCode、Aider 等。手动 Esc 中断不会当成完成。审批选项从屏幕菜单变成按钮，再 send-keys 回窗格。",
+        "features": [
+          "每颗点一种状态：红=等你、绿=完成、橙=进行中、蓝环=后台仍在跑",
+          "点击或全局快捷键跳到正确的 tmux 窗格和终端，必要时自动 attach",
+          "把权限菜单选项做成岛上的按钮，悬停可预览窗格末行",
+          "Claude Code 上下文占用条、完成历史、专注模式，以及跟随当前屏幕"
+        ],
+        "highlights": [
+          "为「同时开一堆 tmux Agent、却不知道谁在等你」这个很具体的痛点做了完整的桌面交互",
+          "明确不接入终端 API，因此兼容 WezTerm、Ghostty、iTerm2、kitty、Alacritty、Terminal.app，也支持分离会话和多 tmux 服务器",
+          "文档强调零网络、可审计；带 43 个测试和演示用的虚构 tmux 环境"
+        ],
+        "limitations": [
+          "只支持 macOS 14+ 的 Apple silicon；没有公证，非 Homebrew 安装时系统会拦截首次打开",
+          "刚发布，星标很少；除 Claude Code 外，其他 Agent 主要靠读屏，界面一变就可能失效",
+          "应用本身无沙箱，会读 tmux 和 Claude 会话文件，并能够向窗格发按键，需要信任本地程序"
+        ],
+        "comparison": "和 coucou、herdr、eta、unified-dev 都在解决「同时盯多个编程 Agent」。coucou 也是 Mac 灵动岛（还可到 iPhone 锁屏）并批准工具调用，但不以 tmux 为中心；herdr 是 Rust 写的 Agent 运行时复用器，强调断线不停和跨机器面板；Eta 是一体式多 Agent 工作台；unified-dev 用 git worktree 隔离并行会话。只在 macOS 上用 tmux 跑 Claude Code/Codex、想要缺口提示和键盘跳转时选 TmuxIsland；要跨机器或自带运行时，看 herdr 或 Eta；要在手机上批准，看 coucou。",
+        "researched_at": "2026-11-22"
       }
     },
     {
@@ -11007,6 +11257,52 @@
         ],
         "comparison": "和 ferrite 是两个极端：ferrite 在专用 GPU 上追求吞吐，本项目在任意 CPU 上追求可运行。和 mlx-serve 的实用服务定位不同。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "last30days-skill",
+      "name": "last30days",
+      "summary": "跨 Reddit、X、YouTube、HN、Polymarket 等来源并行检索近 30 天讨论，按真实互动排序并汇总成带引用的简报，可装进 Claude Code、Grok、Codex 等 50 多种 Agent 宿主。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "python",
+        "检索",
+        "mcp"
+      ],
+      "source_url": "https://github.com/mvanhorn/last30days-skill",
+      "preview_url": "https://x.ai/bot/marketplace/bots/last30days",
+      "post_url": "https://x.com/forgetsen/status/2123960555303993609",
+      "author": "mvanhorn（@mvanhorn）",
+      "models": [],
+      "first_seen": "2026-11-21",
+      "origin": "daily-digest",
+      "stars": 72014,
+      "notes": "2026-11-22 查询 GitHub API：72014 星，2026-01-23 建仓。当天出现在 GitHub 趋势和 X 清单里，不是全新项目。预览链接指向 Grok Bot 市场安装页。v4 的专利/招聘「秘密信号」等能力以当前 README 为准，未在本次独立跑通。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.12+ 技能包（skills/last30days/SKILL.md 与 scripts/last30days.py），MIT。用 yt-dlp 抽 YouTube 转写，X 检索带有 vendored 的 Node Bird 客户端，部分来源走 ScrapeCreators 等 API。可按 Agent Skills 规范安装到 50 多种宿主，也提供 Claude Code / Grok 插件、claude.ai 的 .skill 包、Claude Desktop 的 .mcpb，以及 OpenClaw。可选把发现写入本机 SQLite（research.db）。无推理密钥时用本地打分；配置了 OpenAI、xAI、OpenRouter 或 Gemini 等密钥才会把片段送给外部模型做重排序。",
+        "method": "输入主题后先解析相关的账号、仓库、版块和渠道，再对多家来源做多查询并行检索，按互动、相关度和新鲜度打分，把同一事件的报道合并成簇，最后生成带出处的简报。v4 在公司主题下还会读当月美国专利和官网招聘页，只标记「不像该公司一贯申请」或尚未公开的信号，并给相关报道附上评论金句、Polymarket 赔率和股价线。本地库可离线检索以往简报。",
+        "features": [
+          "一次查询并行搜索社交、视频、论坛、预测市场和代码等来源，输出带引用的 30 天简报",
+          "公司主题可附加专利和招聘页上的「秘密信号」，以及行情与赔率一行摘要",
+          "零配置即可用 Reddit、HN、Polymarket、GitHub 等；向导再解锁需要密钥或登录的来源",
+          "简报可留在本机库里，之后按主题检索"
+        ],
+        "highlights": [
+          "星标极高的研究型技能，安装面覆盖 Claude Code、Grok Bot、Codex、Cursor 等主流宿主",
+          "强调搜「人正在说什么」而不是编辑过的网页，并把预测市场和原始评论当作信号",
+          "文档把数据出境边界写清楚：默认只把请求发到你调用的搜索 API；外部重排序和 Reddit 登录检索都是可选"
+        ],
+        "limitations": [
+          "X、YouTube、TikTok 等完整能力通常要自备密钥、浏览器会话或第三方抓取服务，来源越多，鉴权和稳定性成本越高",
+          "聚合和「秘密信号」都依赖公开页面与模型归纳，可能漏报、误报或被来源结构变化打断，README 中的案例是展示而非独立核实",
+          "项目已存在近一年，当天是趋势曝光而不是首次发布；部分可选来源（Amazon、Telegram 等）还要额外商业 API"
+        ],
+        "comparison": "库内没有同样覆盖「近 30 天多平台舆论」的技能。更近的参照是 understand-anything（给 Agent 快速建立代码/知识理解，偏仓库内部）、geo-sleuth（用开源地理证据做单张照片定位）、papertrails 不相关。deeptutor 是本地学习 Agent，吃的是你提供的 PDF 和笔记，不是全网舆论。要把「这件事最近大家都在说什么」做成可引用简报，选 last30days；要深挖自己的仓库或资料，选 understand-anything 或 DeepTutor。",
+        "researched_at": "2026-11-22"
       }
     },
     {

@@ -66,6 +66,7 @@
 | frogxteps | Unreal Engine 5.9，一人指挥 Claude Code 多 Agent（日志自述） | 第三人称动作：蛙+史莱姆机甲攻城，五种角色，Windows 下载 | light，无源码；四天 Jam 成品 | 未公开 | 看 UE5 + 多 Agent 在 Jam 周期里能做到哪一步 |
 | blender-skills | 28 个 Agent Skills（Python），可选 Blender MCP，面向 Blender 5.2 LTS+/5.3 | 建模到导出的完整 3D 管线技能，对照页展示有/无技能差异（效果自述） | ★1966；测试与 5.3 验证为自述 | MIT | 已有编码 Agent、要用 Blender 做游戏资产 |
 | papertrails | three.js 程序化纸片场景，Fable 5.2 + Opus 5.5（作者自述） | 可漫游的无限纸艺世界，立体书翻页感 | ★35，刚发布；工作流为自报 | MIT | 风格化网页漫游，研究 AI 美术工作流 |
+| sprite-stacking | Agent 技能 + Python/NumPy 四视图雕刻和 HTML 查看器 | 把像素四视图变成可旋转的假 3D 切片和十六向精灵表 | ★369，2026-11-20 建仓 | MIT | 用编码 Agent 做可旋转像素道具，而不上 3D 引擎 |
 | walking-block | three.js 纯代码场景，时间纯函数，可离线渲成 45 秒片 | 八足苏联板楼行走的可重现短片/观察器 | ★43；需本地运行 | MIT（音频另有许可） | 研究复杂程序化场景和可复现渲染 |
 | cozy-country | 未查到源码，Nimian Legends 商业田园沙盒 | 画地形、摆房屋再走进去逛，无战斗 | light，闭源 | 未查到 | 无压力建造漫游 |
 | ten-balls | 未查到源码的浏览器投篮小游戏 | 十球蓄力投篮，空心三分、连中加倍 | light | 未查到 | 极小可玩小品 |
@@ -101,6 +102,8 @@
 2026-11-17 补入 blender-skills：28 个面向 Blender 5.x 的专业工作流技能，把「Agent 驱动 DCC」从 Scenario 两件套扩展到「把技能装进已有编码 Agent」这条更轻的路径；测试和对照效果为自述。
 
 2026-11-18 书签全量补录：papertrails 把立体书翻页做成可走的无限世界，是「AI 直接写出的演示」里风格最明确的新样本之一；同一作者线补上 walking-block、athenaion、procedural-alpine-lake，分别对应机械巨构短片、可漫游大世界和地貌电影。tibo-dog、forge-fly、spinward、cozy-country、littleprince 等可玩或可逛作品多为 light。brush-and-blade 虽小，但是少见的开源像素格斗。
+
+2026-11-22 每日精选补入 sprite-stacking：把经典精灵堆叠做成四视图雕刻加 Agent 技能，属于可复用的方法件，可与 pixelfx 的代码像素特效对照；它不做真 3D 资产，也替代不了 blender-skills。
 
 ## 研发效率
 
@@ -154,6 +157,8 @@
 | vercel-eve | TypeScript 约定目录框架（指令/工具/技能/频道/日程），npm 包 eve | 从零定义可检查、可部署的耐久 Agent，可加 Web Chat | ★5941，Vercel；当天有 1.0.1 讨论 | Apache-2.0 | 要做成可托管 Agent 产品，而不是编排现成 CLI |
 | stitch-skills | Agent Skills + Stitch MCP，三个设计/构建/工具插件 | 在 Stitch 里生成界面并导出 React / React Native | ★1.0 万；代码约三个月未更新 | Apache-2.0 | 已在用 Google Stitch 的编码 Agent 工作流 |
 | rust-anything | Rust CLI + 行为录制回放，桥接旧代码与 Rust 移植，含 MCP/技能 | 增量把多语言应用迁到 Rust 并验收行为 | ★1553，MIT；用例数字为自报 | MIT | 要用 Agent 改写但怕改坏行为 |
+| clickhouse-loom | 自托管 MCP：ClickHouse 记忆 + 代码索引，Claude Code/Codex/Cursor 插件 | 跨会话共享记忆，记忆挂在文件和符号上，并可查定义与调用方 | ★180，官方基准为自报 | Apache-2.0 | 给编码 Agent 补团队长期记忆和代码定位 |
+| tracer-opensre | Python CI/CD 可靠性 Agent，工具循环调查失败构建并可自托管 | 区分 CI 故障和代码故障，把修复推到 PR 上待审，也可查生产故障 | ★1.4 万，Public Alpha | Apache-2.0 | 流水线变红时先让 Agent 调查再人工合并 |
 | beautifulrust | 三个 Agent 技能 + 测试过的 Clippy 配置 | 写、审、把其他语言改成较地道的 Rust | ★2046，有文档站 | MIT | 纠正「能跑但不像 Rust」 |
 | swamp | CLI + TypeScript 行为类型和 YAML 工作流，CEL 传数据，AGPL | 把重复任务编成可再跑的行为和工作流 | ★959；效率数字为转述/自报 | AGPL-3.0 | 不想每次重新规划 Skill |
 | diffity | Mac/Linux 桌面 diff 审阅器，把批注交给本机 Claude Code | 人审 Agent 代码并让它按评论修改 | ★919；无 Windows 包 | MIT | 本机审 Agent 提交 |
@@ -191,6 +196,8 @@
 
 2026-11-21 补入 seo-skills 和 geo-sleuth，都继续印证「技能是研发效率工具的主流载体」，但一个走向可合并的 SEO/GEO 改动（部分 MCP 连到作者的付费产品），一个是少见的、用脚本排序、模型只做裁决的照片地理定位技能，案例误差为项目自述。
 
+2026-11-22 每日精选补入 clickhouse-loom 和 tracer-opensre。Loom 是数据库厂商做的自托管记忆和代码索引 MCP，官方费用与定位数字为自报，和 TokenEconomizer（省当前仓库 token）及 Omnigraph（图结构共享状态）互补。OpenSRE 补上库内此前缺少的 CI/CD 可靠性 Agent，星标已过万，但仍是 Public Alpha，交互式 shell 要登录，遥测默认开启。
+
 ## Phone/Computer Use
 
 范围：agent-eng/phone-computer-use
@@ -215,6 +222,7 @@
 | xphoneuse | Rust 桌面应用：安卓 scrcpy、iPhone CoreDevice 隧道，内嵌 MCP | 免 Xcode 操控 iPhone/安卓，宏、定位模拟、文件管理 | ★4，评论区发现 | MIT | 跨 Windows/macOS/Linux 的真机 Phone Use |
 | n8n-nod | TypeScript + Electron，本机容器里的 Linux 工作区与 Chromium，PostgreSQL + Vault | 在真实网站跑差事，行动先审批，密钥不进模型 | ★2347，n8n 官方，research preview；评测数字自报 | Apache-2.0 | 本机个人 Computer Use 助手 |
 | coucou | Mac 灵动岛 + iPhone 锁屏伴侣，监视并批准编程 Agent | 在最容易看到的系统位置批准操作 | ★7309 | MIT | Apple 用户盯着后台 Agent |
+| replit-amuse | TypeScript 本机 Web 个人助手，Chromium 实时浏览器 + PostgreSQL，Apache-2.0 | 可旁观/接管的浏览器，发送和付款前审批卡，记忆为工作区文件 | ★131，2026-11-19 开源；只需 OpenAI 密钥 | Apache-2.0 | 要在自己电脑上跑带审批的个人助手，并能看着它浏览 |
 | obscura | Rust 无头浏览器，V8 + CDP，可截图和导出 PDF | 给 Agent 或自动化一个更轻的浏览器 | ★3.6 万；并非完整 Chromium 替代 | Apache-2.0 | 要轻量无头浏览；不是反爬教程 |
 | openrocode | Python + MuJoCo，把机械臂做成三维 Computer Use；模型只看像素和厘米 | 点选或写短程序，套件负责几何、护栏、急停和留痕 | ★2，alpha；公开演示以仿真为主 | Apache-2.0 | 在仿真里试验「模型开车/开臂」的套件 |
 
@@ -241,6 +249,8 @@
 2026-11-19 补入 openrocode：把 Computer Use 的指屏幕、护栏和全程留痕搬到仿真机械臂上，是库内第一个这类机器人套件。它仍是 alpha，未查到完整真机适配说明，和浏览器/桌面操控工具不互相替代。
 
 2026-11-21 补入三条不同方向：karpo-browser 把逐步网页动作交给决策模型，和 opencode-browse / tencent-browserskill 的「通用大模型直接点选」不同，基准为自报；pocket-dev 让人用手机接着指挥本机编码 Agent，和 coucou 同属监视/接续层，但提供终端和 Git；phil 是轻量的电脑控安卓实现，护栏完整度仍不如 pinky。
+
+2026-11-22 每日精选补入 replit-amuse：Replit 开源的本机个人助手，核心是可旁观的实时浏览器和发送/付款审批卡，默认只接 OpenAI、不做 MCP。和 n8n-nod、Linger 同属本机助手，但产品范围更窄、安全边界写得更具体；没有公开托管演示。
 
 ## Agent 军团管理
 
@@ -279,6 +289,7 @@
 | autoswarm | 港多 Agent 协作框架，强调打通上下文，附论文 | 让多个 Agent 共享上下文一起干活 | ★2632，研究型 | MIT | 研究跨 Agent 上下文，而不是现成交付平台 |
 | duskbot | 本地机器人团队桌面应用，复用已有模型订阅 | 对标 Grok Bot 的长期机器人体验 | ★327；PolyForm 非商用许可 | 非商用许可 | 想把数据放在自己机器上；商用需另谈 |
 | anthropic-building-always-on-agents | 官方架构指南，不是开源成品；五个构件：inbox、timers、memory、permissions、outbox | 用短 run 和持久化队列做出常驻体验，收件箱为真相来源 | 2026-11-13 发布 | 指南，无附带仓库 | 要按官方处方设计常驻 Agent，而不是找现成产品 |
+| tmux-island | Swift/SwiftUI macOS 灵动岛，只通过 tmux 读状态和跳窗格 | 多 Agent 状态一览，键盘跳转，岛上点选审批选项 | ★2，2026-11-20 发布；仅 Apple silicon | MIT | 在 macOS 的 tmux 里并行跑多个编码 Agent 时盯梢和跳转 |
 | eta | 单个 Bun 宿主；默认自研 harness，也可经 OAR/ACP 接入 Claude Code、Codex、OpenCode、pi | 一人指挥常驻小队：任务需确认，记忆是可选 sidecar，会话以宿主用户身份跑 | ★229，v0.4.0；安装包未签名 | MIT（SearXNG 等另有许可） | 想自托管一队可检查的个人 Agent，而不是替换团队 SOP |
 | stitch-loop | Google Labs 托管的常驻产品 Agent，接 GitHub 和线上指标，沙箱改代码后开 PR | 按目标持续建议、构建、观察，默认同伴安全/延迟/无障碍循环 | 2026-11-18 宣布，候补中，无源码 | 闭源实验 | 要上线后自动盯产品指标，并能接受排队 |
 | grokbot-deskpet | Tauri 桌面宠物 + 加密 ntfy 通道，专看 Grok Bot 状态 | 一眼看出哪个 Bot 在思考、工作或等你 | ★0，macOS，非官方且未签名 | Apache-2.0 | 只想在桌面上盯 Grok Bot，不负责批准操作 |
@@ -313,6 +324,8 @@
 2026-11-20 补入 Linger 和 Mastra Factory。Linger 把本机大模型推理、记忆、主动行动和桌面操控收成一支个人 Agent 团队，和 Eta、n8n-nod、OpenMausBot 同属「跑在自己电脑上」，差异是自研 MoE 推理和夜间规则自更新；速度和对标 Claude 的说法均为自报，许可也限制对外托管。Factory 则和 LoopForge、Stitch Loop 一样做 issue-to-PR 的交付工厂，但工作流绑在 Mastra 自己的看板和 Slack 上，公开模板仓很薄，引擎在 npm 包里。
 
 2026-11-21 补入 unified-dev 和评论区发现的 Argo。前者把 worktree 隔离做成原生 macOS 控制台的核心，可与 t3-code、coincide 对照，但只支持 macOS 26 的 Apple silicon。Argo 是带多端客户端的自托管 Bot 平台，更接近 linger / agentes-chat / OpenMausBot 这一侧，不过仍是 beta、星标很少。
+
+2026-11-22 每日精选补入 tmux-island：只通过 tmux 监视和跳转多个编码 Agent 的 macOS 灵动岛，和 coucou（岛上批准，不绑定 tmux）、herdr（跨机器运行时复用器）对照。工程完整但刚刚发布，仅 Apple silicon。
 
 ## 大模型工具
 
@@ -385,6 +398,7 @@
 | paper-orchestra | Python 多 Agent 流水线（大纲/文献/分节/润色/绘图）+ 会议 LaTeX 模板 | 把想法和实验记录写成投稿级稿件，可选出图 | ★3025，Google Cloud AI Research；数据集未随仓发布 | Apache-2.0 | 学术稿件第一版，不能替代真正研究 |
 | gmclip | Rust + Tauri + SolidJS，OS 编解码，本地 Parakeet 转写，内置 MCP | 按词剪长录像，一份素材出竖屏和横屏，人与 Agent 共用命令 | 新建，★1，仅 macOS Apple silicon 预发布 | Apache-2.0 或 MIT | 本机把口播/录像剪成 Shorts，并让 Agent 协助 |
 | stick-scene | Agent 技能，提示词生成火柴人讲解动画 | 把概念画成短演示 | ★324，有演示页 | MIT | 快速做解释型小动画 |
+| last30days-skill | Python 研究技能，并行检索社交/视频/论坛/预测市场等并汇总 | 近 30 天舆论简报，可装进 50 多种 Agent 宿主 | ★7.2 万；部分来源需自备密钥 | MIT | 开会或跟进话题前，要一份带引用的近期舆论摘要 |
 | inference-optimisation-skill | 对本机推理栈做爬山式调参的技能 | 覆盖解码、推测解码、KV、TTFT 等 | ★945；收益数字为发帖自报 | MIT | 本地部署觉得慢、想让 Agent 调参 |
 | scarlettkc-2-0 | Hugging Face 权重及 GGUF | 本地聊天和写代码（用户反馈为他评） | light，无独立评测 | 以模型卡为准 | 仅作来源记录，不做排名 |
 | earshot | 本地 CPU 音频工具，让 Agent 听、评并用代码做声 | v0.2 可把录音转成代码 | ★5108 | MIT | 给编码 Agent 补上听觉和可复现声音 |
@@ -427,6 +441,8 @@
 2026-11-20 补入两项内容创作工具，继续印证「LLM 加确定性工具链」：product-demo-agent-toolkit 录的是真实产品界面，和 hyperframes / lieflat-code-video 的代码生成画面不同；easyclip 与 gmclip 一样从长视频剪短片，但走 Claude 技能/MCP，并把人脸布局、字幕等放进付费档。
 
 2026-11-21 补入两款开放权重模型（均为 light，因没有训练源码）和一项 Muse 视频技能。Inkling 2 Mini 用 looped MoE 做可本机运行的编程模型，AA Index 20.1 为第三方指数，其余多数基准为官方自报；DaisyRose-27B 则在 Qwen3.8-27B 上只做 RL（自述）。stickman-video-director 继续内容创作组「技能 + ffmpeg 等确定性工具」的路线，但绑定 Muse。
+
+2026-11-22 每日精选补入 last30days：星标很高的跨平台近 30 天舆论研究技能，补上库内此前缺少的「搜人正在说什么」这一层；完整来源往往要自备密钥或登录，当天是趋势曝光而不是首次发布。
 
 ## 其他（未做对比）
 
