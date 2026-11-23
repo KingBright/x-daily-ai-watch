@@ -78,6 +78,7 @@
 | athenaion | three.js 纯代码大型古希腊世界，Claude Code / Opus 5.5（自述） | 可探索的零资产大场景 | ★717 | MIT | 用 Agent 长期维护大世界的参考 |
 | carriage | three.js 哥特马车站，Gemini 4 Argon 生成并重构 | 模型能力举证演示 | light，★10，文档很少 | 未声明 | 看模型能否改自己写的前端 |
 | procedural-alpine-lake | 程序化地形、GPU 侵蚀与 Python 合成配乐 | 60 秒高山湖泊电影 | ★69；许可证未声明 | 未声明 | 纯代码地貌短片 |
+| ohmygame | TypeScript + Electron/Bun 本地守护进程，内置 Pi，也可驱动 Claude Code/Codex/OpenCode | Agent 写设计、做资产、写代码并在预览里试玩，再发布到社区 | ★3072，仍 beta；发行版默认遥测 | Apache-2.0 | 要一体化的本机 AI 游戏工作室 |
 
 ### 分析
 
@@ -104,6 +105,8 @@
 2026-11-18 书签全量补录：papertrails 把立体书翻页做成可走的无限世界，是「AI 直接写出的演示」里风格最明确的新样本之一；同一作者线补上 walking-block、athenaion、procedural-alpine-lake，分别对应机械巨构短片、可漫游大世界和地貌电影。tibo-dog、forge-fly、spinward、cozy-country、littleprince 等可玩或可逛作品多为 light。brush-and-blade 虽小，但是少见的开源像素格斗。
 
 2026-11-22 每日精选补入 sprite-stacking：把经典精灵堆叠做成四视图雕刻加 Agent 技能，属于可复用的方法件，可与 pixelfx 的代码像素特效对照；它不做真 3D 资产，也替代不了 blender-skills。
+
+2026-11-23 每日精选补入 ohmygame：库内第一个把设计、资产画布、编码、Agent 亲自试玩和发布收成一体的开源游戏工作室，可与 genex-desktop 的跨引擎构建试玩对照。它仍是 beta，发行版默认遥测，目前没有 Linux / Intel Mac 安装包。这补上了「可复用价值在方法和工具」之外的一条产品化工作室路线。
 
 ## 研发效率
 
@@ -171,6 +174,7 @@
 
 | seo-skills | 30 个 SKILL.md + 3 个预配置 MCP（AI SEO Tracker、Scribiz、Awesome Tools） | 把技术 SEO、GEO、内链、迁移等做成可合并的 PR 或仓库文件 | ★1550；部分技能通向作者的付费产品 | MIT | 要用编码 Agent 直接改站点 SEO，而不是只要审计 PDF |
 | geo-sleuth | 标准 Agent Skill + 约 20 个单用途 Python 脚本；OSM/高程/卫星/街景 | 从一张照片求相机坐标、朝向和误差半径，并给出卫星证据图 | ★7352；案例误差为项目记录的盲测 | MIT | 需要可复现、可出示证据的照片地理定位 |
+| agentest | 离线确定性规则，读取 OpenTelemetry GenAI 轨迹，不用 LLM 当评委 | 165 条检查，抓住「声称完成但轨迹不支持」 | ★20；演示数为自带样例 | Apache-2.0 | 要审计某次 Agent 运行是否说到做到 |
 
 ### 分析
 
@@ -197,6 +201,8 @@
 2026-11-21 补入 seo-skills 和 geo-sleuth，都继续印证「技能是研发效率工具的主流载体」，但一个走向可合并的 SEO/GEO 改动（部分 MCP 连到作者的付费产品），一个是少见的、用脚本排序、模型只做裁决的照片地理定位技能，案例误差为项目自述。
 
 2026-11-22 每日精选补入 clickhouse-loom 和 tracer-opensre。Loom 是数据库厂商做的自托管记忆和代码索引 MCP，官方费用与定位数字为自报，和 TokenEconomizer（省当前仓库 token）及 Omnigraph（图结构共享状态）互补。OpenSRE 补上库内此前缺少的 CI/CD 可靠性 Agent，星标已过万，但仍是 Public Alpha，交互式 shell 要登录，遥测默认开启。
+
+2026-11-23 每日精选补入 agentest：用 165 条离线规则审计轨迹，专门抓「Agent 说做完了但记录对不上」，和 TraceTrial-Bench（任务完成 + harness 可靠性）、Agent Initiative Benchmark（该不该开口）互补。星标还很少，演示数字来自自带样例。
 
 ## Phone/Computer Use
 
@@ -229,6 +235,7 @@
 | karpo-browser | TypeScript 库/CLI/MCP，Chrome CDP；System 1 决策模型 + System 2 规划模型 | 把点击/输入交给一次前向的决策模型，大模型只做规划、阅读和收尾 | 当天开源，★0；Browserbase 分数为自报 | Apache-2.0 | 要降低浏览器逐步操作的模型成本，并接到 Claude Code/Codex |
 | pocket-dev | Node 22 CLI，手机浏览器连本机；ISC | 在手机上继续本机 Claude Code/Codex 终端、聊天、Git 和文件 | ★1；电脑需开机且默认同一 Wi-Fi | ISC | 人在外面盯或接着改本机编程 Agent，而不是控制手机 |
 | phil | Python + ADB/uiautomator2，OpenAI 兼容接口 | 电脑用自然语言逐步操作已调试的安卓真机 | 当天开源，★0；有 pytest | MIT | 要从电脑控制安卓，并能换任意兼容 API 的模型 |
+| nosis | Python 运行时：Core / Runtime / Bridge，TUI、GUI 与飞书共用协议 | 分档权限、沙箱 Shell、可确认的桌面操控，会话存 JSONL | ★65，当天无作者原帖 | MIT | 要可换前端、可接飞书的本机个人 Agent 运行时 |
 
 ### 分析
 
@@ -251,6 +258,8 @@
 2026-11-21 补入三条不同方向：karpo-browser 把逐步网页动作交给决策模型，和 opencode-browse / tencent-browserskill 的「通用大模型直接点选」不同，基准为自报；pocket-dev 让人用手机接着指挥本机编码 Agent，和 coucou 同属监视/接续层，但提供终端和 Git；phil 是轻量的电脑控安卓实现，护栏完整度仍不如 pinky。
 
 2026-11-22 每日精选补入 replit-amuse：Replit 开源的本机个人助手，核心是可旁观的实时浏览器和发送/付款审批卡，默认只接 OpenAI、不做 MCP。和 n8n-nod、Linger 同属本机助手，但产品范围更窄、安全边界写得更具体；没有公开托管演示。
+
+2026-11-23 每日精选补入 nosis：可换前端的本机个人 Agent 运行时，桌面控制和分档权限写得很细，并一等接入飞书。和 replit-amuse、n8n-nod 同属本机助手，但更像运行时而不是成品助手；当天没有作者原帖，星标也更少。
 
 ## Agent 军团管理
 
@@ -298,6 +307,8 @@
 
 | unified-dev | 原生 macOS 26/Swift 6.2 应用，每个任务一个 git worktree；MCP 回桥 | 并排跑 Claude Code/Codex/Grok，互不抢分支，可看 diff 和花费 | 仅 Apple silicon；Cursor/OpenCode 尚无 runner；星标本次未查到 | AGPL-3.0 | 要在 Mac 上给每个 Agent 独立 worktree，而不是共享同一工作区 |
 | argo | TypeScript monorepo（React/Electron/Expo/Hono/Postgres），Docker 自托管 | 持久队友：记忆、例程、浏览器/终端/桌面、审批、可委派子 Agent | ★4，beta；也提供托管版；评论区发现 | Apache-2.0 | 要自托管对标 Grok Bot/OpenClaw 的个人/团队助手 |
+| pibot | TypeScript/Electron，内核为钉死的 pi，命令走 sandbox-runtime | 具名 Bot 群聊分工、计划确认、沙箱与审批审计 | ★386，开源第二天，仍是 0.0.x | Apache-2.0 | 要在自己电脑上养一支带护栏的 AI 团队 |
+| openvorld | 本地优先的像素风小镇 harness，可接 Claude Code/Codex 或兼容接口 | 组队对话、writ 批准文件夹/命令/网站，官网有网页演示 | ★26，早期 | MIT | 要把多 Agent 工作做成看得见的本地演示 |
 
 ### 分析
 
@@ -326,6 +337,8 @@
 2026-11-21 补入 unified-dev 和评论区发现的 Argo。前者把 worktree 隔离做成原生 macOS 控制台的核心，可与 t3-code、coincide 对照，但只支持 macOS 26 的 Apple silicon。Argo 是带多端客户端的自托管 Bot 平台，更接近 linger / agentes-chat / OpenMausBot 这一侧，不过仍是 beta、星标很少。
 
 2026-11-22 每日精选补入 tmux-island：只通过 tmux 监视和跳转多个编码 Agent 的 macOS 灵动岛，和 coucou（岛上批准，不绑定 tmux）、herdr（跨机器运行时复用器）对照。工程完整但刚刚发布，仅 Apple silicon。
+
+2026-11-23 每日精选补入 pibot 和 openvorld。Pi Bot 是开源次日即提供安装包的本机 AI 团队，重点是群聊协调、沙箱和审批，而不是调度已有 Claude Code/Codex CLI（那是 T3 Code 一侧）。OpenVorld 把同一问题做成像素风小镇和 writ 批准，有可玩网页演示，但星标很少、仍早期。
 
 ## 大模型工具
 
@@ -415,6 +428,9 @@
 | inkling-2-mini | 26.4B looped MoE，中间 12 层循环 3 次，NVFP4/MXFP8，约 20GB | 开放权重本地多模态模型，官方强调 agentic coding 和少写思维链 | 2026-11-20 发布；多数基准为官方自报；AA Index 20.1 | Apache-2.0 | 要在笔记本上跑开放权重编程/Agent 模型 |
 | daisyrose-27b | 基于 Qwen3.8-27B，只做 RL、无 SFT/蒸馏（自述），Apache-2.0 权重 | 长程 agent 任务微调的即插即用替代权重 | Terminal Bench 4.1 等为官方自测；训练代码未查到 | Apache-2.0 | 已在用 Qwen3.8-27B 栈、想换一版 RL 过的权重 |
 | stickman-video-director | Muse 用的 SKILL.md + 参考契约，基于 kaomei 上游（MIT） | 分场生成、配音、代码合成 BGM、ffmpeg 拼接验收返修 | 当天适配发布，★20；绑定 Muse 工作流 | MIT | 要让 Muse 按规范产出火柴人故事短片 |
+| lingsante-3-1-flash | Hybrid-linear MoE，560B 总参 / 25B 激活，1M 上下文，MIT 权重 | 医疗推理、长程工作流和职业行为对齐（基准为官方自报） | light；需多卡高端 GPU；刚发布 | MIT 权重 | 要自托管的专业医疗文本模型 |
+| lingsante-3-1-air-vl | 原生多模态 MoE，124B / 5.5B 激活，256K 上下文 | 影像报告、健康评估、检索和医疗 GUI（需外部环境） | light；官方分数本次未读到 | MIT 权重 | 要开源权重的医学影像与报告模型 |
+| pan2 | GLP：LLM 写结构化世界状态 + 29B MMDiT + Wan 2.2 VAE | 按文本动作模拟最长约 20 秒视频后果 | ★107，HF 342 赞；本地推理很重 | Apache-2.0 | 要开放权重做动作后果推演的世界模型 |
 
 ### 分析
 
@@ -443,6 +459,8 @@
 2026-11-21 补入两款开放权重模型（均为 light，因没有训练源码）和一项 Muse 视频技能。Inkling 2 Mini 用 looped MoE 做可本机运行的编程模型，AA Index 20.1 为第三方指数，其余多数基准为官方自报；DaisyRose-27B 则在 Qwen3.8-27B 上只做 RL（自述）。stickman-video-director 继续内容创作组「技能 + ffmpeg 等确定性工具」的路线，但绑定 Muse。
 
 2026-11-22 每日精选补入 last30days：星标很高的跨平台近 30 天舆论研究技能，补上库内此前缺少的「搜人正在说什么」这一层；完整来源往往要自备密钥或登录，当天是趋势曝光而不是首次发布。
+
+2026-11-23 每日精选补入两项蚂蚁医疗开源权重和 PAN 2。LingSante-3.1-flash / air-VL 补上库内此前缺少的专业医疗生成模型，基准多为官方自报，且明确不是医疗器械；flash 偏大规模文本，air-VL 偏影像和 GUI。PAN 2 把开放权重世界模型从 Hy-Nomas 的「按轨迹续写」扩展到「先模拟动作后果」，可与闭源的 Genie 4 对照，但本地推理很重，当天热门帖是第三方演示而非官方首发。
 
 ## 其他（未做对比）
 

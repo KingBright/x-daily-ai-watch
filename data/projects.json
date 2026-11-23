@@ -1,33 +1,33 @@
 {
   "meta": {
-    "generated_at": "2026-11-22",
+    "generated_at": "2026-11-23",
     "timezone": "Asia/Shanghai",
-    "projects_total": 324,
+    "projects_total": 332,
     "category_counts": {
-      "game": 57,
-      "agent-eng": 122,
-      "llm-tools": 81,
+      "game": 58,
+      "agent-eng": 126,
+      "llm-tools": 84,
       "other": 64
     },
     "subcategory_counts": {
-      "dev-efficiency": 59,
-      "phone-computer-use": 24,
-      "agent-fleet": 39
+      "dev-efficiency": 60,
+      "phone-computer-use": 25,
+      "agent-fleet": 41
     },
     "origin_counts": {
       "bookmark": 146,
       "reply-on-popular-post": 26,
-      "daily-digest": 136,
+      "daily-digest": 144,
       "bookmark+daily-digest": 11,
       "daily-digest+reply-on-popular-post": 3,
       "user-request": 1,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 251,
-      "light": 73
+      "full": 257,
+      "light": 75
     },
-    "analysis_updated_at": "2026-11-22"
+    "analysis_updated_at": "2026-11-23"
   },
   "projects": [
     {
@@ -1203,6 +1203,60 @@
         ],
         "comparison": "同类「AI 驱动游戏产出」中，portals、3d-os-scenario-skills 面向网页或现代引擎；这款是唯一面向 8 位复古硬件的。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "ohmygame",
+      "name": "OhMyGame",
+      "summary": "开源的 AI 游戏工作室桌面应用：描述想法后，Agent 写设计、做资产、写代码，并在预览里自己试玩，再发布成可打开的链接。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "typescript",
+        "桌面应用",
+        "electron",
+        "游戏开发",
+        "试玩",
+        "claude-code",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/WhiteTowerAI/ohmygame",
+      "preview_url": "https://ohmygame.ai/",
+      "post_url": "https://x.com/jurlycat/status/2124352541874078035",
+      "author": "WhiteTowerAI",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "OpenCode",
+        "Pi"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "daily-digest",
+      "stars": 3072,
+      "notes": "2026-11-23 查询 GitHub API：3072 星、376 fork，2026-08-11 建仓，仍标 beta。当天较热的介绍帖还有 @rammcodes（https://x.com/rammcodes/status/2124406934296261032，464 赞）。官网可下载 macOS（Apple silicon）和 Windows x64 安装包，社区页可玩他人发布的游戏。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 桌面应用，开发用 Bun 1.4.2+，运行时依赖 Node.js 22.19+。结构是 src/daemon（本机 Fastify，127.0.0.1 上的 HTTP 与 SSE）、src/renderer（React）和 src/desktop（Electron，主进程只管窗口生命周期，项目和会话都在守护进程）。内置 Pi coding agent，也可驱动本机已登录的 Claude Code、Codex 或 OpenCode 2.1+ CLI。packages 下有 game-sdk、插件 CLI/UI 和预装插件（Godot、Unity、Unreal、Blender、Aseprite、Tiled，以及微信、抖音小游戏）。对外提供 MCP，发布只上传静态构建。Apache-2.0。",
+        "method": "用户用自然语言描述游戏。Agent 撰写设计文档，在同一块画布上生成图片、视频、3D、动画和音频，再写代码，并在实时预览里自己试玩、出错后尝试修复。对话可以换用本机已有的编码 Agent CLI，OhMyGame 仍保留会话、检查点、撤销、画布和审批。官方建议从 Phaser、Three.js 或 React Three Fiber 的网页游戏起步，也支持互动影视和任意引擎；网页多人游戏的房间、登录、存档和排行榜可随发布一起带上。",
+        "features": [
+          "Agent 写设计、写代码，并在实时预览里试玩，发现问题后尝试修复",
+          "同一块画布管理图、视频、3D、动画、配音和音效，再用插件对接主流引擎和平台",
+          "一键发布成可在浏览器打开的链接，并出现在社区页；也可经 MCP 把画布和试玩交给外部 Agent"
+        ],
+        "highlights": [
+          "库内少见的一体化开源游戏工作室，而不是单引擎技能包或一次性演示",
+          "2026-11-23 查询为 3072 星、376 fork，文档区分发行版遥测与源码构建（后者不发送遥测）",
+          "不转售额度：自带密钥或使用已登录的 Claude Code / Codex / OpenCode"
+        ],
+        "limitations": [
+          "仍在 beta，文档提醒会有粗糙之处",
+          "发行版默认发送用量和崩溃报告，需在设置里关闭；从源码构建不发送遥测",
+          "目前只有 Apple silicon macOS 和 Windows x64 安装包，Intel Mac 与 Linux 仍在路线图；Windows 包尚未代码签名",
+          "不附带模型，需自备密钥或本机 CLI；发布到社区需要账号"
+        ],
+        "comparison": "和 genex-desktop 最接近：都是让编码 Agent 做游戏并试玩的开源桌面应用。Genex 更偏 Unreal、Unity、Godot、Roblox 的跨引擎构建与试玩，归在研发效率；OhMyGame 把设计文档、多媒体画布、Agent 亲自试玩和发布到社区做成完整工作室，并预装引擎插件，归在游戏类。godotprompter、blender-skills、3d-os-scenario-skills 是装进已有 Agent 的单一工具链。要完整的本机游戏工作室选 OhMyGame；要在已安装的主流引擎里闭环构建选 Genex；只要教 Agent 写 Godot 或驱动 Blender，选对应技能。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -4450,6 +4504,53 @@
       }
     },
     {
+      "id": "agentest",
+      "name": "agentest",
+      "summary": "不靠 LLM 当评委的 Agent 行为评测：读取运行轨迹，用 165 条确定性规则检查 Agent 是否真的做了它声称已完成的事。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "python",
+        "评测",
+        "可观测性",
+        "opentelemetry",
+        "cli"
+      ],
+      "source_url": "https://github.com/srpadmanabhuni/agentest",
+      "preview_url": "https://srpadmanabhuni.github.io/agentest/",
+      "post_url": "https://x.com/drsrinip/status/2124400339528847442",
+      "author": "Srinivas Padmanabhuni（@drsrinip）",
+      "models": [],
+      "first_seen": "2026-11-22",
+      "origin": "daily-digest",
+      "stars": 20,
+      "notes": "2026-11-23 查询 GitHub API：20 星、16 fork，2026-10-23 建仓，当天作者发帖介绍。README 演示输出写的是 agentest 3.5.3，bundled sample overreach 为 88 passed / 42 failed（项目自带样例，不是第三方评测）。提供 pip 包 agentest-ai、GitHub Action、Colab 和 Hugging Face Space。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.11+ CLI 与库（pip 包名 agentest-ai，仓库目录包括 agentest/、catalog/、src/、tests/、examples/）。主要读取 OpenTelemetry GenAI 轨迹，也有 LangGraph、OpenAI Agents SDK、AutoGen、smolagents、n8n 的日志导入，以及 A2A 与 MCP 相关检查。165 条规则测试，其中 35 条可选；离线运行，不用 LLM 当评委。Apache-2.0。另有 agentest-action 和文档站。",
+        "method": "所谓 agentic evals 检查的是实际行为：调用了哪些工具、顺序如何、留下了什么状态，而不是只看回复文本。例如购物 Agent 说「已加入购物车」，轨迹里却没有 add_to_cart、购物车仍为空，对应检查会失败。规则覆盖确认后才写入、角色降权后权限是否收回、不可逆转账前是否有批准、是否使用了未允许的工具等。",
+        "features": [
+          "165 条确定性检查（含 35 条可选），可输出终端、HTML 或 Markdown",
+          "读取 OTel GenAI 轨迹，并给常见 Agent 框架提供导入说明",
+          "可进 CI；提供演示命令、Colab 和浏览器里的报告卡"
+        ],
+        "highlights": [
+          "明确针对「Agent 声称已完成、轨迹并未支持」这类失败，不用 LLM 当评委，结果可复现",
+          "文档、示例、Action 和治理文件比较齐全，不像只有帖子的评测宣传",
+          "演示用自带 overreach 样例就能跑出失败项，便于理解它在查什么"
+        ],
+        "limitations": [
+          "2026-11-23 查询仅 20 星，生态仍小",
+          "规则能否覆盖你的 Agent，取决于轨迹是否完整、导入器是否支持该框架",
+          "演示里的通过/失败数来自捆绑样例，不是对外部系统的基准成绩",
+          "本次未实际接入真实线上轨迹"
+        ],
+        "comparison": "和 tracetrial-bench、agent-initiative-benchmark 同属 Agent 评测，但切入点不同。TraceTrial-Bench 同时打任务是否完成和 harness 轨迹是否可靠；Agent Initiative Benchmark 打的是「该不该开口、发给谁」。agentest 不给模型打分，而是用确定性规则审计一次已记录的运行。nvidia-skillevaluator 评的是技能好不好。要查某次运行有没有说到做到，选 agentest；要比较不同 harness 或模型在标准任务上的表现，选 TraceTrial-Bench 或相应基准。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
       "id": "agents-md",
       "name": "agents-md",
       "summary": "一份可放进 Codex 根目录的 AGENTS.md，用来减少防御性垃圾代码。",
@@ -5627,6 +5728,54 @@
         ],
         "comparison": "和 tencent-browserskill、moli、opencode-browse 一样能操作网页，但 Nod 是带桌面应用、审批和 Vault 的完整个人助手，目标是替你跑真实差事，而不是给别的 Agent 当浏览器后端。和 aura-autopilot（游戏引擎里试玩）、xphoneuse（真机手机控制）不在同一场景。想要本机个人助理选 Nod；想把已登录浏览器交给编程 Agent 选 BrowserSkill。",
         "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "nosis",
+      "name": "Nosis",
+      "summary": "开源的本地优先个人 Agent 运行时：同一套内核后面接终端界面、浏览器界面和飞书，权限分档，命令进沙箱，也可以控制桌面。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "python",
+        "本地优先",
+        "computer-use",
+        "mcp",
+        "飞书",
+        "自托管"
+      ],
+      "source_url": "https://github.com/EvannZhongg/Nosis",
+      "preview_url": "https://github.com/EvannZhongg/Nosis",
+      "post_url": "",
+      "author": "EvannZhongg",
+      "models": [],
+      "first_seen": "2026-11-22",
+      "origin": "daily-digest",
+      "stars": 65,
+      "notes": "2026-11-23 查询 GitHub API：65 星、4 fork，2026-09-09 建仓，2026-11-22 仍有推送。当天 X 上未见作者原帖，只有聚合介绍，故 post_url 留空。GUI 默认监听 127.0.0.1:8737。可 pip/uv 安装 nosis-agent。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Python 3.11+（uv）加 Node.js 22+。架构分成 agent_core（与前端无关的机制）、agent_runtime（读配置并组装可运行实例）和独立的 Bridge 进程；TUI、浏览器 GUI 和飞书适配器都只通过 Bridge 的换行 JSON 协议驱动运行时。仓库还有 interfaces/（含 TypeScript 客户端 @nosis/client）和 nosis-sandbox。模型方面，OpenAI 兼容接口走官方 SDK，其他路由和图像生成走 LiteLLM，可为主 Agent、视觉、图像、辅助调用和各个子 Agent 角色单独路由。会话以追加式 JSONL 保存。MIT。",
+        "method": "每个会话可选三种权限预设：先询问、工作区权限、完全权限；默认是先询问。文件工具始终限制在当前工作区，Shell 按范围进入工作区沙箱或主机环境。主 Agent 默认可使用 computer_screenshot 和 computer_action 观察并操作可见桌面（点击、拖拽、滚动、按键、输入），每次按当前权限确认。支持流式输出、工具批处理、上下文压缩、转向、取消、计划和后台任务，以及全局/工作区长期记忆和 cron/间隔/一次性定时任务。",
+        "features": [
+          "TUI、本机 GUI 和飞书共用同一套会话与权限语义",
+          "分档权限、工作区文件隔离、沙箱 Shell，以及需确认的桌面操控",
+          "可恢复的 JSONL 会话、长期记忆、定时任务，以及 Skill、Plugin 和 MCP 扩展"
+        ],
+        "highlights": [
+          "运行时分层清楚，并公开 Bridge 协议和 TypeScript SDK，方便第三方前端接入",
+          "状态和记忆以普通文件保存（~/.nosis），而不是绑定某一家云",
+          "对国内用户友好：飞书是一等接入，而不是事后插件"
+        ],
+        "limitations": [
+          "2026-11-23 查询仅 65 星，当天也没有作者原帖，曝光明显低于 Pi Bot 等新产品",
+          "桌面操控在 Windows 上有窗口裁剪等说明，其他系统的完整度需自行验证",
+          "没有官方托管演示，需本机安装并自配模型密钥",
+          "本次未实际跑通飞书或桌面控制"
+        ],
+        "comparison": "和 replit-amuse、n8n-nod、linger 一样是本机个人 Agent。Amuse 的产品核心是可旁观浏览器和付款审批卡，且默认只接 OpenAI；Nod 自带沙箱电脑与浏览器，产品更完整但仍是 research preview；Linger 强调本机 MoE 和多 Agent 团队。Nosis 更像可换前端的运行时：TUI/GUI/飞书共用核心，桌面控制和分档权限写得很细，但星标和成品完整度不如 Nod。要飞书或可嵌入的本机运行时选 Nosis；要开箱即用的个人助手选 Nod 或 Amuse。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -7503,6 +7652,105 @@
         ],
         "comparison": "和 open-duet-anil-matcha 相比，openmausbot 的聊天应用体验和 VM 更成熟。和 anymodelbot 相比，后者走模型网关加国内 IM，openmausbot 走本机 CLI 加虚拟电脑。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "openvorld",
+      "name": "OpenVorld",
+      "summary": "把多 Agent 项目显示成像素风小镇的开源控制面：每个成员有名字、角色和房子，组队干活，访问文件夹或网站前要你批准。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "javascript",
+        "桌面应用",
+        "多智能体",
+        "本地优先",
+        "像素",
+        "审批"
+      ],
+      "source_url": "https://github.com/DigitalDreams-Lab/OpenVorld",
+      "preview_url": "https://openvorld.com/play/",
+      "post_url": "https://x.com/ZenithYeAI/status/2124350675530252640",
+      "author": "DigitalDreams Lab",
+      "models": [
+        "Claude Code",
+        "Codex"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "daily-digest",
+      "stars": 26,
+      "notes": "2026-11-23 查询 GitHub API：26 星、2 fork，2026-11-15 建仓，上次代码推送 2026-11-20。当天未见官方账号原帖，收录依据是仓库、官网演示和介绍帖。浏览器演示 https://openvorld.com/play/ 无需下载；桌面端支持 macOS、Windows 和 Linux。数据默认在 ~/.openvorld，以 YAML/JSON/JSONL 保存，无官方账号或托管后端。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "JavaScript/Node.js 20+ 的本地优先应用，可 npm run desktop 或 npm run dev 在浏览器打开。每个项目是一个「vorld」：共享项目文件夹，成员有私人工位、房子和存放凭证的 vault。成员可使用已安装的 Claude Code、Codex，或 OpenRouter、OpenAI、Ollama、LM Studio 等 OpenAI 兼容接口；也可以复制集成提示词让其他 Agent 自己接入。浏览器工作使用独立的成员配置，需要 Chrome 或 Edge。世界和历史留在本地。MIT。",
+        "method": "你是创始人：给成员名字、角色、个性和大脑，在 Party Hall 组队并下达目标。队伍共享对话，用 @提及交接、@all 一起回答，并围在你身边工作。成员要访问文件夹、命令或网站时发出 writ（批准请求）。任务气球和工具活动可见，网页工作可看浏览器预览。完成工作可获得 XP、等级和 deeds，偏游戏化的进度，而不是另一套组织架构产品。",
+        "features": [
+          "像素风小镇界面：成员有房子和工位，组队后在同一对话里交接",
+          "writ 批准机制：文件夹、命令和网站访问都要你点头",
+          "可接 Claude Code、Codex 或兼容接口；官网有可玩的网页演示，无需安装"
+        ],
+        "highlights": [
+          "把「谁在干什么、要什么权限」做成看得见的小镇，而不是又一个终端面板",
+          "有可直接打开的网页演示，本地优先且无官方云账号",
+          "可用 packs 扩展模板、角色和主题，而不改引擎"
+        ],
+        "limitations": [
+          "2026-11-23 查询仅 26 星，仍在早期，上次推送在 2026-11-20",
+          "没有大脑的成员只会给出简短的脚本回复，完整能力取决于你接入的模型或 CLI",
+          "浏览器功能绑定 Chrome/Edge；游戏化进度（XP/等级）对工程交付的帮助仍有待观察"
+        ],
+        "comparison": "和 t3-code、agent-teams-ai、pibot、crommacode 都是多 Agent 控制面，但呈现方式不同。T3 Code 和 Agent Teams AI 是务实的 CLI 军团面板；Pi Bot 是本机 Bot 团队加沙箱审批；CrommaCode 把工具调用演成游戏风终端。OpenVorld 把项目做成可走的像素小镇，并用 writ 管权限，更偏「看见工作」而不是最高效的编码编排。要高效调度已有编码 CLI 选 T3 Code；要带沙箱的本机团队选 Pi Bot；要可视化、可演示的本地 harness 选 OpenVorld。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
+      "id": "pibot",
+      "name": "Pi Bot",
+      "summary": "开源的本机 AI 团队桌面应用：多个有名字的 Bot 可以私聊或拉群分工，在指定文件夹里跑命令、改文件，风险步骤要你批准。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "typescript",
+        "桌面应用",
+        "electron",
+        "多智能体",
+        "本地优先",
+        "审批",
+        "mcp",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/w01fb0ss/PiBot",
+      "preview_url": "https://pibot.space",
+      "post_url": "https://x.com/it_works_123/status/2124423401142128838",
+      "author": "w01fb0ss（@it_works_123）",
+      "models": [],
+      "first_seen": "2026-11-22",
+      "origin": "daily-digest",
+      "stars": 386,
+      "notes": "2026-11-23 查询 GitHub API：386 星、53 fork，2026-11-21 建仓。作者 @it_works_123 在 2026-11-21 11:45 UTC 宣布 Apache-2.0 开源（https://x.com/it_works_123/status/2124106873729421365），前一日精选未收入；当天发布开源后的第一个版本 v0.0.3。支持 macOS 13+、Windows 10/11、64 位 Linux，另有 Android 应用。内核是作为 npm 依赖钉死的 pi（earendil-works/pi），只用在 packages/agent。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript pnpm monorepo + Electron 桌面应用（apps/desktop），另有 React Native/Expo 的 Android 应用、Cloudflare Worker 中继、无头 runner 和 CLI。Agent 内核是钉死的 pi，封装在 packages/agent，大脑不依赖 Electron，因此也可无头运行。命令在 @anthropic-ai/sandbox-runtime 沙箱中执行；工具调用经过统一策略引擎，审批、命令和外发都写入审计日志。可用 Ollama 本地模型、OpenRouter、自备密钥，以及文档所称的订阅登录。Apache-2.0。无遥测。",
+        "method": "每个 Bot 有名字、角色、模型、技能、权限和记忆。群聊由协调者做计划、分派步骤并汇总结果，计划先经你确认再执行。Bot 只在你指定的文件夹里工作，变更可审阅，macOS 上还可从自动检查点恢复。例程可以按时间、文件夹变化或连接触发。还可经 ACP 从编辑器使用，或把 runner 放到其他电脑。",
+        "features": [
+          "具名 Bot 的私聊与群聊，协调者分派任务，计划需人工确认",
+          "工作区变更可审、命令进沙箱，风险操作先审批并记入审计日志",
+          "定时和触发例程，以及 MCP、技能、知识库；可选 Android、远程 runner 和自建中继"
+        ],
+        "highlights": [
+          "开源第二天就补上安装包和 v0.0.3，强调本地优先：聊天、文件和密钥留在本机，官方服务器不接收这些内容",
+          "2026-11-23 查询为 386 星，仓库布局、指南、隐私说明和检查命令比较完整",
+          "和「聚合已有编码 CLI」不同，重点是自己管理 Bot、权限、沙箱和审计"
+        ],
+        "limitations": [
+          "项目刚开源两天，版本仍是 0.0.x",
+          "本地优先并不表示提示词不会离开本机：所选模型服务商仍会看到你发出去的内容",
+          "完整能力依赖你自己配置模型和可选的手机/中继；本次未实际安装运行"
+        ],
+        "comparison": "和 linger、argo、agentes-chat、openmausbot、duskbot、eta 一样都是本机或可自托管的多 Bot 团队。Pi Bot 更强调群聊协调、沙箱命令和审批审计，而不是自研本地大模型（Linger）或虚拟机桌面（OpenMausBot）。t3-code、unified-dev、agent-teams-ai、shoal 是把 Claude Code、Codex 等现成 CLI 编成军团；Pi Bot 是自己养 Bot 和权限模型，只把 pi 当内核。要管已有编码 CLI 选 T3 Code；要带护栏的本机 AI 团队选 Pi Bot；要本机 MoE 推理选 Linger。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -9587,6 +9835,107 @@
       }
     },
     {
+      "id": "lingsante-3-1-air-vl",
+      "name": "LingSante-3.1-air-VL",
+      "summary": "蚂蚁集团发布的开源多模态医疗 MoE：总参 124B、激活 5.5B，能看医学影像并写报告，也支持检索、工具和 GUI 操作。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源权重",
+        "moe",
+        "医疗",
+        "多模态",
+        "蚂蚁集团",
+        "huggingface",
+        "产品发布"
+      ],
+      "source_url": "https://huggingface.co/inclusionAI/LingSante-3.1-air-VL",
+      "preview_url": "https://huggingface.co/inclusionAI/LingSante-3.1-air-VL",
+      "post_url": "https://x.com/AntLingAGI/status/2124555085640610194",
+      "author": "Ant Group / Ant Ling（@AntLingAGI）/ inclusionAI",
+      "models": [
+        "LingSante-3.1-air-VL",
+        "Ling-3.0-flash-VL"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "2026-11-23 查询 Hugging Face API：标签为 license:mit，27 赞。官方称为蚂蚁医疗团队首个开源的大型多模态医疗模型。分析依据为模型卡和官方帖；模型卡提到了评测覆盖范围，但本次未读到具体对比分数。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "基于 Ling-3.0-flash-VL 的原生多模态 MoE（Hugging Face 架构名 BailingMoeV3VLForConditionalGeneration）。模型卡写明：总参 124B，每 token 激活 5.5B，接受文本和图像，上下文 256K token（部署示例用 YaRN 拉长）。推荐 SGLang 镜像 lmsysorg/sglang:dev-Ling-3.0-flash-VL，官方示例为 4 张 141GB 级 GPU（TP4）或 8×80GB H100/H800（TP8）；也提供 inclusionAI/vllm-ling-v3。Hugging Face 标签为 MIT。搜索、工具和 GUI 流程需要外部环境提供工具、保持状态并校验动作。",
+        "method": "四个临床焦点是影像报告、多模态健康评估、医学检索与证据综合，以及医疗 GUI Agent。训练时回放通用多模态数据并在通用任务上对齐，以保留 OCR、文档图表理解和通用 GUI 能力。报告流程被写成先看病史和成像条件，再系统读图、权衡鉴别诊断并撰写 Findings/Impression；证据链是「图像→检索→证据→回答」。",
+        "features": [
+          "读医学影像并撰写结构化报告，模型卡称可在一张复杂胸片上指出 8–9 类阳性发现（自述）",
+          "皮肤、饮食和化验报告等健康评估，并可多轮追问病史",
+          "医学文献与相似病例检索，以及在真实变化界面上的预约、购药等 GUI 流程（需外部环境）"
+        ],
+        "highlights": [
+          "官方称为该团队首个开源的大型多模态医疗模型，与同日的文本模型 LingSante-3.1-flash 配套",
+          "模型卡把影像报告、证据检索和 GUI 工作流写得很具体，而不是只做医学问答",
+          "官方帖称在所对比的模型中领先；本次未在模型卡摘录到具体分数，故不转写数字"
+        ],
+        "limitations": [
+          "模型卡写明：是研究模型，不是医疗器械，输出可能不完整或不准确，高风险用途需专业人员复核",
+          "GUI 和检索能力依赖外部工具环境，单独加载权重并不能完成预约或购药",
+          "部署仍需多张高端 GPU；未找到训练仓库，分析深度为 light",
+          "官方领先进度缺少本次可读到的具体分数，不宜当作已核实结果"
+        ],
+        "comparison": "是 lingsante-3-1-flash 的多模态同伴：flash 更大、偏文本推理和长程工作流；air-VL 更轻，能看图写报告并走 GUI。和 mirobody 不同，它直接生成影像与报告结论，而不是先把检验数据标准化。和 gtagentclinic 也不同：后者是 3D 医院评测环境，前者是可部署的多模态模型。需要读片和写报告时看 air-VL；需要更重的文本推理看 flash。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
+      "id": "lingsante-3-1-flash",
+      "name": "LingSante-3.1-flash",
+      "summary": "蚂蚁集团 Ant Ling 发布的开源权重医疗 MoE：总参 560B、每 token 激活 25B，面向复杂医疗推理和长程工作流，并保留通用能力。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源权重",
+        "moe",
+        "医疗",
+        "蚂蚁集团",
+        "huggingface",
+        "产品发布"
+      ],
+      "source_url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash",
+      "preview_url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash",
+      "post_url": "https://x.com/AntLingAGI/status/2124523916819648945",
+      "author": "Ant Group / Ant Ling（@AntLingAGI）/ inclusionAI",
+      "models": [
+        "LingSante-3.1-flash",
+        "Ling-3.1-flash"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "2026-11-23 查询 Hugging Face API：标签为 license:mit，47 赞，downloads 仍为 0（刚发布）。另有 MXFP4 量化版 inclusionAI/LingSante-3.1-flash-MXFP4，以及 ModelScope 镜像。未找到独立训练仓库；分析依据为模型卡、官方帖和 Hugging Face API 中的结构配置。同日还发布了多模态的 LingSante-3.1-air-VL。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "基于 Ling-3.1-flash 的 Hybrid-linear MoE（Hugging Face 架构名 BailingMoeV3ForCausalLM，model_type 为 bailing_hybrid）。模型卡写明：总参 560B，每 token 激活 25B，上下文 100 万 token；63 层 KDA + 9 层 Gated MLA（7:1），4 层 dense，512 个 routed expert 和 1 个共享 expert，每 token 激活 8 个 routed expert，隐层 4096，词表 157184。权重量化为 FP8，另提供 MXFP4。推理官方推荐 SGLang（lmsysorg/sglang:dev-ling-3.1-flash，可开 NEXTN 投机解码），也写了 vLLM 路径。Hugging Face 标签为 MIT；模型卡同时声明仅供研究评估，不是医疗器械。",
+        "method": "通用数据与医疗数据贯穿预训练、中期训练和监督微调；后期用强化学习加强医疗推理、工具、检索和职业行为，再用多教师 on-policy 蒸馏把能力收进一个模型。官方还提到证据-能力匹配（ECM）、贡献感知的多智能体检索，以及在真实 MCP、模拟 MCP 和世界模型环境里合成长程任务并用轨迹级校验。",
+        "features": [
+          "复杂医疗推理：对齐证据与推理目标，并处理相互冲突的证据",
+          "长程医疗工作流：在多步骤、多工具的动态环境里执行任务",
+          "职业行为对齐，以及工具调用和超长上下文（自报 1M token）"
+        ],
+        "highlights": [
+          "当天正式发布的开源权重专业医疗大模型，体量明显大于库内已有的健康数据或医院模拟项目",
+          "官方帖自报：HealthBench Professional 65.72、带工具的 HLE（纯文本）72.22、带上下文的 BrowseComp 94.10，称在这三项上高于 GPT-6 Astra、Claude Opus 5.5 和 Gemini 4 Argon；另报 PhysicianBench 57、EHR-Complex 74.40，以及医师标注一致率 99.62%。以上均为官方自报，本次未独立复核",
+          "提供 FP8 与 MXFP4，以及 Computrix API（付费套餐条件以官方说明为准）"
+        ],
+        "limitations": [
+          "模型卡写明：不是医疗器械，不得单独作为诊断、处方或治疗依据",
+          "本地部署门槛很高，官方示例为 8×H200（TP8+EP8）或 4×GB300；未查到消费级显卡配方",
+          "未找到公开训练代码，本次也未逐行阅读仓库里的建模源码，故分析深度为 light",
+          "基准和一致率数字均为官方自报"
+        ],
+        "comparison": "库内此前没有开源权重的专业医疗大模型。mirobody 是健康数据的标准化与溯源底座，经 MCP 供 Agent 使用，不是生成模型；gtagentclinic 是人与 Agent 共用动作接口的 3D 医院评测环境。要在自己的基础设施上跑医疗推理和工作流，看 LingSante-3.1-flash；要先把化验和可穿戴数据校准并交给任意模型，看 mirobody；要做具身临床评测，看 gtagentclinic。同日发布的 lingsante-3-1-air-vl 是更轻的多模态版本，适合影像和报告，无法替代 flash 的 560B 文本推理规模。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
       "id": "longcat-2-5",
       "name": "LongCat-2.5",
       "summary": "美团面向长程 Agent 任务的多模态模型，国产芯片训练。",
@@ -9934,6 +10283,57 @@
         ],
         "comparison": "和 rsi-inference-bench、vybbench 等评测相比，Oumi 是训练和评测平台。和 twil-8b、sensenova-loop-9b-preview 等小模型相比，Oumi 是造这类模型的工具。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "pan2",
+      "name": "PAN 2",
+      "summary": "MBZUAI IFM 开源的基础世界模型：根据当前画面和文本动作，模拟最长约 20 秒的视频后果，用来做「先想象再行动」的推演。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "world-model",
+        "视频",
+        "扩散模型",
+        "huggingface",
+        "pytorch"
+      ],
+      "source_url": "https://github.com/ifm-ai/PAN2",
+      "preview_url": "https://ifm.ai/pan/",
+      "post_url": "https://x.com/LinusEkenstam/status/2124414499285614895",
+      "author": "Institute of Foundation Models (IFM), MBZUAI",
+      "models": [
+        "PAN 2",
+        "Qwen3.5-9B",
+        "Wan 2.2 VAE"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "daily-digest",
+      "stars": 107,
+      "notes": "2026-11-23 查询：GitHub 107 星（2026-11-05 建仓，训练与推理代码上次推送同日）；Hugging Face 模型卡 IFM/PAN2 为 Apache-2.0，342 赞、809 次下载，createdAt 为 2026-10-07，上次修改 2026-11-12。当天是 @LinusEkenstam 的演示帖，不是 IFM 官方首发。权重与代码在此之前已公开。ComfyUI 也有社区支持说明，本次未实测。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Generative Latent Prediction（GLP）双骨干：语言模型做概念推理，把观察和文本动作写成带时间的结构化世界状态（事件、绑定到行动者的动作、相机运动）；冻结的 Qwen3.5-9B 文本编码器把该描述映射为条件特征；从零训练的 29B MMDiT（PAN2Transformer3DModel）预测视频 latent，再由 Wan 2.2 VAE 解码。默认 704×1248、24 fps，最多约 20 秒（241–481 帧）。仓库含 train.py、generate.py、pan/、inference/、config/ 和 dataset/。权重与代码均为 Apache-2.0。",
+        "method": "先把自然语言改写成结构化世界状态字幕（可用概念推理技能、本地指令模型和 Claude Opus 5.5、GPT-6 Astra、Kimi K3、Qwen 3.8 Flash 等），再交给感知扩散骨干做文生视频或图生视频。目的是可核验的模拟，而不是「按要求画出任意结果」。技术博客将其称为 6D-PI（物理智能的六个维度）。模型卡还给出单动作 300 例和多步计划 100 项等评测设置；具体百分比以技术报告为准，本次未完整摘录。",
+        "features": [
+          "输入可选首帧和文本动作，输出最长约 20 秒的模拟视频",
+          "同一套扩散骨干支持文生视频和图生视频，需结构化字幕",
+          "提供本地推理脚本、检查点转换，以及概念推理用的提示改写工具"
+        ],
+        "highlights": [
+          "库内少见的、权重和训练/推理代码都公开的基础世界模型，可与闭源的 Genie 4 对照",
+          "把「先模拟再选择动作」写成明确的系统，而不是一次性文生视频演示",
+          "Hugging Face 上已有 342 赞；官网提供演示和技术博客"
+        ],
+        "limitations": [
+          "本地推理很重：每张 GPU 要放下完整的 29B 扩散模型，还要另载 Qwen3.5-9B 和 Wan 2.2 VAE；环境依赖较新的 PyTorch/CUDA 组合",
+          "感知骨干需要结构化字幕，自由文本应先经过概念推理改写，否则效果会下降",
+          "当天热门帖是第三方演示，不是新的官方首发；技术报告中的能力分数本次未完整转写",
+          "仓库在 2026-11-05 之后未见新的代码推送"
+        ],
+        "comparison": "和 genie-4、hy-nomas 同属交互世界生成。Genie 4 是闭源产品，强调走进世界、实时改环境和原生音频，但只有符合条件的 Google AI Ultra（及 Pro 候补）能用；Hy-Nomas 用文本和相机轨迹按片段续写同一世界。PAN 2 更强调动作后果的物理推演，并同时公开 29B 感知骨干和训练代码。worldlabs-atlas 输出可探索的 3D 世界或高斯泼溅，路径不同。要开放权重做「如果我这样做，世界会怎样」选 PAN 2；要可走进去玩的闭源产品选 Genie 4；要按轨迹续写开源视频选 Hy-Nomas。",
+        "researched_at": "2026-11-23"
       }
     },
     {
