@@ -79,6 +79,10 @@
 | carriage | three.js 哥特马车站，Gemini 4 Argon 生成并重构 | 模型能力举证演示 | light，★10，文档很少 | 未声明 | 看模型能否改自己写的前端 |
 | procedural-alpine-lake | 程序化地形、GPU 侵蚀与 Python 合成配乐 | 60 秒高山湖泊电影 | ★69；许可证未声明 | 未声明 | 纯代码地貌短片 |
 | ohmygame | TypeScript + Electron/Bun 本地守护进程，内置 Pi，也可驱动 Claude Code/Codex/OpenCode | Agent 写设计、做资产、写代码并在预览里试玩，再发布到社区 | ★3072，仍 beta；发行版默认遥测 | Apache-2.0 | 要一体化的本机 AI 游戏工作室 |
+| papercraft | Agent 技能 + three.js 纸片库和拍摄脚本 | 按立体书纸艺风格做游戏、页面和动画 | ★214，2026-11-21 建仓 | MIT | 要复用 Papertrails 那套纸艺风格做自己的内容 |
+| cube-to-cafe-racer | Blender 5.2 / Cycles，全部 Python 程序化，无外部模型 | 金属立方体展开成咖啡馆赛车的 45 秒短片 | ★0；成片在仓库内，音频另有许可 | MIT（代码） | 研究程序化机械变形和可重渲短片 |
+| burn-it-back | 未查到引擎，Steam 即将发售的商业单机 | 冰雪废土生存策略，夜里用火烧退会进化的活体组织 | light，计划 2027 发行，无源码 | 闭源 | 看题材和调性，尚不能试玩 |
+| duskward | 单文件 HTML 托管在 agnt.gg，无独立仓库 | 可交互的奥尼尔圆柱殖民地 | light；体积和零依赖为自述 | 未查到 | 想打开看圆柱世界，不适合当实现教材 |
 
 ### 分析
 
@@ -107,6 +111,8 @@
 2026-11-22 每日精选补入 sprite-stacking：把经典精灵堆叠做成四视图雕刻加 Agent 技能，属于可复用的方法件，可与 pixelfx 的代码像素特效对照；它不做真 3D 资产，也替代不了 blender-skills。
 
 2026-11-23 每日精选补入 ohmygame：库内第一个把设计、资产画布、编码、Agent 亲自试玩和发布收成一体的开源游戏工作室，可与 genex-desktop 的跨引擎构建试玩对照。它仍是 beta，发行版默认遥测，目前没有 Linux / Intel Mac 安装包。这补上了「可复用价值在方法和工具」之外的一条产品化工作室路线。
+
+2026-11-23 每周书签补入四项：papercraft 把 Papertrails 的纸艺方法做成可安装技能，是风格化成品旁边的方法件；cube-to-cafe-racer 补上 Leon Lin 影像线里的 Blender/Cycles 机械变形短片；burn-it-back 是尚未发售的商业生存策略，只能看设定；duskward 提供圆柱殖民地的在线单文件预览，但没有独立源码，仍属 light 演示。
 
 ## 研发效率
 
@@ -175,6 +181,10 @@
 | seo-skills | 30 个 SKILL.md + 3 个预配置 MCP（AI SEO Tracker、Scribiz、Awesome Tools） | 把技术 SEO、GEO、内链、迁移等做成可合并的 PR 或仓库文件 | ★1550；部分技能通向作者的付费产品 | MIT | 要用编码 Agent 直接改站点 SEO，而不是只要审计 PDF |
 | geo-sleuth | 标准 Agent Skill + 约 20 个单用途 Python 脚本；OSM/高程/卫星/街景 | 从一张照片求相机坐标、朝向和误差半径，并给出卫星证据图 | ★7352；案例误差为项目记录的盲测 | MIT | 需要可复现、可出示证据的照片地理定位 |
 | agentest | 离线确定性规则，读取 OpenTelemetry GenAI 轨迹，不用 LLM 当评委 | 165 条检查，抓住「声称完成但轨迹不支持」 | ★20；演示数为自带样例 | Apache-2.0 | 要审计某次 Agent 运行是否说到做到 |
+| sign-in-with-chatgpt-devkit | 本机 Node SDK + React 组件，走 ChatGPT OAuth 和订阅额度 | 让本机开源应用用 ChatGPT 登录并调用套餐，不必自备 API Key | ★321；非商业许可 | 非商业许可 v1.0 | 给开源 Agent 降低鉴权和计费门槛（商用需另申请） |
+| open-artifact | 本机守护进程 + 开放文件夹格式 + 技能/MCP/插件 | 幻灯片、设计、表格、动画等可在本地编辑、评论并导回 Agent | ★362，由 baoyu-design 重建 | Apache-2.0 | 要在任意编码 Agent 里做可编辑的本地成品 |
+| agy-milestone-progress | Antigravity 插件，纯 Python 标准库 + Hook | 大任务拆里程碑、白话播报，静默过久则提醒或刹车 | ★5，新建；绑定 Antigravity | MIT | 解决 Antigravity 长任务黑盒思考、看不到进度 |
+| design-flow | Agent Skill + 本地 UX 画布和原型页 | 先画出屏幕、分支和错误路径，批准后才写代码 | ★14，新建 | MIT | 先对齐交互再开工，减少返工 |
 
 ### 分析
 
@@ -203,6 +213,8 @@
 2026-11-22 每日精选补入 clickhouse-loom 和 tracer-opensre。Loom 是数据库厂商做的自托管记忆和代码索引 MCP，官方费用与定位数字为自报，和 TokenEconomizer（省当前仓库 token）及 Omnigraph（图结构共享状态）互补。OpenSRE 补上库内此前缺少的 CI/CD 可靠性 Agent，星标已过万，但仍是 Public Alpha，交互式 shell 要登录，遥测默认开启。
 
 2026-11-23 每日精选补入 agentest：用 165 条离线规则审计轨迹，专门抓「Agent 说做完了但记录对不上」，和 TraceTrial-Bench（任务完成 + harness 可靠性）、Agent Initiative Benchmark（该不该开口）互补。星标还很少，演示数字来自自带样例。
+
+2026-11-23 每周书签补入四项：open-artifact 和 design-flow 都把「先在本机画布上改再继续」做成技能，前者覆盖八种成品类型，后者专管 UX 流程批准；agy-milestone-progress 给 Antigravity 长任务补上可见的里程碑和刹车；sign-in-with-chatgpt-devkit 是少见的官方身份/额度套件，但许可证为非商业，商用不能直接拿来就用。
 
 ## Phone/Computer Use
 
@@ -309,6 +321,7 @@
 | argo | TypeScript monorepo（React/Electron/Expo/Hono/Postgres），Docker 自托管 | 持久队友：记忆、例程、浏览器/终端/桌面、审批、可委派子 Agent | ★4，beta；也提供托管版；评论区发现 | Apache-2.0 | 要自托管对标 Grok Bot/OpenClaw 的个人/团队助手 |
 | pibot | TypeScript/Electron，内核为钉死的 pi，命令走 sandbox-runtime | 具名 Bot 群聊分工、计划确认、沙箱与审批审计 | ★386，开源第二天，仍是 0.0.x | Apache-2.0 | 要在自己电脑上养一支带护栏的 AI 团队 |
 | openvorld | 本地优先的像素风小镇 harness，可接 Claude Code/Codex 或兼容接口 | 组队对话、writ 批准文件夹/命令/网站，官网有网页演示 | ★26，早期 | MIT | 要把多 Agent 工作做成看得见的本地演示 |
+| loopx | TypeScript 控制面 + SQLite / PostgreSQL 状态层，中立对接多种 CLI | 跨会话保存 Goal / Todo / Gate / Evidence，本地或自托管长程调度 | ★6748；v2.4；基准为自报 | Apache-2.0 | 要可验证、可换宿主的长程 Agent 控制面 |
 
 ### 分析
 
@@ -339,6 +352,8 @@
 2026-11-22 每日精选补入 tmux-island：只通过 tmux 监视和跳转多个编码 Agent 的 macOS 灵动岛，和 coucou（岛上批准，不绑定 tmux）、herdr（跨机器运行时复用器）对照。工程完整但刚刚发布，仅 Apple silicon。
 
 2026-11-23 每日精选补入 pibot 和 openvorld。Pi Bot 是开源次日即提供安装包的本机 AI 团队，重点是群聊协调、沙箱和审批，而不是调度已有 Claude Code/Codex CLI（那是 T3 Code 一侧）。OpenVorld 把同一问题做成像素风小镇和 writ 批准，有可玩网页演示，但星标很少、仍早期。
+
+2026-11-23 每周书签补入 loopx：开源的长程控制面，把目标、验收、门禁和证据做成可跨会话、跨 Codex/Claude Code 等宿主保存的状态，可从本机 SQLite 起步或自托管 PostgreSQL。和 tencent-loopforge 的 Docker SOP、shoal / hf-agent-manager 的并排会话、stitch-loop 的托管持续优化形成对照。LHTB 等基准数字为项目自报。
 
 ## 大模型工具
 
@@ -431,6 +446,8 @@
 | lingsante-3-1-flash | Hybrid-linear MoE，560B 总参 / 25B 激活，1M 上下文，MIT 权重 | 医疗推理、长程工作流和职业行为对齐（基准为官方自报） | light；需多卡高端 GPU；刚发布 | MIT 权重 | 要自托管的专业医疗文本模型 |
 | lingsante-3-1-air-vl | 原生多模态 MoE，124B / 5.5B 激活，256K 上下文 | 影像报告、健康评估、检索和医疗 GUI（需外部环境） | light；官方分数本次未读到 | MIT 权重 | 要开源权重的医学影像与报告模型 |
 | pan2 | GLP：LLM 写结构化世界状态 + 29B MMDiT + Wan 2.2 VAE | 按文本动作模拟最长约 20 秒视频后果 | ★107，HF 342 赞；本地推理很重 | Apache-2.0 | 要开放权重做动作后果推演的世界模型 |
+| tunelm | LFM3-1.7B + LoRA SFT + GRPO，输出可执行 Strudel | 把音乐描述变成可在浏览器里播放和编辑的乐谱代码 | ★0；有在线演示和 HF 权重；评测为自报 | 文档自称 AGPL-3.0-or-later | 要「描述→可编辑乐曲代码」的小模型 |
+| tufazip | 163M Transformer + 算术编码，压缩时在线学习 | enwik9 无损压到含解码器约 105.39 MB（自报） | 研究提交；双 B200、压缩/解压各约一周 | MIT | 研究「预测即压缩」，不是日常 zip |
 
 ### 分析
 
@@ -462,6 +479,7 @@
 
 2026-11-23 每日精选补入两项蚂蚁医疗开源权重和 PAN 2。LingSante-3.1-flash / air-VL 补上库内此前缺少的专业医疗生成模型，基准多为官方自报，且明确不是医疗器械；flash 偏大规模文本，air-VL 偏影像和 GUI。PAN 2 把开放权重世界模型从 Hy-Nomas 的「按轨迹续写」扩展到「先模拟动作后果」，可与闭源的 Genie 4 对照，但本地推理很重，当天热门帖是第三方演示而非官方首发。
 
+2026-11-23 每周书签补入 tunelm 和 tufazip。TuneLM 把自然语言音乐描述变成可执行的 Strudel 代码，补上库内「代码做声音」里缺的专用微调模型，训练和听感数字为自报。tufazip 是以 Transformer 为唯一预测器的无损文本压缩研究记录，压缩率可核对，但耗时和硬件决定了它不是实用工具。
 ## 其他（未做对比）
 
 `other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：
@@ -475,3 +493,5 @@
 - 地图与三维地理：reearth-visualizer（可分享的 WebGIS 故事）、3d-tiles-renderer-js（3D Tiles 渲染库，有火星示例）
 - 素材与演示合集：3dgarden（免费网页优化 GLB）、phc-pixel-heat-city（制作中的等距像素城市包）、waggles（three.js 演示合集）
 - 效率工具：duodesk、theysay、quairone、terminus-notes、gr8r-studio、wowtype（Linux 拼音输入法）、mole（Mac/PC 清理 CLI，7.5 万星）、cassotis-ime（跨平台开源拼音输入法「言泉」）、harper（离线英文语法检查）、phonebox（安卓旧机当桌面副屏）、kiri（Rust 容器运行时，Docker API 兼容）、jiff（Rust 1.0 日期时间库）、bootvine（Linux 启动进度树）
+- 本地笔记：quiet-md（Rust + GPUI 原生笔记，文件就是本地文件夹，可导入 Obsidian）
+- 纯代码短片：aero-scarborough-fair（零依赖歌声物理建模 + Canvas 水彩短片）

@@ -2,20 +2,20 @@
   "meta": {
     "generated_at": "2026-11-23",
     "timezone": "Asia/Shanghai",
-    "projects_total": 332,
+    "projects_total": 345,
     "category_counts": {
-      "game": 58,
-      "agent-eng": 126,
-      "llm-tools": 84,
-      "other": 64
+      "game": 62,
+      "agent-eng": 131,
+      "llm-tools": 86,
+      "other": 66
     },
     "subcategory_counts": {
-      "dev-efficiency": 60,
+      "dev-efficiency": 64,
       "phone-computer-use": 25,
-      "agent-fleet": 41
+      "agent-fleet": 42
     },
     "origin_counts": {
-      "bookmark": 146,
+      "bookmark": 159,
       "reply-on-popular-post": 26,
       "daily-digest": 144,
       "bookmark+daily-digest": 11,
@@ -24,8 +24,8 @@
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 257,
-      "light": 75
+      "full": 268,
+      "light": 77
     },
     "analysis_updated_at": "2026-11-23"
   },
@@ -431,6 +431,49 @@
       }
     },
     {
+      "id": "burn-it-back",
+      "name": "Burn It Back",
+      "summary": "Birich Studio 的生存策略游戏：在冰雪针叶林里建定居点，向地下掩体缴定额，夜里用火焰把会学习、会扩张的活体组织烧退回去。计划 2027 年发售。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "游戏",
+        "策略",
+        "生存",
+        "steam",
+        "商业产品"
+      ],
+      "source_url": null,
+      "preview_url": "https://store.steampowered.com/app/5065580/",
+      "post_url": "https://x.com/GamewithDave/status/2122796922230759686",
+      "author": "Birich Studio",
+      "models": [],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "无公开源码。Steam 页面确认开发商/发行商为 Birich Studio，类型为独立、模拟、策略，计划 2027 年发行，支持单机、成就和家庭共享。书签帖来自 @GamewithDave，宣传语为 Frostpunk 遇上 The Thing；活体组织会学习玩家的作战方式，这一设定来自宣传，未试玩、也无法验证。2026-11-23 复查 Steam 页可打开。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "未查到引擎或源码。已知为即将在 Steam 上发行的商业单机游戏，由 Birich Studio 开发发行。",
+        "method": "宣传设定是：地下掩体煤快耗尽，把人送到冰雪废墟的地表定居，白天砍树、拆废墟、完成掩体定额，夜里用围栏、探照灯、枪械和喷火器抵挡会扩张、会适应的活体组织，再用火焰把地面一块块夺回来。",
+        "features": [
+          "冰雪废土上的定居点生存与资源管理",
+          "向地下掩体缴纳定额，换物资和新居民",
+          "夜间防御，并用火焰反推会进化的活体组织"
+        ],
+        "highlights": [
+          "题材清楚：生存策略加上会记忆玩家打法的活体威胁",
+          "已有正式 Steam 页面，而不是只有预告图"
+        ],
+        "limitations": [
+          "尚未发售，不能试玩，学习/进化等宣传点均为自述",
+          "无公开源码，引擎和具体系统设计未查到"
+        ],
+        "comparison": "库内同类「冰雪生存策略」几乎没有。和 cozy-country 的无压力田园建造相反，本项目强调定额、夜间威胁和用火夺回地面。在发售前只能当题材和 Tonality 参考，不能当可玩或可复用的技术样本。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
       "id": "carriage",
       "name": "Carriage",
       "summary": "用 Gemini 4 Argon 做的哥特维多利亚马车 three.js 网站，作者后来又让同一模型重构了整站。",
@@ -517,6 +560,50 @@
       }
     },
     {
+      "id": "cube-to-cafe-racer",
+      "name": "Cube → Café Racer",
+      "summary": "Leon Lin 用 Blender 5.2 和 Cycles，全部由 Python 生成、不引入外部模型或贴图，把金属立方体展开成咖啡馆赛车的 45 秒短片。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "python",
+        "blender",
+        "短片",
+        "程序化"
+      ],
+      "source_url": "https://github.com/Leonxlnx/cube-to-cafe-racer",
+      "preview_url": null,
+      "post_url": "https://x.com/LexnLin/status/2123491505218216304",
+      "author": "Leon Lin（@LexnLin）",
+      "models": [],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 0,
+      "notes": "星标 0（2026-11-23 查询）。仓库 2026-11-17 创建，代码 MIT。仓库内有 1080p 成片 media/cube_bike_1080p30.mp4，未查到单独的网页预览。音乐和音效是下载的现成素材，许可见 audio/CREDITS.md；若转发视频需按 mix_report.md 注明 CC BY 署名。渲染路径在脚本里指向作者本机目录。本次读了 README，并浏览了 src/ 与 audio/ 目录。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Blender 5.2、Cycles，全部由 Python 在 Blender 里生成，没有手摆的 .blend，也没有外部三维资产或贴图。src/ 按立方体蒙皮、车架、引擎、轮组、时间轴和后期拆分；每一帧姿态是时间的纯函数。成片 45 秒、1080p 30fps。声音由 mix.py 按动画时间轴剪辑现成录音，不是合成。代码 MIT，音频另有许可。",
+        "method": "把 1.1 米拉丝铝立方体的缝、门和壁板写成机械展开：门绕立方体拐角转 270 度，壁板伸缩，摇臂像折尺一样打开，盖板折成油箱和尾部。镜头按音乐节拍切成 22 个镜头，再做合成、补帧、调色和震动。",
+        "features": [
+          "45 秒无角色、无字幕的机械变形短片，仓库内附成片和分镜静帧",
+          "几何、材质、绑定和镜头全部程序化，可按脚本重渲",
+          "声音时间轴与动画对齐，并单独列出第三方许可"
+        ],
+        "highlights": [
+          "变形逻辑写得很具体，源码按部件拆分，适合研究程序化机械动画",
+          "和作者其他纯代码影像项目是同一条工作线"
+        ],
+        "limitations": [
+          "这是一条短片，不是可玩的游戏或通用工具",
+          "重渲很慢（作者写明笔记本 CPU 先以较低分辨率渲染再放大），脚本里还有本机路径",
+          "音乐和音效不是开源合成，转发时要遵守第三方许可"
+        ],
+        "comparison": "和 procedural-alpine-lake、walking-block 同属 Leon Lin 的纯代码影像线。本项目是 Blender/Cycles 里把立方体展开成摩托车的短片，procedural-alpine-lake 是地貌电影，walking-block 是 three.js 里可观察的机械行走。和 cinetic 相比，cinetic 是可复用的电影感技能，本仓库是一部完成的作品。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
       "id": "dread-and-district",
       "name": "Dread & District",
       "summary": "用 Claude Fable 5.2 和一组互相争论的 Agent 做出来的奇幻运输模拟游戏。",
@@ -596,6 +683,51 @@
         ],
         "comparison": "与同帖的 waldo-stripes-soft 一样是 light 网页 3D 小游戏，玩法从「找人」换成「走迷宫」；没有源码，参考价值低于 crimson-loong、room-at-dawn。",
         "researched_at": "2026-11-16"
+      }
+    },
+    {
+      "id": "duskward",
+      "name": "Duskward（O'Neill Cylinder）",
+      "summary": "Nathan Wilbanks 做的可交互奥尼尔圆柱空间殖民地：单个约 1064 KB 的 HTML 文件，自称不用外部图片、模型和库，可在 agnt.gg 上打开。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "3d",
+        "html",
+        "网页",
+        "程序化"
+      ],
+      "source_url": null,
+      "preview_url": "https://agnt.gg/creations/DmDSpPYm?card=link",
+      "post_url": "https://x.com/NathanWilbanks_/status/2122359334290313441",
+      "author": "Nathan Wilbanks（@NathanWilbanks_）",
+      "models": [
+        "Fable 5.2",
+        "Claude Opus 5.5"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": null,
+      "notes": "未查到独立 GitHub 仓库。作者在评论里把可打开的单文件指向 agnt.gg/creations/DmDSpPYm（页面标题为 Duskward）。帖文自称无图片、3D 模型和外部库，单文件 1064 KB，用 @agnt_gg 搭配 Fable 5.2 与 Opus 5.5 做成，均为自述。2026-11-23 复查该预览页可打开，但页面本身几乎没有额外说明。未把原帖视频当作已观看，也未在本次实测性能。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "未查到独立源码仓库。公开形态是 agnt.gg 上的「整个作品就是一个自包含文件」预览。作者自称单文件 HTML、不使用外部图模库。制作工具为 agnt.gg，模型为 Fable 5.2 与 Opus 5.5（自述）。",
+        "method": "在一个文件里程序化搭出可交互的奥尼尔圆柱内部世界，并处理贴地式的圆柱重力（作者在评论里说重力是最难的部分）。具体渲染和物理实现未查到可阅读的源码。",
+        "features": [
+          "可在浏览器里打开的圆柱殖民地漫游",
+          "以单文件形式分发，作者称体积约 1064 KB"
+        ],
+        "highlights": [
+          "太空圆柱殖民地题材在网页演示里不多见",
+          "有可打开的在线预览，而不是只有视频"
+        ],
+        "limitations": [
+          "没有独立 GitHub 或可下载的源码说明，难以学习实现细节或二次修改",
+          "体积、零依赖和所用模型均为作者自述",
+          "预览页文案很少，本次未深入试玩"
+        ],
+        "comparison": "和 spinward 都是太空圆柱殖民地题材的网页体验：duskward 至少有 agnt.gg 上的单文件预览，spinward 的源码和试玩页都未查到。和 athenaion、room-at-dawn 这类公开仓库的纯代码大世界相比，Duskward 更难作为技术参考。若要研究实现，优先看有源码的程序化场景。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -1398,7 +1530,7 @@
           "工作流与风格对照效果为自报或转述，未独立验证",
           "项目刚发布，星标和文档都还很少"
         ],
-        "comparison": "与库内 Painted Valley、赤龍、6:51 a room at dawn、room-at-dawn 同属纯代码或代码生成的 three.js 场景。Painted Valley 授权更宽松、更适合当风格化起点；6:51 强在写实烘焙光照；Papertrails 的差异是「沿路径不断弹出的纸艺世界」和无限拼接，而不是单场景写实或短片。",
+        "comparison": "与库内 Painted Valley、赤龍、6:51 a room at dawn、room-at-dawn 同属纯代码或代码生成的 three.js 场景。Painted Valley 授权更宽松、更适合当风格化起点；6:51 强在写实烘焙光照；Papertrails 的差异是「沿路径不断弹出的纸艺世界」和无限拼接，而不是单场景写实或短片。作者后来把同一套纸艺方法做成了技能 papercraft，要复用这种风格做自己的内容请看该条目。",
         "researched_at": "2026-11-18"
       }
     },
@@ -2055,6 +2187,56 @@
         ],
         "comparison": "和 portals 的区别在于 portals 全部实时程序化生成；moss-keeper 是预渲染视频。和 bee-x9 一样是 AI 内容展示，但本项目开源。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "papercraft",
+      "name": "papercraft",
+      "summary": "xikhar 把纸艺立体书风格做成可安装的 Agent 技能：用代码搭建会从地面翻起的纸模型世界，可做游戏、页面、动画和视频。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "skill",
+        "three.js",
+        "javascript",
+        "游戏",
+        "风格化"
+      ],
+      "source_url": "https://github.com/xikhar/papercraft",
+      "preview_url": null,
+      "post_url": "https://x.com/xikhar/status/2123941283320479918",
+      "author": "xikhar（Shikhar）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "Cursor",
+        "Gemini CLI",
+        "OpenCode"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 214,
+      "notes": "星标 214（2026-11-23 查询）。仓库 2026-11-21 创建，MIT。安装命令为 npx skills add xikhar/papercraft。作者同一套审美的可漫游展示世界见库内 papertrails。本次读了 README，并浏览了 skills/papercraft/ 目录。未把原帖视频当作已观看。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "标准 Agent Skill（skills/papercraft/，含 SKILL.md、按需参考、可复用的 2D/3D 纸片库、模板、示例、调色和 capture.py 等拍摄脚本）。视觉方法来自已发布的 three.js 立体书游戏：哑光纸、薄切边高光、随环境着色的软阴影、移轴微距镜头。可用 npx skills add 装到支持 Agent Skills 的编码 Agent。MIT。",
+        "method": "技能先教「怎样看起来像拍出来的纸模型」，再按可扩展的结构类型（插接十字、分层平面、折叠盒和棱柱、穹顶、印刷水面、可行走的桥甲板等）搭零件，并带测量-批评循环。主题、调色和天气由用户提示和参考图决定；只有在你要求时才调用图像生成，默认都可以纯代码完成。同一套世界可输出 16:9、竖屏、4K 静帧或 MP4。",
+        "features": [
+          "把纸艺风格做成可安装技能，用来做游戏、互动场景、网页和动画",
+          "提供纸片结构、铰链运动、角色卡片互不穿透和声音方面的方法",
+          "capture.py 可按常用画幅输出静帧和 MP4"
+        ],
+        "highlights": [
+          "不是一句「做成纸片风」，而是把已上线作品里的尺寸和镜头经验写进技能",
+          "和作者的展示世界 Papertrails 配套，风格来源清楚"
+        ],
+        "limitations": [
+          "仓库很新，主要是技能和参考实现，不是一个完整可发布游戏",
+          "最终效果仍取决于所用编码 Agent 和提示，技能不能单独保证画质"
+        ],
+        "comparison": "papercraft 是把 papertrails 那套纸艺审美做成可复用技能；papertrails 本身是可漫游的展示世界。要按这种风格做自己的游戏或页面用 papercraft，只想体验立体书世界用 papertrails。和 painted-valley、guizang-game-skill 等风格化/游戏技能相比，它专攻「拍出来的纸模型」而不是吉卜力或动作游戏流程。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -3111,6 +3293,54 @@
       }
     },
     {
+      "id": "design-flow",
+      "name": "Design Flow",
+      "summary": "Steven Lynn 的 UX 流程技能：编码 Agent 先画出可点击的流程图和原型页，你在画布上评论并批准后，它才开始写代码。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "typescript",
+        "ux",
+        "设计"
+      ],
+      "source_url": "https://github.com/stvlynn/design-flow",
+      "preview_url": null,
+      "post_url": "https://x.com/Stv_Lynn/status/2123715877438963885",
+      "author": "Steven Lynn（@Stv_Lynn / stvlynn）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "Cursor"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 14,
+      "notes": "星标 14（2026-11-23 查询）。仓库 2026-11-19 创建，MIT。安装命令为 npx skills add stvlynn/design-flow，需 Node.js 20+。可选再装 Claude Code 插件以在无 watcher 时把未读评论挂到下一轮。本次读了 README，并浏览了 skills/、src/、web/、schema/、hooks/ 目录。未查到官方托管的在线演示。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Agent Skill 内置 CLI、本地服务器和无限画布（TypeScript / Vite）。Agent 先把流程写成 .design-flow/<feature>/flow.yaml（泳道、屏幕、箭头）和 prototype.html（每个屏幕一页、使用产品自身风格），本地服务在浏览器里排成画布。评论通过 watcher 或 Claude Code 插件回传到会话。可用 skills CLI 装到 Claude Code、Codex、Cursor 等。MIT。",
+        "method": "针对 Agent 先堆组件、在评审时才发现漏了「邮箱已注册、验证码过期、连错五次、离线」等分支。先对齐可点击的流程和错误路径，你在按钮、字段或箭头上留评论，Agent 当场改流程；按 Approve 之后才写实现代码。",
+        "features": [
+          "先输出 UX 流程图和可点击原型，而不是直接写业务代码",
+          "在画布上对屏幕和箭头评论，并回传到 Agent 会话",
+          "批准后才开工；可选 Claude Code 插件持续同步评论"
+        ],
+        "highlights": [
+          "把「先对齐交互再写代码」做成可安装的具体工作流，而不是一句口号",
+          "源码里同时有技能、画布、schema 和钩子，结构完整"
+        ],
+        "limitations": [
+          "仓库很新、星标很少，需要本机 Node 服务，没有官方在线演示",
+          "流程质量仍取决于 Agent 会不会主动画出冷门分支",
+          "主要面向网页/产品 UX，不是视觉设计系统或通用文档"
+        ],
+        "comparison": "和 elephant-goldfish-model「先审设计再写代码」同一思路，但 design-flow 产出的是可点击的 UX 流程图和原型页，而不是设计文档。和 open-artifact 的 Design 类型相近，但 design-flow 把批准当成开工闸门，并强调错误分支和返回路径。若要做完整幻灯片或表格成品，用 open-artifact；若要先卡住交互再写代码，用 design-flow。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
       "id": "diffity",
       "name": "Diffity",
       "summary": "Mac 和 Linux 上的代码评审桌面应用，用来看你或 Agent 写的改动，并把批注交给 Claude Code 修改。",
@@ -3579,6 +3809,56 @@
       }
     },
     {
+      "id": "open-artifact",
+      "name": "Open Artifact",
+      "summary": "Jim Liu（宝玉）开源的本机 Artifact 格式：编码 Agent 把幻灯片、设计稿、表格、动画等写成普通文件夹，本地页面里可编辑、评论并导回 Agent 会话。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "mcp",
+        "typescript",
+        "本地优先",
+        "设计"
+      ],
+      "source_url": "https://github.com/JimLiu/open-artifact",
+      "preview_url": null,
+      "post_url": "https://x.com/dotey/status/2124052093971624234",
+      "author": "Jim Liu（宝玉 / @dotey）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "Cursor",
+        "GitHub Copilot",
+        "Gemini"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 362,
+      "notes": "星标 362（2026-11-23 查询）。仓库 2026-11-17 创建，由 baoyu-design 重建而来，旧地址会重定向。Apache-2.0。书签帖展示用 Gemini Neon 做视频向 Artifact。未查到公开托管的在线演示，使用方式是本机守护进程加技能。本次读了 README / README.zh-CN，并浏览了 artifact-types/、skills/、plugins/、docs/、crates/、packages/ 目录。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "开源、与模型和 Agent 解耦的本地 Artifact 格式。仓库以 TypeScript 为主，另有 Rust crates。形态是「一个本地守护进程 + 一个页面框架 + /open-artifact 技能 + 各 Agent 应用的插件」。八种类型（幻灯片、设计、设计系统、白板、表格、仪表盘、文档、动画）各自以普通文件夹和标记文件存放，例如幻灯片用 project/deck.json。提供 MCP 和 CLI 回退。Apache-2.0。",
+        "method": "你向编码 Agent 提出要一份幻灯片或一段动画，Agent 把文件写到本地目录；守护进程在 127.0.0.1 打开可编辑页面，你改标题、挪便签、留评论，再「Send to agent」把评论送回当前会话。不经过云端账号，也不绑定某一家模型。",
+        "features": [
+          "八种本地成品类型，可用 PDF、PPTX、PNG、HTML 等格式导出",
+          "本机预览里直接编辑和评论，并把评论送回 Agent 会话",
+          "提供技能、MCP、CLI 和多种编码 Agent 插件"
+        ],
+        "highlights": [
+          "把 Claude.ai 式 Artifact 做成可在任意编码 Agent 里用的开放本地格式",
+          "文档中英双语，类型指南和技能文件齐全，目录结构完整"
+        ],
+        "limitations": [
+          "需要在本机跑守护进程，没有查到可直接打开的官方在线演示",
+          "视频/动画类仍受所用模型镜头稳定性影响，批量出片的成本和返工率要自己评估"
+        ],
+        "comparison": "和 design-flow 都把「先在本机画布上改、再让 Agent 继续」做成技能；Open Artifact 覆盖幻灯片、设计、表格、动画等八种成品，design-flow 专注 UX 流程和批准开工。和 cinetic 相比，cinetic 偏用代码生成电影感片子，Open Artifact 是可编辑、可导出的本地成品格式。和 stack-diagram 这类单用途出图技能相比，它更像一套本地制作台。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
       "id": "open-code-review",
       "name": "Open Code Review（阿里）",
       "summary": "阿里开源的 AI 代码审查 CLI（ocr）：确定性工程流水线加工具型 LLM Agent，输出钉到具体行的结构化审查意见，可接 Claude Code/Codex/Cursor/Kimi Code。",
@@ -4005,6 +4285,53 @@
         ],
         "comparison": "和 superpowers、stageshow、stitch-skills、modern-web-guidance 一样以 SKILL.md 为载体，但对象是搜索可见性和可合并的站点改动，而不是通用编程方法论或 UI 规范。security-audit-skill、nvidia-skillevaluator 管的是安全和技能质量，不替代这组运营向工作流。已经在用编码 Agent 维护营销站、又希望改动能进 Git 的人更合适；只要一份策略备忘，不必上这套。",
         "researched_at": "2026-11-21"
+      }
+    },
+    {
+      "id": "sign-in-with-chatgpt-devkit",
+      "name": "Sign in with ChatGPT DevKit",
+      "summary": "OpenAI 的本地开发套件：让本机开源应用用 ChatGPT 账号登录，并在用户授权后使用其 ChatGPT 订阅额度，而不必自备 API Key。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "openai",
+        "开源",
+        "typescript",
+        "react",
+        "登录",
+        "sdk"
+      ],
+      "source_url": "https://github.com/openai/sign-in-with-chatgpt-devkit",
+      "preview_url": "https://developers.openai.com/siwc",
+      "post_url": "https://x.com/Fei2411/status/2124407807218958355",
+      "author": "OpenAI",
+      "models": [
+        "ChatGPT"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 321,
+      "notes": "星标 321（2026-11-23 查询）。仓库创建于 2026-09-29。OpenAI 自有代码使用 Sign-in with ChatGPT DevKit Noncommercial License v1.0（GitHub API 返回 NOASSERTION）。帖文称开源项目可自动分配额度、商用需申请，属转述/自述，以官方文档为准。本次读了 README，并浏览了 packages/、examples/、docs/ 目录。示例应用 Paste Perfect 需要 macOS 14+、Node.js 22.12+ 和辅助功能权限。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 单体仓库：@siwc/local 跑在本机 Node.js 进程里，负责 OAuth、系统加密的凭据存储、账号资料、模型发现和流式 Responses；@siwc/react 提供登录、连接状态和订阅用量组件。examples/paste-perfect 是 macOS 示例（Electron 设置面板加原生粘贴助手）。许可证为非商业许可 v1.0，第三方字体和依赖保留各自许可。",
+        "method": "用「Sign in with ChatGPT」把第三方本机应用接到用户已有的 ChatGPT 账号和套餐。用户授权后，应用可走订阅额度调用模型，而不再单独申请 API Key。官方 cookbook 以 Paste Perfect 演示：复制文本、在目标应用里快捷键唤出菜单，把改写结果粘贴回去。",
+        "features": [
+          "本机 SDK：登录、凭据存储、账号配置和流式调用",
+          "React 组件和官方设计资源，用于登录按钮、账号状态和用量入口",
+          "示例应用 Paste Perfect：把剪贴板文本改写成表格、翻译、清单等并粘贴到其他应用"
+        ],
+        "highlights": [
+          "官方提供的身份和额度通道，降低开源 Agent 要用户自备 API Key 的门槛",
+          "仓库结构清楚，有组件画廊、安全说明和可运行的桌面示例"
+        ],
+        "limitations": [
+          "许可证为非商业许可，商用需要另走官方申请，不能按 MIT/Apache 直接闭源分发",
+          "额度与用户自己的 ChatGPT 套餐如何划分、限额细节以官方文档为准，帖文说法未在本次逐条核对",
+          "Paste Perfect 目前主要支持 macOS 文本粘贴，兼容性因目标应用而异"
+        ],
+        "comparison": "库内没有同类「用 ChatGPT 登录并走订阅额度」的官方工具包。它解决的是第三方 Agent 的鉴权和计费门槛，而不是再提供一套模型运行时。和只给 API Key 接入的开发套件不同，这里绑定的是用户已有的 ChatGPT 账号。若要做可商用的自有计费，需要另看官方商用申请，不能直接按普通开源协议使用。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -4587,6 +4914,53 @@
         ],
         "comparison": "和 grokbot-field-notes 的 AGENTS.md 同类，后者更长并附 40 条踩坑记录。和 superpowers、pstack 相比，它只是单个文件，不是完整方法论。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "agy-milestone-progress",
+      "name": "agy-milestone-progress",
+      "summary": "给 Antigravity 用的开源插件：大任务自动拆里程碑并停下来确认，过程中用白话播报进度，并用 Hook 防止长时间静默或失控空转。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "python",
+        "antigravity",
+        "插件",
+        "进度"
+      ],
+      "source_url": "https://github.com/Embarrassedfisherman/agy-milestone-progress",
+      "preview_url": null,
+      "post_url": "https://x.com/xinyang193293/status/2124274332302262485",
+      "author": "Clark（@xinyang193293）",
+      "models": [
+        "Antigravity",
+        "Gemini"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 5,
+      "notes": "星标 5（2026-11-23 查询）。仓库 2026-11-19 创建，MIT，版本 1.1.1。纯 Python 标准库，官方称在 Antigravity 桌面 2.34.0 与 agy CLI 1.5.13 上验证。本次读了 README / README.zh-CN，并浏览了 hooks/、skills/、scripts/、tests/、docs/ 目录。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Antigravity（AGY）全局插件，Python 3.9+ 标准库，无第三方依赖。用 scripts/sync.py 把运行时文件同步到 ~/.gemini/config/plugins/milestone-progress，并可做校验和完整性检查。包含 hooks、规则、技能和单元测试，支持 en / zh / ja 及按对话语言自适应。macOS 可用 osascript 做桌面通知，Linux 可选 notify-send，Windows 跳过通知。MIT。",
+        "method": "针对「发完提示词后，Agent 在折叠的思考块里连续工具调用十几分钟、看不清阶段和该不该介入」。小改动直接做完；大任务拆成里程碑，分段暂停确认。每隔几步在正文里写一行人话进度。底层 Hook 在连续多轮静默时提醒，达到轮次上限则强制收尾。",
+        "features": [
+          "按任务大小分流：小改动直出，大任务按里程碑确认",
+          "过程中定期用白话汇报当前进度",
+          "静默过久或轮次过多时自动提醒或刹车，macOS 可弹桌面通知"
+        ],
+        "highlights": [
+          "问题具体，实现也克制：不引入额外依赖，有同步脚本、校验和测试",
+          "专门补上 Antigravity 长任务「黑盒思考」的可见性"
+        ],
+        "limitations": [
+          "只服务 Antigravity，不能用在 Claude Code 或 Codex",
+          "仓库很新、星标很少，兼容性以文档中的版本矩阵为准",
+          "里程碑拆分和播报效果取决于模型和提示，插件不能保证判断总是合适"
+        ],
+        "comparison": "专为 Antigravity 长任务提供里程碑、进度播报和失控刹车，和 agent-thinking-meter（事后看本机日志里工具步还有没有推理）互补：一个管进行中的可见性，一个管事后统计。和 antigravity-dynamic-workflows 不同，本项目不是用脚本编排多个子 Agent，而是给单次长任务加阶段门和提醒。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -7430,6 +7804,58 @@
         ],
         "comparison": "和 shoal、hf-agent-manager、agentes-chat 一样管理多个编码 Agent，但 LoopForge 的重点是可版本化的 SOP 和审批门，而不是并排终端。和 plannotator（人审阅产出）互补：一个管「怎么交付」，一个管「怎么批注」。和 vercel-eve 对比：eve 是从零定义自己的 Agent，LoopForge 是编排现成的 Claude Code/Codex 等 CLI。团队要标准化 AI 交付选 LoopForge；个人只要本机工作台选 shoal。",
         "researched_at": "2026-11-18"
+      }
+    },
+    {
+      "id": "loopx",
+      "name": "LoopX",
+      "summary": "开源的长程 Agent 控制面：把目标、验收、待办、门禁和证据做成可跨会话保存的状态层，可在本机 SQLite 或自托管 PostgreSQL 上调度 Codex、Claude Code、Gemini、DeepSeek 等运行时。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "typescript",
+        "python",
+        "多agent",
+        "自托管",
+        "长程",
+        "控制面"
+      ],
+      "source_url": "https://github.com/loopx-project/loopx",
+      "preview_url": "https://loopx-project.github.io/loopx/",
+      "post_url": "https://x.com/huangruiteng/status/2124123602660516344",
+      "author": "huangruiteng / LoopX 项目",
+      "models": [
+        "Codex",
+        "Claude Code",
+        "Gemini",
+        "DeepSeek"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 6748,
+      "notes": "星标 6748（2026-11-23 查询）。仓库 2026-05-31 创建，许可证 Apache-2.0，官网与徽章均如此标注。作者 @huangruiteng 在 2026-11-21 宣布从 1.x 到 v2.4：通用任务语义、同周期 3.0% 首读差分、Yardstick / Stride v2，以及社区共建的 LooChat 与飞书门禁。LHTB（46 题 +17.3%）和 EdgeBench 等数字来自项目文档和发帖，属自报，未在本次复现。本次读了 README 和目录（docs/、packages/、loopx/、apps/、benchmark/、skills/），并对照了官方站点。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "以 TypeScript 为核心控制面（仓库同时保留 Python 3.11+ 部分），把 Goal / Acceptance / Todo / Claim & Lease / Gate / Evidence 做成领域无关的状态协议，持久化在 SQLite（本地快速起步）或自托管 PostgreSQL（带默认拒绝 ACL 的原子事务）。Agent 运行时负责模型和工具，LoopX 保存跨会话、跨 Codex / Claude Code / Gemini / DeepSeek 等宿主的可验证工作状态。提供文档站、基准、技能和插件。Apache-2.0。",
+        "method": "先用自然语言给出目标，由 Agent 拆成可验收的待办并在控制面上领取、举证、过门。压缩周期内用差分继续上下文（作者自报同周期首读约 3.0%，失配则回退完整快照）；用同父反事实标尺（Yardstick）和证据驱动步幅（Stride v2）约束长程「刷分」式改测试。人的授权仍管受保护操作。",
+        "features": [
+          "跨会话保存目标、验收、决策和证据，换宿主也不必从头再讲一遍",
+          "本机 SQLite 几分钟起步，或自托管 PostgreSQL 做团队规模",
+          "中立对接多种编码 Agent，并有一句话建 Goal、工作台和门禁等社区组件"
+        ],
+        "highlights": [
+          "把「长程 Agent」做成可检查的控制面，而不是又一个绑定单一厂商的编排器",
+          "文档、治理、基准和源码目录都比较完整，星标和贡献记录可查",
+          "v2.4 把 2.0 架构和社区共创写进一次正式说明"
+        ],
+        "limitations": [
+          "概念层（Goal、Gate、Evidence、租约）有学习成本，需要愿意维护这套状态",
+          "长程基准和 3.0% 上下文等关键数字均为项目自报，本次未复现",
+          "要真正 7×24 常驻，仍取决于本机或团队怎么挂宿主 Agent"
+        ],
+        "comparison": "和 tencent-loopforge 都做长程、可审批的多 Agent 交付，但 loopx 强调与具体 CLI 解耦的目标/证据控制面和本地 SQLite 起步，tencent-loopforge 强调把现成 CLI 放进 Docker SOP。和 stitch-loop 相比，LoopX 开源自托管，Stitch Loop 是 Google 托管实验。和 shoal、hf-agent-manager 相比，后两者重在并排管理多个原生会话，LoopX 重在跨会话保存可验证的目标状态。和 agent-autoloop 相比，后者更轻，主要做定时任务和危险操作确认。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -10819,6 +11245,56 @@
       }
     },
     {
+      "id": "tunelm",
+      "name": "TuneLM",
+      "summary": "把自然语言的音乐描述变成可编辑、可在浏览器里播放的 Strudel 代码：在 LiquidAI LFM3-1.7B 上做 LoRA 微调和 GRPO。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "python",
+        "微调",
+        "强化学习",
+        "音乐",
+        "strudel"
+      ],
+      "source_url": "https://github.com/shanmukh05/TuneLM",
+      "preview_url": "https://www.tensorwrites.com/tunelm",
+      "post_url": "https://x.com/tensorfiend/status/2124076861617741999",
+      "author": "Shanmukha Sainath（@tensorfiend / shanmukh05）",
+      "models": [
+        "TuneLM-LFM3-1.7B",
+        "LFM3-1.7B",
+        "Gemini 4 Argon",
+        "Gemini 4 Carbon"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 0,
+      "notes": "星标 0（2026-11-23 查询）。仓库 2026-09-17 创建，主页与演示为 tensorwrites.com/tunelm，模型在 Hugging Face：tensorfiend/TuneLM-LFM3-1.7B-code2music-2011，数据集为 tensorfiend/code2music。仓库文档写明 AGPL-3.0-or-later，GitHub API 返回 NOASSERTION。作者帖称 Gemini 4 Carbon / Neon / Argon 更适合直接写 Strudel。训练规模、校验集可执行率和 MusicPrefs 等数字来自博客和模型卡，属自报。本次读了 README、官方博客和演示页说明。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "在 LiquidAI LFM3-1.7B 上用 LoRA 做监督微调，再用 GRPO 做强化学习。输出是作曲说明加可在 Strudel（Tidal Cycles 的 JavaScript 移植）里执行的程序，由浏览器合成音频。仓库包含 web/ 与 api/、src/tunelm/ 训练与数据管线、Strudel 校验器、配置和评测脚本。演示走 Vercel API 和 Modal 上的推理。文档自称 AGPL-3.0-or-later。",
+        "method": "教师模型（博客写明用 Gemini 4 Argon / Carbon）生成「听众需求—作曲说明—Strudel 程序」对，校验器先确认程序能出声再纳入 SFT。RL 阶段用另一组带约束合同的请求（速度、调性、乐器、「不要鼓」等），对不可运行的程序给零奖励。应用侧会先编译并检查音频，失败可让模型修补。",
+        "features": [
+          "把音乐描述变成可编辑的 Strudel 代码，并在浏览器里分层试听和导出 WAV",
+          "公开训练与数据管线、校验器和 Hugging Face 上的合并权重",
+          "用代码是否可运行、是否满足约定来做强化学习奖励"
+        ],
+        "highlights": [
+          "把「用代码做音乐」做成可训练、可检验的完整项目，而不只是演示视频",
+          "有在线试玩、博客和可复查的仓库结构"
+        ],
+        "limitations": [
+          "GitHub 星标为 0，项目仍早，推理演示依赖作者的 Modal / Vercel 部署",
+          "许可证需以仓库内文本为准（文档自称 AGPL-3.0-or-later）",
+          "可执行率和听感评测数字均为自报，未在本次复现；风格受 Strudel 声音库限制"
+        ],
+        "comparison": "和 earshot 都涉及「用代码做声音」：earshot 是给编程 Agent 的本地听音和合成工具，tunelm 是把自然语言描述变成可执行乐谱代码的微调模型。库内没有同等的「描述→Strudel 程序」模型。和 cinetic 相比，cinetic 是用编码 Agent 做影像和配乐技能，TuneLM 则训练了一个专用小模型。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
       "id": "twil-8b",
       "name": "TwIL-8B",
       "summary": "webAI 基于 Granite 继续训练的开放权重推理小模型，可本机跑。",
@@ -12155,6 +12631,52 @@
       }
     },
     {
+      "id": "tufazip",
+      "name": "tufazip",
+      "summary": "Tufa Labs 的 Transformer 无损压缩器：把 1GB 维基百科文本（enwik9）压到含解码器在内约 105.39 MB，面向大文本压缩基准，不是日常压缩工具。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "python",
+        "transformer",
+        "压缩",
+        "研究"
+      ],
+      "source_url": "https://github.com/Tufalabs/tufazip",
+      "preview_url": "https://tufalabs.ai/research/tufazip/",
+      "post_url": "https://x.com/aigclink/status/2123598865064669607",
+      "author": "Tufa Labs / Tommy He",
+      "models": [
+        "tufazip Transformer 163M"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 888,
+      "notes": "2026-11-23 查询时阅读了 GitHub README 与官方博客。许可证 MIT。官方原帖为 https://x.com/tufalabs/status/2123350647273631907；书签是 @aigclink 的介绍。压缩率和耗时均来自项目 README / 博客（自报）：enwik9 压缩流 100,958,324 字节，解码器压缩包 4,430,029 字节，合计 105,388,353 字节；压缩约 631,548 秒，解压约 645,748 秒，机器为 2×NVIDIA B200。本次浏览了 nn.py、arithmetic_coder.py、checkpoint_utils.py 和仓库根目录。未运行复现。星标 888（2026-11-23 查询）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "确定性的 Transformer 预测器加算术编码。博客和 README 写明：12 层、1.63 亿参数的 decoder-only Transformer（RoPE、SwiGLU、RMSNorm），由约 3430 万参数的离线先验量化到约 4.33 MB 后初始化，压缩过程中继续在线学习；解码端重复同样的学习，因此不必传输完整在线权重。运行要求为 Linux x86-64、恰好两张可见的 NVIDIA B200、CUDA 13.0、Python 3.12.3 等。MIT。",
+        "method": "把文本可逆地编成 token，用模型给出下一个 token 的概率，再用算术编码把概率变成更短的比特流。解码器用同一套概率反向恢复。离线先验负责把模型体积计入基准得分后仍然划算。这是 Large Text Compression Benchmark / Hutter Prize 思路下的研究提交，不是通用归档格式。",
+        "features": [
+          "对 enwik9 做真正的逐字节无损压缩，并公开权重校验和与还原校验",
+          "把 Transformer 预测和算术编码接在一起，解码端会重做在线学习",
+          "提供博客、复现命令和 v1 历史提交"
+        ],
+        "highlights": [
+          "把「预测即压缩」做成可核对的基准提交，而不是「让模型再写一篇差不多的文章」",
+          "方法、机器和 SHA-256 都写得很清楚，便于对照"
+        ],
+        "limitations": [
+          "压缩和解压各约一周，并需要两张 B200，不能当日常 zip 使用（项目自己也这样说）",
+          "不支持按块随机读取：取出末尾几个字节也要几乎从头推演",
+          "排名和体积数字均为项目自报，以提交时的基准页面为准"
+        ],
+        "comparison": "库内没有同类以 Transformer 作为唯一预测器做无损文本压缩的项目。tufazip 是面向长期文本压缩基准的研究记录，和日常压缩、向量检索或模型权重量化都不是同一类问题。若关心的是「模型能不能当压缩器」，看本项目；若关心的是省磁盘的实用工具，它现在还不合适。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
       "id": "zhihu-mcp",
       "name": "zhihu-mcp",
       "summary": "知乎搜索与直答能力的社区 MCP。",
@@ -12491,6 +13013,52 @@
         ],
         "comparison": "库内没有同类算法可视化工具；对游戏开发可作为 A* 教学参照，和 ldtk 等游戏工具不属同一层面。",
         "researched_at": "2026-11-14"
+      }
+    },
+    {
+      "id": "aero-scarborough-fair",
+      "name": "Aero Sings Scarborough Fair",
+      "summary": "ChetasLua 用纯 Python 标准库做物理建模歌声，再用零依赖的 Canvas 2D 画出水彩短片，演唱《Scarborough Fair》，不使用外部库、素材或 TTS。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "python",
+        "canvas",
+        "音乐",
+        "生成艺术"
+      ],
+      "source_url": "https://github.com/ChetasLua/aero-scarborough-fair",
+      "preview_url": "https://chetaslua.github.io/aero-scarborough-fair/",
+      "post_url": "https://x.com/chetaslua/status/2124131378770182389",
+      "author": "ChetasLua（@chetaslua）",
+      "models": [
+        "Gemini 4 Neon"
+      ],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 12,
+      "notes": "星标 12（2026-11-23 查询）。仓库 2026-11-21 创建，MIT。作者原帖强调由 Gemini 4 Neon 完成，且不用外部库、素材或 TTS。在线预览为 GitHub Pages，也可打开仓库内约 13 MB 的单文件 HTML。本次读了 README，并浏览了 voice_synth.py、song_spec.py、accompaniment.py、build_html.py 和 Canvas 脚本。未把原帖视频当作已完整观看。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "零第三方依赖。歌声与伴奏用 Python 3 标准库（array、math、random、wave）做物理建模：LF 式声门流、五共振峰 Klatt 级联声道、吉他和大提琴等，写成 22,050 Hz 立体声 WAV。画面是手写的 HTML5 Canvas 2D 引擎，模拟水彩、木炭素描和蘸水笔，不加载外部字体、图片或脚本。build_html.py 把音频（base64）、时间轴和渲染引擎打进单文件 HTML。MIT。",
+        "method": "先在 song_spec.py 里写好 D 多利亚、3/4 拍和英文音素时间轴，再用合成器按乐谱逐字演唱并叠加伴奏与厅堂混响；另一套 Canvas 场景按五幕时间轴实时绘制。目标是证明「只有代码也可以同时做出图像、影像、音乐和人声」。",
+        "features": [
+          "约 108.8 秒的演唱与短片，可在 GitHub Pages 或本地单文件 HTML 里播放",
+          "歌声、吉他、大提琴和混响全部由标准库合成，不用 TTS 或采样",
+          "水彩画风的五幕动画也在浏览器里实时绘制，不加载外部素材"
+        ],
+        "highlights": [
+          "约束很硬：零依赖、零素材、零 TTS，源码和可播放文件都公开",
+          "歌声合成与画面管线拆在独立文件里，结构可读"
+        ],
+        "limitations": [
+          "这是一部固定短片，不是可交互工具，也不是通用歌声模型",
+          "单文件 HTML 体积较大（约 13 MB，内嵌音频）",
+          "原帖说由 Gemini 4 Neon 写成，具体提示和迭代过程未在仓库里完整记录"
+        ],
+        "comparison": "和 crimson-loong、walking-block 一样强调「纯代码、零外部资产」，但本项目是歌声物理建模加 2D 水彩短片，不是可漫游 3D 世界。和 earshot、tunelm 的「代码做音乐」相比，这里连演唱和画面都是手写合成，没有用外部 TTS 或模型权重。想看 3D 世界请看 crimson-loong；想要可编辑的生成乐曲请看 tunelm。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -13823,6 +14391,51 @@
       }
     },
     {
+      "id": "quiet-md",
+      "name": "Quiet.md",
+      "summary": "s1dashu 开源的本地笔记应用：笔记就是电脑上的真实文件夹和文件，用 Rust 和 GPUI 绘制，支持 Mac、Windows 和 Linux，并可导入 Obsidian 库。",
+      "category": "other",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "rust",
+        "gpui",
+        "笔记",
+        "本地优先",
+        "桌面应用"
+      ],
+      "source_url": "https://github.com/s1dashu/quiet-md",
+      "preview_url": "https://quiet.md",
+      "post_url": "https://x.com/s1dashu/status/2123702832758997484",
+      "author": "s1dashu",
+      "models": [],
+      "first_seen": "2026-11-22",
+      "origin": "bookmark",
+      "stars": 2632,
+      "notes": "星标 2632（2026-11-23 查询）。仓库 2026-11-01 创建，MIT，官网 quiet.md。作者自报：百万字笔记滚动每帧 4.4 毫秒；白板里一万个图形时拖动每帧 1.4 毫秒，并称同样场景比 Excalidraw 快 12 倍。这些数字未在本次实测。官网还提到兼容飞书文档格式。本次读了 README，并浏览了 crates/、src/、docs/、web/ 目录。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust 原生桌面应用，用 Zed 的 GPUI 做 GPU 绘制，跨 macOS、Windows 和 Linux。笔记是磁盘上的真实文件夹和按标题命名的文件（Markdown 等），侧栏里的目录对应真实目录。仓库还包含 crates、包装脚本和多语言 README。默认不联网，中日韩手写字体和可选文档字体除外。MIT。",
+        "method": "不做专有库或云同步锁定：打开的就是你电脑上的文件。强调大文档滚动和笔记内白板的绘制性能，并用一键导入降低从 Obsidian 迁出的成本。",
+        "features": [
+          "跨三平台的本地笔记，文件就是普通文件夹和文档",
+          "可一键导入 Obsidian 库",
+          "笔记内带白板；官网称兼容飞书文档格式"
+        ],
+        "highlights": [
+          "开源、本地优先，和「导出才能拿到自己的字」的笔记应用相反",
+          "用 Rust + GPUI 走原生绘制，仓库和多语言文档都比较完整，发布后星标增长很快"
+        ],
+        "limitations": [
+          "滚动和白板性能数字来自作者发帖，属自报，未在本次实测",
+          "评论区已有人问外部编辑器或 Agent 同时改同一文件时的冲突提示，本次未核对是否已有完善方案",
+          "不是云协同笔记，也不以内置 Agent 为卖点"
+        ],
+        "comparison": "和 terminus-notes 都是笔记应用，但 quiet-md 是本地文件夹式的 Rust 原生桌面端，terminus-notes 是可自托管、可接 Claude 的 Notion 向替代。技术底座和 gpui-kit 一样走 Zed 的 GPUI，但 Quiet.md 是完整笔记产品，gpui-kit 是通用组件框架。想要文件在自己磁盘上、打开即用，选 Quiet.md；想要可接大模型的云端/自托管 Notion 替代，选 terminus-notes。",
+        "researched_at": "2026-11-23"
+      }
+    },
+    {
       "id": "reearth-visualizer",
       "name": "Re:Earth Visualizer",
       "summary": "开源 WebGIS 平台，用 Cesium 把常见 GIS 数据做成可嵌入、可分享的交互地图故事。",
@@ -14225,30 +14838,32 @@
     {
       "id": "wedulab",
       "name": "WeduLab",
-      "summary": "六大学科交互式虚拟实验室（站点产品）。",
+      "summary": "WY（@akokoi1）的课堂交互式教学实验站点：打开即用、无需安装，覆盖物理、地理、生物、化学、信息技术和美术等，含三维水循环、元素周期表、从逻辑门到 CPU 等演示。",
       "category": "other",
       "subcategory": null,
       "tags": [
-        "教育",
-        "实验室"
+        "3d",
+        "实验室",
+        "教学",
+        "教育"
       ],
       "source_url": null,
-      "preview_url": "https://wedulab.com/?lang=en",
-      "post_url": "https://x.com/slashui/status/2116383058735554610",
-      "author": "slashui",
+      "preview_url": "https://wedulab.com/",
+      "post_url": "https://x.com/jinglian/status/2108511734919205112",
+      "author": "WY（@akokoi1）",
       "models": [],
       "first_seen": "2026-10-31",
       "origin": "bookmark",
       "stars": null,
-      "notes": null,
+      "notes": "2026-11-23 书签复查：站点作者为 WY / @akokoi1，与库内 edulab 技能不是同一产品。新书签 https://x.com/jinglian/status/2108511734919205112 介绍地理「水循环」演示上线。原条目 post_url 曾与 tongjiang-lab 相同（https://x.com/slashui/status/2116383058735554610），已改为这条更直接的介绍帖。本次打开 wedulab.com，可见电学、地球运动、细胞、周期表、水循环、神经网络、逻辑电路到 CPU、神舟发射、美术透视、艺术史、孟德尔豌豆等多项实验，已超出早期「六大学科」的概括。源码仍未查到，分析保持 light。",
       "analysis": {
         "depth": "light",
         "core_tech": "浏览器端互动教学工具集（技术栈未查到）。",
         "method": "每个实验室聚焦一个主题，适合课堂演示和自主探究，配有仪器、数据记录和测验。",
         "features": [
-          "VoltLab 电路实验室",
-          "3D 等高线",
-          "大气环流粒子模拟等（官网列出物理、地理等学科）"
+          "浏览器打开即用的学科演示，适合课堂投屏或学生自行探究",
+          "地理「水循环」三维沙盘：蒸发、输送、降水、径流和下渗等环节，并涉及海绵城市和水量平衡",
+          "另有电学实验台、三维周期表、细胞结构、从逻辑门到 CPU、神舟发射、美术透视和艺术史等演示"
         ],
         "highlights": [
           "适配中学和高中课堂，开箱即用"
@@ -14256,8 +14871,8 @@
         "limitations": [
           "闭源，商业模式未查到"
         ],
-        "comparison": "和 tongjiang-lab、atlas-of-physics 同类；wedulab 覆盖学科更广，并且偏模拟实验。",
-        "researched_at": "2026-11-10"
+        "comparison": "和 tongjiang-lab、atlas-of-physics、3d-periodic-table 同属理科交互教学。wedulab 覆盖学科更广，而且是站点成品；3d-periodic-table 只做周期表；edulab 是同一作者方向上的开源讲题技能，不要和本站点搞混。cn-math-taxonomy 偏知识图谱和题库，不做这种三维演示。",
+        "researched_at": "2026-11-23"
       }
     },
     {
@@ -14498,6 +15113,7 @@
       "category": "other",
       "subcategory": null,
       "tags": [
+        "小学",
         "开源",
         "教育",
         "知识图谱"
@@ -14510,7 +15126,7 @@
       "first_seen": "2026-11-07",
       "origin": "bookmark",
       "stars": null,
-      "notes": null,
+      "notes": "2026-11-23 书签补充：作者 @hassanyehiaa 称已补齐小学各科，科学、道德与法治已上线，数学和英语题目做了升级，网站还要改版。以上为作者自述，未在本次逐科复核完成度。新书签 https://x.com/hassanyehiaa/status/2115781957317759127。",
       "analysis": {
         "depth": "full",
         "core_tech": "纯静态站（HTML、JS，带 PWA 的 sw.js），数据和生成脚本用 Python（scripts/ 下 189 个文件）；内容是知识点、先修边和题库组成的知识图谱，按课标条目对齐；采用 CC BY-NC 4.0，商用需另外授权。",
