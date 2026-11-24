@@ -1,33 +1,33 @@
 {
   "meta": {
-    "generated_at": "2026-11-23",
+    "generated_at": "2026-11-24",
     "timezone": "Asia/Shanghai",
-    "projects_total": 345,
+    "projects_total": 352,
     "category_counts": {
       "game": 62,
-      "agent-eng": 131,
-      "llm-tools": 86,
+      "agent-eng": 137,
+      "llm-tools": 87,
       "other": 66
     },
     "subcategory_counts": {
-      "dev-efficiency": 64,
+      "dev-efficiency": 67,
       "phone-computer-use": 25,
-      "agent-fleet": 42
+      "agent-fleet": 45
     },
     "origin_counts": {
       "bookmark": 159,
       "reply-on-popular-post": 26,
-      "daily-digest": 144,
+      "daily-digest": 151,
       "bookmark+daily-digest": 11,
       "daily-digest+reply-on-popular-post": 3,
       "user-request": 1,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 268,
-      "light": 77
+      "full": 274,
+      "light": 78
     },
-    "analysis_updated_at": "2026-11-23"
+    "analysis_updated_at": "2026-11-24"
   },
   "projects": [
     {
@@ -2849,6 +2849,60 @@
       }
     },
     {
+      "id": "aihubbar",
+      "name": "AI Hub Bar",
+      "summary": "开源的 Mac 菜单栏应用：集中查看 Claude、Codex、Copilot、Gemini、Cursor 等服务的剩余额度，列出正在跑的 Agent 会话，并可以按项目模板发起命令。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "swift",
+        "macos",
+        "菜单栏",
+        "用量",
+        "claude-code",
+        "桌面应用"
+      ],
+      "source_url": "https://github.com/OlehDemishev/AIHubBar",
+      "preview_url": "https://olehdemishev.github.io/AIHubBar/",
+      "post_url": "https://x.com/OlehDemishev/status/2124897546178908276",
+      "author": "Oleh Demishev（@OlehDemishev）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "GitHub Copilot",
+        "Gemini CLI",
+        "Cursor",
+        "Antigravity"
+      ],
+      "first_seen": "2026-11-23",
+      "origin": "daily-digest",
+      "stars": 0,
+      "notes": "星标于 2026-11-23（美西）用 GitHub API / gh 查询：0 星、0 fork，但仓库体量不小（含 Swift 测试、文档和站点）。2026 年 10 月前曾用名 ClaudePult，bundle id 和数据目录仍保留旧名。Windows/Linux 走 Tauri 2，文档写明应用仍在准备中，发行包尚未签名。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "macOS 14+ 原生菜单栏应用（Swift 6、SwiftUI，LSUIElement，XcodeGen 的 project.yml 生成工程），菜单栏、通知、小组件和 Control Center 入口都在同一套模块里。额度、会话、项目命令、Telegram 等按 Modules 和 Services 拆分，例如 LimitsModule、SessionsModule、HubLimits、RunningSessions、CommandEngine。自动更新用 Sparkle 2.10.1。Windows/Linux 另有 Tauri 2 + Rust workspace（desktop/，包名仍见 claudepult-core）。API 密钥进 Keychain。MIT。Apple Developer ID 签名并公证。",
+        "method": "它不替代 Claude Code 等工具，而是读取你本机已登录服务的限额和会话状态，在菜单栏用环形图和倒计时显示会话/周额度，并按最近消耗做「能不能撑到重置」的预测。正在跑的 Claude Code / Codex / Copilot CLI 会话会出现在同一列表里，显示当前在改哪个文件或在跑什么命令；权限请求可从通知、面板或 Telegram 批准。项目按模板（开发、视频、写作等）组织命令，结果写成新文件而不是覆盖，还可以让两三个服务并排跑同一条命令以便比较。",
+        "features": [
+          "在一个面板里看多个 AI 服务的会话和周额度、按项目的消耗和最长 90 天历史（可导出 CSV）",
+          "列出正在跑的 Agent 会话，支持从通知批准或拒绝权限，并在接近额度时暂停后台任务",
+          "按项目模板发起命令，结果另存为新文件，并可对同一命令做多服务对比"
+        ],
+        "highlights": [
+          "把多服务额度、实时会话和项目命令收进一个公证过的原生 Mac 菜单栏应用，完成度明显高于许多同日出现的小工具",
+          "文档、指南、决策记录和测试都在仓库里；支持 13 种界面语言",
+          "无账号、无分析；可选 Telegram 通知，默认不经过作者的服务器"
+        ],
+        "limitations": [
+          "2026-11-23 查询为 0 星，社区验证还很少",
+          "完整体验目前在 macOS；Windows/Linux 仍在准备，发行包未签名",
+          "实时会话列表主要覆盖 Claude Code、Codex 和 Copilot CLI，其他服务以额度或命令为主"
+        ],
+        "comparison": "和 usage-wizard、agent-thinking-meter 都是看本机用量，但分工不同：Usage Wizard 只针对 Claude Code 的上下文体积、缓存窗口和交接；agent-thinking-meter 是命令行统计「调用工具前是否还在推理」；AI Hub Bar 覆盖多家服务的额度、会话和项目命令。tmux-island、grokbot-deskpet 也是菜单栏/灵动岛盯梢，但只盯状态，不管额度和发起命令。要在 Mac 上同时看多家服务并顺手发起任务，选 AI Hub Bar；只想管 Claude Code 何时该开新会话，选 Usage Wizard。",
+        "researched_at": "2026-11-24"
+      }
+    },
+    {
       "id": "aws-emulator",
       "name": "AWS Emulator",
       "summary": "AWS 官方开源的本地 AWS API 模拟器（Rust），无需账号即可在本机或 CI 里跑 SDK/CLI 调用；全部代码由自主 Agent 编写和测试。",
@@ -4736,6 +4790,100 @@
         ],
         "comparison": "和 perch 都帮助理解代码，perch 以 PR 为单位，本项目以整库为单位。和 tokeneconomizer 的「仓库记忆」不同，本项目面向人，tokeneconomizer 面向 Agent。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "usage-wizard",
+      "name": "Usage Wizard",
+      "summary": "开源的 Mac 菜单栏小工具：根据本机 Claude Code 会话日志显示当前上下文有多大、缓存还热多久，并在该换新对话时用两步交接把结论带走。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "swift",
+        "macos",
+        "菜单栏",
+        "用量",
+        "claude-code"
+      ],
+      "source_url": "https://github.com/ambilux/usage-wizard",
+      "preview_url": null,
+      "post_url": "https://x.com/nobilis/status/2124839177455837515",
+      "author": "@nobilis / ambilux",
+      "models": [
+        "Claude Code"
+      ],
+      "first_seen": "2026-11-23",
+      "origin": "daily-digest",
+      "stars": 0,
+      "notes": "星标于 2026-11-23（美西）用 GitHub API / gh 查询：0 星、0 fork。非官方、与 Anthropic 无关联。仓库很小（菜单栏 Swift 源码、构建脚本和文档），当天仍有关于新对话先检查交接备忘的提交。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "仅 macOS 的本地菜单栏工具，Swift 源码在 menubar/Sources（如 Store.swift、Notifier.swift），用 shell 脚本构建。数据只读本机 ~/.claude/projects 里的会话日志，不经过作者的服务器。加权 token 会区分输出、缓存写入和缓存读取。交接时把一份备忘写到项目下的 .handoffs/。MIT。文档明确写了非官方、不隶属 Anthropic。",
+        "method": "Claude Code 每轮都会重读整个对话，上下文变大或缓存过期后，下一轮会更吃额度。Usage Wizard 在菜单栏显示最近一次对话的上下文大小和「缓存还热多久」，并按阈值用通知提醒该开新对话。点「换到新对话」后，它把一段提示词放到剪贴板并唤起 Claude，让其把目标、已完成、未完成、决策、下一步和验证方法写入 .handoffs/；新对话开始前会先读这份备忘并先总结、再提问，而不是直接继续改代码。",
+        "features": [
+          "菜单栏实时显示当前对话上下文大小、健康状态和缓存剩余时间",
+          "按对话、按天查看加权用量，并打开仪表盘窗口",
+          "两步交接：先生成 .handoffs/ 备忘，再在新对话里带上这些结论"
+        ],
+        "highlights": [
+          "专门对准 Claude Code「对话变贵」和「缓存过期要重写」这两个具体问题，而不是做总的多服务看板",
+          "完全本地、无账号、无遥测，实现小而可读",
+          "当天还在改新对话启动时先核对交接备忘的行为"
+        ],
+        "limitations": [
+          "只支持 macOS 上的 Claude Code，不看其他服务或其他系统",
+          "2026-11-23 查询为 0 星，功能面很窄，没有会话批准或项目命令",
+          "加权用量和缓存剩余时间依赖于本机日志格式，Claude Code 若改日志路径可能失效"
+        ],
+        "comparison": "和 aihubbar 都出现在菜单栏，但 Usage Wizard 只做 Claude Code 的上下文与交接，AI Hub Bar 覆盖多家服务的额度和会话，还能发起项目命令。agent-thinking-meter 读的也是本机日志，但统计的是「推理是否还在」，不管缓存窗口。已经在用 Claude Code 并总是撞上下文墙时，Usage Wizard 更直接；要一张总控面板，选 AI Hub Bar。",
+        "researched_at": "2026-11-24"
+      }
+    },
+    {
+      "id": "wa-mcp",
+      "name": "WA MCP",
+      "summary": "开源的本机 WhatsApp MCP：让 Claude、Cursor 等 Agent 搜索和阅读聊天、转写语音、识别截图文字；发送功能默认关闭，需你再打开并确认。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "mcp",
+        "go",
+        "python",
+        "whatsapp",
+        "本地优先"
+      ],
+      "source_url": "https://github.com/tsahospital-beep/wa-mcp",
+      "preview_url": "https://tsahospital-beep.github.io/wa-mcp/",
+      "post_url": "https://x.com/AngryPigeonClub/status/2124900798781890779",
+      "author": "@AngryPigeonClub / tsahospital-beep",
+      "models": [],
+      "first_seen": "2026-11-23",
+      "origin": "daily-digest",
+      "stars": 5,
+      "notes": "星标于 2026-11-23（美西）用 GitHub API / gh 查询：5 星、0 fork。GitHub 组织名为 tsahospital-beep，与 X 账号 @AngryPigeonClub 的对应关系以仓库自述为准，未查到更正式的公司主页。仓库在 2026-11-23 创建，但已包含 Go 桥、Python MCP 服务端/SDK 和文档，不像从零写一天的草稿。作者自报可对照其他 WhatsApp MCP 的功能表，未独立逐项复核。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "两部分：Go 写的本地桥（module github.com/tsahospital-beep/wa-mcp/bridge，依赖 go.mau.fi/whatsmeow 和 SQLite），以及 Python 3.11+ 的 MCP 服务器与 SDK（uv workspace：wa-mcp-server、wa-mcp-sdk，根版本 0.2.1）。可走 stdio 或 Streamable HTTP（带 hashed bearer 或 OAuth 2.1 PKCE）。数据库里的消息文本、附件名、反应和媒体密钥默认用操作系统钥匙串（或口令/密钥文件）加密。提供 Docker/Compose、OpenAPI 的本地 HTTP API，以及把桥嵌进其他程序的 Go 包。MIT。",
+        "method": "在本机把 WhatsApp 账号与桥链接后，聊天会同步到加密的本地库；MCP 工具负责搜索、列出待回复、转写语音（faster-whisper、whisper.cpp 或兼容接口）、用 Tesseract/RapidOCR 读截图，并可导入官方聊天导出以补更早的历史。发送文本、文件和语音默认关闭，需要你在支持确认的客户端里批准，或打开相应配置。可选的「像人一样发送」只是控制已读、输入状态和间隔，文档写明不保证效果。Agent 也可以通过 get_my_day 一次取出今日待办、承诺、未回消息和未接来电。",
+        "features": [
+          "搜索消息、转写语音、从截图和文档提取文本，并汇总今日待办",
+          "发送默认关闭，可按需打开并在客户端确认",
+          "本地加密存储，可多账号，并提供远程 HTTP、Docker 和 Python/Go 嵌入方式"
+        ],
+        "highlights": [
+          "功能面比许多只转发文本的 WhatsApp MCP 更完整，文档里还列出了和多个同类仓库的对照表",
+          "默认加密、默认不发送，比「装上就能代发消息」更克制",
+          "桥与 MCP 服务拆成 Go/Python，并带测试、安全说明和站点文档"
+        ],
+        "limitations": [
+          "发布组织名看起来不像正式产品品牌，需要自己判断是否愿意把 WhatsApp 会话交给这个实现",
+          "链接的是个人 WhatsApp 会话，误开发送或把远程 HTTP 暴露到公网都有风险，文档虽有 Host/Origin 和鉴权说明，仍要自己配好",
+          "星标很少，对照表中的「优于其他项目」是作者自报"
+        ],
+        "comparison": "库内几乎没有同类的 WhatsApp 本地 MCP。smitline 做的是让 Agent 打电话或进会议，不是读写即时消息。phonebox 是手机工具，方向也不同。WA MCP 更接近「把已有聊天应用接进 Agent」的连接器。若需要的是电脑或浏览器操控，应看 Phone/Computer Use 类项目，而不是这个聊天桥。",
+        "researched_at": "2026-11-24"
       }
     },
     {
@@ -7207,6 +7355,57 @@
       }
     },
     {
+      "id": "beluga",
+      "name": "Beluga",
+      "summary": "开源桌面应用：每个任务单独占用一个 git worktree、分支和 Agent，并可在点头同意后，让你的 Agent 直接向朋友电脑上的 Agent 求助。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "typescript",
+        "桌面应用",
+        "worktree",
+        "多agent",
+        "p2p",
+        "claude-code",
+        "macOS"
+      ],
+      "source_url": "https://github.com/beluga-labs/beluga",
+      "preview_url": "https://github.com/beluga-labs/beluga/releases/latest",
+      "post_url": "https://x.com/mycodventure/status/2124800101508100292",
+      "author": "Kayra Uckilinc / beluga-labs（@mycodventure）",
+      "models": [
+        "Claude Code"
+      ],
+      "first_seen": "2026-11-23",
+      "origin": "daily-digest",
+      "stars": 596,
+      "notes": "星标于 2026-11-23（美西）用 GitHub API / gh 查询：596 星、56 fork。仓库根 package.json 写的引擎版本是 0.6.2，当天提交说明是 Mac 应用与手机应用 3.8.0。安装说明写明 macOS 尚未公证、Windows 安装包尚未签名。主要驱动 Claude Code（依赖 @anthropic-ai/claude-agent-sdk）。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 单体仓库：根目录是未发布的引擎（Node 20+，CLI 入口 beluga），packages/mac 是 Mac 应用，另有 companion、mailbox 等包；src 下按 agent、daemon、machines、net、ipc 等分层。Agent 执行依赖 @anthropic-ai/claude-agent-sdk，并接入 MCP SDK。机器之间用 hyperdht / @hyperswarm/secret-stream 做端到端加密的点对点通信，不经过中转服务器。任务通过 git worktree 隔离。提供 macOS 13+（Apple Silicon）、Linux x64（AppImage/.deb/.rpm）和 Windows 10+ x64 安装包，以及手机应用。MIT。",
+        "method": "你描述一个任务，Beluga 为它建一个新的 worktree、分支和 Agent，主目录默认只读，多个任务可以并排进行。Agent 在过程中产生的截图、测试日志和接口返回会进 Scratch 面板，不必等任务结束。把朋友加进来后，用 @ 提到对方，你的 Agent 可以请求在对方电脑上执行（需要对方点允许），结果回到当前对话；也可以邀请朋友旁观或一起跟 Agent 说话。Sentinel 把一次性说明变成定时或事件触发的任务并留下报告。也可以把引擎装到常开的服务器上，再用手机或浏览器使用。",
+        "features": [
+          "每个任务独立 worktree 和分支，侧栏能看到谁在干活、什么能合并、什么在等你",
+          "Scratch 里实时看到截图、测试日志和文件，聊天里也可出现可排序表格、图表和代码结构图",
+          "点对点向朋友的 Agent 求助，或邀请朋友进入当前会话，需对方批准",
+          "Sentinel 定时/事件任务，以及把应用装到服务器后从手机或浏览器继续用"
+        ],
+        "highlights": [
+          "和一般「并排跑几个 CLI」的控制台相比，多了经用户批准的跨机器 Agent 互助，通信是点对点加密",
+          "2026-11-23 查询为 596 星、56 fork，测试目录很大，当天发布 Mac/手机 3.8.0",
+          "主目录保持只读、任务在独立 worktree 里改，合并和开 PR 可以在界面完成"
+        ],
+        "limitations": [
+          "当前主要围绕 Claude Code，不是像 t3-code 那样广泛接入各家 CLI",
+          "Mac 应用尚未公证，Windows 安装包尚未签名，第一次打开会被系统拦截",
+          "引擎版本号与桌面/手机发行版号不一致，文档需要对照 Releases"
+        ],
+        "comparison": "和 unified-dev 一样给每个任务一个真正的 git worktree，但 Beluga 是跨平台桌面应用，并且能在批准后让 Agent 去朋友的电脑上办事；unified-dev 是仅限新款 Apple silicon 的原生 Mac 应用，接入 Claude Code/Codex/Grok。t3-code 和 specwithcode 更强调在一个界面里切换或回退多家 CLI。要在多台人的电脑之间协作、并且接受目前以 Claude Code 为主，选 Beluga；要在一台新款 Mac 上隔离并行编码，选 Unified Dev；要一个人跨多家订阅做控制台，选 t3-code 或 SpecWithCode。",
+        "researched_at": "2026-11-24"
+      }
+    },
+    {
       "id": "bot-teams",
       "name": "Bot Teams",
       "summary": "现成多机器人团队模板，一条提示词安装。",
@@ -8365,6 +8564,59 @@
       }
     },
     {
+      "id": "specwithcode",
+      "name": "SpecWithCode",
+      "summary": "开源桌面应用：在自己的电脑上并排跑 Claude Code、Codex、Copilot 等编程 Agent；某一家额度用尽时，可按项目规则把线程连同近期上下文交给另一家继续。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "typescript",
+        "桌面应用",
+        "多agent",
+        "acp",
+        "worktree",
+        "claude-code",
+        "控制面"
+      ],
+      "source_url": "https://github.com/anton-abyzov/specwithcode",
+      "preview_url": "https://specwithcode.com",
+      "post_url": "https://x.com/aabyzov/status/2124705708113625331",
+      "author": "Anton Abyzov（@aabyzov）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "GitHub Copilot"
+      ],
+      "first_seen": "2026-11-23",
+      "origin": "daily-digest",
+      "stars": 6,
+      "notes": "星标于 2026-11-23（美西）用 GitHub API / gh 查询：6 星、4 fork。仓库是 SpecWeave Studio 单体仓，当天合并了 release/1.0.412。根目录有体积很大的 .repos/ 目录，分析以 apps/、packages/ 和文档为准，未把 .repos 当作全部第一方代码。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript pnpm monorepo（包名 @specweave-studio/monorepo，MIT）。apps 下有 desktop、web、server、mobile、ios、android、chrome-extension 等；packages 里包括 effect-acp（用 Effect 实现的 ACP 协议客户端/Agent）、shared、ssh 和 tailscale。服务端与桌面用 Effect-TS，多机可通过局域网、SSH 隧道或 Tailscale 配对。任务规格、完成条件和证据以 SpecWeave（同作者的 MIT 仓库）文件形式写进 git。不转售推理，使用你已有的订阅或 API Key。",
+        "method": "一个协调线程把目标拆成多个 worker，每个 worker 用自己的提供方、模型和 git worktree，人审的是 PR 而不是聊天记录。屏幕上能看到各账号用量；当某一家触达限额，项目级规则可以把线程连同近期对话交给另一家、等到重置，或先问你。规格和验收证据留在仓库里，其他 Agent 可以用 specweave pickup 接着做。工作在你指定的机器上进行，电脑休眠就会停。",
+        "features": [
+          "协调者拆任务，worker 在不同提供方和 worktree 上并行，完成后开 PR",
+          "按项目规则在额度用尽时换提供方，并带走近期上下文",
+          "把更多机器通过局域网、SSH 或 Tailscale 加进来，任务跑在代码和登录态所在的机器上",
+          "规格、证据和交接以文件形式进 git，可用 SpecWeave 继续"
+        ],
+        "highlights": [
+          "把「额度用尽就换一家继续」做成一等能力，这是很多并排控制台只展示用量、不自动续上的地方",
+          "用 ACP（packages/effect-acp）对接官方 Agent，而不是只包一层终端",
+          "当天仍在发 1.0.x 安装包，文档区分桌面应用和本机 server 安装脚本"
+        ],
+        "limitations": [
+          "2026-11-23 查询仅 6 星，体量远小于 t3-code，生态和文档成熟度还需观察",
+          "仓库含很大的 .repos/ 目录，阅读源码时要先分清哪些是第一方应用代码",
+          "不是云服务：电脑休眠工作就会停，也没有代为托管的推理"
+        ],
+        "comparison": "和 t3-code、coincide、unified-dev、beluga 同属本机多 Agent 控制台。t3-code 星标和客户端覆盖面最大；unified-dev / beluga 强调 worktree 隔离，Beluga 还多了跨人电脑的互助；SpecWithCode 的差异是项目级额度回退，以及把规格和证据写进 git（SpecWeave）。要一家额度用完后自动换线，选 SpecWithCode；要一个已经很完整的跨端控制面，选 t3-code。",
+        "researched_at": "2026-11-24"
+      }
+    },
+    {
       "id": "stitch-loop",
       "name": "Stitch Loop（Google Labs）",
       "summary": "Google Labs 的常驻产品 Agent：接上代码库和线上指标，按目标持续提出改进、在沙箱里改代码并开出待你审批的 PR。",
@@ -8411,6 +8663,62 @@
         ],
         "comparison": "和 tencent-loopforge 都做「沙箱改代码 + 人审」，但 LoopForge 是开源自托管 SOP 交付平台，Stitch Loop 是 Google 托管的上线后持续优化实验，要排队且看不到实现。anthropic-building-always-on-agents 是常驻 Agent 的架构指南，本项目更像把那套思路做成看线上指标的产品。stitch-skills 只覆盖设计阶段技能，管不到上线之后。vercel-eve 则是开源、文件系统优先的可持久 Agent 框架，要自建而不是候补托管服务。",
         "researched_at": "2026-11-19"
+      }
+    },
+    {
+      "id": "superhive",
+      "name": "SuperHive",
+      "summary": "开源的多人、多 Agent 共享工作区：在自己电脑或云服务器上跑起来，用浏览器、飞书或微信进同一个房间，把本机已登录的 Codex、Claude Code、Copilot 等 Agent 拉进来一起干活。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "typescript",
+        "多agent",
+        "自托管",
+        "控制面",
+        "飞书",
+        "微信",
+        "claude-code"
+      ],
+      "source_url": "https://github.com/wangrongding/SuperHive",
+      "preview_url": "https://wangrongding.github.io/SuperHive/",
+      "post_url": "https://x.com/binbin_eth/status/2124697709126807956",
+      "author": "wangrongding",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "GitHub Copilot",
+        "OpenCode",
+        "Gemini CLI",
+        "Antigravity"
+      ],
+      "first_seen": "2026-11-23",
+      "origin": "daily-digest",
+      "stars": 785,
+      "notes": "星标于 2026-11-23（美西）用 GitHub API / gh 查询：785 星、45 fork。许可证为 AGPL-3.0-only，对外以网络服务提供或嵌入商业产品需遵守 AGPL 或另行取得商业许可。当天见到的 X 帖是中文开源速览，不是作者自己的首发帖。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript pnpm monorepo（根包 superhive-workspace 0.1.0）：apps 下有 server、web、desktop、docs，packages 下有协议层 @superhive/protocol 和代理包 superhive。要求 Node.js 22.12+，可用 npm i -g superhive 或 npx superhive 启动，默认在 0.0.0.0:8787 打开 Web UI，数据写在 ~/.superhive/。协议层包含房间会话、worktree 和工作区文件等逻辑，并有对应测试。Agent 侧对接 Codex、Claude Code、GitHub Copilot、OpenCode、omp、OpenClaw、Gemini CLI、Antigravity（agy）等已登录 CLI。许可证 AGPL-3.0-only。",
+        "method": "人在浏览器或飞书/微信里进同一个房间，用 @agent-name 分派工作，也可以设一名领队 Agent 在没有 @ 时接手并路由。公开消息是共享上下文，但每个 Agent 的会话、文件和命令权限仍留在它运行的那台电脑上；从网页添加时默认 Workspace 权限，命令行 hive join 默认只读，完全访问需要明确确认。房间可以跑在本机、局域网、VPN 或带 HTTPS 的云服务器上，手机扫码即可连飞书或个人微信。本地 Agent 在服务器替换或重启后保持连接并恢复，上游限流会自动重试，重复消息会丢弃，并用多维预算避免刷屏。",
+        "features": [
+          "一个房间里多人加多个 Agent，可互相委派子任务、往共享看板发进度，并在需要决策时向人发选择题",
+          "权限留在 Agent 所在电脑，默认不是完全访问",
+          "手机可通过飞书或个人微信收卡片、点选回复并切换房间",
+          "每次对话记录实际 token 用量、缓存命中和估计费用，并可停止或重试"
+        ],
+        "highlights": [
+          "把「人和多个已登录 CLI Agent 进同一聊天室」做成可自托管的浏览器房间，而不是又一个单人桌面控制台",
+          "2026-11-23 查询为 785 星、45 fork，文档站点与桌面端都在同一仓库里，当天仍有中英混排终端渲染等修复",
+          "明确区分共享上下文和本机权限边界，并支持飞书/微信，适合人在手机上参与"
+        ],
+        "limitations": [
+          "AGPL-3.0-only：对外提供网络服务或嵌入商业产品必须开源或购买商业许可",
+          "要先在 Agent 那台电脑上装好并登录对应 CLI，Hive 本身不转售额度",
+          "根版本号仍是 0.1.0，接口和数据目录形态可能还会变"
+        ],
+        "comparison": "和 t3-code、shoal、unified-dev、specwithcode 同属多 CLI 控制面，但 SuperHive 的中心是「可自托管的共享房间」：人可以从浏览器、飞书或微信进来，Agent 从各自电脑加入，而不是只在一张本机桌面上并排线程。t3-code 体量最大、跨端最完整；unified-dev / beluga 更强调每个任务一个 worktree；loopx 更偏向可验证的长程状态层。要拉同事一起在同一个房间里指挥多台机器上的 Agent，选 SuperHive；只想一个人在本机统一操控多个 CLI，选 t3-code。",
+        "researched_at": "2026-11-24"
       }
     },
     {
@@ -9495,6 +9803,56 @@
         ],
         "comparison": "和 science-s-last-exam、vybbench、rsi-inference-bench 同属评测，但本项目测的是 harness 而不是模型或推理引擎。和 agav、dsh-superagent-prototype 等具体 harness 形成对照：那些是被测对象，本项目是裁判。库内没有第二个同等规模的多 harness 对照基准。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "glm-5-4",
+      "name": "GLM-5.4（智谱 / Z.ai）",
+      "summary": "智谱 Z.ai 发布的首个 Loop Transformer 旗舰模型：把已预训练的约 750B 底座中 28 层循环跑两遍，以加深推理而不增加参数，目前向 GLM Coding Plan 用户开放。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "产品发布",
+        "智谱",
+        "looped-transformer",
+        "编程模型",
+        "多模态",
+        "1m上下文"
+      ],
+      "source_url": null,
+      "preview_url": "https://z.ai/blog/glm-5.4",
+      "post_url": "https://x.com/ZixuanLi_/status/2124719282512859480",
+      "author": "Z.ai / 智谱（Zixuan Li @ZixuanLi_ 宣布）",
+      "models": [
+        "GLM-5.4",
+        "GLM-5",
+        "GLM-5.3"
+      ],
+      "first_seen": "2026-11-23",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "当天没有开放权重或训练代码，分析为 light。架构、速度、与 2T–3T 模型对标、30B 消融和「输出缩短 10–14%」等数字均来自 2026-11-23 官方博客与文档，属自报。官方文档写明：Model API 要等安全评估完成后才会开放；权重计划在完成必要的安全加固后负责任地开源，发布当日尚未提供。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Loop Transformer：在已预训练的 GLM-5 约 750B 底座上，把 28 层共享权重循环 2 次，而不是从零训练循环模型。为在 750B 规模上稳住训练和部署，官方写了三处改动：按 token 的门控渐进更新（Gated Progressive Updates）、跨循环共享稀疏 KV 并给第二轮加独立滑动窗口、第二轮复用第一轮的稀疏注意力索引。输入支持文本、图像、视频和文件，输出文本；上下文 1M，最大输出 128K。提供思考模式、流式、工具调用、上下文缓存和结构化输出。当日以 GLM Coding Plan、ZCode 和 Z.ai Chat 提供，未查到可下载权重或训练仓库。",
+        "method": "官方认为从零预训练循环模型，在同样预训练算力下往往不如非共享层模型，因此对现成底座做继续训练，用较小的额外算力提高推理深度。博客还写了在 1B、4B、30B 和 750B 上逐步验证，并在与 750B 同结构的 30B 模型上做了等参数对比：参数量相同、总训练算力约多 10%。官方自述：长推理链任务（数学、科学推理、长上下文）收益更大；在 GPQA-Diamond、MMLU-Pro 等基准上平均输出长度下降 10–14%，部分推理从显式思维链转到循环内部。产品定位是 Generalized Coding：用代码去做视频、完整游戏、FreeCAD 机械设计和 GLSL 三维场景等更广的任务。",
+        "features": [
+          "GLM Coding Plan 用户可在 Claude Code 中把模型设为 glm-5.4[1m]，在其他工具中设为 glm-5.4",
+          "官方文档写明：有周配额的用户，GLM-5.4 的可用额度是 GLM-5.3 的 1.5 倍",
+          "在 ZCode 和 Z.ai Chat 中使用；文档列出思考模式、流式输出、函数调用和上下文缓存"
+        ],
+        "highlights": [
+          "是智谱第一个做成旗舰产品的 Loop Transformer，和库内只能本机跑的小循环模型不在同一档规模",
+          "官方博客把循环架构、KV 缓存和稀疏索引的工程取舍写得很具体，而不只是发一个产品名",
+          "官方自报离峰最高约 200 tokens/s、高峰约 70–80 tokens/s；智能水平对标 2T–3T 参数模型（自报）"
+        ],
+        "limitations": [
+          "发布当日不开放权重，Model API 也要等安全评估；本地无法复现",
+          "对标 2T–3T、解码速度和 30B 消融数字均为官方自报，当天没有完整公开模型卡式对照表可独立复核",
+          "官方自己写明容易陷入过长的「马拉松式思考」，虽然自称这会提高正确率"
+        ],
+        "comparison": "和 inkling-2-mini、sensenova-loop-9b-preview 同属循环深度路线，但后两者是可下载的小规模开放权重，GLM-5.4 是约 750B 的闭源旗舰服务。和 gemini-4-hydrogen 一样先以产品/套餐形式提供，没有可查的训练代码，故都是 light。要在本机跑循环架构编程模型看 Inkling 2 Mini；要在 Claude Code 等工具里直接换一个旗舰编程模型、并能接受尚无权重的，看 GLM-5.4。",
+        "researched_at": "2026-11-24"
       }
     },
     {

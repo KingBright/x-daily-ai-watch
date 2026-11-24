@@ -185,6 +185,9 @@
 | open-artifact | 本机守护进程 + 开放文件夹格式 + 技能/MCP/插件 | 幻灯片、设计、表格、动画等可在本地编辑、评论并导回 Agent | ★362，由 baoyu-design 重建 | Apache-2.0 | 要在任意编码 Agent 里做可编辑的本地成品 |
 | agy-milestone-progress | Antigravity 插件，纯 Python 标准库 + Hook | 大任务拆里程碑、白话播报，静默过久则提醒或刹车 | ★5，新建；绑定 Antigravity | MIT | 解决 Antigravity 长任务黑盒思考、看不到进度 |
 | design-flow | Agent Skill + 本地 UX 画布和原型页 | 先画出屏幕、分支和错误路径，批准后才写代码 | ★14，新建 | MIT | 先对齐交互再开工，减少返工 |
+| aihubbar | 原生 macOS 14+ Swift 6/SwiftUI 菜单栏，Windows/Linux 的 Tauri 2 仍在准备 | 多服务额度与实时会话、按项目发起命令并对比结果 | ★0，但有公证的 Mac 安装包和完整文档 | MIT | 要在 Mac 菜单栏同时看多家 AI 服务并顺手开工 |
+| wa-mcp | Go（whatsmeow）本地桥 + Python MCP 服务端/SDK，存储默认加密 | 搜索 WhatsApp 聊天、转写语音、读截图；发送默认关闭 | ★5，2026-11-23 建仓；组织名需自行评估 | MIT | 要把本机 WhatsApp 只读（或受控发送）接进 Agent |
+| usage-wizard | 小型 Swift 菜单栏，只读 ~/.claude/projects 日志 | 显示上下文和缓存窗口，两步交接把结论写入 .handoffs/ | ★0，仅 macOS / Claude Code，非官方 | MIT | 专门解决 Claude Code 对话变贵和该换新会话的时机 |
 
 ### 分析
 
@@ -215,6 +218,7 @@
 2026-11-23 每日精选补入 agentest：用 165 条离线规则审计轨迹，专门抓「Agent 说做完了但记录对不上」，和 TraceTrial-Bench（任务完成 + harness 可靠性）、Agent Initiative Benchmark（该不该开口）互补。星标还很少，演示数字来自自带样例。
 
 2026-11-23 每周书签补入四项：open-artifact 和 design-flow 都把「先在本机画布上改再继续」做成技能，前者覆盖八种成品类型，后者专管 UX 流程批准；agy-milestone-progress 给 Antigravity 长任务补上可见的里程碑和刹车；sign-in-with-chatgpt-devkit 是少见的官方身份/额度套件，但许可证为非商业，商用不能直接拿来就用。
+2026-11-24 每日精选补入三项偏本机观测和连接的工具：AI Hub Bar 是覆盖多家服务额度和会话的原生 Mac 菜单栏应用，完成度明显高于 0 星这个数字；Usage Wizard 更窄，只解决 Claude Code 的上下文体积、缓存窗口和交接；WA MCP 补上库内此前缺少的 WhatsApp 本地 MCP，默认加密且默认不发送，但发布组织名需要使用者自己判断。
 
 ## Phone/Computer Use
 
@@ -322,6 +326,9 @@
 | pibot | TypeScript/Electron，内核为钉死的 pi，命令走 sandbox-runtime | 具名 Bot 群聊分工、计划确认、沙箱与审批审计 | ★386，开源第二天，仍是 0.0.x | Apache-2.0 | 要在自己电脑上养一支带护栏的 AI 团队 |
 | openvorld | 本地优先的像素风小镇 harness，可接 Claude Code/Codex 或兼容接口 | 组队对话、writ 批准文件夹/命令/网站，官网有网页演示 | ★26，早期 | MIT | 要把多 Agent 工作做成看得见的本地演示 |
 | loopx | TypeScript 控制面 + SQLite / PostgreSQL 状态层，中立对接多种 CLI | 跨会话保存 Goal / Todo / Gate / Evidence，本地或自托管长程调度 | ★6748；v2.4；基准为自报 | Apache-2.0 | 要可验证、可换宿主的长程 Agent 控制面 |
+| superhive | TypeScript pnpm monorepo，Web/桌面 + 本机或云上的房间服务器，对接已登录 CLI | 多人与多 Agent 进同一房间，权限留在 Agent 所在电脑，可用飞书/微信 | ★785，0.1.0；AGPL 对网络提供有互惠要求 | AGPL-3.0-only | 要自托管一个人和多个 CLI Agent 共用的房间 |
+| beluga | TypeScript 引擎 + 桌面/手机应用，Claude Agent SDK，hyperdht 点对点 | 每任务一个 worktree，经批准可向朋友电脑上的 Agent 求助 | ★596，Mac/手机 3.8.0；Mac 未公证、Win 未签名 | MIT | 要隔离并行任务，并在人与人的电脑之间协作 |
+| specwithcode | Effect-TS monorepo + ACP，桌面/Web/移动端，SpecWeave 把规格写入 git | 并排跑多家 CLI，额度用尽可按规则换提供方继续 | ★6，1.0.412；不转售推理 | MIT | 要在本机把多家订阅连起来，并在撞墙时换线 |
 
 ### 分析
 
@@ -354,6 +361,8 @@
 2026-11-23 每日精选补入 pibot 和 openvorld。Pi Bot 是开源次日即提供安装包的本机 AI 团队，重点是群聊协调、沙箱和审批，而不是调度已有 Claude Code/Codex CLI（那是 T3 Code 一侧）。OpenVorld 把同一问题做成像素风小镇和 writ 批准，有可玩网页演示，但星标很少、仍早期。
 
 2026-11-23 每周书签补入 loopx：开源的长程控制面，把目标、验收、门禁和证据做成可跨会话、跨 Codex/Claude Code 等宿主保存的状态，可从本机 SQLite 起步或自托管 PostgreSQL。和 tencent-loopforge 的 Docker SOP、shoal / hf-agent-manager 的并排会话、stitch-loop 的托管持续优化形成对照。LHTB 等基准数字为项目自报。
+
+2026-11-24 每日精选补入 SuperHive、Beluga 和 SpecWithCode。SuperHive 把控制台做成可自托管的共享房间，人可以从浏览器或飞书/微信加入，AGPL 对对外提供网络服务有要求；Beluga 与 unified-dev 一样用 worktree 隔离任务，但跨平台，并且能在批准后让 Agent 去朋友的电脑上办事；SpecWithCode 星标还很少，但把「额度用尽换提供方继续」和 git 里的规格/证据做成了差异点。t3-code 仍是体量最大的本机控制面。
 
 ## 大模型工具
 
@@ -448,6 +457,7 @@
 | pan2 | GLP：LLM 写结构化世界状态 + 29B MMDiT + Wan 2.2 VAE | 按文本动作模拟最长约 20 秒视频后果 | ★107，HF 342 赞；本地推理很重 | Apache-2.0 | 要开放权重做动作后果推演的世界模型 |
 | tunelm | LFM3-1.7B + LoRA SFT + GRPO，输出可执行 Strudel | 把音乐描述变成可在浏览器里播放和编辑的乐谱代码 | ★0；有在线演示和 HF 权重；评测为自报 | 文档自称 AGPL-3.0-or-later | 要「描述→可编辑乐曲代码」的小模型 |
 | tufazip | 163M Transformer + 算术编码，压缩时在线学习 | enwik9 无损压到含解码器约 105.39 MB（自报） | 研究提交；双 B200、压缩/解压各约一周 | MIT | 研究「预测即压缩」，不是日常 zip |
+| glm-5-4 | 约 750B 底座上 28 层循环 2 次的 Loop Transformer，1M 上下文 | 编程套餐旗舰，官方定位 Generalized Coding（视频/游戏/CAD 等） | light，闭源服务；权重和 API 尚未开放；数字为官方自报 | 未开放权重 | 要在 Claude Code 等工具里试用智谱循环旗舰，且能接受暂无权重 |
 
 ### 分析
 
@@ -480,6 +490,8 @@
 2026-11-23 每日精选补入两项蚂蚁医疗开源权重和 PAN 2。LingSante-3.1-flash / air-VL 补上库内此前缺少的专业医疗生成模型，基准多为官方自报，且明确不是医疗器械；flash 偏大规模文本，air-VL 偏影像和 GUI。PAN 2 把开放权重世界模型从 Hy-Nomas 的「按轨迹续写」扩展到「先模拟动作后果」，可与闭源的 Genie 4 对照，但本地推理很重，当天热门帖是第三方演示而非官方首发。
 
 2026-11-23 每周书签补入 tunelm 和 tufazip。TuneLM 把自然语言音乐描述变成可执行的 Strudel 代码，补上库内「代码做声音」里缺的专用微调模型，训练和听感数字为自报。tufazip 是以 Transformer 为唯一预测器的无损文本压缩研究记录，压缩率可核对，但耗时和硬件决定了它不是实用工具。
+2026-11-24 每日精选补入 GLM-5.4：智谱把 Loop Transformer 做成约 750B 的旗舰编程模型，和 inkling-2-mini 这类可本机跑的小循环模型不在同一档；当天只对 Coding Plan 等产品开放，权重和 API 尚未放出，对标 2T–3T 与速度数字均为官方自报，官方也承认容易陷入过长思考。
+
 ## 其他（未做对比）
 
 `other` 类是教育站、效率工具、内容聚合等杂项，彼此关联很弱，所以不做整体对比；每个项目的 `analysis.comparison` 里有点对点的参照。其中可以对照着看的有：

@@ -996,7 +996,8 @@
         "2026-11-21 补入 seo-skills 和 geo-sleuth，都继续印证「技能是研发效率工具的主流载体」，但一个走向可合并的 SEO/GEO 改动（部分 MCP 连到作者的付费产品），一个是少见的、用脚本排序、模型只做裁决的照片地理定位技能，案例误差为项目自述。",
         "2026-11-22 每日精选补入 clickhouse-loom 和 tracer-opensre。Loom 是数据库厂商做的自托管记忆和代码索引 MCP，官方费用与定位数字为自报，和 TokenEconomizer（省当前仓库 token）及 Omnigraph（图结构共享状态）互补。OpenSRE 补上库内此前缺少的 CI/CD 可靠性 Agent，星标已过万，但仍是 Public Alpha，交互式 shell 要登录，遥测默认开启。",
         "2026-11-23 每日精选补入 agentest：用 165 条离线规则审计轨迹，专门抓「Agent 说做完了但记录对不上」，和 TraceTrial-Bench（任务完成 + harness 可靠性）、Agent Initiative Benchmark（该不该开口）互补。星标还很少，演示数字来自自带样例。",
-        "2026-11-23 每周书签补入四项：open-artifact 和 design-flow 都把「先在本机画布上改再继续」做成技能，前者覆盖八种成品类型，后者专管 UX 流程批准；agy-milestone-progress 给 Antigravity 长任务补上可见的里程碑和刹车；sign-in-with-chatgpt-devkit 是少见的官方身份/额度套件，但许可证为非商业，商用不能直接拿来就用。"
+        "2026-11-23 每周书签补入四项：open-artifact 和 design-flow 都把「先在本机画布上改再继续」做成技能，前者覆盖八种成品类型，后者专管 UX 流程批准；agy-milestone-progress 给 Antigravity 长任务补上可见的里程碑和刹车；sign-in-with-chatgpt-devkit 是少见的官方身份/额度套件，但许可证为非商业，商用不能直接拿来就用。",
+        "2026-11-24 每日精选补入三项偏本机观测和连接的工具：AI Hub Bar 是覆盖多家服务额度和会话的原生 Mac 菜单栏应用，完成度明显高于 0 星这个数字；Usage Wizard 更窄，只解决 Claude Code 的上下文体积、缓存窗口和交接；WA MCP 补上库内此前缺少的 WhatsApp 本地 MCP，默认加密且默认不发送，但发布组织名需要使用者自己判断。"
       ]
     },
     {
@@ -1504,7 +1505,8 @@
         "2026-11-21 补入 unified-dev 和评论区发现的 Argo。前者把 worktree 隔离做成原生 macOS 控制台的核心，可与 t3-code、coincide 对照，但只支持 macOS 26 的 Apple silicon。Argo 是带多端客户端的自托管 Bot 平台，更接近 linger / agentes-chat / OpenMausBot 这一侧，不过仍是 beta、星标很少。",
         "2026-11-22 每日精选补入 tmux-island：只通过 tmux 监视和跳转多个编码 Agent 的 macOS 灵动岛，和 coucou（岛上批准，不绑定 tmux）、herdr（跨机器运行时复用器）对照。工程完整但刚刚发布，仅 Apple silicon。",
         "2026-11-23 每日精选补入 pibot 和 openvorld。Pi Bot 是开源次日即提供安装包的本机 AI 团队，重点是群聊协调、沙箱和审批，而不是调度已有 Claude Code/Codex CLI（那是 T3 Code 一侧）。OpenVorld 把同一问题做成像素风小镇和 writ 批准，有可玩网页演示，但星标很少、仍早期。",
-        "2026-11-23 每周书签补入 loopx：开源的长程控制面，把目标、验收、门禁和证据做成可跨会话、跨 Codex/Claude Code 等宿主保存的状态，可从本机 SQLite 起步或自托管 PostgreSQL。和 tencent-loopforge 的 Docker SOP、shoal / hf-agent-manager 的并排会话、stitch-loop 的托管持续优化形成对照。LHTB 等基准数字为项目自报。"
+        "2026-11-23 每周书签补入 loopx：开源的长程控制面，把目标、验收、门禁和证据做成可跨会话、跨 Codex/Claude Code 等宿主保存的状态，可从本机 SQLite 起步或自托管 PostgreSQL。和 tencent-loopforge 的 Docker SOP、shoal / hf-agent-manager 的并排会话、stitch-loop 的托管持续优化形成对照。LHTB 等基准数字为项目自报。",
+        "2026-11-24 每日精选补入 SuperHive、Beluga 和 SpecWithCode。SuperHive 把控制台做成可自托管的共享房间，人可以从浏览器或飞书/微信加入，AGPL 对对外提供网络服务有要求；Beluga 与 unified-dev 一样用 worktree 隔离任务，但跨平台，并且能在批准后让 Agent 去朋友的电脑上办事；SpecWithCode 星标还很少，但把「额度用尽换提供方继续」和 git 里的规格/证据做成了差异点。t3-code 仍是体量最大的本机控制面。"
       ]
     },
     {
@@ -2152,7 +2154,8 @@
         "2026-11-21 补入两款开放权重模型（均为 light，因没有训练源码）和一项 Muse 视频技能。Inkling 2 Mini 用 looped MoE 做可本机运行的编程模型，AA Index 20.1 为第三方指数，其余多数基准为官方自报；DaisyRose-27B 则在 Qwen3.8-27B 上只做 RL（自述）。stickman-video-director 继续内容创作组「技能 + ffmpeg 等确定性工具」的路线，但绑定 Muse。",
         "2026-11-22 每日精选补入 last30days：星标很高的跨平台近 30 天舆论研究技能，补上库内此前缺少的「搜人正在说什么」这一层；完整来源往往要自备密钥或登录，当天是趋势曝光而不是首次发布。",
         "2026-11-23 每日精选补入两项蚂蚁医疗开源权重和 PAN 2。LingSante-3.1-flash / air-VL 补上库内此前缺少的专业医疗生成模型，基准多为官方自报，且明确不是医疗器械；flash 偏大规模文本，air-VL 偏影像和 GUI。PAN 2 把开放权重世界模型从 Hy-Nomas 的「按轨迹续写」扩展到「先模拟动作后果」，可与闭源的 Genie 4 对照，但本地推理很重，当天热门帖是第三方演示而非官方首发。",
-        "2026-11-23 每周书签补入 tunelm 和 tufazip。TuneLM 把自然语言音乐描述变成可执行的 Strudel 代码，补上库内「代码做声音」里缺的专用微调模型，训练和听感数字为自报。tufazip 是以 Transformer 为唯一预测器的无损文本压缩研究记录，压缩率可核对，但耗时和硬件决定了它不是实用工具。"
+        "2026-11-23 每周书签补入 tunelm 和 tufazip。TuneLM 把自然语言音乐描述变成可执行的 Strudel 代码，补上库内「代码做声音」里缺的专用微调模型，训练和听感数字为自报。tufazip 是以 Transformer 为唯一预测器的无损文本压缩研究记录，压缩率可核对，但耗时和硬件决定了它不是实用工具。",
+        "2026-11-24 每日精选补入 GLM-5.4：智谱把 Loop Transformer 做成约 750B 的旗舰编程模型，和 inkling-2-mini 这类可本机跑的小循环模型不在同一档；当天只对 Coding Plan 等产品开放，权重和 API 尚未放出，对标 2T–3T 与速度数字均为官方自报，官方也承认容易陷入过长思考。"
       ]
     },
     {
