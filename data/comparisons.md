@@ -188,6 +188,10 @@
 | aihubbar | 原生 macOS 14+ Swift 6/SwiftUI 菜单栏，Windows/Linux 的 Tauri 2 仍在准备 | 多服务额度与实时会话、按项目发起命令并对比结果 | ★0，但有公证的 Mac 安装包和完整文档 | MIT | 要在 Mac 菜单栏同时看多家 AI 服务并顺手开工 |
 | wa-mcp | Go（whatsmeow）本地桥 + Python MCP 服务端/SDK，存储默认加密 | 搜索 WhatsApp 聊天、转写语音、读截图；发送默认关闭 | ★5，2026-11-23 建仓；组织名需自行评估 | MIT | 要把本机 WhatsApp 只读（或受控发送）接进 Agent |
 | usage-wizard | 小型 Swift 菜单栏，只读 ~/.claude/projects 日志 | 显示上下文和缓存窗口，两步交接把结论写入 .handoffs/ | ★0，仅 macOS / Claude Code，非官方 | MIT | 专门解决 Claude Code 对话变贵和该换新会话的时机 |
+| mirage | Python/TypeScript/Rust 虚拟终端：统一 VFS + 按需把计算路由到本机或沙箱 | 用 Agent 熟悉的 shell 语义访问多服务，并用 profile/策略做权限裁剪 | ★3840，0.1.0 正式发布，仍标 experimental | Apache-2.0 | 要在应用或边缘里嵌入可策略控制的终端，而不默认起一台完整沙箱 |
+| shirudo | C + eBPF，签名 upatch，TPM 测量；OpenAI 与 Cisco 联合开源 | Agent 起草热补丁，人批准后在不停机的 Linux 服务上挡住漏洞路径 | ★1737，pre-release，需定制内核和 TPM | BSD-2-Clause | 漏洞已公开、正式补丁未上时的虚拟补丁，不能替代真正的补丁 |
+| agent-memory | 本机 Bun/TypeScript MCP：混合检索、知识图谱、代码图谱和 Web UI | 跨 Claude Code/Cursor 的本机记忆和会话交接 | 2026-11-24 建仓，★0；延迟和内存为自报 | MIT | 只要本机共享记忆、不要上图数据库或独立服务 |
+| ai-werk-skills | 23 个 Markdown Agent Skills + 仓库内带 TTL 的大脑 | 把编码 Agent 编成五阶段软件交付线 | 2026-11-20 建仓，★0，2026-11-24 宣布开源 | Apache-2.0 | 已有编码宿主、想用纯技能而不是再上一套控制台 |
 
 ### 分析
 
@@ -220,6 +224,7 @@
 2026-11-23 每周书签补入四项：open-artifact 和 design-flow 都把「先在本机画布上改再继续」做成技能，前者覆盖八种成品类型，后者专管 UX 流程批准；agy-milestone-progress 给 Antigravity 长任务补上可见的里程碑和刹车；sign-in-with-chatgpt-devkit 是少见的官方身份/额度套件，但许可证为非商业，商用不能直接拿来就用。
 2026-11-24 每日精选补入三项偏本机观测和连接的工具：AI Hub Bar 是覆盖多家服务额度和会话的原生 Mac 菜单栏应用，完成度明显高于 0 星这个数字；Usage Wizard 更窄，只解决 Claude Code 的上下文体积、缓存窗口和交接；WA MCP 补上库内此前缺少的 WhatsApp 本地 MCP，默认加密且默认不发送，但发布组织名需要使用者自己判断。
 
+2026-11-25 每日精选补入 mirage、shirudo、agent-memory 和 ai-werk-skills。Mirage 给出一种新的本机/嵌入式终端抽象：统一 VFS 加按需路由计算，和再起一台沙箱不是同一条路，官方内存和数据源数字为自报，版本仍标 experimental。Shirudo 是 OpenAI 与 Cisco 的 eBPF 热补丁平台，库内此前没有同类，但 pre-release，生产还要定制内核和 TPM。agent-memory 是当天新建的本机 MCP 记忆层，和 clickhouse-loom、omnigraph、tokeneconomizer 对照更轻、完全本机，星标为 0，性能数字为自报。AI Werk Skills 把软件工厂写成 23 个可移植 Markdown 技能加带 TTL 的大脑，和 mastra-factory / tencent-loopforge 的运行时工厂不同，也还没有外部验证。
 ## Phone/Computer Use
 
 范围：agent-eng/phone-computer-use
@@ -252,6 +257,7 @@
 | pocket-dev | Node 22 CLI，手机浏览器连本机；ISC | 在手机上继续本机 Claude Code/Codex 终端、聊天、Git 和文件 | ★1；电脑需开机且默认同一 Wi-Fi | ISC | 人在外面盯或接着改本机编程 Agent，而不是控制手机 |
 | phil | Python + ADB/uiautomator2，OpenAI 兼容接口 | 电脑用自然语言逐步操作已调试的安卓真机 | 当天开源，★0；有 pytest | MIT | 要从电脑控制安卓，并能换任意兼容 API 的模型 |
 | nosis | Python 运行时：Core / Runtime / Bridge，TUI、GUI 与飞书共用协议 | 分档权限、沙箱 Shell、可确认的桌面操控，会话存 JSONL | ★65，当天无作者原帖 | MIT | 要可换前端、可接飞书的本机个人 Agent 运行时 |
+| easi-run | 自托管真实 Chrome：Rust 控制器 + 自研合成器，MCP/REST | 隔离会话、人工接管登录/验证码，会话 ID 可交还给下一个 Agent | ★125，评论区发现；AGPL | AGPL-3.0 | 要在自己的 Linux 服务器上给 Agent 真 Chrome，而不是无头仿真引擎 |
 
 ### 分析
 
@@ -277,6 +283,7 @@
 
 2026-11-23 每日精选补入 nosis：可换前端的本机个人 Agent 运行时，桌面控制和分档权限写得很细，并一等接入飞书。和 replit-amuse、n8n-nod 同属本机助手，但更像运行时而不是成品助手；当天没有作者原帖，星标也更少。
 
+2026-11-25 每日精选补入评论区发现的 easi-run：自托管真实 Chrome 会话，强调人工接管和会话交接，和 tencent-browserskill（本机已登录浏览器）、moli / obscura（自研无头引擎）不互相替代；许可证是 AGPL-3.0。
 ## Agent 军团管理
 
 范围：agent-eng/agent-fleet
@@ -329,6 +336,9 @@
 | superhive | TypeScript pnpm monorepo，Web/桌面 + 本机或云上的房间服务器，对接已登录 CLI | 多人与多 Agent 进同一房间，权限留在 Agent 所在电脑，可用飞书/微信 | ★785，0.1.0；AGPL 对网络提供有互惠要求 | AGPL-3.0-only | 要自托管一个人和多个 CLI Agent 共用的房间 |
 | beluga | TypeScript 引擎 + 桌面/手机应用，Claude Agent SDK，hyperdht 点对点 | 每任务一个 worktree，经批准可向朋友电脑上的 Agent 求助 | ★596，Mac/手机 3.8.0；Mac 未公证、Win 未签名 | MIT | 要隔离并行任务，并在人与人的电脑之间协作 |
 | specwithcode | Effect-TS monorepo + ACP，桌面/Web/移动端，SpecWeave 把规格写入 git | 并排跑多家 CLI，额度用尽可按规则换提供方继续 | ★6，1.0.412；不转售推理 | MIT | 要在本机把多家订阅连起来，并在撞墙时换线 |
+| paradev | TypeScript/Electron 多端控制面，默认每任务一个 git worktree | 并行跑已登录的 Claude Code/Codex 等，带手机端、自建 Linux 主机和自动化 | ★1.6 万，MIT（博客记 2026-11-04 改许可）；当天补了 Linux 下载 | MIT | 要产品化的多端控制面，并且接受 Electron 体量 |
+| prism-agent | TypeScript 常驻 Agent，SQLite 单运行时，Slack/Teams，Vercel AI SDK | 目标跨会话推进，heartbeat 与日程，编码可交给 Claude Code/Codex | ★18，2026-11-24 开源，企业向 | Apache-2.0 | 要在公司已治理渠道里放一个可锁定身份的常驻助手 |
+| open-agent | FastAPI + Next.js 本机工作流平台，聊天用类型化工具改画布 | n8n 风格节点与版本化回滚，可离线接本地模型 | ★1，体量不小但仍早期；测试数为自报与仓库统计 | MIT | 想在本机用聊天加画布做自动化，并能接受早期项目风险 |
 
 ### 分析
 
@@ -364,6 +374,7 @@
 
 2026-11-24 每日精选补入 SuperHive、Beluga 和 SpecWithCode。SuperHive 把控制台做成可自托管的共享房间，人可以从浏览器或飞书/微信加入，AGPL 对对外提供网络服务有要求；Beluga 与 unified-dev 一样用 worktree 隔离任务，但跨平台，并且能在批准后让 Agent 去朋友的电脑上办事；SpecWithCode 星标还很少，但把「额度用尽换提供方继续」和 git 里的规格/证据做成了差异点。t3-code 仍是体量最大的本机控制面。
 
+2026-11-25 每日精选补入 paradev、prism-agent 和 open-agent。Paradev 是体量最大的新入库控制面之一（查询时约 1.6 万星），与 t3-code、unified-dev、beluga、superhive 对照更完整（多端、worktree、自建主机），但 MIT 变更的博客日期是 2026-11-04，当天主要是再次宣布并加上 Linux 下载。Prism Agent 是 Mirantis 的企业向常驻助手，渠道限于 Web/终端/Slack/Teams，更靠近 argo / linger 这一侧而不是 CLI 控制台；刚开源，星标很少。Open-Agent 是本机 n8n 风格工作流加聊天控制面，仓库和测试量不小，但几乎还没有社区使用，宣传文档可能超前。t3-code 仍是本机多 CLI 控制面的体量基准。
 ## 大模型工具
 
 范围：category=llm-tools

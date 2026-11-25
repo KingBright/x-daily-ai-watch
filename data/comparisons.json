@@ -997,7 +997,8 @@
         "2026-11-22 每日精选补入 clickhouse-loom 和 tracer-opensre。Loom 是数据库厂商做的自托管记忆和代码索引 MCP，官方费用与定位数字为自报，和 TokenEconomizer（省当前仓库 token）及 Omnigraph（图结构共享状态）互补。OpenSRE 补上库内此前缺少的 CI/CD 可靠性 Agent，星标已过万，但仍是 Public Alpha，交互式 shell 要登录，遥测默认开启。",
         "2026-11-23 每日精选补入 agentest：用 165 条离线规则审计轨迹，专门抓「Agent 说做完了但记录对不上」，和 TraceTrial-Bench（任务完成 + harness 可靠性）、Agent Initiative Benchmark（该不该开口）互补。星标还很少，演示数字来自自带样例。",
         "2026-11-23 每周书签补入四项：open-artifact 和 design-flow 都把「先在本机画布上改再继续」做成技能，前者覆盖八种成品类型，后者专管 UX 流程批准；agy-milestone-progress 给 Antigravity 长任务补上可见的里程碑和刹车；sign-in-with-chatgpt-devkit 是少见的官方身份/额度套件，但许可证为非商业，商用不能直接拿来就用。",
-        "2026-11-24 每日精选补入三项偏本机观测和连接的工具：AI Hub Bar 是覆盖多家服务额度和会话的原生 Mac 菜单栏应用，完成度明显高于 0 星这个数字；Usage Wizard 更窄，只解决 Claude Code 的上下文体积、缓存窗口和交接；WA MCP 补上库内此前缺少的 WhatsApp 本地 MCP，默认加密且默认不发送，但发布组织名需要使用者自己判断。"
+        "2026-11-24 每日精选补入三项偏本机观测和连接的工具：AI Hub Bar 是覆盖多家服务额度和会话的原生 Mac 菜单栏应用，完成度明显高于 0 星这个数字；Usage Wizard 更窄，只解决 Claude Code 的上下文体积、缓存窗口和交接；WA MCP 补上库内此前缺少的 WhatsApp 本地 MCP，默认加密且默认不发送，但发布组织名需要使用者自己判断。",
+        "2026-11-25 每日精选补入 mirage、shirudo、agent-memory 和 ai-werk-skills。Mirage 给出一种新的本机/嵌入式终端抽象：统一 VFS 加按需路由计算，和再起一台沙箱不是同一条路，官方内存和数据源数字为自报，版本仍标 experimental。Shirudo 是 OpenAI 与 Cisco 的 eBPF 热补丁平台，库内此前没有同类，但 pre-release，生产还要定制内核和 TPM。agent-memory 是当天新建的本机 MCP 记忆层，和 clickhouse-loom、omnigraph、tokeneconomizer 对照更轻、完全本机，星标为 0，性能数字为自报。AI Werk Skills 把软件工厂写成 23 个可移植 Markdown 技能加带 TTL 的大脑，和 mastra-factory / tencent-loopforge 的运行时工厂不同，也还没有外部验证。"
       ]
     },
     {
@@ -1185,7 +1186,8 @@
         "2026-11-19 补入 openrocode：把 Computer Use 的指屏幕、护栏和全程留痕搬到仿真机械臂上，是库内第一个这类机器人套件。它仍是 alpha，未查到完整真机适配说明，和浏览器/桌面操控工具不互相替代。",
         "2026-11-21 补入三条不同方向：karpo-browser 把逐步网页动作交给决策模型，和 opencode-browse / tencent-browserskill 的「通用大模型直接点选」不同，基准为自报；pocket-dev 让人用手机接着指挥本机编码 Agent，和 coucou 同属监视/接续层，但提供终端和 Git；phil 是轻量的电脑控安卓实现，护栏完整度仍不如 pinky。",
         "2026-11-22 每日精选补入 replit-amuse：Replit 开源的本机个人助手，核心是可旁观的实时浏览器和发送/付款审批卡，默认只接 OpenAI、不做 MCP。和 n8n-nod、Linger 同属本机助手，但产品范围更窄、安全边界写得更具体；没有公开托管演示。",
-        "2026-11-23 每日精选补入 nosis：可换前端的本机个人 Agent 运行时，桌面控制和分档权限写得很细，并一等接入飞书。和 replit-amuse、n8n-nod 同属本机助手，但更像运行时而不是成品助手；当天没有作者原帖，星标也更少。"
+        "2026-11-23 每日精选补入 nosis：可换前端的本机个人 Agent 运行时，桌面控制和分档权限写得很细，并一等接入飞书。和 replit-amuse、n8n-nod 同属本机助手，但更像运行时而不是成品助手；当天没有作者原帖，星标也更少。",
+        "2026-11-25 每日精选补入评论区发现的 easi-run：自托管真实 Chrome 会话，强调人工接管和会话交接，和 tencent-browserskill（本机已登录浏览器）、moli / obscura（自研无头引擎）不互相替代；许可证是 AGPL-3.0。"
       ]
     },
     {
@@ -1506,7 +1508,8 @@
         "2026-11-22 每日精选补入 tmux-island：只通过 tmux 监视和跳转多个编码 Agent 的 macOS 灵动岛，和 coucou（岛上批准，不绑定 tmux）、herdr（跨机器运行时复用器）对照。工程完整但刚刚发布，仅 Apple silicon。",
         "2026-11-23 每日精选补入 pibot 和 openvorld。Pi Bot 是开源次日即提供安装包的本机 AI 团队，重点是群聊协调、沙箱和审批，而不是调度已有 Claude Code/Codex CLI（那是 T3 Code 一侧）。OpenVorld 把同一问题做成像素风小镇和 writ 批准，有可玩网页演示，但星标很少、仍早期。",
         "2026-11-23 每周书签补入 loopx：开源的长程控制面，把目标、验收、门禁和证据做成可跨会话、跨 Codex/Claude Code 等宿主保存的状态，可从本机 SQLite 起步或自托管 PostgreSQL。和 tencent-loopforge 的 Docker SOP、shoal / hf-agent-manager 的并排会话、stitch-loop 的托管持续优化形成对照。LHTB 等基准数字为项目自报。",
-        "2026-11-24 每日精选补入 SuperHive、Beluga 和 SpecWithCode。SuperHive 把控制台做成可自托管的共享房间，人可以从浏览器或飞书/微信加入，AGPL 对对外提供网络服务有要求；Beluga 与 unified-dev 一样用 worktree 隔离任务，但跨平台，并且能在批准后让 Agent 去朋友的电脑上办事；SpecWithCode 星标还很少，但把「额度用尽换提供方继续」和 git 里的规格/证据做成了差异点。t3-code 仍是体量最大的本机控制面。"
+        "2026-11-24 每日精选补入 SuperHive、Beluga 和 SpecWithCode。SuperHive 把控制台做成可自托管的共享房间，人可以从浏览器或飞书/微信加入，AGPL 对对外提供网络服务有要求；Beluga 与 unified-dev 一样用 worktree 隔离任务，但跨平台，并且能在批准后让 Agent 去朋友的电脑上办事；SpecWithCode 星标还很少，但把「额度用尽换提供方继续」和 git 里的规格/证据做成了差异点。t3-code 仍是体量最大的本机控制面。",
+        "2026-11-25 每日精选补入 paradev、prism-agent 和 open-agent。Paradev 是体量最大的新入库控制面之一（查询时约 1.6 万星），与 t3-code、unified-dev、beluga、superhive 对照更完整（多端、worktree、自建主机），但 MIT 变更的博客日期是 2026-11-04，当天主要是再次宣布并加上 Linux 下载。Prism Agent 是 Mirantis 的企业向常驻助手，渠道限于 Web/终端/Slack/Teams，更靠近 argo / linger 这一侧而不是 CLI 控制台；刚开源，星标很少。Open-Agent 是本机 n8n 风格工作流加聊天控制面，仓库和测试量不小，但几乎还没有社区使用，宣传文档可能超前。t3-code 仍是本机多 CLI 控制面的体量基准。"
       ]
     },
     {

@@ -1,33 +1,33 @@
 {
   "meta": {
-    "generated_at": "2026-11-24",
+    "generated_at": "2026-11-25",
     "timezone": "Asia/Shanghai",
-    "projects_total": 352,
+    "projects_total": 360,
     "category_counts": {
       "game": 62,
-      "agent-eng": 137,
+      "agent-eng": 145,
       "llm-tools": 87,
       "other": 66
     },
     "subcategory_counts": {
-      "dev-efficiency": 67,
-      "phone-computer-use": 25,
-      "agent-fleet": 45
+      "dev-efficiency": 71,
+      "phone-computer-use": 26,
+      "agent-fleet": 48
     },
     "origin_counts": {
       "bookmark": 159,
       "reply-on-popular-post": 26,
-      "daily-digest": 151,
+      "daily-digest": 158,
       "bookmark+daily-digest": 11,
-      "daily-digest+reply-on-popular-post": 3,
+      "daily-digest+reply-on-popular-post": 4,
       "user-request": 1,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 274,
+      "full": 282,
       "light": 78
     },
-    "analysis_updated_at": "2026-11-24"
+    "analysis_updated_at": "2026-11-25"
   },
   "projects": [
     {
@@ -2903,6 +2903,61 @@
       }
     },
     {
+      "id": "ai-werk-skills",
+      "name": "AI Werk Skills",
+      "summary": "23 个纯 Markdown 的 Agent Skills：把编码 Agent 变成一条五阶段软件交付线，并用仓库内的 Markdown「大脑」在技能之间共享带时效的项目知识。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "skill",
+        "markdown",
+        "软件交付",
+        "apache-2.0"
+      ],
+      "source_url": "https://github.com/AnPod/ai-software-factory",
+      "preview_url": null,
+      "post_url": "https://x.com/AnPod/status/2125170054107136167",
+      "author": "AnPod（@AnPod）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "OpenCode",
+        "Gemini CLI",
+        "GitHub Copilot CLI",
+        "Cursor CLI",
+        "Pi",
+        "Factory Droid"
+      ],
+      "first_seen": "2026-11-24",
+      "origin": "daily-digest",
+      "stars": 0,
+      "notes": "GitHub API 于 2026-11-25 查询：0 星、0 fork，许可证 Apache-2.0，2026-11-20 建仓，2026-11-24 在 X 宣布开源。仓库 skills/ 下确有 23 个技能目录。无在线演示。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Apache-2.0。主体是 skills/ 下 23 个符合 Agent Skills 规范的目录，另有 install.sh、.claude-plugin（marketplace.json / plugin.json）、CLAUDE.md、AGENTS.md、测试和 evals。知识库约定在项目里的 .aiwerk/brain/：带 YAML 前置元数据的 Markdown（收集时间、来源、ttl_days、confidence）。官方称可用于 Claude Code、GitHub Copilot CLI、Codex、OpenCode、Pi、Cursor CLI、Gemini CLI 和 Factory Droid。",
+        "method": "先用 aiwerk-init / landscape / survey 访谈宿主、盘点工具并调研仓库，写入大脑；再沿 intake → spec/plan → 实现与沙箱 → 评审/测试/安全门 → 发布、部署检查、事故和 SLO 这条五阶段线推进。每个技能先读大脑再写回，并更新 index.md 与 log.md。大脑不会在后台偷偷改：合并后用 docs-sync 对照 diff，过期页要人确认才刷新，## Human notes 下的段落技能不得覆盖。思路来自 Karpathy 的 LLM Wiki：维护一份可版本管理的项目脑，而不是每次任务重新发现仓库。",
+        "features": [
+          "23 个技能覆盖初始化、调研、规格、实现、测试/安全门、发布、事故和健康审计",
+          "带 TTL 和来源的 Markdown 大脑，和代码一起进 git",
+          "安装脚本和多宿主插件清单",
+          "含技能校验脚本和一部分自动化测试"
+        ],
+        "highlights": [
+          "把「软件工厂」做成可移植的纯 Markdown 技能，而不是再做一个控制台",
+          "大脑的更新规则写得很严：不过期不擅自刷新，并保留人写的笔记",
+          "声明支持的编码宿主比较全，适合已经有 Claude Code/Codex 等工具的团队"
+        ],
+        "limitations": [
+          "2026-11-25 查询为 0 星，2026-11-20 建仓，实践效果和技能质量还缺少外部验证",
+          "没有独立的运行时或沙箱实现，最终执行质量取决于宿主 Agent",
+          "无在线演示；能否在所有声明宿主上无差别工作，需按各宿主的技能加载方式自行验证"
+        ],
+        "comparison": "和 seo-skills、stitch-skills、modern-web-guidance 同属可安装技能包，但 AI Werk 不面向垂直任务（SEO 或现代 Web API），而是整条交付流程。mastra-factory、tencent-loopforge 是带运行时的工厂平台；elephant-goldfish-model 用「有记忆的大象 + 无记忆的金鱼」做设计审查。要一条可进 git 的 Markdown 交付线，看 ai-werk-skills；要把工厂做成可托管的服务，看 loopforge 或 mastra-factory。",
+        "researched_at": "2026-11-25"
+      }
+    },
+    {
       "id": "aws-emulator",
       "name": "AWS Emulator",
       "summary": "AWS 官方开源的本地 AWS API 模拟器（Rust），无需账号即可在本机或 CI 里跑 SDK/CLI 调用；全部代码由自主 Agent 编写和测试。",
@@ -3678,6 +3733,56 @@
       }
     },
     {
+      "id": "mirage",
+      "name": "Mirage",
+      "summary": "Strukto 正式发布 0.1.0 的开源虚拟终端：把 Agent 看到的 shell、文件系统和 CLI 与底层数据和计算机器拆开，使终端环境可以跑在应用、浏览器甚至边缘设备里。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "typescript",
+        "python",
+        "rust",
+        "虚拟终端",
+        "vfs",
+        "沙箱替代",
+        "产品发布",
+        "apache-2.0"
+      ],
+      "source_url": "https://github.com/strukto-ai/mirage",
+      "preview_url": "https://www.strukto.ai/news/mirage-0-1-0",
+      "post_url": "https://x.com/zechengzh/status/2125308941190250618",
+      "author": "Strukto（@zechengzh / @struktoai）",
+      "models": [],
+      "first_seen": "2026-11-24",
+      "origin": "daily-digest",
+      "stars": 3840,
+      "notes": "GitHub API 于 2026-11-25 查询：3840 星、290 fork，2026-05-06 建仓，许可证 Apache-2.0，仓库状态标 experimental。工作区约 100KB、会话约 10KB、约 60 个数据源等数字来自 README，属自报。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Apache-2.0。仓库是多语言单体：python/（PyPI 包 mirage-ai）、typescript/packages（core、node、cli、browser、cloudflare、server，以及 claude-agent-sdk、openai-agents、langchain、mastra、opencode、pi 等宿主适配）、rust/（mirage-rs、shell-wasm 等，对应官方所述用 Rust 重写的 Unix 风格工具）。终端由 Workspace 配置挂载、虚拟 CLI、profile 和机器路由组成，命令可导出为 OpenTelemetry 追踪。官方文档站点 docs.mirage.strukto.ai，状态标 experimental。",
+        "method": "核心思路是：Agent 真正熟悉的是终端语义，而不是一台完整的容器或微虚机。Mirage 把界面（bash 兼容 shell、POSIX 风格工具）、数据（统一虚拟文件系统）和计算（本进程、E2B 等沙箱或远程机器）拆开。S3、Slack、Gmail、Google Drive 等服务挂到同一棵目录树，grep/ls/jq 等命令在有云搜索的源上会走对方自己的搜索。profile 用 allow/ask/deny 管命令，用 hide/show 管路径（隐藏路径在 Agent 看来不存在）。脚本化策略可以在命令执行前看到完整终端上下文。需要真计算时，route policy 再把某一行派到指定机器。",
+        "features": [
+          "用代码或一份配置定义工作区：挂载、虚拟 CLI、profile 和机器路由",
+          "统一 VFS，把多家云存储和通讯服务暴露成同一套 Unix 命令；官方自述约 60 个数据源",
+          "MCP 等工具可虚拟成 CLI，用 man/which 发现",
+          "每条命令可记录并导出 OpenTelemetry 追踪，状态可放在内存、磁盘、Redis 或 S3"
+        ],
+        "highlights": [
+          "2026-11-24 正式发布 0.1.0，原帖强调不必为每个 Agent 起一整台沙箱，只要终端接口",
+          "2026-11-25 查询为 3840 星、290 fork，Python/TypeScript/Rust 三套实现和多宿主适配都在同一仓库，工程完整",
+          "README 自报工作区约 100KB、新会话约 10KB，可在 FastAPI/Express、浏览器标签或树莓派上嵌入"
+        ],
+        "limitations": [
+          "仓库徽章和文档标明 experimental，0.1.0 仍是早期正式版",
+          "内存占用、数据源数量和「每条命令只增加 KB 级内存」均为项目自报，未独立实测",
+          "需要真实软件（如 LibreOffice）时仍要路由到真实机器或沙箱，评论里也有人提出状态回滚和策略边界问题"
+        ],
+        "comparison": "库内此前没有同类「虚拟终端 + 统一 VFS」项目。和 nosis、linger、n8n-nod 等本机运行时不同，Mirage 不是再做一个会点桌面的 Agent，而是给已有 Agent 一层可嵌入、可策略控制的终端抽象。和 e2b 等沙箱、以及 easi-run 这种真实 Chrome 会话相比，它把计算下沉为按需路由，而不是默认占用一台完整环境。要在应用里给 Agent 统一的 ls/grep 接口并做权限裁剪，看 Mirage；要让 Agent 操作已登录的真浏览器，看 easi-run 或 tencent-browserskill。",
+        "researched_at": "2026-11-25"
+      }
+    },
+    {
       "id": "modern-web-guidance",
       "name": "Modern Web Guidance（Google Chrome）",
       "summary": "Chrome、Edge、Firefox 与 MDN 团队共同维护的编程 Agent 技能：按需检索 250 个现代 Web 平台特性的专家指南，让 Agent 不再写过时 JavaScript。",
@@ -4342,6 +4447,58 @@
       }
     },
     {
+      "id": "shirudo",
+      "name": "Shirudo",
+      "summary": "OpenAI 与 Cisco 联合开源的 Linux eBPF 安全平台：由 Agent 起草并测试有签名的热补丁（upatch），经人工批准后在不停机的情况下挡住漏洞路径，直到正式补丁发布。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "c",
+        "ebpf",
+        "安全",
+        "linux",
+        "产品发布",
+        "openai",
+        "cisco",
+        "bsd-2-clause"
+      ],
+      "source_url": "https://github.com/shirudo-dev/shirudo",
+      "preview_url": "https://openai.com/index/introducing-shirudo",
+      "post_url": "https://x.com/OpenAI/status/2124980590717911527",
+      "author": "OpenAI 与 Cisco（仓库 shirudo-dev）",
+      "models": [
+        "Codex"
+      ],
+      "first_seen": "2026-11-24",
+      "origin": "daily-digest",
+      "stars": 1737,
+      "notes": "GitHub API 于 2026-11-25 查询：1737 星、163 fork，许可证 BSD-2-Clause，2026-10-13 建仓。README 写明 pre-release；生产环境需要带签名加载 ABI 的内核补丁和 TPM 2.0。官方演示（如 Java4Shell 护住 Elasticsearch）来自 OpenAI/Cisco 公告，属自报。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "C 语言用户态工具加 bpf/ 目录下的 eBPF 程序，BSD-2-Clause。核心对象是有签名的微补丁 upatch：仓库 upatches/ 下有 kernel-obs、kernel-cve、java-base64、java-sql-inj、app-sandbox 等示例。引导后限制用户态加载未签名 BPF；加载/卸载走内核校验的 sealed .bpf keyring。Java upatch 在用户态校验，配置好的 JVM 启动时加载。变更会扩展 TPM 测量，用于出具签名证据。文档在 Documentation/ 与 docs.shirudo.dev。Makefile 分包装、版本和目标依赖。",
+        "method": "针对「漏洞已公开、正式补丁还没上」的窗口：Agent（官方演示用 Codex）根据漏洞起草一条尽量窄的 eBPF 或 Java 防护，先测试再交给人批准，签字后加载到仍在运行的服务上，不重启。生产目标在 initrd 阶段就执行 shirudo init，即使目标机上的 root 没有运营者的签名密钥，也无法改掉运行时。它明确是虚拟补丁而不是替代厂商补丁。",
+        "features": [
+          "用签名 upatch 在内核挂钩或 Java 应用层挡住脆弱路径，服务可继续运行",
+          "包含 kernel-obs 等可观察性包，监控进程、网络和权限变化",
+          "TPM 测量已加载的 upatch 集合，用于验证目标状态",
+          "本地可用软件 TPM 的虚拟机做快速试用；文档列出 x86-64 测试和 arm64 主机测试"
+        ],
+        "highlights": [
+          "2026-11-24 OpenAI 与 Cisco 同时发官方博客，是当天少有的大厂联合安全运行时开源",
+          "2026-11-25 查询为 1737 星、163 fork，C/eBPF 树、示例 upatch 和文档比较完整",
+          "把「人工批准 + 签名加载 + TPM 证据」做成强制路径，而不是只靠提示词约束 Agent"
+        ],
+        "limitations": [
+          "README 写明 pre-release；生产需要打了 shirudo 内核补丁、具备签名加载 ABI 的内核，以及 TPM 2.0，多数现网机器一时用不了",
+          "官方演示挡住 Java4Shell 等案例为项目方自报，未独立复核漏报率",
+          "riscv64 目标验证仍待完成；盾只是过滤器，不能代替真正的补丁"
+        ],
+        "comparison": "库内没有同类的 eBPF 热补丁平台。security-audit-skill 是让编码 Agent 分阶段审代码，tracer-opensre 做 CI/CD 可靠性，都不进入内核运行时。Shirudo 面向「Agent 协助运维已上线的 Linux 服务」。要在代码提交前做审计，看 security-audit-skill；要在漏洞窗口给在线服务加一条可撤回的签名盾，看 Shirudo。",
+        "researched_at": "2026-11-25"
+      }
+    },
+    {
       "id": "sign-in-with-chatgpt-devkit",
       "name": "Sign in with ChatGPT DevKit",
       "summary": "OpenAI 的本地开发套件：让本机开源应用用 ChatGPT 账号登录，并在用户授权后使用其 ChatGPT 订阅额度，而不必自备 API Key。",
@@ -4926,6 +5083,56 @@
         ],
         "comparison": "和 dsh-superagent-prototype 思路相近（事件到工单再到 Agent），但它更轻、更通用，dsh 绑定 DeepSeek Harness 和单个仓库。和 openduet-copilotkit 等编排器相比，它重在后台常驻加人工审批，不提供可视化面板。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "agent-memory",
+      "name": "agent-memory",
+      "summary": "本机 MCP 记忆层：给 Claude Code、Cursor 等 Agent 提供跨会话的混合检索、知识图谱、代码图谱和本地 Web UI，数据都留在自己的机器上。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "typescript",
+        "mcp",
+        "记忆",
+        "知识图谱",
+        "bun",
+        "mit"
+      ],
+      "source_url": "https://github.com/kumard3/agent-memory",
+      "preview_url": null,
+      "post_url": "https://x.com/kumard_3/status/2125273909356626045",
+      "author": "Kumar Deepanshu（@kumard_3）",
+      "models": [
+        "Claude Code"
+      ],
+      "first_seen": "2026-11-24",
+      "origin": "daily-digest",
+      "stars": 0,
+      "notes": "GitHub API 于 2026-11-25 查询：0 星、0 fork，许可证 MIT，2026-11-24 当天建仓。README 自报空闲约 16MB、在 10.5 万条记忆上热查询约 0.08 秒。预览是本机 UI（默认 127.0.0.1:41999），无公开演示，preview_url 留空。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript，用 Bun 构建，MIT。src/ 含 MCP 服务器、混合检索（BM25 + 本地嵌入，RRF 融合）、知识图谱、代码图谱、会话整理、保险库和 CLI（amx）。watcher/ 是可选的 Rust 文件监视器。stdio 入口在首次请求时拉起真正的服务器，空闲 10 分钟后退出。数据目录 ~/.agent-memory/。Web UI 只绑定 localhost。另有 SKILL.md，提示 Agent 在何时调用 memory_context 等工具。检索和模式搜索还需要本机的 ripgrep 与 ast-grep。",
+        "method": "把记忆从某个 Agent 产品里拿出来，放到本机的共享层。新会话先读项目简报（master context）和上次交接。可以摄入 Claude Code 的本地 transcript 和整理过的笔记，用蒸馏把长会话变成条目（调用本机 claude CLI）。图谱保存带类型的实体和关系；代码图谱索引导入、导出、路由、模型和环境变量，可用监视器保持更新。删除、修剪和压缩都有对应工具，避免只进不出。",
+        "features": [
+          "MCP 工具覆盖读简报、存取、图谱、遗忘/压缩、摄入 transcript 和代码图谱查询",
+          "本机 Web UI：知识地图、搜索、记忆编辑、会话和代码图谱",
+          "amx CLI 做仓库地图、代码搜索和模式查询",
+          "密钥进 macOS Keychain，按项目注入环境变量，列出时不返回明文"
+        ],
+        "highlights": [
+          "2026-11-24 当天新建的完整小系统，检索、图谱、UI、CLI 和 Rust watcher 都在仓库里",
+          "明确做跨 Claude Code / Cursor 的本机记忆，而不是绑死在一个宿主里",
+          "README 对空闲内存和热查询延迟写了具体数字（自报）"
+        ],
+        "limitations": [
+          "2026-11-25 查询为 0 星，当天刚发布，社区和正确性都未经广泛验证",
+          "0.08 秒 / 10.5 万条记忆、空闲 16MB 均为 README 自报，未独立实测",
+          "密钥保险库目前写明用 macOS Keychain；非 Mac 上的等价能力未在 README 里写清。预览需本机启动"
+        ],
+        "comparison": "和 clickhouse-loom、tokeneconomizer、omnigraph 都解决「Agent 如何记住和取回」。Loom 是可自托管的 MCP，偏共享文档检索和代码索引；TokenEconomizer 更偏省 token 的仓库精简；omnigraph 是多 Agent 共享记忆的图数据库，带分支合并。agent-memory 更轻、完全本机，并带知识图谱和代码图谱的一体化 UI。要团队共享并做并发写入控制，看 omnigraph；要给 ClickHouse 生态做带引用的检索，看 loom；只想在本机给多个编码 Agent 补一层记忆，看 agent-memory。",
+        "researched_at": "2026-11-25"
       }
     },
     {
@@ -6799,6 +7006,57 @@
       }
     },
     {
+      "id": "easi-run",
+      "name": "easi.run",
+      "summary": "自托管的真实 Chrome 会话服务：每个 Agent 占用隔离的浏览器配置，支持 MCP、人工接管登录和验证码，并用自研 Rust 合成器做低带宽画面流。",
+      "category": "agent-eng",
+      "subcategory": "phone-computer-use",
+      "tags": [
+        "开源",
+        "rust",
+        "chrome",
+        "browser-use",
+        "mcp",
+        "自托管",
+        "agpl-3.0"
+      ],
+      "source_url": "https://github.com/julianosig/easi.run",
+      "preview_url": "https://easi.run/",
+      "post_url": "https://x.com/jul1anodev/status/2125327169337569695",
+      "author": "julianosig（@jul1anodev）",
+      "models": [
+        "Claude Code",
+        "Codex"
+      ],
+      "first_seen": "2026-11-24",
+      "origin": "daily-digest+reply-on-popular-post",
+      "stars": 125,
+      "notes": "GitHub API 于 2026-11-25 查询：125 星、4 fork，许可证 AGPL-3.0，2026-10-22 建仓。发现于 Mirage 0.1.0 原帖评论，作者说明 Chrome 留在独立主机上，会话 ID 可在交还控制权后交给下一个授权 worker。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Rust workspace（controller/ 与 tests/）加 Svelte/Vite 客户端（client/），AGPL-3.0。文档包括 architecture、design、security、topology、stealth、agent-compatibility 和 benchmark。自研合成器把 Chrome 画面流式传出：静止内容用无损分块，滚动尽量复用已有画面，剧烈运动默认走 AV1，网络允许时用 UDP。内置 MCP 服务器和 REST API；安装器在本机已有、且尚未注册同名服务器时，会把 easi 加进 Claude Code。跑在你自己的 Linux 服务器上。",
+        "method": "给每个 Agent 一个隔离的真实 Google Chrome 配置，而不是再做一个无头引擎去仿真页面。人可以在实时画面里接管以完成登录、2FA 或验证码，然后把同一 session ID 交回给 Agent。Agent 可用 CSS 选择器读页面结构，必要时打开开发者工具跑脚本（文档提醒站点可能察觉）。下载和上传默认先问人。还可以按会话指定出口代理，并据此建议时区和语言。",
+        "features": [
+          "MCP 与 REST：start_session 后用 session ID 做后续浏览器操作，支持恢复会话",
+          "人工接管处理登录和验证码，控制权交还后会话可继续",
+          "按会话保存的资料、拖放文件、下载/上传审批",
+          "自研低带宽画面流，而不是整路 VNC"
+        ],
+        "highlights": [
+          "在热门 Mirage 帖评论里自荐，项目本身有完整 Rust 服务、文档和官网",
+          "2026-11-25 查询为 125 星，定位是「把真 Chrome 留在自己的机器上」",
+          "会话交接模型（lease / 交还控制权）和 Mirage 的「界面与计算分离」可以互补"
+        ],
+        "limitations": [
+          "AGPL-3.0：对外提供网络服务通常需要开源或另行获得许可",
+          "需要自备 Linux 服务器和 Chrome 运行环境，不是无头轻量引擎那种一键嵌入",
+          "打开开发者工具或跑页面脚本可能被站点识别；隐身与对抗检测能力以文档为准，未独立实测带宽数字"
+        ],
+        "comparison": "和 tencent-browserskill、replit-amuse、n8n-nod 一样操作真实浏览器，但 easi-run 强调自托管隔离会话和人工接管。moli、obscura 是自研轻量无头引擎（CDP），不是真 Chrome，登录态和反自动化表现会不同。karpo-browser 走规划模型加决策模型。pinky 是真机手机而不是桌面 Chrome。要复用已登录的本机 Chrome，看 tencent-browserskill；要在自己的服务器上给每个 Agent 单独的 Chrome 并允许人接管，看 easi-run。",
+        "researched_at": "2026-11-25"
+      }
+    },
+    {
       "id": "hermes-voice",
       "name": "hermes-voice",
       "summary": "经 Home Assistant 把旧 Echo 变成 Hermes Agent 语音入口。",
@@ -8197,6 +8455,58 @@
       }
     },
     {
+      "id": "open-agent",
+      "name": "Open-Agent",
+      "summary": "本地优先的 MIT 工作流与 Agent 平台：用聊天里的类型化工具来搭建、调试和回滚 n8n 风格的工作流，也可完全离线运行。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "python",
+        "typescript",
+        "fastapi",
+        "nextjs",
+        "工作流",
+        "n8n",
+        "mit"
+      ],
+      "source_url": "https://github.com/mdsabibahamedsad/Open-Agent",
+      "preview_url": null,
+      "post_url": null,
+      "author": "Md Sabib Ahamed Sad",
+      "models": [
+        "Ollama",
+        "LM Studio"
+      ],
+      "first_seen": "2026-11-24",
+      "origin": "daily-digest",
+      "stars": 1,
+      "notes": "GitHub API 于 2026-11-25 查询：1 星、0 fork，许可证 MIT，2026-10-02 建仓。未找到当天的 X 原帖，来源是 2026-11-24 的 DEV 介绍。README 称 59 个节点、46 个聊天工具、1800+ 测试；本次在仓库内统计到 1588 个 Python def test_，另有 TypeScript 测试文件。当天最新提交是文档向的 README 整理。无在线演示，preview_url 留空。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "MIT。FastAPI 后端（apps/api/src/openagent，含 runtime、orchestration、connectors、marketplace 等）加 Next.js 前端（apps/web），另有 worker、desktop、packages/workflow-engine 和 packages/cli。默认用嵌入式 SQLite，也提供带 PostgreSQL/Redis 的 Docker Compose。文档和 DEV 文称聊天控制面有 46 个类型化工具（名为 Koro），工作流引擎有 59 个节点和 6 种触发器，表达式走 n8n 风格的封闭语法，数据契约是 {json, binary, pairedItem}。可接 Ollama、LM Studio 或任意 OpenAI 兼容端点。",
+        "method": "把聊天当成主控制面，而不是画布旁边的附件。助手用类型化工具增删连线、单步测试、查看失败运行和回滚；每次变更生成新版本，破坏性操作需要签名确认令牌。即使大模型不可达，也可以用确定性命令模式继续运行、检查和调度工作流。目标是在本机给出接近 n8n 的执行语义，同时避免必须上云或按次计费。",
+        "features": [
+          "Web 画布、聊天助手、CLI、SDK 和 webhook 共用同一套 API 与工作流引擎",
+          "版本化变更和可回滚，破坏性操作需确认",
+          "可完全离线，指向本地模型端点",
+          "README 提供与 n8n 的功能对照表"
+        ],
+        "highlights": [
+          "仓库体量很大：API、工作流引擎、前端和大量测试目录都在，不是只有文档的空壳",
+          "本机统计到 1588 个 Python 测试函数，另有 TS 测试，说明执行语义被认真测过",
+          "MIT 且宣称无 fair-code 限制，和部分工作流产品的许可证对比明确"
+        ],
+        "limitations": [
+          "2026-11-25 查询仅 1 星，社区验证几乎没有；当天提交是「star-ready README」，宣传痕迹较重",
+          "文档还覆盖 billing、marketplace、payouts 等，部分能力可能超前于成熟度，需对照 FEATURE_PARITY_MATRIX 判断",
+          "59 节点、46 工具、1800+ 测试多为项目自报；未找到可公开访问的在线演示"
+        ],
+        "comparison": "库内没有另一套完整的开源 n8n 替代品。n8n-nod 是 n8n 公司做的本机个人 Agent（沙箱电脑和浏览器），不是工作流画布。mastra-factory、tencent-loopforge 更接近 issue-to-PR 的软件工厂。Open-Agent 适合想在本机用聊天加画布编排自动化、并接受早期项目风险的人；要现成的个人桌面 Agent，看 n8n-nod 或 linger；要指挥已有编码 CLI，看 paradev 或 t3-code。",
+        "researched_at": "2026-11-25"
+      }
+    },
+    {
       "id": "openduet-copilotkit",
       "name": "OpenDuet (CopilotKit)",
       "summary": "可自托管的开源 agent 模板，agent 主动推进、人可随时插手。",
@@ -8330,6 +8640,62 @@
       }
     },
     {
+      "id": "paradev",
+      "name": "Paradev",
+      "summary": "开源的多端编程 Agent 控制面：用独立 git worktree 并行跑 Claude Code、Codex、OpenCode 等已有订阅，并可从桌面、手机或自建 Linux 主机查看和审阅。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "typescript",
+        "桌面应用",
+        "electron",
+        "多agent",
+        "worktree",
+        "控制面",
+        "mit"
+      ],
+      "source_url": "https://github.com/ParadevAI/Paradev",
+      "preview_url": "https://paradev.com/",
+      "post_url": "https://x.com/ParadevAI/status/2125293469136732635",
+      "author": "ParadevAI",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "OpenCode",
+        "Gemini CLI",
+        "Cursor Agent",
+        "Amp"
+      ],
+      "first_seen": "2026-11-24",
+      "origin": "daily-digest",
+      "stars": 16582,
+      "notes": "GitHub API 于 2026-11-25 查询：16582 星、1492 fork，许可证 MIT，2025-10-21 建仓。官方博客写明 2026-11-04 从 Elastic License 2.0 改为 MIT；2026-11-24 官方帖再次宣布 MIT，同日仓库合入 Linux 下载入口（commit 296f25b4）。Windows 官方文档仍写尚未提供。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript monorepo（根包名仍为 @superset/repo），Bun + Turborepo，workspaces 分 packages/*、apps/*、tooling/*。桌面端在 apps/desktop，另有 mobile、web、api、cli、mcp、agent-harness、pty-daemon、sandbox、host-service 等。仓库中有大量 Electron / Metro / React Native 补丁，说明桌面走 Electron、移动端走 RN。MIT（官方称 TypeScript SDK 也已从 Apache-2.0 改为 MIT）。文档在 docs.paradev.com。",
+        "method": "默认每个任务一个 git worktree 和独立分支，多个 Agent 同时改文件时互不覆盖，冲突留到合并时再解。它不转售模型额度，只编排你已经登录的 Claude Code、Codex、Amp、Gemini CLI、OpenCode、Cursor Agent 等。审阅在内置 diff 里完成，合入走普通分支和 PR。还可以按日程或 Sentry/Slack/webhook 等事件拉起带真实工作区的会话。本地优先，代码默认不离开本机；也可把主机放到自己的 Linux 服务器或官方云上，从手机查看。",
+        "features": [
+          "桌面 IDE、iPhone/iPad/Android、CLI 和 MCP 多种入口",
+          "并行会话各自占用 worktree，带终端、diff、端口和开发服务器预览",
+          "按日程或外部事件自动拉起 Agent，输出仍是可审阅的工作区",
+          "Pages：把 Agent 生成的设计和报告分享给同事，并让 Agent 直接处理评论"
+        ],
+        "highlights": [
+          "2026-11-25 查询为 16582 星、1492 fork，是当天库外最成熟的开源 Agent 军团控制面之一",
+          "2026-11-24 官方帖（310 赞）再次强调 MIT，并可 fork 做自己的产品；同日合入 Linux 下载",
+          "不转售额度，隔离模型是 worktree 而不是再包一层模型 API"
+        ],
+        "limitations": [
+          "改用 MIT 的官方博客日期是 2026-11-04，今天的帖是再次宣布，并不是当天才第一次开源",
+          "官方文档仍写 Windows 尚未提供；Linux 刚刚加上下载入口，稳定性需观察",
+          "体积是 Electron 加多端 monorepo，本机开销大于纯 CLI 或原生控制台"
+        ],
+        "comparison": "和 t3-code、unified-dev、beluga、shoal、superhive 同属多 CLI 控制面。t3-code 仍是星标最高、衍生最多的基准；unified-dev 把 worktree 做到原生 macOS，但只支持 Apple silicon 的 macOS 26；beluga 同样用 worktree，还能在批准后向朋友的电脑求助；superhive 中心是可自托管的共享房间。Paradev 更接近「完整产品」：桌面+手机+自建云+自动化和 Pages，许可证现为 MIT。只想在本机并排驱动已有 CLI，t3-code 或 unified-dev 更轻；要带移动端和自建主机的产品化控制面，看 Paradev。",
+        "researched_at": "2026-11-25"
+      }
+    },
+    {
       "id": "pibot",
       "name": "Pi Bot",
       "summary": "开源的本机 AI 团队桌面应用：多个有名字的 Bot 可以私聊或拉群分工，在指定文件夹里跑命令、改文件，风险步骤要你批准。",
@@ -8426,6 +8792,62 @@
         ],
         "comparison": "与库内 herdr（终端复用器，管理哪个 Agent 卡住）、t3-code（统一操控多 Agent 的控制台）互补：plannotator 不负责启动或调度 Agent，而是专做审阅和反馈回传层；与 open-code-review 相比偏人工批注，后者偏自动化行级审查。",
         "researched_at": "2026-11-15"
+      }
+    },
+    {
+      "id": "prism-agent",
+      "name": "Prism Agent（Mirantis）",
+      "summary": "Mirantis 把企业向常驻 Agent 以 Apache 2.0 开源：对话结束后仍按目标和日程继续工作，可在 Web/终端、Slack 和 Teams 里到达，并把编码任务交给 Claude Code 或 Codex。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "typescript",
+        "常驻agent",
+        "slack",
+        "teams",
+        "computer-use",
+        "企业",
+        "apache-2.0",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/Mirantis/prism",
+      "preview_url": "https://www.mirantis.com/blog/prism-agent-is-open-source-an-ai-agent-that-keeps-working-after-the-conversation-ends/",
+      "post_url": null,
+      "author": "Mirantis（Miska Kaipiainen）",
+      "models": [
+        "Claude Opus 5",
+        "Claude Haiku",
+        "Amazon Titan v2",
+        "Claude Code",
+        "Codex"
+      ],
+      "first_seen": "2026-11-24",
+      "origin": "daily-digest",
+      "stars": 18,
+      "notes": "GitHub API 于 2026-11-25 查询：18 星、0 fork，许可证 Apache-2.0，2026-05-21 建仓。2026-11-24 Mirantis 官方博客宣布开源。检索当天未找到官方 X 原帖，故 post_url 留空。默认模型（主循环 Claude Opus 5、分类门 Claude Haiku、嵌入 Amazon Titan v2）来自仓库 README，属项目说明。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "TypeScript 包 prism-agent，Apache-2.0。依赖 Vercel AI SDK（Amazon Bedrock、Anthropic、Azure、OpenAI）、MCP SDK、Slack Bolt、Microsoft Teams 应用 SDK、Prisma + better-sqlite3（单进程自带数据，无独立数据库）。源码按 tools、routes、services、queues、protocol、prompts 分层，另有计算机使用和编辑器相关文档（docs/computer.md、docs/editors.md、docs/heartbeat.md、docs/scheduled-tasks.md）。可本机安装脚本或 ghcr.io/mirantis/prism 容器。",
+        "method": "从 Lens K8S IDE 里的助手演变成独立的公司向 Agent：给它一个目标，它跨回合追到做完；用自然语言或 cron 安排任务；heartbeat 按日程检查，只在有新情况时汇报；webhook 接收外部派活。身份由一组 Markdown 文档定义（Soul、User、Memory、Vision、Agent guide、Heartbeat、Bootstrap），改文档即改行为。工具风险门对照 Agent guide 拦截不安全调用，locked-in 模式禁止它改写自己的身份和长期记忆。编码任务可交给 Claude Code 或 Codex 并跟到结束，也可以自己跑命令、读网页、用桌面和浏览器。只接企业已治理的渠道（Web、终端、Slack、Teams），明确不接 Telegram/WhatsApp。",
+        "features": [
+          "目标跨会话持续推进，重启后恢复已接受的工作",
+          "日程任务、heartbeat 巡检和 webhook 收件",
+          "Web UI、终端 UI、Slack、Teams，以及语音和加入 Google Meet（文档有 voice/meetings 章节）",
+          "技能和插件走开放标准，其他工具的技能可直接用"
+        ],
+        "highlights": [
+          "2026-11-24 正式以 Apache 2.0 开源，定位是公司团队而不是个人全能助理",
+          "单运行时加 SQLite，无需额外部署数据库，和「企业渠道 + 自带模型合同」的约束写得很明确",
+          "把工具风险门和锁定身份做成运营商控制，而不是只写在提示词里"
+        ],
+        "limitations": [
+          "2026-11-25 查询仅 18 星、0 fork，开源曝光刚开始，社区验证很少",
+          "当天未找到官方 X 原帖，主要依据博客和仓库",
+          "默认主模型是 Claude Opus 5，实际能力和费用取决于你接入的提供方；桌面/浏览器操控的完备程度需按文档自行验证"
+        ],
+        "comparison": "和 argo、linger、n8n-nod、duskbot、open-duet-anil-matcha 同属常驻/个人或团队 Agent，但 Prism 明确做公司渠道（Slack/Teams）和合规约束，不做消费级聊天应用。和 anthropic-building-always-on-agents 这份指南对照：Prism 是可安装的实现，指南则强调收件箱和短 run。和 t3-code、paradev 不同，它不是并排驱动你已有的多个 CLI 控制台，而是自己当常驻队友，必要时再把编码交给 Claude Code/Codex。要在本机并排管 CLI，看 paradev 或 t3-code；要在公司 Slack/Teams 里放一个可持续干活、可锁定身份的助手，看 Prism。",
+        "researched_at": "2026-11-25"
       }
     },
     {
