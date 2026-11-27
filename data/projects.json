@@ -1,33 +1,33 @@
 {
   "meta": {
-    "generated_at": "2026-11-25",
+    "generated_at": "2026-11-27",
     "timezone": "Asia/Shanghai",
-    "projects_total": 360,
+    "projects_total": 369,
     "category_counts": {
-      "game": 62,
-      "agent-eng": 145,
-      "llm-tools": 87,
+      "game": 63,
+      "agent-eng": 148,
+      "llm-tools": 92,
       "other": 66
     },
     "subcategory_counts": {
-      "dev-efficiency": 71,
+      "dev-efficiency": 73,
       "phone-computer-use": 26,
-      "agent-fleet": 48
+      "agent-fleet": 49
     },
     "origin_counts": {
       "bookmark": 159,
       "reply-on-popular-post": 26,
-      "daily-digest": 158,
+      "daily-digest": 167,
       "bookmark+daily-digest": 11,
       "daily-digest+reply-on-popular-post": 4,
       "user-request": 1,
       "user-request+bookmark": 1
     },
     "analysis_counts": {
-      "full": 282,
-      "light": 78
+      "full": 290,
+      "light": 79
     },
-    "analysis_updated_at": "2026-11-25"
+    "analysis_updated_at": "2026-11-27"
   },
   "projects": [
     {
@@ -1389,6 +1389,60 @@
         ],
         "comparison": "和 genex-desktop 最接近：都是让编码 Agent 做游戏并试玩的开源桌面应用。Genex 更偏 Unreal、Unity、Godot、Roblox 的跨引擎构建与试玩，归在研发效率；OhMyGame 把设计文档、多媒体画布、Agent 亲自试玩和发布到社区做成完整工作室，并预装引擎插件，归在游戏类。godotprompter、blender-skills、3d-os-scenario-skills 是装进已有 Agent 的单一工具链。要完整的本机游戏工作室选 OhMyGame；要在已安装的主流引擎里闭环构建选 Genex；只要教 Agent 写 Godot 或驱动 Blender，选对应技能。",
         "researched_at": "2026-11-23"
+      }
+    },
+    {
+      "id": "opengame",
+      "name": "OpenGame",
+      "summary": "OpenDesign 开源的游戏工作室工具链：把已有的 Claude Code、Codex、DeepSeek 等编码 Agent 接上技能、MCP 和 25 个可玩模板，用于 remix、试玩检查和小游戏发行，而不是再做一个新的 Agent。",
+      "category": "game",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "apache-2.0",
+        "skill",
+        "mcp",
+        "three.js",
+        "游戏工作室",
+        "小游戏"
+      ],
+      "source_url": "https://github.com/nexu-io/opengame",
+      "preview_url": null,
+      "post_url": "https://x.com/tuturetom/status/2125955552442462556",
+      "author": "OpenDesign（@tuturetom / @OpenDesignHQ）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "DeepSeek Harness",
+        "Gemini CLI"
+      ],
+      "first_seen": "2026-11-26",
+      "origin": "daily-digest",
+      "stars": 950,
+      "notes": "GitHub API 于 2026-11-27 查询：950 星、165 fork，Apache-2.0，2026-11-25 建仓。传播帖（如 @cjun0428）把能力写成「一键复刻 GTA6 / 黑神话」，与 README 不符：文档写的是 25 个内置可玩模板。未查到可直接使用的官方在线工作室，需本地安装并接自己的编码 Agent。package.json 名称是 openmotion，版本 0.0.1。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Apache-2.0。Node.js 22.18+ 的 TypeScript 单体（package.json 名为 openmotion）：server.ts 与 mcp.ts 提供工作室和 MCP，studio/ 是 Vite 前端，skills/ 下有 opengame、openmotion-game、openmotion-design、openmotion-media、openmotion-video 等技能，另有 templates/、template-library/、gateway/、desktop/、examples/ 和测试。可用 Skills CLI 安装主技能，模板资源走 Git LFS。",
+        "method": "不自带编码 Agent，而是给 Claude Code、Codex、DeepSeek Harness、Gemini CLI 等已有本地 Agent（README 称 22 个）配游戏工具链：技能手册、MCP 工具和带源码的可玩模板。流程是选模板或从想法开始，改玩法、角色和画风，再做逻辑检查、无头试玩、封面和宣传片，并导出网页或 9:16 Playable Ads，也可对接微信小游戏、TikTok、抖音等上架路径。传播文案里的「一键复刻 3A」是夸张，仓库当前提供的是 25 个模板上的 remix。",
+        "features": [
+          "把已有编码 Agent 接成游戏工作室（README 称支持 22 个本地 Agent）",
+          "25 个带源码的可玩模板，可 remix 和换装",
+          "MCP 与多份开发、动画、试玩广告和 QA 手册",
+          "导出网页、竖屏可玩广告，并规划微信、抖音、TikTok 发布路径"
+        ],
+        "highlights": [
+          "建仓约两天，2026-11-27 查询已约 950 星，当天相关帖收藏量很高",
+          "定位清楚：给现成 Agent 用的游戏工具链，而不是新的对话机器人",
+          "仓库体量大，有工作室前端、模板库、测试和中英日 README"
+        ],
+        "limitations": [
+          "传播文案明显夸大，不能按「一键复刻 3A 大作」理解",
+          "需要 Node 22.18+、Git LFS 以及你自己的 Agent 订阅或 API Key；未查到官方在线工作室",
+          "README 带 OpenDesign Go 订阅推广；模板同质化和上架变现效果缺少独立验证",
+          "package.json 仍是 0.0.1 private"
+        ],
+        "comparison": "和 ohmygame 都想做 AI 游戏工作室。ohmygame 是带预览试玩和发布的一体化桌面应用（内置 Pi，也可驱动其他 Agent）；opengame 不自带 Agent，把工作室能力以技能和 MCP 接到你已有的 Claude Code、Codex 或 DeepSeek 上，并强调小游戏模板和发行路径。genex-desktop 是跨引擎的构建与试玩闭环；godotprompter、blender-skills 是单引擎技能。要一体化本机应用看 ohmygame；要用现有编码 Agent 做小游戏 remix 和上架流程，看 opengame。",
+        "researched_at": "2026-11-27"
       }
     },
     {
@@ -4211,6 +4265,54 @@
       }
     },
     {
+      "id": "panel-firewall",
+      "name": "Panel",
+      "summary": "给运行中的 Agent 加确定性闸门：MCP 代理按策略拦截工具调用并要求人工批准，对客回复里「已经办完」的说法必须能对上签名回执。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "mit",
+        "mcp",
+        "安全",
+        "人工审批",
+        "python"
+      ],
+      "source_url": "https://github.com/tenthlook/panel-firewall",
+      "preview_url": null,
+      "post_url": "https://x.com/ensarava/status/2126105486949023983",
+      "author": "Naren Saravanan / Axiom Labs（@ensarava）",
+      "models": [],
+      "first_seen": "2026-11-26",
+      "origin": "daily-digest",
+      "stars": 0,
+      "notes": "GitHub API 于 2026-11-27 查询：0 星、0 fork，MIT，2026-11-24 建仓。作者在 README 中写明这是早期、单作者、仅沙箱的软件。发帖所称「测试中批准绕过从 39 降到 0」为自报。无在线演示。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "MIT。Python 包 panel_firewall 分两层：Action firewall（MCP 代理，拦工具调用）和 Support guard（OpenAI 兼容代理，拦对客回复）。裁决全是确定性代码，不把模型当裁判。SQL 用 sqlglot 解析成 AST，并加 SQLite authorizer。回执用 Ed25519 签名并做哈希链（tenthlook-core 格式）。同意必须在代理之外完成，不能来自 Agent 自己的参数；默认失败则关闭。",
+        "method": "把 Agent 的错误分成「做了不该做的」和「说了没做的」。防火墙按 YAML 策略和只追加账本，对工具调用给出 allow / needs_consent / block；执行前申领幂等键，执行后记账并签发回执。对客回复里「已经办完」的说法必须引用账本里能核对的回执，否则改写。Support guard 把回复解析成承诺和动作，对照书面政策和真实订单。",
+        "features": [
+          "MCP 工具调用的策略拦截、人工批准和幂等执行",
+          "对客承诺必须有回执，否则改写回复",
+          "签名并哈希链式记录的回执",
+          "可接 Stripe 测试模式、Shopify 开发店、SQLite 或任意 MCP 服务器"
+        ],
+        "highlights": [
+          "明确「裁决不用模型」，避免评审器和被评审者是同一类系统",
+          "README 对早期、仅沙箱的定位写得很清楚",
+          "和「把规则写成 skill 再盼 Agent 遵守」是不同思路"
+        ],
+        "limitations": [
+          "2026-11-27 查询 0 星，作者自述为早期、仅沙箱软件",
+          "「批准绕过从 39 降到 0」为自报，README 要求先读 Limits 再看待任何数字",
+          "无在线演示",
+          "对客守卫目前按网店退款等政策设计，迁到其他领域要自己写策略"
+        ],
+        "comparison": "openmoat、nvidia-skillspector 主要管编码 Agent 的文件、命令或技能安装风险；shirudo 是内核级热补丁。panel-firewall 拦的是运行中的工具调用和对客承诺，更接近支付或客服场景的策略防火墙。要拦本机危险命令看 openmoat；要给已在调支付或订单工具的 Agent 加确定性闸门，看 panel-firewall。",
+        "researched_at": "2026-11-27"
+      }
+    },
+    {
       "id": "papilot",
       "name": "Papilot",
       "summary": "开源的智能体 LaTeX 编辑器：在排版后的 PDF 上圈选批注，交给你已有的编程 Agent 改稿，再对照排好的前后页决定接受或拒绝。",
@@ -4390,6 +4492,59 @@
         ],
         "comparison": "与 modern-web-guidance（四大浏览器厂商的 Web API 指南技能）同属「领域知识技能」，一个管 API 写法、一个管视觉设计；与 llm-tools 里的 norman-skill、opendesigner 等设计类技能相比，它不负责生成，而是给生成结果做规则化评审，可与生成类工具串联。",
         "researched_at": "2026-11-16"
+      }
+    },
+    {
+      "id": "rigdepot",
+      "name": "Rigdepot",
+      "summary": "用一个 Git 仓库集中团队的技能、MCP、工作流和 Agent 定义，再同步进每人电脑上的 Claude Code、Codex 和 OpenCode，并可先预览、再写入、再撤销。",
+      "category": "agent-eng",
+      "subcategory": "dev-efficiency",
+      "tags": [
+        "开源",
+        "apache-2.0",
+        "golang",
+        "mcp",
+        "skill",
+        "团队",
+        "claude-code"
+      ],
+      "source_url": "https://github.com/code2rich/rigdepot",
+      "preview_url": "https://rigdepot.code2rich.com",
+      "post_url": "https://x.com/code2rich/status/2126109922450358530",
+      "author": "code2rich（@code2rich）",
+      "models": [
+        "Claude Code",
+        "Codex",
+        "OpenCode"
+      ],
+      "first_seen": "2026-11-26",
+      "origin": "daily-digest",
+      "stars": 4,
+      "notes": "GitHub API 于 2026-11-27 查询：4 星、0 fork，Apache-2.0，2026-11-25 建仓，0.1.0 为首个发布。作者写明 Windows 仍是预览，且 CI 在 Windows 上的测试尚未全部通过。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Apache-2.0，Go 编写。0.1.0（2026-11-25）包含命令行 rgd 和可选的团队服务 rgd-server 及 Web 控制台。仓库有 cmd/、internal/、schema/、web/、deploy/、examples/ 和中英文文档，可用 Homebrew cask、Scoop 或安装脚本安装。资源放在一个 Git 仓库里，再按各工具自己的格式写进本机。",
+        "method": "解决团队里每人各配一套 Claude Code、Codex、OpenCode 导致的技能和 MCP 漂移。先在一个受代码评审的仓库里集中资源，用 rgd sync --plan 预览再写入，并可撤销。可选自托管服务器做访问范围、个人密钥、评审、审计和反馈。Intake 检查阻止把凭证提交进仓库。",
+        "features": [
+          "一个 Git 仓库集中技能、MCP、工作流和 Agent 定义",
+          "同步到 Claude Code、Codex、OpenCode，先预览再写入，可撤销",
+          "可选团队服务器：范围、密钥、评审和审计",
+          "中英文文档和在线演示"
+        ],
+        "highlights": [
+          "把团队级 Agent 配置当成平台工程问题，而不是再发一份压缩包",
+          "0.1.0 文档诚实：Windows 仍是预览，部分 CI 未通过",
+          "有 brew/scoop 发布物和演示站"
+        ],
+        "limitations": [
+          "2026-11-27 查询仅 4 星，首个版本刚发布",
+          "目前只同步三种编码 Agent",
+          "Windows 支持不完整，作者已写明",
+          "团队服务器的权限和审计需要自建，效果有待实际使用验证"
+        ],
+        "comparison": "vercel-eve 用约定目录在一个项目里组织单个 Agent 的指令和技能；rigdepot 的对象是团队里多台机器、多种编码 Agent 的配置同步。relay 做的是 Agent 之间交接任务，不是配置分发。要统一全组的技能和 MCP，看 rigdepot；要给单个 Agent 立项目规矩，看 vercel-eve。",
+        "researched_at": "2026-11-27"
       }
     },
     {
@@ -8640,6 +8795,54 @@
       }
     },
     {
+      "id": "pequalnp",
+      "name": "P = NP ?（pequalnp）",
+      "summary": "Brilliant 运营的公开 Agent 军团：把 P vs NP 相关命题拆成 Lean 4 任务，只有通过钉死版本检查器的证明才算 checked，并不声称问题已经解决。",
+      "category": "agent-eng",
+      "subcategory": "agent-fleet",
+      "tags": [
+        "开源",
+        "apache-2.0",
+        "lean",
+        "形式化",
+        "多智能体",
+        "研究"
+      ],
+      "source_url": "https://github.com/open-goat/pequalnp-proofs",
+      "preview_url": "https://pequalnp.com",
+      "post_url": null,
+      "author": "Brilliant",
+      "models": [],
+      "first_seen": "2026-11-26",
+      "origin": "daily-digest",
+      "stars": 261,
+      "notes": "GitHub API 于 2026-11-27 查询：261 星、3929 fork（fork 数异常高，原因未查到），Apache-2.0，2026-11-22 建仓并持续推送。未查到单一官方 X 发布帖，预览用网站。仓库明确写：没有任何陈述声称 P vs NP 已被解决。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Apache-2.0。公开仓库是 Lean 4 工程：lean/ 下钉死 toolchain 与 Mathlib，定义在 PEqualNP/Defs，外部提交进 PEqualNP/Outside，检查器是 lean/CheckLemma.lean 与 tools/check-lean.mjs。网站 pequalnp.com 由 Brilliant 运行，负责任务分发（desk API）、编排器和可视化。可用 tools/pnp.sh 领取 gap、本地检查并开 PR。",
+        "method": "一支公开的 Agent 军团分解与 P vs NP 相关的命题；只有通过钉死版本 Lean 检查器的证明才记为 checked。编排器领取工作单元，红队专门找反例，barrier desk 对照相对化、自然证明、代数化等已知障碍。外部 Agent 通过租约领取一个 gap，文件必须恰好证明公示命题，禁止 sorry，只允许三个标准公理。仓库和网站都不把任何已检查引理说成「P vs NP 已解决」。",
+        "features": [
+          "实时网站展示已检查、未解决和各程序进展",
+          "机器检查的 Lean 证明，公开可复跑",
+          "外部 Agent 可用脚本领题、提交 PR 并记贡献",
+          "红队和障碍评估与证明工作并列"
+        ],
+        "highlights": [
+          "把千年问题做成可公开审计的 Agent 协作，而不是发一篇声称证明的帖子",
+          "检查规则写得很严，避免「看起来像证明」",
+          "与 axiom-stacks 同属 Agent 加 Lean，但这里是带任务台的在线军团"
+        ],
+        "limitations": [
+          "项目本身也不声称问题已解决，距离最终答案未知",
+          "网站上的场次和规模数字未在本次逐条核对，引用需以网站为准",
+          "2026-11-22 建仓，fork 数异常高，原因未查到",
+          "需要 elan 和钉死的 Mathlib，不能随意 lake update；未查到官方 X 原帖"
+        ],
+        "comparison": "和 axiom-stacks 一样用 Agent 写可检查的 Lean，但 axiom-stacks 形式化的是 Stacks Project，pequalnp 是面向 P vs NP 的公开军团和任务台。inference-proofs 验证的是模型推理，不是数学定理。要做数学形式化军团，看 pequalnp；要形式化已有数学教材，看 axiom-stacks。",
+        "researched_at": "2026-11-27"
+      }
+    },
+    {
       "id": "paradev",
       "name": "Paradev",
       "summary": "开源的多端编程 Agent 控制面：用独立 git worktree 并行跑 Claude Code、Codex、OpenCode 等已有订阅，并可从桌面、手机或自建 Linux 主机查看和审阅。",
@@ -10650,6 +10853,54 @@
       }
     },
     {
+      "id": "inference-proofs",
+      "name": "Inference Proofs",
+      "summary": "Lucid Computing 与合作方开源的可验证推理评测：用同一套公开规则比较各证明系统，衡量证明一条模型回复相对普通推理的成本和代价。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "apache-2.0",
+        "评测",
+        "可验证推理",
+        "zkml",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/ai-verification-observatory/inference-proofs",
+      "preview_url": "https://www.inferenceproofs.ai/",
+      "post_url": "https://x.com/LucidComputing/status/2125635757033361570",
+      "author": "Lucid Computing 与合作方（AI Verification Observatory）",
+      "models": [],
+      "first_seen": "2026-11-26",
+      "origin": "daily-digest",
+      "stars": 27,
+      "notes": "GitHub API 于 2026-11-27 查询：27 星、3 fork，代码 Apache-2.0，结果与规则 CC BY 4.0，2026-11-03 建仓，官方发布帖在 2026-11-25。本次按仍在广泛讨论的正式发布收录。介绍博客见 https://lucidcomputing.ai/blog/introducing-inference-proofs 。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "代码 Apache-2.0，结果与规则 CC BY 4.0。Python 3.12/3.13，用 uv 管理，mypy strict、Ruff，并有 CI 和 RFC 方法论文档。仓库运行已有证明系统并按同一规则比较，本身不实现证明器。适配器约定为 info → setup → commit → prove → verify。计时在容器外进行，并用 NVML/cgroup 采样；验证器要过同一组篡改负向对照。每个系统配一行无证明的 vLLM 生产推理作为对照。",
+        "method": "所有可运行的证明系统面对同一请求：固定 512 token 提示和 512 token greedy 回复，提示在规则冻结后用公共随机信标从公版书抽取。系统必须先通过包括篡改拒绝、仅 CPU 验证等检查才能上榜。只在同一模型档内，按「证明一条回复相对普通推理的成本倍数」排序，不跨模型排名。每套配置有一张 claim card，说明该系统实际证明了什么。",
+        "features": [
+          "公开规则下比较证明成本、时间、证明大小和验证时间",
+          "负向对照和 claim card，避免把不同命题的证明直接比速度",
+          "公开结果站和学习页，可用 RFC 扩展方法",
+          "按适配器接入新的证明系统"
+        ],
+        "highlights": [
+          "把「可验证推理」从各家自说自话的数字收成一场公开赛",
+          "工程规范（RFC、严格类型、CI 重算指标）明显强于一般评测仓库",
+          "思路接近 Ethproofs，并加上面向推理的 claim card"
+        ],
+        "limitations": [
+          "2026-11-27 查询 27 星，Level 1 v1.0 刚发布",
+          "只证明「是这个模型、这次推理」，不证明输出是否安全或正确",
+          "固定 512+512 token 不能代表长上下文或工具调用",
+          "复现仍需要相应的托管或本地 GPU 环境"
+        ],
+        "comparison": "库内 nvidia-skillevaluator、harness2 等评测的是 Agent 或技能表现；axiom-stacks 和 pequalnp 用 Lean 检查数学证明。inference-proofs 不评智能，只比较「证明这次推理」的系统和成本。要选可验证推理方案，看它；要把数学证明做成可检查的 Lean，看 axiom-stacks 或 pequalnp。",
+        "researched_at": "2026-11-27"
+      }
+    },
+    {
       "id": "inkling-2-mini",
       "name": "Inkling 2 Mini",
       "summary": "Thinking Machines 发布的 26.4B looped MoE 开放权重模型：中间层循环三次，检查点约 20GB，可在笔记本电脑上跑，官方强调 agentic coding。",
@@ -11041,6 +11292,58 @@
       }
     },
     {
+      "id": "lingbot-navi",
+      "name": "LingBot-Navi",
+      "summary": "蚂蚁集团 Robbyant 开源的场景导航模型：用可复用的 3D 空间记忆理解新的语言指令，找到当前视野之外的目标并规划路径。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "apache-2.0",
+        "具身智能",
+        "导航",
+        "空间记忆",
+        "蚂蚁集团",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/Robbyant/lingbot-navi",
+      "preview_url": "https://technology.robbyant.com/lingbot-navi",
+      "post_url": "https://x.com/robbyant_brain/status/2126020732610302086",
+      "author": "Robbyant（蚂蚁集团，@robbyant_brain）",
+      "models": [
+        "LingBot-Navi",
+        "LingBot-Map 2.0"
+      ],
+      "first_seen": "2026-11-26",
+      "origin": "daily-digest",
+      "stars": 5,
+      "notes": "GitHub API 于 2026-11-27 查询：5 星、1 fork，Apache-2.0，2026-11-26 建仓。权重和数据集在 Hugging Face / ModelScope。评测数字来自官方 README 在 H20-3E、每场景第 0 条、共 36 回合的 10% 子集，须标自报。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "Apache-2.0。Python 3.10+，需 Linux x86_64、NVIDIA GPU、CUDA 12.8 和 C++ 编译器。仓库含 lingbot_navi/ 模型代码、close_loop_test/ 闭环评测、data_toolkit/、examples/、tech_report/ 和 install.py。权重在 Hugging Face / ModelScope。空间记忆由 LingBot-Map 把短 RGB 序列重建为局部记忆块。架构是空间记忆编码器、视觉语言解码器和轨迹解码器；轨迹用 flow matching 生成路径点，再交给局部规划器执行，块间用交叉注意力连接。",
+        "method": "针对连续导航里「用过去的观察理解新指令、找到当前看不见的目标」：把视觉特征锚定到重建表面，做成紧凑的空间 token，并统一做物体定位、图像定位、空间问答和 3D 路径预测。评测脚本基于 Habitat-Sim 和 GOAT-Bench 等。官方在 H20-3E 上对 36 个回合的子集给出参考结果，例如 GOAT 子集 SR 68.26%、SPL 38.26%（自报）。",
+        "features": [
+          "跨任务可复用的 3D 空间记忆",
+          "物体定位、图像定位、坐标导航、前沿探索和局部路径执行",
+          "发布真实职场场景数据集和顺序任务基准",
+          "提供安装、推理和闭环评测脚本"
+        ],
+        "highlights": [
+          "蚂蚁具身公司 Robbyant 在 2026-11-26 首次公开代码、权重和数据",
+          "把地图记忆和语言导航拆成 Map / Navi，官方称在熟悉场所会更快",
+          "文档和评测脚本完整，有技术页和中英文 README"
+        ],
+        "limitations": [
+          "2026-11-27 查询仅 5 星，刚发布",
+          "安装和评测依赖较重，需要编译 Habitat-Sim 并准备 GOAT-Bench 等数据",
+          "官方数字来自 36 回合子集，不是全量基准，须标自报",
+          "面向机器人导航研究，不是通用聊天或桌面 Agent"
+        ],
+        "comparison": "库内 openrocode 是把 Computer Use 搬到仿真机械臂上的 Agent 套件，管的是控制和护栏；lingbot-navi 是带空间记忆的导航模型本身。pan2、hy-nomas 做视觉世界推演或生成，不输出可执行导航。要研究「记住场景再找东西」，看 lingbot-navi；要在仿真臂上接现成编码 Agent，看 openrocode。",
+        "researched_at": "2026-11-27"
+      }
+    },
+    {
       "id": "lingsante-3-1-air-vl",
       "name": "LingSante-3.1-air-VL",
       "summary": "蚂蚁集团发布的开源多模态医疗 MoE：总参 124B、激活 5.5B，能看医学影像并写报告，也支持检索、工具和 GUI 操作。",
@@ -11229,6 +11532,58 @@
         ],
         "comparison": "和 teachable-figures、atlas-of-physics、3d-periodic-table 同属把科学内容做成可看的视觉材料，本项目更偏「生成可渲染的数学影片」。和 lieflat-code-video、motion-graphics-music-video-skill 都用代码做影像，但题材分别是数学讲解、产品片和音乐视频。",
         "researched_at": "2026-11-12"
+      }
+    },
+    {
+      "id": "ming-image-0-2-design",
+      "name": "Ming-Image-0.2-Design",
+      "summary": "蚂蚁集团 Ant Ling 开源的 6B DiT 视觉设计模型：面向 UI、海报、电商主图和空间效果图，官方称在 AA-Image-T2I v2.1 开源权重总榜上排第一。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "图像生成",
+        "DiT",
+        "设计",
+        "MIT",
+        "蚂蚁集团",
+        "产品发布"
+      ],
+      "source_url": "https://github.com/inclusionAI/Ming-Image",
+      "preview_url": "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design",
+      "post_url": "https://x.com/AntLingAGI/status/2125916926048358827",
+      "author": "蚂蚁集团 Ant Ling / inclusionAI（@AntLingAGI）",
+      "models": [
+        "Ming-Image-0.2-Design",
+        "Ling-3.2-flash",
+        "Ling-3.0-flash-VL"
+      ],
+      "first_seen": "2026-11-26",
+      "origin": "daily-digest",
+      "stars": 240,
+      "notes": "GitHub API 于 2026-11-27 查询：推理仓库 inclusionAI/Ming-Image 240 星、15 fork，MIT 许可，2026-09-17 建仓，2026-11-26 推送 0.2 相关更新。0.2-Design 权重在 Hugging Face / ModelScope；0.2-Design-Layer 官方计划下周开源。0.2 暂无独立 Demo（0.1 有 Spaces）。Elo 1,095 与开源权重第一的表述来自官方对 Artificial Analysis 榜单的转述，须标自报。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "MIT（推理仓库；官方亦以 MIT 发布权重）。inclusionAI/Ming-Image 以 infer.py 作为统一入口，代码包括 modeling_bailingmm2.py、configuration_bailing_moe_v2.py、qwen2_5_vit.py 和 diffusion/。Ming-Image-0.2-Design 是 6B 参数的 DiT 视觉设计生成模型，与 0.1 Design 共用推理代码。文生图默认 12 步、CFG 1.0、2048×2048，推荐一块至少 80 GiB 显存的 GPU、BF16，可选 FlashAttention 2。提示词增强可用 Ling-3.0-flash-VL 或 qwen3.8-27B；网页设计可与 Ling-3.2-flash 衔接。分层仍用已开源的 0.1-Design-Layer。",
+        "method": "面向 UI、海报、信息图、电商主图和空间效果图做文生图，强调复杂构图、光照和可读文字。提示可以是自然语言，也可以是 Figma 风格的结构化 JSON，并可先做提示词增强。分层模型把扁平设计拆成可独立编辑的透明图层。官方称截至 2026-11-25，该模型在 Artificial Analysis AA-Image-T2I v2.1 开源权重总榜上排第一、Elo 为 1,095（自报）。",
+        "features": [
+          "文生图，面向设计类画面，并支持透明背景",
+          "可与 0.1-Design-Layer 做可编辑图层分解（0.2 Layer 尚未开源）",
+          "Hugging Face / ModelScope 权重，以及 Comfy-Org 的 ComfyUI 封装（bf16 / int8）",
+          "配套设计、PPT 技能在 ling-cookbook；0.2 暂无独立在线 Demo"
+        ],
+        "highlights": [
+          "蚂蚁集团正式发布的开源权重设计模型，原帖互动很高",
+          "明确对标设计生产中的文字、构图和光照，而不只是自然风景",
+          "推理代码与 0.1 兼容，升级主要是换权重"
+        ],
+        "limitations": [
+          "官方推荐至少 80 GiB 显存，本地门槛高",
+          "0.2 暂无独立 Demo，Layer 0.2 尚未开源",
+          "排行榜数字为官方转述，本次未独立复核"
+        ],
+        "comparison": "库内尚无同定位的开源权重「视觉设计」文生图模型。lingsante-3-1-flash 和 lingsante-3-1-air-vl 是蚂蚁的医疗文本或医疗多模态模型，不是设计出图。hy-nomas、pan2 做世界或视频生成，idol 是单图转 3DGS。要开源权重做 UI、海报或主图，看 ming-image-0-2-design；要交互式三维世界续写，看 hy-nomas 或 pan2。",
+        "researched_at": "2026-11-27"
       }
     },
     {
@@ -11808,6 +12163,52 @@
         ],
         "comparison": "和 rsi-inference-bench 互补（科研和系统工程）。和 archimedes-reynolds、hydrogen-1-0 这些被评测对象相比，SLE 是衡量标尺。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "cloudflare-search-for-agents",
+      "name": "Search for Agents（Cloudflare）",
+      "summary": "Cloudflare 把站内检索做成域名上的一个开关：自动索引网站内容，并在 /.well-known/search 向 Agent 提供可发现的 Markdown 搜索接口。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "产品发布",
+        "cloudflare",
+        "搜索",
+        "agent",
+        "商业服务"
+      ],
+      "source_url": null,
+      "preview_url": "https://blog.cloudflare.com/search-for-agents/",
+      "post_url": null,
+      "author": "Cloudflare",
+      "models": [],
+      "first_seen": "2026-11-26",
+      "origin": "daily-digest",
+      "stars": null,
+      "notes": "商业功能，无独立开源仓库。深度为 light。未查到 Cloudflare 官方 X 原帖，预览用 2026-11-25 官方博客。文档还见 https://developers.cloudflare.com/ai-search/how-to/search-for-agents/ 。官方称全套餐（含 Free）可开 beta，计费按 AI Search，2026-12-01 开始计费。",
+      "analysis": {
+        "depth": "light",
+        "core_tech": "Cloudflare 网络侧功能，建立在已有 AI Search 上。打开开关后自动创建实例、抓取并索引该 zone，在本域名暴露 /.well-known/search（支持 GET 和 HTTP QUERY，结果为 Markdown）。HTML 响应会加入 agent:endpoint 等 meta，便于 Agent 发现。可与 Markdown for Agents 的内容协商一起使用。无独立开源仓库。",
+        "method": "把「给 Agent 做站内检索」从自建爬虫、索引和 API，收成控制台或 API 上的一个开关，并在网络层完成发现和接口暴露。搜索返回站点内容，而不是生成式答案。访问仍受该域名的 Bot Management、AI Crawl Control 和 WAF 约束。",
+        "features": [
+          "一键为域名创建可被 Agent 发现的站内搜索",
+          "/.well-known/search 返回 Markdown 结果",
+          "可调整 rerank、缓存等 AI Search 选项",
+          "Free 计划也可开启（有限额）"
+        ],
+        "highlights": [
+          "大厂把 Agent 检索做成平台能力，降低站点接入成本",
+          "发现机制写进页面 meta，不必再单独教每个 Agent 端点在哪"
+        ],
+        "limitations": [
+          "闭源商业服务，只能根据官方博客和文档做轻量分析",
+          "官方称 2026-12-01 起按 AI Search 计费，免费档有限额",
+          "有用户称 Markdown for Agents 可能需要更高套餐，需以官方文档为准",
+          "不能替代站点自己的权限和反爬策略；未查到官方 X 原帖"
+        ],
+        "comparison": "库内 last30days-skill 是从公开平台做研究简报，security-audit-skill 是 Cloudflare 开源的代码审计技能，都和「站长开放站内 Agent 搜索」不是一类。库内尚无同类的托管开关产品。要给自己的网站提供官方检索入口，看 cloudflare-search-for-agents；要让 Agent 去抓任意网页，仍看检索或爬取类工具。",
+        "researched_at": "2026-11-27"
       }
     },
     {
@@ -13138,6 +13539,58 @@
         ],
         "comparison": "和权重空间编程-mit 同属「在权重里编程」的研究方向。和 axiom-stacks 一样是前沿研究展示，不是实用工具。",
         "researched_at": "2026-11-10"
+      }
+    },
+    {
+      "id": "posts-design-mcp",
+      "name": "posts.design MCP",
+      "summary": "把人工精选的品牌社媒、OG 图和发布视频图库做成托管 MCP 和可安装技能，让 Agent 按真实作品做方向拆解，并在本机 remake。",
+      "category": "llm-tools",
+      "subcategory": null,
+      "tags": [
+        "开源",
+        "mit",
+        "mcp",
+        "skill",
+        "设计",
+        "社交媒体"
+      ],
+      "source_url": "https://github.com/posts-design/mcp",
+      "preview_url": "https://posts.design",
+      "post_url": "https://x.com/baseddesigner/status/2126064107212415407",
+      "author": "posts.design（@baseddesigner）",
+      "models": [
+        "Claude",
+        "ChatGPT",
+        "Claude Code"
+      ],
+      "first_seen": "2026-11-26",
+      "origin": "daily-digest",
+      "stars": 26,
+      "notes": "GitHub API 于 2026-11-27 查询：26 星、3 fork，MIT，2026-10-25 建仓。当天帖子把 11 个技能作为开源组合推广。图库检索和部分视频能力走托管 MCP，受 credits 限制：免费账号每月 100 credits，Pro 为 1,000；完整视频拆解和 remake 在 Pro。",
+      "analysis": {
+        "depth": "full",
+        "core_tech": "MIT。JavaScript 仓库既提供托管 MCP（https://posts.design/mcp，Streamable HTTP，OAuth 或个人密钥），也包含可在本地渲染的技能（如 remake）。posts.design 是人工精选的品牌社媒、OG 图和发布视频图库。可用 npx skills add posts-design/mcp 安装。免费账号每月 100 credits，Pro 1,000。",
+        "method": "Agent 向图库要参考、方向和拆解，再在本机按技能重做。例如用 remake 技能按原片分镜，换上自己的文案、logo、颜色和字体，并在 Claude Code 里渲染。也可以只要分镜、声音拆解或 OG 图方向。出发点是真实已发布作品，而不是从零生成一套风格。",
+        "features": [
+          "托管 MCP，可在 Claude、ChatGPT 等里连接",
+          "按真实发布案例检索和归纳品牌发布方式",
+          "包含 remake、direction breakdown、sound breakdown、OG 图等技能",
+          "本机渲染，资产和字体留在自己的项目里"
+        ],
+        "highlights": [
+          "开源的是技能和 MCP 用法，背后是一手案例库，比再写一套提示词更具体",
+          "安装路径清楚，既可远程 MCP 也可装技能",
+          "当天介绍帖收藏量较高"
+        ],
+        "limitations": [
+          "案例库和部分视频能力受 credits / Pro 限制，不是完全离线的开源数据集",
+          "仓库 2026-10 已存在，本次主要是把技能栈作为组合来推广",
+          "设计系统会不会被执行，仍取决于宿主 Agent",
+          "remake 质量依赖本机渲染链路，本次未做独立抽查"
+        ],
+        "comparison": "和 social-media-skills、unslop、stageshow、seo-skills 同属给 Agent 的内容或设计技能，但 posts-design-mcp 连的是真实品牌发布图库，并强调按原片重做，而不是通用去 AI 味或 SEO 改站。要做发布向视觉并需要真实参考，看 posts-design-mcp；只要通用去 AI 味或界面规范，看 unslop 或 stageshow。",
+        "researched_at": "2026-11-27"
       }
     },
     {

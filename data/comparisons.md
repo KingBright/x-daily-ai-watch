@@ -2,7 +2,7 @@
 
 按子类对库内项目做横向对比，比较技术路线、核心能力、成熟度、开源情况和适用场景。每个项目的详细分析见 `projects.json` 里的 `analysis` 字段。
 
-- 更新：2026-11-18（Asia/Shanghai）；2026-11-17（美西）全量书签补录条目的星标在 2026-11-17（美西时间）查询；2026-11-16 每周书签新条目的星标在 2026-11-15（美西时间）查询；2026-11-15 新条目的星标在 2026-11-14（美西时间）查询；2026-11-14 新条目的星标在 2026-11-13（美西时间）查询；既有条目的星标多在 2026-11-09 至 11-10 查询，本批新条目的星标在 2026-11-12 查询，数字会变化
+- 更新：2026-11-27（Asia/Shanghai）；2026-11-18（Asia/Shanghai）；2026-11-17（美西）全量书签补录条目的星标在 2026-11-17（美西时间）查询；2026-11-16 每周书签新条目的星标在 2026-11-15（美西时间）查询；2026-11-15 新条目的星标在 2026-11-14（美西时间）查询；2026-11-14 新条目的星标在 2026-11-13（美西时间）查询；既有条目的星标多在 2026-11-09 至 11-10 查询，本批新条目的星标在 2026-11-12 查询，数字会变化
 - 「自报」表示数字来自项目方的 README 或博客，未经独立验证；light 表示只有页面或帖子，没有可查的源码
 - 各类项目数量不在本文写死，以 `projects.json` 的 `projects` 数组为准（「项目库」Page 会实时计算）
 
@@ -21,6 +21,7 @@
 
 | 项目 id | 技术路线 | 核心能力 | 成熟度 | 开源 | 适用场景 |
 | --- | --- | --- | --- | --- | --- |
+| opengame | 给已有编码 Agent 的 TypeScript 工作室：技能 + MCP + Three.js 模板库 | 25 个可玩模板 remix、无头试玩、竖屏广告和上架路径 | ★950，2026-11-25 建仓；传播文案有夸大 | Apache-2.0 | 要用现成 Claude Code/Codex/DeepSeek 做小游戏 remix 和发行 |
 | 3d-os-scenario-skills | Agent 技能加 Scenario MCP，驱动 Blender、Maya、UE、Unity 等 DCC 和引擎 | 从概念图到引擎落地的多部门美术流水线 | ★3.6k，2026-08 创建，活跃 | MIT | AI 辅助游戏美术和资产生产 |
 | scenario-blender-plugin | Blender 5 Python 扩展，内置本地 MCP | 在 Blender 里一站式调用多模态生成模型 | ★968，有 425 个测试文件和模糊测试 | GPL-3.0 | Blender 用户的 AI 资产工作流 |
 | parametric-topdown-pixel-architecture | 零依赖 JS 参数化渲染加 Node CLI，配方嵌入 PNG | 批量生成像素建筑并导出 Godot 预制体 | ★182，早期 | NOASSERTION | 2D 俯视角游戏批量造城 |
@@ -83,6 +84,7 @@
 | cube-to-cafe-racer | Blender 5.2 / Cycles，全部 Python 程序化，无外部模型 | 金属立方体展开成咖啡馆赛车的 45 秒短片 | ★0；成片在仓库内，音频另有许可 | MIT（代码） | 研究程序化机械变形和可重渲短片 |
 | burn-it-back | 未查到引擎，Steam 即将发售的商业单机 | 冰雪废土生存策略，夜里用火烧退会进化的活体组织 | light，计划 2027 发行，无源码 | 闭源 | 看题材和调性，尚不能试玩 |
 | duskward | 单文件 HTML 托管在 agnt.gg，无独立仓库 | 可交互的奥尼尔圆柱殖民地 | light；体积和零依赖为自述 | 未查到 | 想打开看圆柱世界，不适合当实现教材 |
+2026-11-27 每日精选补入 opengame：它不是再做一个 Agent，而是给已有编码 Agent 配游戏工作室工具链。和 ohmygame 的一体化桌面应用不同，这里强调 25 个模板和上架路径；传播帖里的「一键复刻 GTA6 / 黑神话」与 README 不符，应按模板 remix 理解。
 
 ### 分析
 
@@ -120,6 +122,8 @@
 
 | 项目 id | 技术路线 | 核心能力 | 成熟度 | 开源 | 适用场景 |
 | --- | --- | --- | --- | --- | --- |
+| rigdepot | Go CLI + 可选团队服务器，把技能/MCP/工作流放进一个 Git 仓库再同步到本机工具 | 同步 Claude Code、Codex、OpenCode，可预览、写入和撤销 | ★4，0.1.0；Windows 仍是预览 | Apache-2.0 | 要统一团队里多台机器、多种编码 Agent 的配置 |
+| panel-firewall | Python MCP/OpenAI 代理，确定性策略 + 签名回执，裁决不用模型 | 拦工具调用、要求人工批准，对客「已办完」必须对上回执 | ★0，早期仅沙箱；自报数字需谨慎 | MIT | 要给支付或客服类 Agent 加运行时闸门 |
 | superpowers | 可组合技能加 hooks，适配十几种 harness | 规划、调试、写作等研发方法论 | ★31.5 万，事实标准 | MIT | 任何编程 Agent 的基础技能层 |
 | pstack | Cursor 插件（技能加 agents） | 验证驱动、少写代码、并行 Agent | ★1.6 万（cursor/plugins 仓库） | 未单独声明 | Cursor 重度用户 |
 | elephant-goldfish-model | 跨平台插件：有上下文的 Agent 写规格，无记忆的 Agent 评审 | 先审设计再写代码 | ★1.7 万，Google 出品 | Apache-2.0 | 需要设计评审的中大型改动 |
@@ -177,6 +181,7 @@
 | papilot | 跨平台 LaTeX 编辑器，对接已有编程 Agent，在已排版 PDF 上审阅 | 圈选页面让 Agent 改 .tex，对照排版结果接受或拒绝 | ★363，v0.11.0，可与 Overleaf 同步 | MIT | 写论文时不想盯着源码 diff |
 | onlook | Electron + React 19 画布，git worktree 跑真实 dev server，接入 Claude Code 或 Codex | 在真实产品界面上并列探索并改代码，差异作为可审 PR | ★27413，YC W25；官方包目前仅 macOS | Apache-2.0 | 设计师要在真实 Web 产品上做界面探索 |
 | agent-thinking-meter | 标准库 Python CLI，读本机 Claude Code / Codex / Antigravity 日志 | 统计工具步还带不带推理、每回合工具次数，只输出聚合计数 | 新建，★0；案例数字为自报 | MIT | 用自己的日志验证「模型是不是更懒了」 |
+2026-11-27 每日精选补入 rigdepot 和 panel-firewall。前者做团队级技能和 MCP 同步，和 vercel-eve 的「单项目约定目录」不同；后者是运行时确定性防火墙，裁决不用模型，目前仍是早期沙箱软件，数字为自报。
 
 | seo-skills | 30 个 SKILL.md + 3 个预配置 MCP（AI SEO Tracker、Scribiz、Awesome Tools） | 把技术 SEO、GEO、内链、迁移等做成可合并的 PR 或仓库文件 | ★1550；部分技能通向作者的付费产品 | MIT | 要用编码 Agent 直接改站点 SEO，而不是只要审计 PDF |
 | geo-sleuth | 标准 Agent Skill + 约 20 个单用途 Python 脚本；OSM/高程/卫星/街景 | 从一张照片求相机坐标、朝向和误差半径，并给出卫星证据图 | ★7352；案例误差为项目记录的盲测 | MIT | 需要可复现、可出示证据的照片地理定位 |
@@ -290,6 +295,7 @@
 
 | 项目 id | 技术路线 | 核心能力 | 成熟度 | 开源 | 适用场景 |
 | --- | --- | --- | --- | --- | --- |
+| pequalnp | Lean 4 钉死工具链 + 网站任务台，Agent 军团分解命题并由检查器判定 | 只把通过检查的证明记为 checked，外部 Agent 可领题提交 | ★261，2026-11-22 建仓；不声称 P vs NP 已解决 | Apache-2.0 | 要公开、可审计地用 Agent 做形式化数学 |
 | t3-code | TS 单仓：本地服务器、Web、Electron 加移动端遥控 | 统一操控本机多种编程 Agent | ★5.4 万 | MIT | 多 Agent 编程控制台 |
 | coincide | T3 Code 的原生 macOS 移植（AppKit、SwiftUI 加 Rust） | 并排运行、中途换 Agent | ★14 | MIT | 追求原生性能的 Mac 用户 |
 | tastecode | Electron（TS、Swift）加本地编排服务 | 面向创意网页、3D 和动效的多 Agent 工作台 | ★513 | Apache-2.0 | 创意前端 |
@@ -327,6 +333,7 @@
 | grokbot-deskpet | Tauri 桌面宠物 + 加密 ntfy 通道，专看 Grok Bot 状态 | 一眼看出哪个 Bot 在思考、工作或等你 | ★0，macOS，非官方且未签名 | Apache-2.0 | 只想在桌面上盯 Grok Bot，不负责批准操作 |
 | linger | TypeScript 本机个人 Agent + 自研 PolyStrata MoE 推理，Cua/Playwright 操控桌面和浏览器 | 本地或已有订阅上跑 Another Me：记忆 wiki、主动提醒、team.md 多 Agent | ★1540，2026-11-19 开源；速度与「接近 Claude」为自报 | Apache-2.0 加托管/品牌附加条款 | 要在自己电脑上跑带本地大模型的个人 Agent 团队 |
 | mastra-factory | 薄 TypeScript 模板 + npm 包 @mastra/factory，Postgres，可选 Slack；默认可走 Mastra 平台 | 把 GitHub/Linear/Jira 的 issue 变成可审批的计划、实现和 PR | 模板仓 ★52；238/630 周 PR 数为团队自报 | 声明 Apache-2.0（根目录未见 LICENSE 文件） | 已在用 Mastra、想从看板或 Slack 开软件工厂的团队 |
+2026-11-27 每日精选补入 pequalnp：Brilliant 的公开 Agent 军团攻击 P vs NP 相关命题，和 axiom-stacks 形式化 Stacks Project 是同一类「Agent + Lean」，但这里有在线任务台和红队，并且明确问题仍未解决。
 
 | unified-dev | 原生 macOS 26/Swift 6.2 应用，每个任务一个 git worktree；MCP 回桥 | 并排跑 Claude Code/Codex/Grok，互不抢分支，可看 diff 和花费 | 仅 Apple silicon；Cursor/OpenCode 尚无 runner；星标本次未查到 | AGPL-3.0 | 要在 Mac 上给每个 Agent 独立 worktree，而不是共享同一工作区 |
 | argo | TypeScript monorepo（React/Electron/Expo/Hono/Postgres），Docker 自托管 | 持久队友：记忆、例程、浏览器/终端/桌面、审批、可委派子 Agent | ★4，beta；也提供托管版；评论区发现 | Apache-2.0 | 要自托管对标 Grok Bot/OpenClaw 的个人/团队助手 |
@@ -381,6 +388,11 @@
 
 | 项目 id | 技术路线 | 核心能力 | 成熟度 | 开源 | 适用场景 |
 | --- | --- | --- | --- | --- | --- |
+| ming-image-0-2-design | 6B DiT 设计文生图，与 0.1 共用推理代码，MIT 权重 | UI/海报/主图/空间效果图，可读文字和构图（榜单为自报） | ★240（推理仓）；0.2 权重 2026-11-26 发布，推荐 80GB 显存 | MIT | 要开源权重做设计类出图 |
+| lingbot-navi | 空间记忆编码器 + 视觉语言解码器 + flow matching 轨迹解码，Apache-2.0 | 跨任务 3D 记忆、语言找物和路径规划 | ★5，2026-11-26 首发；评测为 36 回合子集自报 | Apache-2.0 | 要研究「记住场景再导航」的具身模型 |
+| cloudflare-search-for-agents | Cloudflare 网络侧开关，基于 AI Search，暴露 /.well-known/search | 自动索引站点并向 Agent 返回 Markdown 检索结果 | light，商业功能；2026-12-01 起计费 | 闭源 | 要给自己的网站提供官方 Agent 搜索入口 |
+| inference-proofs | 公开规则下运行各证明系统，对照 vLLM 无证明推理 | 比较证明成本与命题范围，不跨模型排名 | ★27，Level 1 v1.0 | 代码 Apache-2.0，数据 CC BY 4.0 | 要比较可验证推理方案 |
+| posts-design-mcp | 托管 MCP + 本地 remake 等技能，连人工精选品牌发布图库 | 按真实作品做方向拆解并在本机重做 | ★26；部分能力需 credits/Pro | MIT（技能/MCP 用法） | 要做发布向视觉并需要真实参考 |
 | mistral-large-4 | 1T 参数原生多模态，开放权重 | 编程、防御性网络安全（官方说法） | light | 开放权重 | 需要私有部署大模型 |
 | longcat-2-5 | 1.6T 参数，用国产芯片训练 | 长程 Agent 任务 | light | 未查到 | 国产算力生态 |
 | ling-3-2-flash | 原生多模态 MoE，通过 API 提供 | 长上下文、文档和网页理解 | light | API | 多模态 API 选型 |
@@ -459,6 +471,7 @@
 | hy-nomas | 分段自回归 MMDiT + Qwen 文本编码器 + 相机条件，开源权重 | 按视频片段用文本和相机轨迹续写同一世界 | ★586，可单卡量化推理；标准配置偏多卡 | Apache-2.0 | 要自托管或对照闭源世界模型 |
 | product-demo-agent-toolkit | TypeScript 工具包 + 本地 Studio，驱动你已有的编程 Agent 录真实产品 | 按人的节奏走流程并配旁白，可在不重拍的情况下改参数 | ★15，新建 | MIT | 给客户拍真实产品操作演示 |
 | easyclip | 本机 ffmpeg + Claude 技能/MCP，模型只看很短的摘要表 | 从链接或文件剪竖屏 Shorts，带政策检查；Pro 另付费 | ★2，评论区发现；免费版有限额 | MIT（免费版） | 用 Claude 从长录像/直播切 Shorts |
+2026-11-27 每日精选补入 ming-image-0-2-design、lingbot-navi、cloudflare-search-for-agents、inference-proofs 和 posts-design-mcp。前两者是蚂蚁系的开源模型（设计出图与带空间记忆的导航）；Cloudflare 把站内 Agent 搜索做成托管开关；Inference Proofs 比较的是可验证推理成本而不是智能；posts.design 把真实品牌发布图库接到 Agent 技能上。
 
 | inkling-2-mini | 26.4B looped MoE，中间 12 层循环 3 次，NVFP4/MXFP8，约 20GB | 开放权重本地多模态模型，官方强调 agentic coding 和少写思维链 | 2026-11-20 发布；多数基准为官方自报；AA Index 20.1 | Apache-2.0 | 要在笔记本上跑开放权重编程/Agent 模型 |
 | daisyrose-27b | 基于 Qwen3.8-27B，只做 RL、无 SFT/蒸馏（自述），Apache-2.0 权重 | 长程 agent 任务微调的即插即用替代权重 | Terminal Bench 4.1 等为官方自测；训练代码未查到 | Apache-2.0 | 已在用 Qwen3.8-27B 栈、想换一版 RL 过的权重 |

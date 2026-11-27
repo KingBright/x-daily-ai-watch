@@ -1,11 +1,19 @@
 {
-  "updated_at": "2026-11-18",
+  "updated_at": "2026-11-27",
   "sections": [
     {
       "key": "game",
       "title": "游戏",
       "scope": "category=game",
       "rows": [
+        {
+          "id": "opengame",
+          "tech": "给已有编码 Agent 的 TypeScript 工作室：技能 + MCP + Three.js 模板库",
+          "capability": "25 个可玩模板 remix、无头试玩、竖屏广告和上架路径",
+          "maturity": "★950，2026-11-25 建仓；传播文案有夸大",
+          "license": "Apache-2.0",
+          "use_case": "要用现成 Claude Code/Codex/DeepSeek 做小游戏 remix 和发行"
+        },
         {
           "id": "3d-os-scenario-skills",
           "tech": "Agent 技能加 Scenario MCP，驱动 Blender、Maya、UE、Unity 等 DCC 和引擎",
@@ -504,6 +512,7 @@
         }
       ],
       "prose": [
+        "2026-11-27 每日精选补入 opengame：它不是再做一个 Agent，而是给已有编码 Agent 配游戏工作室工具链。和 ohmygame 的一体化桌面应用不同，这里强调 25 个模板和上架路径；传播帖里的「一键复刻 GTA6 / 黑神话」与 README 不符，应按模板 remix 理解。",
         "这一类分成三条技术路线：一是「AI 资产流水线」，包括 3d-os-scenario-skills、scenario-blender-plugin、parametric-topdown-pixel-architecture，以及后来的 pixelfx（代码像素特效）和 guizang-game-skill（可玩网页动作游戏技能）；二是「渲染引擎和技术底座」，包括 threepp、solstice，以及重写商业游戏运行时的 iw4l，外加与 AI 无关的成熟关卡编辑器 LDtk；三是「AI 直接写出的成品或演示」，包括 portals、poke-bonk、书桌之上，以及 dread-and-district、earth-on-spawn、voxel-engine、the-quiet-elevation，再加上后来在热门帖评论里见到的 a-little-earth、our-3d-reality、fable-contra、sapper-minesweeper，大多是网页 3D。",
         "结论 1：最成熟、最值得接入工作流的是 Scenario 的两件套。技能库覆盖整条流水线，Blender 插件的工程质量最高（测试、模糊测试、发布签名齐全），两者合起来就是「Agent 驱动 DCC」的参考实现。",
         "结论 2：渲染底座里，threepp 胜在成熟，solstice 胜在技术前沿（WebGPU 上的虚拟化几何），但后者还只是演示。three-voxel-destruction 把 WebGPU 用在可玩的体素刚体破坏上，并开源了演示和底层求解器 three-avbd，适合对照「只有托管页的体素演示」。想在浏览器之外做原生 3D，选 threepp；想研究 Web 端下一代渲染，看 solstice；想看可玩的 WebGPU 物理，看 three-voxel-destruction。",
@@ -525,6 +534,22 @@
       "title": "研发效率",
       "scope": "agent-eng/dev-efficiency",
       "rows": [
+        {
+          "id": "rigdepot",
+          "tech": "Go CLI + 可选团队服务器，把技能/MCP/工作流放进一个 Git 仓库再同步到本机工具",
+          "capability": "同步 Claude Code、Codex、OpenCode，可预览、写入和撤销",
+          "maturity": "★4，0.1.0；Windows 仍是预览",
+          "license": "Apache-2.0",
+          "use_case": "要统一团队里多台机器、多种编码 Agent 的配置"
+        },
+        {
+          "id": "panel-firewall",
+          "tech": "Python MCP/OpenAI 代理，确定性策略 + 签名回执，裁决不用模型",
+          "capability": "拦工具调用、要求人工批准，对客「已办完」必须对上回执",
+          "maturity": "★0，早期仅沙箱；自报数字需谨慎",
+          "license": "MIT",
+          "use_case": "要给支付或客服类 Agent 加运行时闸门"
+        },
         {
           "id": "superpowers",
           "tech": "可组合技能加 hooks，适配十几种 harness",
@@ -983,6 +1008,7 @@
         }
       ],
       "prose": [
+        "2026-11-27 每日精选补入 rigdepot 和 panel-firewall。前者做团队级技能和 MCP 同步，和 vercel-eve 的「单项目约定目录」不同；后者是运行时确定性防火墙，裁决不用模型，目前仍是早期沙箱软件，数字为自报。",
         "这一类可以按作用分成五层：方法论和技能层（superpowers、pstack、elephant-goldfish-model、unslop、stageshow、agents-md）；理解和审计层（understand-anything、security-audit-skill、stroq、landmine）；安全和成本层（openmoat、tokeneconomizer、agav、playbasis-agent-hub）；运行时和自治层（borg、oar-kanso、agent-autoloop、dsh-superagent-prototype、octopus-si-os、exact，以及后来补入的 kwwk、minimax-code、optiq-code）；生态和目录层（Grok Bot 相关项目、xai-plugin-marketplace）。",
         "结论 1：技能（SKILL.md）已经成为研发效率工具的主流载体。星标最高的几个（superpowers 31.5 万、understand-anything 9.2 万、security-audit-skill 6.8 万）都是技能或插件，而且同时适配多种 harness，技能本身几乎不绑定具体 Agent。",
         "结论 2：多个项目不约而同用「换一个干净的上下文去复核」来提高质量：elephant-goldfish-model 用无记忆评审，security-audit-skill 用新上下文证伪，pstack 强调验证。这是目前对抗 Agent 自我确认偏差最有效的套路。",
@@ -1195,6 +1221,14 @@
       "title": "Agent 军团管理",
       "scope": "agent-eng/agent-fleet",
       "rows": [
+        {
+          "id": "pequalnp",
+          "tech": "Lean 4 钉死工具链 + 网站任务台，Agent 军团分解命题并由检查器判定",
+          "capability": "只把通过检查的证明记为 checked，外部 Agent 可领题提交",
+          "maturity": "★261，2026-11-22 建仓；不声称 P vs NP 已解决",
+          "license": "Apache-2.0",
+          "use_case": "要公开、可审计地用 Agent 做形式化数学"
+        },
         {
           "id": "t3-code",
           "tech": "TS 单仓：本地服务器、Web、Electron 加移动端遥控",
@@ -1493,6 +1527,7 @@
         }
       ],
       "prose": [
+        "2026-11-27 每日精选补入 pequalnp：Brilliant 的公开 Agent 军团攻击 P vs NP 相关命题，和 axiom-stacks 形式化 Stacks Project 是同一类「Agent + Lean」，但这里有在线任务台和红队，并且明确问题仍未解决。",
         "这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面、herdr 终端复用器、agent-teams-ai 看板式自治团队），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）；面向公司组织的商业平台则有后来见到的 agent-ceo。",
         "结论 1：控制台方向 t3-code 仍然体量最大（既有记录约 5.4 万星），coincide、tastecode 做原生性能和创意场景上的差异化。recalc 把控制台收成一张可公式化验收的表，crommacode 把观察做成游戏并加 worktree 蜂群，但后者暂不开放源码。除 crommacode 外，这类方案大多仍选择驱动本机已登录的 CLI，沿用用户已有的订阅。",
         "结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。若目标是公司组织而不是本机编码控制台，agent-ceo 给出了「人和 Agent 共用组织规则、完成判定要分开」的产品形态，但闭源，页面上的规模数字均为自报，需要自己试用。",
@@ -1517,6 +1552,46 @@
       "title": "大模型工具",
       "scope": "category=llm-tools",
       "rows": [
+        {
+          "id": "ming-image-0-2-design",
+          "tech": "6B DiT 设计文生图，与 0.1 共用推理代码，MIT 权重",
+          "capability": "UI/海报/主图/空间效果图，可读文字和构图（榜单为自报）",
+          "maturity": "★240（推理仓）；0.2 权重 2026-11-26 发布，推荐 80GB 显存",
+          "license": "MIT",
+          "use_case": "要开源权重做设计类出图"
+        },
+        {
+          "id": "lingbot-navi",
+          "tech": "空间记忆编码器 + 视觉语言解码器 + flow matching 轨迹解码，Apache-2.0",
+          "capability": "跨任务 3D 记忆、语言找物和路径规划",
+          "maturity": "★5，2026-11-26 首发；评测为 36 回合子集自报",
+          "license": "Apache-2.0",
+          "use_case": "要研究「记住场景再导航」的具身模型"
+        },
+        {
+          "id": "cloudflare-search-for-agents",
+          "tech": "Cloudflare 网络侧开关，基于 AI Search，暴露 /.well-known/search",
+          "capability": "自动索引站点并向 Agent 返回 Markdown 检索结果",
+          "maturity": "light，商业功能；2026-12-01 起计费",
+          "license": "闭源",
+          "use_case": "要给自己的网站提供官方 Agent 搜索入口"
+        },
+        {
+          "id": "inference-proofs",
+          "tech": "公开规则下运行各证明系统，对照 vLLM 无证明推理",
+          "capability": "比较证明成本与命题范围，不跨模型排名",
+          "maturity": "★27，Level 1 v1.0",
+          "license": "代码 Apache-2.0，数据 CC BY 4.0",
+          "use_case": "要比较可验证推理方案"
+        },
+        {
+          "id": "posts-design-mcp",
+          "tech": "托管 MCP + 本地 remake 等技能，连人工精选品牌发布图库",
+          "capability": "按真实作品做方向拆解并在本机重做",
+          "maturity": "★26；部分能力需 credits/Pro",
+          "license": "MIT（技能/MCP 用法）",
+          "use_case": "要做发布向视觉并需要真实参考"
+        },
         {
           "id": "mistral-large-4",
           "tech": "1T 参数原生多模态，开放权重",
@@ -2143,6 +2218,7 @@
         }
       ],
       "prose": [
+        "2026-11-27 每日精选补入 ming-image-0-2-design、lingbot-navi、cloudflare-search-for-agents、inference-proofs 和 posts-design-mcp。前两者是蚂蚁系的开源模型（设计出图与带空间记忆的导航）；Cloudflare 把站内 Agent 搜索做成托管开关；Inference Proofs 比较的是可验证推理成本而不是智能；posts.design 把真实品牌发布图库接到 Agent 技能上。",
         "可以分成 7 组：模型（表中前几行）、推理和效率（kimi-k3-in-c、ferrite、mlx-serve、latent-sparse-attention、xerj-query-1）、权重和训练（nesformer、权重空间编程-mit、oumi-faie）、评测（rsi-inference-bench、science-s-last-exam、vybbench）、学习和科研（deeptutor 到 archimedes-reynolds）、内容创作（视频、动效、设计、写作），以及语音（cicada-知了、hy-simulmt、argument-cat、phonic-1）。",
         "结论 1：模型组全部是 light 分析，因为只有官方博客或 API，没有可验证的代码。开放权重小模型（twil-8b、sensenova-loop-9b-preview）适合本地实验；大模型（mistral-large-4、longcat-2-5）的价值更多在于部署选项。基准数据都是厂商自报。",
         "结论 2：最有技术含量的是「权重即程序」这条新路线：nesformer 用编译器写权重，权重空间编程-mit 让 LLM 推理后改权重，两者方向相反、互相补充。推理效率方向的 kimi-k3-in-c（极限省内存）、ferrite（全 Rust）、latent-sparse-attention（长上下文）都还以自报数据为主，生产可用性需要自己验证。",
