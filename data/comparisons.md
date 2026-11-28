@@ -122,6 +122,9 @@
 
 | 项目 id | 技术路线 | 核心能力 | 成熟度 | 开源 | 适用场景 |
 | --- | --- | --- | --- | --- | --- |
+| pax | Python TUI，建在 Pydantic AI Harness 的 Coder 上，连编码 Agent 也是插件 | 终端里改代码、跑命令，可接自己的 agent，可开沙箱和 MCP | 单体仓 ★21433；Pax 本身是 beta，通往 1.0 | MIT | 要一个可拆开的官方终端编码 Agent，或把已有 Pydantic AI agent 接到 TUI |
+| sessionly | 本机 Rust CLI + SQLite 总账，可选 TypeScript 仪表盘和服务器 | 统一五家编码 Agent 的花费，并追踪行是否还留在文件和 PR 里 | ★189；演示数据为作者自有仓库，不是基准 | Apache-2.0（ee/ 另有商业许可） | 要跨工具比较花费和「代码留下多少」 |
+| swarmy | 只读 Rust 终端仪表盘，读取 Claude Code / Antigravity / Codex 已有日志 | 实时看会话、子 Agent、花费和周额度，不启动也不控制 Agent | ★95，2026-11-22 建仓 | MIT OR Apache-2.0 | 要在本机并排观察多个宿主的现场状态和额度 |
 | rigdepot | Go CLI + 可选团队服务器，把技能/MCP/工作流放进一个 Git 仓库再同步到本机工具 | 同步 Claude Code、Codex、OpenCode，可预览、写入和撤销 | ★4，0.1.0；Windows 仍是预览 | Apache-2.0 | 要统一团队里多台机器、多种编码 Agent 的配置 |
 | panel-firewall | Python MCP/OpenAI 代理，确定性策略 + 签名回执，裁决不用模型 | 拦工具调用、要求人工批准，对客「已办完」必须对上回执 | ★0，早期仅沙箱；自报数字需谨慎 | MIT | 要给支付或客服类 Agent 加运行时闸门 |
 | superpowers | 可组合技能加 hooks，适配十几种 harness | 规划、调试、写作等研发方法论 | ★31.5 万，事实标准 | MIT | 任何编程 Agent 的基础技能层 |
@@ -199,6 +202,7 @@
 | ai-werk-skills | 23 个 Markdown Agent Skills + 仓库内带 TTL 的大脑 | 把编码 Agent 编成五阶段软件交付线 | 2026-11-20 建仓，★0，2026-11-24 宣布开源 | Apache-2.0 | 已有编码宿主、想用纯技能而不是再上一套控制台 |
 
 ### 分析
+2026-11-27 补入 pax、sessionly 和 swarmy。Pax 是 Pydantic 官方终端编码 Agent，连 Agent 本身都可以换成插件，默认无沙箱无审批，基准数字为官方自报单次运行。sessionly 和 swarmy 都观测本机编码 Agent，但一个是花费与行存活的总账，一个是只读的实时仪表盘，可以一起用，谁也代替不了调度器。
 
 这一类可以按作用分成五层：方法论和技能层（superpowers、pstack、elephant-goldfish-model、unslop、stageshow、agents-md）；理解和审计层（understand-anything、security-audit-skill、stroq、landmine）；安全和成本层（openmoat、tokeneconomizer、agav、playbasis-agent-hub）；运行时和自治层（borg、oar-kanso、agent-autoloop、dsh-superagent-prototype、octopus-si-os、exact，以及后来补入的 kwwk、minimax-code、optiq-code）；生态和目录层（Grok Bot 相关项目、xai-plugin-marketplace）。
 
@@ -295,6 +299,10 @@
 
 | 项目 id | 技术路线 | 核心能力 | 成熟度 | 开源 | 适用场景 |
 | --- | --- | --- | --- | --- | --- |
+| icons8-hub | 自托管 Python 调度器，浏览器/Telegram 入口，执行器占独立 worktree | 把一个目标拆到多路 Claude Code 或 Codex，只把决定送回来 | ★62，2026-11-19 建仓，实验性，无逐步确认 | Apache-2.0 | 要在自己的机器上并行推进一个大目标 |
+| andon | Go + Docker cell + 文件看板，镜像预装 Claude Code、Codex 和 herdr | 单人软件工厂：领 issue、独立审查、门禁合并，安灯只在必须叫人时亮 | ★222，v0.0.x，作者声明不稳定、暂不接受 PR | Apache-2.0 | 一个人要把本机 Agent 收成可离开座位的流水线 |
+| cospan | JavaScript 插件，跨 Antigravity / Codex / Claude Code / DeepSeek Harness 的异步委托协议 | 按「模型 × 宿主」在后台派活，宿主不阻塞自己的上下文 | ★78，2026-11-15 建仓；无独立预览页 | MIT | 要让一个已在跑的宿主去调用另一个宿主 |
+| ccc | 本机 Python 值班台，FSL-1.1-MIT，缺陷进 WatchTower 队列后再交给编码 Agent | 监控和客户报障由 Agent 修，只有真正要拍板的问题发到手机或邮箱 | ★221；On-call 为预览；评论区发现 | FSL-1.1-MIT（两年后转 MIT） | 已经有真实用户、想让编码 Agent 为产品值班 |
 | pequalnp | Lean 4 钉死工具链 + 网站任务台，Agent 军团分解命题并由检查器判定 | 只把通过检查的证明记为 checked，外部 Agent 可领题提交 | ★261，2026-11-22 建仓；不声称 P vs NP 已解决 | Apache-2.0 | 要公开、可审计地用 Agent 做形式化数学 |
 | t3-code | TS 单仓：本地服务器、Web、Electron 加移动端遥控 | 统一操控本机多种编程 Agent | ★5.4 万 | MIT | 多 Agent 编程控制台 |
 | coincide | T3 Code 的原生 macOS 移植（AppKit、SwiftUI 加 Rust） | 并排运行、中途换 Agent | ★14 | MIT | 追求原生性能的 Mac 用户 |
@@ -348,6 +356,7 @@
 | open-agent | FastAPI + Next.js 本机工作流平台，聊天用类型化工具改画布 | n8n 风格节点与版本化回滚，可离线接本地模型 | ★1，体量不小但仍早期；测试数为自报与仓库统计 | MIT | 想在本机用聊天加画布做自动化，并能接受早期项目风险 |
 
 ### 分析
+2026-11-27 补入 icons8-hub、andon、cospan，以及评论区发现的 ccc。Hub 把一个目标拆到多路 worktree 上的 Claude Code / Codex；Andon 是单人 Docker 工厂，管 issue 到合并的纪律；Cospan 则让宿主之间异步互派，自己不当控制面。CCC 把同一类「只把决定送给你」的思路用在产品值班和缺陷队列上，许可证是 FSL 而不是一经发布的 MIT。
 
 这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面、herdr 终端复用器、agent-teams-ai 看板式自治团队），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）；面向公司组织的商业平台则有后来见到的 agent-ceo。
 
@@ -388,6 +397,7 @@
 
 | 项目 id | 技术路线 | 核心能力 | 成熟度 | 开源 | 适用场景 |
 | --- | --- | --- | --- | --- | --- |
+| inkworks-skill | 给编码 Agent 的 three.js 技能：解析运动学 + 工程图风格 kit，无模型文件 | 可单步、拖动和环绕观察的机械原理页，两种版式，可本地录演示 | ★539，2026-11-25 建仓；需本地预览 | MIT | 要用 Agent 做能逐步看懂的 3D 原理页 |
 | ming-image-0-2-design | 6B DiT 设计文生图，与 0.1 共用推理代码，MIT 权重 | UI/海报/主图/空间效果图，可读文字和构图（榜单为自报） | ★240（推理仓）；0.2 权重 2026-11-26 发布，推荐 80GB 显存 | MIT | 要开源权重做设计类出图 |
 | lingbot-navi | 空间记忆编码器 + 视觉语言解码器 + flow matching 轨迹解码，Apache-2.0 | 跨任务 3D 记忆、语言找物和路径规划 | ★5，2026-11-26 首发；评测为 36 回合子集自报 | Apache-2.0 | 要研究「记住场景再导航」的具身模型 |
 | cloudflare-search-for-agents | Cloudflare 网络侧开关，基于 AI Search，暴露 /.well-known/search | 自动索引站点并向 Agent 返回 Markdown 检索结果 | light，商业功能；2026-12-01 起计费 | 闭源 | 要给自己的网站提供官方 Agent 搜索入口 |
@@ -484,6 +494,7 @@
 | glm-5-4 | 约 750B 底座上 28 层循环 2 次的 Loop Transformer，1M 上下文 | 编程套餐旗舰，官方定位 Generalized Coding（视频/游戏/CAD 等） | light，闭源服务；权重和 API 尚未开放；数字为官方自报 | 未开放权重 | 要在 Claude Code 等工具里试用智谱循环旗舰，且能接受暂无权重 |
 
 ### 分析
+2026-11-27 补入 inkworks-skill：它不是游戏工作室，而是用解析运动学做可逐步检查的 3D 原理页，和 sprite-stacking、3d-os-scenario-skills 那些资产/特效技能不在同一条线上。
 
 可以分成 7 组：模型（表中前几行）、推理和效率（kimi-k3-in-c、ferrite、mlx-serve、latent-sparse-attention、xerj-query-1）、权重和训练（nesformer、权重空间编程-mit、oumi-faie）、评测（rsi-inference-bench、science-s-last-exam、vybbench）、学习和科研（deeptutor 到 archimedes-reynolds）、内容创作（视频、动效、设计、写作），以及语音（cicada-知了、hy-simulmt、argument-cat、phonic-1）。
 

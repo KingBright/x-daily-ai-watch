@@ -535,6 +535,30 @@
       "scope": "agent-eng/dev-efficiency",
       "rows": [
         {
+          "id": "pax",
+          "tech": "Python TUI，建在 Pydantic AI Harness 的 Coder 上，连编码 Agent 也是插件",
+          "capability": "终端里改代码、跑命令，可接自己的 agent，可开沙箱和 MCP",
+          "maturity": "单体仓 ★21433；Pax 本身是 beta，通往 1.0",
+          "license": "MIT",
+          "use_case": "要一个可拆开的官方终端编码 Agent，或把已有 Pydantic AI agent 接到 TUI"
+        },
+        {
+          "id": "sessionly",
+          "tech": "本机 Rust CLI + SQLite 总账，可选 TypeScript 仪表盘和服务器",
+          "capability": "统一五家编码 Agent 的花费，并追踪行是否还留在文件和 PR 里",
+          "maturity": "★189；演示数据为作者自有仓库，不是基准",
+          "license": "Apache-2.0（ee/ 另有商业许可）",
+          "use_case": "要跨工具比较花费和「代码留下多少」"
+        },
+        {
+          "id": "swarmy",
+          "tech": "只读 Rust 终端仪表盘，读取 Claude Code / Antigravity / Codex 已有日志",
+          "capability": "实时看会话、子 Agent、花费和周额度，不启动也不控制 Agent",
+          "maturity": "★95，2026-11-22 建仓",
+          "license": "MIT OR Apache-2.0",
+          "use_case": "要在本机并排观察多个宿主的现场状态和额度"
+        },
+        {
           "id": "rigdepot",
           "tech": "Go CLI + 可选团队服务器，把技能/MCP/工作流放进一个 Git 仓库再同步到本机工具",
           "capability": "同步 Claude Code、Codex、OpenCode，可预览、写入和撤销",
@@ -1009,6 +1033,7 @@
       ],
       "prose": [
         "2026-11-27 每日精选补入 rigdepot 和 panel-firewall。前者做团队级技能和 MCP 同步，和 vercel-eve 的「单项目约定目录」不同；后者是运行时确定性防火墙，裁决不用模型，目前仍是早期沙箱软件，数字为自报。",
+        "2026-11-27 补入 pax、sessionly 和 swarmy。Pax 是 Pydantic 官方终端编码 Agent，连 Agent 本身都可以换成插件，默认无沙箱无审批，基准数字为官方自报单次运行。sessionly 和 swarmy 都观测本机编码 Agent，但一个是花费与行存活的总账，一个是只读的实时仪表盘，可以一起用，谁也代替不了调度器。",
         "这一类可以按作用分成五层：方法论和技能层（superpowers、pstack、elephant-goldfish-model、unslop、stageshow、agents-md）；理解和审计层（understand-anything、security-audit-skill、stroq、landmine）；安全和成本层（openmoat、tokeneconomizer、agav、playbasis-agent-hub）；运行时和自治层（borg、oar-kanso、agent-autoloop、dsh-superagent-prototype、octopus-si-os、exact，以及后来补入的 kwwk、minimax-code、optiq-code）；生态和目录层（Grok Bot 相关项目、xai-plugin-marketplace）。",
         "结论 1：技能（SKILL.md）已经成为研发效率工具的主流载体。星标最高的几个（superpowers 31.5 万、understand-anything 9.2 万、security-audit-skill 6.8 万）都是技能或插件，而且同时适配多种 harness，技能本身几乎不绑定具体 Agent。",
         "结论 2：多个项目不约而同用「换一个干净的上下文去复核」来提高质量：elephant-goldfish-model 用无记忆评审，security-audit-skill 用新上下文证伪，pstack 强调验证。这是目前对抗 Agent 自我确认偏差最有效的套路。",
@@ -1221,6 +1246,38 @@
       "title": "Agent 军团管理",
       "scope": "agent-eng/agent-fleet",
       "rows": [
+        {
+          "id": "icons8-hub",
+          "tech": "自托管 Python 调度器，浏览器/Telegram 入口，执行器占独立 worktree",
+          "capability": "把一个目标拆到多路 Claude Code 或 Codex，只把决定送回来",
+          "maturity": "★62，2026-11-19 建仓，实验性，无逐步确认",
+          "license": "Apache-2.0",
+          "use_case": "要在自己的机器上并行推进一个大目标"
+        },
+        {
+          "id": "andon",
+          "tech": "Go + Docker cell + 文件看板，镜像预装 Claude Code、Codex 和 herdr",
+          "capability": "单人软件工厂：领 issue、独立审查、门禁合并，安灯只在必须叫人时亮",
+          "maturity": "★222，v0.0.x，作者声明不稳定、暂不接受 PR",
+          "license": "Apache-2.0",
+          "use_case": "一个人要把本机 Agent 收成可离开座位的流水线"
+        },
+        {
+          "id": "cospan",
+          "tech": "JavaScript 插件，跨 Antigravity / Codex / Claude Code / DeepSeek Harness 的异步委托协议",
+          "capability": "按「模型 × 宿主」在后台派活，宿主不阻塞自己的上下文",
+          "maturity": "★78，2026-11-15 建仓；无独立预览页",
+          "license": "MIT",
+          "use_case": "要让一个已在跑的宿主去调用另一个宿主"
+        },
+        {
+          "id": "ccc",
+          "tech": "本机 Python 值班台，FSL-1.1-MIT，缺陷进 WatchTower 队列后再交给编码 Agent",
+          "capability": "监控和客户报障由 Agent 修，只有真正要拍板的问题发到手机或邮箱",
+          "maturity": "★221；On-call 为预览；评论区发现",
+          "license": "FSL-1.1-MIT（两年后转 MIT）",
+          "use_case": "已经有真实用户、想让编码 Agent 为产品值班"
+        },
         {
           "id": "pequalnp",
           "tech": "Lean 4 钉死工具链 + 网站任务台，Agent 军团分解命题并由检查器判定",
@@ -1528,6 +1585,7 @@
       ],
       "prose": [
         "2026-11-27 每日精选补入 pequalnp：Brilliant 的公开 Agent 军团攻击 P vs NP 相关命题，和 axiom-stacks 形式化 Stacks Project 是同一类「Agent + Lean」，但这里有在线任务台和红队，并且明确问题仍未解决。",
+        "2026-11-27 补入 icons8-hub、andon、cospan，以及评论区发现的 ccc。Hub 把一个目标拆到多路 worktree 上的 Claude Code / Codex；Andon 是单人 Docker 工厂，管 issue 到合并的纪律；Cospan 则让宿主之间异步互派，自己不当控制面。CCC 把同一类「只把决定送给你」的思路用在产品值班和缺陷队列上，许可证是 FSL 而不是一经发布的 MIT。",
         "这一类有三种形态：编程 Agent 控制台（t3-code、coincide、tastecode，以及后来的 recalc 表格工作台、crommacode 游戏化桌面、herdr 终端复用器、agent-teams-ai 看板式自治团队），管的是本机的 CLI Agent；通用 Bot 平台（openmausbot、open-duet-anil-matcha、openduet-copilotkit、rerun），对标 Grok Bot 这类托管 Bot；团队模板和胶水层（bot-teams、hypergrok-trading-desk、relay、the-office-agents）；面向公司组织的商业平台则有后来见到的 agent-ceo。",
         "结论 1：控制台方向 t3-code 仍然体量最大（既有记录约 5.4 万星），coincide、tastecode 做原生性能和创意场景上的差异化。recalc 把控制台收成一张可公式化验收的表，crommacode 把观察做成游戏并加 worktree 蜂群，但后者暂不开放源码。除 crommacode 外，这类方案大多仍选择驱动本机已登录的 CLI，沿用用户已有的订阅。",
         "结论 2：Grok Bot 开源替代里，openmausbot（2 万星，执行环境最完整）和 open-duet-anil-matcha（7 千星，历史最久）最成熟。rerun 的 Foreman 自动组队最接近「管理者」角色，但采用 AGPL 许可。选型时主要看隔离方式（VM 还是 Docker）、许可证、要不要自带模型 key。若目标是公司组织而不是本机编码控制台，agent-ceo 给出了「人和 Agent 共用组织规则、完成判定要分开」的产品形态，但闭源，页面上的规模数字均为自报，需要自己试用。",
@@ -1552,6 +1610,14 @@
       "title": "大模型工具",
       "scope": "category=llm-tools",
       "rows": [
+        {
+          "id": "inkworks-skill",
+          "tech": "给编码 Agent 的 three.js 技能：解析运动学 + 工程图风格 kit，无模型文件",
+          "capability": "可单步、拖动和环绕观察的机械原理页，两种版式，可本地录演示",
+          "maturity": "★539，2026-11-25 建仓；需本地预览",
+          "license": "MIT",
+          "use_case": "要用 Agent 做能逐步看懂的 3D 原理页"
+        },
         {
           "id": "ming-image-0-2-design",
           "tech": "6B DiT 设计文生图，与 0.1 共用推理代码，MIT 权重",
@@ -2219,6 +2285,7 @@
       ],
       "prose": [
         "2026-11-27 每日精选补入 ming-image-0-2-design、lingbot-navi、cloudflare-search-for-agents、inference-proofs 和 posts-design-mcp。前两者是蚂蚁系的开源模型（设计出图与带空间记忆的导航）；Cloudflare 把站内 Agent 搜索做成托管开关；Inference Proofs 比较的是可验证推理成本而不是智能；posts.design 把真实品牌发布图库接到 Agent 技能上。",
+        "2026-11-27 补入 inkworks-skill：它不是游戏工作室，而是用解析运动学做可逐步检查的 3D 原理页，和 sprite-stacking、3d-os-scenario-skills 那些资产/特效技能不在同一条线上。",
         "可以分成 7 组：模型（表中前几行）、推理和效率（kimi-k3-in-c、ferrite、mlx-serve、latent-sparse-attention、xerj-query-1）、权重和训练（nesformer、权重空间编程-mit、oumi-faie）、评测（rsi-inference-bench、science-s-last-exam、vybbench）、学习和科研（deeptutor 到 archimedes-reynolds）、内容创作（视频、动效、设计、写作），以及语音（cicada-知了、hy-simulmt、argument-cat、phonic-1）。",
         "结论 1：模型组全部是 light 分析，因为只有官方博客或 API，没有可验证的代码。开放权重小模型（twil-8b、sensenova-loop-9b-preview）适合本地实验；大模型（mistral-large-4、longcat-2-5）的价值更多在于部署选项。基准数据都是厂商自报。",
         "结论 2：最有技术含量的是「权重即程序」这条新路线：nesformer 用编译器写权重，权重空间编程-mit 让 LLM 推理后改权重，两者方向相反、互相补充。推理效率方向的 kimi-k3-in-c（极限省内存）、ferrite（全 Rust）、latent-sparse-attention（长上下文）都还以自报数据为主，生产可用性需要自己验证。",
